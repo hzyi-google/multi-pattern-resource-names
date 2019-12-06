@@ -138,6 +138,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "google.privacy.dlp.v2.RedactImageRequest" do
     optional :parent, :string, 1
+    optional :location_id, :string, 8
     optional :inspect_config, :message, 2, "google.privacy.dlp.v2.InspectConfig"
     repeated :image_redaction_configs, :message, 5, "google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig"
     optional :include_findings, :bool, 6
@@ -167,6 +168,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :item, :message, 4, "google.privacy.dlp.v2.ContentItem"
     optional :inspect_template_name, :string, 5
     optional :deidentify_template_name, :string, 6
+    optional :location_id, :string, 7
   end
   add_message "google.privacy.dlp.v2.DeidentifyContentResponse" do
     optional :item, :message, 1, "google.privacy.dlp.v2.ContentItem"
@@ -179,6 +181,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :item, :message, 4, "google.privacy.dlp.v2.ContentItem"
     optional :inspect_template_name, :string, 5
     optional :reidentify_template_name, :string, 6
+    optional :location_id, :string, 7
   end
   add_message "google.privacy.dlp.v2.ReidentifyContentResponse" do
     optional :item, :message, 1, "google.privacy.dlp.v2.ContentItem"
@@ -189,6 +192,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :inspect_config, :message, 2, "google.privacy.dlp.v2.InspectConfig"
     optional :item, :message, 3, "google.privacy.dlp.v2.ContentItem"
     optional :inspect_template_name, :string, 4
+    optional :location_id, :string, 5
   end
   add_message "google.privacy.dlp.v2.InspectContentResponse" do
     optional :result, :message, 1, "google.privacy.dlp.v2.InspectResult"
@@ -233,6 +237,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "google.privacy.dlp.v2.ListInfoTypesRequest" do
     optional :language_code, :string, 1
     optional :filter, :string, 2
+    optional :location_id, :string, 3
   end
   add_message "google.privacy.dlp.v2.ListInfoTypesResponse" do
     repeated :info_types, :message, 1, "google.privacy.dlp.v2.InfoTypeDescription"
@@ -692,6 +697,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :parent, :string, 1
     optional :inspect_template, :message, 2, "google.privacy.dlp.v2.InspectTemplate"
     optional :template_id, :string, 3
+    optional :location_id, :string, 4
   end
   add_message "google.privacy.dlp.v2.UpdateInspectTemplateRequest" do
     optional :name, :string, 1
@@ -706,6 +712,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :page_token, :string, 2
     optional :page_size, :int32, 3
     optional :order_by, :string, 4
+    optional :location_id, :string, 5
   end
   add_message "google.privacy.dlp.v2.ListInspectTemplatesResponse" do
     repeated :inspect_templates, :message, 1, "google.privacy.dlp.v2.InspectTemplate"
@@ -718,6 +725,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :parent, :string, 1
     optional :job_trigger, :message, 2, "google.privacy.dlp.v2.JobTrigger"
     optional :trigger_id, :string, 3
+    optional :location_id, :string, 4
   end
   add_message "google.privacy.dlp.v2.ActivateJobTriggerRequest" do
     optional :name, :string, 1
@@ -733,6 +741,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "google.privacy.dlp.v2.CreateDlpJobRequest" do
     optional :parent, :string, 1
     optional :job_id, :string, 4
+    optional :location_id, :string, 5
     oneof :job do
       optional :inspect_job, :message, 2, "google.privacy.dlp.v2.InspectJobConfig"
       optional :risk_job, :message, 3, "google.privacy.dlp.v2.RiskAnalysisJobConfig"
@@ -744,6 +753,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :page_size, :int32, 3
     optional :order_by, :string, 4
     optional :filter, :string, 5
+    optional :location_id, :string, 7
   end
   add_message "google.privacy.dlp.v2.ListJobTriggersResponse" do
     repeated :job_triggers, :message, 1, "google.privacy.dlp.v2.JobTrigger"
@@ -790,6 +800,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :page_token, :string, 3
     optional :type, :enum, 5, "google.privacy.dlp.v2.DlpJobType"
     optional :order_by, :string, 6
+    optional :location_id, :string, 7
   end
   add_message "google.privacy.dlp.v2.ListDlpJobsResponse" do
     repeated :jobs, :message, 1, "google.privacy.dlp.v2.DlpJob"
@@ -805,6 +816,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :parent, :string, 1
     optional :deidentify_template, :message, 2, "google.privacy.dlp.v2.DeidentifyTemplate"
     optional :template_id, :string, 3
+    optional :location_id, :string, 4
   end
   add_message "google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest" do
     optional :name, :string, 1
@@ -819,6 +831,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :page_token, :string, 2
     optional :page_size, :int32, 3
     optional :order_by, :string, 4
+    optional :location_id, :string, 5
   end
   add_message "google.privacy.dlp.v2.ListDeidentifyTemplatesResponse" do
     repeated :deidentify_templates, :message, 1, "google.privacy.dlp.v2.DeidentifyTemplate"
@@ -865,6 +878,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :parent, :string, 1
     optional :config, :message, 2, "google.privacy.dlp.v2.StoredInfoTypeConfig"
     optional :stored_info_type_id, :string, 3
+    optional :location_id, :string, 4
   end
   add_message "google.privacy.dlp.v2.UpdateStoredInfoTypeRequest" do
     optional :name, :string, 1
@@ -879,6 +893,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :page_token, :string, 2
     optional :page_size, :int32, 3
     optional :order_by, :string, 4
+    optional :location_id, :string, 5
   end
   add_message "google.privacy.dlp.v2.ListStoredInfoTypesResponse" do
     repeated :stored_info_types, :message, 1, "google.privacy.dlp.v2.StoredInfoType"

@@ -75,4 +75,24 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTemplateIdBytes();
+
+  /**
+   * <pre>
+   * The geographic location to store the deidentification template. Reserved
+   * for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location to store the deidentification template. Reserved
+   * for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

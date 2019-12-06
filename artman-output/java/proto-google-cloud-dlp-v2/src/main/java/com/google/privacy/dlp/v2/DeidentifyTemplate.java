@@ -5,7 +5,7 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * The DeidentifyTemplates contains instructions on how to deidentify content.
+ * DeidentifyTemplates contains instructions on how to de-identify content.
  * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
  * </pre>
  *
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The DeidentifyTemplates contains instructions on how to deidentify content.
+   * DeidentifyTemplates contains instructions on how to de-identify content.
    * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
    * </pre>
    *
@@ -1088,7 +1088,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1098,7 +1098,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1112,7 +1112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1132,7 +1132,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1150,7 +1150,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1190,7 +1190,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1217,7 +1217,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a inspectTemplate, output only field.
+     * The creation timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -1241,7 +1241,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1265,7 +1265,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1285,7 +1285,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1303,7 +1303,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1325,7 +1325,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1343,7 +1343,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1355,7 +1355,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -1370,7 +1370,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a inspectTemplate, output only field.
+     * The last update timestamp of an inspectTemplate, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>

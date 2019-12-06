@@ -73,4 +73,24 @@ public interface CreateJobTriggerRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTriggerIdBytes();
+
+  /**
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

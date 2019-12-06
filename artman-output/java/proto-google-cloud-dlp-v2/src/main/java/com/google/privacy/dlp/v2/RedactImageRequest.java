@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private RedactImageRequest() {
     parent_ = "";
+    locationId_ = "";
     imageRedactionConfigs_ = java.util.Collections.emptyList();
   }
 
@@ -69,9 +70,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               imageRedactionConfigs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             imageRedactionConfigs_.add(
                 input.readMessage(com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.parser(), extensionRegistry));
@@ -95,6 +96,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            locationId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -110,7 +117,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -1355,6 +1362,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object locationId_;
+  /**
+   * <pre>
+   * The geographic location to process the request. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 8;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The geographic location to process the request. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 8;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
   /**
@@ -1519,6 +1570,9 @@ private static final long serialVersionUID = 0L;
     if (byteItem_ != null) {
       output.writeMessage(7, getByteItem());
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1547,6 +1601,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getByteItem());
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, locationId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1564,6 +1621,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getParent()
         .equals(other.getParent())) return false;
+    if (!getLocationId()
+        .equals(other.getLocationId())) return false;
     if (hasInspectConfig() != other.hasInspectConfig()) return false;
     if (hasInspectConfig()) {
       if (!getInspectConfig()
@@ -1591,6 +1650,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     if (hasInspectConfig()) {
       hash = (37 * hash) + INSPECT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInspectConfig().hashCode();
@@ -1747,6 +1808,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       parent_ = "";
 
+      locationId_ = "";
+
       if (inspectConfigBuilder_ == null) {
         inspectConfig_ = null;
       } else {
@@ -1755,7 +1818,7 @@ private static final long serialVersionUID = 0L;
       }
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         imageRedactionConfigsBuilder_.clear();
       }
@@ -1796,15 +1859,16 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
+      result.locationId_ = locationId_;
       if (inspectConfigBuilder_ == null) {
         result.inspectConfig_ = inspectConfig_;
       } else {
         result.inspectConfig_ = inspectConfigBuilder_.build();
       }
       if (imageRedactionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.imageRedactionConfigs_ = imageRedactionConfigs_;
       } else {
@@ -1869,6 +1933,10 @@ private static final long serialVersionUID = 0L;
         parent_ = other.parent_;
         onChanged();
       }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
+        onChanged();
+      }
       if (other.hasInspectConfig()) {
         mergeInspectConfig(other.getInspectConfig());
       }
@@ -1876,7 +1944,7 @@ private static final long serialVersionUID = 0L;
         if (!other.imageRedactionConfigs_.isEmpty()) {
           if (imageRedactionConfigs_.isEmpty()) {
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureImageRedactionConfigsIsMutable();
             imageRedactionConfigs_.addAll(other.imageRedactionConfigs_);
@@ -1889,7 +1957,7 @@ private static final long serialVersionUID = 0L;
             imageRedactionConfigsBuilder_.dispose();
             imageRedactionConfigsBuilder_ = null;
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             imageRedactionConfigsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getImageRedactionConfigsFieldBuilder() : null;
@@ -2019,6 +2087,100 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     * <pre>
+     * The geographic location to process the request. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 8;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to process the request. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to process the request. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 8;</code>
+     */
+    public Builder setLocationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to process the request. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 8;</code>
+     */
+    public Builder clearLocationId() {
+      
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to process the request. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 8;</code>
+     */
+    public Builder setLocationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      locationId_ = value;
       onChanged();
       return this;
     }
@@ -2179,9 +2341,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig> imageRedactionConfigs_ =
       java.util.Collections.emptyList();
     private void ensureImageRedactionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         imageRedactionConfigs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>(imageRedactionConfigs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -2375,7 +2537,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearImageRedactionConfigs() {
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         imageRedactionConfigsBuilder_.clear();
@@ -2480,7 +2642,7 @@ private static final long serialVersionUID = 0L;
         imageRedactionConfigsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig, com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.Builder, com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>(
                 imageRedactionConfigs_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         imageRedactionConfigs_ = null;

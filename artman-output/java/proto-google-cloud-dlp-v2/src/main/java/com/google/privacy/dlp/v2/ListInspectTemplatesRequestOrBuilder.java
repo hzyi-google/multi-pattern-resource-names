@@ -92,4 +92,24 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
+
+  /**
+   * <pre>
+   * The geographic location where inspection templates will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location where inspection templates will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

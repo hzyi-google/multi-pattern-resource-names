@@ -59,3 +59,4 @@ do
 done
 
 rm -rf artman-output/*.desc
+rm -rf artman-output/*.yaml

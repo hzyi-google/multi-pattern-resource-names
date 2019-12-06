@@ -5,7 +5,9 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * Configuration for a StoredInfoType.
+ * Configuration for stored infoTypes. All fields and subfield are provided
+ * by the user. For more information, see
+ * https://cloud.google.com/dlp/docs/creating-custom-infotypes.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeConfig}
@@ -454,7 +456,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for a StoredInfoType.
+   * Configuration for stored infoTypes. All fields and subfield are provided
+   * by the user. For more information, see
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeConfig}

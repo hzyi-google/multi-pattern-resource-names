@@ -423,18 +423,20 @@ func TestDataTransferServiceCreateTransferConfig(t *testing.T) {
 	var disabled bool = true
 	var userId int64 = 147132913
 	var datasetRegion string = "datasetRegion959248539"
+	var notificationPubsubTopic string = "notificationPubsubTopic1794281191"
 	var expectedResponse = &datatransferpb.TransferConfig{
 		Name: name,
 		Destination: &datatransferpb.TransferConfig_DestinationDatasetId{
 			DestinationDatasetId: destinationDatasetId,
 		},
-		DisplayName:           displayName,
-		DataSourceId:          dataSourceId,
-		Schedule:              schedule,
-		DataRefreshWindowDays: dataRefreshWindowDays,
-		Disabled:              disabled,
-		UserId:                userId,
-		DatasetRegion:         datasetRegion,
+		DisplayName:             displayName,
+		DataSourceId:            dataSourceId,
+		Schedule:                schedule,
+		DataRefreshWindowDays:   dataRefreshWindowDays,
+		Disabled:                disabled,
+		UserId:                  userId,
+		DatasetRegion:           datasetRegion,
+		NotificationPubsubTopic: notificationPubsubTopic,
 	}
 
 	mockDataTransfer.err = nil
@@ -504,18 +506,20 @@ func TestDataTransferServiceUpdateTransferConfig(t *testing.T) {
 	var disabled bool = true
 	var userId int64 = 147132913
 	var datasetRegion string = "datasetRegion959248539"
+	var notificationPubsubTopic string = "notificationPubsubTopic1794281191"
 	var expectedResponse = &datatransferpb.TransferConfig{
 		Name: name,
 		Destination: &datatransferpb.TransferConfig_DestinationDatasetId{
 			DestinationDatasetId: destinationDatasetId,
 		},
-		DisplayName:           displayName,
-		DataSourceId:          dataSourceId,
-		Schedule:              schedule,
-		DataRefreshWindowDays: dataRefreshWindowDays,
-		Disabled:              disabled,
-		UserId:                userId,
-		DatasetRegion:         datasetRegion,
+		DisplayName:             displayName,
+		DataSourceId:            dataSourceId,
+		Schedule:                schedule,
+		DataRefreshWindowDays:   dataRefreshWindowDays,
+		Disabled:                disabled,
+		UserId:                  userId,
+		DatasetRegion:           datasetRegion,
+		NotificationPubsubTopic: notificationPubsubTopic,
 	}
 
 	mockDataTransfer.err = nil
@@ -637,18 +641,20 @@ func TestDataTransferServiceGetTransferConfig(t *testing.T) {
 	var disabled bool = true
 	var userId int64 = 147132913
 	var datasetRegion string = "datasetRegion959248539"
+	var notificationPubsubTopic string = "notificationPubsubTopic1794281191"
 	var expectedResponse = &datatransferpb.TransferConfig{
 		Name: name2,
 		Destination: &datatransferpb.TransferConfig_DestinationDatasetId{
 			DestinationDatasetId: destinationDatasetId,
 		},
-		DisplayName:           displayName,
-		DataSourceId:          dataSourceId,
-		Schedule:              schedule,
-		DataRefreshWindowDays: dataRefreshWindowDays,
-		Disabled:              disabled,
-		UserId:                userId,
-		DatasetRegion:         datasetRegion,
+		DisplayName:             displayName,
+		DataSourceId:            dataSourceId,
+		Schedule:                schedule,
+		DataRefreshWindowDays:   dataRefreshWindowDays,
+		Disabled:                disabled,
+		UserId:                  userId,
+		DatasetRegion:           datasetRegion,
+		NotificationPubsubTopic: notificationPubsubTopic,
 	}
 
 	mockDataTransfer.err = nil
@@ -846,14 +852,16 @@ func TestDataTransferServiceGetTransferRun(t *testing.T) {
 	var dataSourceId string = "dataSourceId-1015796374"
 	var userId int64 = 147132913
 	var schedule string = "schedule-697920873"
+	var notificationPubsubTopic string = "notificationPubsubTopic1794281191"
 	var expectedResponse = &datatransferpb.TransferRun{
 		Name: name2,
 		Destination: &datatransferpb.TransferRun_DestinationDatasetId{
 			DestinationDatasetId: destinationDatasetId,
 		},
-		DataSourceId: dataSourceId,
-		UserId:       userId,
-		Schedule:     schedule,
+		DataSourceId:            dataSourceId,
+		UserId:                  userId,
+		Schedule:                schedule,
+		NotificationPubsubTopic: notificationPubsubTopic,
 	}
 
 	mockDataTransfer.err = nil

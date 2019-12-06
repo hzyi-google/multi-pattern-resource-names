@@ -506,7 +506,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/dataSources/{data_source_id}`
+     * `projects/{project_id}/dataSources/{data_source_id}` or
+     * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -572,7 +573,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $parent Required. The BigQuery project id for which data sources should be returned.
-     * Must be in the form: `projects/{project_id}`
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * @param array $optionalArgs {
      *     Optional.
      *     @type string $pageToken
@@ -638,9 +640,9 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $parent Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id}
-     * If specified location and location of the destination bigquery dataset
-     * do not match - the request will fail.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * @param TransferConfig $transferConfig Required. Data transfer configuration to create.
      * @param array $optionalArgs {
      *     Optional.
@@ -668,6 +670,11 @@ class DataTransferServiceGapicClient
      *          must use the "none+gsession" response type. which be return a
      *          version_info back in the authorization response which be be put in a JWT
      *          claim in the token request.
+     *     @type string $serviceAccountName
+     *          Optional service account name. If this field is set, transfer config will
+     *          be created with this service account credentials. It requires that
+     *          requesting user calling this API has permissions to act as this service
+     *          account.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -690,6 +697,9 @@ class DataTransferServiceGapicClient
         }
         if (isset($optionalArgs['versionInfo'])) {
             $request->setVersionInfo($optionalArgs['versionInfo']);
+        }
+        if (isset($optionalArgs['serviceAccountName'])) {
+            $request->setServiceAccountName($optionalArgs['serviceAccountName']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -751,6 +761,12 @@ class DataTransferServiceGapicClient
      *          must use the "none+gsession" response type. which be return a
      *          version_info back in the authorization response which be be put in a JWT
      *          claim in the token request.
+     *     @type string $serviceAccountName
+     *          Optional service account name. If this field is set and
+     *          "service_account_name" is set in update_mask, transfer config will be
+     *          updated to use this service account credentials. It requires that
+     *          requesting user calling this API has permissions to act as this service
+     *          account.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -773,6 +789,9 @@ class DataTransferServiceGapicClient
         }
         if (isset($optionalArgs['versionInfo'])) {
             $request->setVersionInfo($optionalArgs['versionInfo']);
+        }
+        if (isset($optionalArgs['serviceAccountName'])) {
+            $request->setServiceAccountName($optionalArgs['serviceAccountName']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -806,7 +825,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -854,7 +874,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -919,7 +940,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $parent Required. The BigQuery project id for which data sources
-     * should be returned: `projects/{project_id}`.
+     * should be returned: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type string[] $dataSourceIds
@@ -995,7 +1017,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $parent Required. Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * @param Timestamp $startTime Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * @param Timestamp $endTime Required. End time of the range of transfer runs. For example,
@@ -1051,7 +1074,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -1101,7 +1125,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -1165,7 +1190,8 @@ class DataTransferServiceGapicClient
      *
      * @param string $parent Required. Name of transfer configuration for which transfer runs should be retrieved.
      * Format of transfer configuration resource name is:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * @param array $optionalArgs {
      *     Optional.
      *     @type int[] $states
@@ -1257,7 +1283,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $parent Required. Transfer run name in the form:
-     * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * @param array $optionalArgs {
      *     Optional.
      *     @type string $pageToken
@@ -1334,7 +1361,8 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param string $name Required. The data source in the form:
-     * `projects/{project_id}/dataSources/{data_source_id}`
+     * `projects/{project_id}/dataSources/{data_source_id}` or
+     * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
      * @param array $optionalArgs {
      *     Optional.
      *     @type RetrySettings|array $retrySettings
@@ -1389,7 +1417,8 @@ class DataTransferServiceGapicClient
      *     Optional.
      *     @type string $parent
      *          Transfer configuration name in the form:
-     *          `projects/{project_id}/transferConfigs/{config_id}`.
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      *     @type TimeRange $requestedTimeRange
      *          Time range for the transfer runs that should be started.
      *     @type Timestamp $requestedRunTime

@@ -69,7 +69,7 @@ public interface InspectTemplateOrBuilder extends
 
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -77,7 +77,7 @@ public interface InspectTemplateOrBuilder extends
   boolean hasCreateTime();
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -85,7 +85,7 @@ public interface InspectTemplateOrBuilder extends
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -94,7 +94,7 @@ public interface InspectTemplateOrBuilder extends
 
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -102,7 +102,7 @@ public interface InspectTemplateOrBuilder extends
   boolean hasUpdateTime();
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -110,7 +110,7 @@ public interface InspectTemplateOrBuilder extends
   com.google.protobuf.Timestamp getUpdateTime();
   /**
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>

@@ -17,6 +17,13 @@ module Google
     module Bigquery
       module Datatransfer
         module V1
+          # Represents preferences for sending email notifications for transfer run
+          # events.
+          # @!attribute [rw] enable_failure_email
+          #   @return [true, false]
+          #     If true, email notifications will be sent on transfer run failures.
+          class EmailPreferences; end
+
           # Options customizing the data transfer schedule.
           # @!attribute [rw] disable_auto_scheduling
           #   @return [true, false]
@@ -110,6 +117,14 @@ module Google
           # @!attribute [rw] dataset_region
           #   @return [String]
           #     Output only. Region in which BigQuery dataset is located.
+          # @!attribute [rw] notification_pubsub_topic
+          #   @return [String]
+          #     Pub/Sub topic where notifications will be sent after transfer runs
+          #     associated with this transfer config finish.
+          # @!attribute [rw] email_preferences
+          #   @return [Google::Cloud::Bigquery::Datatransfer::V1::EmailPreferences]
+          #     Email notifications will be sent according to these preferences
+          #     to the email address of the user who owns this transfer config.
           class TransferConfig; end
 
           # Represents a data transfer run.
@@ -162,6 +177,15 @@ module Google
           #     scheduled manually, this is empty.
           #     NOTE: the system might choose to delay the schedule depending on the
           #     current load, so `schedule_time` doesn't always match this.
+          # @!attribute [rw] notification_pubsub_topic
+          #   @return [String]
+          #     Output only. Pub/Sub topic where a notification will be sent after this
+          #     transfer run finishes
+          # @!attribute [rw] email_preferences
+          #   @return [Google::Cloud::Bigquery::Datatransfer::V1::EmailPreferences]
+          #     Output only. Email notifications will be sent according to these
+          #     preferences to the email address of the user who owns the transfer config
+          #     this run was derived from.
           class TransferRun; end
 
           # Represents a user facing message for a particular data transfer run.

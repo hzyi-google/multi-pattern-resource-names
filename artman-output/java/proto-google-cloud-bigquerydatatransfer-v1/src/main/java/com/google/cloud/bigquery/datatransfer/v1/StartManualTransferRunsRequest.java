@@ -1176,7 +1176,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Transfer configuration name in the form:
-   * `projects/{project_id}/transferConfigs/{config_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1196,7 +1197,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Transfer configuration name in the form:
-   * `projects/{project_id}/transferConfigs/{config_id}`.
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1688,7 +1690,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1708,7 +1711,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1729,7 +1733,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1747,7 +1752,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1761,7 +1767,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Transfer configuration name in the form:
-     * `projects/{project_id}/transferConfigs/{config_id}`.
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>

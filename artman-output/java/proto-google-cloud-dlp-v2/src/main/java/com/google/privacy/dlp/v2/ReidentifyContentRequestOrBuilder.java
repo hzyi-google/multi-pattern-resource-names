@@ -177,4 +177,24 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getReidentifyTemplateNameBytes();
+
+  /**
+   * <pre>
+   * The geographic location to process content reidentification.  Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location to process content reidentification.  Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

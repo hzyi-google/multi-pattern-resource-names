@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListInfoTypesRequest() {
     languageCode_ = "";
     filter_ = "";
+    locationId_ = "";
   }
 
   @java.lang.Override
@@ -58,6 +59,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             filter_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            locationId_ = s;
             break;
           }
           default: {
@@ -182,6 +189,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object locationId_;
+  /**
+   * <pre>
+   * The geographic location to list info types. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 3;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The geographic location to list info types. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -202,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (!getFilterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -216,6 +270,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+    }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, locationId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -236,6 +293,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguageCode())) return false;
     if (!getFilter()
         .equals(other.getFilter())) return false;
+    if (!getLocationId()
+        .equals(other.getLocationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +310,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -392,6 +453,8 @@ private static final long serialVersionUID = 0L;
 
       filter_ = "";
 
+      locationId_ = "";
+
       return this;
     }
 
@@ -420,6 +483,7 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.ListInfoTypesRequest result = new com.google.privacy.dlp.v2.ListInfoTypesRequest(this);
       result.languageCode_ = languageCode_;
       result.filter_ = filter_;
+      result.locationId_ = locationId_;
       onBuilt();
       return result;
     }
@@ -474,6 +538,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        onChanged();
+      }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -694,6 +762,100 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     * <pre>
+     * The geographic location to list info types. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 3;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to list info types. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to list info types. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 3;</code>
+     */
+    public Builder setLocationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to list info types. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 3;</code>
+     */
+    public Builder clearLocationId() {
+      
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to list info types. Reserved for future
+     * extensions.
+     * </pre>
+     *
+     * <code>string location_id = 3;</code>
+     */
+    public Builder setLocationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      locationId_ = value;
       onChanged();
       return this;
     }

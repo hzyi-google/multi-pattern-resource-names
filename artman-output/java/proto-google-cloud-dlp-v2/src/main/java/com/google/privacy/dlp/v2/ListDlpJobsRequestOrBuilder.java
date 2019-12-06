@@ -166,4 +166,24 @@ public interface ListDlpJobsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
+
+  /**
+   * <pre>
+   * The geographic location where jobs will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location where jobs will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

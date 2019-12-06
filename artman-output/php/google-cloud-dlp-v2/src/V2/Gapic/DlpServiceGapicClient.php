@@ -602,6 +602,9 @@ class DlpServiceGapicClient
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
      *          are recursively merged.
+     *     @type string $locationId
+     *          The geographic location to process content inspection. Reserved for future
+     *          extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -626,6 +629,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['inspectTemplateName'])) {
             $request->setInspectTemplateName($optionalArgs['inspectTemplateName']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -667,6 +673,9 @@ class DlpServiceGapicClient
      * @param string $parent The parent resource name, for example projects/my-project-id.
      * @param array $optionalArgs {
      *     Optional.
+     *     @type string $locationId
+     *          The geographic location to process the request. Reserved for future
+     *          extensions.
      *     @type InspectConfig $inspectConfig
      *          Configuration for the inspector.
      *     @type ImageRedactionConfig[] $imageRedactionConfigs
@@ -692,6 +701,9 @@ class DlpServiceGapicClient
     {
         $request = new RedactImageRequest();
         $request->setParent($parent);
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
+        }
         if (isset($optionalArgs['inspectConfig'])) {
             $request->setInspectConfig($optionalArgs['inspectConfig']);
         }
@@ -766,6 +778,9 @@ class DlpServiceGapicClient
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
      *          are recursively merged.
+     *     @type string $locationId
+     *          The geographic location to process de-identification. Reserved for future
+     *          extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -796,6 +811,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['deidentifyTemplateName'])) {
             $request->setDeidentifyTemplateName($optionalArgs['deidentifyTemplateName']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -861,6 +879,9 @@ class DlpServiceGapicClient
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
      *          are recursively merged.
+     *     @type string $locationId
+     *          The geographic location to process content reidentification.  Reserved for
+     *          future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -891,6 +912,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['reidentifyTemplateName'])) {
             $request->setReidentifyTemplateName($optionalArgs['reidentifyTemplateName']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -932,6 +956,9 @@ class DlpServiceGapicClient
      *     @type string $filter
      *          Optional filter to only return infoTypes supported by certain parts of the
      *          API. Defaults to supported_by=INSPECT.
+     *     @type string $locationId
+     *          The geographic location to list info types. Reserved for future
+     *          extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -953,6 +980,16 @@ class DlpServiceGapicClient
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
         }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'location_id' => $request->getLocationId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'ListInfoTypes',
@@ -989,6 +1026,9 @@ class DlpServiceGapicClient
      *          numbers, and hyphens; that is, it must match the regular
      *          expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
      *          characters. Can be empty to allow the system to generate one.
+     *     @type string $locationId
+     *          The geographic location to store the inspection template. Reserved for
+     *          future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1010,6 +1050,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['templateId'])) {
             $request->setTemplateId($optionalArgs['templateId']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1200,6 +1243,9 @@ class DlpServiceGapicClient
      *          - `update_time`: corresponds to time the template was last updated.
      *          - `name`: corresponds to template's name.
      *          - `display_name`: corresponds to template's display name.
+     *     @type string $locationId
+     *          The geographic location where inspection templates will be retrieved from.
+     *          Use `-` for all locations. Reserved for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1224,6 +1270,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1319,6 +1368,9 @@ class DlpServiceGapicClient
      *          numbers, and hyphens; that is, it must match the regular
      *          expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
      *          characters. Can be empty to allow the system to generate one.
+     *     @type string $locationId
+     *          The geographic location to store the deidentification template. Reserved
+     *          for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1340,6 +1392,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['templateId'])) {
             $request->setTemplateId($optionalArgs['templateId']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1531,6 +1586,9 @@ class DlpServiceGapicClient
      *          - `update_time`: corresponds to time the template was last updated.
      *          - `name`: corresponds to template's name.
      *          - `display_name`: corresponds to template's display name.
+     *     @type string $locationId
+     *          The geographic location where deidentifications templates will be retrieved
+     *          from. Use `-` for all locations. Reserved for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1555,6 +1613,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1653,6 +1714,9 @@ class DlpServiceGapicClient
      *          numbers, and hyphens; that is, it must match the regular
      *          expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
      *          characters. Can be empty to allow the system to generate one.
+     *     @type string $locationId
+     *          The geographic location to store and process the job. Reserved for
+     *          future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1677,6 +1741,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['jobId'])) {
             $request->setJobId($optionalArgs['jobId']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -1783,6 +1850,9 @@ class DlpServiceGapicClient
      *          - `end_time`: corresponds to time the job ended.
      *          - `name`: corresponds to job's name.
      *          - `state`: corresponds to `state`
+     *     @type string $locationId
+     *          The geographic location where jobs will be retrieved from.
+     *          Use `-` for all locations. Reserved for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1813,6 +1883,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -2066,6 +2139,9 @@ class DlpServiceGapicClient
      *          * last_run_time > \"2017-12-12T00:00:00+00:00\"
      *
      *          The length of this field should be no more than 500 characters.
+     *     @type string $locationId
+     *          The geographic location where job triggers will be retrieved from.
+     *          Use `-` for all locations. Reserved for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -2093,6 +2169,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -2297,6 +2376,9 @@ class DlpServiceGapicClient
      *          numbers, and hyphens; that is, it must match the regular
      *          expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
      *          characters. Can be empty to allow the system to generate one.
+     *     @type string $locationId
+     *          The geographic location to store the job trigger. Reserved for
+     *          future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -2318,6 +2400,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['triggerId'])) {
             $request->setTriggerId($optionalArgs['triggerId']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -2362,6 +2447,9 @@ class DlpServiceGapicClient
      *          numbers, and hyphens; that is, it must match the regular
      *          expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
      *          characters. Can be empty to allow the system to generate one.
+     *     @type string $locationId
+     *          The geographic location to store the stored infoType. Reserved for
+     *          future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -2383,6 +2471,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['storedInfoTypeId'])) {
             $request->setStoredInfoTypeId($optionalArgs['storedInfoTypeId']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -2578,6 +2669,9 @@ class DlpServiceGapicClient
      *          - `state`: corresponds to the state of the resource.
      *          - `name`: corresponds to resource name.
      *          - `display_name`: corresponds to info type's display name.
+     *     @type string $locationId
+     *          The geographic location where stored infoTypes will be retrieved from.
+     *          Use `-` for all locations. Reserved for future extensions.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -2602,6 +2696,9 @@ class DlpServiceGapicClient
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
+        }
+        if (isset($optionalArgs['locationId'])) {
+            $request->setLocationId($optionalArgs['locationId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([

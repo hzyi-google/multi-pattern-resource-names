@@ -10,7 +10,8 @@ public interface GetTransferConfigRequestOrBuilder extends
   /**
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,7 +20,8 @@ public interface GetTransferConfigRequestOrBuilder extends
   /**
    * <pre>
    * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}`
+   * `projects/{project_id}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

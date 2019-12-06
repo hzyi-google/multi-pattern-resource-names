@@ -27,6 +27,26 @@ public interface RedactImageRequestOrBuilder extends
 
   /**
    * <pre>
+   * The geographic location to process the request. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 8;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location to process the request. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 8;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
+
+  /**
+   * <pre>
    * Configuration for the inspector.
    * </pre>
    *

@@ -103,4 +103,24 @@ public interface InspectContentRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInspectTemplateNameBytes();
+
+  /**
+   * <pre>
+   * The geographic location to process content inspection. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   * <pre>
+   * The geographic location to process content inspection. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationIdBytes();
 }

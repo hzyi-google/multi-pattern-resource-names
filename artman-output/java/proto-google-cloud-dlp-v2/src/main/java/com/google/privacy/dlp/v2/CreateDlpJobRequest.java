@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
   private CreateDlpJobRequest() {
     parent_ = "";
     jobId_ = "";
+    locationId_ = "";
   }
 
   @java.lang.Override
@@ -88,6 +89,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             jobId_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            locationId_ = s;
             break;
           }
           default: {
@@ -302,6 +309,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object locationId_;
+  /**
+   * <pre>
+   * The geographic location to store and process the job. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The geographic location to store and process the job. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -328,6 +379,9 @@ private static final long serialVersionUID = 0L;
     if (!getJobIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobId_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -351,6 +405,9 @@ private static final long serialVersionUID = 0L;
     if (!getJobIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobId_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, locationId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -370,6 +427,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getParent())) return false;
     if (!getJobId()
         .equals(other.getJobId())) return false;
+    if (!getLocationId()
+        .equals(other.getLocationId())) return false;
     if (!getJobCase().equals(other.getJobCase())) return false;
     switch (jobCase_) {
       case 2:
@@ -398,6 +457,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getJobId().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     switch (jobCase_) {
       case 2:
         hash = (37 * hash) + INSPECT_JOB_FIELD_NUMBER;
@@ -553,6 +614,8 @@ private static final long serialVersionUID = 0L;
 
       jobId_ = "";
 
+      locationId_ = "";
+
       jobCase_ = 0;
       job_ = null;
       return this;
@@ -597,6 +660,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       result.jobId_ = jobId_;
+      result.locationId_ = locationId_;
       result.jobCase_ = jobCase_;
       onBuilt();
       return result;
@@ -652,6 +716,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
+        onChanged();
+      }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
         onChanged();
       }
       switch (other.getJobCase()) {
@@ -1172,6 +1240,100 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       jobId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     * <pre>
+     * The geographic location to store and process the job. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to store and process the job. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The geographic location to store and process the job. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder setLocationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to store and process the job. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder clearLocationId() {
+      
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The geographic location to store and process the job. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder setLocationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      locationId_ = value;
       onChanged();
       return this;
     }
