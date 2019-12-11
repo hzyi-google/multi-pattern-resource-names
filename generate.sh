@@ -22,12 +22,12 @@ updategenerator()
 
 GAPICS=(
 	"java_gapic"\
-	"csharp_gapic"\
-	"nodejs_gapic"\
-	"ruby_gapic"\
-	"php_gapic"\
-	# "python_gapic"\
-	"go_gapic"
+	# "csharp_gapic"\
+	# "nodejs_gapic"\
+	# "ruby_gapic"\
+	# "php_gapic"\
+	# # "python_gapic"\
+	# "go_gapic"
 )
 
 
@@ -51,7 +51,7 @@ for gapic in "${GAPICS[@]}"
 do
   for config in "${APIS[@]}"
 	do
-		artman --local --output-dir artman-output \
+		artman --output-dir artman-output \
 		  --root-dir `pwd`/googleapis \
 		  --config $config \
 		 	generate $gapic
