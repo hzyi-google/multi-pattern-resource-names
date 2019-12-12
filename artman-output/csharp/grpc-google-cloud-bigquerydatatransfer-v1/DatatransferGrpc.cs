@@ -1070,26 +1070,26 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1 {
           .AddMethod(__Method_CheckValidCreds, serviceImpl.CheckValidCreds).Build();
     }
 
-    /// <summary>Register service method implementations with a service binder. Useful when customizing the service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, DataTransferServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetDataSource, serviceImpl.GetDataSource);
-      serviceBinder.AddMethod(__Method_ListDataSources, serviceImpl.ListDataSources);
-      serviceBinder.AddMethod(__Method_CreateTransferConfig, serviceImpl.CreateTransferConfig);
-      serviceBinder.AddMethod(__Method_UpdateTransferConfig, serviceImpl.UpdateTransferConfig);
-      serviceBinder.AddMethod(__Method_DeleteTransferConfig, serviceImpl.DeleteTransferConfig);
-      serviceBinder.AddMethod(__Method_GetTransferConfig, serviceImpl.GetTransferConfig);
-      serviceBinder.AddMethod(__Method_ListTransferConfigs, serviceImpl.ListTransferConfigs);
-      serviceBinder.AddMethod(__Method_ScheduleTransferRuns, serviceImpl.ScheduleTransferRuns);
-      serviceBinder.AddMethod(__Method_StartManualTransferRuns, serviceImpl.StartManualTransferRuns);
-      serviceBinder.AddMethod(__Method_GetTransferRun, serviceImpl.GetTransferRun);
-      serviceBinder.AddMethod(__Method_DeleteTransferRun, serviceImpl.DeleteTransferRun);
-      serviceBinder.AddMethod(__Method_ListTransferRuns, serviceImpl.ListTransferRuns);
-      serviceBinder.AddMethod(__Method_ListTransferLogs, serviceImpl.ListTransferLogs);
-      serviceBinder.AddMethod(__Method_CheckValidCreds, serviceImpl.CheckValidCreds);
+      serviceBinder.AddMethod(__Method_GetDataSource, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.GetDataSourceRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.DataSource>(serviceImpl.GetDataSource));
+      serviceBinder.AddMethod(__Method_ListDataSources, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.ListDataSourcesRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.ListDataSourcesResponse>(serviceImpl.ListDataSources));
+      serviceBinder.AddMethod(__Method_CreateTransferConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.CreateTransferConfigRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.TransferConfig>(serviceImpl.CreateTransferConfig));
+      serviceBinder.AddMethod(__Method_UpdateTransferConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.UpdateTransferConfigRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.TransferConfig>(serviceImpl.UpdateTransferConfig));
+      serviceBinder.AddMethod(__Method_DeleteTransferConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.DeleteTransferConfigRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteTransferConfig));
+      serviceBinder.AddMethod(__Method_GetTransferConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.GetTransferConfigRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.TransferConfig>(serviceImpl.GetTransferConfig));
+      serviceBinder.AddMethod(__Method_ListTransferConfigs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferConfigsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferConfigsResponse>(serviceImpl.ListTransferConfigs));
+      serviceBinder.AddMethod(__Method_ScheduleTransferRuns, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.ScheduleTransferRunsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.ScheduleTransferRunsResponse>(serviceImpl.ScheduleTransferRuns));
+      serviceBinder.AddMethod(__Method_StartManualTransferRuns, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.StartManualTransferRunsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.StartManualTransferRunsResponse>(serviceImpl.StartManualTransferRuns));
+      serviceBinder.AddMethod(__Method_GetTransferRun, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.GetTransferRunRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.TransferRun>(serviceImpl.GetTransferRun));
+      serviceBinder.AddMethod(__Method_DeleteTransferRun, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.DeleteTransferRunRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteTransferRun));
+      serviceBinder.AddMethod(__Method_ListTransferRuns, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferRunsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferRunsResponse>(serviceImpl.ListTransferRuns));
+      serviceBinder.AddMethod(__Method_ListTransferLogs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferLogsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.ListTransferLogsResponse>(serviceImpl.ListTransferLogs));
+      serviceBinder.AddMethod(__Method_CheckValidCreds, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.BigQuery.DataTransfer.V1.CheckValidCredsRequest, global::Google.Cloud.BigQuery.DataTransfer.V1.CheckValidCredsResponse>(serviceImpl.CheckValidCreds));
     }
 
   }

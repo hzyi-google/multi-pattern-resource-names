@@ -10,8 +10,8 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getDataSources',
-                ],
+                    'resourcesGetMethod' => 'getDataSources'
+                ]
             ],
             'ListTransferConfigs' => [
                 'pageStreaming' => [
@@ -20,8 +20,8 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getTransferConfigs',
-                ],
+                    'resourcesGetMethod' => 'getTransferConfigs'
+                ]
             ],
             'ListTransferRuns' => [
                 'pageStreaming' => [
@@ -30,8 +30,8 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getTransferRuns',
-                ],
+                    'resourcesGetMethod' => 'getTransferRuns'
+                ]
             ],
             'ListTransferLogs' => [
                 'pageStreaming' => [
@@ -40,9 +40,9 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getTransferMessages',
-                ],
+                    'resourcesGetMethod' => 'getTransferMessages'
+                ]
             ],
-        ],
-    ],
+        ]
+    ]
 ];

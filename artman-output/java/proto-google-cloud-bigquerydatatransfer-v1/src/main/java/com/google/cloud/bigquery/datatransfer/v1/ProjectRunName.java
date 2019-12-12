@@ -22,8 +22,13 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ *
+ * @deprecated This resource name class will be removed in the next major version.
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
+@Deprecated
 public class ProjectRunName extends RunName {
 
   private static final PathTemplate PATH_TEMPLATE =
@@ -136,7 +141,7 @@ public class ProjectRunName extends RunName {
   }
 
   /** Builder for ProjectRunName. */
-  public static class Builder {
+  public static class Builder extends RunName.Builder {
 
     private String project;
     private String transferConfig;

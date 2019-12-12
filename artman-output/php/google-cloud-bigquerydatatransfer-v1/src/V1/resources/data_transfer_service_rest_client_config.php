@@ -18,7 +18,7 @@ return [
                             'getName',
                         ],
                     ],
-                ],
+                ]
             ],
             'ListDataSources' => [
                 'method' => 'get',
@@ -35,7 +35,7 @@ return [
                             'getParent',
                         ],
                     ],
-                ],
+                ]
             ],
             'CreateTransferConfig' => [
                 'method' => 'post',
@@ -54,7 +54,7 @@ return [
                             'getParent',
                         ],
                     ],
-                ],
+                ]
             ],
             'UpdateTransferConfig' => [
                 'method' => 'patch',
@@ -74,7 +74,7 @@ return [
                             'getName',
                         ],
                     ],
-                ],
+                ]
             ],
             'DeleteTransferConfig' => [
                 'method' => 'delete',
@@ -91,7 +91,7 @@ return [
                             'getName',
                         ],
                     ],
-                ],
+                ]
             ],
             'GetTransferConfig' => [
                 'method' => 'get',
@@ -108,7 +108,7 @@ return [
                             'getName',
                         ],
                     ],
-                ],
+                ]
             ],
             'ListTransferConfigs' => [
                 'method' => 'get',
@@ -125,7 +125,7 @@ return [
                             'getParent',
                         ],
                     ],
-                ],
+                ]
             ],
             'ScheduleTransferRuns' => [
                 'method' => 'post',
@@ -144,94 +144,7 @@ return [
                             'getParent',
                         ],
                     ],
-                ],
-            ],
-            'GetTransferRun' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/transferConfigs/*/runs/*}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{name=projects/*/transferConfigs/*/runs/*}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteTransferRun' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/transferConfigs/*/runs/*}',
-                'additionalBindings' => [
-                    [
-                        'method' => 'delete',
-                        'uriTemplate' => '/v1/{name=projects/*/transferConfigs/*/runs/*}',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListTransferRuns' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/transferConfigs/*}/runs',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{parent=projects/*/transferConfigs/*}/runs',
-                    ],
-                ],
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'ListTransferLogs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/transferConfigs/*/runs/*}/transferLogs',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{parent=projects/*/transferConfigs/*/runs/*}/transferLogs',
-                    ],
-                ],
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'CheckValidCreds' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataSources/*}:checkValidCreds',
-                'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v1/{name=projects/*/dataSources/*}:checkValidCreds',
-                        'body' => '*',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
+                ]
             ],
             'StartManualTransferRuns' => [
                 'method' => 'post',
@@ -250,8 +163,95 @@ return [
                             'getParent',
                         ],
                     ],
+                ]
+            ],
+            'GetTransferRun' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/transferConfigs/*/runs/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{name=projects/*/transferConfigs/*/runs/*}',
+                    ],
                 ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ]
+            ],
+            'DeleteTransferRun' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/transferConfigs/*/runs/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v1/{name=projects/*/transferConfigs/*/runs/*}',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ]
+            ],
+            'ListTransferRuns' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/transferConfigs/*}/runs',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{parent=projects/*/transferConfigs/*}/runs',
+                    ],
+                ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ]
+            ],
+            'ListTransferLogs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/transferConfigs/*/runs/*}/transferLogs',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{parent=projects/*/transferConfigs/*/runs/*}/transferLogs',
+                    ],
+                ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ]
+            ],
+            'CheckValidCreds' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/dataSources/*}:checkValidCreds',
+                'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1/{name=projects/*/dataSources/*}:checkValidCreds',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ]
             ],
         ],
-    ],
+    ]
 ];

@@ -16,6 +16,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -27,6 +28,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -37,6 +39,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+   * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
   /**
@@ -45,6 +48,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
+   * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
@@ -63,6 +67,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
+   * @return Whether the runTime field is set.
    */
   boolean hasRunTime();
   /**
@@ -72,6 +77,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp run_time = 10;</code>
+   * @return The runTime.
    */
   com.google.protobuf.Timestamp getRunTime();
   /**
@@ -90,6 +96,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.rpc.Status error_status = 21;</code>
+   * @return Whether the errorStatus field is set.
    */
   boolean hasErrorStatus();
   /**
@@ -98,6 +105,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.rpc.Status error_status = 21;</code>
+   * @return The errorStatus.
    */
   com.google.rpc.Status getErrorStatus();
   /**
@@ -116,6 +124,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -125,6 +134,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -144,6 +154,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -153,6 +164,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -171,6 +183,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -179,6 +192,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -196,6 +210,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the params field is set.
    */
   boolean hasParams();
   /**
@@ -204,6 +219,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The params.
    */
   com.google.protobuf.Struct getParams();
   /**
@@ -221,6 +237,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();
   /**
@@ -229,6 +246,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for destinationDatasetId.
    */
   com.google.protobuf.ByteString
       getDestinationDatasetIdBytes();
@@ -239,6 +257,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
   /**
@@ -247,6 +266,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for dataSourceId.
    */
   com.google.protobuf.ByteString
       getDataSourceIdBytes();
@@ -257,6 +277,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -265,6 +286,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
+   * @return The state.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getState();
 
@@ -274,6 +296,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>int64 user_id = 11;</code>
+   * @return The userId.
    */
   long getUserId();
 
@@ -287,6 +310,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The schedule.
    */
   java.lang.String getSchedule();
   /**
@@ -299,6 +323,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for schedule.
    */
   com.google.protobuf.ByteString
       getScheduleBytes();
@@ -310,6 +335,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
   /**
@@ -319,6 +345,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for notificationPubsubTopic.
    */
   com.google.protobuf.ByteString
       getNotificationPubsubTopicBytes();
@@ -331,6 +358,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the emailPreferences field is set.
    */
   boolean hasEmailPreferences();
   /**
@@ -341,6 +369,7 @@ public interface TransferRunOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The emailPreferences.
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
   /**

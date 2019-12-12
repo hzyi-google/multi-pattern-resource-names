@@ -675,6 +675,34 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Tests
         }
 
         [Fact]
+        public void StartManualTransferRuns()
+        {
+            Mock<DataTransferService.DataTransferServiceClient> mockGrpcClient = new Mock<DataTransferService.DataTransferServiceClient>(MockBehavior.Strict);
+            StartManualTransferRunsRequest request = new StartManualTransferRunsRequest();
+            StartManualTransferRunsResponse expectedResponse = new StartManualTransferRunsResponse();
+            mockGrpcClient.Setup(x => x.StartManualTransferRuns(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            DataTransferServiceClient client = new DataTransferServiceClientImpl(mockGrpcClient.Object, null);
+            StartManualTransferRunsResponse response = client.StartManualTransferRuns(request);
+            Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task StartManualTransferRunsAsync()
+        {
+            Mock<DataTransferService.DataTransferServiceClient> mockGrpcClient = new Mock<DataTransferService.DataTransferServiceClient>(MockBehavior.Strict);
+            StartManualTransferRunsRequest request = new StartManualTransferRunsRequest();
+            StartManualTransferRunsResponse expectedResponse = new StartManualTransferRunsResponse();
+            mockGrpcClient.Setup(x => x.StartManualTransferRunsAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<StartManualTransferRunsResponse>(Task.FromResult(expectedResponse), null, null, null, null));
+            DataTransferServiceClient client = new DataTransferServiceClientImpl(mockGrpcClient.Object, null);
+            StartManualTransferRunsResponse response = await client.StartManualTransferRunsAsync(request);
+            Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
         public void GetTransferRun()
         {
             Mock<DataTransferService.DataTransferServiceClient> mockGrpcClient = new Mock<DataTransferService.DataTransferServiceClient>(MockBehavior.Strict);
@@ -920,34 +948,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Tests
                 .Returns(new Grpc.Core.AsyncUnaryCall<CheckValidCredsResponse>(Task.FromResult(expectedResponse), null, null, null, null));
             DataTransferServiceClient client = new DataTransferServiceClientImpl(mockGrpcClient.Object, null);
             CheckValidCredsResponse response = await client.CheckValidCredsAsync(request);
-            Assert.Same(expectedResponse, response);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void StartManualTransferRuns()
-        {
-            Mock<DataTransferService.DataTransferServiceClient> mockGrpcClient = new Mock<DataTransferService.DataTransferServiceClient>(MockBehavior.Strict);
-            StartManualTransferRunsRequest request = new StartManualTransferRunsRequest();
-            StartManualTransferRunsResponse expectedResponse = new StartManualTransferRunsResponse();
-            mockGrpcClient.Setup(x => x.StartManualTransferRuns(request, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            DataTransferServiceClient client = new DataTransferServiceClientImpl(mockGrpcClient.Object, null);
-            StartManualTransferRunsResponse response = client.StartManualTransferRuns(request);
-            Assert.Same(expectedResponse, response);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task StartManualTransferRunsAsync()
-        {
-            Mock<DataTransferService.DataTransferServiceClient> mockGrpcClient = new Mock<DataTransferService.DataTransferServiceClient>(MockBehavior.Strict);
-            StartManualTransferRunsRequest request = new StartManualTransferRunsRequest();
-            StartManualTransferRunsResponse expectedResponse = new StartManualTransferRunsResponse();
-            mockGrpcClient.Setup(x => x.StartManualTransferRunsAsync(request, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<StartManualTransferRunsResponse>(Task.FromResult(expectedResponse), null, null, null, null));
-            DataTransferServiceClient client = new DataTransferServiceClientImpl(mockGrpcClient.Object, null);
-            StartManualTransferRunsResponse response = await client.StartManualTransferRunsAsync(request);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
