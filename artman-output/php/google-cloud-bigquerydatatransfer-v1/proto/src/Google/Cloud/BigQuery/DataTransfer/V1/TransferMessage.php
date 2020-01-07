@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.TransferMessage</code>
  */
-final class TransferMessage extends \Google\Protobuf\Internal\Message
+class TransferMessage extends \Google\Protobuf\Internal\Message
 {
     /**
      * Time when message was logged.

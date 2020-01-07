@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse</code>
  */
-final class ListTransferLogsResponse extends \Google\Protobuf\Internal\Message
+class ListTransferLogsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The stored pipeline transfer messages.

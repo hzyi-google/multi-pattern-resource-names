@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest</code>
  */
-final class ScheduleTransferRunsRequest extends \Google\Protobuf\Internal\Message
+class ScheduleTransferRunsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Transfer configuration name in the form:

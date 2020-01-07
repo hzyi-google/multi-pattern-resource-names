@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest</code>
  */
-final class CheckValidCredsRequest extends \Google\Protobuf\Internal\Message
+class CheckValidCredsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The data source in the form:

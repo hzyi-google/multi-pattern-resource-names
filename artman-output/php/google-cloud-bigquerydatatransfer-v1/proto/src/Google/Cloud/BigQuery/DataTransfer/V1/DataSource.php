@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.DataSource</code>
  */
-final class DataSource extends \Google\Protobuf\Internal\Message
+class DataSource extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. Data source resource name.

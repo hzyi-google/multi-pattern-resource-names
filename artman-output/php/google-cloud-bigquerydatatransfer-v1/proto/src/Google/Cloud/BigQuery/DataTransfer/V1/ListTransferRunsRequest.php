@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest</code>
  */
-final class ListTransferRunsRequest extends \Google\Protobuf\Internal\Message
+class ListTransferRunsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Name of transfer configuration for which transfer runs should be retrieved.

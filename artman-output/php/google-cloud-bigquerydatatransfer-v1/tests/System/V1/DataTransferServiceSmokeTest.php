@@ -24,6 +24,8 @@ namespace Google\Cloud\BigQuery\DataTransfer\Tests\System\V1;
 
 use Google\Cloud\BigQuery\DataTransfer\V1\DataTransferServiceClient;
 use Google\ApiCore\Testing\GeneratedTest;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListDataSourcesRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListDataSourcesResponse;
 
 /**
  * @group datatransfer
@@ -37,7 +39,7 @@ class DataTransferServiceSmokeTest extends GeneratedTest
     public function listDataSourcesTest()
     {
         $projectId = getenv('PROJECT_ID');
-        if (false === $projectId) {
+        if ($projectId === false) {
             $this->fail('Environment variable PROJECT_ID must be set for smoke test');
         }
 

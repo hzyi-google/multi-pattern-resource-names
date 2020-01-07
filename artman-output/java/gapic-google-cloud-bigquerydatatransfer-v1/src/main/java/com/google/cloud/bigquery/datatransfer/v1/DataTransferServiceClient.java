@@ -1047,6 +1047,51 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Start manual transfer runs to be executed now with schedule_time equal to current time. The
+   * transfer runs can be created for a time range where the run_time is between start_time
+   * (inclusive) and end_time (exclusive), or for a specific run_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+   *   StartManualTransferRunsResponse response = dataTransferServiceClient.startManualTransferRuns(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StartManualTransferRunsResponse startManualTransferRuns(
+      StartManualTransferRunsRequest request) {
+    return startManualTransferRunsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Start manual transfer runs to be executed now with schedule_time equal to current time. The
+   * transfer runs can be created for a time range where the run_time is between start_time
+   * (inclusive) and end_time (exclusive), or for a specific run_time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+   *   ApiFuture&lt;StartManualTransferRunsResponse&gt; future = dataTransferServiceClient.startManualTransferRunsCallable().futureCall(request);
+   *   // Do something
+   *   StartManualTransferRunsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    return stub.startManualTransferRunsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns information about the particular transfer run.
    *
    * <p>Sample code:
@@ -1614,51 +1659,6 @@ public class DataTransferServiceClient implements BackgroundResource {
   public final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable() {
     return stub.checkValidCredsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Start manual transfer runs to be executed now with schedule_time equal to current time. The
-   * transfer runs can be created for a time range where the run_time is between start_time
-   * (inclusive) and end_time (exclusive), or for a specific run_time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
-   *   StartManualTransferRunsResponse response = dataTransferServiceClient.startManualTransferRuns(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final StartManualTransferRunsResponse startManualTransferRuns(
-      StartManualTransferRunsRequest request) {
-    return startManualTransferRunsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Start manual transfer runs to be executed now with schedule_time equal to current time. The
-   * transfer runs can be created for a time range where the run_time is between start_time
-   * (inclusive) and end_time (exclusive), or for a specific run_time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
-   *   ApiFuture&lt;StartManualTransferRunsResponse&gt; future = dataTransferServiceClient.startManualTransferRunsCallable().futureCall(request);
-   *   // Do something
-   *   StartManualTransferRunsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsCallable() {
-    return stub.startManualTransferRunsCallable();
   }
 
   @Override

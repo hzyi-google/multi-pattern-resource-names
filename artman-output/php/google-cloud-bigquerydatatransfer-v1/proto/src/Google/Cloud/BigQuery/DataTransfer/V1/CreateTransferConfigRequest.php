@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest</code>
  */
-final class CreateTransferConfigRequest extends \Google\Protobuf\Internal\Message
+class CreateTransferConfigRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The BigQuery project id where the transfer configuration should be created.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse</code>
  */
-final class ListDataSourcesResponse extends \Google\Protobuf\Internal\Message
+class ListDataSourcesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of supported data sources and their transfer settings.

@@ -1739,6 +1739,19 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
 
     }
 
+    public partial class StartManualTransferRunsRequest
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// </summary>
+        public Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof ParentAsTransferConfigNameOneof
+        {
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof.Parse(Parent, true); }
+            set { Parent = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
     public partial class TransferConfig
     {
         /// <summary>

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest</code>
  */
-final class GetDataSourceRequest extends \Google\Protobuf\Internal\Message
+class GetDataSourceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The field will contain name of the resource requested, for example:

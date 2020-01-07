@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ScheduleOptions</code>
  */
-final class ScheduleOptions extends \Google\Protobuf\Internal\Message
+class ScheduleOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * If true, automatic scheduling of data transfer runs for this configuration

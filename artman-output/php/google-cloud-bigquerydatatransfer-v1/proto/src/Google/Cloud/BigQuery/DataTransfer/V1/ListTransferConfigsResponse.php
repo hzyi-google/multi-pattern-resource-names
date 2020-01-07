@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse</code>
  */
-final class ListTransferConfigsResponse extends \Google\Protobuf\Internal\Message
+class ListTransferConfigsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The stored pipeline transfer configurations.

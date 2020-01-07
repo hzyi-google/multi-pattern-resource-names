@@ -24,25 +24,45 @@ namespace Google\Cloud\BigQuery\DataTransfer\Tests\Unit\V1;
 
 use Google\Cloud\BigQuery\DataTransfer\V1\DataTransferServiceClient;
 use Google\ApiCore\ApiException;
+use Google\ApiCore\BidiStream;
 use Google\ApiCore\CredentialsWrapper;
+use Google\ApiCore\LongRunning\OperationsClient;
+use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\CreateTransferConfigRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\DataSource;
+use Google\Cloud\BigQuery\DataTransfer\V1\DataTransferServiceGrpcClient;
+use Google\Cloud\BigQuery\DataTransfer\V1\DeleteTransferConfigRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\DeleteTransferRunRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\GetDataSourceRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\GetTransferConfigRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\GetTransferRunRequest;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListDataSourcesRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\ListDataSourcesResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferConfigsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferConfigsResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferLogsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferLogsResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferRunsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\ListTransferRunsResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\ScheduleTransferRunsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\ScheduleTransferRunsResponse;
+use Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsResponse;
 use Google\Cloud\BigQuery\DataTransfer\V1\TransferConfig;
 use Google\Cloud\BigQuery\DataTransfer\V1\TransferMessage;
 use Google\Cloud\BigQuery\DataTransfer\V1\TransferRun;
+use Google\Cloud\BigQuery\DataTransfer\V1\UpdateTransferConfigRequest;
+use Google\LongRunning\GetOperationRequest;
 use Google\Protobuf\Any;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Protobuf\Timestamp;
 use Google\Rpc\Code;
+use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
@@ -77,10 +97,8 @@ class DataTransferServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new DataTransferServiceClient($options);
     }
-
     /**
      * @test
      */
@@ -771,6 +789,68 @@ class DataTransferServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function startManualTransferRunsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new StartManualTransferRunsResponse();
+        $transport->addResponse($expectedResponse);
+
+        $response = $client->startManualTransferRuns();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns', $actualFuncCall);
+
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function startManualTransferRunsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        try {
+            $client->startManualTransferRuns();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function getTransferRunTest()
     {
         $transport = $this->createTransport();
@@ -1140,67 +1220,6 @@ class DataTransferServiceClientTest extends GeneratedTest
 
         try {
             $client->checkValidCreds($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function startManualTransferRunsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new StartManualTransferRunsResponse();
-        $transport->addResponse($expectedResponse);
-
-        $response = $client->startManualTransferRuns();
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns', $actualFuncCall);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function startManualTransferRunsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        try {
-            $client->startManualTransferRuns();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

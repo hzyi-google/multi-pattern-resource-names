@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.EmailPreferences</code>
  */
-final class EmailPreferences extends \Google\Protobuf\Internal\Message
+class EmailPreferences extends \Google\Protobuf\Internal\Message
 {
     /**
      * If true, email notifications will be sent on transfer run failures.

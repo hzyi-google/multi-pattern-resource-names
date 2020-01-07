@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.DataSourceParameter</code>
  */
-final class DataSourceParameter extends \Google\Protobuf\Internal\Message
+class DataSourceParameter extends \Google\Protobuf\Internal\Message
 {
     /**
      * Parameter identifier.
@@ -393,7 +393,7 @@ final class DataSourceParameter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue min_value = 9;</code>
      * @return float|null
      */
-    public function getMinValueUnwrapped()
+    public function getMinValueValue()
     {
         $wrapper = $this->getMinValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
@@ -423,7 +423,7 @@ final class DataSourceParameter extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setMinValueUnwrapped($var)
+    public function setMinValueValue($var)
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
         return $this->setMinValue($wrappedVar);
@@ -448,7 +448,7 @@ final class DataSourceParameter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_value = 10;</code>
      * @return float|null
      */
-    public function getMaxValueUnwrapped()
+    public function getMaxValueValue()
     {
         $wrapper = $this->getMaxValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
@@ -478,7 +478,7 @@ final class DataSourceParameter extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setMaxValueUnwrapped($var)
+    public function setMaxValueValue($var)
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
         return $this->setMaxValue($wrappedVar);

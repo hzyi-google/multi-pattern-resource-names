@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest</code>
  */
-final class ListDataSourcesRequest extends \Google\Protobuf\Internal\Message
+class ListDataSourcesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The BigQuery project id for which data sources should be returned.

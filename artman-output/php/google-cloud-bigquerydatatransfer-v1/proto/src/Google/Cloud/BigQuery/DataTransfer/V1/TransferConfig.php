@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.TransferConfig</code>
  */
-final class TransferConfig extends \Google\Protobuf\Internal\Message
+class TransferConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the transfer config.

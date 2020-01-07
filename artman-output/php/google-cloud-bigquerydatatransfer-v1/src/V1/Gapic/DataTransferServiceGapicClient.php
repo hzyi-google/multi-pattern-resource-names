@@ -39,6 +39,7 @@ use Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsResponse;
 use Google\Cloud\BigQuery\DataTransfer\V1\CreateTransferConfigRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\DataSource;
+use Google\Cloud\BigQuery\DataTransfer\V1\DataTransferServiceGrpcClient;
 use Google\Cloud\BigQuery\DataTransfer\V1\DeleteTransferConfigRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\DeleteTransferRunRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\GetDataSourceRequest;
@@ -59,7 +60,9 @@ use Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsRequest;
 use Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsRequest\TimeRange;
 use Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsResponse;
 use Google\Cloud\BigQuery\DataTransfer\V1\TransferConfig;
+use Google\Cloud\BigQuery\DataTransfer\V1\TransferMessage\MessageSeverity;
 use Google\Cloud\BigQuery\DataTransfer\V1\TransferRun;
+use Google\Cloud\BigQuery\DataTransfer\V1\TransferState;
 use Google\Cloud\BigQuery\DataTransfer\V1\UpdateTransferConfigRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -88,7 +91,6 @@ use Google\Protobuf\Timestamp;
  * with these names, this class includes a format method for each type of name, and additionally
  * a parseName method to extract the individual identifiers contained within formatted names
  * that are returned by the API.
- *
  * @experimental
  */
 class DataTransferServiceGapicClient
@@ -131,28 +133,29 @@ class DataTransferServiceGapicClient
     private static $projectTransferConfigNameTemplate;
     private static $pathTemplateMap;
 
+
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/data_transfer_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/data_transfer_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/data_transfer_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/data_transfer_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/data_transfer_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/data_transfer_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/data_transfer_service_rest_client_config.php',
-                ],
-            ],
+                    'restClientConfigPath' => __DIR__ . '/../resources/data_transfer_service_rest_client_config.php',
+                ]
+            ]
         ];
     }
 
     private static function getLocationNameTemplate()
     {
-        if (null == self::$locationNameTemplate) {
+        if (self::$locationNameTemplate == null) {
             self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
         }
 
@@ -161,7 +164,7 @@ class DataTransferServiceGapicClient
 
     private static function getLocationDataSourceNameTemplate()
     {
-        if (null == self::$locationDataSourceNameTemplate) {
+        if (self::$locationDataSourceNameTemplate == null) {
             self::$locationDataSourceNameTemplate = new PathTemplate('projects/{project}/locations/{location}/dataSources/{data_source}');
         }
 
@@ -170,7 +173,7 @@ class DataTransferServiceGapicClient
 
     private static function getLocationRunNameTemplate()
     {
-        if (null == self::$locationRunNameTemplate) {
+        if (self::$locationRunNameTemplate == null) {
             self::$locationRunNameTemplate = new PathTemplate('projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}');
         }
 
@@ -179,7 +182,7 @@ class DataTransferServiceGapicClient
 
     private static function getLocationTransferConfigNameTemplate()
     {
-        if (null == self::$locationTransferConfigNameTemplate) {
+        if (self::$locationTransferConfigNameTemplate == null) {
             self::$locationTransferConfigNameTemplate = new PathTemplate('projects/{project}/locations/{location}/transferConfigs/{transfer_config}');
         }
 
@@ -188,7 +191,7 @@ class DataTransferServiceGapicClient
 
     private static function getProjectNameTemplate()
     {
-        if (null == self::$projectNameTemplate) {
+        if (self::$projectNameTemplate == null) {
             self::$projectNameTemplate = new PathTemplate('projects/{project}');
         }
 
@@ -197,7 +200,7 @@ class DataTransferServiceGapicClient
 
     private static function getProjectDataSourceNameTemplate()
     {
-        if (null == self::$projectDataSourceNameTemplate) {
+        if (self::$projectDataSourceNameTemplate == null) {
             self::$projectDataSourceNameTemplate = new PathTemplate('projects/{project}/dataSources/{data_source}');
         }
 
@@ -206,7 +209,7 @@ class DataTransferServiceGapicClient
 
     private static function getProjectRunNameTemplate()
     {
-        if (null == self::$projectRunNameTemplate) {
+        if (self::$projectRunNameTemplate == null) {
             self::$projectRunNameTemplate = new PathTemplate('projects/{project}/transferConfigs/{transfer_config}/runs/{run}');
         }
 
@@ -215,16 +218,17 @@ class DataTransferServiceGapicClient
 
     private static function getProjectTransferConfigNameTemplate()
     {
-        if (null == self::$projectTransferConfigNameTemplate) {
+        if (self::$projectTransferConfigNameTemplate == null) {
             self::$projectTransferConfigNameTemplate = new PathTemplate('projects/{project}/transferConfigs/{transfer_config}');
         }
 
         return self::$projectTransferConfigNameTemplate;
     }
 
+
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
                 'locationDataSource' => self::getLocationDataSourceNameTemplate(),
@@ -236,19 +240,17 @@ class DataTransferServiceGapicClient
                 'projectTransferConfig' => self::getProjectTransferConfigNameTemplate(),
             ];
         }
-
         return self::$pathTemplateMap;
     }
-
     /**
      * Formats a string containing the fully-qualified path to represent
      * a location resource.
      *
      * @param string $project
      * @param string $location
-     *
      * @return string The formatted location resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function locationName($project, $location)
     {
@@ -265,9 +267,9 @@ class DataTransferServiceGapicClient
      * @param string $project
      * @param string $location
      * @param string $dataSource
-     *
      * @return string The formatted location_data_source resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function locationDataSourceName($project, $location, $dataSource)
     {
@@ -286,9 +288,9 @@ class DataTransferServiceGapicClient
      * @param string $location
      * @param string $transferConfig
      * @param string $run
-     *
      * @return string The formatted location_run resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function locationRunName($project, $location, $transferConfig, $run)
     {
@@ -307,9 +309,9 @@ class DataTransferServiceGapicClient
      * @param string $project
      * @param string $location
      * @param string $transferConfig
-     *
      * @return string The formatted location_transfer_config resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function locationTransferConfigName($project, $location, $transferConfig)
     {
@@ -325,9 +327,9 @@ class DataTransferServiceGapicClient
      * a project resource.
      *
      * @param string $project
-     *
      * @return string The formatted project resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function projectName($project)
     {
@@ -342,9 +344,9 @@ class DataTransferServiceGapicClient
      *
      * @param string $project
      * @param string $dataSource
-     *
      * @return string The formatted project_data_source resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function projectDataSourceName($project, $dataSource)
     {
@@ -361,9 +363,9 @@ class DataTransferServiceGapicClient
      * @param string $project
      * @param string $transferConfig
      * @param string $run
-     *
      * @return string The formatted project_run resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function projectRunName($project, $transferConfig, $run)
     {
@@ -380,9 +382,9 @@ class DataTransferServiceGapicClient
      *
      * @param string $project
      * @param string $transferConfig
-     *
      * @return string The formatted project_transfer_config resource.
-     * @experimental
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function projectTransferConfigName($project, $transferConfig)
     {
@@ -403,7 +405,7 @@ class DataTransferServiceGapicClient
      * - project: projects/{project}
      * - projectDataSource: projects/{project}/dataSources/{data_source}
      * - projectRun: projects/{project}/transferConfigs/{transfer_config}/runs/{run}
-     * - projectTransferConfig: projects/{project}/transferConfigs/{transfer_config}.
+     * - projectTransferConfig: projects/{project}/transferConfigs/{transfer_config}
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -411,10 +413,8 @@ class DataTransferServiceGapicClient
      * each of the supported templates, and return the first match.
      *
      * @param string $formattedName The formatted name string
-     * @param string $template      Optional name of template to match
-     *
+     * @param string $template Optional name of template to match
      * @return array An associative array from name component IDs to component values.
-     *
      * @throws ValidationException If $formattedName could not be matched.
      * @experimental
      */
@@ -426,7 +426,6 @@ class DataTransferServiceGapicClient
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
             }
-
             return $templateMap[$template]->match($formattedName);
         }
 
@@ -440,12 +439,14 @@ class DataTransferServiceGapicClient
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
+
+
+
     /**
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
-     *
+     *     Optional. Options for configuring the service API wrapper.
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
      *           as "<uri>:<port>". Default 'bigquerydatatransfer.googleapis.com:443'.
@@ -488,7 +489,6 @@ class DataTransferServiceGapicClient
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
-     *
      * @throws ValidationException
      * @experimental
      */
@@ -513,12 +513,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/dataSources/{data_source_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/dataSources/{data_source_id}` or
+     * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -581,12 +580,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The BigQuery project id for which data sources should be returned.
-     *                             Must be in the form: `projects/{project_id}` or
-     *                             `projects/{project_id}/locations/{location_id}
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $parent Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type string $pageToken
      *          A page token is used to specify a page of values to be returned.
      *          If no page token is specified (the default), the first page
@@ -649,14 +647,13 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string         $parent         Required. The BigQuery project id where the transfer configuration should be created.
-     *                                       Must be in the format projects/{project_id}/locations/{location_id} or
-     *                                       projects/{project_id}. If specified location and location of the
-     *                                       destination bigquery dataset do not match - the request will fail.
+     * @param string $parent Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * @param TransferConfig $transferConfig Required. Data transfer configuration to create.
-     * @param array          $optionalArgs   {
-     *                                       Optional.
-     *
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type string $authorizationCode
      *          Optional OAuth2 authorization code to use with this transfer configuration.
      *          This is required if new credentials are needed, as indicated by
@@ -745,10 +742,9 @@ class DataTransferServiceGapicClient
      * ```
      *
      * @param TransferConfig $transferConfig Required. Data transfer configuration to create.
-     * @param FieldMask      $updateMask     Required. Required list of fields to be updated in this request.
-     * @param array          $optionalArgs   {
-     *                                       Optional.
-     *
+     * @param FieldMask $updateMask Required. Required list of fields to be updated in this request.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type string $authorizationCode
      *          Optional OAuth2 authorization code to use with this transfer configuration.
      *          If it is provided, the transfer configuration will be associated with the
@@ -836,12 +832,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -886,12 +881,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -953,12 +947,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The BigQuery project id for which data sources
-     *                             should be returned: `projects/{project_id}` or
-     *                             `projects/{project_id}/locations/{location_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $parent Required. The BigQuery project id for which data sources
+     * should be returned: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type string[] $dataSourceIds
      *          When specified, only configurations of requested data sources are returned.
      *     @type string $pageToken
@@ -1031,16 +1024,15 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string    $parent       Required. Transfer configuration name in the form:
-     *                                `projects/{project_id}/transferConfigs/{config_id}` or
-     *                                `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-     * @param Timestamp $startTime    Required. Start time of the range of transfer runs. For example,
-     *                                `"2017-05-25T00:00:00+00:00"`.
-     * @param Timestamp $endTime      Required. End time of the range of transfer runs. For example,
-     *                                `"2017-05-30T00:00:00+00:00"`.
-     * @param array     $optionalArgs {
-     *                                Optional.
-     *
+     * @param string $parent Required. Transfer configuration name in the form:
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+     * @param Timestamp $startTime Required. Start time of the range of transfer runs. For example,
+     * `"2017-05-25T00:00:00+00:00"`.
+     * @param Timestamp $endTime Required. End time of the range of transfer runs. For example,
+     * `"2017-05-30T00:00:00+00:00"`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1076,6 +1068,73 @@ class DataTransferServiceGapicClient
     }
 
     /**
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $response = $dataTransferServiceClient->startManualTransferRuns();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *     @type string $parent
+     *          Transfer configuration name in the form:
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+     *     @type TimeRange $requestedTimeRange
+     *          Time range for the transfer runs that should be started.
+     *     @type Timestamp $requestedRunTime
+     *          Specific run_time for a transfer run to be started. The
+     *          requested_run_time must not be in the future.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function startManualTransferRuns(array $optionalArgs = [])
+    {
+        $request = new StartManualTransferRunsRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['requestedTimeRange'])) {
+            $request->setRequestedTimeRange($optionalArgs['requestedTimeRange']);
+        }
+        if (isset($optionalArgs['requestedRunTime'])) {
+            $request->setRequestedRunTime($optionalArgs['requestedRunTime']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'StartManualTransferRuns',
+            StartManualTransferRunsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
      * Returns information about the particular transfer run.
      *
      * Sample code:
@@ -1089,12 +1148,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1141,12 +1199,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1206,13 +1263,12 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. Name of transfer configuration for which transfer runs should be retrieved.
-     *                             Format of transfer configuration resource name is:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $parent Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
+     * `projects/{project_id}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type int[] $states
      *          When specified, only transfer runs with requested states are returned.
      *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\TransferState}
@@ -1301,12 +1357,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. Transfer run name in the form:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $parent Required. Transfer run name in the form:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type string $pageToken
      *          A page token is used to specify a page of values to be returned.
      *          If no page token is specified (the default), the first page
@@ -1380,12 +1435,11 @@ class DataTransferServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The data source in the form:
-     *                             `projects/{project_id}/dataSources/{data_source_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The data source in the form:
+     * `projects/{project_id}/dataSources/{data_source_id}` or
+     * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1413,74 +1467,6 @@ class DataTransferServiceGapicClient
         return $this->startCall(
             'CheckValidCreds',
             CheckValidCredsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Start manual transfer runs to be executed now with schedule_time equal to
-     * current time. The transfer runs can be created for a time range where the
-     * run_time is between start_time (inclusive) and end_time (exclusive), or for
-     * a specific run_time.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $response = $dataTransferServiceClient->startManualTransferRuns();
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $parent
-     *          Transfer configuration name in the form:
-     *          `projects/{project_id}/transferConfigs/{config_id}` or
-     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-     *     @type TimeRange $requestedTimeRange
-     *          Time range for the transfer runs that should be started.
-     *     @type Timestamp $requestedRunTime
-     *          Specific run_time for a transfer run to be started. The
-     *          requested_run_time must not be in the future.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\BigQuery\DataTransfer\V1\StartManualTransferRunsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function startManualTransferRuns(array $optionalArgs = [])
-    {
-        $request = new StartManualTransferRunsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
-        if (isset($optionalArgs['requestedTimeRange'])) {
-            $request->setRequestedTimeRange($optionalArgs['requestedTimeRange']);
-        }
-        if (isset($optionalArgs['requestedRunTime'])) {
-            $request->setRequestedRunTime($optionalArgs['requestedRunTime']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'StartManualTransferRuns',
-            StartManualTransferRunsResponse::class,
             $optionalArgs,
             $request
         )->wait();

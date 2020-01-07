@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest</code>
  */
-final class DeleteTransferRunRequest extends \Google\Protobuf\Internal\Message
+class DeleteTransferRunRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The field will contain name of the resource requested, for example:

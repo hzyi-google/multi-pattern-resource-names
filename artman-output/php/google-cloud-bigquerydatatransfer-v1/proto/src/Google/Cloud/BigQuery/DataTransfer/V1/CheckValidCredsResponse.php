@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse</code>
  */
-final class CheckValidCredsResponse extends \Google\Protobuf\Internal\Message
+class CheckValidCredsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * If set to `true`, the credentials exist and are valid.

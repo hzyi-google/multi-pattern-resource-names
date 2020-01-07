@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest</code>
  */
-final class ListTransferLogsRequest extends \Google\Protobuf\Internal\Message
+class ListTransferLogsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Transfer run name in the form:

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange</code>
  */
-final class TimeRange extends \Google\Protobuf\Internal\Message
+class TimeRange extends \Google\Protobuf\Internal\Message
 {
     /**
      * Start time of the range of transfer runs. For example,
