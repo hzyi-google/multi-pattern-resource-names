@@ -123,7 +123,7 @@ public class ProjectName extends ParentName {
   }
 
   /** Builder for ProjectName. */
-  public static class Builder extends ParentName.Builder {
+  public static class Builder {
 
     private String project;
 

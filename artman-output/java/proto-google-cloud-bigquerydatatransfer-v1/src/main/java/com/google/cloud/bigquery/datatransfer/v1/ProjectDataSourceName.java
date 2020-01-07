@@ -132,7 +132,7 @@ public class ProjectDataSourceName extends DataSourceName {
   }
 
   /** Builder for ProjectDataSourceName. */
-  public static class Builder extends DataSourceName.Builder {
+  public static class Builder {
 
     private String project;
     private String dataSource;

@@ -132,7 +132,7 @@ public class LocationName extends ParentName {
   }
 
   /** Builder for LocationName. */
-  public static class Builder extends ParentName.Builder {
+  public static class Builder {
 
     private String project;
     private String location;

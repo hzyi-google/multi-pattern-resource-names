@@ -141,7 +141,7 @@ public class LocationDataSourceName extends DataSourceName {
   }
 
   /** Builder for LocationDataSourceName. */
-  public static class Builder extends DataSourceName.Builder {
+  public static class Builder {
 
     private String project;
     private String location;
