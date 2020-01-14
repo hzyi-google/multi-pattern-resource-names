@@ -15,11 +15,6 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1;
 
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
-
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -28,7 +23,6 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStubSettings;
@@ -74,8 +68,7 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   }
 
   /** Returns the object with the settings used for calls to listDataSources. */
-  public PagedCallSettings<
-          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+  public UnaryCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).listDataSourcesSettings();
   }
@@ -103,8 +96,7 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   }
 
   /** Returns the object with the settings used for calls to listTransferConfigs. */
-  public PagedCallSettings<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
+  public UnaryCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).listTransferConfigsSettings();
   }
@@ -113,6 +105,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   public UnaryCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).scheduleTransferRunsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startManualTransferRuns. */
+  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
   }
 
   /** Returns the object with the settings used for calls to getTransferRun. */
@@ -126,15 +124,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   }
 
   /** Returns the object with the settings used for calls to listTransferRuns. */
-  public PagedCallSettings<
-          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+  public UnaryCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).listTransferRunsSettings();
   }
 
   /** Returns the object with the settings used for calls to listTransferLogs. */
-  public PagedCallSettings<
-          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+  public UnaryCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).listTransferLogsSettings();
   }
@@ -143,12 +139,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to startManualTransferRuns. */
-  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
   }
 
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
@@ -254,8 +244,7 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     }
 
     /** Returns the builder for the settings used for calls to listDataSources. */
-    public PagedCallSettings.Builder<
-            ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+    public UnaryCallSettings.Builder<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesSettings() {
       return getStubSettingsBuilder().listDataSourcesSettings();
     }
@@ -285,9 +274,7 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     }
 
     /** Returns the builder for the settings used for calls to listTransferConfigs. */
-    public PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
-            ListTransferConfigsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsSettings() {
       return getStubSettingsBuilder().listTransferConfigsSettings();
     }
@@ -296,6 +283,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsSettings() {
       return getStubSettingsBuilder().scheduleTransferRunsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
+    public UnaryCallSettings.Builder<
+            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsSettings() {
+      return getStubSettingsBuilder().startManualTransferRunsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTransferRun. */
@@ -309,15 +303,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     }
 
     /** Returns the builder for the settings used for calls to listTransferRuns. */
-    public PagedCallSettings.Builder<
-            ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsSettings() {
       return getStubSettingsBuilder().listTransferRunsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTransferLogs. */
-    public PagedCallSettings.Builder<
-            ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsSettings() {
       return getStubSettingsBuilder().listTransferLogsSettings();
     }
@@ -326,13 +318,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return getStubSettingsBuilder().checkValidCredsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
-    public UnaryCallSettings.Builder<
-            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-        startManualTransferRunsSettings() {
-      return getStubSettingsBuilder().startManualTransferRunsSettings();
     }
 
     @Override

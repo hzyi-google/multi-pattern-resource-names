@@ -53,27 +53,6 @@ module Google
 
             DEFAULT_TIMEOUT = 30
 
-            PAGE_DESCRIPTORS = {
-              "list_data_sources" => Google::Gax::PageDescriptor.new(
-                "page_token",
-                "next_page_token",
-                "data_sources"),
-              "list_transfer_configs" => Google::Gax::PageDescriptor.new(
-                "page_token",
-                "next_page_token",
-                "transfer_configs"),
-              "list_transfer_runs" => Google::Gax::PageDescriptor.new(
-                "page_token",
-                "next_page_token",
-                "transfer_runs"),
-              "list_transfer_logs" => Google::Gax::PageDescriptor.new(
-                "page_token",
-                "next_page_token",
-                "transfer_messages")
-            }.freeze
-
-            private_constant :PAGE_DESCRIPTORS
-
             # The scopes needed to make gRPC calls to all of the methods defined in
             # this service.
             ALL_SCOPES = [
@@ -87,48 +66,6 @@ module Google
 
             private_constant :LOCATION_PATH_TEMPLATE
 
-            LOCATION_DATA_SOURCE_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/locations/{location}/dataSources/{data_source}"
-            )
-
-            private_constant :LOCATION_DATA_SOURCE_PATH_TEMPLATE
-
-            LOCATION_RUN_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}"
-            )
-
-            private_constant :LOCATION_RUN_PATH_TEMPLATE
-
-            LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/locations/{location}/transferConfigs/{transfer_config}"
-            )
-
-            private_constant :LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE
-
-            PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}"
-            )
-
-            private_constant :PROJECT_PATH_TEMPLATE
-
-            PROJECT_DATA_SOURCE_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/dataSources/{data_source}"
-            )
-
-            private_constant :PROJECT_DATA_SOURCE_PATH_TEMPLATE
-
-            PROJECT_RUN_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/transferConfigs/{transfer_config}/runs/{run}"
-            )
-
-            private_constant :PROJECT_RUN_PATH_TEMPLATE
-
-            PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-              "projects/{project}/transferConfigs/{transfer_config}"
-            )
-
-            private_constant :PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE
-
             # Returns a fully-qualified location resource name string.
             # @param project [String]
             # @param location [String]
@@ -137,91 +74,6 @@ module Google
               LOCATION_PATH_TEMPLATE.render(
                 :"project" => project,
                 :"location" => location
-              )
-            end
-
-            # Returns a fully-qualified location_data_source resource name string.
-            # @param project [String]
-            # @param location [String]
-            # @param data_source [String]
-            # @return [String]
-            def self.location_data_source_path project, location, data_source
-              LOCATION_DATA_SOURCE_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"location" => location,
-                :"data_source" => data_source
-              )
-            end
-
-            # Returns a fully-qualified location_run resource name string.
-            # @param project [String]
-            # @param location [String]
-            # @param transfer_config [String]
-            # @param run [String]
-            # @return [String]
-            def self.location_run_path project, location, transfer_config, run
-              LOCATION_RUN_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"location" => location,
-                :"transfer_config" => transfer_config,
-                :"run" => run
-              )
-            end
-
-            # Returns a fully-qualified location_transfer_config resource name string.
-            # @param project [String]
-            # @param location [String]
-            # @param transfer_config [String]
-            # @return [String]
-            def self.location_transfer_config_path project, location, transfer_config
-              LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"location" => location,
-                :"transfer_config" => transfer_config
-              )
-            end
-
-            # Returns a fully-qualified project resource name string.
-            # @param project [String]
-            # @return [String]
-            def self.project_path project
-              PROJECT_PATH_TEMPLATE.render(
-                :"project" => project
-              )
-            end
-
-            # Returns a fully-qualified project_data_source resource name string.
-            # @param project [String]
-            # @param data_source [String]
-            # @return [String]
-            def self.project_data_source_path project, data_source
-              PROJECT_DATA_SOURCE_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"data_source" => data_source
-              )
-            end
-
-            # Returns a fully-qualified project_run resource name string.
-            # @param project [String]
-            # @param transfer_config [String]
-            # @param run [String]
-            # @return [String]
-            def self.project_run_path project, transfer_config, run
-              PROJECT_RUN_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"transfer_config" => transfer_config,
-                :"run" => run
-              )
-            end
-
-            # Returns a fully-qualified project_transfer_config resource name string.
-            # @param project [String]
-            # @param transfer_config [String]
-            # @return [String]
-            def self.project_transfer_config_path project, transfer_config
-              PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE.render(
-                :"project" => project,
-                :"transfer_config" => transfer_config
               )
             end
 
@@ -307,7 +159,6 @@ module Google
                   client_config,
                   Google::Gax::Grpc::STATUS_CODE_NAMES,
                   timeout,
-                  page_descriptors: PAGE_DESCRIPTORS,
                   errors: Google::Gax::Grpc::API_ERRORS,
                   metadata: headers
                 )
@@ -392,6 +243,14 @@ module Google
                   {'parent' => request.parent}
                 end
               )
+              @start_manual_transfer_runs = Google::Gax.create_api_call(
+                @data_transfer_service_stub.method(:start_manual_transfer_runs),
+                defaults["start_manual_transfer_runs"],
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'parent' => request.parent}
+                end
+              )
               @get_transfer_run = Google::Gax.create_api_call(
                 @data_transfer_service_stub.method(:get_transfer_run),
                 defaults["get_transfer_run"],
@@ -432,14 +291,6 @@ module Google
                   {'name' => request.name}
                 end
               )
-              @start_manual_transfer_runs = Google::Gax.create_api_call(
-                @data_transfer_service_stub.method(:start_manual_transfer_runs),
-                defaults["start_manual_transfer_runs"],
-                exception_transformer: exception_transformer,
-                params_extractor: proc do |request|
-                  {'parent' => request.parent}
-                end
-              )
             end
 
             # Service calls
@@ -463,11 +314,10 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_data_source_path("[PROJECT]", "[DATA_SOURCE]")
-            #   response = data_transfer_client.get_data_source(formatted_name)
+            #   response = data_transfer_client.get_data_source
 
             def get_data_source \
-                name,
+                name: nil,
                 options: nil,
                 &block
               req = {
@@ -484,50 +334,37 @@ module Google
             #   Required. The BigQuery project id for which data sources should be returned.
             #   Must be in the form: `projects/{project_id}` or
             #   `projects/{project_id}/locations/{location_id}
+            # @param page_token [String]
+            #   Pagination token, which can be used to request a specific page
+            #   of `ListDataSourcesRequest` list results. For multiple-page
+            #   results, `ListDataSourcesResponse` outputs
+            #   a `next_page` token, which can be used as the
+            #   `page_token` value to request the next page of list results.
             # @param page_size [Integer]
-            #   The maximum number of resources contained in the underlying API
-            #   response. If page streaming is performed per-resource, this
-            #   parameter does not affect the return value. If page streaming is
-            #   performed per-page, this determines the maximum number of
-            #   resources in a page.
+            #   Page size. The default page size is the maximum value of 1000 results.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::DataSource>]
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::ListDataSourcesResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::DataSource>]
-            #   An enumerable of Google::Cloud::Bigquery::Datatransfer::V1::DataSource instances.
-            #   See Google::Gax::PagedEnumerable documentation for other
-            #   operations such as per-page iteration or access to the response
-            #   object.
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::ListDataSourcesResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_path("[PROJECT]")
-            #
-            #   # Iterate over all results.
-            #   data_transfer_client.list_data_sources(formatted_parent).each do |element|
-            #     # Process element.
-            #   end
-            #
-            #   # Or iterate over results one page at a time.
-            #   data_transfer_client.list_data_sources(formatted_parent).each_page do |page|
-            #     # Process each page at a time.
-            #     page.each do |element|
-            #       # Process element.
-            #     end
-            #   end
+            #   response = data_transfer_client.list_data_sources
 
             def list_data_sources \
-                parent,
+                parent: nil,
+                page_token: nil,
                 page_size: nil,
                 options: nil,
                 &block
               req = {
                 parent: parent,
+                page_token: page_token,
                 page_size: page_size
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListDataSourcesRequest)
@@ -586,15 +423,11 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_path("[PROJECT]")
-            #
-            #   # TODO: Initialize `transfer_config`:
-            #   transfer_config = {}
-            #   response = data_transfer_client.create_transfer_config(formatted_parent, transfer_config)
+            #   response = data_transfer_client.create_transfer_config
 
             def create_transfer_config \
-                parent,
-                transfer_config,
+                parent: nil,
+                transfer_config: nil,
                 authorization_code: nil,
                 version_info: nil,
                 service_account_name: nil,
@@ -618,10 +451,6 @@ module Google
             #   Required. Data transfer configuration to create.
             #   A hash of the same form as `Google::Cloud::Bigquery::Datatransfer::V1::TransferConfig`
             #   can also be provided.
-            # @param update_mask [Google::Protobuf::FieldMask | Hash]
-            #   Required. Required list of fields to be updated in this request.
-            #   A hash of the same form as `Google::Protobuf::FieldMask`
-            #   can also be provided.
             # @param authorization_code [String]
             #   Optional OAuth2 authorization code to use with this transfer configuration.
             #   If it is provided, the transfer configuration will be associated with the
@@ -639,6 +468,10 @@ module Google
             #     urn:ietf:wg:oauth:2.0:oob means that authorization code should be
             #     returned in the title bar of the browser, with the page text prompting
             #     the user to copy the code and paste it in the application.
+            # @param update_mask [Google::Protobuf::FieldMask | Hash]
+            #   Required. Required list of fields to be updated in this request.
+            #   A hash of the same form as `Google::Protobuf::FieldMask`
+            #   can also be provided.
             # @param version_info [String]
             #   Optional version info. If users want to find a very recent access token,
             #   that is, immediately after approving access, users have to set the
@@ -664,26 +497,20 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #
-            #   # TODO: Initialize `transfer_config`:
-            #   transfer_config = {}
-            #
-            #   # TODO: Initialize `update_mask`:
-            #   update_mask = {}
-            #   response = data_transfer_client.update_transfer_config(transfer_config, update_mask)
+            #   response = data_transfer_client.update_transfer_config
 
             def update_transfer_config \
-                transfer_config,
-                update_mask,
+                transfer_config: nil,
                 authorization_code: nil,
+                update_mask: nil,
                 version_info: nil,
                 service_account_name: nil,
                 options: nil,
                 &block
               req = {
                 transfer_config: transfer_config,
-                update_mask: update_mask,
                 authorization_code: authorization_code,
+                update_mask: update_mask,
                 version_info: version_info,
                 service_account_name: service_account_name
               }.delete_if { |_, v| v.nil? }
@@ -709,11 +536,10 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_transfer_config_path("[PROJECT]", "[TRANSFER_CONFIG]")
-            #   data_transfer_client.delete_transfer_config(formatted_name)
+            #   data_transfer_client.delete_transfer_config
 
             def delete_transfer_config \
-                name,
+                name: nil,
                 options: nil,
                 &block
               req = {
@@ -742,11 +568,10 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_transfer_config_path("[PROJECT]", "[TRANSFER_CONFIG]")
-            #   response = data_transfer_client.get_transfer_config(formatted_name)
+            #   response = data_transfer_client.get_transfer_config
 
             def get_transfer_config \
-                name,
+                name: nil,
                 options: nil,
                 &block
               req = {
@@ -764,52 +589,39 @@ module Google
             #   `projects/{project_id}/locations/{location_id}`
             # @param data_source_ids [Array<String>]
             #   When specified, only configurations of requested data sources are returned.
+            # @param page_token [String]
+            #   Pagination token, which can be used to request a specific page
+            #   of `ListTransfersRequest` list results. For multiple-page
+            #   results, `ListTransfersResponse` outputs
+            #   a `next_page` token, which can be used as the
+            #   `page_token` value to request the next page of list results.
             # @param page_size [Integer]
-            #   The maximum number of resources contained in the underlying API
-            #   response. If page streaming is performed per-resource, this
-            #   parameter does not affect the return value. If page streaming is
-            #   performed per-page, this determines the maximum number of
-            #   resources in a page.
+            #   Page size. The default page size is the maximum value of 1000 results.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
             # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferConfig>]
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferConfigsResponse]
             # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferConfig>]
-            #   An enumerable of Google::Cloud::Bigquery::Datatransfer::V1::TransferConfig instances.
-            #   See Google::Gax::PagedEnumerable documentation for other
-            #   operations such as per-page iteration or access to the response
-            #   object.
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferConfigsResponse]
             # @raise [Google::Gax::GaxError] if the RPC is aborted.
             # @example
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_path("[PROJECT]")
-            #
-            #   # Iterate over all results.
-            #   data_transfer_client.list_transfer_configs(formatted_parent).each do |element|
-            #     # Process element.
-            #   end
-            #
-            #   # Or iterate over results one page at a time.
-            #   data_transfer_client.list_transfer_configs(formatted_parent).each_page do |page|
-            #     # Process each page at a time.
-            #     page.each do |element|
-            #       # Process element.
-            #     end
-            #   end
+            #   response = data_transfer_client.list_transfer_configs
 
             def list_transfer_configs \
-                parent,
+                parent: nil,
                 data_source_ids: nil,
+                page_token: nil,
                 page_size: nil,
                 options: nil,
                 &block
               req = {
                 parent: parent,
                 data_source_ids: data_source_ids,
+                page_token: page_token,
                 page_size: page_size
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListTransferConfigsRequest)
@@ -848,19 +660,12 @@ module Google
             #   require "google/cloud/bigquery/data_transfer"
             #
             #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_transfer_config_path("[PROJECT]", "[TRANSFER_CONFIG]")
-            #
-            #   # TODO: Initialize `start_time`:
-            #   start_time = {}
-            #
-            #   # TODO: Initialize `end_time`:
-            #   end_time = {}
-            #   response = data_transfer_client.schedule_transfer_runs(formatted_parent, start_time, end_time)
+            #   response = data_transfer_client.schedule_transfer_runs
 
             def schedule_transfer_runs \
-                parent,
-                start_time,
-                end_time,
+                parent: nil,
+                start_time: nil,
+                end_time: nil,
                 options: nil,
                 &block
               req = {
@@ -870,233 +675,6 @@ module Google
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ScheduleTransferRunsRequest)
               @schedule_transfer_runs.call(req, options, &block)
-            end
-
-            # Returns information about the particular transfer run.
-            #
-            # @param name [String]
-            #   Required. The field will contain name of the resource requested, for example:
-            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::TransferRun]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Bigquery::Datatransfer::V1::TransferRun]
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_run_path("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
-            #   response = data_transfer_client.get_transfer_run(formatted_name)
-
-            def get_transfer_run \
-                name,
-                options: nil,
-                &block
-              req = {
-                name: name
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::GetTransferRunRequest)
-              @get_transfer_run.call(req, options, &block)
-            end
-
-            # Deletes the specified transfer run.
-            #
-            # @param name [String]
-            #   Required. The field will contain name of the resource requested, for example:
-            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result []
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_run_path("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
-            #   data_transfer_client.delete_transfer_run(formatted_name)
-
-            def delete_transfer_run \
-                name,
-                options: nil,
-                &block
-              req = {
-                name: name
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::DeleteTransferRunRequest)
-              @delete_transfer_run.call(req, options, &block)
-              nil
-            end
-
-            # Returns information about running and completed jobs.
-            #
-            # @param parent [String]
-            #   Required. Name of transfer configuration for which transfer runs should be retrieved.
-            #   Format of transfer configuration resource name is:
-            #   `projects/{project_id}/transferConfigs/{config_id}` or
-            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-            # @param states [Array<Google::Cloud::Bigquery::Datatransfer::V1::TransferState>]
-            #   When specified, only transfer runs with requested states are returned.
-            # @param page_size [Integer]
-            #   The maximum number of resources contained in the underlying API
-            #   response. If page streaming is performed per-resource, this
-            #   parameter does not affect the return value. If page streaming is
-            #   performed per-page, this determines the maximum number of
-            #   resources in a page.
-            # @param run_attempt [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsRequest::RunAttempt]
-            #   Indicates how run attempts are to be pulled.
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferRun>]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferRun>]
-            #   An enumerable of Google::Cloud::Bigquery::Datatransfer::V1::TransferRun instances.
-            #   See Google::Gax::PagedEnumerable documentation for other
-            #   operations such as per-page iteration or access to the response
-            #   object.
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_transfer_config_path("[PROJECT]", "[TRANSFER_CONFIG]")
-            #
-            #   # Iterate over all results.
-            #   data_transfer_client.list_transfer_runs(formatted_parent).each do |element|
-            #     # Process element.
-            #   end
-            #
-            #   # Or iterate over results one page at a time.
-            #   data_transfer_client.list_transfer_runs(formatted_parent).each_page do |page|
-            #     # Process each page at a time.
-            #     page.each do |element|
-            #       # Process element.
-            #     end
-            #   end
-
-            def list_transfer_runs \
-                parent,
-                states: nil,
-                page_size: nil,
-                run_attempt: nil,
-                options: nil,
-                &block
-              req = {
-                parent: parent,
-                states: states,
-                page_size: page_size,
-                run_attempt: run_attempt
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsRequest)
-              @list_transfer_runs.call(req, options, &block)
-            end
-
-            # Returns user facing log messages for the data transfer run.
-            #
-            # @param parent [String]
-            #   Required. Transfer run name in the form:
-            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-            # @param page_size [Integer]
-            #   The maximum number of resources contained in the underlying API
-            #   response. If page streaming is performed per-resource, this
-            #   parameter does not affect the return value. If page streaming is
-            #   performed per-page, this determines the maximum number of
-            #   resources in a page.
-            # @param message_types [Array<Google::Cloud::Bigquery::Datatransfer::V1::TransferMessage::MessageSeverity>]
-            #   Message types to return. If not populated - INFO, WARNING and ERROR
-            #   messages are returned.
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferMessage>]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Gax::PagedEnumerable<Google::Cloud::Bigquery::Datatransfer::V1::TransferMessage>]
-            #   An enumerable of Google::Cloud::Bigquery::Datatransfer::V1::TransferMessage instances.
-            #   See Google::Gax::PagedEnumerable documentation for other
-            #   operations such as per-page iteration or access to the response
-            #   object.
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_run_path("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
-            #
-            #   # Iterate over all results.
-            #   data_transfer_client.list_transfer_logs(formatted_parent).each do |element|
-            #     # Process element.
-            #   end
-            #
-            #   # Or iterate over results one page at a time.
-            #   data_transfer_client.list_transfer_logs(formatted_parent).each_page do |page|
-            #     # Process each page at a time.
-            #     page.each do |element|
-            #       # Process element.
-            #     end
-            #   end
-
-            def list_transfer_logs \
-                parent,
-                page_size: nil,
-                message_types: nil,
-                options: nil,
-                &block
-              req = {
-                parent: parent,
-                page_size: page_size,
-                message_types: message_types
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListTransferLogsRequest)
-              @list_transfer_logs.call(req, options, &block)
-            end
-
-            # Returns true if valid credentials exist for the given data source and
-            # requesting user.
-            # Some data sources doesn't support service account, so we need to talk to
-            # them on behalf of the end user. This API just checks whether we have OAuth
-            # token for the particular user, which is a pre-requisite before user can
-            # create a transfer config.
-            #
-            # @param name [String]
-            #   Required. The data source in the form:
-            #   `projects/{project_id}/dataSources/{data_source_id}` or
-            #   `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsResponse]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsResponse]
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   formatted_name = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_data_source_path("[PROJECT]", "[DATA_SOURCE]")
-            #   response = data_transfer_client.check_valid_creds(formatted_name)
-
-            def check_valid_creds \
-                name,
-                options: nil,
-                &block
-              req = {
-                name: name
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsRequest)
-              @check_valid_creds.call(req, options, &block)
             end
 
             # Start manual transfer runs to be executed now with schedule_time equal to
@@ -1144,6 +722,204 @@ module Google
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest)
               @start_manual_transfer_runs.call(req, options, &block)
+            end
+
+            # Returns information about the particular transfer run.
+            #
+            # @param name [String]
+            #   Required. The field will contain name of the resource requested, for example:
+            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::TransferRun]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::TransferRun]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   response = data_transfer_client.get_transfer_run
+
+            def get_transfer_run \
+                name: nil,
+                options: nil,
+                &block
+              req = {
+                name: name
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::GetTransferRunRequest)
+              @get_transfer_run.call(req, options, &block)
+            end
+
+            # Deletes the specified transfer run.
+            #
+            # @param name [String]
+            #   Required. The field will contain name of the resource requested, for example:
+            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result []
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   data_transfer_client.delete_transfer_run
+
+            def delete_transfer_run \
+                name: nil,
+                options: nil,
+                &block
+              req = {
+                name: name
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::DeleteTransferRunRequest)
+              @delete_transfer_run.call(req, options, &block)
+              nil
+            end
+
+            # Returns information about running and completed jobs.
+            #
+            # @param parent [String]
+            #   Required. Name of transfer configuration for which transfer runs should be retrieved.
+            #   Format of transfer configuration resource name is:
+            #   `projects/{project_id}/transferConfigs/{config_id}` or
+            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+            # @param states [Array<Google::Cloud::Bigquery::Datatransfer::V1::TransferState>]
+            #   When specified, only transfer runs with requested states are returned.
+            # @param page_token [String]
+            #   Pagination token, which can be used to request a specific page
+            #   of `ListTransferRunsRequest` list results. For multiple-page
+            #   results, `ListTransferRunsResponse` outputs
+            #   a `next_page` token, which can be used as the
+            #   `page_token` value to request the next page of list results.
+            # @param page_size [Integer]
+            #   Page size. The default page size is the maximum value of 1000 results.
+            # @param run_attempt [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsRequest::RunAttempt]
+            #   Indicates how run attempts are to be pulled.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsResponse]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsResponse]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   response = data_transfer_client.list_transfer_runs
+
+            def list_transfer_runs \
+                parent: nil,
+                states: nil,
+                page_token: nil,
+                page_size: nil,
+                run_attempt: nil,
+                options: nil,
+                &block
+              req = {
+                parent: parent,
+                states: states,
+                page_token: page_token,
+                page_size: page_size,
+                run_attempt: run_attempt
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListTransferRunsRequest)
+              @list_transfer_runs.call(req, options, &block)
+            end
+
+            # Returns user facing log messages for the data transfer run.
+            #
+            # @param parent [String]
+            #   Required. Transfer run name in the form:
+            #   `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+            # @param page_token [String]
+            #   Pagination token, which can be used to request a specific page
+            #   of `ListTransferLogsRequest` list results. For multiple-page
+            #   results, `ListTransferLogsResponse` outputs
+            #   a `next_page` token, which can be used as the
+            #   `page_token` value to request the next page of list results.
+            # @param page_size [Integer]
+            #   Page size. The default page size is the maximum value of 1000 results.
+            # @param message_types [Array<Google::Cloud::Bigquery::Datatransfer::V1::TransferMessage::MessageSeverity>]
+            #   Message types to return. If not populated - INFO, WARNING and ERROR
+            #   messages are returned.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferLogsResponse]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::ListTransferLogsResponse]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   response = data_transfer_client.list_transfer_logs
+
+            def list_transfer_logs \
+                parent: nil,
+                page_token: nil,
+                page_size: nil,
+                message_types: nil,
+                options: nil,
+                &block
+              req = {
+                parent: parent,
+                page_token: page_token,
+                page_size: page_size,
+                message_types: message_types
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::ListTransferLogsRequest)
+              @list_transfer_logs.call(req, options, &block)
+            end
+
+            # Returns true if valid credentials exist for the given data source and
+            # requesting user.
+            # Some data sources doesn't support service account, so we need to talk to
+            # them on behalf of the end user. This API just checks whether we have OAuth
+            # token for the particular user, which is a pre-requisite before user can
+            # create a transfer config.
+            #
+            # @param name [String]
+            #   Required. The data source in the form:
+            #   `projects/{project_id}/dataSources/{data_source_id}` or
+            #   `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsResponse]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsResponse]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   response = data_transfer_client.check_valid_creds
+
+            def check_valid_creds \
+                name: nil,
+                options: nil,
+                &block
+              req = {
+                name: name
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsRequest)
+              @check_valid_creds.call(req, options, &block)
             end
           end
         end

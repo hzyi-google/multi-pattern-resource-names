@@ -15,11 +15,6 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
-
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -154,6 +149,19 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ScheduleTransferRunsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsMethodDescriptor =
+          MethodDescriptor
+              .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<GetTransferRunRequest, TransferRun>
       getTransferRunMethodDescriptor =
           MethodDescriptor.<GetTransferRunRequest, TransferRun>newBuilder()
@@ -207,27 +215,12 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<
-          StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsMethodDescriptor =
-          MethodDescriptor
-              .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/StartManualTransferRuns")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(StartManualTransferRunsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesCallable;
-  private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
-      listDataSourcesPagedCallable;
   private final UnaryCallable<CreateTransferConfigRequest, TransferConfig>
       createTransferConfigCallable;
   private final UnaryCallable<UpdateTransferConfigRequest, TransferConfig>
@@ -236,24 +229,18 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<GetTransferConfigRequest, TransferConfig> getTransferConfigCallable;
   private final UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable;
-  private final UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
-      listTransferConfigsPagedCallable;
   private final UnaryCallable<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsCallable;
+  private final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable;
   private final UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable;
   private final UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable;
   private final UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable;
-  private final UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
-      listTransferRunsPagedCallable;
   private final UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsCallable;
-  private final UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
-      listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
-  private final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -407,6 +394,21 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsTransportSettings =
+            GrpcCallSettings
+                .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
+                .setMethodDescriptor(startManualTransferRunsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<StartManualTransferRunsRequest>() {
+                      @Override
+                      public Map<String, String> extract(StartManualTransferRunsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<GetTransferRunRequest, TransferRun> getTransferRunTransportSettings =
         GrpcCallSettings.<GetTransferRunRequest, TransferRun>newBuilder()
             .setMethodDescriptor(getTransferRunMethodDescriptor)
@@ -475,30 +477,12 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-        startManualTransferRunsTransportSettings =
-            GrpcCallSettings
-                .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
-                .setMethodDescriptor(startManualTransferRunsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<StartManualTransferRunsRequest>() {
-                      @Override
-                      public Map<String, String> extract(StartManualTransferRunsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
 
     this.getDataSourceCallable =
         callableFactory.createUnaryCallable(
             getDataSourceTransportSettings, settings.getDataSourceSettings(), clientContext);
     this.listDataSourcesCallable =
         callableFactory.createUnaryCallable(
-            listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
-    this.listDataSourcesPagedCallable =
-        callableFactory.createPagedCallable(
             listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
     this.createTransferConfigCallable =
         callableFactory.createUnaryCallable(
@@ -525,15 +509,15 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
             listTransferConfigsTransportSettings,
             settings.listTransferConfigsSettings(),
             clientContext);
-    this.listTransferConfigsPagedCallable =
-        callableFactory.createPagedCallable(
-            listTransferConfigsTransportSettings,
-            settings.listTransferConfigsSettings(),
-            clientContext);
     this.scheduleTransferRunsCallable =
         callableFactory.createUnaryCallable(
             scheduleTransferRunsTransportSettings,
             settings.scheduleTransferRunsSettings(),
+            clientContext);
+    this.startManualTransferRunsCallable =
+        callableFactory.createUnaryCallable(
+            startManualTransferRunsTransportSettings,
+            settings.startManualTransferRunsSettings(),
             clientContext);
     this.getTransferRunCallable =
         callableFactory.createUnaryCallable(
@@ -546,34 +530,18 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.listTransferRunsCallable =
         callableFactory.createUnaryCallable(
             listTransferRunsTransportSettings, settings.listTransferRunsSettings(), clientContext);
-    this.listTransferRunsPagedCallable =
-        callableFactory.createPagedCallable(
-            listTransferRunsTransportSettings, settings.listTransferRunsSettings(), clientContext);
     this.listTransferLogsCallable =
         callableFactory.createUnaryCallable(
-            listTransferLogsTransportSettings, settings.listTransferLogsSettings(), clientContext);
-    this.listTransferLogsPagedCallable =
-        callableFactory.createPagedCallable(
             listTransferLogsTransportSettings, settings.listTransferLogsSettings(), clientContext);
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
-    this.startManualTransferRunsCallable =
-        callableFactory.createUnaryCallable(
-            startManualTransferRunsTransportSettings,
-            settings.startManualTransferRunsSettings(),
-            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
     return getDataSourceCallable;
-  }
-
-  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
-      listDataSourcesPagedCallable() {
-    return listDataSourcesPagedCallable;
   }
 
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
@@ -596,11 +564,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return getTransferConfigCallable;
   }
 
-  public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
-      listTransferConfigsPagedCallable() {
-    return listTransferConfigsPagedCallable;
-  }
-
   public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable() {
     return listTransferConfigsCallable;
@@ -611,6 +574,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return scheduleTransferRunsCallable;
   }
 
+  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    return startManualTransferRunsCallable;
+  }
+
   public UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable() {
     return getTransferRunCallable;
   }
@@ -619,19 +587,9 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return deleteTransferRunCallable;
   }
 
-  public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
-      listTransferRunsPagedCallable() {
-    return listTransferRunsPagedCallable;
-  }
-
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable() {
     return listTransferRunsCallable;
-  }
-
-  public UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
-      listTransferLogsPagedCallable() {
-    return listTransferLogsPagedCallable;
   }
 
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
@@ -641,11 +599,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     return checkValidCredsCallable;
-  }
-
-  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsCallable() {
-    return startManualTransferRunsCallable;
   }
 
   @Override

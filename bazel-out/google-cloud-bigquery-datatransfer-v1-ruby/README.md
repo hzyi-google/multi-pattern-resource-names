@@ -20,28 +20,6 @@ steps:
 $ gem install google-cloud-bigquery-data_transfer
 ```
 
-### Preview
-#### DataTransferServiceClient
-```rb
-require "google/cloud/bigquery/data_transfer"
-
-data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new
-formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.location_path(project_id, "us-central1")
-
-# Iterate over all results.
-data_transfer_client.list_data_sources(formatted_parent).each do |element|
-  # Process element.
-end
-
-# Or iterate over results one page at a time.
-data_transfer_client.list_data_sources(formatted_parent).each_page do |page|
-  # Process each page at a time.
-  page.each do |element|
-    # Process element.
-  end
-end
-```
-
 ### Next Steps
 - Read the [Client Library Documentation][] for BigQuery Data Transfer API
   to see other available methods on the client.

@@ -77,8 +77,7 @@ use Google\Protobuf\Timestamp;
  * ```
  * $dataTransferServiceClient = new DataTransferServiceClient();
  * try {
- *     $formattedName = $dataTransferServiceClient->projectDataSourceName('[PROJECT]', '[DATA_SOURCE]');
- *     $response = $dataTransferServiceClient->getDataSource($formattedName);
+ *     $response = $dataTransferServiceClient->getDataSource();
  * } finally {
  *     $dataTransferServiceClient->close();
  * }
@@ -122,13 +121,6 @@ class DataTransferServiceGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
     private static $locationNameTemplate;
-    private static $locationDataSourceNameTemplate;
-    private static $locationRunNameTemplate;
-    private static $locationTransferConfigNameTemplate;
-    private static $projectNameTemplate;
-    private static $projectDataSourceNameTemplate;
-    private static $projectRunNameTemplate;
-    private static $projectTransferConfigNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -159,81 +151,11 @@ class DataTransferServiceGapicClient
         return self::$locationNameTemplate;
     }
 
-    private static function getLocationDataSourceNameTemplate()
-    {
-        if (null == self::$locationDataSourceNameTemplate) {
-            self::$locationDataSourceNameTemplate = new PathTemplate('projects/{project}/locations/{location}/dataSources/{data_source}');
-        }
-
-        return self::$locationDataSourceNameTemplate;
-    }
-
-    private static function getLocationRunNameTemplate()
-    {
-        if (null == self::$locationRunNameTemplate) {
-            self::$locationRunNameTemplate = new PathTemplate('projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}');
-        }
-
-        return self::$locationRunNameTemplate;
-    }
-
-    private static function getLocationTransferConfigNameTemplate()
-    {
-        if (null == self::$locationTransferConfigNameTemplate) {
-            self::$locationTransferConfigNameTemplate = new PathTemplate('projects/{project}/locations/{location}/transferConfigs/{transfer_config}');
-        }
-
-        return self::$locationTransferConfigNameTemplate;
-    }
-
-    private static function getProjectNameTemplate()
-    {
-        if (null == self::$projectNameTemplate) {
-            self::$projectNameTemplate = new PathTemplate('projects/{project}');
-        }
-
-        return self::$projectNameTemplate;
-    }
-
-    private static function getProjectDataSourceNameTemplate()
-    {
-        if (null == self::$projectDataSourceNameTemplate) {
-            self::$projectDataSourceNameTemplate = new PathTemplate('projects/{project}/dataSources/{data_source}');
-        }
-
-        return self::$projectDataSourceNameTemplate;
-    }
-
-    private static function getProjectRunNameTemplate()
-    {
-        if (null == self::$projectRunNameTemplate) {
-            self::$projectRunNameTemplate = new PathTemplate('projects/{project}/transferConfigs/{transfer_config}/runs/{run}');
-        }
-
-        return self::$projectRunNameTemplate;
-    }
-
-    private static function getProjectTransferConfigNameTemplate()
-    {
-        if (null == self::$projectTransferConfigNameTemplate) {
-            self::$projectTransferConfigNameTemplate = new PathTemplate('projects/{project}/transferConfigs/{transfer_config}');
-        }
-
-        return self::$projectTransferConfigNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
-                'locationDataSource' => self::getLocationDataSourceNameTemplate(),
-                'locationRun' => self::getLocationRunNameTemplate(),
-                'locationTransferConfig' => self::getLocationTransferConfigNameTemplate(),
-                'project' => self::getProjectNameTemplate(),
-                'projectDataSource' => self::getProjectDataSourceNameTemplate(),
-                'projectRun' => self::getProjectRunNameTemplate(),
-                'projectTransferConfig' => self::getProjectTransferConfigNameTemplate(),
             ];
         }
 
@@ -259,151 +181,10 @@ class DataTransferServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location_data_source resource.
-     *
-     * @param string $project
-     * @param string $location
-     * @param string $dataSource
-     *
-     * @return string The formatted location_data_source resource.
-     * @experimental
-     */
-    public static function locationDataSourceName($project, $location, $dataSource)
-    {
-        return self::getLocationDataSourceNameTemplate()->render([
-            'project' => $project,
-            'location' => $location,
-            'data_source' => $dataSource,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location_run resource.
-     *
-     * @param string $project
-     * @param string $location
-     * @param string $transferConfig
-     * @param string $run
-     *
-     * @return string The formatted location_run resource.
-     * @experimental
-     */
-    public static function locationRunName($project, $location, $transferConfig, $run)
-    {
-        return self::getLocationRunNameTemplate()->render([
-            'project' => $project,
-            'location' => $location,
-            'transfer_config' => $transferConfig,
-            'run' => $run,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a location_transfer_config resource.
-     *
-     * @param string $project
-     * @param string $location
-     * @param string $transferConfig
-     *
-     * @return string The formatted location_transfer_config resource.
-     * @experimental
-     */
-    public static function locationTransferConfigName($project, $location, $transferConfig)
-    {
-        return self::getLocationTransferConfigNameTemplate()->render([
-            'project' => $project,
-            'location' => $location,
-            'transfer_config' => $transferConfig,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * @param string $project
-     *
-     * @return string The formatted project resource.
-     * @experimental
-     */
-    public static function projectName($project)
-    {
-        return self::getProjectNameTemplate()->render([
-            'project' => $project,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project_data_source resource.
-     *
-     * @param string $project
-     * @param string $dataSource
-     *
-     * @return string The formatted project_data_source resource.
-     * @experimental
-     */
-    public static function projectDataSourceName($project, $dataSource)
-    {
-        return self::getProjectDataSourceNameTemplate()->render([
-            'project' => $project,
-            'data_source' => $dataSource,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project_run resource.
-     *
-     * @param string $project
-     * @param string $transferConfig
-     * @param string $run
-     *
-     * @return string The formatted project_run resource.
-     * @experimental
-     */
-    public static function projectRunName($project, $transferConfig, $run)
-    {
-        return self::getProjectRunNameTemplate()->render([
-            'project' => $project,
-            'transfer_config' => $transferConfig,
-            'run' => $run,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project_transfer_config resource.
-     *
-     * @param string $project
-     * @param string $transferConfig
-     *
-     * @return string The formatted project_transfer_config resource.
-     * @experimental
-     */
-    public static function projectTransferConfigName($project, $transferConfig)
-    {
-        return self::getProjectTransferConfigNameTemplate()->render([
-            'project' => $project,
-            'transfer_config' => $transferConfig,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - location: projects/{project}/locations/{location}
-     * - locationDataSource: projects/{project}/locations/{location}/dataSources/{data_source}
-     * - locationRun: projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}
-     * - locationTransferConfig: projects/{project}/locations/{location}/transferConfigs/{transfer_config}
-     * - project: projects/{project}
-     * - projectDataSource: projects/{project}/dataSources/{data_source}
-     * - projectRun: projects/{project}/transferConfigs/{transfer_config}/runs/{run}
-     * - projectTransferConfig: projects/{project}/transferConfigs/{transfer_config}.
+     * - location: projects/{project}/locations/{location}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -506,19 +287,19 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedName = $dataTransferServiceClient->projectDataSourceName('[PROJECT]', '[DATA_SOURCE]');
-     *     $response = $dataTransferServiceClient->getDataSource($formattedName);
+     *     $response = $dataTransferServiceClient->getDataSource();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/dataSources/{data_source_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $name
+     *          Required. The field will contain name of the resource requested, for example:
+     *          `projects/{project_id}/dataSources/{data_source_id}` or
+     *          `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -531,10 +312,12 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getDataSource($name, array $optionalArgs = [])
+    public function getDataSource(array $optionalArgs = [])
     {
         $request = new GetDataSourceRequest();
-        $request->setName($name);
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'name' => $request->getName(),
@@ -559,43 +342,27 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedParent = $dataTransferServiceClient->projectName('[PROJECT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $dataTransferServiceClient->listDataSources($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $dataTransferServiceClient->listDataSources($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $response = $dataTransferServiceClient->listDataSources();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string $parent       Required. The BigQuery project id for which data sources should be returned.
-     *                             Must be in the form: `projects/{project_id}` or
-     *                             `projects/{project_id}/locations/{location_id}
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $parent
+     *          Required. The BigQuery project id for which data sources should be returned.
+     *          Must be in the form: `projects/{project_id}` or
+     *          `projects/{project_id}/locations/{location_id}
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *          Pagination token, which can be used to request a specific page
+     *          of `ListDataSourcesRequest` list results. For multiple-page
+     *          results, `ListDataSourcesResponse` outputs
+     *          a `next_page` token, which can be used as the
+     *          `page_token` value to request the next page of list results.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *          Page size. The default page size is the maximum value of 1000 results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -603,15 +370,17 @@ class DataTransferServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\ListDataSourcesResponse
      *
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listDataSources($parent, array $optionalArgs = [])
+    public function listDataSources(array $optionalArgs = [])
     {
         $request = new ListDataSourcesRequest();
-        $request->setParent($parent);
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
@@ -626,12 +395,12 @@ class DataTransferServiceGapicClient
             ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
             : $requestParams->getHeader();
 
-        return $this->getPagedListResponse(
+        return $this->startCall(
             'ListDataSources',
-            $optionalArgs,
             ListDataSourcesResponse::class,
+            $optionalArgs,
             $request
-        );
+        )->wait();
     }
 
     /**
@@ -641,22 +410,22 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedParent = $dataTransferServiceClient->projectName('[PROJECT]');
-     *     $transferConfig = new TransferConfig();
-     *     $response = $dataTransferServiceClient->createTransferConfig($formattedParent, $transferConfig);
+     *     $response = $dataTransferServiceClient->createTransferConfig();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string         $parent         Required. The BigQuery project id where the transfer configuration should be created.
-     *                                       Must be in the format projects/{project_id}/locations/{location_id} or
-     *                                       projects/{project_id}. If specified location and location of the
-     *                                       destination bigquery dataset do not match - the request will fail.
-     * @param TransferConfig $transferConfig Required. Data transfer configuration to create.
-     * @param array          $optionalArgs   {
-     *                                       Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $parent
+     *          Required. The BigQuery project id where the transfer configuration should be created.
+     *          Must be in the format projects/{project_id}/locations/{location_id} or
+     *          projects/{project_id}. If specified location and location of the
+     *          destination bigquery dataset do not match - the request will fail.
+     *     @type TransferConfig $transferConfig
+     *          Required. Data transfer configuration to create.
      *     @type string $authorizationCode
      *          Optional OAuth2 authorization code to use with this transfer configuration.
      *          This is required if new credentials are needed, as indicated by
@@ -698,11 +467,15 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function createTransferConfig($parent, $transferConfig, array $optionalArgs = [])
+    public function createTransferConfig(array $optionalArgs = [])
     {
         $request = new CreateTransferConfigRequest();
-        $request->setParent($parent);
-        $request->setTransferConfig($transferConfig);
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['transferConfig'])) {
+            $request->setTransferConfig($optionalArgs['transferConfig']);
+        }
         if (isset($optionalArgs['authorizationCode'])) {
             $request->setAuthorizationCode($optionalArgs['authorizationCode']);
         }
@@ -736,19 +509,17 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $transferConfig = new TransferConfig();
-     *     $updateMask = new FieldMask();
-     *     $response = $dataTransferServiceClient->updateTransferConfig($transferConfig, $updateMask);
+     *     $response = $dataTransferServiceClient->updateTransferConfig();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param TransferConfig $transferConfig Required. Data transfer configuration to create.
-     * @param FieldMask      $updateMask     Required. Required list of fields to be updated in this request.
-     * @param array          $optionalArgs   {
-     *                                       Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type TransferConfig $transferConfig
+     *          Required. Data transfer configuration to create.
      *     @type string $authorizationCode
      *          Optional OAuth2 authorization code to use with this transfer configuration.
      *          If it is provided, the transfer configuration will be associated with the
@@ -766,6 +537,8 @@ class DataTransferServiceGapicClient
      *            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
      *            returned in the title bar of the browser, with the page text prompting
      *            the user to copy the code and paste it in the application.
+     *     @type FieldMask $updateMask
+     *          Required. Required list of fields to be updated in this request.
      *     @type string $versionInfo
      *          Optional version info. If users want to find a very recent access token,
      *          that is, immediately after approving access, users have to set the
@@ -791,13 +564,17 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function updateTransferConfig($transferConfig, $updateMask, array $optionalArgs = [])
+    public function updateTransferConfig(array $optionalArgs = [])
     {
         $request = new UpdateTransferConfigRequest();
-        $request->setTransferConfig($transferConfig);
-        $request->setUpdateMask($updateMask);
+        if (isset($optionalArgs['transferConfig'])) {
+            $request->setTransferConfig($optionalArgs['transferConfig']);
+        }
         if (isset($optionalArgs['authorizationCode'])) {
             $request->setAuthorizationCode($optionalArgs['authorizationCode']);
+        }
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
         }
         if (isset($optionalArgs['versionInfo'])) {
             $request->setVersionInfo($optionalArgs['versionInfo']);
@@ -829,19 +606,19 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedName = $dataTransferServiceClient->projectTransferConfigName('[PROJECT]', '[TRANSFER_CONFIG]');
-     *     $dataTransferServiceClient->deleteTransferConfig($formattedName);
+     *     $dataTransferServiceClient->deleteTransferConfig();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $name
+     *          Required. The field will contain name of the resource requested, for example:
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -852,10 +629,12 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function deleteTransferConfig($name, array $optionalArgs = [])
+    public function deleteTransferConfig(array $optionalArgs = [])
     {
         $request = new DeleteTransferConfigRequest();
-        $request->setName($name);
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'name' => $request->getName(),
@@ -879,19 +658,19 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedName = $dataTransferServiceClient->projectTransferConfigName('[PROJECT]', '[TRANSFER_CONFIG]');
-     *     $response = $dataTransferServiceClient->getTransferConfig($formattedName);
+     *     $response = $dataTransferServiceClient->getTransferConfig();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $name
+     *          Required. The field will contain name of the resource requested, for example:
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -904,10 +683,12 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getTransferConfig($name, array $optionalArgs = [])
+    public function getTransferConfig(array $optionalArgs = [])
     {
         $request = new GetTransferConfigRequest();
-        $request->setName($name);
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'name' => $request->getName(),
@@ -931,45 +712,29 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedParent = $dataTransferServiceClient->projectName('[PROJECT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferConfigs($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferConfigs($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
+     *     $response = $dataTransferServiceClient->listTransferConfigs();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string $parent       Required. The BigQuery project id for which data sources
-     *                             should be returned: `projects/{project_id}` or
-     *                             `projects/{project_id}/locations/{location_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $parent
+     *          Required. The BigQuery project id for which data sources
+     *          should be returned: `projects/{project_id}` or
+     *          `projects/{project_id}/locations/{location_id}`
      *     @type string[] $dataSourceIds
      *          When specified, only configurations of requested data sources are returned.
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *          Pagination token, which can be used to request a specific page
+     *          of `ListTransfersRequest` list results. For multiple-page
+     *          results, `ListTransfersResponse` outputs
+     *          a `next_page` token, which can be used as the
+     *          `page_token` value to request the next page of list results.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *          Page size. The default page size is the maximum value of 1000 results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -977,15 +742,17 @@ class DataTransferServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\ApiCore\PagedListResponse
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\ListTransferConfigsResponse
      *
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listTransferConfigs($parent, array $optionalArgs = [])
+    public function listTransferConfigs(array $optionalArgs = [])
     {
         $request = new ListTransferConfigsRequest();
-        $request->setParent($parent);
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
         if (isset($optionalArgs['dataSourceIds'])) {
             $request->setDataSourceIds($optionalArgs['dataSourceIds']);
         }
@@ -1003,12 +770,12 @@ class DataTransferServiceGapicClient
             ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
             : $requestParams->getHeader();
 
-        return $this->getPagedListResponse(
+        return $this->startCall(
             'ListTransferConfigs',
-            $optionalArgs,
             ListTransferConfigsResponse::class,
+            $optionalArgs,
             $request
-        );
+        )->wait();
     }
 
     /**
@@ -1022,25 +789,25 @@ class DataTransferServiceGapicClient
      * ```
      * $dataTransferServiceClient = new DataTransferServiceClient();
      * try {
-     *     $formattedParent = $dataTransferServiceClient->projectTransferConfigName('[PROJECT]', '[TRANSFER_CONFIG]');
-     *     $startTime = new Timestamp();
-     *     $endTime = new Timestamp();
-     *     $response = $dataTransferServiceClient->scheduleTransferRuns($formattedParent, $startTime, $endTime);
+     *     $response = $dataTransferServiceClient->scheduleTransferRuns();
      * } finally {
      *     $dataTransferServiceClient->close();
      * }
      * ```
      *
-     * @param string    $parent       Required. Transfer configuration name in the form:
-     *                                `projects/{project_id}/transferConfigs/{config_id}` or
-     *                                `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-     * @param Timestamp $startTime    Required. Start time of the range of transfer runs. For example,
-     *                                `"2017-05-25T00:00:00+00:00"`.
-     * @param Timestamp $endTime      Required. End time of the range of transfer runs. For example,
-     *                                `"2017-05-30T00:00:00+00:00"`.
-     * @param array     $optionalArgs {
-     *                                Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type string $parent
+     *          Required. Transfer configuration name in the form:
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+     *     @type Timestamp $startTime
+     *          Required. Start time of the range of transfer runs. For example,
+     *          `"2017-05-25T00:00:00+00:00"`.
+     *     @type Timestamp $endTime
+     *          Required. End time of the range of transfer runs. For example,
+     *          `"2017-05-30T00:00:00+00:00"`.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1053,12 +820,18 @@ class DataTransferServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function scheduleTransferRuns($parent, $startTime, $endTime, array $optionalArgs = [])
+    public function scheduleTransferRuns(array $optionalArgs = [])
     {
         $request = new ScheduleTransferRunsRequest();
-        $request->setParent($parent);
-        $request->setStartTime($startTime);
-        $request->setEndTime($endTime);
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['startTime'])) {
+            $request->setStartTime($optionalArgs['startTime']);
+        }
+        if (isset($optionalArgs['endTime'])) {
+            $request->setEndTime($optionalArgs['endTime']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'parent' => $request->getParent(),
@@ -1070,349 +843,6 @@ class DataTransferServiceGapicClient
         return $this->startCall(
             'ScheduleTransferRuns',
             ScheduleTransferRunsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Returns information about the particular transfer run.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $formattedName = $dataTransferServiceClient->projectRunName('[PROJECT]', '[TRANSFER_CONFIG]', '[RUN]');
-     *     $response = $dataTransferServiceClient->getTransferRun($formattedName);
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\BigQuery\DataTransfer\V1\TransferRun
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getTransferRun($name, array $optionalArgs = [])
-    {
-        $request = new GetTransferRunRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetTransferRun',
-            TransferRun::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Deletes the specified transfer run.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $formattedName = $dataTransferServiceClient->projectRunName('[PROJECT]', '[TRANSFER_CONFIG]', '[RUN]');
-     *     $dataTransferServiceClient->deleteTransferRun($formattedName);
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The field will contain name of the resource requested, for example:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteTransferRun($name, array $optionalArgs = [])
-    {
-        $request = new DeleteTransferRunRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteTransferRun',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Returns information about running and completed jobs.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $formattedParent = $dataTransferServiceClient->projectTransferConfigName('[PROJECT]', '[TRANSFER_CONFIG]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferRuns($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferRuns($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. Name of transfer configuration for which transfer runs should be retrieved.
-     *                             Format of transfer configuration resource name is:
-     *                             `projects/{project_id}/transferConfigs/{config_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int[] $states
-     *          When specified, only transfer runs with requested states are returned.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\TransferState}
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type int $runAttempt
-     *          Indicates how run attempts are to be pulled.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\ListTransferRunsRequest\RunAttempt}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listTransferRuns($parent, array $optionalArgs = [])
-    {
-        $request = new ListTransferRunsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['states'])) {
-            $request->setStates($optionalArgs['states']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['runAttempt'])) {
-            $request->setRunAttempt($optionalArgs['runAttempt']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListTransferRuns',
-            $optionalArgs,
-            ListTransferRunsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Returns user facing log messages for the data transfer run.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $formattedParent = $dataTransferServiceClient->projectRunName('[PROJECT]', '[TRANSFER_CONFIG]', '[RUN]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferLogs($formattedParent);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $dataTransferServiceClient->listTransferLogs($formattedParent);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $parent       Required. Transfer run name in the form:
-     *                             `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type int[] $messageTypes
-     *          Message types to return. If not populated - INFO, WARNING and ERROR
-     *          messages are returned.
-     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\TransferMessage\MessageSeverity}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listTransferLogs($parent, array $optionalArgs = [])
-    {
-        $request = new ListTransferLogsRequest();
-        $request->setParent($parent);
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['messageTypes'])) {
-            $request->setMessageTypes($optionalArgs['messageTypes']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'parent' => $request->getParent(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListTransferLogs',
-            $optionalArgs,
-            ListTransferLogsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Returns true if valid credentials exist for the given data source and
-     * requesting user.
-     * Some data sources doesn't support service account, so we need to talk to
-     * them on behalf of the end user. This API just checks whether we have OAuth
-     * token for the particular user, which is a pre-requisite before user can
-     * create a transfer config.
-     *
-     * Sample code:
-     * ```
-     * $dataTransferServiceClient = new DataTransferServiceClient();
-     * try {
-     *     $formattedName = $dataTransferServiceClient->projectDataSourceName('[PROJECT]', '[DATA_SOURCE]');
-     *     $response = $dataTransferServiceClient->checkValidCreds($formattedName);
-     * } finally {
-     *     $dataTransferServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The data source in the form:
-     *                             `projects/{project_id}/dataSources/{data_source_id}` or
-     *                             `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function checkValidCreds($name, array $optionalArgs = [])
-    {
-        $request = new CheckValidCredsRequest();
-        $request->setName($name);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CheckValidCreds',
-            CheckValidCredsResponse::class,
             $optionalArgs,
             $request
         )->wait();
@@ -1481,6 +911,327 @@ class DataTransferServiceGapicClient
         return $this->startCall(
             'StartManualTransferRuns',
             StartManualTransferRunsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns information about the particular transfer run.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $response = $dataTransferServiceClient->getTransferRun();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          Required. The field will contain name of the resource requested, for example:
+     *          `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\TransferRun
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getTransferRun(array $optionalArgs = [])
+    {
+        $request = new GetTransferRunRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetTransferRun',
+            TransferRun::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Deletes the specified transfer run.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $dataTransferServiceClient->deleteTransferRun();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          Required. The field will contain name of the resource requested, for example:
+     *          `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function deleteTransferRun(array $optionalArgs = [])
+    {
+        $request = new DeleteTransferRunRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'DeleteTransferRun',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns information about running and completed jobs.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $response = $dataTransferServiceClient->listTransferRuns();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $parent
+     *          Required. Name of transfer configuration for which transfer runs should be retrieved.
+     *          Format of transfer configuration resource name is:
+     *          `projects/{project_id}/transferConfigs/{config_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+     *     @type int[] $states
+     *          When specified, only transfer runs with requested states are returned.
+     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\TransferState}
+     *     @type string $pageToken
+     *          Pagination token, which can be used to request a specific page
+     *          of `ListTransferRunsRequest` list results. For multiple-page
+     *          results, `ListTransferRunsResponse` outputs
+     *          a `next_page` token, which can be used as the
+     *          `page_token` value to request the next page of list results.
+     *     @type int $pageSize
+     *          Page size. The default page size is the maximum value of 1000 results.
+     *     @type int $runAttempt
+     *          Indicates how run attempts are to be pulled.
+     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\ListTransferRunsRequest\RunAttempt}
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\ListTransferRunsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listTransferRuns(array $optionalArgs = [])
+    {
+        $request = new ListTransferRunsRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['states'])) {
+            $request->setStates($optionalArgs['states']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['runAttempt'])) {
+            $request->setRunAttempt($optionalArgs['runAttempt']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'ListTransferRuns',
+            ListTransferRunsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns user facing log messages for the data transfer run.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $response = $dataTransferServiceClient->listTransferLogs();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $parent
+     *          Required. Transfer run name in the form:
+     *          `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+     *          `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+     *     @type string $pageToken
+     *          Pagination token, which can be used to request a specific page
+     *          of `ListTransferLogsRequest` list results. For multiple-page
+     *          results, `ListTransferLogsResponse` outputs
+     *          a `next_page` token, which can be used as the
+     *          `page_token` value to request the next page of list results.
+     *     @type int $pageSize
+     *          Page size. The default page size is the maximum value of 1000 results.
+     *     @type int[] $messageTypes
+     *          Message types to return. If not populated - INFO, WARNING and ERROR
+     *          messages are returned.
+     *          For allowed values, use constants defined on {@see \Google\Cloud\BigQuery\DataTransfer\V1\TransferMessage\MessageSeverity}
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\ListTransferLogsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listTransferLogs(array $optionalArgs = [])
+    {
+        $request = new ListTransferLogsRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['messageTypes'])) {
+            $request->setMessageTypes($optionalArgs['messageTypes']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'ListTransferLogs',
+            ListTransferLogsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
+     *
+     * Sample code:
+     * ```
+     * $dataTransferServiceClient = new DataTransferServiceClient();
+     * try {
+     *     $response = $dataTransferServiceClient->checkValidCreds();
+     * } finally {
+     *     $dataTransferServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          Required. The data source in the form:
+     *          `projects/{project_id}/dataSources/{data_source_id}` or
+     *          `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\BigQuery\DataTransfer\V1\CheckValidCredsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function checkValidCreds(array $optionalArgs = [])
+    {
+        $request = new CheckValidCredsRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'CheckValidCreds',
+            CheckValidCredsResponse::class,
             $optionalArgs,
             $request
         )->wait();

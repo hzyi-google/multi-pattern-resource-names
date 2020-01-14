@@ -15,13 +15,7 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
-
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -30,18 +24,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
@@ -64,7 +52,6 @@ import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
-import com.google.cloud.bigquery.datatransfer.v1.TransferMessage;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.common.collect.ImmutableList;
@@ -113,8 +100,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings;
-  private final PagedCallSettings<
-          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+  private final UnaryCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesSettings;
   private final UnaryCallSettings<CreateTransferConfigRequest, TransferConfig>
       createTransferConfigSettings;
@@ -123,23 +109,20 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   private final UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings;
   private final UnaryCallSettings<GetTransferConfigRequest, TransferConfig>
       getTransferConfigSettings;
-  private final PagedCallSettings<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
+  private final UnaryCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsSettings;
   private final UnaryCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsSettings;
+  private final UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsSettings;
   private final UnaryCallSettings<GetTransferRunRequest, TransferRun> getTransferRunSettings;
   private final UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings;
-  private final PagedCallSettings<
-          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+  private final UnaryCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsSettings;
-  private final PagedCallSettings<
-          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+  private final UnaryCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsSettings;
   private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings;
-  private final UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsSettings;
 
   /** Returns the object with the settings used for calls to getDataSource. */
   public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
@@ -147,8 +130,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   }
 
   /** Returns the object with the settings used for calls to listDataSources. */
-  public PagedCallSettings<
-          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+  public UnaryCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesSettings() {
     return listDataSourcesSettings;
   }
@@ -176,8 +158,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   }
 
   /** Returns the object with the settings used for calls to listTransferConfigs. */
-  public PagedCallSettings<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
+  public UnaryCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsSettings() {
     return listTransferConfigsSettings;
   }
@@ -186,6 +167,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   public UnaryCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsSettings() {
     return scheduleTransferRunsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startManualTransferRuns. */
+  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsSettings() {
+    return startManualTransferRunsSettings;
   }
 
   /** Returns the object with the settings used for calls to getTransferRun. */
@@ -199,15 +186,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   }
 
   /** Returns the object with the settings used for calls to listTransferRuns. */
-  public PagedCallSettings<
-          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+  public UnaryCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsSettings() {
     return listTransferRunsSettings;
   }
 
   /** Returns the object with the settings used for calls to listTransferLogs. */
-  public PagedCallSettings<
-          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+  public UnaryCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsSettings() {
     return listTransferLogsSettings;
   }
@@ -216,12 +201,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings() {
     return checkValidCredsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to startManualTransferRuns. */
-  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsSettings() {
-    return startManualTransferRunsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -301,247 +280,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     getTransferConfigSettings = settingsBuilder.getTransferConfigSettings().build();
     listTransferConfigsSettings = settingsBuilder.listTransferConfigsSettings().build();
     scheduleTransferRunsSettings = settingsBuilder.scheduleTransferRunsSettings().build();
+    startManualTransferRunsSettings = settingsBuilder.startManualTransferRunsSettings().build();
     getTransferRunSettings = settingsBuilder.getTransferRunSettings().build();
     deleteTransferRunSettings = settingsBuilder.deleteTransferRunSettings().build();
     listTransferRunsSettings = settingsBuilder.listTransferRunsSettings().build();
     listTransferLogsSettings = settingsBuilder.listTransferLogsSettings().build();
     checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
-    startManualTransferRunsSettings = settingsBuilder.startManualTransferRunsSettings().build();
   }
-
-  private static final PagedListDescriptor<
-          ListDataSourcesRequest, ListDataSourcesResponse, DataSource>
-      LIST_DATA_SOURCES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDataSourcesRequest, ListDataSourcesResponse, DataSource>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDataSourcesRequest injectToken(
-                ListDataSourcesRequest payload, String token) {
-              return ListDataSourcesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDataSourcesRequest injectPageSize(
-                ListDataSourcesRequest payload, int pageSize) {
-              return ListDataSourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDataSourcesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDataSourcesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
-              return payload.getDataSourcesList() != null
-                  ? payload.getDataSourcesList()
-                  : ImmutableList.<DataSource>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
-      LIST_TRANSFER_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferConfigsRequest injectToken(
-                ListTransferConfigsRequest payload, String token) {
-              return ListTransferConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferConfigsRequest injectPageSize(
-                ListTransferConfigsRequest payload, int pageSize) {
-              return ListTransferConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferConfig> extractResources(ListTransferConfigsResponse payload) {
-              return payload.getTransferConfigsList() != null
-                  ? payload.getTransferConfigsList()
-                  : ImmutableList.<TransferConfig>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
-      LIST_TRANSFER_RUNS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferRunsRequest injectToken(
-                ListTransferRunsRequest payload, String token) {
-              return ListTransferRunsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferRunsRequest injectPageSize(
-                ListTransferRunsRequest payload, int pageSize) {
-              return ListTransferRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferRunsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferRunsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferRun> extractResources(ListTransferRunsResponse payload) {
-              return payload.getTransferRunsList() != null
-                  ? payload.getTransferRunsList()
-                  : ImmutableList.<TransferRun>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
-      LIST_TRANSFER_LOGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferLogsRequest injectToken(
-                ListTransferLogsRequest payload, String token) {
-              return ListTransferLogsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferLogsRequest injectPageSize(
-                ListTransferLogsRequest payload, int pageSize) {
-              return ListTransferLogsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferLogsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferLogsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferMessage> extractResources(ListTransferLogsResponse payload) {
-              return payload.getTransferMessagesList() != null
-                  ? payload.getTransferMessagesList()
-                  : ImmutableList.<TransferMessage>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
-      LIST_DATA_SOURCES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDataSourcesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> callable,
-                ListDataSourcesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDataSourcesResponse> futureResponse) {
-              PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> pageContext =
-                  PageContext.create(callable, LIST_DATA_SOURCES_PAGE_STR_DESC, request, context);
-              return ListDataSourcesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
-      LIST_TRANSFER_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferConfigsRequest, ListTransferConfigsResponse,
-              ListTransferConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse> callable,
-                ListTransferConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferConfigsResponse> futureResponse) {
-              PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListTransferConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
-      LIST_TRANSFER_RUNS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferRunsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse> callable,
-                ListTransferRunsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferRunsResponse> futureResponse) {
-              PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_RUNS_PAGE_STR_DESC, request, context);
-              return ListTransferRunsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
-      LIST_TRANSFER_LOGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferLogsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse> callable,
-                ListTransferLogsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferLogsResponse> futureResponse) {
-              PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_LOGS_PAGE_STR_DESC, request, context);
-              return ListTransferLogsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for DataTransferServiceStubSettings. */
   public static class Builder
@@ -549,8 +294,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings;
-    private final PagedCallSettings.Builder<
-            ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+    private final UnaryCallSettings.Builder<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesSettings;
     private final UnaryCallSettings.Builder<CreateTransferConfigRequest, TransferConfig>
         createTransferConfigSettings;
@@ -560,28 +304,24 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         deleteTransferConfigSettings;
     private final UnaryCallSettings.Builder<GetTransferConfigRequest, TransferConfig>
         getTransferConfigSettings;
-    private final PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
-            ListTransferConfigsPagedResponse>
+    private final UnaryCallSettings.Builder<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsSettings;
     private final UnaryCallSettings.Builder<
             ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsSettings;
+    private final UnaryCallSettings.Builder<
+            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsSettings;
     private final UnaryCallSettings.Builder<GetTransferRunRequest, TransferRun>
         getTransferRunSettings;
     private final UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty>
         deleteTransferRunSettings;
-    private final PagedCallSettings.Builder<
-            ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+    private final UnaryCallSettings.Builder<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsSettings;
-    private final PagedCallSettings.Builder<
-            ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+    private final UnaryCallSettings.Builder<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsSettings;
     private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings;
-    private final UnaryCallSettings.Builder<
-            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-        startManualTransferRunsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -626,7 +366,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       getDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listDataSourcesSettings = PagedCallSettings.newBuilder(LIST_DATA_SOURCES_PAGE_STR_FACT);
+      listDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -636,22 +376,21 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       getTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTransferConfigsSettings =
-          PagedCallSettings.newBuilder(LIST_TRANSFER_CONFIGS_PAGE_STR_FACT);
+      listTransferConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       scheduleTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      startManualTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTransferRunsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_RUNS_PAGE_STR_FACT);
+      listTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
+      listTransferLogsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      startManualTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -663,12 +402,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               getTransferConfigSettings,
               listTransferConfigsSettings,
               scheduleTransferRunsSettings,
+              startManualTransferRunsSettings,
               getTransferRunSettings,
               deleteTransferRunSettings,
               listTransferRunsSettings,
               listTransferLogsSettings,
-              checkValidCredsSettings,
-              startManualTransferRunsSettings);
+              checkValidCredsSettings);
 
       initDefaults(this);
     }
@@ -706,7 +445,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       builder
           .deleteTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -725,13 +464,18 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .startManualTransferRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getTransferRunSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteTransferRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -746,11 +490,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       builder
           .checkValidCredsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .startManualTransferRunsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -768,12 +507,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       getTransferConfigSettings = settings.getTransferConfigSettings.toBuilder();
       listTransferConfigsSettings = settings.listTransferConfigsSettings.toBuilder();
       scheduleTransferRunsSettings = settings.scheduleTransferRunsSettings.toBuilder();
+      startManualTransferRunsSettings = settings.startManualTransferRunsSettings.toBuilder();
       getTransferRunSettings = settings.getTransferRunSettings.toBuilder();
       deleteTransferRunSettings = settings.deleteTransferRunSettings.toBuilder();
       listTransferRunsSettings = settings.listTransferRunsSettings.toBuilder();
       listTransferLogsSettings = settings.listTransferLogsSettings.toBuilder();
       checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
-      startManualTransferRunsSettings = settings.startManualTransferRunsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -785,12 +524,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               getTransferConfigSettings,
               listTransferConfigsSettings,
               scheduleTransferRunsSettings,
+              startManualTransferRunsSettings,
               getTransferRunSettings,
               deleteTransferRunSettings,
               listTransferRunsSettings,
               listTransferLogsSettings,
-              checkValidCredsSettings,
-              startManualTransferRunsSettings);
+              checkValidCredsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -815,8 +554,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     }
 
     /** Returns the builder for the settings used for calls to listDataSources. */
-    public PagedCallSettings.Builder<
-            ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+    public UnaryCallSettings.Builder<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesSettings() {
       return listDataSourcesSettings;
     }
@@ -846,9 +584,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     }
 
     /** Returns the builder for the settings used for calls to listTransferConfigs. */
-    public PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
-            ListTransferConfigsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsSettings() {
       return listTransferConfigsSettings;
     }
@@ -857,6 +593,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     public UnaryCallSettings.Builder<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsSettings() {
       return scheduleTransferRunsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
+    public UnaryCallSettings.Builder<
+            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsSettings() {
+      return startManualTransferRunsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getTransferRun. */
@@ -870,15 +613,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     }
 
     /** Returns the builder for the settings used for calls to listTransferRuns. */
-    public PagedCallSettings.Builder<
-            ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsSettings() {
       return listTransferRunsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTransferLogs. */
-    public PagedCallSettings.Builder<
-            ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+    public UnaryCallSettings.Builder<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsSettings() {
       return listTransferLogsSettings;
     }
@@ -887,13 +628,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return checkValidCredsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
-    public UnaryCallSettings.Builder<
-            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-        startManualTransferRunsSettings() {
-      return startManualTransferRunsSettings;
     }
 
     @Override

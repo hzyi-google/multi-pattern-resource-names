@@ -15,11 +15,6 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
-
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -64,11 +59,6 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDataSourceCallable()");
   }
 
-  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
-      listDataSourcesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listDataSourcesPagedCallable()");
-  }
-
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
     throw new UnsupportedOperationException("Not implemented: listDataSourcesCallable()");
   }
@@ -89,11 +79,6 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getTransferConfigCallable()");
   }
 
-  public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
-      listTransferConfigsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listTransferConfigsPagedCallable()");
-  }
-
   public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTransferConfigsCallable()");
@@ -104,6 +89,11 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: scheduleTransferRunsCallable()");
   }
 
+  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    throw new UnsupportedOperationException("Not implemented: startManualTransferRunsCallable()");
+  }
+
   public UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable() {
     throw new UnsupportedOperationException("Not implemented: getTransferRunCallable()");
   }
@@ -112,19 +102,9 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteTransferRunCallable()");
   }
 
-  public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
-      listTransferRunsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listTransferRunsPagedCallable()");
-  }
-
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTransferRunsCallable()");
-  }
-
-  public UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
-      listTransferLogsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listTransferLogsPagedCallable()");
   }
 
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
@@ -134,11 +114,6 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
-  }
-
-  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsCallable() {
-    throw new UnsupportedOperationException("Not implemented: startManualTransferRunsCallable()");
   }
 
   @Override
