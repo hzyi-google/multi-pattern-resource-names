@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,11 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: scheduleTransferRunsCallable()");
   }
 
+  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsCallable() {
+    throw new UnsupportedOperationException("Not implemented: startManualTransferRunsCallable()");
+  }
+
   public UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable() {
     throw new UnsupportedOperationException("Not implemented: getTransferRunCallable()");
   }
@@ -134,11 +139,6 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
-  }
-
-  public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsCallable() {
-    throw new UnsupportedOperationException("Not implemented: startManualTransferRunsCallable()");
   }
 
   @Override

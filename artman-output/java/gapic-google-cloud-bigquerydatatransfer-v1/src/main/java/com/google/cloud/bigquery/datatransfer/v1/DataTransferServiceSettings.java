@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,12 @@ import javax.annotation.Generated;
  * <code>
  * DataTransferServiceSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceSettings.newBuilder();
- * dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataTransferServiceSettingsBuilder
+ *     .getDataSourceSettings()
+ *     .setRetrySettings(
+ *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataTransferServiceSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
  * </code>
  * </pre>
@@ -115,6 +119,12 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).scheduleTransferRunsSettings();
   }
 
+  /** Returns the object with the settings used for calls to startManualTransferRuns. */
+  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+      startManualTransferRunsSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getTransferRun. */
   public UnaryCallSettings<GetTransferRunRequest, TransferRun> getTransferRunSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).getTransferRunSettings();
@@ -143,12 +153,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to startManualTransferRuns. */
-  public UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-      startManualTransferRunsSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).startManualTransferRunsSettings();
   }
 
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
@@ -298,6 +302,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return getStubSettingsBuilder().scheduleTransferRunsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
+    public UnaryCallSettings.Builder<
+            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
+        startManualTransferRunsSettings() {
+      return getStubSettingsBuilder().startManualTransferRunsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getTransferRun. */
     public UnaryCallSettings.Builder<GetTransferRunRequest, TransferRun> getTransferRunSettings() {
       return getStubSettingsBuilder().getTransferRunSettings();
@@ -326,13 +337,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return getStubSettingsBuilder().checkValidCredsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to startManualTransferRuns. */
-    public UnaryCallSettings.Builder<
-            StartManualTransferRunsRequest, StartManualTransferRunsResponse>
-        startManualTransferRunsSettings() {
-      return getStubSettingsBuilder().startManualTransferRunsSettings();
     }
 
     @Override

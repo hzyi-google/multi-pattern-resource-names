@@ -13,6 +13,7 @@ public interface EmailPreferencesOrBuilder extends
    * </pre>
    *
    * <code>bool enable_failure_email = 1;</code>
+   * @return The enableFailureEmail.
    */
   boolean getEnableFailureEmail();
 }

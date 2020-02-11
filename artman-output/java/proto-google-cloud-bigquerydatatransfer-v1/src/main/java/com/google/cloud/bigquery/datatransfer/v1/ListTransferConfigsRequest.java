@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListTransferConfigsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -57,9 +64,9 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               dataSourceIds_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             dataSourceIds_.add(s);
             break;
@@ -90,7 +97,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -110,7 +117,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest.class, com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -121,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -142,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -165,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   * @return A list containing the dataSourceIds.
    */
   public com.google.protobuf.ProtocolStringList
       getDataSourceIdsList() {
@@ -176,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   * @return The count of dataSourceIds.
    */
   public int getDataSourceIdsCount() {
     return dataSourceIds_.size();
@@ -186,6 +196,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The dataSourceIds at the given index.
    */
   public java.lang.String getDataSourceIds(int index) {
     return dataSourceIds_.get(index);
@@ -196,6 +208,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dataSourceIds at the given index.
    */
   public com.google.protobuf.ByteString
       getDataSourceIdsBytes(int index) {
@@ -214,6 +228,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -237,6 +252,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -260,6 +276,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -502,7 +519,7 @@ private static final long serialVersionUID = 0L;
       parent_ = "";
 
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -534,16 +551,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest result = new com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.dataSourceIds_ = dataSourceIds_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -599,7 +614,7 @@ private static final long serialVersionUID = 0L;
       if (!other.dataSourceIds_.isEmpty()) {
         if (dataSourceIds_.isEmpty()) {
           dataSourceIds_ = other.dataSourceIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDataSourceIdsIsMutable();
           dataSourceIds_.addAll(other.dataSourceIds_);
@@ -652,6 +667,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -673,6 +689,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -695,6 +712,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -714,6 +733,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -729,6 +749,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -744,9 +766,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureDataSourceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = new com.google.protobuf.LazyStringArrayList(dataSourceIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -755,6 +777,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @return A list containing the dataSourceIds.
      */
     public com.google.protobuf.ProtocolStringList
         getDataSourceIdsList() {
@@ -766,6 +789,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @return The count of dataSourceIds.
      */
     public int getDataSourceIdsCount() {
       return dataSourceIds_.size();
@@ -776,6 +800,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param index The index of the element to return.
+     * @return The dataSourceIds at the given index.
      */
     public java.lang.String getDataSourceIds(int index) {
       return dataSourceIds_.get(index);
@@ -786,6 +812,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dataSourceIds at the given index.
      */
     public com.google.protobuf.ByteString
         getDataSourceIdsBytes(int index) {
@@ -797,6 +825,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The dataSourceIds to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceIds(
         int index, java.lang.String value) {
@@ -814,6 +845,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param value The dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDataSourceIds(
         java.lang.String value) {
@@ -831,6 +864,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param values The dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDataSourceIds(
         java.lang.Iterable<java.lang.String> values) {
@@ -846,10 +881,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDataSourceIds() {
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -859,6 +895,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string data_source_ids = 2;</code>
+     * @param value The bytes of the dataSourceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDataSourceIdsBytes(
         com.google.protobuf.ByteString value) {
@@ -883,6 +921,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -906,6 +945,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -930,6 +970,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -951,6 +993,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -968,6 +1011,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3;</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -988,6 +1033,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -998,6 +1044,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -1011,6 +1059,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       

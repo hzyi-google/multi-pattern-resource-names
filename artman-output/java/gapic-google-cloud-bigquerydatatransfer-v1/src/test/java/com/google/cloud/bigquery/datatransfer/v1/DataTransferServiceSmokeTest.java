@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ public class DataTransferServiceSmokeTest {
 
   public static void executeNoCatch(String projectId) throws Exception {
     try (DataTransferServiceClient client = DataTransferServiceClient.create()) {
-      ParentName parent = LocationName.of(projectId, "us-central1");
+      ProjectName parent = ProjectName.of(projectId);
 
       ListDataSourcesPagedResponse pagedResponse = client.listDataSources(parent);
     }

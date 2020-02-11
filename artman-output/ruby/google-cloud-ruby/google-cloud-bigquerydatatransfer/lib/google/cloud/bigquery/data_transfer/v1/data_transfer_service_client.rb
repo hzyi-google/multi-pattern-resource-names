@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -141,6 +141,8 @@ module Google
             end
 
             # Returns a fully-qualified location_data_source resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param location [String]
             # @param data_source [String]
@@ -154,6 +156,8 @@ module Google
             end
 
             # Returns a fully-qualified location_run resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param location [String]
             # @param transfer_config [String]
@@ -169,6 +173,8 @@ module Google
             end
 
             # Returns a fully-qualified location_transfer_config resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param location [String]
             # @param transfer_config [String]
@@ -191,6 +197,8 @@ module Google
             end
 
             # Returns a fully-qualified project_data_source resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param data_source [String]
             # @return [String]
@@ -202,6 +210,8 @@ module Google
             end
 
             # Returns a fully-qualified project_run resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param transfer_config [String]
             # @param run [String]
@@ -215,6 +225,8 @@ module Google
             end
 
             # Returns a fully-qualified project_transfer_config resource name string.
+            # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+            # This helper function will be deleted in the next major version.
             # @param project [String]
             # @param transfer_config [String]
             # @return [String]
@@ -392,6 +404,14 @@ module Google
                   {'parent' => request.parent}
                 end
               )
+              @start_manual_transfer_runs = Google::Gax.create_api_call(
+                @data_transfer_service_stub.method(:start_manual_transfer_runs),
+                defaults["start_manual_transfer_runs"],
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'parent' => request.parent}
+                end
+              )
               @get_transfer_run = Google::Gax.create_api_call(
                 @data_transfer_service_stub.method(:get_transfer_run),
                 defaults["get_transfer_run"],
@@ -430,14 +450,6 @@ module Google
                 exception_transformer: exception_transformer,
                 params_extractor: proc do |request|
                   {'name' => request.name}
-                end
-              )
-              @start_manual_transfer_runs = Google::Gax.create_api_call(
-                @data_transfer_service_stub.method(:start_manual_transfer_runs),
-                defaults["start_manual_transfer_runs"],
-                exception_transformer: exception_transformer,
-                params_extractor: proc do |request|
-                  {'parent' => request.parent}
                 end
               )
             end
@@ -872,6 +884,53 @@ module Google
               @schedule_transfer_runs.call(req, options, &block)
             end
 
+            # Start manual transfer runs to be executed now with schedule_time equal to
+            # current time. The transfer runs can be created for a time range where the
+            # run_time is between start_time (inclusive) and end_time (exclusive), or for
+            # a specific run_time.
+            #
+            # @param parent [String]
+            #   Transfer configuration name in the form:
+            #   `projects/{project_id}/transferConfigs/{config_id}` or
+            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+            # @param requested_time_range [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest::TimeRange | Hash]
+            #   Time range for the transfer runs that should be started.
+            #   A hash of the same form as `Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest::TimeRange`
+            #   can also be provided.
+            # @param requested_run_time [Google::Protobuf::Timestamp | Hash]
+            #   Specific run_time for a transfer run to be started. The
+            #   requested_run_time must not be in the future.
+            #   A hash of the same form as `Google::Protobuf::Timestamp`
+            #   can also be provided.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsResponse]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsResponse]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/bigquery/data_transfer"
+            #
+            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
+            #   response = data_transfer_client.start_manual_transfer_runs
+
+            def start_manual_transfer_runs \
+                parent: nil,
+                requested_time_range: nil,
+                requested_run_time: nil,
+                options: nil,
+                &block
+              req = {
+                parent: parent,
+                requested_time_range: requested_time_range,
+                requested_run_time: requested_run_time
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest)
+              @start_manual_transfer_runs.call(req, options, &block)
+            end
+
             # Returns information about the particular transfer run.
             #
             # @param name [String]
@@ -1097,53 +1156,6 @@ module Google
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::CheckValidCredsRequest)
               @check_valid_creds.call(req, options, &block)
-            end
-
-            # Start manual transfer runs to be executed now with schedule_time equal to
-            # current time. The transfer runs can be created for a time range where the
-            # run_time is between start_time (inclusive) and end_time (exclusive), or for
-            # a specific run_time.
-            #
-            # @param parent [String]
-            #   Transfer configuration name in the form:
-            #   `projects/{project_id}/transferConfigs/{config_id}` or
-            #   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-            # @param requested_time_range [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest::TimeRange | Hash]
-            #   Time range for the transfer runs that should be started.
-            #   A hash of the same form as `Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest::TimeRange`
-            #   can also be provided.
-            # @param requested_run_time [Google::Protobuf::Timestamp | Hash]
-            #   Specific run_time for a transfer run to be started. The
-            #   requested_run_time must not be in the future.
-            #   A hash of the same form as `Google::Protobuf::Timestamp`
-            #   can also be provided.
-            # @param options [Google::Gax::CallOptions]
-            #   Overrides the default settings for this call, e.g, timeout,
-            #   retries, etc.
-            # @yield [result, operation] Access the result along with the RPC operation
-            # @yieldparam result [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsResponse]
-            # @yieldparam operation [GRPC::ActiveCall::Operation]
-            # @return [Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsResponse]
-            # @raise [Google::Gax::GaxError] if the RPC is aborted.
-            # @example
-            #   require "google/cloud/bigquery/data_transfer"
-            #
-            #   data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-            #   response = data_transfer_client.start_manual_transfer_runs
-
-            def start_manual_transfer_runs \
-                parent: nil,
-                requested_time_range: nil,
-                requested_run_time: nil,
-                options: nil,
-                &block
-              req = {
-                parent: parent,
-                requested_time_range: requested_time_range,
-                requested_run_time: requested_run_time
-              }.delete_if { |_, v| v.nil? }
-              req = Google::Gax::to_proto(req, Google::Cloud::Bigquery::Datatransfer::V1::StartManualTransferRunsRequest)
-              @start_manual_transfer_runs.call(req, options, &block)
             end
           end
         end

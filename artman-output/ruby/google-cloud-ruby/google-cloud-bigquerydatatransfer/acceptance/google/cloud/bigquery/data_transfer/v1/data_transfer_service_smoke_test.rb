@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ describe "DataTransferServiceSmokeTest v1" do
     project_id = ENV["DATA_TRANSFER_TEST_PROJECT"].freeze
 
     data_transfer_client = Google::Cloud::Bigquery::DataTransfer.new(version: :v1)
-    formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.location_path(project_id, "us-central1")
+    formatted_parent = Google::Cloud::Bigquery::DataTransfer::V1::DataTransferServiceClient.project_path(project_id)
 
     # Iterate over all results.
     data_transfer_client.list_data_sources(formatted_parent).each do |element|

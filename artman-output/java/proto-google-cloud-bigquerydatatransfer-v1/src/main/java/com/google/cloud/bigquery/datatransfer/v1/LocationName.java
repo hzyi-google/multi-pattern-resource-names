@@ -22,9 +22,11 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class LocationName extends ParentName {
+public class LocationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");

@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ScheduleOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool disable_auto_scheduling = 3;</code>
+   * @return The disableAutoScheduling.
    */
   public boolean getDisableAutoScheduling() {
     return disableAutoScheduling_;
@@ -137,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -151,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -181,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -194,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -589,6 +600,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_auto_scheduling = 3;</code>
+     * @return The disableAutoScheduling.
      */
     public boolean getDisableAutoScheduling() {
       return disableAutoScheduling_;
@@ -602,6 +614,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_auto_scheduling = 3;</code>
+     * @param value The disableAutoScheduling to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableAutoScheduling(boolean value) {
       
@@ -618,6 +632,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_auto_scheduling = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisableAutoScheduling() {
       
@@ -639,6 +654,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -653,6 +669,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -827,6 +844,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -840,6 +858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {

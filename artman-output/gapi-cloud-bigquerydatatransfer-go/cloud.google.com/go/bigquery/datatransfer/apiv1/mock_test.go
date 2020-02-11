@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -846,6 +846,56 @@ func TestDataTransferServiceScheduleTransferRunsError(t *testing.T) {
 	}
 	_ = resp
 }
+func TestDataTransferServiceStartManualTransferRuns(t *testing.T) {
+	var expectedResponse *datatransferpb.StartManualTransferRunsResponse = &datatransferpb.StartManualTransferRunsResponse{}
+
+	mockDataTransfer.err = nil
+	mockDataTransfer.reqs = nil
+
+	mockDataTransfer.resps = append(mockDataTransfer.resps[:0], expectedResponse)
+
+	var request *datatransferpb.StartManualTransferRunsRequest = &datatransferpb.StartManualTransferRunsRequest{}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.StartManualTransferRuns(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockDataTransfer.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestDataTransferServiceStartManualTransferRunsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockDataTransfer.err = gstatus.Error(errCode, "test error")
+
+	var request *datatransferpb.StartManualTransferRunsRequest = &datatransferpb.StartManualTransferRunsRequest{}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.StartManualTransferRuns(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
 func TestDataTransferServiceGetTransferRun(t *testing.T) {
 	var name2 string = "name2-1052831874"
 	var destinationDatasetId string = "destinationDatasetId1541564179"
@@ -1164,56 +1214,6 @@ func TestDataTransferServiceCheckValidCredsError(t *testing.T) {
 	}
 
 	resp, err := c.CheckValidCreds(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestDataTransferServiceStartManualTransferRuns(t *testing.T) {
-	var expectedResponse *datatransferpb.StartManualTransferRunsResponse = &datatransferpb.StartManualTransferRunsResponse{}
-
-	mockDataTransfer.err = nil
-	mockDataTransfer.reqs = nil
-
-	mockDataTransfer.resps = append(mockDataTransfer.resps[:0], expectedResponse)
-
-	var request *datatransferpb.StartManualTransferRunsRequest = &datatransferpb.StartManualTransferRunsRequest{}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.StartManualTransferRuns(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockDataTransfer.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestDataTransferServiceStartManualTransferRunsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockDataTransfer.err = gstatus.Error(errCode, "test error")
-
-	var request *datatransferpb.StartManualTransferRunsRequest = &datatransferpb.StartManualTransferRunsRequest{}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.StartManualTransferRuns(context.Background(), request)
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)

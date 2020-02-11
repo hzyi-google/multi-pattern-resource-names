@@ -114,25 +114,15 @@ public final class TransferProto {
       "STREAMING\020\002\032\002\030\001*s\n\rTransferState\022\036\n\032TRAN" +
       "SFER_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\002\022\013\n" +
       "\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\r\n" +
-      "\tCANCELLED\020\006B\317\002\n)com.google.cloud.bigque" +
+      "\tCANCELLED\020\006B\347\001\n)com.google.cloud.bigque" +
       "ry.datatransfer.v1B\rTransferProtoP\001ZQgoo" +
       "gle.golang.org/genproto/googleapis/cloud" +
       "/bigquery/datatransfer/v1;datatransfer\242\002" +
       "\005GCBDT\252\002%Google.Cloud.BigQuery.DataTrans" +
       "fer.V1\312\002%Google\\Cloud\\BigQuery\\DataTrans" +
-      "fer\\V1\352Ae\n&bigquerydatatransfer.google.c" +
-      "om/Parent\022\022projects/{project}\022\'projects/" +
-      "{project}/locations/{location}b\006proto3"
+      "fer\\V1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.FieldBehaviorProto.getDescriptor(),
@@ -140,7 +130,7 @@ public final class TransferProto {
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_google_cloud_bigquery_datatransfer_v1_EmailPreferences_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_datatransfer_v1_EmailPreferences_fieldAccessorTable = new
@@ -175,7 +165,6 @@ public final class TransferProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

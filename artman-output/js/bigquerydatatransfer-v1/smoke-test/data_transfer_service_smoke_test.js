@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
 
 'use strict';
 
+const {describe, it} = require('mocha');
+
 describe('DataTransferServiceSmokeTest', () => {
   if (!process.env.GCLOUD_PROJECT) {
     throw new Error("Usage: GCLOUD_PROJECT=<project_id> node #{$0}");
@@ -28,7 +30,7 @@ describe('DataTransferServiceSmokeTest', () => {
     });
 
     // Iterate over all elements.
-    const formattedParent = client.locationPath(projectId, 'us-central1');
+    const formattedParent = client.projectPath(projectId);
 
     client.listDataSources({parent: formattedParent})
       .then(responses => {
@@ -49,7 +51,7 @@ describe('DataTransferServiceSmokeTest', () => {
     });
 
     // Or obtain the paged response.
-    const formattedParent = client.locationPath(projectId, 'us-central1');
+    const formattedParent = client.projectPath(projectId);
 
 
     const options = {autoPaginate: false};
@@ -81,7 +83,7 @@ describe('DataTransferServiceSmokeTest', () => {
       // optional auth parameters.
     });
 
-    const formattedParent = client.locationPath(projectId, 'us-central1');
+    const formattedParent = client.projectPath(projectId);
     client.listDataSourcesStream({parent: formattedParent})
       .on('data', element => {
         console.log(element);

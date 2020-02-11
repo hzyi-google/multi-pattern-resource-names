@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -188,6 +188,24 @@ func ExampleClient_ScheduleTransferRuns() {
 	_ = resp
 }
 
+func ExampleClient_StartManualTransferRuns() {
+	ctx := context.Background()
+	c, err := datatransfer.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &datatransferpb.StartManualTransferRunsRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.StartManualTransferRuns(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleClient_GetTransferRun() {
 	ctx := context.Background()
 	c, err := datatransfer.NewClient(ctx)
@@ -281,24 +299,6 @@ func ExampleClient_CheckValidCreds() {
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.CheckValidCreds(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
-}
-
-func ExampleClient_StartManualTransferRuns() {
-	ctx := context.Background()
-	c, err := datatransfer.NewClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &datatransferpb.StartManualTransferRunsRequest{
-		// TODO: Fill request struct fields.
-	}
-	resp, err := c.StartManualTransferRuns(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

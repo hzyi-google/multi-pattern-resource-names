@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListDataSourcesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -98,7 +105,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.class, com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATA_SOURCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> dataSources_;
   /**
@@ -165,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -187,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -447,7 +455,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse result = new com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (dataSourcesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dataSources_ = java.util.Collections.unmodifiableList(dataSources_);
@@ -458,7 +465,6 @@ private static final long serialVersionUID = 0L;
         result.dataSources_ = dataSourcesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -889,6 +895,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -911,6 +918,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -934,6 +942,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -954,6 +964,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -970,6 +981,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {

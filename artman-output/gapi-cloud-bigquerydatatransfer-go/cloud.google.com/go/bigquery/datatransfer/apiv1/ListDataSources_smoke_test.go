@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ func TestDataTransferServiceSmoke(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	var formattedParent string = fmt.Sprintf("projects/%s/locations/%s", projectId, "us-central1")
+	var formattedParent string = fmt.Sprintf("projects/%s", projectId)
 	var request = &datatransferpb.ListDataSourcesRequest{
 		Parent: formattedParent,
 	}

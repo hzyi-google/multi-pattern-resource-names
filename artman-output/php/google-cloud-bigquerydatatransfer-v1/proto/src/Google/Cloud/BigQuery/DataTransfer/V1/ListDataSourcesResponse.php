@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse</code>
  */
-final class ListDataSourcesResponse extends \Google\Protobuf\Internal\Message
+class ListDataSourcesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of supported data sources and their transfer settings.
@@ -29,7 +29,7 @@ final class ListDataSourcesResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

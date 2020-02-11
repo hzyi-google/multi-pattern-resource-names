@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest</code>
  */
-final class StartManualTransferRunsRequest extends \Google\Protobuf\Internal\Message
+class StartManualTransferRunsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Transfer configuration name in the form:
@@ -22,7 +22,7 @@ final class StartManualTransferRunsRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     protected $time;
 
     /**

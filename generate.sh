@@ -58,5 +58,5 @@ do
   done
 done
 
-rm -rf artman-output/*.desc
-rm -rf artman-output/*.yaml
+# rm -rf artman-output/*
+cp -r googleapis/artman-output .

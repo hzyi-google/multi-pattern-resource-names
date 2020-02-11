@@ -32,6 +32,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateTransferConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -44,7 +51,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -157,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -180,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the transferConfig field is set.
    */
   public boolean hasTransferConfig() {
     return transferConfig_ != null;
@@ -190,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The transferConfig.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
     return transferConfig_ == null ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance() : transferConfig_;
@@ -227,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   * @return The authorizationCode.
    */
   public java.lang.String getAuthorizationCode() {
     java.lang.Object ref = authorizationCode_;
@@ -260,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   * @return The bytes for authorizationCode.
    */
   public com.google.protobuf.ByteString
       getAuthorizationCodeBytes() {
@@ -288,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   * @return The versionInfo.
    */
   public java.lang.String getVersionInfo() {
     java.lang.Object ref = versionInfo_;
@@ -312,6 +325,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   * @return The bytes for versionInfo.
    */
   public com.google.protobuf.ByteString
       getVersionInfoBytes() {
@@ -338,6 +352,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   * @return The serviceAccountName.
    */
   public java.lang.String getServiceAccountName() {
     java.lang.Object ref = serviceAccountName_;
@@ -360,6 +375,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   * @return The bytes for serviceAccountName.
    */
   public com.google.protobuf.ByteString
       getServiceAccountNameBytes() {
@@ -777,6 +793,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -799,6 +816,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -822,6 +840,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -842,6 +862,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -858,6 +879,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -880,6 +903,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the transferConfig field is set.
      */
     public boolean hasTransferConfig() {
       return transferConfigBuilder_ != null || transferConfig_ != null;
@@ -890,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The transferConfig.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -1045,6 +1070,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     * @return The authorizationCode.
      */
     public java.lang.String getAuthorizationCode() {
       java.lang.Object ref = authorizationCode_;
@@ -1078,6 +1104,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     * @return The bytes for authorizationCode.
      */
     public com.google.protobuf.ByteString
         getAuthorizationCodeBytes() {
@@ -1112,6 +1139,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     * @param value The authorizationCode to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationCode(
         java.lang.String value) {
@@ -1143,6 +1172,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAuthorizationCode() {
       
@@ -1170,6 +1200,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authorization_code = 3;</code>
+     * @param value The bytes for authorizationCode to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -1195,6 +1227,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     * @return The versionInfo.
      */
     public java.lang.String getVersionInfo() {
       java.lang.Object ref = versionInfo_;
@@ -1219,6 +1252,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     * @return The bytes for versionInfo.
      */
     public com.google.protobuf.ByteString
         getVersionInfoBytes() {
@@ -1244,6 +1278,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     * @param value The versionInfo to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionInfo(
         java.lang.String value) {
@@ -1266,6 +1302,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearVersionInfo() {
       
@@ -1284,6 +1321,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string version_info = 5;</code>
+     * @param value The bytes for versionInfo to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionInfoBytes(
         com.google.protobuf.ByteString value) {
@@ -1307,6 +1346,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     * @return The serviceAccountName.
      */
     public java.lang.String getServiceAccountName() {
       java.lang.Object ref = serviceAccountName_;
@@ -1329,6 +1369,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     * @return The bytes for serviceAccountName.
      */
     public com.google.protobuf.ByteString
         getServiceAccountNameBytes() {
@@ -1352,6 +1393,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     * @param value The serviceAccountName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountName(
         java.lang.String value) {
@@ -1372,6 +1415,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountName() {
       
@@ -1388,6 +1432,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
+     * @param value The bytes for serviceAccountName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountNameBytes(
         com.google.protobuf.ByteString value) {

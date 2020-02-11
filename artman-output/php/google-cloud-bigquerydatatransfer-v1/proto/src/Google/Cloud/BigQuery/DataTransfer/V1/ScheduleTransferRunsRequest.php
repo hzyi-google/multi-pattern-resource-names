@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest</code>
  */
-final class ScheduleTransferRunsRequest extends \Google\Protobuf\Internal\Message
+class ScheduleTransferRunsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Transfer configuration name in the form:
@@ -22,21 +22,21 @@ final class ScheduleTransferRunsRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $start_time = null;
+    protected $start_time = null;
     /**
      * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $end_time = null;
+    protected $end_time = null;
 
     /**
      * Constructor.
