@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CloudStorageOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -69,9 +76,9 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             fileTypes_.add(rawValue);
             break;
@@ -81,9 +88,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               fileTypes_.add(rawValue);
             }
@@ -121,7 +128,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -208,6 +215,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -215,6 +224,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static SampleMethod forNumber(int value) {
       switch (value) {
         case 0: return SAMPLE_METHOD_UNSPECIFIED;
@@ -289,6 +302,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The url.
      */
     java.lang.String getUrl();
     /**
@@ -304,6 +318,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The bytes for url.
      */
     com.google.protobuf.ByteString
         getUrlBytes();
@@ -315,6 +330,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+     * @return Whether the regexFileSet field is set.
      */
     boolean hasRegexFileSet();
     /**
@@ -324,6 +340,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+     * @return The regexFileSet.
      */
     com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet();
     /**
@@ -357,6 +374,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FileSet();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -369,7 +393,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -446,6 +469,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -472,6 +496,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString
         getUrlBytes() {
@@ -496,6 +521,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+     * @return Whether the regexFileSet field is set.
      */
     public boolean hasRegexFileSet() {
       return regexFileSet_ != null;
@@ -507,6 +533,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+     * @return The regexFileSet.
      */
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet() {
       return regexFileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance() : regexFileSet_;
@@ -873,6 +900,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string url = 1;</code>
+       * @return The url.
        */
       public java.lang.String getUrl() {
         java.lang.Object ref = url_;
@@ -899,6 +927,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string url = 1;</code>
+       * @return The bytes for url.
        */
       public com.google.protobuf.ByteString
           getUrlBytes() {
@@ -926,6 +955,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string url = 1;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
        */
       public Builder setUrl(
           java.lang.String value) {
@@ -950,6 +981,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string url = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUrl() {
         
@@ -970,6 +1002,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string url = 1;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
        */
       public Builder setUrlBytes(
           com.google.protobuf.ByteString value) {
@@ -993,6 +1027,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+       * @return Whether the regexFileSet field is set.
        */
       public boolean hasRegexFileSet() {
         return regexFileSetBuilder_ != null || regexFileSet_ != null;
@@ -1004,6 +1039,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
+       * @return The regexFileSet.
        */
       public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet() {
         if (regexFileSetBuilder_ == null) {
@@ -1197,7 +1233,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int FILE_SET_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStorageOptions.FileSet fileSet_;
   /**
@@ -1206,6 +1241,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+   * @return Whether the fileSet field is set.
    */
   public boolean hasFileSet() {
     return fileSet_ != null;
@@ -1216,6 +1252,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+   * @return The fileSet.
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
     return fileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance() : fileSet_;
@@ -1241,6 +1278,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
+   * @return The bytesLimitPerFile.
    */
   public long getBytesLimitPerFile() {
     return bytesLimitPerFile_;
@@ -1257,6 +1295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 bytes_limit_per_file_percent = 8;</code>
+   * @return The bytesLimitPerFilePercent.
    */
   public int getBytesLimitPerFilePercent() {
     return bytesLimitPerFilePercent_;
@@ -1283,6 +1322,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   * @return A list containing the fileTypes.
    */
   public java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -1297,6 +1337,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   * @return The count of fileTypes.
    */
   public int getFileTypesCount() {
     return fileTypes_.size();
@@ -1310,6 +1351,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   * @param index The index of the element to return.
+   * @return The fileTypes at the given index.
    */
   public com.google.privacy.dlp.v2.FileType getFileTypes(int index) {
     return fileTypes_converter_.convert(fileTypes_.get(index));
@@ -1323,6 +1366,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   * @return A list containing the enum numeric values on the wire for fileTypes.
    */
   public java.util.List<java.lang.Integer>
   getFileTypesValueList() {
@@ -1337,6 +1381,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of fileTypes at the given index.
    */
   public int getFileTypesValue(int index) {
     return fileTypes_.get(index);
@@ -1347,12 +1393,14 @@ private static final long serialVersionUID = 0L;
   private int sampleMethod_;
   /**
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   * @return The enum numeric value on the wire for sampleMethod.
    */
   public int getSampleMethodValue() {
     return sampleMethod_;
   }
   /**
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   * @return The sampleMethod.
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
     @SuppressWarnings("deprecation")
@@ -1370,6 +1418,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 files_limit_percent = 7;</code>
+   * @return The filesLimitPercent.
    */
   public int getFilesLimitPercent() {
     return filesLimitPercent_;
@@ -1658,7 +1707,7 @@ private static final long serialVersionUID = 0L;
       bytesLimitPerFilePercent_ = 0;
 
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       sampleMethod_ = 0;
 
       filesLimitPercent_ = 0;
@@ -1690,7 +1739,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CloudStorageOptions buildPartial() {
       com.google.privacy.dlp.v2.CloudStorageOptions result = new com.google.privacy.dlp.v2.CloudStorageOptions(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fileSetBuilder_ == null) {
         result.fileSet_ = fileSet_;
       } else {
@@ -1698,14 +1746,13 @@ private static final long serialVersionUID = 0L;
       }
       result.bytesLimitPerFile_ = bytesLimitPerFile_;
       result.bytesLimitPerFilePercent_ = bytesLimitPerFilePercent_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fileTypes_ = fileTypes_;
       result.sampleMethod_ = sampleMethod_;
       result.filesLimitPercent_ = filesLimitPercent_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1766,7 +1813,7 @@ private static final long serialVersionUID = 0L;
       if (!other.fileTypes_.isEmpty()) {
         if (fileTypes_.isEmpty()) {
           fileTypes_ = other.fileTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFileTypesIsMutable();
           fileTypes_.addAll(other.fileTypes_);
@@ -1818,6 +1865,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+     * @return Whether the fileSet field is set.
      */
     public boolean hasFileSet() {
       return fileSetBuilder_ != null || fileSet_ != null;
@@ -1828,6 +1876,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
+     * @return The fileSet.
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
       if (fileSetBuilder_ == null) {
@@ -1971,6 +2020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
+     * @return The bytesLimitPerFile.
      */
     public long getBytesLimitPerFile() {
       return bytesLimitPerFile_;
@@ -1983,6 +2033,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
+     * @param value The bytesLimitPerFile to set.
+     * @return This builder for chaining.
      */
     public Builder setBytesLimitPerFile(long value) {
       
@@ -1998,6 +2050,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBytesLimitPerFile() {
       
@@ -2016,6 +2069,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     * @return The bytesLimitPerFilePercent.
      */
     public int getBytesLimitPerFilePercent() {
       return bytesLimitPerFilePercent_;
@@ -2029,6 +2083,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     * @param value The bytesLimitPerFilePercent to set.
+     * @return This builder for chaining.
      */
     public Builder setBytesLimitPerFilePercent(int value) {
       
@@ -2045,6 +2101,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBytesLimitPerFilePercent() {
       
@@ -2056,9 +2113,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> fileTypes_ =
       java.util.Collections.emptyList();
     private void ensureFileTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = new java.util.ArrayList<java.lang.Integer>(fileTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2070,6 +2127,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @return A list containing the fileTypes.
      */
     public java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -2084,6 +2142,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @return The count of fileTypes.
      */
     public int getFileTypesCount() {
       return fileTypes_.size();
@@ -2097,6 +2156,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param index The index of the element to return.
+     * @return The fileTypes at the given index.
      */
     public com.google.privacy.dlp.v2.FileType getFileTypes(int index) {
       return fileTypes_converter_.convert(fileTypes_.get(index));
@@ -2110,6 +2171,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The fileTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setFileTypes(
         int index, com.google.privacy.dlp.v2.FileType value) {
@@ -2130,6 +2194,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param value The fileTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addFileTypes(com.google.privacy.dlp.v2.FileType value) {
       if (value == null) {
@@ -2149,6 +2215,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param values The fileTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFileTypes(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.FileType> values) {
@@ -2168,10 +2236,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileTypes() {
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2184,6 +2253,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @return A list containing the enum numeric values on the wire for fileTypes.
      */
     public java.util.List<java.lang.Integer>
     getFileTypesValueList() {
@@ -2198,6 +2268,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fileTypes at the given index.
      */
     public int getFileTypesValue(int index) {
       return fileTypes_.get(index);
@@ -2211,6 +2283,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fileTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setFileTypesValue(
         int index, int value) {
@@ -2228,6 +2303,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param value The enum numeric value on the wire for fileTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addFileTypesValue(int value) {
       ensureFileTypesIsMutable();
@@ -2244,6 +2321,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
+     * @param values The enum numeric values on the wire for fileTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFileTypesValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -2258,12 +2337,15 @@ private static final long serialVersionUID = 0L;
     private int sampleMethod_ = 0;
     /**
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     * @return The enum numeric value on the wire for sampleMethod.
      */
     public int getSampleMethodValue() {
       return sampleMethod_;
     }
     /**
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     * @param value The enum numeric value on the wire for sampleMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleMethodValue(int value) {
       sampleMethod_ = value;
@@ -2272,6 +2354,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     * @return The sampleMethod.
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
       @SuppressWarnings("deprecation")
@@ -2280,6 +2363,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     * @param value The sampleMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleMethod(com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod value) {
       if (value == null) {
@@ -2292,6 +2377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSampleMethod() {
       
@@ -2309,6 +2395,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 files_limit_percent = 7;</code>
+     * @return The filesLimitPercent.
      */
     public int getFilesLimitPercent() {
       return filesLimitPercent_;
@@ -2321,6 +2408,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 files_limit_percent = 7;</code>
+     * @param value The filesLimitPercent to set.
+     * @return This builder for chaining.
      */
     public Builder setFilesLimitPercent(int value) {
       
@@ -2336,6 +2425,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 files_limit_percent = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilesLimitPercent() {
       

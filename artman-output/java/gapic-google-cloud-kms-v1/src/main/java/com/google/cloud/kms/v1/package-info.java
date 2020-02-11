@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@
  * following objects:
  *
  * <p>&#42; [KeyRing][google.cloud.kms.v1.KeyRing] &#42; [CryptoKey][google.cloud.kms.v1.CryptoKey]
- * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] &#42;
+ * [ImportJob][google.cloud.kms.v1.ImportJob]
  *
  * <p>If you are using manual gRPC libraries, see [Using gRPC with Cloud
  * KMS](https://cloud.google.com/kms/docs/grpc).

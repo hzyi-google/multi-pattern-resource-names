@@ -13,25 +13,25 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.UpdateFindingRequest</code>
  */
-final class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
+class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $finding = null;
+    protected $finding = null;
     /**
      * The FieldMask to use when updating the finding resource. This field should
      * not be specified when creating a finding.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.
@@ -40,7 +40,7 @@ final class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Securitycenter\V1beta1\Finding $finding
-     *           The finding resource to update or create if it does not already exist.
+     *           Required. The finding resource to update or create if it does not already exist.
      *           parent, security_marks, and update_time will be ignored.
      *           In the case of creation, the finding id portion of the name must
      *           alphanumeric and less than or equal to 32 characters and greater than 0
@@ -56,13 +56,13 @@ final class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Securitycenter\V1beta1\Finding
      */
     public function getFinding()
@@ -71,13 +71,13 @@ final class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The finding resource to update or create if it does not already exist.
+     * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Securitycenter\V1beta1\Finding $var
      * @return $this
      */

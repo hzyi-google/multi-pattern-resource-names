@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.GetProfileRequest</code>
  */
-final class GetProfileRequest extends \Google\Protobuf\Internal\Message
+class GetProfileRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Resource name of the profile to get.
@@ -21,9 +21,9 @@ final class GetProfileRequest extends \Google\Protobuf\Internal\Message
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
      * example, "projects/foo/tenants/bar/profiles/baz".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -49,7 +49,7 @@ final class GetProfileRequest extends \Google\Protobuf\Internal\Message
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
      * example, "projects/foo/tenants/bar/profiles/baz".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -63,7 +63,7 @@ final class GetProfileRequest extends \Google\Protobuf\Internal\Message
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
      * example, "projects/foo/tenants/bar/profiles/baz".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

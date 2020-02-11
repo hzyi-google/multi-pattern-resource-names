@@ -34,6 +34,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Finding();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -94,10 +101,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               sourceProperties_ = com.google.protobuf.MapField.newMapField(
                   SourcePropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
             sourceProperties__ = input.readMessage(
@@ -262,6 +269,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -269,6 +278,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0: return STATE_UNSPECIFIED;
@@ -326,7 +339,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.State)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -338,6 +350,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -360,6 +373,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -387,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 2;</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -410,6 +425,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 2;</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -438,6 +454,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string resource_name = 3;</code>
+   * @return The resourceName.
    */
   public java.lang.String getResourceName() {
     java.lang.Object ref = resourceName_;
@@ -462,6 +479,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string resource_name = 3;</code>
+   * @return The bytes for resourceName.
    */
   public com.google.protobuf.ByteString
       getResourceNameBytes() {
@@ -485,6 +503,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -495,6 +514,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+   * @return The state.
    */
   public com.google.cloud.securitycenter.v1.Finding.State getState() {
     @SuppressWarnings("deprecation")
@@ -512,6 +532,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string category = 5;</code>
+   * @return The category.
    */
   public java.lang.String getCategory() {
     java.lang.Object ref = category_;
@@ -533,6 +554,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string category = 5;</code>
+   * @return The bytes for category.
    */
   public com.google.protobuf.ByteString
       getCategoryBytes() {
@@ -558,6 +580,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_uri = 6;</code>
+   * @return The externalUri.
    */
   public java.lang.String getExternalUri() {
     java.lang.Object ref = externalUri_;
@@ -579,6 +602,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_uri = 6;</code>
+   * @return The bytes for externalUri.
    */
   public com.google.protobuf.ByteString
       getExternalUriBytes() {
@@ -708,6 +732,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the securityMarks field is set.
    */
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
@@ -720,6 +745,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The securityMarks.
    */
   public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null ? com.google.cloud.securitycenter.v1.SecurityMarks.getDefaultInstance() : securityMarks_;
@@ -747,6 +773,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
+   * @return Whether the eventTime field is set.
    */
   public boolean hasEventTime() {
     return eventTime_ != null;
@@ -759,6 +786,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
+   * @return The eventTime.
    */
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
@@ -784,6 +812,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -794,6 +823,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1210,7 +1240,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.securitycenter.v1.Finding buildPartial() {
       com.google.cloud.securitycenter.v1.Finding result = new com.google.cloud.securitycenter.v1.Finding(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.parent_ = parent_;
       result.resourceName_ = resourceName_;
@@ -1234,7 +1263,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1357,6 +1385,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1379,6 +1408,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1402,6 +1432,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1422,6 +1454,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1438,6 +1471,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1462,6 +1497,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 2;</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1485,6 +1521,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 2;</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -1509,6 +1546,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 2;</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -1530,6 +1569,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -1547,6 +1587,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 2;</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -1572,6 +1614,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 3;</code>
+     * @return The resourceName.
      */
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
@@ -1596,6 +1639,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 3;</code>
+     * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString
         getResourceNameBytes() {
@@ -1621,6 +1665,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 3;</code>
+     * @param value The resourceName to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceName(
         java.lang.String value) {
@@ -1643,6 +1689,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResourceName() {
       
@@ -1661,6 +1708,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 3;</code>
+     * @param value The bytes for resourceName to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1681,6 +1730,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1691,6 +1741,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1703,6 +1755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+     * @return The state.
      */
     public com.google.cloud.securitycenter.v1.Finding.State getState() {
       @SuppressWarnings("deprecation")
@@ -1715,6 +1768,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.securitycenter.v1.Finding.State value) {
       if (value == null) {
@@ -1731,6 +1786,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -1748,6 +1804,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string category = 5;</code>
+     * @return The category.
      */
     public java.lang.String getCategory() {
       java.lang.Object ref = category_;
@@ -1769,6 +1826,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string category = 5;</code>
+     * @return The bytes for category.
      */
     public com.google.protobuf.ByteString
         getCategoryBytes() {
@@ -1791,6 +1849,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string category = 5;</code>
+     * @param value The category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategory(
         java.lang.String value) {
@@ -1810,6 +1870,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string category = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCategory() {
       
@@ -1825,6 +1886,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string category = 5;</code>
+     * @param value The bytes for category to set.
+     * @return This builder for chaining.
      */
     public Builder setCategoryBytes(
         com.google.protobuf.ByteString value) {
@@ -1847,6 +1910,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_uri = 6;</code>
+     * @return The externalUri.
      */
     public java.lang.String getExternalUri() {
       java.lang.Object ref = externalUri_;
@@ -1868,6 +1932,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_uri = 6;</code>
+     * @return The bytes for externalUri.
      */
     public com.google.protobuf.ByteString
         getExternalUriBytes() {
@@ -1890,6 +1955,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_uri = 6;</code>
+     * @param value The externalUri to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalUri(
         java.lang.String value) {
@@ -1909,6 +1976,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_uri = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearExternalUri() {
       
@@ -1924,6 +1992,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_uri = 6;</code>
+     * @param value The bytes for externalUri to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2120,6 +2190,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the securityMarks field is set.
      */
     public boolean hasSecurityMarks() {
       return securityMarksBuilder_ != null || securityMarks_ != null;
@@ -2132,6 +2203,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The securityMarks.
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -2291,6 +2363,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
+     * @return Whether the eventTime field is set.
      */
     public boolean hasEventTime() {
       return eventTimeBuilder_ != null || eventTime_ != null;
@@ -2303,6 +2376,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
+     * @return The eventTime.
      */
     public com.google.protobuf.Timestamp getEventTime() {
       if (eventTimeBuilder_ == null) {
@@ -2460,6 +2534,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2470,6 +2545,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {

@@ -13,30 +13,30 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListJobTriggersRequest</code>
  */
-final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
+class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example `projects/my-project-id`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -51,14 +51,14 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string order_by = 4;</code>
      */
-    private $order_by = '';
+    protected $order_by = '';
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -75,14 +75,14 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 5;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * The geographic location where job triggers will be retrieved from.
      * Use `-` for all locations. Reserved for future extensions.
      *
      * Generated from protobuf field <code>string location_id = 7;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -93,13 +93,13 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The parent resource name, for example `projects/my-project-id`.
      *     @type string $page_token
-     *           Optional page token to continue retrieval. Comes from previous call
+     *           Page token to continue retrieval. Comes from previous call
      *           to ListJobTriggers. `order_by` field must not
      *           change for subsequent calls.
      *     @type int $page_size
-     *           Optional size of the page, can be limited by a server.
+     *           Size of the page, can be limited by a server.
      *     @type string $order_by
-     *           Optional comma separated list of triggeredJob fields to order by,
+     *           Comma separated list of triggeredJob fields to order by,
      *           followed by `asc` or `desc` postfix. This list is case-insensitive,
      *           default sorting order is ascending, redundant space characters are
      *           insignificant.
@@ -112,12 +112,12 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
      *           - `display_name`: corresponds to JobTrigger's display name.
      *           - `status`: corresponds to JobTrigger's status.
      *     @type string $filter
-     *           Optional. Allows filtering.
+     *           Allows filtering.
      *           Supported syntax:
      *           * Filter expressions are made up of one or more restrictions.
      *           * Restrictions can be combined by `AND` or `OR` logical operators. A
      *           sequence of restrictions implicitly uses `AND`.
-     *           * A restriction has the form of `<field> <operator> <value>`.
+     *           * A restriction has the form of `{field} {operator} {value}`.
      *           * Supported fields/values for inspect jobs:
      *               - `status` - HEALTHY|PAUSED|CANCELLED
      *               - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -168,7 +168,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      *
@@ -181,7 +181,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      *
@@ -198,7 +198,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      * @return int
@@ -209,7 +209,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      * @param int $var
@@ -224,7 +224,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -246,7 +246,7 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -272,12 +272,12 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -301,12 +301,12 @@ final class ListJobTriggersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY

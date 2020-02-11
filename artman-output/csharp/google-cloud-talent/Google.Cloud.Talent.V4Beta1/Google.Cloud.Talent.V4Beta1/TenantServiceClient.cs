@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -143,13 +143,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <list>
         /// <item><description>No status codes</description></item>
         /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
+        /// Default RPC expiration is 300000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings CreateTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: NonIdempotentRetryFilter
             )));
 
@@ -173,13 +173,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
+        /// Default RPC expiration is 300000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings GetTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: IdempotentRetryFilter
             )));
 
@@ -202,13 +202,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <list>
         /// <item><description>No status codes</description></item>
         /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
+        /// Default RPC expiration is 300000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings UpdateTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: NonIdempotentRetryFilter
             )));
 
@@ -232,13 +232,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
+        /// Default RPC expiration is 300000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings DeleteTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: IdempotentRetryFilter
             )));
 
@@ -262,13 +262,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
+        /// Default RPC expiration is 300000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings ListTenantsSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: IdempotentRetryFilter
             )));
 
@@ -895,8 +895,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// Updates specified tenant.
         /// </summary>
         /// <param name="tenant">
-        /// Required. The tenant resource to replace the current resource in the
-        /// system.
+        /// Required. The tenant resource to replace the current resource in the system.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -917,8 +916,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// Updates specified tenant.
         /// </summary>
         /// <param name="tenant">
-        /// Required. The tenant resource to replace the current resource in the
-        /// system.
+        /// Required. The tenant resource to replace the current resource in the system.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -936,8 +934,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// Updates specified tenant.
         /// </summary>
         /// <param name="tenant">
-        /// Required. The tenant resource to replace the current resource in the
-        /// system.
+        /// Required. The tenant resource to replace the current resource in the system.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.

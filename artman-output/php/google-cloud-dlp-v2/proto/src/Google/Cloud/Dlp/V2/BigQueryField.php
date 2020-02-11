@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.BigQueryField</code>
  */
-final class BigQueryField extends \Google\Protobuf\Internal\Message
+class BigQueryField extends \Google\Protobuf\Internal\Message
 {
     /**
      * Source table of the field.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
      */
-    private $table = null;
+    protected $table = null;
     /**
      * Designated field in the BigQuery table.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
      */
-    private $field = null;
+    protected $field = null;
 
     /**
      * Constructor.

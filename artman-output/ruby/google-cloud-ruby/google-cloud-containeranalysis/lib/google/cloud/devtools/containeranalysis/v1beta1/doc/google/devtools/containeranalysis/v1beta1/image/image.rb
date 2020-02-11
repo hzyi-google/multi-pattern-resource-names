@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ module Grafeas
       # Layer holds metadata specific to a layer of a Docker image.
       # @!attribute [rw] directive
       #   @return [Grafeas::V1beta1::Image::Layer::Directive]
-      #     The recovered Dockerfile directive used to construct this layer.
+      #     Required. The recovered Dockerfile directive used to construct this layer.
       # @!attribute [rw] arguments
       #   @return [String]
       #     The recovered arguments to the Dockerfile directive.
@@ -28,55 +28,55 @@ module Grafeas
           # Default value for unsupported/missing directive.
           DIRECTIVE_UNSPECIFIED = 0
 
-          # https://docs.docker.com/reference/builder/#maintainer
+          # https://docs.docker.com/engine/reference/builder/
           MAINTAINER = 1
 
-          # https://docs.docker.com/reference/builder/#run
+          # https://docs.docker.com/engine/reference/builder/
           RUN = 2
 
-          # https://docs.docker.com/reference/builder/#cmd
+          # https://docs.docker.com/engine/reference/builder/
           CMD = 3
 
-          # https://docs.docker.com/reference/builder/#label
+          # https://docs.docker.com/engine/reference/builder/
           LABEL = 4
 
-          # https://docs.docker.com/reference/builder/#expose
+          # https://docs.docker.com/engine/reference/builder/
           EXPOSE = 5
 
-          # https://docs.docker.com/reference/builder/#env
+          # https://docs.docker.com/engine/reference/builder/
           ENV = 6
 
-          # https://docs.docker.com/reference/builder/#add
+          # https://docs.docker.com/engine/reference/builder/
           ADD = 7
 
-          # https://docs.docker.com/reference/builder/#copy
+          # https://docs.docker.com/engine/reference/builder/
           COPY = 8
 
-          # https://docs.docker.com/reference/builder/#entrypoint
+          # https://docs.docker.com/engine/reference/builder/
           ENTRYPOINT = 9
 
-          # https://docs.docker.com/reference/builder/#volume
+          # https://docs.docker.com/engine/reference/builder/
           VOLUME = 10
 
-          # https://docs.docker.com/reference/builder/#user
+          # https://docs.docker.com/engine/reference/builder/
           USER = 11
 
-          # https://docs.docker.com/reference/builder/#workdir
+          # https://docs.docker.com/engine/reference/builder/
           WORKDIR = 12
 
-          # https://docs.docker.com/reference/builder/#arg
+          # https://docs.docker.com/engine/reference/builder/
           ARG = 13
 
-          # https://docs.docker.com/reference/builder/#onbuild
+          # https://docs.docker.com/engine/reference/builder/
           ONBUILD = 14
 
-          # https://docs.docker.com/reference/builder/#stopsignal
+          # https://docs.docker.com/engine/reference/builder/
           STOPSIGNAL = 15
 
-          # https://docs.docker.com/reference/builder/#healthcheck
+          # https://docs.docker.com/engine/reference/builder/
           HEALTHCHECK = 16
 
-          # https://docs.docker.com/reference/builder/#shell
+          # https://docs.docker.com/engine/reference/builder/
           SHELL = 17
         end
       end
@@ -84,10 +84,11 @@ module Grafeas
       # A set of properties that uniquely identify a given Docker image.
       # @!attribute [rw] v1_name
       #   @return [String]
-      #     The layer-id of the final layer in the Docker image's v1 representation.
+      #     Required. The layer ID of the final layer in the Docker image's v1
+      #     representation.
       # @!attribute [rw] v2_blob
       #   @return [Array<String>]
-      #     The ordered list of v2 blobs that represent a given image.
+      #     Required. The ordered list of v2 blobs that represent a given image.
       # @!attribute [rw] v2_name
       #   @return [String]
       #     Output only. The name of the image's v2 blobs computed via:
@@ -103,17 +104,17 @@ module Grafeas
       # Or an equivalent reference, e.g. a tag of the resource_url.
       # @!attribute [rw] resource_url
       #   @return [String]
-      #     The resource_url for the resource representing the basis of
-      #     associated occurrence images.
+      #     Required. Immutable. The resource_url for the resource representing the
+      #     basis of associated occurrence images.
       # @!attribute [rw] fingerprint
       #   @return [Grafeas::V1beta1::Image::Fingerprint]
-      #     The fingerprint of the base image.
+      #     Required. Immutable. The fingerprint of the base image.
       class Basis; end
 
       # Details of an image occurrence.
       # @!attribute [rw] derived_image
       #   @return [Grafeas::V1beta1::Image::Derived]
-      #     The child image derived from the base image.
+      #     Required. Immutable. The child image derived from the base image.
       class Details; end
 
       # Derived describes the derived image portion (Occurrence) of the DockerImage
@@ -121,7 +122,7 @@ module Grafeas
       # <DockerImage.Basis in attached Note>.
       # @!attribute [rw] fingerprint
       #   @return [Grafeas::V1beta1::Image::Fingerprint]
-      #     The fingerprint of the derived image.
+      #     Required. The fingerprint of the derived image.
       # @!attribute [rw] distance
       #   @return [Integer]
       #     Output only. The number of layers by which this image differs from the

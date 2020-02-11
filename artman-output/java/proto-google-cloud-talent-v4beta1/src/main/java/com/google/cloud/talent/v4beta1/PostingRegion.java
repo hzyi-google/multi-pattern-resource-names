@@ -26,11 +26,10 @@ public enum PostingRegion
   /**
    * <pre>
    * In addition to exact location matching, job posting is returned when the
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in the search
-   * query is in the same administrative area as the returned job posting. For
-   * example, if a `ADMINISTRATIVE_AREA` job is posted in "CA, USA", it's
-   * returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-   * has "Mountain View".
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in the search query is in the same administrative area
+   * as the returned job posting. For example, if a `ADMINISTRATIVE_AREA` job
+   * is posted in "CA, USA", it's returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has
+   * "Mountain View".
    * Administrative area refers to top-level administrative subdivision of this
    * country. For example, US state, IT region, UK constituent nation and
    * JP prefecture.
@@ -42,11 +41,9 @@ public enum PostingRegion
   /**
    * <pre>
    * In addition to exact location matching, job is returned when
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in search
-   * query is in the same country as this job. For example, if a `NATION_WIDE`
-   * job is posted in "USA", it's returned if
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has 'Mountain
-   * View'.
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in search query is in the same country as this job.
+   * For example, if a `NATION_WIDE` job is posted in "USA", it's
+   * returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has 'Mountain View'.
    * </pre>
    *
    * <code>NATION = 2;</code>
@@ -77,11 +74,10 @@ public enum PostingRegion
   /**
    * <pre>
    * In addition to exact location matching, job posting is returned when the
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in the search
-   * query is in the same administrative area as the returned job posting. For
-   * example, if a `ADMINISTRATIVE_AREA` job is posted in "CA, USA", it's
-   * returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-   * has "Mountain View".
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in the search query is in the same administrative area
+   * as the returned job posting. For example, if a `ADMINISTRATIVE_AREA` job
+   * is posted in "CA, USA", it's returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has
+   * "Mountain View".
    * Administrative area refers to top-level administrative subdivision of this
    * country. For example, US state, IT region, UK constituent nation and
    * JP prefecture.
@@ -93,11 +89,9 @@ public enum PostingRegion
   /**
    * <pre>
    * In addition to exact location matching, job is returned when
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in search
-   * query is in the same country as this job. For example, if a `NATION_WIDE`
-   * job is posted in "USA", it's returned if
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has 'Mountain
-   * View'.
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in search query is in the same country as this job.
+   * For example, if a `NATION_WIDE` job is posted in "USA", it's
+   * returned if [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] has 'Mountain View'.
    * </pre>
    *
    * <code>NATION = 2;</code>
@@ -124,6 +118,8 @@ public enum PostingRegion
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -131,6 +127,10 @@ public enum PostingRegion
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static PostingRegion forNumber(int value) {
     switch (value) {
       case 0: return POSTING_REGION_UNSPECIFIED;

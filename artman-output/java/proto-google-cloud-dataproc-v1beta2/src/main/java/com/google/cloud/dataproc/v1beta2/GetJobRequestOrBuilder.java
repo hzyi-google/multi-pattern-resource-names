@@ -14,6 +14,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -23,6 +24,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -33,6 +35,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -41,6 +44,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
@@ -51,6 +55,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobId.
    */
   java.lang.String getJobId();
   /**
@@ -59,6 +64,7 @@ public interface GetJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString
       getJobIdBytes();

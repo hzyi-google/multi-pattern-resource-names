@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InspectTemplate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -41,7 +48,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -145,13 +151,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The template name. Output only.
+   * Output only. The template name.
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -167,13 +174,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The template name. Output only.
+   * Output only. The template name.
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -197,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -216,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -239,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -258,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -277,30 +289,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -310,30 +324,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -347,6 +363,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -357,6 +374,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
@@ -808,13 +826,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The template name. Output only.
+     * Output only. The template name.
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -830,13 +849,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The template name. Output only.
+     * Output only. The template name.
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -853,13 +873,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The template name. Output only.
+     * Output only. The template name.
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -873,13 +895,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The template name. Output only.
+     * Output only. The template name.
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -889,13 +912,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The template name. Output only.
+     * Output only. The template name.
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -916,6 +941,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -935,6 +961,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -955,6 +982,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -972,6 +1001,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -985,6 +1015,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1005,6 +1037,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1024,6 +1057,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1044,6 +1078,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1061,6 +1097,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1074,6 +1111,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1092,20 +1131,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1116,10 +1157,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1136,10 +1177,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1154,10 +1195,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1176,10 +1217,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1194,10 +1235,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -1206,10 +1247,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1221,10 +1262,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of an inspectTemplate, output only field.
+     * Output only. The creation timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1245,20 +1286,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1269,10 +1312,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1289,10 +1332,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1307,10 +1350,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1329,10 +1372,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1347,10 +1390,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       
@@ -1359,10 +1402,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1374,10 +1417,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of an inspectTemplate, output only field.
+     * Output only. The last update timestamp of an inspectTemplate.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1402,6 +1445,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -1412,6 +1456,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {

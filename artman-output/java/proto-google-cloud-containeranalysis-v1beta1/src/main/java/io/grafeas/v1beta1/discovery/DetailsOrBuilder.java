@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   * @return Whether the discovered field is set.
    */
   boolean hasDiscovered();
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   * @return The discovered.
    */
   io.grafeas.v1beta1.discovery.Discovered getDiscovered();
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>

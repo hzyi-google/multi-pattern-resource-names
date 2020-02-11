@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,14 +193,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the new source's parent. Its format should be
+   * @param parent Required. Resource name of the new source's parent. Its format should be
    *     "organizations/[organization_id]".
-   * @param source The Source being created, only the display_name and description will be used. All
-   *     other fields will be ignored.
+   * @param source Required. The Source being created, only the display_name and description will be
+   *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source createSource(OrganizationName parent, Source source) {
-
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -223,14 +222,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the new source's parent. Its format should be
+   * @param parent Required. Resource name of the new source's parent. Its format should be
    *     "organizations/[organization_id]".
-   * @param source The Source being created, only the display_name and description will be used. All
-   *     other fields will be ignored.
+   * @param source Required. The Source being created, only the display_name and description will be
+   *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source createSource(String parent, Source source) {
-
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder().setParent(parent).setSource(source).build();
     return createSource(request);
@@ -300,17 +298,16 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the new finding's parent. Its format should be
+   * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
-   * @param findingId Unique identifier provided by the client within the parent scope. It must be
-   *     alphanumeric and less than or equal to 32 characters and greater than 0 characters in
-   *     length.
-   * @param finding The Finding being created. The name and security_marks will be ignored as they
-   *     are both output only fields on this resource.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be alphanumeric and less than or equal to 32 characters and greater than 0 characters
+   *     in length.
+   * @param finding Required. The Finding being created. The name and security_marks will be ignored
+   *     as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding createFinding(SourceName parent, String findingId, Finding finding) {
-
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -335,17 +332,16 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the new finding's parent. Its format should be
+   * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
-   * @param findingId Unique identifier provided by the client within the parent scope. It must be
-   *     alphanumeric and less than or equal to 32 characters and greater than 0 characters in
-   *     length.
-   * @param finding The Finding being created. The name and security_marks will be ignored as they
-   *     are both output only fields on this resource.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be alphanumeric and less than or equal to 32 characters and greater than 0 characters
+   *     in length.
+   * @param finding Required. The Finding being created. The name and security_marks will be ignored
+   *     as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding createFinding(String parent, String findingId, Finding finding) {
-
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent)
@@ -426,7 +422,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(SourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -452,7 +447,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -515,12 +509,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the organization to get organization settings for. Its format is
+   * @param name Required. Name of the organization to get organization settings for. Its format is
    *     "organizations/[organization_id]/organizationSettings".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrganizationSettings getOrganizationSettings(OrganizationSettingsName name) {
-
     GetOrganizationSettingsRequest request =
         GetOrganizationSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -541,12 +534,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Name of the organization to get organization settings for. Its format is
+   * @param name Required. Name of the organization to get organization settings for. Its format is
    *     "organizations/[organization_id]/organizationSettings".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrganizationSettings getOrganizationSettings(String name) {
-
     GetOrganizationSettingsRequest request =
         GetOrganizationSettingsRequest.newBuilder().setName(name).build();
     return getOrganizationSettings(request);
@@ -612,12 +604,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Relative resource name of the source. Its format is
+   * @param name Required. Relative resource name of the source. Its format is
    *     "organizations/[organization_id]/source/[source_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(SourceName name) {
-
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -636,12 +627,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Relative resource name of the source. Its format is
+   * @param name Required. Relative resource name of the source. Its format is
    *     "organizations/[organization_id]/source/[source_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(String name) {
-
     GetSourceRequest request = GetSourceRequest.newBuilder().setName(name).build();
     return getSource(request);
   }
@@ -783,7 +773,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -797,12 +787,12 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of the source to groupBy. Its format is
+   * @param parent Required. Name of the source to groupBy. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/123/sources/-
-   * @param groupBy Expression that defines what assets fields to use for grouping (including
-   *     `state`). The string value should follow SQL syntax: comma separated list of fields. For
-   *     example: "parent,resource_name".
+   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   * @param groupBy Required. Expression that defines what assets fields to use for grouping
+   *     (including `state`). The string value should follow SQL syntax: comma separated list of
+   *     fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -821,7 +811,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -835,12 +825,12 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of the source to groupBy. Its format is
+   * @param parent Required. Name of the source to groupBy. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/123/sources/-
-   * @param groupBy Expression that defines what assets fields to use for grouping (including
-   *     `state`). The string value should follow SQL syntax: comma separated list of fields. For
-   *     example: "parent,resource_name".
+   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   * @param groupBy Required. Expression that defines what assets fields to use for grouping
+   *     (including `state`). The string value should follow SQL syntax: comma separated list of
+   *     fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -856,7 +846,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -886,7 +876,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -916,7 +906,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1032,7 +1022,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1060,7 +1050,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1088,7 +1078,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
-   * /v1beta1/organizations/123/sources/-/findings
+   * /v1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1132,7 +1122,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent of sources to list. Its format should be
+   * @param parent Required. Resource name of the parent of sources to list. Its format should be
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1159,7 +1149,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent of sources to list. Its format should be
+   * @param parent Required. Resource name of the parent of sources to list. Its format should be
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1265,14 +1255,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of the organization to run asset discovery for. Its format is
+   * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(OrganizationName parent) {
-
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1296,14 +1285,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Name of the organization to run asset discovery for. Its format is
+   * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(String parent) {
-
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder().setParent(parent).build();
     return runAssetDiscoveryAsync(request);
@@ -1405,15 +1393,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The relative resource name of the finding. See:
+   * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/123/sources/456/finding/789".
-   * @param state The desired State of the finding.
-   * @param startTime The time at which the updated state takes effect.
+   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+   * @param state Required. The desired State of the finding.
+   * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding setFindingState(FindingName name, Finding.State state, Timestamp startTime) {
-
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1438,15 +1425,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The relative resource name of the finding. See:
+   * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/123/sources/456/finding/789".
-   * @param state The desired State of the finding.
-   * @param startTime The time at which the updated state takes effect.
+   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+   * @param state Required. The desired State of the finding.
+   * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding setFindingState(String name, Finding.State state, Timestamp startTime) {
-
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name)
@@ -1531,7 +1517,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(SourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1562,7 +1547,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1640,7 +1624,6 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       SourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1672,7 +1655,6 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1745,14 +1727,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param finding The finding resource to update or create if it does not already exist. parent,
-   *     security_marks, and update_time will be ignored.
+   * @param finding Required. The finding resource to update or create if it does not already exist.
+   *     parent, security_marks, and update_time will be ignored.
    *     <p>In the case of creation, the finding id portion of the name must alphanumeric and less
    *     than or equal to 32 characters and greater than 0 characters in length.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding updateFinding(Finding finding) {
-
     UpdateFindingRequest request = UpdateFindingRequest.newBuilder().setFinding(finding).build();
     return updateFinding(request);
   }
@@ -1817,12 +1798,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param organizationSettings The organization settings resource to update.
+   * @param organizationSettings Required. The organization settings resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrganizationSettings updateOrganizationSettings(
       OrganizationSettings organizationSettings) {
-
     UpdateOrganizationSettingsRequest request =
         UpdateOrganizationSettingsRequest.newBuilder()
             .setOrganizationSettings(organizationSettings)
@@ -1890,11 +1870,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param source The source resource to update.
+   * @param source Required. The source resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source updateSource(Source source) {
-
     UpdateSourceRequest request = UpdateSourceRequest.newBuilder().setSource(source).build();
     return updateSource(request);
   }
@@ -1957,11 +1936,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param securityMarks The security marks resource to update.
+   * @param securityMarks Required. The security marks resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityMarks updateSecurityMarks(SecurityMarks securityMarks) {
-
     UpdateSecurityMarksRequest request =
         UpdateSecurityMarksRequest.newBuilder().setSecurityMarks(securityMarks).build();
     return updateSecurityMarks(request);

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.DeleteLogRequest</code>
  */
-final class DeleteLogRequest extends \Google\Protobuf\Internal\Message
+class DeleteLogRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the log to delete:
@@ -27,9 +27,9 @@ final class DeleteLogRequest extends \Google\Protobuf\Internal\Message
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $log_name = '';
+    protected $log_name = '';
 
     /**
      * Constructor.
@@ -67,7 +67,7 @@ final class DeleteLogRequest extends \Google\Protobuf\Internal\Message
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getLogName()
@@ -87,7 +87,7 @@ final class DeleteLogRequest extends \Google\Protobuf\Internal\Message
      * For more information about log names, see
      * [LogEntry][google.logging.v2.LogEntry].
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

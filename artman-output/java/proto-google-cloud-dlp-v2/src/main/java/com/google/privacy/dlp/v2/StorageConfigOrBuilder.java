@@ -13,6 +13,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   * @return Whether the datastoreOptions field is set.
    */
   boolean hasDatastoreOptions();
   /**
@@ -21,6 +22,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   * @return The datastoreOptions.
    */
   com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions();
   /**
@@ -38,6 +40,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   * @return Whether the cloudStorageOptions field is set.
    */
   boolean hasCloudStorageOptions();
   /**
@@ -46,6 +49,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   * @return The cloudStorageOptions.
    */
   com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions();
   /**
@@ -63,6 +67,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   * @return Whether the bigQueryOptions field is set.
    */
   boolean hasBigQueryOptions();
   /**
@@ -71,6 +76,7 @@ public interface StorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   * @return The bigQueryOptions.
    */
   com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions();
   /**
@@ -84,10 +90,12 @@ public interface StorageConfigOrBuilder extends
 
   /**
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   * @return Whether the timespanConfig field is set.
    */
   boolean hasTimespanConfig();
   /**
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   * @return The timespanConfig.
    */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig();
   /**

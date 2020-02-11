@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ module Grafeas
       # An artifact that can be deployed in some runtime.
       # @!attribute [rw] resource_uri
       #   @return [Array<String>]
-      #     Resource URI for the artifact being deployed.
+      #     Required. Resource URI for the artifact being deployed.
       class Deployable; end
 
       # Details of a deployment occurrence.
       # @!attribute [rw] deployment
       #   @return [Grafeas::V1beta1::Deployment::Deployment]
-      #     Deployment history for the resource.
+      #     Required. Deployment history for the resource.
       class Details; end
 
       # The period during which some deployable was active in a runtime.
@@ -33,7 +33,7 @@ module Grafeas
       #     Identity of the user that triggered this deployment.
       # @!attribute [rw] deploy_time
       #   @return [Google::Protobuf::Timestamp]
-      #     Beginning of the lifetime of this deployment.
+      #     Required. Beginning of the lifetime of this deployment.
       # @!attribute [rw] undeploy_time
       #   @return [Google::Protobuf::Timestamp]
       #     End of the lifetime of this deployment.

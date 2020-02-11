@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateCryptoKeyVersionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,30 +114,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.kms.v1.CryptoKeyVersion cryptoKeyVersion_;
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKeyVersion field is set.
    */
   public boolean hasCryptoKeyVersion() {
     return cryptoKeyVersion_ != null;
   }
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersion.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
     return cryptoKeyVersion_ == null ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance() : cryptoKeyVersion_;
   }
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
     return getCryptoKeyVersion();
@@ -141,30 +149,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -524,20 +534,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.kms.v1.CryptoKeyVersion, com.google.cloud.kms.v1.CryptoKeyVersion.Builder, com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder> cryptoKeyVersionBuilder_;
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the cryptoKeyVersion field is set.
      */
     public boolean hasCryptoKeyVersion() {
       return cryptoKeyVersionBuilder_ != null || cryptoKeyVersion_ != null;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKeyVersion.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -548,10 +560,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -568,10 +580,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKeyVersion(
         com.google.cloud.kms.v1.CryptoKeyVersion.Builder builderForValue) {
@@ -586,10 +598,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -608,10 +620,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCryptoKeyVersion() {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -626,10 +638,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.Builder getCryptoKeyVersionBuilder() {
       
@@ -638,10 +650,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
       if (cryptoKeyVersionBuilder_ != null) {
@@ -653,10 +665,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.CryptoKeyVersion, com.google.cloud.kms.v1.CryptoKeyVersion.Builder, com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder> 
@@ -677,20 +689,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -701,10 +715,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -721,10 +735,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -739,10 +753,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -761,10 +775,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -779,10 +793,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -791,10 +805,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -806,10 +820,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

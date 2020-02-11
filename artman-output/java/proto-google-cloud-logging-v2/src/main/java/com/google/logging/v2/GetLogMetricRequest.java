@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetLogMetricRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -89,11 +95,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object metricName_;
   /**
    * <pre>
-   * The resource name of the desired metric:
+   * Required. The resource name of the desired metric:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The metricName.
    */
   public java.lang.String getMetricName() {
     java.lang.Object ref = metricName_;
@@ -109,11 +116,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the desired metric:
+   * Required. The resource name of the desired metric:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for metricName.
    */
   public com.google.protobuf.ByteString
       getMetricNameBytes() {
@@ -438,11 +446,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object metricName_ = "";
     /**
      * <pre>
-     * The resource name of the desired metric:
+     * Required. The resource name of the desired metric:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The metricName.
      */
     public java.lang.String getMetricName() {
       java.lang.Object ref = metricName_;
@@ -458,11 +467,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the desired metric:
+     * Required. The resource name of the desired metric:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for metricName.
      */
     public com.google.protobuf.ByteString
         getMetricNameBytes() {
@@ -479,11 +489,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the desired metric:
+     * Required. The resource name of the desired metric:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The metricName to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricName(
         java.lang.String value) {
@@ -497,11 +509,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the desired metric:
+     * Required. The resource name of the desired metric:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearMetricName() {
       
@@ -511,11 +524,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the desired metric:
+     * Required. The resource name of the desired metric:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for metricName to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricNameBytes(
         com.google.protobuf.ByteString value) {

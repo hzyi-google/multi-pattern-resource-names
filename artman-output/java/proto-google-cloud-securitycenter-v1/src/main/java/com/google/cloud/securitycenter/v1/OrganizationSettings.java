@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new OrganizationSettings();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +120,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @return A list containing the projectIds.
      */
     java.util.List<java.lang.String>
         getProjectIdsList();
@@ -123,6 +130,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @return The count of projectIds.
      */
     int getProjectIdsCount();
     /**
@@ -131,6 +139,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The projectIds at the given index.
      */
     java.lang.String getProjectIds(int index);
     /**
@@ -139,6 +149,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the projectIds at the given index.
      */
     com.google.protobuf.ByteString
         getProjectIdsBytes(int index);
@@ -149,6 +161,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * @return The enum numeric value on the wire for inclusionMode.
      */
     int getInclusionModeValue();
     /**
@@ -157,6 +170,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * @return The inclusionMode.
      */
     com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode();
   }
@@ -179,6 +193,13 @@ private static final long serialVersionUID = 0L;
     private AssetDiscoveryConfig() {
       projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       inclusionMode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AssetDiscoveryConfig();
     }
 
     @java.lang.Override
@@ -339,6 +360,8 @@ private static final long serialVersionUID = 0L;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -346,6 +369,10 @@ private static final long serialVersionUID = 0L;
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static InclusionMode forNumber(int value) {
         switch (value) {
           case 0: return INCLUSION_MODE_UNSPECIFIED;
@@ -403,7 +430,6 @@ private static final long serialVersionUID = 0L;
       // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode)
     }
 
-    private int bitField0_;
     public static final int PROJECT_IDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList projectIds_;
     /**
@@ -412,6 +438,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @return A list containing the projectIds.
      */
     public com.google.protobuf.ProtocolStringList
         getProjectIdsList() {
@@ -423,6 +450,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @return The count of projectIds.
      */
     public int getProjectIdsCount() {
       return projectIds_.size();
@@ -433,6 +461,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The projectIds at the given index.
      */
     public java.lang.String getProjectIds(int index) {
       return projectIds_.get(index);
@@ -443,6 +473,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the projectIds at the given index.
      */
     public com.google.protobuf.ByteString
         getProjectIdsBytes(int index) {
@@ -457,6 +489,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * @return The enum numeric value on the wire for inclusionMode.
      */
     public int getInclusionModeValue() {
       return inclusionMode_;
@@ -467,6 +500,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * @return The inclusionMode.
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode() {
       @SuppressWarnings("deprecation")
@@ -718,14 +752,12 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig buildPartial() {
         com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result = new com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.projectIds_ = projectIds_;
         result.inclusionMode_ = inclusionMode_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -830,6 +862,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @return A list containing the projectIds.
        */
       public com.google.protobuf.ProtocolStringList
           getProjectIdsList() {
@@ -841,6 +874,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @return The count of projectIds.
        */
       public int getProjectIdsCount() {
         return projectIds_.size();
@@ -851,6 +885,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param index The index of the element to return.
+       * @return The projectIds at the given index.
        */
       public java.lang.String getProjectIds(int index) {
         return projectIds_.get(index);
@@ -861,6 +897,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the projectIds at the given index.
        */
       public com.google.protobuf.ByteString
           getProjectIdsBytes(int index) {
@@ -872,6 +910,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The projectIds to set.
+       * @return This builder for chaining.
        */
       public Builder setProjectIds(
           int index, java.lang.String value) {
@@ -889,6 +930,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param value The projectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProjectIds(
           java.lang.String value) {
@@ -906,6 +949,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param values The projectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllProjectIds(
           java.lang.Iterable<java.lang.String> values) {
@@ -921,6 +966,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProjectIds() {
         projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -934,6 +980,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
+       * @param value The bytes of the projectIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProjectIdsBytes(
           com.google.protobuf.ByteString value) {
@@ -954,6 +1002,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * @return The enum numeric value on the wire for inclusionMode.
        */
       public int getInclusionModeValue() {
         return inclusionMode_;
@@ -964,6 +1013,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * @param value The enum numeric value on the wire for inclusionMode to set.
+       * @return This builder for chaining.
        */
       public Builder setInclusionModeValue(int value) {
         inclusionMode_ = value;
@@ -976,6 +1027,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * @return The inclusionMode.
        */
       public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode() {
         @SuppressWarnings("deprecation")
@@ -988,6 +1040,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * @param value The inclusionMode to set.
+       * @return This builder for chaining.
        */
       public Builder setInclusionMode(com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode value) {
         if (value == null) {
@@ -1004,6 +1058,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInclusionMode() {
         
@@ -1075,6 +1130,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1097,6 +1153,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -1123,6 +1180,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool enable_asset_discovery = 2;</code>
+   * @return The enableAssetDiscovery.
    */
   public boolean getEnableAssetDiscovery() {
     return enableAssetDiscovery_;
@@ -1136,6 +1194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * @return Whether the assetDiscoveryConfig field is set.
    */
   public boolean hasAssetDiscoveryConfig() {
     return assetDiscoveryConfig_ != null;
@@ -1146,6 +1205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * @return The assetDiscoveryConfig.
    */
   public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig getAssetDiscoveryConfig() {
     return assetDiscoveryConfig_ == null ? com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance() : assetDiscoveryConfig_;
@@ -1526,6 +1586,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1548,6 +1609,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1571,6 +1633,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1591,6 +1655,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1607,6 +1672,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1630,6 +1697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>
+     * @return The enableAssetDiscovery.
      */
     public boolean getEnableAssetDiscovery() {
       return enableAssetDiscovery_;
@@ -1643,6 +1711,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>
+     * @param value The enableAssetDiscovery to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableAssetDiscovery(boolean value) {
       
@@ -1659,6 +1729,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEnableAssetDiscovery() {
       
@@ -1676,6 +1747,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * @return Whether the assetDiscoveryConfig field is set.
      */
     public boolean hasAssetDiscoveryConfig() {
       return assetDiscoveryConfigBuilder_ != null || assetDiscoveryConfig_ != null;
@@ -1686,6 +1758,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * @return The assetDiscoveryConfig.
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig getAssetDiscoveryConfig() {
       if (assetDiscoveryConfigBuilder_ == null) {

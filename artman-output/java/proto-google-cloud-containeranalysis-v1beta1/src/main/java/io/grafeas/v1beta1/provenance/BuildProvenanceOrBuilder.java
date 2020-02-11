@@ -9,18 +9,20 @@ public interface BuildProvenanceOrBuilder extends
 
   /**
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -39,6 +42,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -137,6 +141,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -145,6 +150,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -162,6 +168,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -170,6 +177,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -187,6 +195,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -195,6 +204,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -214,6 +224,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string creator = 8;</code>
+   * @return The creator.
    */
   java.lang.String getCreator();
   /**
@@ -224,6 +235,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string creator = 8;</code>
+   * @return The bytes for creator.
    */
   com.google.protobuf.ByteString
       getCreatorBytes();
@@ -234,6 +246,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   * @return The logsUri.
    */
   java.lang.String getLogsUri();
   /**
@@ -242,6 +255,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   * @return The bytes for logsUri.
    */
   com.google.protobuf.ByteString
       getLogsUriBytes();
@@ -252,6 +266,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Source source_provenance = 10;</code>
+   * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
   /**
@@ -260,6 +275,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Source source_provenance = 10;</code>
+   * @return The sourceProvenance.
    */
   io.grafeas.v1beta1.provenance.Source getSourceProvenance();
   /**
@@ -277,6 +293,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   * @return The triggerId.
    */
   java.lang.String getTriggerId();
   /**
@@ -285,6 +302,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   * @return The bytes for triggerId.
    */
   com.google.protobuf.ByteString
       getTriggerIdBytes();
@@ -354,6 +372,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
   /**
@@ -362,6 +381,7 @@ public interface BuildProvenanceOrBuilder extends
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   * @return The bytes for builderVersion.
    */
   com.google.protobuf.ByteString
       getBuilderVersionBytes();

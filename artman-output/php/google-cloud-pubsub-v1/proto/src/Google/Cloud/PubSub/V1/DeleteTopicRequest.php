@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.DeleteTopicRequest</code>
  */
-final class DeleteTopicRequest extends \Google\Protobuf\Internal\Message
+class DeleteTopicRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of the topic to delete.
@@ -21,7 +21,7 @@ final class DeleteTopicRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string topic = 1;</code>
      */
-    private $topic = '';
+    protected $topic = '';
 
     /**
      * Constructor.

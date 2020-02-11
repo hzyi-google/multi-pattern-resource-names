@@ -9,36 +9,40 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder extends
 
   /**
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersionId.
    */
   java.lang.String getCryptoKeyVersionId();
   /**
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for cryptoKeyVersionId.
    */
   com.google.protobuf.ByteString
       getCryptoKeyVersionIdBytes();

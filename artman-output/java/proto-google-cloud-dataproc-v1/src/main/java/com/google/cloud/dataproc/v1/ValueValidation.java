@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ValueValidation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -99,6 +106,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the values.
    */
   public com.google.protobuf.ProtocolStringList
       getValuesList() {
@@ -110,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of values.
    */
   public int getValuesCount() {
     return values_.size();
@@ -120,6 +129,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The values at the given index.
    */
   public java.lang.String getValues(int index) {
     return values_.get(index);
@@ -130,6 +141,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the values at the given index.
    */
   public com.google.protobuf.ByteString
       getValuesBytes(int index) {
@@ -474,6 +487,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the values.
      */
     public com.google.protobuf.ProtocolStringList
         getValuesList() {
@@ -485,6 +499,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The count of values.
      */
     public int getValuesCount() {
       return values_.size();
@@ -495,6 +510,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
@@ -505,6 +522,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
      */
     public com.google.protobuf.ByteString
         getValuesBytes(int index) {
@@ -516,6 +535,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index to set the value at.
+     * @param value The values to set.
+     * @return This builder for chaining.
      */
     public Builder setValues(
         int index, java.lang.String value) {
@@ -533,6 +555,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The values to add.
+     * @return This builder for chaining.
      */
     public Builder addValues(
         java.lang.String value) {
@@ -550,6 +574,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The values to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValues(
         java.lang.Iterable<java.lang.String> values) {
@@ -565,6 +591,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -578,6 +605,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes of the values to add.
+     * @return This builder for chaining.
      */
     public Builder addValuesBytes(
         com.google.protobuf.ByteString value) {

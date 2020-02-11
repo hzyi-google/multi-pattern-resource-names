@@ -13,6 +13,7 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+   * @return Whether the privacyMetric field is set.
    */
   boolean hasPrivacyMetric();
   /**
@@ -21,6 +22,7 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+   * @return The privacyMetric.
    */
   com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric();
   /**
@@ -38,6 +40,7 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+   * @return Whether the sourceTable field is set.
    */
   boolean hasSourceTable();
   /**
@@ -46,6 +49,7 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+   * @return The sourceTable.
    */
   com.google.privacy.dlp.v2.BigQueryTable getSourceTable();
   /**

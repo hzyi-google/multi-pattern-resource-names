@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.ListOccurrencesResponse</code>
  */
-final class ListOccurrencesResponse extends \Google\Protobuf\Internal\Message
+class ListOccurrencesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The occurrences requested.
@@ -28,7 +28,7 @@ final class ListOccurrencesResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

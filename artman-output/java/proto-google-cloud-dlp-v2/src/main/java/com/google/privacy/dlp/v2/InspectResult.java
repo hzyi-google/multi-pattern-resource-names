@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InspectResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -96,7 +103,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.InspectResult.class, com.google.privacy.dlp.v2.InspectResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FINDINGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.Finding> findings_;
   /**
@@ -165,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool findings_truncated = 2;</code>
+   * @return The findingsTruncated.
    */
   public boolean getFindingsTruncated() {
     return findingsTruncated_;
@@ -417,7 +424,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.InspectResult buildPartial() {
       com.google.privacy.dlp.v2.InspectResult result = new com.google.privacy.dlp.v2.InspectResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (findingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           findings_ = java.util.Collections.unmodifiableList(findings_);
@@ -428,7 +434,6 @@ private static final long serialVersionUID = 0L;
         result.findings_ = findingsBuilder_.build();
       }
       result.findingsTruncated_ = findingsTruncated_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -860,6 +865,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     * @return The findingsTruncated.
      */
     public boolean getFindingsTruncated() {
       return findingsTruncated_;
@@ -875,6 +881,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     * @param value The findingsTruncated to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingsTruncated(boolean value) {
       
@@ -893,6 +901,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool findings_truncated = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFindingsTruncated() {
       

@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -150,12 +150,16 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       name = "name3373707"
       destination = "destination-1429847026"
       filter = "filter-1274492040"
+      description = "description-1724546052"
+      disabled = true
       writer_identity = "writerIdentity775638794"
       include_children = true
       expected_response = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writer_identity: writer_identity,
         include_children: include_children
       }
@@ -235,12 +239,16 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       name = "name3373707"
       destination = "destination-1429847026"
       filter = "filter-1274492040"
+      description = "description-1724546052"
+      disabled = true
       writer_identity = "writerIdentity775638794"
       include_children = true
       expected_response = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writer_identity: writer_identity,
         include_children: include_children
       }
@@ -323,12 +331,16 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       name = "name3373707"
       destination = "destination-1429847026"
       filter = "filter-1274492040"
+      description = "description-1724546052"
+      disabled = true
       writer_identity = "writerIdentity775638794"
       include_children = true
       expected_response = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writer_identity: writer_identity,
         include_children: include_children
       }
@@ -870,6 +882,146 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
             client.delete_exclusion(formatted_name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'get_cmek_settings' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#get_cmek_settings."
+
+    it 'invokes get_cmek_settings without error' do
+      # Create expected grpc response
+      name = "name3373707"
+      kms_key_name = "kmsKeyName2094986649"
+      service_account_id = "serviceAccountId-111486921"
+      expected_response = {
+        name: name,
+        kms_key_name: kms_key_name,
+        service_account_id: service_account_id
+      }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::CmekSettings)
+
+      # Mock Grpc layer
+      mock_method = proc do
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:get_cmek_settings, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("get_cmek_settings")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          response = client.get_cmek_settings
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_cmek_settings do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_cmek_settings with error' do
+      # Mock Grpc layer
+      mock_method = proc do
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:get_cmek_settings, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("get_cmek_settings")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.get_cmek_settings
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'update_cmek_settings' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#update_cmek_settings."
+
+    it 'invokes update_cmek_settings without error' do
+      # Create expected grpc response
+      name = "name3373707"
+      kms_key_name = "kmsKeyName2094986649"
+      service_account_id = "serviceAccountId-111486921"
+      expected_response = {
+        name: name,
+        kms_key_name: kms_key_name,
+        service_account_id: service_account_id
+      }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::CmekSettings)
+
+      # Mock Grpc layer
+      mock_method = proc do
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:update_cmek_settings, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("update_cmek_settings")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          response = client.update_cmek_settings
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.update_cmek_settings do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes update_cmek_settings with error' do
+      # Mock Grpc layer
+      mock_method = proc do
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:update_cmek_settings, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("update_cmek_settings")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.update_cmek_settings
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

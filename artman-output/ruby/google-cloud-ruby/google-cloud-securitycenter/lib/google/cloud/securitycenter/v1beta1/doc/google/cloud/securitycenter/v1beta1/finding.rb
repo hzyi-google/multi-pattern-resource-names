@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,19 +27,21 @@ module Google
         #     The relative resource name of this finding. See:
         #     https://cloud.google.com/apis/design/resource_names#relative_resource_name
         #     Example:
-        #     "organizations/123/sources/456/findings/789"
+        #     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
         # @!attribute [rw] parent
         #   @return [String]
-        #     The relative resource name of the source the finding belongs to. See:
+        #     Immutable. The relative resource name of the source the finding belongs to. See:
         #     https://cloud.google.com/apis/design/resource_names#relative_resource_name
         #     This field is immutable after creation time.
         #     For example:
-        #     "organizations/123/sources/456"
+        #     "organizations/{organization_id}/sources/{source_id}"
         # @!attribute [rw] resource_name
         #   @return [String]
-        #     The full resource name of the Google Cloud Platform (GCP) resource this
-        #     finding is for. See:
+        #     For findings on Google Cloud Platform (GCP) resources, the full resource
+        #     name of the GCP resource this finding is for. See:
         #     https://cloud.google.com/apis/design/resource_names#full_resource_name
+        #     When the finding is for a non-GCP resource, the resourceName can be a
+        #     customer or partner defined string.
         #     This field is immutable after creation time.
         # @!attribute [rw] state
         #   @return [Google::Cloud::Securitycenter::V1beta1::Finding::State]
@@ -68,8 +70,8 @@ module Google
         # @!attribute [rw] event_time
         #   @return [Google::Protobuf::Timestamp]
         #     The time at which the event took place. For example, if the finding
-        #     represents an open firewall it would capture the time the open firewall was
-        #     detected.
+        #     represents an open firewall it would capture the time the detector believes
+        #     the firewall became open. The accuracy is determined by the detector.
         # @!attribute [rw] create_time
         #   @return [Google::Protobuf::Timestamp]
         #     The time at which the finding was created in Cloud SCC.

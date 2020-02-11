@@ -13,7 +13,8 @@ public interface ImportJobOrBuilder extends
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;importJobs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -22,52 +23,53 @@ public interface ImportJobOrBuilder extends
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;importJobs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * Required and immutable. The wrapping method to be used for incoming
-   * key material.
+   * Required. Immutable. The wrapping method to be used for incoming key material.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The enum numeric value on the wire for importMethod.
    */
   int getImportMethodValue();
   /**
    * <pre>
-   * Required and immutable. The wrapping method to be used for incoming
-   * key material.
+   * Required. Immutable. The wrapping method to be used for incoming key material.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.ImportMethod import_method = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The importMethod.
    */
   com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod();
 
   /**
    * <pre>
-   * Required and immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This
-   * must match the
+   * Required. Immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level] of the
    * [version_template][google.cloud.kms.v1.CryptoKey.version_template] on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you
    * attempt to import into.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
   /**
    * <pre>
-   * Required and immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This
-   * must match the
+   * Required. Immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level] of the
    * [version_template][google.cloud.kms.v1.CryptoKey.version_template] on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you
    * attempt to import into.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
@@ -76,7 +78,8 @@ public interface ImportJobOrBuilder extends
    * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -84,7 +87,8 @@ public interface ImportJobOrBuilder extends
    * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -92,7 +96,7 @@ public interface ImportJobOrBuilder extends
    * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -101,7 +105,8 @@ public interface ImportJobOrBuilder extends
    * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
   /**
@@ -109,7 +114,8 @@ public interface ImportJobOrBuilder extends
    * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
   /**
@@ -117,7 +123,7 @@ public interface ImportJobOrBuilder extends
    * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 4;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder();
 
@@ -127,7 +133,8 @@ public interface ImportJobOrBuilder extends
    * expiration and can no longer be used to import key material.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -136,7 +143,8 @@ public interface ImportJobOrBuilder extends
    * expiration and can no longer be used to import key material.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
@@ -145,7 +153,7 @@ public interface ImportJobOrBuilder extends
    * expiration and can no longer be used to import key material.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 
@@ -155,7 +163,8 @@ public interface ImportJobOrBuilder extends
    * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   * <code>.google.protobuf.Timestamp expire_event_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the expireEventTime field is set.
    */
   boolean hasExpireEventTime();
   /**
@@ -164,7 +173,8 @@ public interface ImportJobOrBuilder extends
    * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   * <code>.google.protobuf.Timestamp expire_event_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The expireEventTime.
    */
   com.google.protobuf.Timestamp getExpireEventTime();
   /**
@@ -173,7 +183,7 @@ public interface ImportJobOrBuilder extends
    * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_event_time = 10;</code>
+   * <code>.google.protobuf.Timestamp expire_event_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireEventTimeOrBuilder();
 
@@ -183,7 +193,8 @@ public interface ImportJobOrBuilder extends
    * be used.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -192,7 +203,8 @@ public interface ImportJobOrBuilder extends
    * be used.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.ImportJobState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
   com.google.cloud.kms.v1.ImportJob.ImportJobState getState();
 
@@ -203,7 +215,8 @@ public interface ImportJobOrBuilder extends
    * [ACTIVE][google.cloud.kms.v1.ImportJob.ImportJobState.ACTIVE].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
   /**
@@ -213,7 +226,8 @@ public interface ImportJobOrBuilder extends
    * [ACTIVE][google.cloud.kms.v1.ImportJob.ImportJobState.ACTIVE].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The publicKey.
    */
   com.google.cloud.kms.v1.ImportJob.WrappingPublicKey getPublicKey();
   /**
@@ -223,7 +237,7 @@ public interface ImportJobOrBuilder extends
    * [ACTIVE][google.cloud.kms.v1.ImportJob.ImportJobState.ACTIVE].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7;</code>
+   * <code>.google.cloud.kms.v1.ImportJob.WrappingPublicKey public_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.kms.v1.ImportJob.WrappingPublicKeyOrBuilder getPublicKeyOrBuilder();
 
@@ -236,7 +250,8 @@ public interface ImportJobOrBuilder extends
    * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -248,7 +263,8 @@ public interface ImportJobOrBuilder extends
    * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
   /**
@@ -260,7 +276,7 @@ public interface ImportJobOrBuilder extends
    * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder();
 }

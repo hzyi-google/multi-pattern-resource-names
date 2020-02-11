@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListJobTriggersRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -145,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -164,12 +172,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -185,12 +194,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -210,10 +220,11 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Optional size of the page, can be limited by a server.
+   * Size of the page, can be limited by a server.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -223,7 +234,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Optional comma separated list of triggeredJob fields to order by,
+   * Comma separated list of triggeredJob fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -238,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -253,7 +265,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional comma separated list of triggeredJob fields to order by,
+   * Comma separated list of triggeredJob fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -268,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString
       getOrderByBytes() {
@@ -287,12 +300,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -309,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string filter = 5;</code>
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -324,12 +338,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -346,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string filter = 5;</code>
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
       getFilterBytes() {
@@ -370,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -390,6 +406,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -803,6 +820,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -822,6 +840,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -842,6 +861,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -859,6 +880,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -872,6 +894,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -888,12 +912,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -909,12 +934,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -931,12 +957,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -950,12 +978,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -965,12 +994,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -987,20 +1018,23 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
     }
     /**
      * <pre>
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -1010,10 +1044,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional size of the page, can be limited by a server.
+     * Size of the page, can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       
@@ -1025,7 +1060,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1040,6 +1075,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1055,7 +1091,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1070,6 +1106,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString
         getOrderByBytes() {
@@ -1086,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1101,6 +1138,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(
         java.lang.String value) {
@@ -1114,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1129,6 +1168,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
       
@@ -1138,7 +1178,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of triggeredJob fields to order by,
+     * Comma separated list of triggeredJob fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1153,6 +1193,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(
         com.google.protobuf.ByteString value) {
@@ -1169,12 +1211,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1191,6 +1233,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5;</code>
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1206,12 +1249,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1228,6 +1271,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5;</code>
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
         getFilterBytes() {
@@ -1244,12 +1288,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1266,6 +1310,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(
         java.lang.String value) {
@@ -1279,12 +1325,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1301,6 +1347,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
       
@@ -1310,12 +1357,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `status` - HEALTHY|PAUSED|CANCELLED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1332,6 +1379,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(
         com.google.protobuf.ByteString value) {
@@ -1353,6 +1402,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1373,6 +1423,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -1394,6 +1445,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -1412,6 +1465,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -1426,6 +1480,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 7;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

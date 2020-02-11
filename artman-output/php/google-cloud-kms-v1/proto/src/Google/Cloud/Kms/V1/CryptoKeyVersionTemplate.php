@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.CryptoKeyVersionTemplate</code>
  */
-final class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
+class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
 {
     /**
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
@@ -24,7 +24,7 @@ final class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
      */
-    private $protection_level = 0;
+    protected $protection_level = 0;
     /**
      * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
      * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
@@ -32,9 +32,9 @@ final class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
      * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $algorithm = 0;
+    protected $algorithm = 0;
 
     /**
      * Constructor.
@@ -93,7 +93,7 @@ final class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
      * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int
      */
     public function getAlgorithm()
@@ -108,7 +108,7 @@ final class CryptoKeyVersionTemplate extends \Google\Protobuf\Internal\Message
      * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int $var
      * @return $this
      */

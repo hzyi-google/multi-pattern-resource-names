@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateOccurrenceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +113,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -127,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -150,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+   * @return Whether the occurrence field is set.
    */
   public boolean hasOccurrence() {
     return occurrence_ != null;
@@ -160,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+   * @return The occurrence.
    */
   public io.grafeas.v1beta1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
@@ -519,6 +529,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -539,6 +550,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -560,6 +572,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -578,6 +592,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -592,6 +607,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -614,6 +631,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+     * @return Whether the occurrence field is set.
      */
     public boolean hasOccurrence() {
       return occurrenceBuilder_ != null || occurrence_ != null;
@@ -624,6 +642,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+     * @return The occurrence.
      */
     public io.grafeas.v1beta1.Occurrence getOccurrence() {
       if (occurrenceBuilder_ == null) {

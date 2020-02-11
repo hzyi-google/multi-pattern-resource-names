@@ -9,20 +9,22 @@ public interface LocationOrBuilder extends
 
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The cpeUri.
    */
   java.lang.String getCpeUri();
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The bytes for cpeUri.
    */
   com.google.protobuf.ByteString
       getCpeUriBytes();
@@ -33,6 +35,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   * @return Whether the version field is set.
    */
   boolean hasVersion();
   /**
@@ -41,6 +44,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   * @return The version.
    */
   io.grafeas.v1beta1.pkg.Version getVersion();
   /**
@@ -58,6 +62,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The path.
    */
   java.lang.String getPath();
   /**
@@ -66,6 +71,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The bytes for path.
    */
   com.google.protobuf.ByteString
       getPathBytes();

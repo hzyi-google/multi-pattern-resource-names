@@ -54,7 +54,7 @@ public interface RecordTransformationsOrBuilder extends
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -64,7 +64,7 @@ public interface RecordTransformationsOrBuilder extends
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -73,7 +73,7 @@ public interface RecordTransformationsOrBuilder extends
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -82,7 +82,7 @@ public interface RecordTransformationsOrBuilder extends
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -92,7 +92,7 @@ public interface RecordTransformationsOrBuilder extends
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InstanceGroupAutoscalingPolicyConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,6 +110,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The minInstances.
    */
   public int getMinInstances() {
     return minInstances_;
@@ -121,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The maxInstances.
    */
   public int getMaxInstances() {
     return maxInstances_;
@@ -149,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The weight.
    */
   public int getWeight() {
     return weight_;
@@ -504,6 +513,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The minInstances.
      */
     public int getMinInstances() {
       return minInstances_;
@@ -516,6 +526,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The minInstances to set.
+     * @return This builder for chaining.
      */
     public Builder setMinInstances(int value) {
       
@@ -531,6 +543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 min_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMinInstances() {
       
@@ -550,6 +563,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The maxInstances.
      */
     public int getMaxInstances() {
       return maxInstances_;
@@ -564,6 +578,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The maxInstances to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxInstances(int value) {
       
@@ -581,6 +597,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_instances = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
       
@@ -611,6 +628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The weight.
      */
     public int getWeight() {
       return weight_;
@@ -636,6 +654,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The weight to set.
+     * @return This builder for chaining.
      */
     public Builder setWeight(int value) {
       
@@ -664,6 +684,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 weight = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearWeight() {
       

@@ -63,13 +63,13 @@ namespace Grafeas.V1Beta1.Provenance {
             "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grafeas.V1Beta1.Source.SourceReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.BuildProvenance), global::Grafeas.V1Beta1.Provenance.BuildProvenance.Parser, new[]{ "Id", "ProjectId", "Commands", "BuiltArtifacts", "CreateTime", "StartTime", "EndTime", "Creator", "LogsUri", "SourceProvenance", "TriggerId", "BuildOptions", "BuilderVersion" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Source), global::Grafeas.V1Beta1.Provenance.Source.Parser, new[]{ "ArtifactStorageSourceUri", "FileHashes", "Context", "AdditionalContexts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.FileHashes), global::Grafeas.V1Beta1.Provenance.FileHashes.Parser, new[]{ "FileHash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Hash), global::Grafeas.V1Beta1.Provenance.Hash.Parser, new[]{ "Type", "Value" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Command), global::Grafeas.V1Beta1.Provenance.Command.Parser, new[]{ "Name", "Env", "Args", "Dir", "Id", "WaitFor" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Artifact), global::Grafeas.V1Beta1.Provenance.Artifact.Parser, new[]{ "Checksum", "Id", "Names" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.BuildProvenance), global::Grafeas.V1Beta1.Provenance.BuildProvenance.Parser, new[]{ "Id", "ProjectId", "Commands", "BuiltArtifacts", "CreateTime", "StartTime", "EndTime", "Creator", "LogsUri", "SourceProvenance", "TriggerId", "BuildOptions", "BuilderVersion" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Source), global::Grafeas.V1Beta1.Provenance.Source.Parser, new[]{ "ArtifactStorageSourceUri", "FileHashes", "Context", "AdditionalContexts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.FileHashes), global::Grafeas.V1Beta1.Provenance.FileHashes.Parser, new[]{ "FileHash" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Hash), global::Grafeas.V1Beta1.Provenance.Hash.Parser, new[]{ "Type", "Value" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Command), global::Grafeas.V1Beta1.Provenance.Command.Parser, new[]{ "Name", "Env", "Args", "Dir", "Id", "WaitFor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Provenance.Artifact), global::Grafeas.V1Beta1.Provenance.Artifact.Parser, new[]{ "Checksum", "Id", "Names" }, null, null, null, null)
           }));
     }
     #endregion
@@ -130,7 +130,7 @@ namespace Grafeas.V1Beta1.Provenance {
     public const int IdFieldNumber = 1;
     private string id_ = "";
     /// <summary>
-    /// Unique identifier of the build.
+    /// Required. Unique identifier of the build.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
@@ -283,7 +283,7 @@ namespace Grafeas.V1Beta1.Provenance {
     /// <summary>Field number for the "build_options" field.</summary>
     public const int BuildOptionsFieldNumber = 12;
     private static readonly pbc::MapField<string, string>.Codec _map_buildOptions_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 98);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 98);
     private readonly pbc::MapField<string, string> buildOptions_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Special options applied to this build. This is a catch-all field where
@@ -645,7 +645,7 @@ namespace Grafeas.V1Beta1.Provenance {
     /// <summary>Field number for the "file_hashes" field.</summary>
     public const int FileHashesFieldNumber = 2;
     private static readonly pbc::MapField<string, global::Grafeas.V1Beta1.Provenance.FileHashes>.Codec _map_fileHashes_codec
-        = new pbc::MapField<string, global::Grafeas.V1Beta1.Provenance.FileHashes>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Grafeas.V1Beta1.Provenance.FileHashes.Parser), 18);
+        = new pbc::MapField<string, global::Grafeas.V1Beta1.Provenance.FileHashes>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Grafeas.V1Beta1.Provenance.FileHashes.Parser), 18);
     private readonly pbc::MapField<string, global::Grafeas.V1Beta1.Provenance.FileHashes> fileHashes_ = new pbc::MapField<string, global::Grafeas.V1Beta1.Provenance.FileHashes>();
     /// <summary>
     /// Hash(es) of the build source, which can be used to verify that the original
@@ -817,7 +817,7 @@ namespace Grafeas.V1Beta1.Provenance {
   }
 
   /// <summary>
-  /// Container message for hashes of byte content of files, used in Source
+  /// Container message for hashes of byte content of files, used in source
   /// messages to verify integrity of source input to the build.
   /// </summary>
   public sealed partial class FileHashes : pb::IMessage<FileHashes> {
@@ -860,7 +860,7 @@ namespace Grafeas.V1Beta1.Provenance {
         = pb::FieldCodec.ForMessage(10, global::Grafeas.V1Beta1.Provenance.Hash.Parser);
     private readonly pbc::RepeatedField<global::Grafeas.V1Beta1.Provenance.Hash> fileHash_ = new pbc::RepeatedField<global::Grafeas.V1Beta1.Provenance.Hash>();
     /// <summary>
-    /// Collection of file hashes.
+    /// Required. Collection of file hashes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Grafeas.V1Beta1.Provenance.Hash> FileHash {
@@ -984,9 +984,9 @@ namespace Grafeas.V1Beta1.Provenance {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType type_ = 0;
+    private global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType type_ = global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType.Unspecified;
     /// <summary>
-    /// The type of hash that was performed.
+    /// Required. The type of hash that was performed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType Type {
@@ -1000,7 +1000,7 @@ namespace Grafeas.V1Beta1.Provenance {
     public const int ValueFieldNumber = 2;
     private pb::ByteString value_ = pb::ByteString.Empty;
     /// <summary>
-    /// The hash value.
+    /// Required. The hash value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Value {
@@ -1031,7 +1031,7 @@ namespace Grafeas.V1Beta1.Provenance {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType.Unspecified) hash ^= Type.GetHashCode();
       if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1046,7 +1046,7 @@ namespace Grafeas.V1Beta1.Provenance {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Type != 0) {
+      if (Type != global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -1062,7 +1062,7 @@ namespace Grafeas.V1Beta1.Provenance {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != 0) {
+      if (Type != global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Value.Length != 0) {
@@ -1079,7 +1079,7 @@ namespace Grafeas.V1Beta1.Provenance {
       if (other == null) {
         return;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::Grafeas.V1Beta1.Provenance.Hash.Types.HashType.Unspecified) {
         Type = other.Type;
       }
       if (other.Value.Length != 0) {
@@ -1113,7 +1113,7 @@ namespace Grafeas.V1Beta1.Provenance {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       /// <summary>
-      /// Specifies the hash algorithm, if any.
+      /// Specifies the hash algorithm.
       /// </summary>
       public enum HashType {
         /// <summary>
@@ -1177,8 +1177,8 @@ namespace Grafeas.V1Beta1.Provenance {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// Name of the command, as presented on the command line, or if the command is
-    /// packaged as a Docker container, as presented to `docker pull`.
+    /// Required. Name of the command, as presented on the command line, or if the
+    /// command is packaged as a Docker container, as presented to `docker pull`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.DeleteInspectTemplateRequest</code>
  */
-final class DeleteInspectTemplateRequest extends \Google\Protobuf\Internal\Message
+class DeleteInspectTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Resource name of the organization and inspectTemplate to be deleted, for
@@ -22,7 +22,7 @@ final class DeleteInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -154,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -173,10 +181,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object region_;
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -192,10 +201,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString
       getRegionBytes() {
@@ -219,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobId.
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -238,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for jobId.
    */
   public com.google.protobuf.ByteString
       getJobIdBytes() {
@@ -261,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the job field is set.
    */
   public boolean hasJob() {
     return job_ != null;
@@ -271,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The job.
    */
   public com.google.cloud.dataproc.v1.Job getJob() {
     return job_ == null ? com.google.cloud.dataproc.v1.Job.getDefaultInstance() : job_;
@@ -299,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -314,6 +329,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -742,6 +758,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -762,6 +779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -783,6 +801,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -801,6 +821,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -815,6 +836,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -831,10 +854,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object region_ = "";
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -850,10 +874,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
@@ -870,10 +895,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(
         java.lang.String value) {
@@ -887,10 +914,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
       
@@ -900,10 +928,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(
         com.google.protobuf.ByteString value) {
@@ -924,6 +954,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The jobId.
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -943,6 +974,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
@@ -963,6 +995,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobId(
         java.lang.String value) {
@@ -980,6 +1014,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobId() {
       
@@ -993,6 +1028,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1015,6 +1052,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -1025,6 +1063,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The job.
      */
     public com.google.cloud.dataproc.v1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -1173,6 +1212,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1188,6 +1228,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

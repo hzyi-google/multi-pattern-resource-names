@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AutoscalingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -94,10 +100,11 @@ private static final long serialVersionUID = 0L;
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The policyUri.
    */
   public java.lang.String getPolicyUri() {
     java.lang.Object ref = policyUri_;
@@ -118,10 +125,11 @@ private static final long serialVersionUID = 0L;
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for policyUri.
    */
   public com.google.protobuf.ByteString
       getPolicyUriBytes() {
@@ -451,10 +459,11 @@ private static final long serialVersionUID = 0L;
      * Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-     * Note that the policy must be in the same project and Cloud Dataproc region.
+     * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The policyUri.
      */
     public java.lang.String getPolicyUri() {
       java.lang.Object ref = policyUri_;
@@ -475,10 +484,11 @@ private static final long serialVersionUID = 0L;
      * Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-     * Note that the policy must be in the same project and Cloud Dataproc region.
+     * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for policyUri.
      */
     public com.google.protobuf.ByteString
         getPolicyUriBytes() {
@@ -500,10 +510,12 @@ private static final long serialVersionUID = 0L;
      * Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-     * Note that the policy must be in the same project and Cloud Dataproc region.
+     * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The policyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setPolicyUri(
         java.lang.String value) {
@@ -522,10 +534,11 @@ private static final long serialVersionUID = 0L;
      * Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-     * Note that the policy must be in the same project and Cloud Dataproc region.
+     * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPolicyUri() {
       
@@ -540,10 +553,12 @@ private static final long serialVersionUID = 0L;
      * Examples:
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-     * Note that the policy must be in the same project and Cloud Dataproc region.
+     * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
      * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for policyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setPolicyUriBytes(
         com.google.protobuf.ByteString value) {

@@ -31,6 +31,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Publication();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -153,7 +160,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.Publication.class, com.google.cloud.talent.v4beta1.Publication.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUTHORS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList authors_;
   /**
@@ -163,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   * @return A list containing the authors.
    */
   public com.google.protobuf.ProtocolStringList
       getAuthorsList() {
@@ -175,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   * @return The count of authors.
    */
   public int getAuthorsCount() {
     return authors_.size();
@@ -186,6 +194,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   * @param index The index of the element to return.
+   * @return The authors at the given index.
    */
   public java.lang.String getAuthors(int index) {
     return authors_.get(index);
@@ -197,6 +207,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string authors = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the authors at the given index.
    */
   public com.google.protobuf.ByteString
       getAuthorsBytes(int index) {
@@ -212,6 +224,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string title = 2;</code>
+   * @return The title.
    */
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
@@ -232,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string title = 2;</code>
+   * @return The bytes for title.
    */
   public com.google.protobuf.ByteString
       getTitleBytes() {
@@ -256,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -276,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -300,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string journal = 4;</code>
+   * @return The journal.
    */
   public java.lang.String getJournal() {
     java.lang.Object ref = journal_;
@@ -320,6 +337,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string journal = 4;</code>
+   * @return The bytes for journal.
    */
   public com.google.protobuf.ByteString
       getJournalBytes() {
@@ -344,6 +362,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string volume = 5;</code>
+   * @return The volume.
    */
   public java.lang.String getVolume() {
     java.lang.Object ref = volume_;
@@ -364,6 +383,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string volume = 5;</code>
+   * @return The bytes for volume.
    */
   public com.google.protobuf.ByteString
       getVolumeBytes() {
@@ -388,6 +408,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string publisher = 6;</code>
+   * @return The publisher.
    */
   public java.lang.String getPublisher() {
     java.lang.Object ref = publisher_;
@@ -408,6 +429,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string publisher = 6;</code>
+   * @return The bytes for publisher.
    */
   public com.google.protobuf.ByteString
       getPublisherBytes() {
@@ -431,6 +453,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
+   * @return Whether the publicationDate field is set.
    */
   public boolean hasPublicationDate() {
     return publicationDate_ != null;
@@ -441,6 +464,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date publication_date = 7;</code>
+   * @return The publicationDate.
    */
   public com.google.type.Date getPublicationDate() {
     return publicationDate_ == null ? com.google.type.Date.getDefaultInstance() : publicationDate_;
@@ -465,6 +489,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string publication_type = 8;</code>
+   * @return The publicationType.
    */
   public java.lang.String getPublicationType() {
     java.lang.Object ref = publicationType_;
@@ -485,6 +510,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string publication_type = 8;</code>
+   * @return The bytes for publicationType.
    */
   public com.google.protobuf.ByteString
       getPublicationTypeBytes() {
@@ -509,6 +535,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string isbn = 9;</code>
+   * @return The isbn.
    */
   public java.lang.String getIsbn() {
     java.lang.Object ref = isbn_;
@@ -529,6 +556,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string isbn = 9;</code>
+   * @return The bytes for isbn.
    */
   public com.google.protobuf.ByteString
       getIsbnBytes() {
@@ -882,7 +910,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Publication buildPartial() {
       com.google.cloud.talent.v4beta1.Publication result = new com.google.cloud.talent.v4beta1.Publication(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         authors_ = authors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -900,7 +927,6 @@ private static final long serialVersionUID = 0L;
       }
       result.publicationType_ = publicationType_;
       result.isbn_ = isbn_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1034,6 +1060,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @return A list containing the authors.
      */
     public com.google.protobuf.ProtocolStringList
         getAuthorsList() {
@@ -1046,6 +1073,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @return The count of authors.
      */
     public int getAuthorsCount() {
       return authors_.size();
@@ -1057,6 +1085,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param index The index of the element to return.
+     * @return The authors at the given index.
      */
     public java.lang.String getAuthors(int index) {
       return authors_.get(index);
@@ -1068,6 +1098,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the authors at the given index.
      */
     public com.google.protobuf.ByteString
         getAuthorsBytes(int index) {
@@ -1080,6 +1112,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The authors to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthors(
         int index, java.lang.String value) {
@@ -1098,6 +1133,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param value The authors to add.
+     * @return This builder for chaining.
      */
     public Builder addAuthors(
         java.lang.String value) {
@@ -1116,6 +1153,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param values The authors to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAuthors(
         java.lang.Iterable<java.lang.String> values) {
@@ -1132,6 +1171,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAuthors() {
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1146,6 +1186,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string authors = 1;</code>
+     * @param value The bytes of the authors to add.
+     * @return This builder for chaining.
      */
     public Builder addAuthorsBytes(
         com.google.protobuf.ByteString value) {
@@ -1167,6 +1209,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 2;</code>
+     * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -1187,6 +1230,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 2;</code>
+     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -1208,6 +1252,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 2;</code>
+     * @param value The title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitle(
         java.lang.String value) {
@@ -1226,6 +1272,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTitle() {
       
@@ -1240,6 +1287,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 2;</code>
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitleBytes(
         com.google.protobuf.ByteString value) {
@@ -1261,6 +1310,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1281,6 +1331,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1302,6 +1353,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1320,6 +1373,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1334,6 +1388,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1355,6 +1411,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string journal = 4;</code>
+     * @return The journal.
      */
     public java.lang.String getJournal() {
       java.lang.Object ref = journal_;
@@ -1375,6 +1432,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string journal = 4;</code>
+     * @return The bytes for journal.
      */
     public com.google.protobuf.ByteString
         getJournalBytes() {
@@ -1396,6 +1454,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string journal = 4;</code>
+     * @param value The journal to set.
+     * @return This builder for chaining.
      */
     public Builder setJournal(
         java.lang.String value) {
@@ -1414,6 +1474,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string journal = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJournal() {
       
@@ -1428,6 +1489,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string journal = 4;</code>
+     * @param value The bytes for journal to set.
+     * @return This builder for chaining.
      */
     public Builder setJournalBytes(
         com.google.protobuf.ByteString value) {
@@ -1449,6 +1512,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string volume = 5;</code>
+     * @return The volume.
      */
     public java.lang.String getVolume() {
       java.lang.Object ref = volume_;
@@ -1469,6 +1533,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string volume = 5;</code>
+     * @return The bytes for volume.
      */
     public com.google.protobuf.ByteString
         getVolumeBytes() {
@@ -1490,6 +1555,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string volume = 5;</code>
+     * @param value The volume to set.
+     * @return This builder for chaining.
      */
     public Builder setVolume(
         java.lang.String value) {
@@ -1508,6 +1575,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string volume = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearVolume() {
       
@@ -1522,6 +1590,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string volume = 5;</code>
+     * @param value The bytes for volume to set.
+     * @return This builder for chaining.
      */
     public Builder setVolumeBytes(
         com.google.protobuf.ByteString value) {
@@ -1543,6 +1613,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publisher = 6;</code>
+     * @return The publisher.
      */
     public java.lang.String getPublisher() {
       java.lang.Object ref = publisher_;
@@ -1563,6 +1634,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publisher = 6;</code>
+     * @return The bytes for publisher.
      */
     public com.google.protobuf.ByteString
         getPublisherBytes() {
@@ -1584,6 +1656,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publisher = 6;</code>
+     * @param value The publisher to set.
+     * @return This builder for chaining.
      */
     public Builder setPublisher(
         java.lang.String value) {
@@ -1602,6 +1676,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publisher = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPublisher() {
       
@@ -1616,6 +1691,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publisher = 6;</code>
+     * @param value The bytes for publisher to set.
+     * @return This builder for chaining.
      */
     public Builder setPublisherBytes(
         com.google.protobuf.ByteString value) {
@@ -1638,6 +1715,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
+     * @return Whether the publicationDate field is set.
      */
     public boolean hasPublicationDate() {
       return publicationDateBuilder_ != null || publicationDate_ != null;
@@ -1648,6 +1726,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date publication_date = 7;</code>
+     * @return The publicationDate.
      */
     public com.google.type.Date getPublicationDate() {
       if (publicationDateBuilder_ == null) {
@@ -1790,6 +1869,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publication_type = 8;</code>
+     * @return The publicationType.
      */
     public java.lang.String getPublicationType() {
       java.lang.Object ref = publicationType_;
@@ -1810,6 +1890,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publication_type = 8;</code>
+     * @return The bytes for publicationType.
      */
     public com.google.protobuf.ByteString
         getPublicationTypeBytes() {
@@ -1831,6 +1912,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publication_type = 8;</code>
+     * @param value The publicationType to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicationType(
         java.lang.String value) {
@@ -1849,6 +1932,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publication_type = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPublicationType() {
       
@@ -1863,6 +1947,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string publication_type = 8;</code>
+     * @param value The bytes for publicationType to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicationTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -1884,6 +1970,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string isbn = 9;</code>
+     * @return The isbn.
      */
     public java.lang.String getIsbn() {
       java.lang.Object ref = isbn_;
@@ -1904,6 +1991,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string isbn = 9;</code>
+     * @return The bytes for isbn.
      */
     public com.google.protobuf.ByteString
         getIsbnBytes() {
@@ -1925,6 +2013,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string isbn = 9;</code>
+     * @param value The isbn to set.
+     * @return This builder for chaining.
      */
     public Builder setIsbn(
         java.lang.String value) {
@@ -1943,6 +2033,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string isbn = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIsbn() {
       
@@ -1957,6 +2048,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string isbn = 9;</code>
+     * @param value The bytes for isbn to set.
+     * @return This builder for chaining.
      */
     public Builder setIsbnBytes(
         com.google.protobuf.ByteString value) {

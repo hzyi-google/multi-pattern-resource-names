@@ -23,6 +23,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * * [KeyRing][google.cloud.kms.v1.KeyRing]
  * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
  * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ * * [ImportJob][google.cloud.kms.v1.ImportJob]
  * If you are using manual gRPC libraries, see
  * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
  * </pre>
@@ -920,6 +921,7 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * * [ImportJob][google.cloud.kms.v1.ImportJob]
    * If you are using manual gRPC libraries, see
    * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
@@ -1372,6 +1374,7 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * * [ImportJob][google.cloud.kms.v1.ImportJob]
    * If you are using manual gRPC libraries, see
    * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
@@ -1695,6 +1698,7 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * * [ImportJob][google.cloud.kms.v1.ImportJob]
    * If you are using manual gRPC libraries, see
    * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
@@ -1995,6 +1999,7 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * * [ImportJob][google.cloud.kms.v1.ImportJob]
    * If you are using manual gRPC libraries, see
    * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>

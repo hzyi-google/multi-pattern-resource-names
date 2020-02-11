@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Finding();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -156,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string quote = 1;</code>
+   * @return The quote.
    */
   public java.lang.String getQuote() {
     java.lang.Object ref = quote_;
@@ -179,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string quote = 1;</code>
+   * @return The bytes for quote.
    */
   public com.google.protobuf.ByteString
       getQuoteBytes() {
@@ -203,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return infoType_ != null;
@@ -214,6 +223,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
@@ -238,6 +248,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+   * @return The enum numeric value on the wire for likelihood.
    */
   public int getLikelihoodValue() {
     return likelihood_;
@@ -248,6 +259,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+   * @return The likelihood.
    */
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
     @SuppressWarnings("deprecation")
@@ -263,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+   * @return Whether the location field is set.
    */
   public boolean hasLocation() {
     return location_ != null;
@@ -273,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+   * @return The location.
    */
   public com.google.privacy.dlp.v2.Location getLocation() {
     return location_ == null ? com.google.privacy.dlp.v2.Location.getDefaultInstance() : location_;
@@ -296,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -306,6 +321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -331,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+   * @return Whether the quoteInfo field is set.
    */
   public boolean hasQuoteInfo() {
     return quoteInfo_ != null;
@@ -343,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+   * @return The quoteInfo.
    */
   public com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo() {
     return quoteInfo_ == null ? com.google.privacy.dlp.v2.QuoteInfo.getDefaultInstance() : quoteInfo_;
@@ -813,6 +831,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string quote = 1;</code>
+     * @return The quote.
      */
     public java.lang.String getQuote() {
       java.lang.Object ref = quote_;
@@ -836,6 +855,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string quote = 1;</code>
+     * @return The bytes for quote.
      */
     public com.google.protobuf.ByteString
         getQuoteBytes() {
@@ -860,6 +880,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string quote = 1;</code>
+     * @param value The quote to set.
+     * @return This builder for chaining.
      */
     public Builder setQuote(
         java.lang.String value) {
@@ -881,6 +903,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string quote = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearQuote() {
       
@@ -898,6 +921,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string quote = 1;</code>
+     * @param value The bytes for quote to set.
+     * @return This builder for chaining.
      */
     public Builder setQuoteBytes(
         com.google.protobuf.ByteString value) {
@@ -921,6 +946,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return infoTypeBuilder_ != null || infoType_ != null;
@@ -932,6 +958,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -1080,6 +1107,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+     * @return The enum numeric value on the wire for likelihood.
      */
     public int getLikelihoodValue() {
       return likelihood_;
@@ -1090,6 +1118,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+     * @param value The enum numeric value on the wire for likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihoodValue(int value) {
       likelihood_ = value;
@@ -1102,6 +1132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+     * @return The likelihood.
      */
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
       @SuppressWarnings("deprecation")
@@ -1114,6 +1145,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+     * @param value The likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
       if (value == null) {
@@ -1130,6 +1163,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLikelihood() {
       
@@ -1147,6 +1181,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+     * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
@@ -1157,6 +1192,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Location location = 4;</code>
+     * @return The location.
      */
     public com.google.privacy.dlp.v2.Location getLocation() {
       if (locationBuilder_ == null) {
@@ -1300,6 +1336,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1310,6 +1347,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1455,6 +1493,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+     * @return Whether the quoteInfo field is set.
      */
     public boolean hasQuoteInfo() {
       return quoteInfoBuilder_ != null || quoteInfo_ != null;
@@ -1467,6 +1506,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.QuoteInfo quote_info = 7;</code>
+     * @return The quoteInfo.
      */
     public com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo() {
       if (quoteInfoBuilder_ == null) {

@@ -9,27 +9,30 @@ public interface KmsWrappedCryptoKeyOrBuilder extends
 
   /**
    * <pre>
-   * The wrapped data crypto key. [required]
+   * Required. The wrapped data crypto key.
    * </pre>
    *
-   * <code>bytes wrapped_key = 1;</code>
+   * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The wrappedKey.
    */
   com.google.protobuf.ByteString getWrappedKey();
 
   /**
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
   /**
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for cryptoKeyName.
    */
   com.google.protobuf.ByteString
       getCryptoKeyNameBytes();

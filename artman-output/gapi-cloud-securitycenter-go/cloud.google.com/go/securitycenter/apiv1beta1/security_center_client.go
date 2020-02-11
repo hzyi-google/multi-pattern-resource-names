@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -307,7 +307,7 @@ func (c *Client) GroupAssets(ctx context.Context, req *securitycenterpb.GroupAss
 // specified properties.
 //
 // To group across all sources provide a - as the source id.
-// Example: /v1beta1/organizations/123/sources/-/findings
+// Example: /v1beta1/organizations/{organization_id}/sources/-/findings
 func (c *Client) GroupFindings(ctx context.Context, req *securitycenterpb.GroupFindingsRequest, opts ...gax.CallOption) *GroupResultIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -388,7 +388,7 @@ func (c *Client) ListAssets(ctx context.Context, req *securitycenterpb.ListAsset
 // ListFindings lists an organization or source's findings.
 //
 // To list across all sources provide a - as the source id.
-// Example: /v1beta1/organizations/123/sources/-/findings
+// Example: /v1beta1/organizations/{organization_id}/sources/-/findings
 func (c *Client) ListFindings(ctx context.Context, req *securitycenterpb.ListFindingsRequest, opts ...gax.CallOption) *FindingIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new QuoteInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,7 +101,8 @@ private static final long serialVersionUID = 0L;
   private int parsedQuoteCase_ = 0;
   private java.lang.Object parsedQuote_;
   public enum ParsedQuoteCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATE_TIME(2),
     PARSEDQUOTE_NOT_SET(0);
     private final int value;
@@ -103,6 +110,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -135,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+   * @return Whether the dateTime field is set.
    */
   public boolean hasDateTime() {
     return parsedQuoteCase_ == 2;
@@ -145,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+   * @return The dateTime.
    */
   public com.google.privacy.dlp.v2.DateTime getDateTime() {
     if (parsedQuoteCase_ == 2) {
@@ -521,6 +532,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+     * @return Whether the dateTime field is set.
      */
     public boolean hasDateTime() {
       return parsedQuoteCase_ == 2;
@@ -531,6 +543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+     * @return The dateTime.
      */
     public com.google.privacy.dlp.v2.DateTime getDateTime() {
       if (dateTimeBuilder_ == null) {

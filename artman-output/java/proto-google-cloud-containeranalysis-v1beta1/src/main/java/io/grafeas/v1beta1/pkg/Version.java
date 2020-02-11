@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Version();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,7 +129,7 @@ private static final long serialVersionUID = 0L;
     VERSION_KIND_UNSPECIFIED(0),
     /**
      * <pre>
-     * A standard package version, defined by the other fields.
+     * A standard package version.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -131,8 +137,7 @@ private static final long serialVersionUID = 0L;
     NORMAL(1),
     /**
      * <pre>
-     * A special version representing negative infinity, other fields are
-     * ignored.
+     * A special version representing negative infinity.
      * </pre>
      *
      * <code>MINIMUM = 2;</code>
@@ -140,8 +145,7 @@ private static final long serialVersionUID = 0L;
     MINIMUM(2),
     /**
      * <pre>
-     * A special version representing positive infinity, other fields are
-     * ignored.
+     * A special version representing positive infinity.
      * </pre>
      *
      * <code>MAXIMUM = 3;</code>
@@ -160,7 +164,7 @@ private static final long serialVersionUID = 0L;
     public static final int VERSION_KIND_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * A standard package version, defined by the other fields.
+     * A standard package version.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -168,8 +172,7 @@ private static final long serialVersionUID = 0L;
     public static final int NORMAL_VALUE = 1;
     /**
      * <pre>
-     * A special version representing negative infinity, other fields are
-     * ignored.
+     * A special version representing negative infinity.
      * </pre>
      *
      * <code>MINIMUM = 2;</code>
@@ -177,8 +180,7 @@ private static final long serialVersionUID = 0L;
     public static final int MINIMUM_VALUE = 2;
     /**
      * <pre>
-     * A special version representing positive infinity, other fields are
-     * ignored.
+     * A special version representing positive infinity.
      * </pre>
      *
      * <code>MAXIMUM = 3;</code>
@@ -195,6 +197,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -202,6 +206,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static VersionKind forNumber(int value) {
       switch (value) {
         case 0: return VERSION_KIND_UNSPECIFIED;
@@ -268,6 +276,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 epoch = 1;</code>
+   * @return The epoch.
    */
   public int getEpoch() {
     return epoch_;
@@ -277,10 +286,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -296,10 +307,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -323,6 +336,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision = 3;</code>
+   * @return The revision.
    */
   public java.lang.String getRevision() {
     java.lang.Object ref = revision_;
@@ -342,6 +356,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision = 3;</code>
+   * @return The bytes for revision.
    */
   public com.google.protobuf.ByteString
       getRevisionBytes() {
@@ -361,22 +376,24 @@ private static final long serialVersionUID = 0L;
   private int kind_;
   /**
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
   }
   /**
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   * @return The kind.
    */
   public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
     @SuppressWarnings("deprecation")
@@ -747,6 +764,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     * @return The epoch.
      */
     public int getEpoch() {
       return epoch_;
@@ -757,6 +775,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     * @param value The epoch to set.
+     * @return This builder for chaining.
      */
     public Builder setEpoch(int value) {
       
@@ -770,6 +790,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEpoch() {
       
@@ -781,10 +802,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -800,10 +823,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -820,10 +845,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -837,10 +865,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -850,10 +880,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -874,6 +907,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision = 3;</code>
+     * @return The revision.
      */
     public java.lang.String getRevision() {
       java.lang.Object ref = revision_;
@@ -893,6 +927,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision = 3;</code>
+     * @return The bytes for revision.
      */
     public com.google.protobuf.ByteString
         getRevisionBytes() {
@@ -913,6 +948,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision = 3;</code>
+     * @param value The revision to set.
+     * @return This builder for chaining.
      */
     public Builder setRevision(
         java.lang.String value) {
@@ -930,6 +967,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRevision() {
       
@@ -943,6 +981,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision = 3;</code>
+     * @param value The bytes for revision to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionBytes(
         com.google.protobuf.ByteString value) {
@@ -959,22 +999,25 @@ private static final long serialVersionUID = 0L;
     private int kind_ = 0;
     /**
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
     }
     /**
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -983,11 +1026,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     * @return The kind.
      */
     public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
       @SuppressWarnings("deprecation")
@@ -996,11 +1040,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(io.grafeas.v1beta1.pkg.Version.VersionKind value) {
       if (value == null) {
@@ -1013,11 +1059,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
       

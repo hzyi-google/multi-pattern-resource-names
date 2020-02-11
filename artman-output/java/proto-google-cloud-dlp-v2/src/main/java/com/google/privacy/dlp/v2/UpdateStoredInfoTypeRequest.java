@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateStoredInfoTypeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -142,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -167,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -179,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * @return The config.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance() : config_;
@@ -204,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -214,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -604,6 +616,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -625,6 +638,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -647,6 +661,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -666,6 +682,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -681,6 +698,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -705,6 +724,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -717,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * @return The config.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
       if (configBuilder_ == null) {
@@ -874,6 +895,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -884,6 +906,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

@@ -13,6 +13,7 @@ public interface AsymmetricDecryptResponseOrBuilder extends
    * </pre>
    *
    * <code>bytes plaintext = 1;</code>
+   * @return The plaintext.
    */
   com.google.protobuf.ByteString getPlaintext();
 }

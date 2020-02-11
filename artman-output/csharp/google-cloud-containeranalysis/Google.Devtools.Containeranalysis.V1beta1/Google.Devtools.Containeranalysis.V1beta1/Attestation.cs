@@ -26,29 +26,39 @@ namespace Grafeas.V1Beta1.Attestation {
           string.Concat(
             "Ckdnb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9h",
             "dHRlc3RhdGlvbi9hdHRlc3RhdGlvbi5wcm90bxIbZ3JhZmVhcy52MWJldGEx",
-            "LmF0dGVzdGF0aW9uIuQBChRQZ3BTaWduZWRBdHRlc3RhdGlvbhIRCglzaWdu",
-            "YXR1cmUYASABKAkSUwoMY29udGVudF90eXBlGAMgASgOMj0uZ3JhZmVhcy52",
-            "MWJldGExLmF0dGVzdGF0aW9uLlBncFNpZ25lZEF0dGVzdGF0aW9uLkNvbnRl",
-            "bnRUeXBlEhQKCnBncF9rZXlfaWQYAiABKAlIACJECgtDb250ZW50VHlwZRIc",
-            "ChhDT05URU5UX1RZUEVfVU5TUEVDSUZJRUQQABIXChNTSU1QTEVfU0lHTklO",
-            "R19KU09OEAFCCAoGa2V5X2lkImsKCUF1dGhvcml0eRI5CgRoaW50GAEgASgL",
-            "MisuZ3JhZmVhcy52MWJldGExLmF0dGVzdGF0aW9uLkF1dGhvcml0eS5IaW50",
-            "GiMKBEhpbnQSGwoTaHVtYW5fcmVhZGFibGVfbmFtZRgBIAEoCSJICgdEZXRh",
-            "aWxzEj0KC2F0dGVzdGF0aW9uGAEgASgLMiguZ3JhZmVhcy52MWJldGExLmF0",
-            "dGVzdGF0aW9uLkF0dGVzdGF0aW9uIm8KC0F0dGVzdGF0aW9uElMKFnBncF9z",
-            "aWduZWRfYXR0ZXN0YXRpb24YASABKAsyMS5ncmFmZWFzLnYxYmV0YTEuYXR0",
-            "ZXN0YXRpb24uUGdwU2lnbmVkQXR0ZXN0YXRpb25IAEILCglzaWduYXR1cmVC",
-            "igEKHmlvLmdyYWZlYXMudjFiZXRhMS5hdHRlc3RhdGlvblABWmBnb29nbGUu",
-            "Z29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2RldnRvb2xzL2NvbnRh",
-            "aW5lcmFuYWx5c2lzL3YxYmV0YTEvYXR0ZXN0YXRpb247YXR0ZXN0YXRpb26i",
-            "AgNHUkFiBnByb3RvMw=="));
+            "LmF0dGVzdGF0aW9uGj1nb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlz",
+            "aXMvdjFiZXRhMS9jb21tb24vY29tbW9uLnByb3RvIuQBChRQZ3BTaWduZWRB",
+            "dHRlc3RhdGlvbhIRCglzaWduYXR1cmUYASABKAkSUwoMY29udGVudF90eXBl",
+            "GAMgASgOMj0uZ3JhZmVhcy52MWJldGExLmF0dGVzdGF0aW9uLlBncFNpZ25l",
+            "ZEF0dGVzdGF0aW9uLkNvbnRlbnRUeXBlEhQKCnBncF9rZXlfaWQYAiABKAlI",
+            "ACJECgtDb250ZW50VHlwZRIcChhDT05URU5UX1RZUEVfVU5TUEVDSUZJRUQQ",
+            "ABIXChNTSU1QTEVfU0lHTklOR19KU09OEAFCCAoGa2V5X2lkIoUCChhHZW5l",
+            "cmljU2lnbmVkQXR0ZXN0YXRpb24SVwoMY29udGVudF90eXBlGAEgASgOMkEu",
+            "Z3JhZmVhcy52MWJldGExLmF0dGVzdGF0aW9uLkdlbmVyaWNTaWduZWRBdHRl",
+            "c3RhdGlvbi5Db250ZW50VHlwZRIaChJzZXJpYWxpemVkX3BheWxvYWQYAiAB",
+            "KAwSLgoKc2lnbmF0dXJlcxgDIAMoCzIaLmdyYWZlYXMudjFiZXRhMS5TaWdu",
+            "YXR1cmUiRAoLQ29udGVudFR5cGUSHAoYQ09OVEVOVF9UWVBFX1VOU1BFQ0lG",
+            "SUVEEAASFwoTU0lNUExFX1NJR05JTkdfSlNPThABImsKCUF1dGhvcml0eRI5",
+            "CgRoaW50GAEgASgLMisuZ3JhZmVhcy52MWJldGExLmF0dGVzdGF0aW9uLkF1",
+            "dGhvcml0eS5IaW50GiMKBEhpbnQSGwoTaHVtYW5fcmVhZGFibGVfbmFtZRgB",
+            "IAEoCSJICgdEZXRhaWxzEj0KC2F0dGVzdGF0aW9uGAEgASgLMiguZ3JhZmVh",
+            "cy52MWJldGExLmF0dGVzdGF0aW9uLkF0dGVzdGF0aW9uIswBCgtBdHRlc3Rh",
+            "dGlvbhJTChZwZ3Bfc2lnbmVkX2F0dGVzdGF0aW9uGAEgASgLMjEuZ3JhZmVh",
+            "cy52MWJldGExLmF0dGVzdGF0aW9uLlBncFNpZ25lZEF0dGVzdGF0aW9uSAAS",
+            "WwoaZ2VuZXJpY19zaWduZWRfYXR0ZXN0YXRpb24YAiABKAsyNS5ncmFmZWFz",
+            "LnYxYmV0YTEuYXR0ZXN0YXRpb24uR2VuZXJpY1NpZ25lZEF0dGVzdGF0aW9u",
+            "SABCCwoJc2lnbmF0dXJlQooBCh5pby5ncmFmZWFzLnYxYmV0YTEuYXR0ZXN0",
+            "YXRpb25QAVpgZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
+            "cy9kZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJldGExL2F0dGVzdGF0",
+            "aW9uO2F0dGVzdGF0aW9uogIDR1JBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation), global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Parser, new[]{ "Signature", "ContentType", "PgpKeyId" }, new[]{ "KeyId" }, new[]{ typeof(global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Authority), global::Grafeas.V1Beta1.Attestation.Authority.Parser, new[]{ "Hint" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Authority.Types.Hint), global::Grafeas.V1Beta1.Attestation.Authority.Types.Hint.Parser, new[]{ "HumanReadableName" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Details), global::Grafeas.V1Beta1.Attestation.Details.Parser, new[]{ "Attestation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Attestation), global::Grafeas.V1Beta1.Attestation.Attestation.Parser, new[]{ "PgpSignedAttestation" }, new[]{ "Signature" }, null, null)
+          new pbr::FileDescriptor[] { global::Grafeas.V1Beta1.CommonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation), global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Parser, new[]{ "Signature", "ContentType", "PgpKeyId" }, new[]{ "KeyId" }, new[]{ typeof(global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation), global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Parser, new[]{ "ContentType", "SerializedPayload", "Signatures" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Authority), global::Grafeas.V1Beta1.Attestation.Authority.Parser, new[]{ "Hint" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Authority.Types.Hint), global::Grafeas.V1Beta1.Attestation.Authority.Types.Hint.Parser, new[]{ "HumanReadableName" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Details), global::Grafeas.V1Beta1.Attestation.Details.Parser, new[]{ "Attestation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Attestation.Attestation), global::Grafeas.V1Beta1.Attestation.Attestation.Parser, new[]{ "PgpSignedAttestation", "GenericSignedAttestation" }, new[]{ "Signature" }, null, null, null)
           }));
     }
     #endregion
@@ -105,9 +115,9 @@ namespace Grafeas.V1Beta1.Attestation {
     public const int SignatureFieldNumber = 1;
     private string signature_ = "";
     /// <summary>
-    /// The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-    /// equivalent.  Since this message only supports attached signatures, the
-    /// payload that was signed must be attached. While the signature format
+    /// Required. The raw content of the signature, as output by GNU Privacy Guard
+    /// (GPG) or equivalent. Since this message only supports attached signatures,
+    /// the payload that was signed must be attached. While the signature format
     /// supported is dependent on the verification implementation, currently only
     /// ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
     /// `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -125,7 +135,7 @@ namespace Grafeas.V1Beta1.Attestation {
 
     /// <summary>Field number for the "content_type" field.</summary>
     public const int ContentTypeFieldNumber = 3;
-    private global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType contentType_ = 0;
+    private global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType contentType_ = global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType.Unspecified;
     /// <summary>
     /// Type (for example schema) of the attestation payload that was signed.
     /// The verifier must ensure that the provided type is one that the verifier
@@ -211,7 +221,7 @@ namespace Grafeas.V1Beta1.Attestation {
     public override int GetHashCode() {
       int hash = 1;
       if (Signature.Length != 0) hash ^= Signature.GetHashCode();
-      if (ContentType != 0) hash ^= ContentType.GetHashCode();
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType.Unspecified) hash ^= ContentType.GetHashCode();
       if (keyIdCase_ == KeyIdOneofCase.PgpKeyId) hash ^= PgpKeyId.GetHashCode();
       hash ^= (int) keyIdCase_;
       if (_unknownFields != null) {
@@ -235,7 +245,7 @@ namespace Grafeas.V1Beta1.Attestation {
         output.WriteRawTag(18);
         output.WriteString(PgpKeyId);
       }
-      if (ContentType != 0) {
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) ContentType);
       }
@@ -250,7 +260,7 @@ namespace Grafeas.V1Beta1.Attestation {
       if (Signature.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Signature);
       }
-      if (ContentType != 0) {
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ContentType);
       }
       if (keyIdCase_ == KeyIdOneofCase.PgpKeyId) {
@@ -270,7 +280,7 @@ namespace Grafeas.V1Beta1.Attestation {
       if (other.Signature.Length != 0) {
         Signature = other.Signature;
       }
-      if (other.ContentType != 0) {
+      if (other.ContentType != global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation.Types.ContentType.Unspecified) {
         ContentType = other.ContentType;
       }
       switch (other.KeyIdCase) {
@@ -333,13 +343,237 @@ namespace Grafeas.V1Beta1.Attestation {
   }
 
   /// <summary>
+  /// An attestation wrapper that uses the Grafeas `Signature` message.
+  /// This attestation must define the `serialized_payload` that the `signatures`
+  /// verify and any metadata necessary to interpret that plaintext.  The
+  /// signatures should always be over the `serialized_payload` bytestring.
+  /// </summary>
+  public sealed partial class GenericSignedAttestation : pb::IMessage<GenericSignedAttestation> {
+    private static readonly pb::MessageParser<GenericSignedAttestation> _parser = new pb::MessageParser<GenericSignedAttestation>(() => new GenericSignedAttestation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GenericSignedAttestation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GenericSignedAttestation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GenericSignedAttestation(GenericSignedAttestation other) : this() {
+      contentType_ = other.contentType_;
+      serializedPayload_ = other.serializedPayload_;
+      signatures_ = other.signatures_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GenericSignedAttestation Clone() {
+      return new GenericSignedAttestation(this);
+    }
+
+    /// <summary>Field number for the "content_type" field.</summary>
+    public const int ContentTypeFieldNumber = 1;
+    private global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType contentType_ = global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType.Unspecified;
+    /// <summary>
+    /// Type (for example schema) of the attestation payload that was signed.
+    /// The verifier must ensure that the provided type is one that the verifier
+    /// supports, and that the attestation payload is a valid instantiation of that
+    /// type (for example by validating a JSON schema).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType ContentType {
+      get { return contentType_; }
+      set {
+        contentType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "serialized_payload" field.</summary>
+    public const int SerializedPayloadFieldNumber = 2;
+    private pb::ByteString serializedPayload_ = pb::ByteString.Empty;
+    /// <summary>
+    /// The serialized payload that is verified by one or more `signatures`.
+    /// The encoding and semantic meaning of this payload must match what is set in
+    /// `content_type`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString SerializedPayload {
+      get { return serializedPayload_; }
+      set {
+        serializedPayload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "signatures" field.</summary>
+    public const int SignaturesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Grafeas.V1Beta1.Signature> _repeated_signatures_codec
+        = pb::FieldCodec.ForMessage(26, global::Grafeas.V1Beta1.Signature.Parser);
+    private readonly pbc::RepeatedField<global::Grafeas.V1Beta1.Signature> signatures_ = new pbc::RepeatedField<global::Grafeas.V1Beta1.Signature>();
+    /// <summary>
+    /// One or more signatures over `serialized_payload`.  Verifier implementations
+    /// should consider this attestation message verified if at least one
+    /// `signature` verifies `serialized_payload`.  See `Signature` in common.proto
+    /// for more details on signature structure and verification.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Grafeas.V1Beta1.Signature> Signatures {
+      get { return signatures_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GenericSignedAttestation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GenericSignedAttestation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ContentType != other.ContentType) return false;
+      if (SerializedPayload != other.SerializedPayload) return false;
+      if(!signatures_.Equals(other.signatures_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType.Unspecified) hash ^= ContentType.GetHashCode();
+      if (SerializedPayload.Length != 0) hash ^= SerializedPayload.GetHashCode();
+      hash ^= signatures_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ContentType);
+      }
+      if (SerializedPayload.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(SerializedPayload);
+      }
+      signatures_.WriteTo(output, _repeated_signatures_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ContentType != global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ContentType);
+      }
+      if (SerializedPayload.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(SerializedPayload);
+      }
+      size += signatures_.CalculateSize(_repeated_signatures_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GenericSignedAttestation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ContentType != global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType.Unspecified) {
+        ContentType = other.ContentType;
+      }
+      if (other.SerializedPayload.Length != 0) {
+        SerializedPayload = other.SerializedPayload;
+      }
+      signatures_.Add(other.signatures_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ContentType = (global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation.Types.ContentType) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            SerializedPayload = input.ReadBytes();
+            break;
+          }
+          case 26: {
+            signatures_.AddEntriesFrom(input, _repeated_signatures_codec);
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the GenericSignedAttestation message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// Type of the attestation plaintext that was signed.
+      /// </summary>
+      public enum ContentType {
+        /// <summary>
+        /// `ContentType` is not set.
+        /// </summary>
+        [pbr::OriginalName("CONTENT_TYPE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// Atomic format attestation signature. See
+        /// https://github.com/containers/image/blob/8a5d2f82a6e3263290c8e0276c3e0f64e77723e7/docs/atomic-signature.md
+        /// The payload extracted in `plaintext` is a JSON blob conforming to the
+        /// linked schema.
+        /// </summary>
+        [pbr::OriginalName("SIMPLE_SIGNING_JSON")] SimpleSigningJson = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
   /// Note kind that represents a logical attestation "role" or "authority". For
   /// example, an organization might have one `Authority` for "QA" and one for
-  /// "build". This Note is intended to act strictly as a grouping mechanism for
-  /// the attached Occurrences (Attestations). This grouping mechanism also
+  /// "build". This note is intended to act strictly as a grouping mechanism for
+  /// the attached occurrences (Attestations). This grouping mechanism also
   /// provides a security boundary, since IAM ACLs gate the ability for a principle
-  /// to attach an Occurrence to a given Note. It also provides a single point of
-  /// lookup to find all attached Attestation Occurrences, even if they don't all
+  /// to attach an occurrence to a given note. It also provides a single point of
+  /// lookup to find all attached attestation occurrences, even if they don't all
   /// live in the same project.
   /// </summary>
   public sealed partial class Authority : pb::IMessage<Authority> {
@@ -350,7 +584,7 @@ namespace Grafeas.V1Beta1.Attestation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -484,11 +718,11 @@ namespace Grafeas.V1Beta1.Attestation {
     public static partial class Types {
       /// <summary>
       /// This submessage provides human-readable hints about the purpose of the
-      /// Authority. Because the name of a Note acts as its resource reference, it is
+      /// authority. Because the name of a note acts as its resource reference, it is
       /// important to disambiguate the canonical name of the Note (which might be a
       /// UUID for security purposes) from "readable" names more suitable for debug
-      /// output. Note that these hints should NOT be used to look up authorities in
-      /// security sensitive contexts, such as when looking up Attestations to
+      /// output. Note that these hints should not be used to look up authorities in
+      /// security sensitive contexts, such as when looking up attestations to
       /// verify.
       /// </summary>
       public sealed partial class Hint : pb::IMessage<Hint> {
@@ -529,7 +763,8 @@ namespace Grafeas.V1Beta1.Attestation {
         public const int HumanReadableNameFieldNumber = 1;
         private string humanReadableName_ = "";
         /// <summary>
-        /// The human readable name of this Attestation Authority, for example "qa".
+        /// Required. The human readable name of this attestation authority, for
+        /// example "qa".
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string HumanReadableName {
@@ -639,7 +874,7 @@ namespace Grafeas.V1Beta1.Attestation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -669,7 +904,7 @@ namespace Grafeas.V1Beta1.Attestation {
     public const int AttestationFieldNumber = 1;
     private global::Grafeas.V1Beta1.Attestation.Attestation attestation_;
     /// <summary>
-    /// Attestation for the resource.
+    /// Required. Attestation for the resource.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Attestation.Attestation Attestation {
@@ -771,11 +1006,11 @@ namespace Grafeas.V1Beta1.Attestation {
 
   /// <summary>
   /// Occurrence that represents a single "attestation". The authenticity of an
-  /// Attestation can be verified using the attached signature. If the verifier
+  /// attestation can be verified using the attached signature. If the verifier
   /// trusts the public key of the signer, then verifying the signature is
-  /// sufficient to establish trust. In this circumstance, the Authority to which
-  /// this Attestation is attached is primarily useful for look-up (how to find
-  /// this Attestation if you already know the Authority and artifact to be
+  /// sufficient to establish trust. In this circumstance, the authority to which
+  /// this attestation is attached is primarily useful for look-up (how to find
+  /// this attestation if you already know the authority and artifact to be
   /// verified) and intent (which authority was this attestation intended to sign
   /// for).
   /// </summary>
@@ -787,7 +1022,7 @@ namespace Grafeas.V1Beta1.Attestation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -807,6 +1042,9 @@ namespace Grafeas.V1Beta1.Attestation {
       switch (other.SignatureCase) {
         case SignatureOneofCase.PgpSignedAttestation:
           PgpSignedAttestation = other.PgpSignedAttestation.Clone();
+          break;
+        case SignatureOneofCase.GenericSignedAttestation:
+          GenericSignedAttestation = other.GenericSignedAttestation.Clone();
           break;
       }
 
@@ -832,11 +1070,23 @@ namespace Grafeas.V1Beta1.Attestation {
       }
     }
 
+    /// <summary>Field number for the "generic_signed_attestation" field.</summary>
+    public const int GenericSignedAttestationFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation GenericSignedAttestation {
+      get { return signatureCase_ == SignatureOneofCase.GenericSignedAttestation ? (global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation) signature_ : null; }
+      set {
+        signature_ = value;
+        signatureCase_ = value == null ? SignatureOneofCase.None : SignatureOneofCase.GenericSignedAttestation;
+      }
+    }
+
     private object signature_;
     /// <summary>Enum of possible cases for the "signature" oneof.</summary>
     public enum SignatureOneofCase {
       None = 0,
       PgpSignedAttestation = 1,
+      GenericSignedAttestation = 2,
     }
     private SignatureOneofCase signatureCase_ = SignatureOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -864,6 +1114,7 @@ namespace Grafeas.V1Beta1.Attestation {
         return true;
       }
       if (!object.Equals(PgpSignedAttestation, other.PgpSignedAttestation)) return false;
+      if (!object.Equals(GenericSignedAttestation, other.GenericSignedAttestation)) return false;
       if (SignatureCase != other.SignatureCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -872,6 +1123,7 @@ namespace Grafeas.V1Beta1.Attestation {
     public override int GetHashCode() {
       int hash = 1;
       if (signatureCase_ == SignatureOneofCase.PgpSignedAttestation) hash ^= PgpSignedAttestation.GetHashCode();
+      if (signatureCase_ == SignatureOneofCase.GenericSignedAttestation) hash ^= GenericSignedAttestation.GetHashCode();
       hash ^= (int) signatureCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -890,6 +1142,10 @@ namespace Grafeas.V1Beta1.Attestation {
         output.WriteRawTag(10);
         output.WriteMessage(PgpSignedAttestation);
       }
+      if (signatureCase_ == SignatureOneofCase.GenericSignedAttestation) {
+        output.WriteRawTag(18);
+        output.WriteMessage(GenericSignedAttestation);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -900,6 +1156,9 @@ namespace Grafeas.V1Beta1.Attestation {
       int size = 0;
       if (signatureCase_ == SignatureOneofCase.PgpSignedAttestation) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PgpSignedAttestation);
+      }
+      if (signatureCase_ == SignatureOneofCase.GenericSignedAttestation) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GenericSignedAttestation);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -918,6 +1177,12 @@ namespace Grafeas.V1Beta1.Attestation {
             PgpSignedAttestation = new global::Grafeas.V1Beta1.Attestation.PgpSignedAttestation();
           }
           PgpSignedAttestation.MergeFrom(other.PgpSignedAttestation);
+          break;
+        case SignatureOneofCase.GenericSignedAttestation:
+          if (GenericSignedAttestation == null) {
+            GenericSignedAttestation = new global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation();
+          }
+          GenericSignedAttestation.MergeFrom(other.GenericSignedAttestation);
           break;
       }
 
@@ -939,6 +1204,15 @@ namespace Grafeas.V1Beta1.Attestation {
             }
             input.ReadMessage(subBuilder);
             PgpSignedAttestation = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation subBuilder = new global::Grafeas.V1Beta1.Attestation.GenericSignedAttestation();
+            if (signatureCase_ == SignatureOneofCase.GenericSignedAttestation) {
+              subBuilder.MergeFrom(GenericSignedAttestation);
+            }
+            input.ReadMessage(subBuilder);
+            GenericSignedAttestation = subBuilder;
             break;
           }
         }

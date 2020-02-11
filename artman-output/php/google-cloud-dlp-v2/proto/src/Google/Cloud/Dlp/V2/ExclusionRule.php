@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ExclusionRule</code>
  */
-final class ExclusionRule extends \Google\Protobuf\Internal\Message
+class ExclusionRule extends \Google\Protobuf\Internal\Message
 {
     /**
      * How the rule is applied, see MatchingType documentation for details.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
      */
-    private $matching_type = 0;
+    protected $matching_type = 0;
     protected $type;
 
     /**

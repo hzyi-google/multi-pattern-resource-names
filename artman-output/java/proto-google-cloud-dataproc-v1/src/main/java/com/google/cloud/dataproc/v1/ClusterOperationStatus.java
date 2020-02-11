@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterOperationStatus();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -199,6 +205,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -206,6 +214,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN;
@@ -272,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -282,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
   public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -297,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The innerState.
    */
   public java.lang.String getInnerState() {
     java.lang.Object ref = innerState_;
@@ -316,6 +331,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for innerState.
    */
   public com.google.protobuf.ByteString
       getInnerStateBytes() {
@@ -339,6 +355,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The details.
    */
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
@@ -358,6 +375,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for details.
    */
   public com.google.protobuf.ByteString
       getDetailsBytes() {
@@ -381,6 +399,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the stateStartTime field is set.
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -391,6 +410,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The stateStartTime.
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateStartTime_;
@@ -782,6 +802,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -792,6 +813,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -804,6 +827,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The state.
      */
     public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -816,6 +840,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.dataproc.v1.ClusterOperationStatus.State value) {
       if (value == null) {
@@ -832,6 +858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -847,6 +874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The innerState.
      */
     public java.lang.String getInnerState() {
       java.lang.Object ref = innerState_;
@@ -866,6 +894,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for innerState.
      */
     public com.google.protobuf.ByteString
         getInnerStateBytes() {
@@ -886,6 +915,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The innerState to set.
+     * @return This builder for chaining.
      */
     public Builder setInnerState(
         java.lang.String value) {
@@ -903,6 +934,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearInnerState() {
       
@@ -916,6 +948,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for innerState to set.
+     * @return This builder for chaining.
      */
     public Builder setInnerStateBytes(
         com.google.protobuf.ByteString value) {
@@ -936,6 +970,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The details.
      */
     public java.lang.String getDetails() {
       java.lang.Object ref = details_;
@@ -955,6 +990,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for details.
      */
     public com.google.protobuf.ByteString
         getDetailsBytes() {
@@ -975,6 +1011,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The details to set.
+     * @return This builder for chaining.
      */
     public Builder setDetails(
         java.lang.String value) {
@@ -992,6 +1030,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDetails() {
       
@@ -1005,6 +1044,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for details to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailsBytes(
         com.google.protobuf.ByteString value) {
@@ -1027,6 +1068,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the stateStartTime field is set.
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1037,6 +1079,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The stateStartTime.
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {

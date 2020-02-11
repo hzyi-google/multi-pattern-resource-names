@@ -16,6 +16,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -27,6 +28,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -41,6 +43,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string parent = 2;</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -53,6 +56,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string parent = 2;</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -68,6 +72,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string resource_name = 3;</code>
+   * @return The resourceName.
    */
   java.lang.String getResourceName();
   /**
@@ -81,6 +86,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string resource_name = 3;</code>
+   * @return The bytes for resourceName.
    */
   com.google.protobuf.ByteString
       getResourceNameBytes();
@@ -91,6 +97,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -99,6 +106,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 4;</code>
+   * @return The state.
    */
   com.google.cloud.securitycenter.v1.Finding.State getState();
 
@@ -110,6 +118,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string category = 5;</code>
+   * @return The category.
    */
   java.lang.String getCategory();
   /**
@@ -120,6 +129,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string category = 5;</code>
+   * @return The bytes for category.
    */
   com.google.protobuf.ByteString
       getCategoryBytes();
@@ -132,6 +142,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string external_uri = 6;</code>
+   * @return The externalUri.
    */
   java.lang.String getExternalUri();
   /**
@@ -142,6 +153,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>string external_uri = 6;</code>
+   * @return The bytes for externalUri.
    */
   com.google.protobuf.ByteString
       getExternalUriBytes();
@@ -223,6 +235,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
   /**
@@ -233,6 +246,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks();
   /**
@@ -254,6 +268,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
+   * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
   /**
@@ -264,6 +279,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
+   * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
   /**
@@ -283,6 +299,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -291,6 +308,7 @@ public interface FindingOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**

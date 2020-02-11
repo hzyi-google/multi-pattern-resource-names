@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateApplicationRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -102,14 +108,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -125,14 +131,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -156,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the application field is set.
    */
   public boolean hasApplication() {
     return application_ != null;
@@ -166,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The application.
    */
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null ? com.google.cloud.talent.v4beta1.Application.getDefaultInstance() : application_;
@@ -520,14 +528,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -543,14 +551,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -567,14 +575,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -588,14 +597,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -605,14 +614,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -635,6 +645,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the application field is set.
      */
     public boolean hasApplication() {
       return applicationBuilder_ != null || application_ != null;
@@ -645,6 +656,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The application.
      */
     public com.google.cloud.talent.v4beta1.Application getApplication() {
       if (applicationBuilder_ == null) {

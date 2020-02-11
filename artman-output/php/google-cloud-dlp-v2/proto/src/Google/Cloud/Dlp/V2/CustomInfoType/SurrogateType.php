@@ -20,7 +20,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CustomInfoType.SurrogateType</code>
  */
-final class SurrogateType extends \Google\Protobuf\Internal\Message
+class SurrogateType extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig</code>
  */
-final class LDiversityConfig extends \Google\Protobuf\Internal\Message
+class LDiversityConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Set of quasi-identifiers indicating how equivalence classes are
@@ -28,7 +28,7 @@ final class LDiversityConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
      */
-    private $sensitive_attribute = null;
+    protected $sensitive_attribute = null;
 
     /**
      * Constructor.

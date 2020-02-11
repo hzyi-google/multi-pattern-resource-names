@@ -1,3 +1,18 @@
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import * as Long from "long";
 import * as $protobuf from "protobufjs";
 /** Namespace google. */
 export namespace google {
@@ -789,7 +804,7 @@ export namespace google {
                     excludeInfoTypes?: (google.privacy.dlp.v2.IExcludeInfoTypes|null);
 
                     /** ExclusionRule matchingType */
-                    matchingType?: (google.privacy.dlp.v2.MatchingType|null);
+                    matchingType?: (google.privacy.dlp.v2.MatchingType|keyof typeof google.privacy.dlp.v2.MatchingType|null);
                 }
 
                 /** Represents an ExclusionRule. */
@@ -811,7 +826,7 @@ export namespace google {
                     public excludeInfoTypes?: (google.privacy.dlp.v2.IExcludeInfoTypes|null);
 
                     /** ExclusionRule matchingType. */
-                    public matchingType: google.privacy.dlp.v2.MatchingType;
+                    public matchingType: (google.privacy.dlp.v2.MatchingType|keyof typeof google.privacy.dlp.v2.MatchingType);
 
                     /** ExclusionRule type. */
                     public type?: ("dictionary"|"regex"|"excludeInfoTypes");
@@ -885,13 +900,6 @@ export namespace google {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-                }
-
-                /** ContentOption enum. */
-                enum ContentOption {
-                    CONTENT_UNSPECIFIED = 0,
-                    CONTENT_TEXT = 1,
-                    CONTENT_IMAGE = 2
                 }
 
                 /** Properties of an InspectionRule. */
@@ -1096,7 +1104,7 @@ export namespace google {
                     infoTypes?: (google.privacy.dlp.v2.IInfoType[]|null);
 
                     /** InspectConfig minLikelihood */
-                    minLikelihood?: (google.privacy.dlp.v2.Likelihood|null);
+                    minLikelihood?: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood|null);
 
                     /** InspectConfig limits */
                     limits?: (google.privacy.dlp.v2.InspectConfig.IFindingLimits|null);
@@ -1130,7 +1138,7 @@ export namespace google {
                     public infoTypes: google.privacy.dlp.v2.IInfoType[];
 
                     /** InspectConfig minLikelihood. */
-                    public minLikelihood: google.privacy.dlp.v2.Likelihood;
+                    public minLikelihood: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood);
 
                     /** InspectConfig limits. */
                     public limits?: (google.privacy.dlp.v2.InspectConfig.IFindingLimits|null);
@@ -1429,10 +1437,10 @@ export namespace google {
                 interface IByteContentItem {
 
                     /** ByteContentItem type */
-                    type?: (google.privacy.dlp.v2.ByteContentItem.BytesType|null);
+                    type?: (google.privacy.dlp.v2.ByteContentItem.BytesType|keyof typeof google.privacy.dlp.v2.ByteContentItem.BytesType|null);
 
                     /** ByteContentItem data */
-                    data?: (Uint8Array|null);
+                    data?: (Uint8Array|string|null);
                 }
 
                 /** Represents a ByteContentItem. */
@@ -1445,10 +1453,10 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IByteContentItem);
 
                     /** ByteContentItem type. */
-                    public type: google.privacy.dlp.v2.ByteContentItem.BytesType;
+                    public type: (google.privacy.dlp.v2.ByteContentItem.BytesType|keyof typeof google.privacy.dlp.v2.ByteContentItem.BytesType);
 
                     /** ByteContentItem data. */
-                    public data: Uint8Array;
+                    public data: (Uint8Array|string);
 
                     /**
                      * Creates a new ByteContentItem instance using the specified properties.
@@ -1936,7 +1944,7 @@ export namespace google {
                     infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** Finding likelihood */
-                    likelihood?: (google.privacy.dlp.v2.Likelihood|null);
+                    likelihood?: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood|null);
 
                     /** Finding location */
                     location?: (google.privacy.dlp.v2.ILocation|null);
@@ -1964,7 +1972,7 @@ export namespace google {
                     public infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** Finding likelihood. */
-                    public likelihood: google.privacy.dlp.v2.Likelihood;
+                    public likelihood: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood);
 
                     /** Finding location. */
                     public location?: (google.privacy.dlp.v2.ILocation|null);
@@ -2148,14 +2156,6 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
-                /** MatchingType enum. */
-                enum MatchingType {
-                    MATCHING_TYPE_UNSPECIFIED = 0,
-                    MATCHING_TYPE_FULL_MATCH = 1,
-                    MATCHING_TYPE_PARTIAL_MATCH = 2,
-                    MATCHING_TYPE_INVERSE_MATCH = 3
-                }
-
                 /** Properties of a ContentLocation. */
                 interface IContentLocation {
 
@@ -2283,7 +2283,7 @@ export namespace google {
                 interface IDocumentLocation {
 
                     /** DocumentLocation fileOffset */
-                    fileOffset?: (number|Long|null);
+                    fileOffset?: (number|Long|string|null);
                 }
 
                 /** Represents a DocumentLocation. */
@@ -2296,7 +2296,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IDocumentLocation);
 
                     /** DocumentLocation fileOffset. */
-                    public fileOffset: (number|Long);
+                    public fileOffset: (number|Long|string);
 
                     /**
                      * Creates a new DocumentLocation instance using the specified properties.
@@ -2475,7 +2475,7 @@ export namespace google {
                 interface ITableLocation {
 
                     /** TableLocation rowIndex */
-                    rowIndex?: (number|Long|null);
+                    rowIndex?: (number|Long|string|null);
                 }
 
                 /** Represents a TableLocation. */
@@ -2488,7 +2488,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.ITableLocation);
 
                     /** TableLocation rowIndex. */
-                    public rowIndex: (number|Long);
+                    public rowIndex: (number|Long|string);
 
                     /**
                      * Creates a new TableLocation instance using the specified properties.
@@ -2565,10 +2565,10 @@ export namespace google {
                 interface IRange {
 
                     /** Range start */
-                    start?: (number|Long|null);
+                    start?: (number|Long|string|null);
 
                     /** Range end */
-                    end?: (number|Long|null);
+                    end?: (number|Long|string|null);
                 }
 
                 /** Represents a Range. */
@@ -2581,10 +2581,10 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IRange);
 
                     /** Range start. */
-                    public start: (number|Long);
+                    public start: (number|Long|string);
 
                     /** Range end. */
-                    public end: (number|Long);
+                    public end: (number|Long|string);
 
                     /**
                      * Creates a new Range instance using the specified properties.
@@ -3189,7 +3189,7 @@ export namespace google {
                 interface IRedactImageResponse {
 
                     /** RedactImageResponse redactedImage */
-                    redactedImage?: (Uint8Array|null);
+                    redactedImage?: (Uint8Array|string|null);
 
                     /** RedactImageResponse extractedText */
                     extractedText?: (string|null);
@@ -3208,7 +3208,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IRedactImageResponse);
 
                     /** RedactImageResponse redactedImage. */
-                    public redactedImage: Uint8Array;
+                    public redactedImage: (Uint8Array|string);
 
                     /** RedactImageResponse extractedText. */
                     public extractedText: string;
@@ -3942,7 +3942,7 @@ export namespace google {
                     table?: (google.privacy.dlp.v2.IBigQueryTable|null);
 
                     /** OutputStorageConfig outputSchema */
-                    outputSchema?: (google.privacy.dlp.v2.OutputStorageConfig.OutputSchema|null);
+                    outputSchema?: (google.privacy.dlp.v2.OutputStorageConfig.OutputSchema|keyof typeof google.privacy.dlp.v2.OutputStorageConfig.OutputSchema|null);
                 }
 
                 /** Represents an OutputStorageConfig. */
@@ -3958,7 +3958,7 @@ export namespace google {
                     public table?: (google.privacy.dlp.v2.IBigQueryTable|null);
 
                     /** OutputStorageConfig outputSchema. */
-                    public outputSchema: google.privacy.dlp.v2.OutputStorageConfig.OutputSchema;
+                    public outputSchema: (google.privacy.dlp.v2.OutputStorageConfig.OutputSchema|keyof typeof google.privacy.dlp.v2.OutputStorageConfig.OutputSchema);
 
                     /** OutputStorageConfig type. */
                     public type?: "table";
@@ -4054,7 +4054,7 @@ export namespace google {
                     infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** InfoTypeStats count */
-                    count?: (number|Long|null);
+                    count?: (number|Long|string|null);
                 }
 
                 /** Represents an InfoTypeStats. */
@@ -4070,7 +4070,7 @@ export namespace google {
                     public infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** InfoTypeStats count. */
-                    public count: (number|Long);
+                    public count: (number|Long|string);
 
                     /**
                      * Creates a new InfoTypeStats instance using the specified properties.
@@ -4341,10 +4341,10 @@ export namespace google {
                     interface IResult {
 
                         /** Result processedBytes */
-                        processedBytes?: (number|Long|null);
+                        processedBytes?: (number|Long|string|null);
 
                         /** Result totalEstimatedBytes */
-                        totalEstimatedBytes?: (number|Long|null);
+                        totalEstimatedBytes?: (number|Long|string|null);
 
                         /** Result infoTypeStats */
                         infoTypeStats?: (google.privacy.dlp.v2.IInfoTypeStats[]|null);
@@ -4360,10 +4360,10 @@ export namespace google {
                         constructor(properties?: google.privacy.dlp.v2.InspectDataSourceDetails.IResult);
 
                         /** Result processedBytes. */
-                        public processedBytes: (number|Long);
+                        public processedBytes: (number|Long|string);
 
                         /** Result totalEstimatedBytes. */
-                        public totalEstimatedBytes: (number|Long);
+                        public totalEstimatedBytes: (number|Long|string);
 
                         /** Result infoTypeStats. */
                         public infoTypeStats: google.privacy.dlp.v2.IInfoTypeStats[];
@@ -6506,19 +6506,19 @@ export namespace google {
                         interface ICategoricalStatsHistogramBucket {
 
                             /** CategoricalStatsHistogramBucket valueFrequencyLowerBound */
-                            valueFrequencyLowerBound?: (number|Long|null);
+                            valueFrequencyLowerBound?: (number|Long|string|null);
 
                             /** CategoricalStatsHistogramBucket valueFrequencyUpperBound */
-                            valueFrequencyUpperBound?: (number|Long|null);
+                            valueFrequencyUpperBound?: (number|Long|string|null);
 
                             /** CategoricalStatsHistogramBucket bucketSize */
-                            bucketSize?: (number|Long|null);
+                            bucketSize?: (number|Long|string|null);
 
                             /** CategoricalStatsHistogramBucket bucketValues */
                             bucketValues?: (google.privacy.dlp.v2.IValueFrequency[]|null);
 
                             /** CategoricalStatsHistogramBucket bucketValueCount */
-                            bucketValueCount?: (number|Long|null);
+                            bucketValueCount?: (number|Long|string|null);
                         }
 
                         /** Represents a CategoricalStatsHistogramBucket. */
@@ -6531,19 +6531,19 @@ export namespace google {
                             constructor(properties?: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.ICategoricalStatsHistogramBucket);
 
                             /** CategoricalStatsHistogramBucket valueFrequencyLowerBound. */
-                            public valueFrequencyLowerBound: (number|Long);
+                            public valueFrequencyLowerBound: (number|Long|string);
 
                             /** CategoricalStatsHistogramBucket valueFrequencyUpperBound. */
-                            public valueFrequencyUpperBound: (number|Long);
+                            public valueFrequencyUpperBound: (number|Long|string);
 
                             /** CategoricalStatsHistogramBucket bucketSize. */
-                            public bucketSize: (number|Long);
+                            public bucketSize: (number|Long|string);
 
                             /** CategoricalStatsHistogramBucket bucketValues. */
                             public bucketValues: google.privacy.dlp.v2.IValueFrequency[];
 
                             /** CategoricalStatsHistogramBucket bucketValueCount. */
-                            public bucketValueCount: (number|Long);
+                            public bucketValueCount: (number|Long|string);
 
                             /**
                              * Creates a new CategoricalStatsHistogramBucket instance using the specified properties.
@@ -6716,7 +6716,7 @@ export namespace google {
                             quasiIdsValues?: (google.privacy.dlp.v2.IValue[]|null);
 
                             /** KAnonymityEquivalenceClass equivalenceClassSize */
-                            equivalenceClassSize?: (number|Long|null);
+                            equivalenceClassSize?: (number|Long|string|null);
                         }
 
                         /** Represents a KAnonymityEquivalenceClass. */
@@ -6732,7 +6732,7 @@ export namespace google {
                             public quasiIdsValues: google.privacy.dlp.v2.IValue[];
 
                             /** KAnonymityEquivalenceClass equivalenceClassSize. */
-                            public equivalenceClassSize: (number|Long);
+                            public equivalenceClassSize: (number|Long|string);
 
                             /**
                              * Creates a new KAnonymityEquivalenceClass instance using the specified properties.
@@ -6809,19 +6809,19 @@ export namespace google {
                         interface IKAnonymityHistogramBucket {
 
                             /** KAnonymityHistogramBucket equivalenceClassSizeLowerBound */
-                            equivalenceClassSizeLowerBound?: (number|Long|null);
+                            equivalenceClassSizeLowerBound?: (number|Long|string|null);
 
                             /** KAnonymityHistogramBucket equivalenceClassSizeUpperBound */
-                            equivalenceClassSizeUpperBound?: (number|Long|null);
+                            equivalenceClassSizeUpperBound?: (number|Long|string|null);
 
                             /** KAnonymityHistogramBucket bucketSize */
-                            bucketSize?: (number|Long|null);
+                            bucketSize?: (number|Long|string|null);
 
                             /** KAnonymityHistogramBucket bucketValues */
                             bucketValues?: (google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.IKAnonymityEquivalenceClass[]|null);
 
                             /** KAnonymityHistogramBucket bucketValueCount */
-                            bucketValueCount?: (number|Long|null);
+                            bucketValueCount?: (number|Long|string|null);
                         }
 
                         /** Represents a KAnonymityHistogramBucket. */
@@ -6834,19 +6834,19 @@ export namespace google {
                             constructor(properties?: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.IKAnonymityHistogramBucket);
 
                             /** KAnonymityHistogramBucket equivalenceClassSizeLowerBound. */
-                            public equivalenceClassSizeLowerBound: (number|Long);
+                            public equivalenceClassSizeLowerBound: (number|Long|string);
 
                             /** KAnonymityHistogramBucket equivalenceClassSizeUpperBound. */
-                            public equivalenceClassSizeUpperBound: (number|Long);
+                            public equivalenceClassSizeUpperBound: (number|Long|string);
 
                             /** KAnonymityHistogramBucket bucketSize. */
-                            public bucketSize: (number|Long);
+                            public bucketSize: (number|Long|string);
 
                             /** KAnonymityHistogramBucket bucketValues. */
                             public bucketValues: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.IKAnonymityEquivalenceClass[];
 
                             /** KAnonymityHistogramBucket bucketValueCount. */
-                            public bucketValueCount: (number|Long);
+                            public bucketValueCount: (number|Long|string);
 
                             /**
                              * Creates a new KAnonymityHistogramBucket instance using the specified properties.
@@ -7019,10 +7019,10 @@ export namespace google {
                             quasiIdsValues?: (google.privacy.dlp.v2.IValue[]|null);
 
                             /** LDiversityEquivalenceClass equivalenceClassSize */
-                            equivalenceClassSize?: (number|Long|null);
+                            equivalenceClassSize?: (number|Long|string|null);
 
                             /** LDiversityEquivalenceClass numDistinctSensitiveValues */
-                            numDistinctSensitiveValues?: (number|Long|null);
+                            numDistinctSensitiveValues?: (number|Long|string|null);
 
                             /** LDiversityEquivalenceClass topSensitiveValues */
                             topSensitiveValues?: (google.privacy.dlp.v2.IValueFrequency[]|null);
@@ -7041,10 +7041,10 @@ export namespace google {
                             public quasiIdsValues: google.privacy.dlp.v2.IValue[];
 
                             /** LDiversityEquivalenceClass equivalenceClassSize. */
-                            public equivalenceClassSize: (number|Long);
+                            public equivalenceClassSize: (number|Long|string);
 
                             /** LDiversityEquivalenceClass numDistinctSensitiveValues. */
-                            public numDistinctSensitiveValues: (number|Long);
+                            public numDistinctSensitiveValues: (number|Long|string);
 
                             /** LDiversityEquivalenceClass topSensitiveValues. */
                             public topSensitiveValues: google.privacy.dlp.v2.IValueFrequency[];
@@ -7124,19 +7124,19 @@ export namespace google {
                         interface ILDiversityHistogramBucket {
 
                             /** LDiversityHistogramBucket sensitiveValueFrequencyLowerBound */
-                            sensitiveValueFrequencyLowerBound?: (number|Long|null);
+                            sensitiveValueFrequencyLowerBound?: (number|Long|string|null);
 
                             /** LDiversityHistogramBucket sensitiveValueFrequencyUpperBound */
-                            sensitiveValueFrequencyUpperBound?: (number|Long|null);
+                            sensitiveValueFrequencyUpperBound?: (number|Long|string|null);
 
                             /** LDiversityHistogramBucket bucketSize */
-                            bucketSize?: (number|Long|null);
+                            bucketSize?: (number|Long|string|null);
 
                             /** LDiversityHistogramBucket bucketValues */
                             bucketValues?: (google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.ILDiversityEquivalenceClass[]|null);
 
                             /** LDiversityHistogramBucket bucketValueCount */
-                            bucketValueCount?: (number|Long|null);
+                            bucketValueCount?: (number|Long|string|null);
                         }
 
                         /** Represents a LDiversityHistogramBucket. */
@@ -7149,19 +7149,19 @@ export namespace google {
                             constructor(properties?: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.ILDiversityHistogramBucket);
 
                             /** LDiversityHistogramBucket sensitiveValueFrequencyLowerBound. */
-                            public sensitiveValueFrequencyLowerBound: (number|Long);
+                            public sensitiveValueFrequencyLowerBound: (number|Long|string);
 
                             /** LDiversityHistogramBucket sensitiveValueFrequencyUpperBound. */
-                            public sensitiveValueFrequencyUpperBound: (number|Long);
+                            public sensitiveValueFrequencyUpperBound: (number|Long|string);
 
                             /** LDiversityHistogramBucket bucketSize. */
-                            public bucketSize: (number|Long);
+                            public bucketSize: (number|Long|string);
 
                             /** LDiversityHistogramBucket bucketValues. */
                             public bucketValues: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.ILDiversityEquivalenceClass[];
 
                             /** LDiversityHistogramBucket bucketValueCount. */
-                            public bucketValueCount: (number|Long);
+                            public bucketValueCount: (number|Long|string);
 
                             /**
                              * Creates a new LDiversityHistogramBucket instance using the specified properties.
@@ -7334,7 +7334,7 @@ export namespace google {
                             quasiIdsValues?: (google.privacy.dlp.v2.IValue[]|null);
 
                             /** KMapEstimationQuasiIdValues estimatedAnonymity */
-                            estimatedAnonymity?: (number|Long|null);
+                            estimatedAnonymity?: (number|Long|string|null);
                         }
 
                         /** Represents a KMapEstimationQuasiIdValues. */
@@ -7350,7 +7350,7 @@ export namespace google {
                             public quasiIdsValues: google.privacy.dlp.v2.IValue[];
 
                             /** KMapEstimationQuasiIdValues estimatedAnonymity. */
-                            public estimatedAnonymity: (number|Long);
+                            public estimatedAnonymity: (number|Long|string);
 
                             /**
                              * Creates a new KMapEstimationQuasiIdValues instance using the specified properties.
@@ -7427,19 +7427,19 @@ export namespace google {
                         interface IKMapEstimationHistogramBucket {
 
                             /** KMapEstimationHistogramBucket minAnonymity */
-                            minAnonymity?: (number|Long|null);
+                            minAnonymity?: (number|Long|string|null);
 
                             /** KMapEstimationHistogramBucket maxAnonymity */
-                            maxAnonymity?: (number|Long|null);
+                            maxAnonymity?: (number|Long|string|null);
 
                             /** KMapEstimationHistogramBucket bucketSize */
-                            bucketSize?: (number|Long|null);
+                            bucketSize?: (number|Long|string|null);
 
                             /** KMapEstimationHistogramBucket bucketValues */
                             bucketValues?: (google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.IKMapEstimationQuasiIdValues[]|null);
 
                             /** KMapEstimationHistogramBucket bucketValueCount */
-                            bucketValueCount?: (number|Long|null);
+                            bucketValueCount?: (number|Long|string|null);
                         }
 
                         /** Represents a KMapEstimationHistogramBucket. */
@@ -7452,19 +7452,19 @@ export namespace google {
                             constructor(properties?: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.IKMapEstimationHistogramBucket);
 
                             /** KMapEstimationHistogramBucket minAnonymity. */
-                            public minAnonymity: (number|Long);
+                            public minAnonymity: (number|Long|string);
 
                             /** KMapEstimationHistogramBucket maxAnonymity. */
-                            public maxAnonymity: (number|Long);
+                            public maxAnonymity: (number|Long|string);
 
                             /** KMapEstimationHistogramBucket bucketSize. */
-                            public bucketSize: (number|Long);
+                            public bucketSize: (number|Long|string);
 
                             /** KMapEstimationHistogramBucket bucketValues. */
                             public bucketValues: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.IKMapEstimationQuasiIdValues[];
 
                             /** KMapEstimationHistogramBucket bucketValueCount. */
-                            public bucketValueCount: (number|Long);
+                            public bucketValueCount: (number|Long|string);
 
                             /**
                              * Creates a new KMapEstimationHistogramBucket instance using the specified properties.
@@ -7736,13 +7736,13 @@ export namespace google {
                             maxProbability?: (number|null);
 
                             /** DeltaPresenceEstimationHistogramBucket bucketSize */
-                            bucketSize?: (number|Long|null);
+                            bucketSize?: (number|Long|string|null);
 
                             /** DeltaPresenceEstimationHistogramBucket bucketValues */
                             bucketValues?: (google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.IDeltaPresenceEstimationQuasiIdValues[]|null);
 
                             /** DeltaPresenceEstimationHistogramBucket bucketValueCount */
-                            bucketValueCount?: (number|Long|null);
+                            bucketValueCount?: (number|Long|string|null);
                         }
 
                         /** Represents a DeltaPresenceEstimationHistogramBucket. */
@@ -7761,13 +7761,13 @@ export namespace google {
                             public maxProbability: number;
 
                             /** DeltaPresenceEstimationHistogramBucket bucketSize. */
-                            public bucketSize: (number|Long);
+                            public bucketSize: (number|Long|string);
 
                             /** DeltaPresenceEstimationHistogramBucket bucketValues. */
                             public bucketValues: google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.IDeltaPresenceEstimationQuasiIdValues[];
 
                             /** DeltaPresenceEstimationHistogramBucket bucketValueCount. */
-                            public bucketValueCount: (number|Long);
+                            public bucketValueCount: (number|Long|string);
 
                             /**
                              * Creates a new DeltaPresenceEstimationHistogramBucket instance using the specified properties.
@@ -7849,7 +7849,7 @@ export namespace google {
                     value?: (google.privacy.dlp.v2.IValue|null);
 
                     /** ValueFrequency count */
-                    count?: (number|Long|null);
+                    count?: (number|Long|string|null);
                 }
 
                 /** Represents a ValueFrequency. */
@@ -7865,7 +7865,7 @@ export namespace google {
                     public value?: (google.privacy.dlp.v2.IValue|null);
 
                     /** ValueFrequency count. */
-                    public count: (number|Long);
+                    public count: (number|Long|string);
 
                     /**
                      * Creates a new ValueFrequency instance using the specified properties.
@@ -7942,7 +7942,7 @@ export namespace google {
                 interface IValue {
 
                     /** Value integerValue */
-                    integerValue?: (number|Long|null);
+                    integerValue?: (number|Long|string|null);
 
                     /** Value floatValue */
                     floatValue?: (number|null);
@@ -7963,7 +7963,7 @@ export namespace google {
                     dateValue?: (google.type.IDate|null);
 
                     /** Value dayOfWeekValue */
-                    dayOfWeekValue?: (google.type.DayOfWeek|null);
+                    dayOfWeekValue?: (google.type.DayOfWeek|keyof typeof google.type.DayOfWeek|null);
                 }
 
                 /** Represents a Value. */
@@ -7976,7 +7976,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IValue);
 
                     /** Value integerValue. */
-                    public integerValue: (number|Long);
+                    public integerValue: (number|Long|string);
 
                     /** Value floatValue. */
                     public floatValue: number;
@@ -7997,7 +7997,7 @@ export namespace google {
                     public dateValue?: (google.type.IDate|null);
 
                     /** Value dayOfWeekValue. */
-                    public dayOfWeekValue: google.type.DayOfWeek;
+                    public dayOfWeekValue: (google.type.DayOfWeek|keyof typeof google.type.DayOfWeek);
 
                     /** Value type. */
                     public type?: ("integerValue"|"floatValue"|"stringValue"|"booleanValue"|"timestampValue"|"timeValue"|"dateValue"|"dayOfWeekValue");
@@ -8173,7 +8173,7 @@ export namespace google {
                     date?: (google.type.IDate|null);
 
                     /** DateTime dayOfWeek */
-                    dayOfWeek?: (google.type.DayOfWeek|null);
+                    dayOfWeek?: (google.type.DayOfWeek|keyof typeof google.type.DayOfWeek|null);
 
                     /** DateTime time */
                     time?: (google.type.ITimeOfDay|null);
@@ -8195,7 +8195,7 @@ export namespace google {
                     public date?: (google.type.IDate|null);
 
                     /** DateTime dayOfWeek. */
-                    public dayOfWeek: google.type.DayOfWeek;
+                    public dayOfWeek: (google.type.DayOfWeek|keyof typeof google.type.DayOfWeek);
 
                     /** DateTime time. */
                     public time?: (google.type.ITimeOfDay|null);
@@ -8623,7 +8623,7 @@ export namespace google {
                 interface ITimePartConfig {
 
                     /** TimePartConfig partToExtract */
-                    partToExtract?: (google.privacy.dlp.v2.TimePartConfig.TimePart|null);
+                    partToExtract?: (google.privacy.dlp.v2.TimePartConfig.TimePart|keyof typeof google.privacy.dlp.v2.TimePartConfig.TimePart|null);
                 }
 
                 /** Represents a TimePartConfig. */
@@ -8636,7 +8636,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.ITimePartConfig);
 
                     /** TimePartConfig partToExtract. */
-                    public partToExtract: google.privacy.dlp.v2.TimePartConfig.TimePart;
+                    public partToExtract: (google.privacy.dlp.v2.TimePartConfig.TimePart|keyof typeof google.privacy.dlp.v2.TimePartConfig.TimePart);
 
                     /**
                      * Creates a new TimePartConfig instance using the specified properties.
@@ -9180,7 +9180,7 @@ export namespace google {
                     charactersToSkip?: (string|null);
 
                     /** CharsToIgnore commonCharactersToIgnore */
-                    commonCharactersToIgnore?: (google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore|null);
+                    commonCharactersToIgnore?: (google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore|keyof typeof google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore|null);
                 }
 
                 /** Represents a CharsToIgnore. */
@@ -9196,7 +9196,7 @@ export namespace google {
                     public charactersToSkip: string;
 
                     /** CharsToIgnore commonCharactersToIgnore. */
-                    public commonCharactersToIgnore: google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore;
+                    public commonCharactersToIgnore: (google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore|keyof typeof google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore);
 
                     /** CharsToIgnore characters. */
                     public characters?: ("charactersToSkip"|"commonCharactersToIgnore");
@@ -9700,7 +9700,7 @@ export namespace google {
                     context?: (google.privacy.dlp.v2.IFieldId|null);
 
                     /** CryptoReplaceFfxFpeConfig commonAlphabet */
-                    commonAlphabet?: (google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet|null);
+                    commonAlphabet?: (google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet|keyof typeof google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet|null);
 
                     /** CryptoReplaceFfxFpeConfig customAlphabet */
                     customAlphabet?: (string|null);
@@ -9728,7 +9728,7 @@ export namespace google {
                     public context?: (google.privacy.dlp.v2.IFieldId|null);
 
                     /** CryptoReplaceFfxFpeConfig commonAlphabet. */
-                    public commonAlphabet: google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet;
+                    public commonAlphabet: (google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet|keyof typeof google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet);
 
                     /** CryptoReplaceFfxFpeConfig customAlphabet. */
                     public customAlphabet: string;
@@ -10024,7 +10024,7 @@ export namespace google {
                 interface IUnwrappedCryptoKey {
 
                     /** UnwrappedCryptoKey key */
-                    key?: (Uint8Array|null);
+                    key?: (Uint8Array|string|null);
                 }
 
                 /** Represents an UnwrappedCryptoKey. */
@@ -10037,7 +10037,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IUnwrappedCryptoKey);
 
                     /** UnwrappedCryptoKey key. */
-                    public key: Uint8Array;
+                    public key: (Uint8Array|string);
 
                     /**
                      * Creates a new UnwrappedCryptoKey instance using the specified properties.
@@ -10110,18 +10110,11 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
-                /** InfoTypeSupportedBy enum. */
-                enum InfoTypeSupportedBy {
-                    ENUM_TYPE_UNSPECIFIED = 0,
-                    INSPECT = 1,
-                    RISK_ANALYSIS = 2
-                }
-
                 /** Properties of a KmsWrappedCryptoKey. */
                 interface IKmsWrappedCryptoKey {
 
                     /** KmsWrappedCryptoKey wrappedKey */
-                    wrappedKey?: (Uint8Array|null);
+                    wrappedKey?: (Uint8Array|string|null);
 
                     /** KmsWrappedCryptoKey cryptoKeyName */
                     cryptoKeyName?: (string|null);
@@ -10137,7 +10130,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.IKmsWrappedCryptoKey);
 
                     /** KmsWrappedCryptoKey wrappedKey. */
-                    public wrappedKey: Uint8Array;
+                    public wrappedKey: (Uint8Array|string);
 
                     /** KmsWrappedCryptoKey cryptoKeyName. */
                     public cryptoKeyName: string;
@@ -10909,7 +10902,7 @@ export namespace google {
                         field?: (google.privacy.dlp.v2.IFieldId|null);
 
                         /** Condition operator */
-                        operator?: (google.privacy.dlp.v2.RelationalOperator|null);
+                        operator?: (google.privacy.dlp.v2.RelationalOperator|keyof typeof google.privacy.dlp.v2.RelationalOperator|null);
 
                         /** Condition value */
                         value?: (google.privacy.dlp.v2.IValue|null);
@@ -10928,7 +10921,7 @@ export namespace google {
                         public field?: (google.privacy.dlp.v2.IFieldId|null);
 
                         /** Condition operator. */
-                        public operator: google.privacy.dlp.v2.RelationalOperator;
+                        public operator: (google.privacy.dlp.v2.RelationalOperator|keyof typeof google.privacy.dlp.v2.RelationalOperator);
 
                         /** Condition value. */
                         public value?: (google.privacy.dlp.v2.IValue|null);
@@ -11098,7 +11091,7 @@ export namespace google {
                     interface IExpressions {
 
                         /** Expressions logicalOperator */
-                        logicalOperator?: (google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator|null);
+                        logicalOperator?: (google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator|keyof typeof google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator|null);
 
                         /** Expressions conditions */
                         conditions?: (google.privacy.dlp.v2.RecordCondition.IConditions|null);
@@ -11114,7 +11107,7 @@ export namespace google {
                         constructor(properties?: google.privacy.dlp.v2.RecordCondition.IExpressions);
 
                         /** Expressions logicalOperator. */
-                        public logicalOperator: google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator;
+                        public logicalOperator: (google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator|keyof typeof google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator);
 
                         /** Expressions conditions. */
                         public conditions?: (google.privacy.dlp.v2.RecordCondition.IConditions|null);
@@ -11207,7 +11200,7 @@ export namespace google {
                 interface ITransformationOverview {
 
                     /** TransformationOverview transformedBytes */
-                    transformedBytes?: (number|Long|null);
+                    transformedBytes?: (number|Long|string|null);
 
                     /** TransformationOverview transformationSummaries */
                     transformationSummaries?: (google.privacy.dlp.v2.ITransformationSummary[]|null);
@@ -11223,7 +11216,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.ITransformationOverview);
 
                     /** TransformationOverview transformedBytes. */
-                    public transformedBytes: (number|Long);
+                    public transformedBytes: (number|Long|string);
 
                     /** TransformationOverview transformationSummaries. */
                     public transformationSummaries: google.privacy.dlp.v2.ITransformationSummary[];
@@ -11321,7 +11314,7 @@ export namespace google {
                     results?: (google.privacy.dlp.v2.TransformationSummary.ISummaryResult[]|null);
 
                     /** TransformationSummary transformedBytes */
-                    transformedBytes?: (number|Long|null);
+                    transformedBytes?: (number|Long|string|null);
                 }
 
                 /** Represents a TransformationSummary. */
@@ -11352,7 +11345,7 @@ export namespace google {
                     public results: google.privacy.dlp.v2.TransformationSummary.ISummaryResult[];
 
                     /** TransformationSummary transformedBytes. */
-                    public transformedBytes: (number|Long);
+                    public transformedBytes: (number|Long|string);
 
                     /**
                      * Creates a new TransformationSummary instance using the specified properties.
@@ -11431,10 +11424,10 @@ export namespace google {
                     interface ISummaryResult {
 
                         /** SummaryResult count */
-                        count?: (number|Long|null);
+                        count?: (number|Long|string|null);
 
                         /** SummaryResult code */
-                        code?: (google.privacy.dlp.v2.TransformationSummary.TransformationResultCode|null);
+                        code?: (google.privacy.dlp.v2.TransformationSummary.TransformationResultCode|keyof typeof google.privacy.dlp.v2.TransformationSummary.TransformationResultCode|null);
 
                         /** SummaryResult details */
                         details?: (string|null);
@@ -11450,10 +11443,10 @@ export namespace google {
                         constructor(properties?: google.privacy.dlp.v2.TransformationSummary.ISummaryResult);
 
                         /** SummaryResult count. */
-                        public count: (number|Long);
+                        public count: (number|Long|string);
 
                         /** SummaryResult code. */
-                        public code: google.privacy.dlp.v2.TransformationSummary.TransformationResultCode;
+                        public code: (google.privacy.dlp.v2.TransformationSummary.TransformationResultCode|keyof typeof google.privacy.dlp.v2.TransformationSummary.TransformationResultCode);
 
                         /** SummaryResult details. */
                         public details: string;
@@ -11997,7 +11990,7 @@ export namespace google {
                     lastRunTime?: (google.protobuf.ITimestamp|null);
 
                     /** JobTrigger status */
-                    status?: (google.privacy.dlp.v2.JobTrigger.Status|null);
+                    status?: (google.privacy.dlp.v2.JobTrigger.Status|keyof typeof google.privacy.dlp.v2.JobTrigger.Status|null);
                 }
 
                 /** Represents a JobTrigger. */
@@ -12037,7 +12030,7 @@ export namespace google {
                     public lastRunTime?: (google.protobuf.ITimestamp|null);
 
                     /** JobTrigger status. */
-                    public status: google.privacy.dlp.v2.JobTrigger.Status;
+                    public status: (google.privacy.dlp.v2.JobTrigger.Status|keyof typeof google.privacy.dlp.v2.JobTrigger.Status);
 
                     /** JobTrigger job. */
                     public job?: "inspectJob";
@@ -14387,10 +14380,10 @@ export namespace google {
                     name?: (string|null);
 
                     /** DlpJob type */
-                    type?: (google.privacy.dlp.v2.DlpJobType|null);
+                    type?: (google.privacy.dlp.v2.DlpJobType|keyof typeof google.privacy.dlp.v2.DlpJobType|null);
 
                     /** DlpJob state */
-                    state?: (google.privacy.dlp.v2.DlpJob.JobState|null);
+                    state?: (google.privacy.dlp.v2.DlpJob.JobState|keyof typeof google.privacy.dlp.v2.DlpJob.JobState|null);
 
                     /** DlpJob riskDetails */
                     riskDetails?: (google.privacy.dlp.v2.IAnalyzeDataSourceRiskDetails|null);
@@ -14427,10 +14420,10 @@ export namespace google {
                     public name: string;
 
                     /** DlpJob type. */
-                    public type: google.privacy.dlp.v2.DlpJobType;
+                    public type: (google.privacy.dlp.v2.DlpJobType|keyof typeof google.privacy.dlp.v2.DlpJobType);
 
                     /** DlpJob state. */
-                    public state: google.privacy.dlp.v2.DlpJob.JobState;
+                    public state: (google.privacy.dlp.v2.DlpJob.JobState|keyof typeof google.privacy.dlp.v2.DlpJob.JobState);
 
                     /** DlpJob riskDetails. */
                     public riskDetails?: (google.privacy.dlp.v2.IAnalyzeDataSourceRiskDetails|null);
@@ -14646,7 +14639,7 @@ export namespace google {
                     pageToken?: (string|null);
 
                     /** ListDlpJobsRequest type */
-                    type?: (google.privacy.dlp.v2.DlpJobType|null);
+                    type?: (google.privacy.dlp.v2.DlpJobType|keyof typeof google.privacy.dlp.v2.DlpJobType|null);
 
                     /** ListDlpJobsRequest orderBy */
                     orderBy?: (string|null);
@@ -14677,7 +14670,7 @@ export namespace google {
                     public pageToken: string;
 
                     /** ListDlpJobsRequest type. */
-                    public type: google.privacy.dlp.v2.DlpJobType;
+                    public type: (google.privacy.dlp.v2.DlpJobType|keyof typeof google.privacy.dlp.v2.DlpJobType);
 
                     /** ListDlpJobsRequest orderBy. */
                     public orderBy: string;
@@ -14754,18 +14747,6 @@ export namespace google {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-                }
-
-                /** RelationalOperator enum. */
-                enum RelationalOperator {
-                    RELATIONAL_OPERATOR_UNSPECIFIED = 0,
-                    EQUAL_TO = 1,
-                    NOT_EQUAL_TO = 2,
-                    GREATER_THAN = 3,
-                    LESS_THAN = 4,
-                    GREATER_THAN_OR_EQUALS = 5,
-                    LESS_THAN_OR_EQUALS = 6,
-                    EXISTS = 7
                 }
 
                 /** Properties of a ListDlpJobsResponse. */
@@ -15753,7 +15734,7 @@ export namespace google {
                 interface ILargeCustomDictionaryStats {
 
                     /** LargeCustomDictionaryStats approxNumPhrases */
-                    approxNumPhrases?: (number|Long|null);
+                    approxNumPhrases?: (number|Long|string|null);
                 }
 
                 /** Represents a LargeCustomDictionaryStats. */
@@ -15766,7 +15747,7 @@ export namespace google {
                     constructor(properties?: google.privacy.dlp.v2.ILargeCustomDictionaryStats);
 
                     /** LargeCustomDictionaryStats approxNumPhrases. */
-                    public approxNumPhrases: (number|Long);
+                    public approxNumPhrases: (number|Long|string);
 
                     /**
                      * Creates a new LargeCustomDictionaryStats instance using the specified properties.
@@ -16047,7 +16028,7 @@ export namespace google {
                     createTime?: (google.protobuf.ITimestamp|null);
 
                     /** StoredInfoTypeVersion state */
-                    state?: (google.privacy.dlp.v2.StoredInfoTypeState|null);
+                    state?: (google.privacy.dlp.v2.StoredInfoTypeState|keyof typeof google.privacy.dlp.v2.StoredInfoTypeState|null);
 
                     /** StoredInfoTypeVersion errors */
                     errors?: (google.privacy.dlp.v2.IError[]|null);
@@ -16072,7 +16053,7 @@ export namespace google {
                     public createTime?: (google.protobuf.ITimestamp|null);
 
                     /** StoredInfoTypeVersion state. */
-                    public state: google.privacy.dlp.v2.StoredInfoTypeState;
+                    public state: (google.privacy.dlp.v2.StoredInfoTypeState|keyof typeof google.privacy.dlp.v2.StoredInfoTypeState);
 
                     /** StoredInfoTypeVersion errors. */
                     public errors: google.privacy.dlp.v2.IError[];
@@ -16853,6 +16834,40 @@ export namespace google {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** RelationalOperator enum. */
+                enum RelationalOperator {
+                    RELATIONAL_OPERATOR_UNSPECIFIED = 0,
+                    EQUAL_TO = 1,
+                    NOT_EQUAL_TO = 2,
+                    GREATER_THAN = 3,
+                    LESS_THAN = 4,
+                    GREATER_THAN_OR_EQUALS = 5,
+                    LESS_THAN_OR_EQUALS = 6,
+                    EXISTS = 7
+                }
+
+                /** MatchingType enum. */
+                enum MatchingType {
+                    MATCHING_TYPE_UNSPECIFIED = 0,
+                    MATCHING_TYPE_FULL_MATCH = 1,
+                    MATCHING_TYPE_PARTIAL_MATCH = 2,
+                    MATCHING_TYPE_INVERSE_MATCH = 3
+                }
+
+                /** ContentOption enum. */
+                enum ContentOption {
+                    CONTENT_UNSPECIFIED = 0,
+                    CONTENT_TEXT = 1,
+                    CONTENT_IMAGE = 2
+                }
+
+                /** InfoTypeSupportedBy enum. */
+                enum InfoTypeSupportedBy {
+                    ENUM_TYPE_UNSPECIFIED = 0,
+                    INSPECT = 1,
+                    RISK_ANALYSIS = 2
+                }
+
                 /** DlpJobType enum. */
                 enum DlpJobType {
                     DLP_JOB_TYPE_UNSPECIFIED = 0,
@@ -17072,7 +17087,7 @@ export namespace google {
                     infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** CustomInfoType likelihood */
-                    likelihood?: (google.privacy.dlp.v2.Likelihood|null);
+                    likelihood?: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood|null);
 
                     /** CustomInfoType dictionary */
                     dictionary?: (google.privacy.dlp.v2.CustomInfoType.IDictionary|null);
@@ -17090,7 +17105,7 @@ export namespace google {
                     detectionRules?: (google.privacy.dlp.v2.CustomInfoType.IDetectionRule[]|null);
 
                     /** CustomInfoType exclusionType */
-                    exclusionType?: (google.privacy.dlp.v2.CustomInfoType.ExclusionType|null);
+                    exclusionType?: (google.privacy.dlp.v2.CustomInfoType.ExclusionType|keyof typeof google.privacy.dlp.v2.CustomInfoType.ExclusionType|null);
                 }
 
                 /** Represents a CustomInfoType. */
@@ -17106,7 +17121,7 @@ export namespace google {
                     public infoType?: (google.privacy.dlp.v2.IInfoType|null);
 
                     /** CustomInfoType likelihood. */
-                    public likelihood: google.privacy.dlp.v2.Likelihood;
+                    public likelihood: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood);
 
                     /** CustomInfoType dictionary. */
                     public dictionary?: (google.privacy.dlp.v2.CustomInfoType.IDictionary|null);
@@ -17124,7 +17139,7 @@ export namespace google {
                     public detectionRules: google.privacy.dlp.v2.CustomInfoType.IDetectionRule[];
 
                     /** CustomInfoType exclusionType. */
-                    public exclusionType: google.privacy.dlp.v2.CustomInfoType.ExclusionType;
+                    public exclusionType: (google.privacy.dlp.v2.CustomInfoType.ExclusionType|keyof typeof google.privacy.dlp.v2.CustomInfoType.ExclusionType);
 
                     /** CustomInfoType type. */
                     public type?: ("dictionary"|"regex"|"surrogateType"|"storedType");
@@ -17769,7 +17784,7 @@ export namespace google {
                         interface ILikelihoodAdjustment {
 
                             /** LikelihoodAdjustment fixedLikelihood */
-                            fixedLikelihood?: (google.privacy.dlp.v2.Likelihood|null);
+                            fixedLikelihood?: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood|null);
 
                             /** LikelihoodAdjustment relativeLikelihood */
                             relativeLikelihood?: (number|null);
@@ -17785,7 +17800,7 @@ export namespace google {
                             constructor(properties?: google.privacy.dlp.v2.CustomInfoType.DetectionRule.ILikelihoodAdjustment);
 
                             /** LikelihoodAdjustment fixedLikelihood. */
-                            public fixedLikelihood: google.privacy.dlp.v2.Likelihood;
+                            public fixedLikelihood: (google.privacy.dlp.v2.Likelihood|keyof typeof google.privacy.dlp.v2.Likelihood);
 
                             /** LikelihoodAdjustment relativeLikelihood. */
                             public relativeLikelihood: number;
@@ -18455,7 +18470,7 @@ export namespace google {
                     fileSet?: (google.privacy.dlp.v2.CloudStorageOptions.IFileSet|null);
 
                     /** CloudStorageOptions bytesLimitPerFile */
-                    bytesLimitPerFile?: (number|Long|null);
+                    bytesLimitPerFile?: (number|Long|string|null);
 
                     /** CloudStorageOptions bytesLimitPerFilePercent */
                     bytesLimitPerFilePercent?: (number|null);
@@ -18464,7 +18479,7 @@ export namespace google {
                     fileTypes?: (google.privacy.dlp.v2.FileType[]|null);
 
                     /** CloudStorageOptions sampleMethod */
-                    sampleMethod?: (google.privacy.dlp.v2.CloudStorageOptions.SampleMethod|null);
+                    sampleMethod?: (google.privacy.dlp.v2.CloudStorageOptions.SampleMethod|keyof typeof google.privacy.dlp.v2.CloudStorageOptions.SampleMethod|null);
 
                     /** CloudStorageOptions filesLimitPercent */
                     filesLimitPercent?: (number|null);
@@ -18483,7 +18498,7 @@ export namespace google {
                     public fileSet?: (google.privacy.dlp.v2.CloudStorageOptions.IFileSet|null);
 
                     /** CloudStorageOptions bytesLimitPerFile. */
-                    public bytesLimitPerFile: (number|Long);
+                    public bytesLimitPerFile: (number|Long|string);
 
                     /** CloudStorageOptions bytesLimitPerFilePercent. */
                     public bytesLimitPerFilePercent: number;
@@ -18492,7 +18507,7 @@ export namespace google {
                     public fileTypes: google.privacy.dlp.v2.FileType[];
 
                     /** CloudStorageOptions sampleMethod. */
-                    public sampleMethod: google.privacy.dlp.v2.CloudStorageOptions.SampleMethod;
+                    public sampleMethod: (google.privacy.dlp.v2.CloudStorageOptions.SampleMethod|keyof typeof google.privacy.dlp.v2.CloudStorageOptions.SampleMethod);
 
                     /** CloudStorageOptions filesLimitPercent. */
                     public filesLimitPercent: number;
@@ -18864,13 +18879,13 @@ export namespace google {
                     identifyingFields?: (google.privacy.dlp.v2.IFieldId[]|null);
 
                     /** BigQueryOptions rowsLimit */
-                    rowsLimit?: (number|Long|null);
+                    rowsLimit?: (number|Long|string|null);
 
                     /** BigQueryOptions rowsLimitPercent */
                     rowsLimitPercent?: (number|null);
 
                     /** BigQueryOptions sampleMethod */
-                    sampleMethod?: (google.privacy.dlp.v2.BigQueryOptions.SampleMethod|null);
+                    sampleMethod?: (google.privacy.dlp.v2.BigQueryOptions.SampleMethod|keyof typeof google.privacy.dlp.v2.BigQueryOptions.SampleMethod|null);
 
                     /** BigQueryOptions excludedFields */
                     excludedFields?: (google.privacy.dlp.v2.IFieldId[]|null);
@@ -18892,13 +18907,13 @@ export namespace google {
                     public identifyingFields: google.privacy.dlp.v2.IFieldId[];
 
                     /** BigQueryOptions rowsLimit. */
-                    public rowsLimit: (number|Long);
+                    public rowsLimit: (number|Long|string);
 
                     /** BigQueryOptions rowsLimitPercent. */
                     public rowsLimitPercent: number;
 
                     /** BigQueryOptions sampleMethod. */
-                    public sampleMethod: google.privacy.dlp.v2.BigQueryOptions.SampleMethod;
+                    public sampleMethod: (google.privacy.dlp.v2.BigQueryOptions.SampleMethod|keyof typeof google.privacy.dlp.v2.BigQueryOptions.SampleMethod);
 
                     /** BigQueryOptions excludedFields. */
                     public excludedFields: google.privacy.dlp.v2.IFieldId[];
@@ -19222,7 +19237,7 @@ export namespace google {
                     tableReference?: (google.privacy.dlp.v2.IBigQueryTable|null);
 
                     /** BigQueryKey rowNumber */
-                    rowNumber?: (number|Long|null);
+                    rowNumber?: (number|Long|string|null);
                 }
 
                 /** Represents a BigQueryKey. */
@@ -19238,7 +19253,7 @@ export namespace google {
                     public tableReference?: (google.privacy.dlp.v2.IBigQueryTable|null);
 
                     /** BigQueryKey rowNumber. */
-                    public rowNumber: (number|Long);
+                    public rowNumber: (number|Long|string);
 
                     /**
                      * Creates a new BigQueryKey instance using the specified properties.
@@ -19506,7 +19521,7 @@ export namespace google {
                         kind?: (string|null);
 
                         /** PathElement id */
-                        id?: (number|Long|null);
+                        id?: (number|Long|string|null);
 
                         /** PathElement name */
                         name?: (string|null);
@@ -19525,7 +19540,7 @@ export namespace google {
                         public kind: string;
 
                         /** PathElement id. */
-                        public id: (number|Long);
+                        public id: (number|Long|string);
 
                         /** PathElement name. */
                         public name: string;
@@ -20366,7 +20381,13 @@ export namespace google {
             nameField?: (string|null);
 
             /** ResourceDescriptor history */
-            history?: (google.api.ResourceDescriptor.History|null);
+            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
+
+            /** ResourceDescriptor plural */
+            plural?: (string|null);
+
+            /** ResourceDescriptor singular */
+            singular?: (string|null);
         }
 
         /** Represents a ResourceDescriptor. */
@@ -20388,7 +20409,13 @@ export namespace google {
             public nameField: string;
 
             /** ResourceDescriptor history. */
-            public history: google.api.ResourceDescriptor.History;
+            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
+
+            /** ResourceDescriptor plural. */
+            public plural: string;
+
+            /** ResourceDescriptor singular. */
+            public singular: string;
 
             /**
              * Creates a new ResourceDescriptor instance using the specified properties.
@@ -21262,10 +21289,10 @@ export namespace google {
             number?: (number|null);
 
             /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|null);
+            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
 
             /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|null);
+            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
 
             /** FieldDescriptorProto typeName */
             typeName?: (string|null);
@@ -21302,10 +21329,10 @@ export namespace google {
             public number: number;
 
             /** FieldDescriptorProto label. */
-            public label: google.protobuf.FieldDescriptorProto.Label;
+            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
 
             /** FieldDescriptorProto type. */
-            public type: google.protobuf.FieldDescriptorProto.Type;
+            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
 
             /** FieldDescriptorProto typeName. */
             public typeName: string;
@@ -22080,7 +22107,7 @@ export namespace google {
             javaStringCheckUtf8?: (boolean|null);
 
             /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|null);
+            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
 
             /** FileOptions goPackage */
             goPackage?: (string|null);
@@ -22126,6 +22153,9 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FileOptions .google.api.resourceDefinition */
+            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -22153,7 +22183,7 @@ export namespace google {
             public javaStringCheckUtf8: boolean;
 
             /** FileOptions optimizeFor. */
-            public optimizeFor: google.protobuf.FileOptions.OptimizeMode;
+            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
 
             /** FileOptions goPackage. */
             public goPackage: string;
@@ -22402,13 +22432,13 @@ export namespace google {
         interface IFieldOptions {
 
             /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|null);
+            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
 
             /** FieldOptions packed */
             packed?: (boolean|null);
 
             /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|null);
+            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
 
             /** FieldOptions lazy */
             lazy?: (boolean|null);
@@ -22439,13 +22469,13 @@ export namespace google {
             constructor(properties?: google.protobuf.IFieldOptions);
 
             /** FieldOptions ctype. */
-            public ctype: google.protobuf.FieldOptions.CType;
+            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
 
             /** FieldOptions packed. */
             public packed: boolean;
 
             /** FieldOptions jstype. */
-            public jstype: google.protobuf.FieldOptions.JSType;
+            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
 
             /** FieldOptions lazy. */
             public lazy: boolean;
@@ -22944,7 +22974,7 @@ export namespace google {
             deprecated?: (boolean|null);
 
             /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|null);
+            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
 
             /** MethodOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
@@ -22969,7 +22999,7 @@ export namespace google {
             public deprecated: boolean;
 
             /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: google.protobuf.MethodOptions.IdempotencyLevel;
+            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
 
             /** MethodOptions uninterpretedOption. */
             public uninterpretedOption: google.protobuf.IUninterpretedOption[];
@@ -23065,16 +23095,16 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|null);
+            stringValue?: (Uint8Array|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -23096,16 +23126,16 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: (number|Long|string);
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: (number|Long|string);
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: Uint8Array;
+            public stringValue: (Uint8Array|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -23692,7 +23722,7 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Timestamp nanos */
             nanos?: (number|null);
@@ -23708,7 +23738,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Timestamp nanos. */
             public nanos: number;
@@ -23788,7 +23818,7 @@ export namespace google {
         interface IDuration {
 
             /** Duration seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Duration nanos */
             nanos?: (number|null);
@@ -23804,7 +23834,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IDuration);
 
             /** Duration seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Duration nanos. */
             public nanos: number;
@@ -24061,7 +24091,7 @@ export namespace google {
             type_url?: (string|null);
 
             /** Any value */
-            value?: (Uint8Array|null);
+            value?: (Uint8Array|string|null);
         }
 
         /** Represents an Any. */
@@ -24077,7 +24107,7 @@ export namespace google {
             public type_url: string;
 
             /** Any value. */
-            public value: Uint8Array;
+            public value: (Uint8Array|string);
 
             /**
              * Creates a new Any instance using the specified properties.

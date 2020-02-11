@@ -13,6 +13,7 @@ public interface DigestOrBuilder extends
    * </pre>
    *
    * <code>bytes sha256 = 1;</code>
+   * @return The sha256.
    */
   com.google.protobuf.ByteString getSha256();
 
@@ -22,6 +23,7 @@ public interface DigestOrBuilder extends
    * </pre>
    *
    * <code>bytes sha384 = 2;</code>
+   * @return The sha384.
    */
   com.google.protobuf.ByteString getSha384();
 
@@ -31,6 +33,7 @@ public interface DigestOrBuilder extends
    * </pre>
    *
    * <code>bytes sha512 = 3;</code>
+   * @return The sha512.
    */
   com.google.protobuf.ByteString getSha512();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,12 +172,11 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param job Required. The job resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job submitJob(String projectId, String region, Job job) {
-
     SubmitJobRequest request =
         SubmitJobRequest.newBuilder().setProjectId(projectId).setRegion(region).setJob(job).build();
     return submitJob(request);
@@ -252,12 +251,11 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String projectId, String region, String jobId) {
-
     GetJobRequest request =
         GetJobRequest.newBuilder()
             .setProjectId(projectId)
@@ -337,7 +335,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String projectId, String region) {
@@ -364,7 +362,7 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param filter Optional. A filter constraining the jobs to list. Filters are case-sensitive and
    *     have the following syntax:
    *     <p>[field = value] AND [field [= value]] ...
@@ -551,12 +549,11 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job cancelJob(String projectId, String region, String jobId) {
-
     CancelJobRequest request =
         CancelJobRequest.newBuilder()
             .setProjectId(projectId)
@@ -640,12 +637,11 @@ public class JobControllerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
-   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param region Required. The Dataproc region in which to handle the request.
    * @param jobId Required. The job ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String projectId, String region, String jobId) {
-
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder()
             .setProjectId(projectId)

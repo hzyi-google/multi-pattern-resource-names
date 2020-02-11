@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.GetOrganizationSettingsRequest</code>
  */
-final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
+class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the organization to get organization settings for. Its format is
+     * Required. Name of the organization to get organization settings for. Its format is
      * "organizations/[organization_id]/organizationSettings".
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Name of the organization to get organization settings for. Its format is
+     *           Required. Name of the organization to get organization settings for. Its format is
      *           "organizations/[organization_id]/organizationSettings".
      * }
      */
@@ -40,10 +40,10 @@ final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Name of the organization to get organization settings for. Its format is
+     * Required. Name of the organization to get organization settings for. Its format is
      * "organizations/[organization_id]/organizationSettings".
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -52,10 +52,10 @@ final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Name of the organization to get organization settings for. Its format is
+     * Required. Name of the organization to get organization settings for. Its format is
      * "organizations/[organization_id]/organizationSettings".
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

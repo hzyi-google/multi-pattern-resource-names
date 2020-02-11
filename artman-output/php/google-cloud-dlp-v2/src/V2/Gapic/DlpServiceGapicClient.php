@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -610,7 +610,7 @@ class DlpServiceGapicClient
      *     @type ContentItem $item
      *          The item to inspect.
      *     @type string $inspectTemplateName
-     *          Optional template to use. Any configuration directly specified in
+     *          Template to use. Any configuration directly specified in
      *          inspect_config will override those set in the template. Singular fields
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
@@ -782,13 +782,13 @@ class DlpServiceGapicClient
      *     @type ContentItem $item
      *          The item to de-identify. Will be treated as text.
      *     @type string $inspectTemplateName
-     *          Optional template to use. Any configuration directly specified in
+     *          Template to use. Any configuration directly specified in
      *          inspect_config will override those set in the template. Singular fields
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
      *          are recursively merged.
      *     @type string $deidentifyTemplateName
-     *          Optional template to use. Any configuration directly specified in
+     *          Template to use. Any configuration directly specified in
      *          deidentify_config will override those set in the template. Singular fields
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
@@ -883,13 +883,13 @@ class DlpServiceGapicClient
      *     @type ContentItem $item
      *          The item to re-identify. Will be treated as text.
      *     @type string $inspectTemplateName
-     *          Optional template to use. Any configuration directly specified in
+     *          Template to use. Any configuration directly specified in
      *          `inspect_config` will override those set in the template. Singular fields
      *          that are set in this request will replace their corresponding fields in the
      *          template. Repeated fields are appended. Singular sub-messages and groups
      *          are recursively merged.
      *     @type string $reidentifyTemplateName
-     *          Optional template to use. References an instance of `DeidentifyTemplate`.
+     *          Template to use. References an instance of `DeidentifyTemplate`.
      *          Any configuration directly specified in `reidentify_config` or
      *          `inspect_config` will override those set in the template. Singular fields
      *          that are set in this request will replace their corresponding fields in the
@@ -967,11 +967,11 @@ class DlpServiceGapicClient
      *                            Optional.
      *
      *     @type string $languageCode
-     *          Optional BCP-47 language code for localized infoType friendly
+     *          BCP-47 language code for localized infoType friendly
      *          names. If omitted, or if localized strings are not available,
      *          en-US strings will be returned.
      *     @type string $filter
-     *          Optional filter to only return infoTypes supported by certain parts of the
+     *          filter to only return infoTypes supported by certain parts of the
      *          API. Defaults to supported_by=INSPECT.
      *     @type string $locationId
      *          The geographic location to list info types. Reserved for future
@@ -1038,7 +1038,7 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type InspectTemplate $inspectTemplate
-     *          The InspectTemplate to create.
+     *          Required. The InspectTemplate to create.
      *     @type string $templateId
      *          The template id can contain uppercase and lowercase letters,
      *          numbers, and hyphens; that is, it must match the regular
@@ -1251,7 +1251,7 @@ class DlpServiceGapicClient
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
      *     @type string $orderBy
-     *          Optional comma separated list of fields to order by,
+     *          Comma separated list of fields to order by,
      *          followed by `asc` or `desc` postfix. This list is case-insensitive,
      *          default sorting order is ascending, redundant space characters are
      *          insignificant.
@@ -1385,7 +1385,7 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type DeidentifyTemplate $deidentifyTemplate
-     *          The DeidentifyTemplate to create.
+     *          Required. The DeidentifyTemplate to create.
      *     @type string $templateId
      *          The template id can contain uppercase and lowercase letters,
      *          numbers, and hyphens; that is, it must match the regular
@@ -1599,7 +1599,7 @@ class DlpServiceGapicClient
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
      *     @type string $orderBy
-     *          Optional comma separated list of fields to order by,
+     *          Comma separated list of fields to order by,
      *          followed by `asc` or `desc` postfix. This list is case-insensitive,
      *          default sorting order is ascending, redundant space characters are
      *          insignificant.
@@ -1736,7 +1736,9 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type InspectJobConfig $inspectJob
+     *          Set to control what and how to inspect.
      *     @type RiskAnalysisJobConfig $riskJob
+     *          Set to choose what metric to calculate.
      *     @type string $jobId
      *          The job id can contain uppercase and lowercase letters,
      *          numbers, and hyphens; that is, it must match the regular
@@ -1825,14 +1827,14 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type string $filter
-     *          Optional. Allows filtering.
+     *          Allows filtering.
      *
      *          Supported syntax:
      *
      *          * Filter expressions are made up of one or more restrictions.
      *          * Restrictions can be combined by `AND` or `OR` logical operators. A
      *          sequence of restrictions implicitly uses `AND`.
-     *          * A restriction has the form of `<field> <operator> <value>`.
+     *          * A restriction has the form of `{field} {operator} {value}`.
      *          * Supported fields/values for inspect jobs:
      *              - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *              - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1866,7 +1868,7 @@ class DlpServiceGapicClient
      *          The type of job. Defaults to `DlpJobType.INSPECT`
      *          For allowed values, use constants defined on {@see \Google\Cloud\Dlp\V2\DlpJobType}
      *     @type string $orderBy
-     *          Optional comma separated list of fields to order by,
+     *          Comma separated list of fields to order by,
      *          followed by `asc` or `desc` postfix. This list is case-insensitive,
      *          default sorting order is ascending, redundant space characters are
      *          insignificant.
@@ -2132,7 +2134,7 @@ class DlpServiceGapicClient
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
      *     @type string $orderBy
-     *          Optional comma separated list of triggeredJob fields to order by,
+     *          Comma separated list of triggeredJob fields to order by,
      *          followed by `asc` or `desc` postfix. This list is case-insensitive,
      *          default sorting order is ascending, redundant space characters are
      *          insignificant.
@@ -2148,14 +2150,14 @@ class DlpServiceGapicClient
      *          - `display_name`: corresponds to JobTrigger's display name.
      *          - `status`: corresponds to JobTrigger's status.
      *     @type string $filter
-     *          Optional. Allows filtering.
+     *          Allows filtering.
      *
      *          Supported syntax:
      *
      *          * Filter expressions are made up of one or more restrictions.
      *          * Restrictions can be combined by `AND` or `OR` logical operators. A
      *          sequence of restrictions implicitly uses `AND`.
-     *          * A restriction has the form of `<field> <operator> <value>`.
+     *          * A restriction has the form of `{field} {operator} {value}`.
      *          * Supported fields/values for inspect jobs:
      *              - `status` - HEALTHY|PAUSED|CANCELLED
      *              - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -2407,7 +2409,7 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type JobTrigger $jobTrigger
-     *          The JobTrigger to create.
+     *          Required. The JobTrigger to create.
      *     @type string $triggerId
      *          The trigger id can contain uppercase and lowercase letters,
      *          numbers, and hyphens; that is, it must match the regular
@@ -2479,7 +2481,7 @@ class DlpServiceGapicClient
      *                             Optional.
      *
      *     @type StoredInfoTypeConfig $config
-     *          Configuration of the storedInfoType to create.
+     *          Required. Configuration of the storedInfoType to create.
      *     @type string $storedInfoTypeId
      *          The storedInfoType ID can contain uppercase and lowercase letters,
      *          numbers, and hyphens; that is, it must match the regular
@@ -2696,7 +2698,7 @@ class DlpServiceGapicClient
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
      *     @type string $orderBy
-     *          Optional comma separated list of fields to order by,
+     *          Comma separated list of fields to order by,
      *          followed by `asc` or `desc` postfix. This list is case-insensitive,
      *          default sorting order is ascending, redundant space characters are
      *          insignificant.

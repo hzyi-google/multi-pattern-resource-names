@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CryptoDeterministicConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
@@ -137,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance() : cryptoKey_;
@@ -160,7 +168,7 @@ private static final long serialVersionUID = 0L;
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -168,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -185,6 +193,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   * @return Whether the surrogateInfoType field is set.
    */
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
@@ -195,7 +204,7 @@ private static final long serialVersionUID = 0L;
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -203,7 +212,7 @@ private static final long serialVersionUID = 0L;
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -220,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   * @return The surrogateInfoType.
    */
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : surrogateInfoType_;
@@ -230,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -238,7 +248,7 @@ private static final long serialVersionUID = 0L;
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -264,7 +274,7 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.FieldId context_;
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -281,13 +291,14 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
   }
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -304,13 +315,14 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -722,6 +734,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
@@ -732,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -875,7 +889,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -883,7 +897,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -900,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+     * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
       return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
@@ -910,7 +925,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -918,7 +933,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -935,6 +950,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+     * @return The surrogateInfoType.
      */
     public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
       if (surrogateInfoTypeBuilder_ == null) {
@@ -949,7 +965,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -957,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -994,7 +1010,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1002,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1037,7 +1053,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1045,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1084,7 +1100,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1092,7 +1108,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1127,7 +1143,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1135,7 +1151,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1164,7 +1180,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1172,7 +1188,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1204,7 +1220,7 @@ private static final long serialVersionUID = 0L;
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1212,7 +1228,7 @@ private static final long serialVersionUID = 0L;
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1249,7 +1265,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> contextBuilder_;
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1266,13 +1282,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1289,6 +1306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {
@@ -1299,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1332,7 +1350,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1363,7 +1381,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1398,7 +1416,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1429,7 +1447,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1454,7 +1472,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1482,7 +1500,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is

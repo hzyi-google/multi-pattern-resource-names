@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.DocumentLocation</code>
  */
-final class DocumentLocation extends \Google\Protobuf\Internal\Message
+class DocumentLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Offset of the line, from the beginning of the file, where the finding
@@ -21,7 +21,7 @@ final class DocumentLocation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 file_offset = 1;</code>
      */
-    private $file_offset = 0;
+    protected $file_offset = 0;
 
     /**
      * Constructor.

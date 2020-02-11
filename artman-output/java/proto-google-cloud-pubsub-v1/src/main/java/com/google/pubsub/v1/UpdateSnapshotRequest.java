@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateSnapshotRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * @return Whether the snapshot field is set.
    */
   public boolean hasSnapshot() {
     return snapshot_ != null;
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * @return The snapshot.
    */
   public com.google.pubsub.v1.Snapshot getSnapshot() {
     return snapshot_ == null ? com.google.pubsub.v1.Snapshot.getDefaultInstance() : snapshot_;
@@ -146,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -157,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -531,6 +541,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * @return Whether the snapshot field is set.
      */
     public boolean hasSnapshot() {
       return snapshotBuilder_ != null || snapshot_ != null;
@@ -541,6 +552,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+     * @return The snapshot.
      */
     public com.google.pubsub.v1.Snapshot getSnapshot() {
       if (snapshotBuilder_ == null) {
@@ -685,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -696,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

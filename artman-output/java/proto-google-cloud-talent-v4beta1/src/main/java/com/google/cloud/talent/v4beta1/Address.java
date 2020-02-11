@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Address();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,7 +127,8 @@ private static final long serialVersionUID = 0L;
   private int addressCase_ = 0;
   private java.lang.Object address_;
   public enum AddressCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     UNSTRUCTURED_ADDRESS(2),
     STRUCTURED_ADDRESS(3),
     ADDRESS_NOT_SET(0);
@@ -130,6 +137,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -164,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The enum numeric value on the wire for usage.
    */
   public int getUsageValue() {
     return usage_;
@@ -174,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The usage.
    */
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
@@ -191,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return The unstructuredAddress.
    */
   public java.lang.String getUnstructuredAddress() {
     java.lang.Object ref = "";
@@ -218,6 +230,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return The bytes for unstructuredAddress.
    */
   public com.google.protobuf.ByteString
       getUnstructuredAddressBytes() {
@@ -246,6 +259,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
+   * @return Whether the structuredAddress field is set.
    */
   public boolean hasStructuredAddress() {
     return addressCase_ == 3;
@@ -257,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
+   * @return The structuredAddress.
    */
   public com.google.type.PostalAddress getStructuredAddress() {
     if (addressCase_ == 3) {
@@ -287,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
+   * @return Whether the current field is set.
    */
   public boolean hasCurrent() {
     return current_ != null;
@@ -297,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
+   * @return The current.
    */
   public com.google.protobuf.BoolValue getCurrent() {
     return current_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : current_;
@@ -735,6 +752,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The enum numeric value on the wire for usage.
      */
     public int getUsageValue() {
       return usage_;
@@ -745,6 +763,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The enum numeric value on the wire for usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
       usage_ = value;
@@ -757,6 +777,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The usage.
      */
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
@@ -769,6 +790,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(com.google.cloud.talent.v4beta1.ContactInfoUsage value) {
       if (value == null) {
@@ -785,6 +808,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
       
@@ -802,6 +826,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string unstructured_address = 2;</code>
+     * @return The unstructuredAddress.
      */
     public java.lang.String getUnstructuredAddress() {
       java.lang.Object ref = "";
@@ -829,6 +854,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string unstructured_address = 2;</code>
+     * @return The bytes for unstructuredAddress.
      */
     public com.google.protobuf.ByteString
         getUnstructuredAddressBytes() {
@@ -857,6 +883,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string unstructured_address = 2;</code>
+     * @param value The unstructuredAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUnstructuredAddress(
         java.lang.String value) {
@@ -877,6 +905,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string unstructured_address = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUnstructuredAddress() {
       if (addressCase_ == 2) {
@@ -895,6 +924,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string unstructured_address = 2;</code>
+     * @param value The bytes for unstructuredAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUnstructuredAddressBytes(
         com.google.protobuf.ByteString value) {
@@ -917,6 +948,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
+     * @return Whether the structuredAddress field is set.
      */
     public boolean hasStructuredAddress() {
       return addressCase_ == 3;
@@ -928,6 +960,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
+     * @return The structuredAddress.
      */
     public com.google.type.PostalAddress getStructuredAddress() {
       if (structuredAddressBuilder_ == null) {
@@ -1098,6 +1131,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue current = 4;</code>
+     * @return Whether the current field is set.
      */
     public boolean hasCurrent() {
       return currentBuilder_ != null || current_ != null;
@@ -1108,6 +1142,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue current = 4;</code>
+     * @return The current.
      */
     public com.google.protobuf.BoolValue getCurrent() {
       if (currentBuilder_ == null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,25 @@
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.protobuf.AbstractMessage;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class CompletionClientTest {
@@ -50,7 +60,7 @@ public class CompletionClientTest {
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockApplicationService,
                 mockCompanyService,
@@ -82,5 +92,61 @@ public class CompletionClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void completeQueryTest() {
+    CompleteQueryResponse expectedResponse = CompleteQueryResponse.newBuilder().build();
+    mockCompletion.addResponse(expectedResponse);
+
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    String query = "query107944136";
+    int pageSize = 883849137;
+    CompleteQueryRequest request =
+        CompleteQueryRequest.newBuilder()
+            .setParent(parent.toString())
+            .setQuery(query)
+            .setPageSize(pageSize)
+            .build();
+
+    CompleteQueryResponse actualResponse = client.completeQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompletion.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CompleteQueryRequest actualRequest = (CompleteQueryRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertEquals(pageSize, actualRequest.getPageSize());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void completeQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCompletion.addException(exception);
+
+    try {
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      String query = "query107944136";
+      int pageSize = 883849137;
+      CompleteQueryRequest request =
+          CompleteQueryRequest.newBuilder()
+              .setParent(parent.toString())
+              .setQuery(query)
+              .setPageSize(pageSize)
+              .build();
+
+      client.completeQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 }

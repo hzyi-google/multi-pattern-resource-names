@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.ListClustersResponse</code>
  */
-final class ListClustersResponse extends \Google\Protobuf\Internal\Message
+class ListClustersResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The clusters in the project.
@@ -28,7 +28,7 @@ final class ListClustersResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

@@ -9,9 +9,7 @@ public interface RequestMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -25,13 +23,12 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string domain = 1;</code>
+   * @return The domain.
    */
   java.lang.String getDomain();
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -45,15 +42,14 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string domain = 1;</code>
+   * @return The bytes for domain.
    */
   com.google.protobuf.ByteString
       getDomainBytes();
 
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -65,13 +61,12 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   * @return The sessionId.
    */
   java.lang.String getSessionId();
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -83,15 +78,14 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   * @return The bytes for sessionId.
    */
   com.google.protobuf.ByteString
       getSessionIdBytes();
 
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -103,13 +97,12 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -121,25 +114,21 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
    * <pre>
-   * Only set when any of
-   * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-   * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+   * Only set when any of [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
    * available for some reason. It is highly recommended not to set this field
-   * and provide accurate
-   * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-   * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
-   * service experience.
+   * and provide accurate [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the
+   * best service experience.
    * </pre>
    *
    * <code>bool allow_missing_ids = 4;</code>
+   * @return The allowMissingIds.
    */
   boolean getAllowMissingIds();
 
@@ -150,6 +139,7 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   * @return Whether the deviceInfo field is set.
    */
   boolean hasDeviceInfo();
   /**
@@ -159,6 +149,7 @@ public interface RequestMetadataOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   * @return The deviceInfo.
    */
   com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo();
   /**

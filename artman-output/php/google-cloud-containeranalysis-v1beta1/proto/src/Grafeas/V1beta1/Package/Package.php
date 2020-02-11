@@ -15,14 +15,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.package.Package</code>
  */
-final class Package extends \Google\Protobuf\Internal\Message
+class Package extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The various channels by which a package is distributed.
      *
@@ -37,7 +37,7 @@ final class Package extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The name of the package.
+     *           Required. Immutable. The name of the package.
      *     @type \Grafeas\V1beta1\Package\Distribution[]|\Google\Protobuf\Internal\RepeatedField $distribution
      *           The various channels by which a package is distributed.
      * }
@@ -48,7 +48,7 @@ final class Package extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -59,7 +59,7 @@ final class Package extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

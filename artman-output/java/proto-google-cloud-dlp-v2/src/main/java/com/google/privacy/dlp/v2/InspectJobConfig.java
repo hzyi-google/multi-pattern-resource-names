@@ -4,6 +4,10 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ * <pre>
+ * Controls what and how to inspect for findings.
+ * </pre>
+ *
  * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
  */
 public  final class InspectJobConfig extends
@@ -18,6 +22,13 @@ private static final long serialVersionUID = 0L;
   private InspectJobConfig() {
     inspectTemplateName_ = "";
     actions_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InspectJobConfig();
   }
 
   @java.lang.Override
@@ -77,9 +88,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             actions_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Action.parser(), extensionRegistry));
@@ -100,7 +111,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         actions_ = java.util.Collections.unmodifiableList(actions_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +131,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.InspectJobConfig.class, com.google.privacy.dlp.v2.InspectJobConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StorageConfig storageConfig_;
   /**
@@ -129,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+   * @return Whether the storageConfig field is set.
    */
   public boolean hasStorageConfig() {
     return storageConfig_ != null;
@@ -139,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+   * @return The storageConfig.
    */
   public com.google.privacy.dlp.v2.StorageConfig getStorageConfig() {
     return storageConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance() : storageConfig_;
@@ -162,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -172,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
@@ -197,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inspect_template_name = 3;</code>
+   * @return The inspectTemplateName.
    */
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
@@ -218,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inspect_template_name = 3;</code>
+   * @return The bytes for inspectTemplateName.
    */
   public com.google.protobuf.ByteString
       getInspectTemplateNameBytes() {
@@ -488,6 +504,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Controls what and how to inspect for findings.
+   * </pre>
+   *
    * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
    */
   public static final class Builder extends
@@ -542,7 +562,7 @@ private static final long serialVersionUID = 0L;
 
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         actionsBuilder_.clear();
       }
@@ -573,7 +593,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.InspectJobConfig buildPartial() {
       com.google.privacy.dlp.v2.InspectJobConfig result = new com.google.privacy.dlp.v2.InspectJobConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (storageConfigBuilder_ == null) {
         result.storageConfig_ = storageConfig_;
       } else {
@@ -586,15 +605,14 @@ private static final long serialVersionUID = 0L;
       }
       result.inspectTemplateName_ = inspectTemplateName_;
       if (actionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.actions_ = actions_;
       } else {
         result.actions_ = actionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -657,7 +675,7 @@ private static final long serialVersionUID = 0L;
         if (!other.actions_.isEmpty()) {
           if (actions_.isEmpty()) {
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureActionsIsMutable();
             actions_.addAll(other.actions_);
@@ -670,7 +688,7 @@ private static final long serialVersionUID = 0L;
             actionsBuilder_.dispose();
             actionsBuilder_ = null;
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             actionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getActionsFieldBuilder() : null;
@@ -718,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+     * @return Whether the storageConfig field is set.
      */
     public boolean hasStorageConfig() {
       return storageConfigBuilder_ != null || storageConfig_ != null;
@@ -728,6 +747,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+     * @return The storageConfig.
      */
     public com.google.privacy.dlp.v2.StorageConfig getStorageConfig() {
       if (storageConfigBuilder_ == null) {
@@ -871,6 +891,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -881,6 +902,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
@@ -1024,6 +1046,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 3;</code>
+     * @return The inspectTemplateName.
      */
     public java.lang.String getInspectTemplateName() {
       java.lang.Object ref = inspectTemplateName_;
@@ -1045,6 +1068,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 3;</code>
+     * @return The bytes for inspectTemplateName.
      */
     public com.google.protobuf.ByteString
         getInspectTemplateNameBytes() {
@@ -1067,6 +1091,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 3;</code>
+     * @param value The inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateName(
         java.lang.String value) {
@@ -1086,6 +1112,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInspectTemplateName() {
       
@@ -1101,6 +1128,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 3;</code>
+     * @param value The bytes for inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1117,9 +1146,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Action> actions_ =
       java.util.Collections.emptyList();
     private void ensureActionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>(actions_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1313,7 +1342,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearActions() {
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         actionsBuilder_.clear();
@@ -1418,7 +1447,7 @@ private static final long serialVersionUID = 0L;
         actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Action, com.google.privacy.dlp.v2.Action.Builder, com.google.privacy.dlp.v2.ActionOrBuilder>(
                 actions_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         actions_ = null;

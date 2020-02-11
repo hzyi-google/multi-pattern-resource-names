@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.TableLocation</code>
  */
-final class TableLocation extends \Google\Protobuf\Internal\Message
+class TableLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The zero-based index of the row where the finding is located.
      *
      * Generated from protobuf field <code>int64 row_index = 1;</code>
      */
-    private $row_index = 0;
+    protected $row_index = 0;
 
     /**
      * Constructor.

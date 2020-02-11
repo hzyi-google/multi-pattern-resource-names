@@ -15,6 +15,7 @@ public interface TimeFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -25,6 +26,7 @@ public interface TimeFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -46,6 +48,7 @@ public interface TimeFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -56,6 +59,7 @@ public interface TimeFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -72,21 +76,21 @@ public interface TimeFilterOrBuilder extends
   /**
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   * @return The enum numeric value on the wire for timeField.
    */
   int getTimeFieldValue();
   /**
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   * @return The timeField.
    */
   com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField();
 }

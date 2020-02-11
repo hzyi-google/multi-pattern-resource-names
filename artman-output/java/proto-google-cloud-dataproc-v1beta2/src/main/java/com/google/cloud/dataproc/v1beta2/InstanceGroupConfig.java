@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InstanceGroupConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -59,9 +66,9 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               instanceNames_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             instanceNames_.add(s);
             break;
@@ -110,9 +117,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               accelerators_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000002;
             }
             accelerators_.add(
                 input.readMessage(com.google.cloud.dataproc.v1beta2.AcceleratorConfig.parser(), extensionRegistry));
@@ -139,10 +146,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
       }
       this.unknownFields = unknownFields.build();
@@ -162,7 +169,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
   private int numInstances_;
   /**
@@ -172,6 +178,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The numInstances.
    */
   public int getNumInstances() {
     return numInstances_;
@@ -186,6 +193,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the instanceNames.
    */
   public com.google.protobuf.ProtocolStringList
       getInstanceNamesList() {
@@ -198,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of instanceNames.
    */
   public int getInstanceNamesCount() {
     return instanceNames_.size();
@@ -209,6 +218,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The instanceNames at the given index.
    */
   public java.lang.String getInstanceNames(int index) {
     return instanceNames_.get(index);
@@ -220,6 +231,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the instanceNames at the given index.
    */
   public com.google.protobuf.ByteString
       getInstanceNamesBytes(int index) {
@@ -236,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The imageUri.
    */
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
@@ -257,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for imageUri.
    */
   public com.google.protobuf.ByteString
       getImageUriBytes() {
@@ -289,6 +304,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The machineTypeUri.
    */
   public java.lang.String getMachineTypeUri() {
     java.lang.Object ref = machineTypeUri_;
@@ -317,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for machineTypeUri.
    */
   public com.google.protobuf.ByteString
       getMachineTypeUriBytes() {
@@ -340,6 +357,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the diskConfig field is set.
    */
   public boolean hasDiskConfig() {
     return diskConfig_ != null;
@@ -350,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The diskConfig.
    */
   public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
     return diskConfig_ == null ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance() : diskConfig_;
@@ -374,6 +393,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The isPreemptible.
    */
   public boolean getIsPreemptible() {
     return isPreemptible_;
@@ -389,6 +409,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the managedGroupConfig field is set.
    */
   public boolean hasManagedGroupConfig() {
     return managedGroupConfig_ != null;
@@ -401,6 +422,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The managedGroupConfig.
    */
   public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
     return managedGroupConfig_ == null ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance() : managedGroupConfig_;
@@ -488,6 +510,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string min_cpu_platform = 9;</code>
+   * @return The minCpuPlatform.
    */
   public java.lang.String getMinCpuPlatform() {
     java.lang.Object ref = minCpuPlatform_;
@@ -509,6 +532,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string min_cpu_platform = 9;</code>
+   * @return The bytes for minCpuPlatform.
    */
   public com.google.protobuf.ByteString
       getMinCpuPlatformBytes() {
@@ -830,7 +854,7 @@ private static final long serialVersionUID = 0L;
       numInstances_ = 0;
 
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       imageUri_ = "";
 
       machineTypeUri_ = "";
@@ -851,7 +875,7 @@ private static final long serialVersionUID = 0L;
       }
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         acceleratorsBuilder_.clear();
       }
@@ -884,11 +908,10 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig buildPartial() {
       com.google.cloud.dataproc.v1beta2.InstanceGroupConfig result = new com.google.cloud.dataproc.v1beta2.InstanceGroupConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.numInstances_ = numInstances_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instanceNames_ = instanceNames_;
       result.imageUri_ = imageUri_;
@@ -905,16 +928,15 @@ private static final long serialVersionUID = 0L;
         result.managedGroupConfig_ = managedGroupConfigBuilder_.build();
       }
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.accelerators_ = accelerators_;
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
       result.minCpuPlatform_ = minCpuPlatform_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -969,7 +991,7 @@ private static final long serialVersionUID = 0L;
       if (!other.instanceNames_.isEmpty()) {
         if (instanceNames_.isEmpty()) {
           instanceNames_ = other.instanceNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInstanceNamesIsMutable();
           instanceNames_.addAll(other.instanceNames_);
@@ -997,7 +1019,7 @@ private static final long serialVersionUID = 0L;
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -1010,7 +1032,7 @@ private static final long serialVersionUID = 0L;
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
             acceleratorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAcceleratorsFieldBuilder() : null;
@@ -1061,6 +1083,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The numInstances.
      */
     public int getNumInstances() {
       return numInstances_;
@@ -1072,6 +1095,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The numInstances to set.
+     * @return This builder for chaining.
      */
     public Builder setNumInstances(int value) {
       
@@ -1086,6 +1111,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumInstances() {
       
@@ -1096,9 +1122,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInstanceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1108,6 +1134,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return A list containing the instanceNames.
      */
     public com.google.protobuf.ProtocolStringList
         getInstanceNamesList() {
@@ -1120,6 +1147,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The count of instanceNames.
      */
     public int getInstanceNamesCount() {
       return instanceNames_.size();
@@ -1131,6 +1159,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the element to return.
+     * @return The instanceNames at the given index.
      */
     public java.lang.String getInstanceNames(int index) {
       return instanceNames_.get(index);
@@ -1142,6 +1172,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the instanceNames at the given index.
      */
     public com.google.protobuf.ByteString
         getInstanceNamesBytes(int index) {
@@ -1154,6 +1186,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index to set the value at.
+     * @param value The instanceNames to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceNames(
         int index, java.lang.String value) {
@@ -1172,6 +1207,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The instanceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addInstanceNames(
         java.lang.String value) {
@@ -1190,6 +1227,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param values The instanceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllInstanceNames(
         java.lang.Iterable<java.lang.String> values) {
@@ -1206,10 +1245,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearInstanceNames() {
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1220,6 +1260,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes of the instanceNames to add.
+     * @return This builder for chaining.
      */
     public Builder addInstanceNamesBytes(
         com.google.protobuf.ByteString value) {
@@ -1242,6 +1284,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -1263,6 +1306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString
         getImageUriBytes() {
@@ -1285,6 +1329,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUri(
         java.lang.String value) {
@@ -1304,6 +1350,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearImageUri() {
       
@@ -1319,6 +1366,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1348,6 +1397,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The machineTypeUri.
      */
     public java.lang.String getMachineTypeUri() {
       java.lang.Object ref = machineTypeUri_;
@@ -1376,6 +1426,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for machineTypeUri.
      */
     public com.google.protobuf.ByteString
         getMachineTypeUriBytes() {
@@ -1405,6 +1456,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The machineTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineTypeUri(
         java.lang.String value) {
@@ -1431,6 +1484,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMachineTypeUri() {
       
@@ -1453,6 +1507,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for machineTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineTypeUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1475,6 +1531,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the diskConfig field is set.
      */
     public boolean hasDiskConfig() {
       return diskConfigBuilder_ != null || diskConfig_ != null;
@@ -1485,6 +1542,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The diskConfig.
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
       if (diskConfigBuilder_ == null) {
@@ -1627,6 +1685,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isPreemptible.
      */
     public boolean getIsPreemptible() {
       return isPreemptible_;
@@ -1638,6 +1697,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The isPreemptible to set.
+     * @return This builder for chaining.
      */
     public Builder setIsPreemptible(boolean value) {
       
@@ -1652,6 +1713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearIsPreemptible() {
       
@@ -1671,6 +1733,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the managedGroupConfig field is set.
      */
     public boolean hasManagedGroupConfig() {
       return managedGroupConfigBuilder_ != null || managedGroupConfig_ != null;
@@ -1683,6 +1746,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The managedGroupConfig.
      */
     public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
       if (managedGroupConfigBuilder_ == null) {
@@ -1834,9 +1898,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> accelerators_ =
       java.util.Collections.emptyList();
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         accelerators_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2041,7 +2105,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -2153,7 +2217,7 @@ private static final long serialVersionUID = 0L;
         acceleratorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.AcceleratorConfig, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder, com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>(
                 accelerators_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         accelerators_ = null;
@@ -2170,6 +2234,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string min_cpu_platform = 9;</code>
+     * @return The minCpuPlatform.
      */
     public java.lang.String getMinCpuPlatform() {
       java.lang.Object ref = minCpuPlatform_;
@@ -2191,6 +2256,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string min_cpu_platform = 9;</code>
+     * @return The bytes for minCpuPlatform.
      */
     public com.google.protobuf.ByteString
         getMinCpuPlatformBytes() {
@@ -2213,6 +2279,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string min_cpu_platform = 9;</code>
+     * @param value The minCpuPlatform to set.
+     * @return This builder for chaining.
      */
     public Builder setMinCpuPlatform(
         java.lang.String value) {
@@ -2232,6 +2300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string min_cpu_platform = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
       
@@ -2247,6 +2316,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string min_cpu_platform = 9;</code>
+     * @param value The bytes for minCpuPlatform to set.
+     * @return This builder for chaining.
      */
     public Builder setMinCpuPlatformBytes(
         com.google.protobuf.ByteString value) {

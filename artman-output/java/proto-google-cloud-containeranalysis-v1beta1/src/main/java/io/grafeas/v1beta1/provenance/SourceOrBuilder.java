@@ -14,6 +14,7 @@ public interface SourceOrBuilder extends
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   * @return The artifactStorageSourceUri.
    */
   java.lang.String getArtifactStorageSourceUri();
   /**
@@ -23,6 +24,7 @@ public interface SourceOrBuilder extends
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   * @return The bytes for artifactStorageSourceUri.
    */
   com.google.protobuf.ByteString
       getArtifactStorageSourceUriBytes();
@@ -112,6 +114,7 @@ public interface SourceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -120,6 +123,7 @@ public interface SourceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
+   * @return The context.
    */
   io.grafeas.v1beta1.source.SourceContext getContext();
   /**

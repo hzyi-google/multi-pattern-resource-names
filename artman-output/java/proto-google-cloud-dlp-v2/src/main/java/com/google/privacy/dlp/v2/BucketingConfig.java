@@ -32,6 +32,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BucketingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -110,6 +117,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+     * @return Whether the min field is set.
      */
     boolean hasMin();
     /**
@@ -119,6 +127,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+     * @return The min.
      */
     com.google.privacy.dlp.v2.Value getMin();
     /**
@@ -137,6 +146,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+     * @return Whether the max field is set.
      */
     boolean hasMax();
     /**
@@ -145,6 +155,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+     * @return The max.
      */
     com.google.privacy.dlp.v2.Value getMax();
     /**
@@ -163,6 +174,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * @return Whether the replacementValue field is set.
      */
     boolean hasReplacementValue();
     /**
@@ -172,6 +184,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * @return The replacementValue.
      */
     com.google.privacy.dlp.v2.Value getReplacementValue();
     /**
@@ -204,6 +217,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Bucket();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -216,7 +236,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -307,6 +326,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+     * @return Whether the min field is set.
      */
     public boolean hasMin() {
       return min_ != null;
@@ -318,6 +338,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+     * @return The min.
      */
     public com.google.privacy.dlp.v2.Value getMin() {
       return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
@@ -342,6 +363,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+     * @return Whether the max field is set.
      */
     public boolean hasMax() {
       return max_ != null;
@@ -352,6 +374,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+     * @return The max.
      */
     public com.google.privacy.dlp.v2.Value getMax() {
       return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
@@ -376,6 +399,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * @return Whether the replacementValue field is set.
      */
     public boolean hasReplacementValue() {
       return replacementValue_ != null;
@@ -387,6 +411,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * @return The replacementValue.
      */
     public com.google.privacy.dlp.v2.Value getReplacementValue() {
       return replacementValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : replacementValue_;
@@ -792,6 +817,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+       * @return Whether the min field is set.
        */
       public boolean hasMin() {
         return minBuilder_ != null || min_ != null;
@@ -803,6 +829,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
+       * @return The min.
        */
       public com.google.privacy.dlp.v2.Value getMin() {
         if (minBuilder_ == null) {
@@ -953,6 +980,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+       * @return Whether the max field is set.
        */
       public boolean hasMax() {
         return maxBuilder_ != null || max_ != null;
@@ -963,6 +991,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
+       * @return The max.
        */
       public com.google.privacy.dlp.v2.Value getMax() {
         if (maxBuilder_ == null) {
@@ -1107,6 +1136,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * @return Whether the replacementValue field is set.
        */
       public boolean hasReplacementValue() {
         return replacementValueBuilder_ != null || replacementValue_ != null;
@@ -1118,6 +1148,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * @return The replacementValue.
        */
       public com.google.privacy.dlp.v2.Value getReplacementValue() {
         if (replacementValueBuilder_ == null) {

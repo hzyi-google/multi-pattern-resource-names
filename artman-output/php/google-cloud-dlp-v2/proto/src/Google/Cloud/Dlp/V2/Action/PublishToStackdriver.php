@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Action.PublishToStackdriver</code>
  */
-final class PublishToStackdriver extends \Google\Protobuf\Internal\Message
+class PublishToStackdriver extends \Google\Protobuf\Internal\Message
 {
 
     /**

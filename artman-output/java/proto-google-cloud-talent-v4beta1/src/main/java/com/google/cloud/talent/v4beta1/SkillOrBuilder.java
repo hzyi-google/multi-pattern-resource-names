@@ -15,6 +15,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -25,6 +26,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -35,6 +37,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   * @return Whether the lastUsedDate field is set.
    */
   boolean hasLastUsedDate();
   /**
@@ -43,6 +46,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   * @return The lastUsedDate.
    */
   com.google.type.Date getLastUsedDate();
   /**
@@ -61,6 +65,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   * @return The enum numeric value on the wire for level.
    */
   int getLevelValue();
   /**
@@ -70,6 +75,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   * @return The level.
    */
   com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel();
 
@@ -80,6 +86,7 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>string context = 4;</code>
+   * @return The context.
    */
   java.lang.String getContext();
   /**
@@ -89,32 +96,31 @@ public interface SkillOrBuilder extends
    * </pre>
    *
    * <code>string context = 4;</code>
+   * @return The bytes for context.
    */
   com.google.protobuf.ByteString
       getContextBytes();
 
   /**
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The skillNameSnippet.
    */
   java.lang.String getSkillNameSnippet();
   /**
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for skillNameSnippet.
    */
   com.google.protobuf.ByteString
       getSkillNameSnippetBytes();

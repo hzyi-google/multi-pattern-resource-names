@@ -47,12 +47,12 @@ namespace Grafeas.V1Beta1.Image {
             "dGExL2ltYWdlO2ltYWdlogIDR1JBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Layer), global::Grafeas.V1Beta1.Image.Layer.Parser, new[]{ "Directive", "Arguments" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Image.Layer.Types.Directive) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Fingerprint), global::Grafeas.V1Beta1.Image.Fingerprint.Parser, new[]{ "V1Name", "V2Blob", "V2Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Basis), global::Grafeas.V1Beta1.Image.Basis.Parser, new[]{ "ResourceUrl", "Fingerprint" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Details), global::Grafeas.V1Beta1.Image.Details.Parser, new[]{ "DerivedImage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Derived), global::Grafeas.V1Beta1.Image.Derived.Parser, new[]{ "Fingerprint", "Distance", "LayerInfo", "BaseResourceUrl" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Layer), global::Grafeas.V1Beta1.Image.Layer.Parser, new[]{ "Directive", "Arguments" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Image.Layer.Types.Directive) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Fingerprint), global::Grafeas.V1Beta1.Image.Fingerprint.Parser, new[]{ "V1Name", "V2Blob", "V2Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Basis), global::Grafeas.V1Beta1.Image.Basis.Parser, new[]{ "ResourceUrl", "Fingerprint" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Details), global::Grafeas.V1Beta1.Image.Details.Parser, new[]{ "DerivedImage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Image.Derived), global::Grafeas.V1Beta1.Image.Derived.Parser, new[]{ "Fingerprint", "Distance", "LayerInfo", "BaseResourceUrl" }, null, null, null, null)
           }));
     }
     #endregion
@@ -99,9 +99,9 @@ namespace Grafeas.V1Beta1.Image {
 
     /// <summary>Field number for the "directive" field.</summary>
     public const int DirectiveFieldNumber = 1;
-    private global::Grafeas.V1Beta1.Image.Layer.Types.Directive directive_ = 0;
+    private global::Grafeas.V1Beta1.Image.Layer.Types.Directive directive_ = global::Grafeas.V1Beta1.Image.Layer.Types.Directive.Unspecified;
     /// <summary>
-    /// The recovered Dockerfile directive used to construct this layer.
+    /// Required. The recovered Dockerfile directive used to construct this layer.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Image.Layer.Types.Directive Directive {
@@ -146,7 +146,7 @@ namespace Grafeas.V1Beta1.Image {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Directive != 0) hash ^= Directive.GetHashCode();
+      if (Directive != global::Grafeas.V1Beta1.Image.Layer.Types.Directive.Unspecified) hash ^= Directive.GetHashCode();
       if (Arguments.Length != 0) hash ^= Arguments.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -161,7 +161,7 @@ namespace Grafeas.V1Beta1.Image {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Directive != 0) {
+      if (Directive != global::Grafeas.V1Beta1.Image.Layer.Types.Directive.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Directive);
       }
@@ -177,7 +177,7 @@ namespace Grafeas.V1Beta1.Image {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Directive != 0) {
+      if (Directive != global::Grafeas.V1Beta1.Image.Layer.Types.Directive.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Directive);
       }
       if (Arguments.Length != 0) {
@@ -194,7 +194,7 @@ namespace Grafeas.V1Beta1.Image {
       if (other == null) {
         return;
       }
-      if (other.Directive != 0) {
+      if (other.Directive != global::Grafeas.V1Beta1.Image.Layer.Types.Directive.Unspecified) {
         Directive = other.Directive;
       }
       if (other.Arguments.Length != 0) {
@@ -236,71 +236,71 @@ namespace Grafeas.V1Beta1.Image {
         /// </summary>
         [pbr::OriginalName("DIRECTIVE_UNSPECIFIED")] Unspecified = 0,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#maintainer
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("MAINTAINER")] Maintainer = 1,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#run
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("RUN")] Run = 2,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#cmd
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("CMD")] Cmd = 3,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#label
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("LABEL")] Label = 4,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#expose
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("EXPOSE")] Expose = 5,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#env
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("ENV")] Env = 6,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#add
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("ADD")] Add = 7,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#copy
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("COPY")] Copy = 8,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#entrypoint
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("ENTRYPOINT")] Entrypoint = 9,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#volume
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("VOLUME")] Volume = 10,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#user
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("USER")] User = 11,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#workdir
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("WORKDIR")] Workdir = 12,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#arg
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("ARG")] Arg = 13,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#onbuild
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("ONBUILD")] Onbuild = 14,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#stopsignal
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("STOPSIGNAL")] Stopsignal = 15,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#healthcheck
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("HEALTHCHECK")] Healthcheck = 16,
         /// <summary>
-        /// https://docs.docker.com/reference/builder/#shell
+        /// https://docs.docker.com/engine/reference/builder/
         /// </summary>
         [pbr::OriginalName("SHELL")] Shell = 17,
       }
@@ -353,7 +353,8 @@ namespace Grafeas.V1Beta1.Image {
     public const int V1NameFieldNumber = 1;
     private string v1Name_ = "";
     /// <summary>
-    /// The layer-id of the final layer in the Docker image's v1 representation.
+    /// Required. The layer ID of the final layer in the Docker image's v1
+    /// representation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string V1Name {
@@ -369,7 +370,7 @@ namespace Grafeas.V1Beta1.Image {
         = pb::FieldCodec.ForString(18);
     private readonly pbc::RepeatedField<string> v2Blob_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// The ordered list of v2 blobs that represent a given image.
+    /// Required. The ordered list of v2 blobs that represent a given image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> V2Blob {
@@ -548,8 +549,8 @@ namespace Grafeas.V1Beta1.Image {
     public const int ResourceUrlFieldNumber = 1;
     private string resourceUrl_ = "";
     /// <summary>
-    /// The resource_url for the resource representing the basis of
-    /// associated occurrence images.
+    /// Required. Immutable. The resource_url for the resource representing the
+    /// basis of associated occurrence images.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ResourceUrl {
@@ -563,7 +564,7 @@ namespace Grafeas.V1Beta1.Image {
     public const int FingerprintFieldNumber = 2;
     private global::Grafeas.V1Beta1.Image.Fingerprint fingerprint_;
     /// <summary>
-    /// The fingerprint of the base image.
+    /// Required. Immutable. The fingerprint of the base image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Image.Fingerprint Fingerprint {
@@ -720,7 +721,7 @@ namespace Grafeas.V1Beta1.Image {
     public const int DerivedImageFieldNumber = 1;
     private global::Grafeas.V1Beta1.Image.Derived derivedImage_;
     /// <summary>
-    /// The child image derived from the base image.
+    /// Required. Immutable. The child image derived from the base image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Image.Derived DerivedImage {
@@ -866,7 +867,7 @@ namespace Grafeas.V1Beta1.Image {
     public const int FingerprintFieldNumber = 1;
     private global::Grafeas.V1Beta1.Image.Fingerprint fingerprint_;
     /// <summary>
-    /// The fingerprint of the derived image.
+    /// Required. The fingerprint of the derived image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Image.Fingerprint Fingerprint {

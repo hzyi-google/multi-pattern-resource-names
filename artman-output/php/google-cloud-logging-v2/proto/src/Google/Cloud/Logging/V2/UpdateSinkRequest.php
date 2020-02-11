@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.UpdateSinkRequest</code>
  */
-final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
+class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The full resource name of the sink to update, including the
@@ -24,16 +24,16 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $sink_name = '';
+    protected $sink_name = '';
     /**
      * Required. The updated sink, whose name is the same identifier that appears
      * as part of `sink_name`.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $sink = null;
+    protected $sink = null;
     /**
      * Optional. See [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * for a description of this field. When updating a sink, the effect of this
@@ -48,7 +48,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool unique_writer_identity = 3;</code>
      */
-    private $unique_writer_identity = false;
+    protected $unique_writer_identity = false;
     /**
      * Optional. Field mask that specifies the fields in `sink` that need
      * an update. A sink field will be overwritten if, and only if, it is
@@ -64,7 +64,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.
@@ -122,7 +122,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getSinkName()
@@ -139,7 +139,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -155,7 +155,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The updated sink, whose name is the same identifier that appears
      * as part of `sink_name`.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Logging\V2\LogSink
      */
     public function getSink()
@@ -167,7 +167,7 @@ final class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The updated sink, whose name is the same identifier that appears
      * as part of `sink_name`.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Logging\V2\LogSink $var
      * @return $this
      */

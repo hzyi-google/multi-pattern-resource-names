@@ -17,6 +17,7 @@ public interface PublicKeyOrBuilder extends
    * </pre>
    *
    * <code>string pem = 1;</code>
+   * @return The pem.
    */
   java.lang.String getPem();
   /**
@@ -29,6 +30,7 @@ public interface PublicKeyOrBuilder extends
    * </pre>
    *
    * <code>string pem = 1;</code>
+   * @return The bytes for pem.
    */
   com.google.protobuf.ByteString
       getPemBytes();
@@ -40,6 +42,7 @@ public interface PublicKeyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -49,6 +52,7 @@ public interface PublicKeyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 }

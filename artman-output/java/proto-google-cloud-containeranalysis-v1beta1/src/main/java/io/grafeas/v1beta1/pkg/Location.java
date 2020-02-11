@@ -6,7 +6,7 @@ package io.grafeas.v1beta1.pkg;
 /**
  * <pre>
  * An occurrence of a particular package installation found within a system's
- * filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+ * filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.package.Location}
@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -110,11 +116,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cpeUri_;
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The cpeUri.
    */
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
@@ -130,11 +137,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The bytes for cpeUri.
    */
   public com.google.protobuf.ByteString
       getCpeUriBytes() {
@@ -158,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   * @return Whether the version field is set.
    */
   public boolean hasVersion() {
     return version_ != null;
@@ -168,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+   * @return The version.
    */
   public io.grafeas.v1beta1.pkg.Version getVersion() {
     return version_ == null ? io.grafeas.v1beta1.pkg.Version.getDefaultInstance() : version_;
@@ -191,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The path.
    */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
@@ -210,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The bytes for path.
    */
   public com.google.protobuf.ByteString
       getPathBytes() {
@@ -408,7 +420,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An occurrence of a particular package installation found within a system's
-   * filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+   * filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.package.Location}
@@ -582,11 +594,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cpeUri_ = "";
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
@@ -602,11 +615,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return The bytes for cpeUri.
      */
     public com.google.protobuf.ByteString
         getCpeUriBytes() {
@@ -623,11 +637,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @param value The cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUri(
         java.lang.String value) {
@@ -641,11 +657,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
       
@@ -655,11 +672,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @param value The bytes for cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUriBytes(
         com.google.protobuf.ByteString value) {
@@ -682,6 +701,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+     * @return Whether the version field is set.
      */
     public boolean hasVersion() {
       return versionBuilder_ != null || version_ != null;
@@ -692,6 +712,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version version = 2;</code>
+     * @return The version.
      */
     public io.grafeas.v1beta1.pkg.Version getVersion() {
       if (versionBuilder_ == null) {
@@ -833,6 +854,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -852,6 +874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -872,6 +895,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @param value The path to set.
+     * @return This builder for chaining.
      */
     public Builder setPath(
         java.lang.String value) {
@@ -889,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPath() {
       
@@ -902,6 +928,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @param value The bytes for path to set.
+     * @return This builder for chaining.
      */
     public Builder setPathBytes(
         com.google.protobuf.ByteString value) {

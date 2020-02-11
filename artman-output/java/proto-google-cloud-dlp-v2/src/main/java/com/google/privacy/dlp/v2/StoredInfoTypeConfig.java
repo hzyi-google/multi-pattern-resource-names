@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StoredInfoTypeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,7 +117,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LARGE_CUSTOM_DICTIONARY(3),
     TYPE_NOT_SET(0);
     private final int value;
@@ -119,6 +126,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -152,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -171,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -194,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -213,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -235,6 +248,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   * @return Whether the largeCustomDictionary field is set.
    */
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 3;
@@ -245,6 +259,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   * @return The largeCustomDictionary.
    */
   public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
     if (typeCase_ == 3) {
@@ -656,6 +671,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -675,6 +691,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -695,6 +712,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -712,6 +731,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -725,6 +745,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -745,6 +767,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -764,6 +787,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -784,6 +808,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -801,6 +827,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -814,6 +841,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -835,6 +864,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+     * @return Whether the largeCustomDictionary field is set.
      */
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 3;
@@ -845,6 +875,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+     * @return The largeCustomDictionary.
      */
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
       if (largeCustomDictionaryBuilder_ == null) {

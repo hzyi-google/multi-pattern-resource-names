@@ -6,11 +6,11 @@ package io.grafeas.v1beta1.attestation;
 /**
  * <pre>
  * Occurrence that represents a single "attestation". The authenticity of an
- * Attestation can be verified using the attached signature. If the verifier
+ * attestation can be verified using the attached signature. If the verifier
  * trusts the public key of the signer, then verifying the signature is
- * sufficient to establish trust. In this circumstance, the Authority to which
- * this Attestation is attached is primarily useful for look-up (how to find
- * this Attestation if you already know the Authority and artifact to be
+ * sufficient to establish trust. In this circumstance, the authority to which
+ * this attestation is attached is primarily useful for look-up (how to find
+ * this attestation if you already know the authority and artifact to be
  * verified) and intent (which authority was this attestation intended to sign
  * for).
  * </pre>
@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Attestation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +49,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -65,6 +71,20 @@ private static final long serialVersionUID = 0L;
               signature_ = subBuilder.buildPartial();
             }
             signatureCase_ = 1;
+            break;
+          }
+          case 18: {
+            io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder subBuilder = null;
+            if (signatureCase_ == 2) {
+              subBuilder = ((io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_).toBuilder();
+            }
+            signature_ =
+                input.readMessage(io.grafeas.v1beta1.attestation.GenericSignedAttestation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_);
+              signature_ = subBuilder.buildPartial();
+            }
+            signatureCase_ = 2;
             break;
           }
           default: {
@@ -102,14 +122,18 @@ private static final long serialVersionUID = 0L;
   private int signatureCase_ = 0;
   private java.lang.Object signature_;
   public enum SignatureCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PGP_SIGNED_ATTESTATION(1),
+    GENERIC_SIGNED_ATTESTATION(2),
     SIGNATURE_NOT_SET(0);
     private final int value;
     private SignatureCase(int value) {
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -120,6 +144,7 @@ private static final long serialVersionUID = 0L;
     public static SignatureCase forNumber(int value) {
       switch (value) {
         case 1: return PGP_SIGNED_ATTESTATION;
+        case 2: return GENERIC_SIGNED_ATTESTATION;
         case 0: return SIGNATURE_NOT_SET;
         default: return null;
       }
@@ -142,6 +167,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+   * @return Whether the pgpSignedAttestation field is set.
    */
   public boolean hasPgpSignedAttestation() {
     return signatureCase_ == 1;
@@ -152,6 +178,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+   * @return The pgpSignedAttestation.
    */
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation() {
     if (signatureCase_ == 1) {
@@ -173,6 +200,34 @@ private static final long serialVersionUID = 0L;
     return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
   }
 
+  public static final int GENERIC_SIGNED_ATTESTATION_FIELD_NUMBER = 2;
+  /**
+   * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+   * @return Whether the genericSignedAttestation field is set.
+   */
+  public boolean hasGenericSignedAttestation() {
+    return signatureCase_ == 2;
+  }
+  /**
+   * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+   * @return The genericSignedAttestation.
+   */
+  public io.grafeas.v1beta1.attestation.GenericSignedAttestation getGenericSignedAttestation() {
+    if (signatureCase_ == 2) {
+       return (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_;
+    }
+    return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+  }
+  /**
+   * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+   */
+  public io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder getGenericSignedAttestationOrBuilder() {
+    if (signatureCase_ == 2) {
+       return (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_;
+    }
+    return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +245,9 @@ private static final long serialVersionUID = 0L;
     if (signatureCase_ == 1) {
       output.writeMessage(1, (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
     }
+    if (signatureCase_ == 2) {
+      output.writeMessage(2, (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -202,6 +260,10 @@ private static final long serialVersionUID = 0L;
     if (signatureCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
+    }
+    if (signatureCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -224,6 +286,10 @@ private static final long serialVersionUID = 0L;
         if (!getPgpSignedAttestation()
             .equals(other.getPgpSignedAttestation())) return false;
         break;
+      case 2:
+        if (!getGenericSignedAttestation()
+            .equals(other.getGenericSignedAttestation())) return false;
+        break;
       case 0:
       default:
     }
@@ -242,6 +308,10 @@ private static final long serialVersionUID = 0L;
       case 1:
         hash = (37 * hash) + PGP_SIGNED_ATTESTATION_FIELD_NUMBER;
         hash = (53 * hash) + getPgpSignedAttestation().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + GENERIC_SIGNED_ATTESTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getGenericSignedAttestation().hashCode();
         break;
       case 0:
       default:
@@ -344,11 +414,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Occurrence that represents a single "attestation". The authenticity of an
-   * Attestation can be verified using the attached signature. If the verifier
+   * attestation can be verified using the attached signature. If the verifier
    * trusts the public key of the signer, then verifying the signature is
-   * sufficient to establish trust. In this circumstance, the Authority to which
-   * this Attestation is attached is primarily useful for look-up (how to find
-   * this Attestation if you already know the Authority and artifact to be
+   * sufficient to establish trust. In this circumstance, the authority to which
+   * this attestation is attached is primarily useful for look-up (how to find
+   * this attestation if you already know the authority and artifact to be
    * verified) and intent (which authority was this attestation intended to sign
    * for).
    * </pre>
@@ -425,6 +495,13 @@ private static final long serialVersionUID = 0L;
           result.signature_ = pgpSignedAttestationBuilder_.build();
         }
       }
+      if (signatureCase_ == 2) {
+        if (genericSignedAttestationBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = genericSignedAttestationBuilder_.build();
+        }
+      }
       result.signatureCase_ = signatureCase_;
       onBuilt();
       return result;
@@ -477,6 +554,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getSignatureCase()) {
         case PGP_SIGNED_ATTESTATION: {
           mergePgpSignedAttestation(other.getPgpSignedAttestation());
+          break;
+        }
+        case GENERIC_SIGNED_ATTESTATION: {
+          mergeGenericSignedAttestation(other.getGenericSignedAttestation());
           break;
         }
         case SIGNATURE_NOT_SET: {
@@ -535,6 +616,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+     * @return Whether the pgpSignedAttestation field is set.
      */
     public boolean hasPgpSignedAttestation() {
       return signatureCase_ == 1;
@@ -545,6 +627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
+     * @return The pgpSignedAttestation.
      */
     public io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation() {
       if (pgpSignedAttestationBuilder_ == null) {
@@ -697,6 +780,144 @@ private static final long serialVersionUID = 0L;
       signatureCase_ = 1;
       onChanged();;
       return pgpSignedAttestationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1beta1.attestation.GenericSignedAttestation, io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder, io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder> genericSignedAttestationBuilder_;
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     * @return Whether the genericSignedAttestation field is set.
+     */
+    public boolean hasGenericSignedAttestation() {
+      return signatureCase_ == 2;
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     * @return The genericSignedAttestation.
+     */
+    public io.grafeas.v1beta1.attestation.GenericSignedAttestation getGenericSignedAttestation() {
+      if (genericSignedAttestationBuilder_ == null) {
+        if (signatureCase_ == 2) {
+          return (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_;
+        }
+        return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+      } else {
+        if (signatureCase_ == 2) {
+          return genericSignedAttestationBuilder_.getMessage();
+        }
+        return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public Builder setGenericSignedAttestation(io.grafeas.v1beta1.attestation.GenericSignedAttestation value) {
+      if (genericSignedAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        signature_ = value;
+        onChanged();
+      } else {
+        genericSignedAttestationBuilder_.setMessage(value);
+      }
+      signatureCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public Builder setGenericSignedAttestation(
+        io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder builderForValue) {
+      if (genericSignedAttestationBuilder_ == null) {
+        signature_ = builderForValue.build();
+        onChanged();
+      } else {
+        genericSignedAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      signatureCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public Builder mergeGenericSignedAttestation(io.grafeas.v1beta1.attestation.GenericSignedAttestation value) {
+      if (genericSignedAttestationBuilder_ == null) {
+        if (signatureCase_ == 2 &&
+            signature_ != io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance()) {
+          signature_ = io.grafeas.v1beta1.attestation.GenericSignedAttestation.newBuilder((io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          signature_ = value;
+        }
+        onChanged();
+      } else {
+        if (signatureCase_ == 2) {
+          genericSignedAttestationBuilder_.mergeFrom(value);
+        }
+        genericSignedAttestationBuilder_.setMessage(value);
+      }
+      signatureCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public Builder clearGenericSignedAttestation() {
+      if (genericSignedAttestationBuilder_ == null) {
+        if (signatureCase_ == 2) {
+          signatureCase_ = 0;
+          signature_ = null;
+          onChanged();
+        }
+      } else {
+        if (signatureCase_ == 2) {
+          signatureCase_ = 0;
+          signature_ = null;
+        }
+        genericSignedAttestationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder getGenericSignedAttestationBuilder() {
+      return getGenericSignedAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    public io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder getGenericSignedAttestationOrBuilder() {
+      if ((signatureCase_ == 2) && (genericSignedAttestationBuilder_ != null)) {
+        return genericSignedAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        if (signatureCase_ == 2) {
+          return (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_;
+        }
+        return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1beta1.attestation.GenericSignedAttestation, io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder, io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder> 
+        getGenericSignedAttestationFieldBuilder() {
+      if (genericSignedAttestationBuilder_ == null) {
+        if (!(signatureCase_ == 2)) {
+          signature_ = io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
+        }
+        genericSignedAttestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1beta1.attestation.GenericSignedAttestation, io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder, io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder>(
+                (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_,
+                getParentForChildren(),
+                isClean());
+        signature_ = null;
+      }
+      signatureCase_ = 2;
+      onChanged();;
+      return genericSignedAttestationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

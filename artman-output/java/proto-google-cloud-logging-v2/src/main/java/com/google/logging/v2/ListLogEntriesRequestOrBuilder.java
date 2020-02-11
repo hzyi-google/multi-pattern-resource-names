@@ -15,6 +15,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   * @return A list containing the projectIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
       getProjectIdsList();
@@ -26,6 +27,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   * @return The count of projectIds.
    */
   @java.lang.Deprecated int getProjectIdsCount();
   /**
@@ -36,6 +38,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   * @param index The index of the element to return.
+   * @return The projectIds at the given index.
    */
   @java.lang.Deprecated java.lang.String getProjectIds(int index);
   /**
@@ -46,6 +50,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the projectIds at the given index.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
       getProjectIdsBytes(int index);
@@ -61,7 +67,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String>
       getResourceNamesList();
@@ -76,7 +83,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The count of resourceNames.
    */
   int getResourceNamesCount();
   /**
@@ -90,7 +98,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
   /**
@@ -104,7 +114,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceNames at the given index.
    */
   com.google.protobuf.ByteString
       getResourceNamesBytes(int index);
@@ -112,7 +124,7 @@ public interface ListLogEntriesRequestOrBuilder extends
   /**
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+   * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
    * match the filter are returned.  An empty filter matches all log entries in
    * the resources listed in `resource_names`. Referencing a parent resource
    * that is not listed in `resource_names` will cause the filter to return no
@@ -121,12 +133,13 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+   * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
    * match the filter are returned.  An empty filter matches all log entries in
    * the resources listed in `resource_names`. Referencing a parent resource
    * that is not listed in `resource_names` will cause the filter to return no
@@ -135,6 +148,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -150,6 +164,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -163,6 +178,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
@@ -175,6 +191,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -187,6 +204,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -198,6 +216,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();

@@ -13,20 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.EncryptResponse</code>
  */
-final class EncryptResponse extends \Google\Protobuf\Internal\Message
+class EncryptResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The encrypted data.
      *
      * Generated from protobuf field <code>bytes ciphertext = 2;</code>
      */
-    private $ciphertext = '';
+    protected $ciphertext = '';
 
     /**
      * Constructor.
@@ -35,7 +36,8 @@ final class EncryptResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     *           The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     *           this field to verify that the intended resource was used for encryption.
      *     @type string $ciphertext
      *           The encrypted data.
      * }
@@ -46,7 +48,8 @@ final class EncryptResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -57,7 +60,8 @@ final class EncryptResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

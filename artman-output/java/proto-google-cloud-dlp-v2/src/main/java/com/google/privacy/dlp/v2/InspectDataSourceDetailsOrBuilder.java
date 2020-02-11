@@ -13,6 +13,7 @@ public interface InspectDataSourceDetailsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * @return Whether the requestedOptions field is set.
    */
   boolean hasRequestedOptions();
   /**
@@ -21,6 +22,7 @@ public interface InspectDataSourceDetailsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * @return The requestedOptions.
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions getRequestedOptions();
   /**
@@ -38,6 +40,7 @@ public interface InspectDataSourceDetailsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
@@ -46,6 +49,7 @@ public interface InspectDataSourceDetailsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * @return The result.
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails.Result getResult();
   /**

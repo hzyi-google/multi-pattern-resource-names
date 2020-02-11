@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,27 +101,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.deployment.Deployment deployment_;
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   * @return Whether the deployment field is set.
    */
   public boolean hasDeployment() {
     return deployment_ != null;
   }
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   * @return The deployment.
    */
   public io.grafeas.v1beta1.deployment.Deployment getDeployment() {
     return deployment_ == null ? io.grafeas.v1beta1.deployment.Deployment.getDefaultInstance() : deployment_;
   }
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -448,20 +456,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.deployment.Deployment, io.grafeas.v1beta1.deployment.Deployment.Builder, io.grafeas.v1beta1.deployment.DeploymentOrBuilder> deploymentBuilder_;
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+     * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
       return deploymentBuilder_ != null || deployment_ != null;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+     * @return The deployment.
      */
     public io.grafeas.v1beta1.deployment.Deployment getDeployment() {
       if (deploymentBuilder_ == null) {
@@ -472,7 +482,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -492,7 +502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -510,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -532,7 +542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -550,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -562,7 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -577,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>

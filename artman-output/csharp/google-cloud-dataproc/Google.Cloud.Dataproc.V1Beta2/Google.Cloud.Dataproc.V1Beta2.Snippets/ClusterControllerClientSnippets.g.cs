@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -624,16 +624,15 @@ namespace Google.Cloud.Dataproc.V1Beta2.Snippets
         /// <summary>Snippet for ListClustersAsync</summary>
         public async Task ListClustersAsync2()
         {
-            // Snippet: ListClustersAsync(string,string,string,string,int?,CallSettings)
+            // Snippet: ListClustersAsync(string,string,string,int?,CallSettings)
             // Create client
             ClusterControllerClient clusterControllerClient = await ClusterControllerClient.CreateAsync();
             // Initialize request argument(s)
             string projectId = "";
             string region = "";
-            string filter = "";
             // Make the request
             PagedAsyncEnumerable<ListClustersResponse, Cluster> response =
-                clusterControllerClient.ListClustersAsync(projectId: projectId, region: region, filter: filter);
+                clusterControllerClient.ListClustersAsync(projectId, region);
 
             // Iterate over all response items, lazily performing RPCs as required
             await response.ForEachAsync((Cluster item) =>
@@ -670,16 +669,15 @@ namespace Google.Cloud.Dataproc.V1Beta2.Snippets
         /// <summary>Snippet for ListClusters</summary>
         public void ListClusters2()
         {
-            // Snippet: ListClusters(string,string,string,string,int?,CallSettings)
+            // Snippet: ListClusters(string,string,string,int?,CallSettings)
             // Create client
             ClusterControllerClient clusterControllerClient = ClusterControllerClient.Create();
             // Initialize request argument(s)
             string projectId = "";
             string region = "";
-            string filter = "";
             // Make the request
             PagedEnumerable<ListClustersResponse, Cluster> response =
-                clusterControllerClient.ListClusters(projectId: projectId, region: region, filter: filter);
+                clusterControllerClient.ListClusters(projectId, region);
 
             // Iterate over all response items, lazily performing RPCs as required
             foreach (Cluster item in response)

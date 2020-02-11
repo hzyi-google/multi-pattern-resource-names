@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.AcknowledgeRequest</code>
  */
-final class AcknowledgeRequest extends \Google\Protobuf\Internal\Message
+class AcknowledgeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The subscription whose message is being acknowledged.
@@ -21,7 +21,7 @@ final class AcknowledgeRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string subscription = 1;</code>
      */
-    private $subscription = '';
+    protected $subscription = '';
     /**
      * The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.

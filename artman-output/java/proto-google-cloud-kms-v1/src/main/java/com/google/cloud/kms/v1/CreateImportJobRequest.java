@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateImportJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,7 +119,8 @@ private static final long serialVersionUID = 0L;
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -133,7 +140,8 @@ private static final long serialVersionUID = 0L;
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -157,7 +165,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The importJobId.
    */
   public java.lang.String getImportJobId() {
     java.lang.Object ref = importJobId_;
@@ -177,7 +186,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for importJobId.
    */
   public com.google.protobuf.ByteString
       getImportJobIdBytes() {
@@ -200,7 +210,8 @@ private static final long serialVersionUID = 0L;
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the importJob field is set.
    */
   public boolean hasImportJob() {
     return importJob_ != null;
@@ -210,7 +221,8 @@ private static final long serialVersionUID = 0L;
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The importJob.
    */
   public com.google.cloud.kms.v1.ImportJob getImportJob() {
     return importJob_ == null ? com.google.cloud.kms.v1.ImportJob.getDefaultInstance() : importJob_;
@@ -220,7 +232,7 @@ private static final long serialVersionUID = 0L;
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder() {
     return getImportJob();
@@ -586,7 +598,8 @@ private static final long serialVersionUID = 0L;
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -606,7 +619,8 @@ private static final long serialVersionUID = 0L;
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -627,7 +641,9 @@ private static final long serialVersionUID = 0L;
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -645,7 +661,8 @@ private static final long serialVersionUID = 0L;
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -659,7 +676,9 @@ private static final long serialVersionUID = 0L;
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -680,7 +699,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string import_job_id = 2;</code>
+     * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The importJobId.
      */
     public java.lang.String getImportJobId() {
       java.lang.Object ref = importJobId_;
@@ -700,7 +720,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string import_job_id = 2;</code>
+     * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for importJobId.
      */
     public com.google.protobuf.ByteString
         getImportJobIdBytes() {
@@ -721,7 +742,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string import_job_id = 2;</code>
+     * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The importJobId to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJobId(
         java.lang.String value) {
@@ -739,7 +762,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string import_job_id = 2;</code>
+     * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearImportJobId() {
       
@@ -753,7 +777,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string import_job_id = 2;</code>
+     * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for importJobId to set.
+     * @return This builder for chaining.
      */
     public Builder setImportJobIdBytes(
         com.google.protobuf.ByteString value) {
@@ -775,7 +801,8 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the importJob field is set.
      */
     public boolean hasImportJob() {
       return importJobBuilder_ != null || importJob_ != null;
@@ -785,7 +812,8 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The importJob.
      */
     public com.google.cloud.kms.v1.ImportJob getImportJob() {
       if (importJobBuilder_ == null) {
@@ -799,7 +827,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setImportJob(com.google.cloud.kms.v1.ImportJob value) {
       if (importJobBuilder_ == null) {
@@ -819,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setImportJob(
         com.google.cloud.kms.v1.ImportJob.Builder builderForValue) {
@@ -837,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeImportJob(com.google.cloud.kms.v1.ImportJob value) {
       if (importJobBuilder_ == null) {
@@ -859,7 +887,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearImportJob() {
       if (importJobBuilder_ == null) {
@@ -877,7 +905,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.ImportJob.Builder getImportJobBuilder() {
       
@@ -889,7 +917,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder() {
       if (importJobBuilder_ != null) {
@@ -904,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+     * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.ImportJob, com.google.cloud.kms.v1.ImportJob.Builder, com.google.cloud.kms.v1.ImportJobOrBuilder> 

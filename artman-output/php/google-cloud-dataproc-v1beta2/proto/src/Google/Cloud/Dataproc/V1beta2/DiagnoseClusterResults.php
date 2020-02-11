@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.DiagnoseClusterResults</code>
  */
-final class DiagnoseClusterResults extends \Google\Protobuf\Internal\Message
+class DiagnoseClusterResults extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The Cloud Storage URI of the diagnostic output.
@@ -22,7 +22,7 @@ final class DiagnoseClusterResults extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $output_uri = '';
+    protected $output_uri = '';
 
     /**
      * Constructor.

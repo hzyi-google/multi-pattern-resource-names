@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CryptoKey</code>
  */
-final class CryptoKey extends \Google\Protobuf\Internal\Message
+class CryptoKey extends \Google\Protobuf\Internal\Message
 {
     protected $source;
 
@@ -28,8 +28,11 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dlp\V2\TransientCryptoKey $transient
+     *           Transient crypto key
      *     @type \Google\Cloud\Dlp\V2\UnwrappedCryptoKey $unwrapped
+     *           Unwrapped crypto key
      *     @type \Google\Cloud\Dlp\V2\KmsWrappedCryptoKey $kms_wrapped
+     *           Kms wrapped key
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +41,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Transient crypto key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      * @return \Google\Cloud\Dlp\V2\TransientCryptoKey
      */
@@ -47,6 +52,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Transient crypto key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      * @param \Google\Cloud\Dlp\V2\TransientCryptoKey $var
      * @return $this
@@ -60,6 +67,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Unwrapped crypto key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      * @return \Google\Cloud\Dlp\V2\UnwrappedCryptoKey
      */
@@ -69,6 +78,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Unwrapped crypto key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      * @param \Google\Cloud\Dlp\V2\UnwrappedCryptoKey $var
      * @return $this
@@ -82,6 +93,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Kms wrapped key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      * @return \Google\Cloud\Dlp\V2\KmsWrappedCryptoKey
      */
@@ -91,6 +104,8 @@ final class CryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Kms wrapped key
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      * @param \Google\Cloud\Dlp\V2\KmsWrappedCryptoKey $var
      * @return $this

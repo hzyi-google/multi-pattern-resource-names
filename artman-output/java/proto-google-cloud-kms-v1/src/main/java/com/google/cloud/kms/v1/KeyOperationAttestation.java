@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new KeyOperationAttestation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -168,6 +174,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -175,6 +183,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AttestationFormat forNumber(int value) {
       switch (value) {
         case 0: return ATTESTATION_FORMAT_UNSPECIFIED;
@@ -239,7 +251,8 @@ private static final long serialVersionUID = 0L;
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for format.
    */
   public int getFormatValue() {
     return format_;
@@ -249,7 +262,8 @@ private static final long serialVersionUID = 0L;
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The format.
    */
   public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
     @SuppressWarnings("deprecation")
@@ -265,7 +279,8 @@ private static final long serialVersionUID = 0L;
    * operation was performed.
    * </pre>
    *
-   * <code>bytes content = 5;</code>
+   * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The content.
    */
   public com.google.protobuf.ByteString getContent() {
     return content_;
@@ -601,7 +616,8 @@ private static final long serialVersionUID = 0L;
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for format.
      */
     public int getFormatValue() {
       return format_;
@@ -611,7 +627,9 @@ private static final long serialVersionUID = 0L;
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
       format_ = value;
@@ -623,7 +641,8 @@ private static final long serialVersionUID = 0L;
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The format.
      */
     public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
       @SuppressWarnings("deprecation")
@@ -635,7 +654,9 @@ private static final long serialVersionUID = 0L;
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormat(com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat value) {
       if (value == null) {
@@ -651,7 +672,8 @@ private static final long serialVersionUID = 0L;
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFormat() {
       
@@ -667,7 +689,8 @@ private static final long serialVersionUID = 0L;
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The content.
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
@@ -678,7 +701,9 @@ private static final long serialVersionUID = 0L;
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The content to set.
+     * @return This builder for chaining.
      */
     public Builder setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -695,7 +720,8 @@ private static final long serialVersionUID = 0L;
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearContent() {
       

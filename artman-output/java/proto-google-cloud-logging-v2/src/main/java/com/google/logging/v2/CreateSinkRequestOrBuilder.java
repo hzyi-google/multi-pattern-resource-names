@@ -17,7 +17,8 @@ public interface CreateSinkRequestOrBuilder extends
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -30,7 +31,8 @@ public interface CreateSinkRequestOrBuilder extends
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -41,7 +43,8 @@ public interface CreateSinkRequestOrBuilder extends
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the sink field is set.
    */
   boolean hasSink();
   /**
@@ -50,7 +53,8 @@ public interface CreateSinkRequestOrBuilder extends
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The sink.
    */
   com.google.logging.v2.LogSink getSink();
   /**
@@ -59,7 +63,7 @@ public interface CreateSinkRequestOrBuilder extends
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder();
 
@@ -78,6 +82,7 @@ public interface CreateSinkRequestOrBuilder extends
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   * @return The uniqueWriterIdentity.
    */
   boolean getUniqueWriterIdentity();
 }

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.Resource</code>
  */
-final class Resource extends \Google\Protobuf\Internal\Message
+class Resource extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the resource. For example, the name of a Docker image -
@@ -21,20 +21,20 @@ final class Resource extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      *
      * Generated from protobuf field <code>string uri = 2;</code>
      */
-    private $uri = '';
+    protected $uri = '';
     /**
      * The hash of the resource content. For example, the Docker digest.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
      */
-    private $content_hash = null;
+    protected $content_hash = null;
 
     /**
      * Constructor.
@@ -46,7 +46,7 @@ final class Resource extends \Google\Protobuf\Internal\Message
      *           The name of the resource. For example, the name of a Docker image -
      *           "Debian".
      *     @type string $uri
-     *           The unique URI of the resource. For example,
+     *           Required. The unique URI of the resource. For example,
      *           `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      *     @type \Grafeas\V1beta1\Provenance\Hash $content_hash
      *           The hash of the resource content. For example, the Docker digest.
@@ -86,7 +86,7 @@ final class Resource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      *
      * Generated from protobuf field <code>string uri = 2;</code>
@@ -98,7 +98,7 @@ final class Resource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      *
      * Generated from protobuf field <code>string uri = 2;</code>

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateOccurrenceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -140,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -163,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+   * @return Whether the occurrence field is set.
    */
   public boolean hasOccurrence() {
     return occurrence_ != null;
@@ -173,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+   * @return The occurrence.
    */
   public io.grafeas.v1beta1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
@@ -196,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -206,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -595,6 +607,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -615,6 +628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -636,6 +650,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -654,6 +670,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -668,6 +685,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -690,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+     * @return Whether the occurrence field is set.
      */
     public boolean hasOccurrence() {
       return occurrenceBuilder_ != null || occurrence_ != null;
@@ -700,6 +720,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
+     * @return The occurrence.
      */
     public io.grafeas.v1beta1.Occurrence getOccurrence() {
       if (occurrenceBuilder_ == null) {
@@ -843,6 +864,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -853,6 +875,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListDlpJobsResponse</code>
  */
-final class ListDlpJobsResponse extends \Google\Protobuf\Internal\Message
+class ListDlpJobsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of DlpJobs that matches the specified filter in the request.
@@ -26,7 +26,7 @@ final class ListDlpJobsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

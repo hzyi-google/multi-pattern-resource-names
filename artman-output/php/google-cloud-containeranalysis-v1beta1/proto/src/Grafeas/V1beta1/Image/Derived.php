@@ -15,21 +15,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.image.Derived</code>
  */
-final class Derived extends \Google\Protobuf\Internal\Message
+class Derived extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
      */
-    private $fingerprint = null;
+    protected $fingerprint = null;
     /**
      * Output only. The number of layers by which this image differs from the
      * associated image basis.
      *
      * Generated from protobuf field <code>int32 distance = 2;</code>
      */
-    private $distance = 0;
+    protected $distance = 0;
     /**
      * This contains layer-specific metadata, if populated it has length
      * "distance" and is ordered with [distance] being the layer immediately
@@ -44,7 +44,7 @@ final class Derived extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string base_resource_url = 4;</code>
      */
-    private $base_resource_url = '';
+    protected $base_resource_url = '';
 
     /**
      * Constructor.
@@ -53,7 +53,7 @@ final class Derived extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Image\Fingerprint $fingerprint
-     *           The fingerprint of the derived image.
+     *           Required. The fingerprint of the derived image.
      *     @type int $distance
      *           Output only. The number of layers by which this image differs from the
      *           associated image basis.
@@ -72,7 +72,7 @@ final class Derived extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
      * @return \Grafeas\V1beta1\Image\Fingerprint
@@ -83,7 +83,7 @@ final class Derived extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
      * @param \Grafeas\V1beta1\Image\Fingerprint $var

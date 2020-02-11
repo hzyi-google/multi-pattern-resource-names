@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult</code>
  */
-final class ListAssetsResult extends \Google\Protobuf\Internal\Message
+class ListAssetsResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * Asset matching the search request.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Asset asset = 1;</code>
      */
-    private $asset = null;
+    protected $asset = null;
     /**
      * State of the asset.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
      */
-    private $state = 0;
+    protected $state = 0;
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InfoType</code>
  */
-final class InfoType extends \Google\Protobuf\Internal\Message
+class InfoType extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of the information type. Either a name of your choosing when
@@ -24,7 +24,7 @@ final class InfoType extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

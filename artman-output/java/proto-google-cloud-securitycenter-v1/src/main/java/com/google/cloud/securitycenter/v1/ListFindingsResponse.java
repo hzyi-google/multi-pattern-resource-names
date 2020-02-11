@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListFindingsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -126,6 +133,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * @return Whether the finding field is set.
      */
     boolean hasFinding();
     /**
@@ -134,6 +142,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * @return The finding.
      */
     com.google.cloud.securitycenter.v1.Finding getFinding();
     /**
@@ -151,6 +160,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+     * @return The enum numeric value on the wire for stateChange.
      */
     int getStateChangeValue();
     /**
@@ -159,8 +169,36 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+     * @return The stateChange.
      */
     com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange getStateChange();
+
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     * @return Whether the resource field is set.
+     */
+    boolean hasResource();
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     * @return The resource.
+     */
+    com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getResource();
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     */
+    com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder getResourceOrBuilder();
   }
   /**
    * <pre>
@@ -183,6 +221,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListFindingsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -195,7 +240,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -223,6 +267,19 @@ private static final long serialVersionUID = 0L;
               int rawValue = input.readEnum();
 
               stateChange_ = rawValue;
+              break;
+            }
+            case 26: {
+              com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -372,6 +429,8 @@ private static final long serialVersionUID = 0L;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -379,6 +438,10 @@ private static final long serialVersionUID = 0L;
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static StateChange forNumber(int value) {
         switch (value) {
           case 0: return UNUSED;
@@ -438,6 +501,1363 @@ private static final long serialVersionUID = 0L;
       // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange)
     }
 
+    public interface ResourceOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The full resource name of the resource. See:
+       * https://cloud.google.com/apis/design/resource_names#full_resource_name
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      java.lang.String getName();
+      /**
+       * <pre>
+       * The full resource name of the resource. See:
+       * https://cloud.google.com/apis/design/resource_names#full_resource_name
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
+      /**
+       * <pre>
+       * The full resource name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_name = 2;</code>
+       * @return The projectName.
+       */
+      java.lang.String getProjectName();
+      /**
+       * <pre>
+       * The full resource name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_name = 2;</code>
+       * @return The bytes for projectName.
+       */
+      com.google.protobuf.ByteString
+          getProjectNameBytes();
+
+      /**
+       * <pre>
+       * The human readable name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_display_name = 3;</code>
+       * @return The projectDisplayName.
+       */
+      java.lang.String getProjectDisplayName();
+      /**
+       * <pre>
+       * The human readable name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_display_name = 3;</code>
+       * @return The bytes for projectDisplayName.
+       */
+      com.google.protobuf.ByteString
+          getProjectDisplayNameBytes();
+
+      /**
+       * <pre>
+       * The full resource name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_name = 4;</code>
+       * @return The parentName.
+       */
+      java.lang.String getParentName();
+      /**
+       * <pre>
+       * The full resource name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_name = 4;</code>
+       * @return The bytes for parentName.
+       */
+      com.google.protobuf.ByteString
+          getParentNameBytes();
+
+      /**
+       * <pre>
+       * The human readable name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_display_name = 5;</code>
+       * @return The parentDisplayName.
+       */
+      java.lang.String getParentDisplayName();
+      /**
+       * <pre>
+       * The human readable name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_display_name = 5;</code>
+       * @return The bytes for parentDisplayName.
+       */
+      com.google.protobuf.ByteString
+          getParentDisplayNameBytes();
+    }
+    /**
+     * <pre>
+     * Information related to the Google Cloud Platform (GCP) resource that is
+     * associated with this finding.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource}
+     */
+    public  static final class Resource extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+        ResourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Resource.newBuilder() to construct.
+      private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Resource() {
+        name_ = "";
+        projectName_ = "";
+        projectDisplayName_ = "";
+        parentName_ = "";
+        parentDisplayName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Resource();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Resource(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                projectName_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                projectDisplayName_ = s;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                parentName_ = s;
+                break;
+              }
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                parentDisplayName_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.securitycenter.v1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securitycenter.v1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.class, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder.class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_;
+      /**
+       * <pre>
+       * The full resource name of the resource. See:
+       * https://cloud.google.com/apis/design/resource_names#full_resource_name
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The full resource name of the resource. See:
+       * https://cloud.google.com/apis/design/resource_names#full_resource_name
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PROJECT_NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object projectName_;
+      /**
+       * <pre>
+       * The full resource name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_name = 2;</code>
+       * @return The projectName.
+       */
+      public java.lang.String getProjectName() {
+        java.lang.Object ref = projectName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The full resource name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_name = 2;</code>
+       * @return The bytes for projectName.
+       */
+      public com.google.protobuf.ByteString
+          getProjectNameBytes() {
+        java.lang.Object ref = projectName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PROJECT_DISPLAY_NAME_FIELD_NUMBER = 3;
+      private volatile java.lang.Object projectDisplayName_;
+      /**
+       * <pre>
+       * The human readable name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_display_name = 3;</code>
+       * @return The projectDisplayName.
+       */
+      public java.lang.String getProjectDisplayName() {
+        java.lang.Object ref = projectDisplayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectDisplayName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The human readable name of project that the resource belongs to.
+       * </pre>
+       *
+       * <code>string project_display_name = 3;</code>
+       * @return The bytes for projectDisplayName.
+       */
+      public com.google.protobuf.ByteString
+          getProjectDisplayNameBytes() {
+        java.lang.Object ref = projectDisplayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PARENT_NAME_FIELD_NUMBER = 4;
+      private volatile java.lang.Object parentName_;
+      /**
+       * <pre>
+       * The full resource name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_name = 4;</code>
+       * @return The parentName.
+       */
+      public java.lang.String getParentName() {
+        java.lang.Object ref = parentName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          parentName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The full resource name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_name = 4;</code>
+       * @return The bytes for parentName.
+       */
+      public com.google.protobuf.ByteString
+          getParentNameBytes() {
+        java.lang.Object ref = parentName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          parentName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PARENT_DISPLAY_NAME_FIELD_NUMBER = 5;
+      private volatile java.lang.Object parentDisplayName_;
+      /**
+       * <pre>
+       * The human readable name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_display_name = 5;</code>
+       * @return The parentDisplayName.
+       */
+      public java.lang.String getParentDisplayName() {
+        java.lang.Object ref = parentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          parentDisplayName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The human readable name of resource's parent.
+       * </pre>
+       *
+       * <code>string parent_display_name = 5;</code>
+       * @return The bytes for parentDisplayName.
+       */
+      public com.google.protobuf.ByteString
+          getParentDisplayNameBytes() {
+        java.lang.Object ref = parentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          parentDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (!getProjectNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectName_);
+        }
+        if (!getProjectDisplayNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectDisplayName_);
+        }
+        if (!getParentNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parentName_);
+        }
+        if (!getParentDisplayNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parentDisplayName_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (!getProjectNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectName_);
+        }
+        if (!getProjectDisplayNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectDisplayName_);
+        }
+        if (!getParentNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parentName_);
+        }
+        if (!getParentDisplayNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parentDisplayName_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource other = (com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource) obj;
+
+        if (!getName()
+            .equals(other.getName())) return false;
+        if (!getProjectName()
+            .equals(other.getProjectName())) return false;
+        if (!getProjectDisplayName()
+            .equals(other.getProjectDisplayName())) return false;
+        if (!getParentName()
+            .equals(other.getParentName())) return false;
+        if (!getParentDisplayName()
+            .equals(other.getParentDisplayName())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + PROJECT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectName().hashCode();
+        hash = (37 * hash) + PROJECT_DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectDisplayName().hashCode();
+        hash = (37 * hash) + PARENT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getParentName().hashCode();
+        hash = (37 * hash) + PARENT_DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getParentDisplayName().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Information related to the Google Cloud Platform (GCP) resource that is
+       * associated with this finding.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.cloud.securitycenter.v1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.securitycenter.v1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.class, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder.class);
+        }
+
+        // Construct using com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          name_ = "";
+
+          projectName_ = "";
+
+          projectDisplayName_ = "";
+
+          parentName_ = "";
+
+          parentDisplayName_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.cloud.securitycenter.v1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getDefaultInstanceForType() {
+          return com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource build() {
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource buildPartial() {
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource result = new com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource(this);
+          result.name_ = name_;
+          result.projectName_ = projectName_;
+          result.projectDisplayName_ = projectDisplayName_;
+          result.parentName_ = parentName_;
+          result.parentDisplayName_ = parentDisplayName_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource) {
+            return mergeFrom((com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource other) {
+          if (other == com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            onChanged();
+          }
+          if (!other.getProjectName().isEmpty()) {
+            projectName_ = other.projectName_;
+            onChanged();
+          }
+          if (!other.getProjectDisplayName().isEmpty()) {
+            projectDisplayName_ = other.projectDisplayName_;
+            onChanged();
+          }
+          if (!other.getParentName().isEmpty()) {
+            parentName_ = other.parentName_;
+            onChanged();
+          }
+          if (!other.getParentDisplayName().isEmpty()) {
+            parentDisplayName_ = other.parentDisplayName_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <pre>
+         * The full resource name of the resource. See:
+         * https://cloud.google.com/apis/design/resource_names#full_resource_name
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         * @return The name.
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of the resource. See:
+         * https://cloud.google.com/apis/design/resource_names#full_resource_name
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of the resource. See:
+         * https://cloud.google.com/apis/design/resource_names#full_resource_name
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of the resource. See:
+         * https://cloud.google.com/apis/design/resource_names#full_resource_name
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+          
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of the resource. See:
+         * https://cloud.google.com/apis/design/resource_names#full_resource_name
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          name_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object projectName_ = "";
+        /**
+         * <pre>
+         * The full resource name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_name = 2;</code>
+         * @return The projectName.
+         */
+        public java.lang.String getProjectName() {
+          java.lang.Object ref = projectName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            projectName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_name = 2;</code>
+         * @return The bytes for projectName.
+         */
+        public com.google.protobuf.ByteString
+            getProjectNameBytes() {
+          java.lang.Object ref = projectName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            projectName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_name = 2;</code>
+         * @param value The projectName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setProjectName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          projectName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_name = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearProjectName() {
+          
+          projectName_ = getDefaultInstance().getProjectName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_name = 2;</code>
+         * @param value The bytes for projectName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setProjectNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          projectName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object projectDisplayName_ = "";
+        /**
+         * <pre>
+         * The human readable name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_display_name = 3;</code>
+         * @return The projectDisplayName.
+         */
+        public java.lang.String getProjectDisplayName() {
+          java.lang.Object ref = projectDisplayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            projectDisplayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The human readable name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_display_name = 3;</code>
+         * @return The bytes for projectDisplayName.
+         */
+        public com.google.protobuf.ByteString
+            getProjectDisplayNameBytes() {
+          java.lang.Object ref = projectDisplayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            projectDisplayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The human readable name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_display_name = 3;</code>
+         * @param value The projectDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setProjectDisplayName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          projectDisplayName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The human readable name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_display_name = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearProjectDisplayName() {
+          
+          projectDisplayName_ = getDefaultInstance().getProjectDisplayName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The human readable name of project that the resource belongs to.
+         * </pre>
+         *
+         * <code>string project_display_name = 3;</code>
+         * @param value The bytes for projectDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setProjectDisplayNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          projectDisplayName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object parentName_ = "";
+        /**
+         * <pre>
+         * The full resource name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_name = 4;</code>
+         * @return The parentName.
+         */
+        public java.lang.String getParentName() {
+          java.lang.Object ref = parentName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            parentName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_name = 4;</code>
+         * @return The bytes for parentName.
+         */
+        public com.google.protobuf.ByteString
+            getParentNameBytes() {
+          java.lang.Object ref = parentName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            parentName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The full resource name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_name = 4;</code>
+         * @param value The parentName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setParentName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          parentName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_name = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearParentName() {
+          
+          parentName_ = getDefaultInstance().getParentName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The full resource name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_name = 4;</code>
+         * @param value The bytes for parentName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setParentNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          parentName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object parentDisplayName_ = "";
+        /**
+         * <pre>
+         * The human readable name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_display_name = 5;</code>
+         * @return The parentDisplayName.
+         */
+        public java.lang.String getParentDisplayName() {
+          java.lang.Object ref = parentDisplayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            parentDisplayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The human readable name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_display_name = 5;</code>
+         * @return The bytes for parentDisplayName.
+         */
+        public com.google.protobuf.ByteString
+            getParentDisplayNameBytes() {
+          java.lang.Object ref = parentDisplayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            parentDisplayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The human readable name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_display_name = 5;</code>
+         * @param value The parentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setParentDisplayName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          parentDisplayName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The human readable name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_display_name = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearParentDisplayName() {
+          
+          parentDisplayName_ = getDefaultInstance().getParentDisplayName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The human readable name of resource's parent.
+         * </pre>
+         *
+         * <code>string parent_display_name = 5;</code>
+         * @param value The bytes for parentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setParentDisplayNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          parentDisplayName_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource)
+      private static final com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource();
+      }
+
+      public static com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Resource>
+          PARSER = new com.google.protobuf.AbstractParser<Resource>() {
+        @java.lang.Override
+        public Resource parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Resource(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Resource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Resource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int FINDING_FIELD_NUMBER = 1;
     private com.google.cloud.securitycenter.v1.Finding finding_;
     /**
@@ -446,6 +1866,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * @return Whether the finding field is set.
      */
     public boolean hasFinding() {
       return finding_ != null;
@@ -456,6 +1877,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+     * @return The finding.
      */
     public com.google.cloud.securitycenter.v1.Finding getFinding() {
       return finding_ == null ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance() : finding_;
@@ -479,6 +1901,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+     * @return The enum numeric value on the wire for stateChange.
      */
     public int getStateChangeValue() {
       return stateChange_;
@@ -489,11 +1912,47 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+     * @return The stateChange.
      */
     public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange getStateChange() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange result = com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange.valueOf(stateChange_);
       return result == null ? com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange.UNRECOGNIZED : result;
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 3;
+    private com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource_;
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     * @return Whether the resource field is set.
+     */
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     * @return The resource.
+     */
+    public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getResource() {
+      return resource_ == null ? com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <pre>
+     * Output only. Resource that is associated with this finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder getResourceOrBuilder() {
+      return getResource();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -516,6 +1975,9 @@ private static final long serialVersionUID = 0L;
       if (stateChange_ != com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange.UNUSED.getNumber()) {
         output.writeEnum(2, stateChange_);
       }
+      if (resource_ != null) {
+        output.writeMessage(3, getResource());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -532,6 +1994,10 @@ private static final long serialVersionUID = 0L;
       if (stateChange_ != com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange.UNUSED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, stateChange_);
+      }
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResource());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -554,6 +2020,11 @@ private static final long serialVersionUID = 0L;
             .equals(other.getFinding())) return false;
       }
       if (stateChange_ != other.stateChange_) return false;
+      if (hasResource() != other.hasResource()) return false;
+      if (hasResource()) {
+        if (!getResource()
+            .equals(other.getResource())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -571,6 +2042,10 @@ private static final long serialVersionUID = 0L;
       }
       hash = (37 * hash) + STATE_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + stateChange_;
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -716,6 +2191,12 @@ private static final long serialVersionUID = 0L;
         }
         stateChange_ = 0;
 
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
         return this;
       }
 
@@ -748,6 +2229,11 @@ private static final long serialVersionUID = 0L;
           result.finding_ = findingBuilder_.build();
         }
         result.stateChange_ = stateChange_;
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -802,6 +2288,9 @@ private static final long serialVersionUID = 0L;
         if (other.stateChange_ != 0) {
           setStateChangeValue(other.getStateChangeValue());
         }
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -840,6 +2329,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+       * @return Whether the finding field is set.
        */
       public boolean hasFinding() {
         return findingBuilder_ != null || finding_ != null;
@@ -850,6 +2340,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
+       * @return The finding.
        */
       public com.google.cloud.securitycenter.v1.Finding getFinding() {
         if (findingBuilder_ == null) {
@@ -991,6 +2482,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+       * @return The enum numeric value on the wire for stateChange.
        */
       public int getStateChangeValue() {
         return stateChange_;
@@ -1001,6 +2493,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+       * @param value The enum numeric value on the wire for stateChange to set.
+       * @return This builder for chaining.
        */
       public Builder setStateChangeValue(int value) {
         stateChange_ = value;
@@ -1013,6 +2507,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+       * @return The stateChange.
        */
       public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange getStateChange() {
         @SuppressWarnings("deprecation")
@@ -1025,6 +2520,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+       * @param value The stateChange to set.
+       * @return This builder for chaining.
        */
       public Builder setStateChange(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange value) {
         if (value == null) {
@@ -1041,12 +2538,168 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange state_change = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStateChange() {
         
         stateChange_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder> resourceBuilder_;
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       * @return Whether the resource field is set.
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       * @return The resource.
+       */
+      public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public Builder setResource(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public Builder setResource(
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public Builder mergeResource(com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Resource that is associated with this finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.Builder, com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.ResourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1101,7 +2754,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int LIST_FINDINGS_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult> listFindingsResults_;
   /**
@@ -1165,6 +2817,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -1175,6 +2828,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -1199,6 +2853,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -1219,6 +2874,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -1242,6 +2898,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 total_size = 4;</code>
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -1527,7 +3184,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.securitycenter.v1.ListFindingsResponse buildPartial() {
       com.google.cloud.securitycenter.v1.ListFindingsResponse result = new com.google.cloud.securitycenter.v1.ListFindingsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (listFindingsResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           listFindingsResults_ = java.util.Collections.unmodifiableList(listFindingsResults_);
@@ -1544,7 +3200,6 @@ private static final long serialVersionUID = 0L;
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1980,6 +3635,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -1990,6 +3646,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -2132,6 +3789,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -2152,6 +3810,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -2173,6 +3832,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -2191,6 +3852,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -2205,6 +3867,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -2225,6 +3889,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -2235,6 +3900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
       
@@ -2248,6 +3915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
       

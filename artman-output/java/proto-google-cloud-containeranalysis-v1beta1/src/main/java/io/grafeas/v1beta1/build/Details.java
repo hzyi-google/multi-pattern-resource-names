@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -102,27 +108,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.provenance.BuildProvenance provenance_;
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   * @return Whether the provenance field is set.
    */
   public boolean hasProvenance() {
     return provenance_ != null;
   }
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   * @return The provenance.
    */
   public io.grafeas.v1beta1.provenance.BuildProvenance getProvenance() {
     return provenance_ == null ? io.grafeas.v1beta1.provenance.BuildProvenance.getDefaultInstance() : provenance_;
   }
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -136,7 +144,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order
@@ -148,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   * @return The provenanceBytes.
    */
   public java.lang.String getProvenanceBytes() {
     java.lang.Object ref = provenanceBytes_;
@@ -164,7 +173,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order
@@ -176,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   * @return The bytes for provenanceBytes.
    */
   public com.google.protobuf.ByteString
       getProvenanceBytesBytes() {
@@ -532,20 +542,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.provenance.BuildProvenance, io.grafeas.v1beta1.provenance.BuildProvenance.Builder, io.grafeas.v1beta1.provenance.BuildProvenanceOrBuilder> provenanceBuilder_;
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+     * @return Whether the provenance field is set.
      */
     public boolean hasProvenance() {
       return provenanceBuilder_ != null || provenance_ != null;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+     * @return The provenance.
      */
     public io.grafeas.v1beta1.provenance.BuildProvenance getProvenance() {
       if (provenanceBuilder_ == null) {
@@ -556,7 +568,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -576,7 +588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -594,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -616,7 +628,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -634,7 +646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -646,7 +658,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -661,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -684,7 +696,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -696,6 +708,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     * @return The provenanceBytes.
      */
     public java.lang.String getProvenanceBytes() {
       java.lang.Object ref = provenanceBytes_;
@@ -712,7 +725,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -724,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     * @return The bytes for provenanceBytes.
      */
     public com.google.protobuf.ByteString
         getProvenanceBytesBytes() {
@@ -741,7 +755,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -753,6 +767,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     * @param value The provenanceBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setProvenanceBytes(
         java.lang.String value) {
@@ -767,7 +783,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -779,6 +795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearProvenanceBytes() {
       
@@ -789,7 +806,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -801,6 +818,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
+     * @param value The bytes for provenanceBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setProvenanceBytesBytes(
         com.google.protobuf.ByteString value) {

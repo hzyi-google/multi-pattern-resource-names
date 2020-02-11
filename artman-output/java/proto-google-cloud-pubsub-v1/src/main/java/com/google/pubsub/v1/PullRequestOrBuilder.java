@@ -14,6 +14,7 @@ public interface PullRequestOrBuilder extends
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -23,6 +24,7 @@ public interface PullRequestOrBuilder extends
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
       getSubscriptionBytes();
@@ -36,6 +38,7 @@ public interface PullRequestOrBuilder extends
    * </pre>
    *
    * <code>bool return_immediately = 2;</code>
+   * @return The returnImmediately.
    */
   boolean getReturnImmediately();
 
@@ -47,6 +50,7 @@ public interface PullRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 max_messages = 3;</code>
+   * @return The maxMessages.
    */
   int getMaxMessages();
 }

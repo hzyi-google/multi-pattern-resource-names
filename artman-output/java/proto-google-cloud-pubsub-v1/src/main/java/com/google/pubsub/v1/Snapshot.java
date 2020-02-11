@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Snapshot();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -79,10 +86,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -135,7 +142,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.Snapshot.class, com.google.pubsub.v1.Snapshot.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -144,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -163,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -186,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The topic.
    */
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
@@ -205,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString
       getTopicBytes() {
@@ -237,6 +247,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * @return Whether the expireTime field is set.
    */
   public boolean hasExpireTime() {
     return expireTime_ != null;
@@ -256,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * @return The expireTime.
    */
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -685,7 +697,6 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.Snapshot buildPartial() {
       com.google.pubsub.v1.Snapshot result = new com.google.pubsub.v1.Snapshot(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.topic_ = topic_;
       if (expireTimeBuilder_ == null) {
@@ -695,7 +706,6 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -794,6 +804,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -813,6 +824,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -833,6 +845,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -850,6 +864,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -863,6 +878,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -883,6 +900,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -902,6 +920,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -922,6 +941,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @param value The topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopic(
         java.lang.String value) {
@@ -939,6 +960,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTopic() {
       
@@ -952,6 +974,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @param value The bytes for topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicBytes(
         com.google.protobuf.ByteString value) {
@@ -983,6 +1007,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
       return expireTimeBuilder_ != null || expireTime_ != null;
@@ -1002,6 +1027,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+     * @return The expireTime.
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {

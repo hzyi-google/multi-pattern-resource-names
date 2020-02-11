@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -218,8 +218,8 @@ module Google
           #   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
           #   is created, for example, "projects/foo".
           # @param client_event [Google::Cloud::Talent::V4beta1::ClientEvent | Hash]
-          #   Required. Events issued when end user interacts with customer's application
-          #   that uses Cloud Talent Solution.
+          #   Required. Events issued when end user interacts with customer's application that
+          #   uses Cloud Talent Solution.
           #   A hash of the same form as `Google::Cloud::Talent::V4beta1::ClientEvent`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]

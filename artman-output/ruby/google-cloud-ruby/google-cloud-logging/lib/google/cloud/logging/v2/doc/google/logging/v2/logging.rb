@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -132,7 +132,7 @@ module Google
       # @!attribute [rw] filter
       #   @return [String]
       #     Optional. A filter that chooses which log entries to return.  See [Advanced
-      #     Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+      #     Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
       #     match the filter are returned.  An empty filter matches all log entries in
       #     the resources listed in `resource_names`. Referencing a parent resource
       #     that is not listed in `resource_names` will cause the filter to return no

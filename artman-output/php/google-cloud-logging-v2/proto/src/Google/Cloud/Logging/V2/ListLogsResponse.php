@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListLogsResponse</code>
  */
-final class ListLogsResponse extends \Google\Protobuf\Internal\Message
+class ListLogsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of log names. For example,
@@ -30,7 +30,7 @@ final class ListLogsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

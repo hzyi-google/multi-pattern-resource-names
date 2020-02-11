@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo</code>
  */
-final class CommuteInfo extends \Google\Protobuf\Internal\Message
+class CommuteInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Location used as the destination in the commute calculation.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
      */
-    private $job_location = null;
+    protected $job_location = null;
     /**
      * The number of seconds required to travel to the job location from the
      * query location. A duration of 0 seconds indicates that the job isn't
@@ -29,7 +29,7 @@ final class CommuteInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Duration travel_duration = 2;</code>
      */
-    private $travel_duration = null;
+    protected $travel_duration = null;
 
     /**
      * Constructor.

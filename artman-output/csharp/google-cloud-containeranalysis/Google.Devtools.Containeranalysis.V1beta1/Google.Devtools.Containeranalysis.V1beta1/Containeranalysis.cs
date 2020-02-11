@@ -27,61 +27,73 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
             "CkFnb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9j",
             "b250YWluZXJhbmFseXNpcy5wcm90bxIpZ29vZ2xlLmRldnRvb2xzLmNvbnRh",
             "aW5lcmFuYWx5c2lzLnYxYmV0YTEaHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMu",
-            "cHJvdG8aHmdvb2dsZS9pYW0vdjEvaWFtX3BvbGljeS5wcm90bxoaZ29vZ2xl",
-            "L2lhbS92MS9wb2xpY3kucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8iogEKClNjYW5Db25maWcSDAoEbmFtZRgBIAEoCRITCgtkZXNj",
-            "cmlwdGlvbhgCIAEoCRIPCgdlbmFibGVkGAMgASgIEi8KC2NyZWF0ZV90aW1l",
-            "GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgt1cGRhdGVf",
-            "dGltZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiJAoUR2V0",
-            "U2NhbkNvbmZpZ1JlcXVlc3QSDAoEbmFtZRgBIAEoCSJfChZMaXN0U2NhbkNv",
-            "bmZpZ3NSZXF1ZXN0Eg4KBnBhcmVudBgBIAEoCRIOCgZmaWx0ZXIYAiABKAkS",
-            "EQoJcGFnZV9zaXplGAMgASgFEhIKCnBhZ2VfdG9rZW4YBCABKAkifwoXTGlz",
-            "dFNjYW5Db25maWdzUmVzcG9uc2USSwoMc2Nhbl9jb25maWdzGAEgAygLMjUu",
-            "Z29vZ2xlLmRldnRvb2xzLmNvbnRhaW5lcmFuYWx5c2lzLnYxYmV0YTEuU2Nh",
-            "bkNvbmZpZxIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkicwoXVXBkYXRlU2Nh",
-            "bkNvbmZpZ1JlcXVlc3QSDAoEbmFtZRgBIAEoCRJKCgtzY2FuX2NvbmZpZxgC",
-            "IAEoCzI1Lmdvb2dsZS5kZXZ0b29scy5jb250YWluZXJhbmFseXNpcy52MWJl",
-            "dGExLlNjYW5Db25maWcyhAoKGENvbnRhaW5lckFuYWx5c2lzVjFCZXRhMRLJ",
-            "AQoMU2V0SWFtUG9saWN5EiIuZ29vZ2xlLmlhbS52MS5TZXRJYW1Qb2xpY3lS",
-            "ZXF1ZXN0GhUuZ29vZ2xlLmlhbS52MS5Qb2xpY3kifoLT5JMCeCIzL3YxYmV0",
-            "YTEve3Jlc291cmNlPXByb2plY3RzLyovbm90ZXMvKn06c2V0SWFtUG9saWN5",
-            "OgEqWj4iOS92MWJldGExL3tyZXNvdXJjZT1wcm9qZWN0cy8qL29jY3VycmVu",
-            "Y2VzLyp9OnNldElhbVBvbGljeToBKhLJAQoMR2V0SWFtUG9saWN5EiIuZ29v",
-            "Z2xlLmlhbS52MS5HZXRJYW1Qb2xpY3lSZXF1ZXN0GhUuZ29vZ2xlLmlhbS52",
-            "MS5Qb2xpY3kifoLT5JMCeCIzL3YxYmV0YTEve3Jlc291cmNlPXByb2plY3Rz",
-            "Lyovbm90ZXMvKn06Z2V0SWFtUG9saWN5OgEqWj4iOS92MWJldGExL3tyZXNv",
-            "dXJjZT1wcm9qZWN0cy8qL29jY3VycmVuY2VzLyp9OmdldElhbVBvbGljeToB",
-            "KhL3AQoSVGVzdElhbVBlcm1pc3Npb25zEiguZ29vZ2xlLmlhbS52MS5UZXN0",
-            "SWFtUGVybWlzc2lvbnNSZXF1ZXN0GikuZ29vZ2xlLmlhbS52MS5UZXN0SWFt",
-            "UGVybWlzc2lvbnNSZXNwb25zZSKLAYLT5JMChAEiOS92MWJldGExL3tyZXNv",
-            "dXJjZT1wcm9qZWN0cy8qL25vdGVzLyp9OnRlc3RJYW1QZXJtaXNzaW9uczoB",
-            "KlpEIj8vdjFiZXRhMS97cmVzb3VyY2U9cHJvamVjdHMvKi9vY2N1cnJlbmNl",
-            "cy8qfTp0ZXN0SWFtUGVybWlzc2lvbnM6ASoSuQEKDUdldFNjYW5Db25maWcS",
-            "Py5nb29nbGUuZGV2dG9vbHMuY29udGFpbmVyYW5hbHlzaXMudjFiZXRhMS5H",
-            "ZXRTY2FuQ29uZmlnUmVxdWVzdBo1Lmdvb2dsZS5kZXZ0b29scy5jb250YWlu",
-            "ZXJhbmFseXNpcy52MWJldGExLlNjYW5Db25maWciMILT5JMCKhIoL3YxYmV0",
-            "YTEve25hbWU9cHJvamVjdHMvKi9zY2FuQ29uZmlncy8qfRLKAQoPTGlzdFNj",
-            "YW5Db25maWdzEkEuZ29vZ2xlLmRldnRvb2xzLmNvbnRhaW5lcmFuYWx5c2lz",
-            "LnYxYmV0YTEuTGlzdFNjYW5Db25maWdzUmVxdWVzdBpCLmdvb2dsZS5kZXZ0",
-            "b29scy5jb250YWluZXJhbmFseXNpcy52MWJldGExLkxpc3RTY2FuQ29uZmln",
-            "c1Jlc3BvbnNlIjCC0+STAioSKC92MWJldGExL3twYXJlbnQ9cHJvamVjdHMv",
-            "Kn0vc2NhbkNvbmZpZ3MSzAEKEFVwZGF0ZVNjYW5Db25maWcSQi5nb29nbGUu",
-            "ZGV2dG9vbHMuY29udGFpbmVyYW5hbHlzaXMudjFiZXRhMS5VcGRhdGVTY2Fu",
-            "Q29uZmlnUmVxdWVzdBo1Lmdvb2dsZS5kZXZ0b29scy5jb250YWluZXJhbmFs",
-            "eXNpcy52MWJldGExLlNjYW5Db25maWciPYLT5JMCNxooL3YxYmV0YTEve25h",
-            "bWU9cHJvamVjdHMvKi9zY2FuQ29uZmlncy8qfToLc2Nhbl9jb25maWdCigEK",
-            "JGNvbS5nb29nbGUuY29udGFpbmVyYW5hbHlzaXMudjFiZXRhMVABWlpnb29n",
-            "bGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2RldnRvb2xzL2Nv",
-            "bnRhaW5lcmFuYWx5c2lzL3YxYmV0YTE7Y29udGFpbmVyYW5hbHlzaXOiAgNH",
-            "Q0FiBnByb3RvMw=="));
+            "cHJvdG8aF2dvb2dsZS9hcGkvY2xpZW50LnByb3RvGh9nb29nbGUvYXBpL2Zp",
+            "ZWxkX2JlaGF2aW9yLnByb3RvGhlnb29nbGUvYXBpL3Jlc291cmNlLnByb3Rv",
+            "Gh5nb29nbGUvaWFtL3YxL2lhbV9wb2xpY3kucHJvdG8aGmdvb2dsZS9pYW0v",
+            "djEvcG9saWN5LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnBy",
+            "b3RvIoICCgpTY2FuQ29uZmlnEgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRp",
+            "b24YAiABKAkSDwoHZW5hYmxlZBgDIAEoCBIvCgtjcmVhdGVfdGltZRgEIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLdXBkYXRlX3RpbWUY",
+            "BSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wOl7qQVsKK2NvbnRh",
+            "aW5lcmFuYWx5c2lzLmdvb2dsZWFwaXMuY29tL1NjYW5Db25maWcSLHByb2pl",
+            "Y3RzL3twcm9qZWN0fS9zY2FuQ29uZmlncy97c2Nhbl9jb25maWd9IlkKFEdl",
+            "dFNjYW5Db25maWdSZXF1ZXN0EkEKBG5hbWUYASABKAlCM+BBAvpBLQorY29u",
+            "dGFpbmVyYW5hbHlzaXMuZ29vZ2xlYXBpcy5jb20vU2NhbkNvbmZpZyKZAQoW",
+            "TGlzdFNjYW5Db25maWdzUmVxdWVzdBJDCgZwYXJlbnQYASABKAlCM+BBAvpB",
+            "LQorY2xvdWRyZXNvdXJjZW1hbmFnZXIuZ29vZ2xlYXBpcy5jb20vUHJvamVj",
+            "dBITCgZmaWx0ZXIYAiABKAlCA+BBAhIRCglwYWdlX3NpemUYAyABKAUSEgoK",
+            "cGFnZV90b2tlbhgEIAEoCSJ/ChdMaXN0U2NhbkNvbmZpZ3NSZXNwb25zZRJL",
+            "CgxzY2FuX2NvbmZpZ3MYASADKAsyNS5nb29nbGUuZGV2dG9vbHMuY29udGFp",
+            "bmVyYW5hbHlzaXMudjFiZXRhMS5TY2FuQ29uZmlnEhcKD25leHRfcGFnZV90",
+            "b2tlbhgCIAEoCSKtAQoXVXBkYXRlU2NhbkNvbmZpZ1JlcXVlc3QSQQoEbmFt",
+            "ZRgBIAEoCUIz4EEC+kEtCitjb250YWluZXJhbmFseXNpcy5nb29nbGVhcGlz",
+            "LmNvbS9TY2FuQ29uZmlnEk8KC3NjYW5fY29uZmlnGAIgASgLMjUuZ29vZ2xl",
+            "LmRldnRvb2xzLmNvbnRhaW5lcmFuYWx5c2lzLnYxYmV0YTEuU2NhbkNvbmZp",
+            "Z0ID4EECMroLChhDb250YWluZXJBbmFseXNpc1YxQmV0YTES3AEKDFNldElh",
+            "bVBvbGljeRIiLmdvb2dsZS5pYW0udjEuU2V0SWFtUG9saWN5UmVxdWVzdBoV",
+            "Lmdvb2dsZS5pYW0udjEuUG9saWN5IpABgtPkkwJ4IjMvdjFiZXRhMS97cmVz",
+            "b3VyY2U9cHJvamVjdHMvKi9ub3Rlcy8qfTpzZXRJYW1Qb2xpY3k6ASpaPiI5",
+            "L3YxYmV0YTEve3Jlc291cmNlPXByb2plY3RzLyovb2NjdXJyZW5jZXMvKn06",
+            "c2V0SWFtUG9saWN5OgEq2kEPcmVzb3VyY2UscG9saWN5EtUBCgxHZXRJYW1Q",
+            "b2xpY3kSIi5nb29nbGUuaWFtLnYxLkdldElhbVBvbGljeVJlcXVlc3QaFS5n",
+            "b29nbGUuaWFtLnYxLlBvbGljeSKJAYLT5JMCeCIzL3YxYmV0YTEve3Jlc291",
+            "cmNlPXByb2plY3RzLyovbm90ZXMvKn06Z2V0SWFtUG9saWN5OgEqWj4iOS92",
+            "MWJldGExL3tyZXNvdXJjZT1wcm9qZWN0cy8qL29jY3VycmVuY2VzLyp9Omdl",
+            "dElhbVBvbGljeToBKtpBCHJlc291cmNlEo4CChJUZXN0SWFtUGVybWlzc2lv",
+            "bnMSKC5nb29nbGUuaWFtLnYxLlRlc3RJYW1QZXJtaXNzaW9uc1JlcXVlc3Qa",
+            "KS5nb29nbGUuaWFtLnYxLlRlc3RJYW1QZXJtaXNzaW9uc1Jlc3BvbnNlIqIB",
+            "gtPkkwKEASI5L3YxYmV0YTEve3Jlc291cmNlPXByb2plY3RzLyovbm90ZXMv",
+            "Kn06dGVzdElhbVBlcm1pc3Npb25zOgEqWkQiPy92MWJldGExL3tyZXNvdXJj",
+            "ZT1wcm9qZWN0cy8qL29jY3VycmVuY2VzLyp9OnRlc3RJYW1QZXJtaXNzaW9u",
+            "czoBKtpBFHJlc291cmNlLHBlcm1pc3Npb25zEsABCg1HZXRTY2FuQ29uZmln",
+            "Ej8uZ29vZ2xlLmRldnRvb2xzLmNvbnRhaW5lcmFuYWx5c2lzLnYxYmV0YTEu",
+            "R2V0U2NhbkNvbmZpZ1JlcXVlc3QaNS5nb29nbGUuZGV2dG9vbHMuY29udGFp",
+            "bmVyYW5hbHlzaXMudjFiZXRhMS5TY2FuQ29uZmlnIjeC0+STAioSKC92MWJl",
+            "dGExL3tuYW1lPXByb2plY3RzLyovc2NhbkNvbmZpZ3MvKn3aQQRuYW1lEtoB",
+            "Cg9MaXN0U2NhbkNvbmZpZ3MSQS5nb29nbGUuZGV2dG9vbHMuY29udGFpbmVy",
+            "YW5hbHlzaXMudjFiZXRhMS5MaXN0U2NhbkNvbmZpZ3NSZXF1ZXN0GkIuZ29v",
+            "Z2xlLmRldnRvb2xzLmNvbnRhaW5lcmFuYWx5c2lzLnYxYmV0YTEuTGlzdFNj",
+            "YW5Db25maWdzUmVzcG9uc2UiQILT5JMCKhIoL3YxYmV0YTEve3BhcmVudD1w",
+            "cm9qZWN0cy8qfS9zY2FuQ29uZmlnc9pBDXBhcmVudCxmaWx0ZXIS3wEKEFVw",
+            "ZGF0ZVNjYW5Db25maWcSQi5nb29nbGUuZGV2dG9vbHMuY29udGFpbmVyYW5h",
+            "bHlzaXMudjFiZXRhMS5VcGRhdGVTY2FuQ29uZmlnUmVxdWVzdBo1Lmdvb2ds",
+            "ZS5kZXZ0b29scy5jb250YWluZXJhbmFseXNpcy52MWJldGExLlNjYW5Db25m",
+            "aWciUILT5JMCNxooL3YxYmV0YTEve25hbWU9cHJvamVjdHMvKi9zY2FuQ29u",
+            "Zmlncy8qfToLc2Nhbl9jb25maWfaQRBuYW1lLHNjYW5fY29uZmlnGlTKQSBj",
+            "b250YWluZXJhbmFseXNpcy5nb29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3",
+            "Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm1CigEKJGNvbS5n",
+            "b29nbGUuY29udGFpbmVyYW5hbHlzaXMudjFiZXRhMVABWlpnb29nbGUuZ29s",
+            "YW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2RldnRvb2xzL2NvbnRhaW5l",
+            "cmFuYWx5c2lzL3YxYmV0YTE7Y29udGFpbmVyYW5hbHlzaXOiAgNHQ0FiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Cloud.Iam.V1.IamPolicyReflection.Descriptor, global::Google.Cloud.Iam.V1.PolicyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig), global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig.Parser, new[]{ "Name", "Description", "Enabled", "CreateTime", "UpdateTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.GetScanConfigRequest), global::Google.Devtools.Containeranalysis.V1Beta1.GetScanConfigRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsRequest), global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsResponse), global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsResponse.Parser, new[]{ "ScanConfigs", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.UpdateScanConfigRequest), global::Google.Devtools.Containeranalysis.V1Beta1.UpdateScanConfigRequest.Parser, new[]{ "Name", "ScanConfig" }, null, null, null)
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Iam.V1.IamPolicyReflection.Descriptor, global::Google.Cloud.Iam.V1.PolicyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig), global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig.Parser, new[]{ "Name", "Description", "Enabled", "CreateTime", "UpdateTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.GetScanConfigRequest), global::Google.Devtools.Containeranalysis.V1Beta1.GetScanConfigRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsRequest), global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsResponse), global::Google.Devtools.Containeranalysis.V1Beta1.ListScanConfigsResponse.Parser, new[]{ "ScanConfigs", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Devtools.Containeranalysis.V1Beta1.UpdateScanConfigRequest), global::Google.Devtools.Containeranalysis.V1Beta1.UpdateScanConfigRequest.Parser, new[]{ "Name", "ScanConfig" }, null, null, null, null)
           }));
     }
     #endregion
@@ -404,7 +416,7 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// The name of the scan configuration in the form of
+    /// Required. The name of the scan configuration in the form of
     /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -543,7 +555,7 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
     public const int ParentFieldNumber = 1;
     private string parent_ = "";
     /// <summary>
-    /// The name of the project to list scan configurations for in the form of
+    /// Required. The name of the project to list scan configurations for in the form of
     /// `projects/[PROJECT_ID]`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -558,7 +570,7 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
     public const int FilterFieldNumber = 2;
     private string filter_ = "";
     /// <summary>
-    /// The filter expression.
+    /// Required. The filter expression.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Filter {
@@ -930,7 +942,7 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// The name of the scan configuration in the form of
+    /// Required. The name of the scan configuration in the form of
     /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -945,7 +957,7 @@ namespace Google.Devtools.Containeranalysis.V1Beta1 {
     public const int ScanConfigFieldNumber = 2;
     private global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig scanConfig_;
     /// <summary>
-    /// The updated scan configuration.
+    /// Required. The updated scan configuration.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Devtools.Containeranalysis.V1Beta1.ScanConfig ScanConfig {

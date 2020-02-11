@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.CreateNoteRequest</code>
  */
-final class CreateNoteRequest extends \Google\Protobuf\Internal\Message
+class CreateNoteRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
@@ -21,19 +21,19 @@ final class CreateNoteRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1;</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * The ID to use for this note.
      *
      * Generated from protobuf field <code>string note_id = 2;</code>
      */
-    private $note_id = '';
+    protected $note_id = '';
     /**
      * The note to create.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.Note note = 3;</code>
      */
-    private $note = null;
+    protected $note = null;
 
     /**
      * Constructor.

@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Discovered();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -189,6 +195,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -196,6 +204,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ContinuousAnalysis forNumber(int value) {
       switch (value) {
         case 0: return CONTINUOUS_ANALYSIS_UNSPECIFIED;
@@ -375,6 +387,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -382,6 +396,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AnalysisStatus forNumber(int value) {
       switch (value) {
         case 0: return ANALYSIS_STATUS_UNSPECIFIED;
@@ -450,6 +468,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+   * @return The enum numeric value on the wire for continuousAnalysis.
    */
   public int getContinuousAnalysisValue() {
     return continuousAnalysis_;
@@ -460,6 +479,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+   * @return The continuousAnalysis.
    */
   public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
     @SuppressWarnings("deprecation")
@@ -475,6 +495,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+   * @return Whether the lastAnalysisTime field is set.
    */
   public boolean hasLastAnalysisTime() {
     return lastAnalysisTime_ != null;
@@ -485,6 +506,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+   * @return The lastAnalysisTime.
    */
   public com.google.protobuf.Timestamp getLastAnalysisTime() {
     return lastAnalysisTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastAnalysisTime_;
@@ -508,6 +530,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+   * @return The enum numeric value on the wire for analysisStatus.
    */
   public int getAnalysisStatusValue() {
     return analysisStatus_;
@@ -518,6 +541,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+   * @return The analysisStatus.
    */
   public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
     @SuppressWarnings("deprecation")
@@ -535,6 +559,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
+   * @return Whether the analysisStatusError field is set.
    */
   public boolean hasAnalysisStatusError() {
     return analysisStatusError_ != null;
@@ -547,6 +572,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
+   * @return The analysisStatusError.
    */
   public com.google.rpc.Status getAnalysisStatusError() {
     return analysisStatusError_ == null ? com.google.rpc.Status.getDefaultInstance() : analysisStatusError_;
@@ -952,6 +978,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * @return The enum numeric value on the wire for continuousAnalysis.
      */
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
@@ -962,6 +989,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * @param value The enum numeric value on the wire for continuousAnalysis to set.
+     * @return This builder for chaining.
      */
     public Builder setContinuousAnalysisValue(int value) {
       continuousAnalysis_ = value;
@@ -974,6 +1003,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * @return The continuousAnalysis.
      */
     public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
       @SuppressWarnings("deprecation")
@@ -986,6 +1016,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * @param value The continuousAnalysis to set.
+     * @return This builder for chaining.
      */
     public Builder setContinuousAnalysis(io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis value) {
       if (value == null) {
@@ -1002,6 +1034,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContinuousAnalysis() {
       
@@ -1019,6 +1052,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+     * @return Whether the lastAnalysisTime field is set.
      */
     public boolean hasLastAnalysisTime() {
       return lastAnalysisTimeBuilder_ != null || lastAnalysisTime_ != null;
@@ -1029,6 +1063,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
+     * @return The lastAnalysisTime.
      */
     public com.google.protobuf.Timestamp getLastAnalysisTime() {
       if (lastAnalysisTimeBuilder_ == null) {
@@ -1170,6 +1205,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+     * @return The enum numeric value on the wire for analysisStatus.
      */
     public int getAnalysisStatusValue() {
       return analysisStatus_;
@@ -1180,6 +1216,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+     * @param value The enum numeric value on the wire for analysisStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisStatusValue(int value) {
       analysisStatus_ = value;
@@ -1192,6 +1230,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+     * @return The analysisStatus.
      */
     public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
       @SuppressWarnings("deprecation")
@@ -1204,6 +1243,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+     * @param value The analysisStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisStatus(io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus value) {
       if (value == null) {
@@ -1220,6 +1261,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAnalysisStatus() {
       
@@ -1239,6 +1281,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.rpc.Status analysis_status_error = 4;</code>
+     * @return Whether the analysisStatusError field is set.
      */
     public boolean hasAnalysisStatusError() {
       return analysisStatusErrorBuilder_ != null || analysisStatusError_ != null;
@@ -1251,6 +1294,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.rpc.Status analysis_status_error = 4;</code>
+     * @return The analysisStatusError.
      */
     public com.google.rpc.Status getAnalysisStatusError() {
       if (analysisStatusErrorBuilder_ == null) {

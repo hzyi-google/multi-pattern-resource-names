@@ -19,6 +19,11 @@ public final class Common {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1beta1_RelatedUrl_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_grafeas_v1beta1_Signature_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1beta1_Signature_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -31,32 +36,32 @@ public final class Common {
       "\n=google/devtools/containeranalysis/v1be" +
       "ta1/common/common.proto\022\017grafeas.v1beta1" +
       "\"(\n\nRelatedUrl\022\013\n\003url\030\001 \001(\t\022\r\n\005label\030\002 \001" +
-      "(\t*\213\001\n\010NoteKind\022\031\n\025NOTE_KIND_UNSPECIFIED" +
-      "\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BUILD\020\002\022\t\n\005IMAG" +
-      "E\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYMENT\020\005\022\r\n\tDISC" +
-      "OVERY\020\006\022\017\n\013ATTESTATION\020\007B{\n\031io.grafeas.v" +
-      "1beta1.commonP\001ZVgoogle.golang.org/genpr" +
-      "oto/googleapis/devtools/containeranalysi" +
-      "s/v1beta1/common;common\242\002\003GRAb\006proto3"
+      "(\t\"5\n\tSignature\022\021\n\tsignature\030\001 \001(\014\022\025\n\rpu" +
+      "blic_key_id\030\002 \001(\t*\213\001\n\010NoteKind\022\031\n\025NOTE_K" +
+      "IND_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005" +
+      "BUILD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLO" +
+      "YMENT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007B" +
+      "{\n\031io.grafeas.v1beta1.commonP\001ZVgoogle.g" +
+      "olang.org/genproto/googleapis/devtools/c" +
+      "ontaineranalysis/v1beta1/common;common\242\002" +
+      "\003GRAb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_grafeas_v1beta1_RelatedUrl_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1beta1_RelatedUrl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grafeas_v1beta1_RelatedUrl_descriptor,
         new java.lang.String[] { "Url", "Label", });
+    internal_static_grafeas_v1beta1_Signature_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1beta1_Signature_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_grafeas_v1beta1_Signature_descriptor,
+        new java.lang.String[] { "Signature", "PublicKeyId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

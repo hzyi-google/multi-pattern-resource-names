@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Deployment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -97,9 +104,9 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               resourceUri_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             resourceUri_.add(s);
             break;
@@ -125,7 +132,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = resourceUri_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -232,6 +239,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -239,6 +248,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Platform forNumber(int value) {
       switch (value) {
         case 0: return PLATFORM_UNSPECIFIED;
@@ -297,7 +310,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:grafeas.v1beta1.deployment.Deployment.Platform)
   }
 
-  private int bitField0_;
   public static final int USER_EMAIL_FIELD_NUMBER = 1;
   private volatile java.lang.Object userEmail_;
   /**
@@ -306,6 +318,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_email = 1;</code>
+   * @return The userEmail.
    */
   public java.lang.String getUserEmail() {
     java.lang.Object ref = userEmail_;
@@ -325,6 +338,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_email = 1;</code>
+   * @return The bytes for userEmail.
    */
   public com.google.protobuf.ByteString
       getUserEmailBytes() {
@@ -344,27 +358,29 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp deployTime_;
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+   * @return Whether the deployTime field is set.
    */
   public boolean hasDeployTime() {
     return deployTime_ != null;
   }
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+   * @return The deployTime.
    */
   public com.google.protobuf.Timestamp getDeployTime() {
     return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
   }
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -381,6 +397,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+   * @return Whether the undeployTime field is set.
    */
   public boolean hasUndeployTime() {
     return undeployTime_ != null;
@@ -391,6 +408,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+   * @return The undeployTime.
    */
   public com.google.protobuf.Timestamp getUndeployTime() {
     return undeployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : undeployTime_;
@@ -414,6 +432,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string config = 4;</code>
+   * @return The config.
    */
   public java.lang.String getConfig() {
     java.lang.Object ref = config_;
@@ -433,6 +452,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string config = 4;</code>
+   * @return The bytes for config.
    */
   public com.google.protobuf.ByteString
       getConfigBytes() {
@@ -456,6 +476,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string address = 5;</code>
+   * @return The address.
    */
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
@@ -475,6 +496,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string address = 5;</code>
+   * @return The bytes for address.
    */
   public com.google.protobuf.ByteString
       getAddressBytes() {
@@ -499,6 +521,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @return A list containing the resourceUri.
    */
   public com.google.protobuf.ProtocolStringList
       getResourceUriList() {
@@ -511,6 +534,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @return The count of resourceUri.
    */
   public int getResourceUriCount() {
     return resourceUri_.size();
@@ -522,6 +546,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @param index The index of the element to return.
+   * @return The resourceUri at the given index.
    */
   public java.lang.String getResourceUri(int index) {
     return resourceUri_.get(index);
@@ -533,6 +559,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceUri at the given index.
    */
   public com.google.protobuf.ByteString
       getResourceUriBytes(int index) {
@@ -547,6 +575,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+   * @return The enum numeric value on the wire for platform.
    */
   public int getPlatformValue() {
     return platform_;
@@ -557,6 +586,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+   * @return The platform.
    */
   public io.grafeas.v1beta1.deployment.Deployment.Platform getPlatform() {
     @SuppressWarnings("deprecation")
@@ -858,7 +888,7 @@ private static final long serialVersionUID = 0L;
       address_ = "";
 
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       platform_ = 0;
 
       return this;
@@ -888,7 +918,6 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.deployment.Deployment buildPartial() {
       io.grafeas.v1beta1.deployment.Deployment result = new io.grafeas.v1beta1.deployment.Deployment(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.userEmail_ = userEmail_;
       if (deployTimeBuilder_ == null) {
         result.deployTime_ = deployTime_;
@@ -902,13 +931,12 @@ private static final long serialVersionUID = 0L;
       }
       result.config_ = config_;
       result.address_ = address_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = resourceUri_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.resourceUri_ = resourceUri_;
       result.platform_ = platform_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -978,7 +1006,7 @@ private static final long serialVersionUID = 0L;
       if (!other.resourceUri_.isEmpty()) {
         if (resourceUri_.isEmpty()) {
           resourceUri_ = other.resourceUri_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureResourceUriIsMutable();
           resourceUri_.addAll(other.resourceUri_);
@@ -1025,6 +1053,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_email = 1;</code>
+     * @return The userEmail.
      */
     public java.lang.String getUserEmail() {
       java.lang.Object ref = userEmail_;
@@ -1044,6 +1073,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_email = 1;</code>
+     * @return The bytes for userEmail.
      */
     public com.google.protobuf.ByteString
         getUserEmailBytes() {
@@ -1064,6 +1094,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_email = 1;</code>
+     * @param value The userEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmail(
         java.lang.String value) {
@@ -1081,6 +1113,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_email = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserEmail() {
       
@@ -1094,6 +1127,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_email = 1;</code>
+     * @param value The bytes for userEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setUserEmailBytes(
         com.google.protobuf.ByteString value) {
@@ -1112,20 +1147,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deployTimeBuilder_;
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+     * @return Whether the deployTime field is set.
      */
     public boolean hasDeployTime() {
       return deployTimeBuilder_ != null || deployTime_ != null;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+     * @return The deployTime.
      */
     public com.google.protobuf.Timestamp getDeployTime() {
       if (deployTimeBuilder_ == null) {
@@ -1136,7 +1173,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1156,7 +1193,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1174,7 +1211,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1196,7 +1233,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1214,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1226,7 +1263,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1241,7 +1278,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -1269,6 +1306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+     * @return Whether the undeployTime field is set.
      */
     public boolean hasUndeployTime() {
       return undeployTimeBuilder_ != null || undeployTime_ != null;
@@ -1279,6 +1317,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+     * @return The undeployTime.
      */
     public com.google.protobuf.Timestamp getUndeployTime() {
       if (undeployTimeBuilder_ == null) {
@@ -1420,6 +1459,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string config = 4;</code>
+     * @return The config.
      */
     public java.lang.String getConfig() {
       java.lang.Object ref = config_;
@@ -1439,6 +1479,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string config = 4;</code>
+     * @return The bytes for config.
      */
     public com.google.protobuf.ByteString
         getConfigBytes() {
@@ -1459,6 +1500,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string config = 4;</code>
+     * @param value The config to set.
+     * @return This builder for chaining.
      */
     public Builder setConfig(
         java.lang.String value) {
@@ -1476,6 +1519,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string config = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConfig() {
       
@@ -1489,6 +1533,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string config = 4;</code>
+     * @param value The bytes for config to set.
+     * @return This builder for chaining.
      */
     public Builder setConfigBytes(
         com.google.protobuf.ByteString value) {
@@ -1509,6 +1555,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 5;</code>
+     * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -1528,6 +1575,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 5;</code>
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -1548,6 +1596,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 5;</code>
+     * @param value The address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddress(
         java.lang.String value) {
@@ -1565,6 +1615,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAddress() {
       
@@ -1578,6 +1629,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 5;</code>
+     * @param value The bytes for address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddressBytes(
         com.google.protobuf.ByteString value) {
@@ -1593,9 +1646,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureResourceUriIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = new com.google.protobuf.LazyStringArrayList(resourceUri_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1605,6 +1658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @return A list containing the resourceUri.
      */
     public com.google.protobuf.ProtocolStringList
         getResourceUriList() {
@@ -1617,6 +1671,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @return The count of resourceUri.
      */
     public int getResourceUriCount() {
       return resourceUri_.size();
@@ -1628,6 +1683,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param index The index of the element to return.
+     * @return The resourceUri at the given index.
      */
     public java.lang.String getResourceUri(int index) {
       return resourceUri_.get(index);
@@ -1639,6 +1696,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceUri at the given index.
      */
     public com.google.protobuf.ByteString
         getResourceUriBytes(int index) {
@@ -1651,6 +1710,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The resourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUri(
         int index, java.lang.String value) {
@@ -1669,6 +1731,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param value The resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceUri(
         java.lang.String value) {
@@ -1687,6 +1751,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param values The resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addAllResourceUri(
         java.lang.Iterable<java.lang.String> values) {
@@ -1703,10 +1769,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1717,6 +1784,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
+     * @param value The bytes of the resourceUri to add.
+     * @return This builder for chaining.
      */
     public Builder addResourceUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1737,6 +1806,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+     * @return The enum numeric value on the wire for platform.
      */
     public int getPlatformValue() {
       return platform_;
@@ -1747,6 +1817,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+     * @param value The enum numeric value on the wire for platform to set.
+     * @return This builder for chaining.
      */
     public Builder setPlatformValue(int value) {
       platform_ = value;
@@ -1759,6 +1831,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+     * @return The platform.
      */
     public io.grafeas.v1beta1.deployment.Deployment.Platform getPlatform() {
       @SuppressWarnings("deprecation")
@@ -1771,6 +1844,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+     * @param value The platform to set.
+     * @return This builder for chaining.
      */
     public Builder setPlatform(io.grafeas.v1beta1.deployment.Deployment.Platform value) {
       if (value == null) {
@@ -1787,6 +1862,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPlatform() {
       

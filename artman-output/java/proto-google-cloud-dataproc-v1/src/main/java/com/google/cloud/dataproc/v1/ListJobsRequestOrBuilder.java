@@ -14,6 +14,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -23,24 +24,27 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
 
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
@@ -51,6 +55,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -61,6 +66,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -70,6 +76,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -81,6 +88,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -90,6 +98,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
@@ -102,6 +111,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for jobStateMatcher.
    */
   int getJobStateMatcherValue();
   /**
@@ -112,6 +122,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The jobStateMatcher.
    */
   com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher();
 
@@ -130,6 +141,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -147,6 +159,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();

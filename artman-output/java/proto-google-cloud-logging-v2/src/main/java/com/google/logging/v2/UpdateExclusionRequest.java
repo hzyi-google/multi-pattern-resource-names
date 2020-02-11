@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateExclusionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,7 +129,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -147,7 +154,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -171,7 +179,8 @@ private static final long serialVersionUID = 0L;
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the exclusion field is set.
    */
   public boolean hasExclusion() {
     return exclusion_ != null;
@@ -182,7 +191,8 @@ private static final long serialVersionUID = 0L;
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The exclusion.
    */
   public com.google.logging.v2.LogExclusion getExclusion() {
     return exclusion_ == null ? com.google.logging.v2.LogExclusion.getDefaultInstance() : exclusion_;
@@ -193,7 +203,7 @@ private static final long serialVersionUID = 0L;
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
     return getExclusion();
@@ -211,7 +221,8 @@ private static final long serialVersionUID = 0L;
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -226,7 +237,8 @@ private static final long serialVersionUID = 0L;
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -241,7 +253,7 @@ private static final long serialVersionUID = 0L;
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -624,7 +636,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -648,7 +661,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -673,7 +687,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -695,7 +711,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -713,7 +730,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -736,7 +755,8 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the exclusion field is set.
      */
     public boolean hasExclusion() {
       return exclusionBuilder_ != null || exclusion_ != null;
@@ -747,7 +767,8 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The exclusion.
      */
     public com.google.logging.v2.LogExclusion getExclusion() {
       if (exclusionBuilder_ == null) {
@@ -762,7 +783,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -783,7 +804,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExclusion(
         com.google.logging.v2.LogExclusion.Builder builderForValue) {
@@ -802,7 +823,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -825,7 +846,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearExclusion() {
       if (exclusionBuilder_ == null) {
@@ -844,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogExclusion.Builder getExclusionBuilder() {
       
@@ -857,7 +878,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
       if (exclusionBuilder_ != null) {
@@ -873,7 +894,7 @@ private static final long serialVersionUID = 0L;
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.LogExclusion, com.google.logging.v2.LogExclusion.Builder, com.google.logging.v2.LogExclusionOrBuilder> 
@@ -902,7 +923,8 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -917,7 +939,8 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -936,7 +959,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -961,7 +984,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -984,7 +1007,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1011,7 +1034,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1034,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -1051,7 +1074,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1071,7 +1094,7 @@ private static final long serialVersionUID = 0L;
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

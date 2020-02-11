@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.ClusterMetrics</code>
  */
-final class ClusterMetrics extends \Google\Protobuf\Internal\Message
+class ClusterMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
      * The HDFS metrics.

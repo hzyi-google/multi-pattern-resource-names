@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateOrganizationSettingsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,30 +114,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1beta1.OrganizationSettings organizationSettings_;
   /**
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the organizationSettings field is set.
    */
   public boolean hasOrganizationSettings() {
     return organizationSettings_ != null;
   }
   /**
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The organizationSettings.
    */
   public com.google.cloud.securitycenter.v1beta1.OrganizationSettings getOrganizationSettings() {
     return organizationSettings_ == null ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.getDefaultInstance() : organizationSettings_;
   }
   /**
    * <pre>
-   * The organization settings resource to update.
+   * Required. The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder getOrganizationSettingsOrBuilder() {
     return getOrganizationSettings();
@@ -145,6 +153,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -155,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -524,20 +534,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1beta1.OrganizationSettings, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder, com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder> organizationSettingsBuilder_;
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the organizationSettings field is set.
      */
     public boolean hasOrganizationSettings() {
       return organizationSettingsBuilder_ != null || organizationSettings_ != null;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The organizationSettings.
      */
     public com.google.cloud.securitycenter.v1beta1.OrganizationSettings getOrganizationSettings() {
       if (organizationSettingsBuilder_ == null) {
@@ -548,10 +560,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOrganizationSettings(com.google.cloud.securitycenter.v1beta1.OrganizationSettings value) {
       if (organizationSettingsBuilder_ == null) {
@@ -568,10 +580,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOrganizationSettings(
         com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder builderForValue) {
@@ -586,10 +598,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeOrganizationSettings(com.google.cloud.securitycenter.v1beta1.OrganizationSettings value) {
       if (organizationSettingsBuilder_ == null) {
@@ -608,10 +620,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearOrganizationSettings() {
       if (organizationSettingsBuilder_ == null) {
@@ -626,10 +638,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder getOrganizationSettingsBuilder() {
       
@@ -638,10 +650,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder getOrganizationSettingsOrBuilder() {
       if (organizationSettingsBuilder_ != null) {
@@ -653,10 +665,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The organization settings resource to update.
+     * Required. The organization settings resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.securitycenter.v1beta1.OrganizationSettings, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder, com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder> 
@@ -681,6 +693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -691,6 +704,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

@@ -15,6 +15,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -25,6 +26,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -35,6 +37,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+   * @return Whether the requestedTimeRange field is set.
    */
   boolean hasRequestedTimeRange();
   /**
@@ -43,6 +46,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+   * @return The requestedTimeRange.
    */
   com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange getRequestedTimeRange();
   /**
@@ -61,6 +65,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+   * @return Whether the requestedRunTime field is set.
    */
   boolean hasRequestedRunTime();
   /**
@@ -70,6 +75,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+   * @return The requestedRunTime.
    */
   com.google.protobuf.Timestamp getRequestedRunTime();
   /**

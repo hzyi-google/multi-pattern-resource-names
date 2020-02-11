@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ module Google
     # Writes log entries and manages your Stackdriver Logging configuration. The
     # table entries below are presented in alphabetical order, not in order of
     # common use. For explanations of the concepts found in the table entries,
-    # read the [Stackdriver Logging documentation](/logging/docs).
+    # read the <a href=https://cloud.google.com/logging/docs>Stackdriver Logging
+    # documentation</a>.
     # - [Product Documentation][]
     #
     # ## Quick Start

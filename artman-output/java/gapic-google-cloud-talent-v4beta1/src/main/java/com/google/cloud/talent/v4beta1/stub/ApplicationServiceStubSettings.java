@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ApplicationServiceStubSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceStubSettings.newBuilder();
- * applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * applicationServiceSettingsBuilder
+ *     .createApplicationSettings()
+ *     .setRetrySettings(
+ *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ApplicationServiceStubSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ContentLocation</code>
  */
-final class ContentLocation extends \Google\Protobuf\Internal\Message
+class ContentLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-     * * Cloud Storage files: `gs://<bucket>/<path>`
-     * * Datastore namespace: <namespace>
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      *
      * Generated from protobuf field <code>string container_name = 1;</code>
      */
-    private $container_name = '';
+    protected $container_name = '';
     /**
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -36,14 +36,14 @@ final class ContentLocation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
-    private $container_timestamp = null;
+    protected $container_timestamp = null;
     /**
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
      *
      * Generated from protobuf field <code>string container_version = 7;</code>
      */
-    private $container_version = '';
+    protected $container_version = '';
     protected $location;
 
     /**
@@ -56,9 +56,9 @@ final class ContentLocation extends \Google\Protobuf\Internal\Message
      *           Name of the container where the finding is located.
      *           The top level name is the source file name or table name. Names of some
      *           common storage containers are formatted as follows:
-     *           * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-     *           * Cloud Storage files: `gs://<bucket>/<path>`
-     *           * Datastore namespace: <namespace>
+     *           * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     *           * Cloud Storage files: `gs://{bucket}/{path}`
+     *           * Datastore namespace: {namespace}
      *           Nested names could be absent if the embedded object has no string
      *           identifier (for an example an image contained within a document).
      *     @type \Google\Cloud\Dlp\V2\RecordLocation $record_location
@@ -86,9 +86,9 @@ final class ContentLocation extends \Google\Protobuf\Internal\Message
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-     * * Cloud Storage files: `gs://<bucket>/<path>`
-     * * Datastore namespace: <namespace>
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      *
@@ -104,9 +104,9 @@ final class ContentLocation extends \Google\Protobuf\Internal\Message
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-     * * Cloud Storage files: `gs://<bucket>/<path>`
-     * * Datastore namespace: <namespace>
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      *

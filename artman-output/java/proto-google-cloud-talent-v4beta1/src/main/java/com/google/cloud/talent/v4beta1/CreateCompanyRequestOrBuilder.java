@@ -15,7 +15,8 @@ public interface CreateCompanyRequestOrBuilder extends
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -26,7 +27,8 @@ public interface CreateCompanyRequestOrBuilder extends
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -37,6 +39,7 @@ public interface CreateCompanyRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the company field is set.
    */
   boolean hasCompany();
   /**
@@ -45,6 +48,7 @@ public interface CreateCompanyRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The company.
    */
   com.google.cloud.talent.v4beta1.Company getCompany();
   /**

@@ -13,6 +13,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -21,6 +22,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
@@ -39,6 +41,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -48,6 +51,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -67,6 +71,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -76,6 +81,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * @return The state.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeState getState();
 
@@ -85,10 +91,10 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -104,10 +110,10 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -122,10 +128,10 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -140,10 +146,10 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -159,10 +165,10 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -179,6 +185,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * @return Whether the stats field is set.
    */
   boolean hasStats();
   /**
@@ -187,6 +194,7 @@ public interface StoredInfoTypeVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * @return The stats.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeStats getStats();
   /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.UpdateOccurrenceRequest</code>
  */
-final class UpdateOccurrenceRequest extends \Google\Protobuf\Internal\Message
+class UpdateOccurrenceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the occurrence in the form of
@@ -21,19 +21,19 @@ final class UpdateOccurrenceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The updated occurrence.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
      */
-    private $occurrence = null;
+    protected $occurrence = null;
     /**
      * The fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

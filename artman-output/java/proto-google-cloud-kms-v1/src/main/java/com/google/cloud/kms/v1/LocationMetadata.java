@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LocationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -93,6 +99,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>
+   * @return The hsmAvailable.
    */
   public boolean getHsmAvailable() {
     return hsmAvailable_;
@@ -414,6 +421,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     * @return The hsmAvailable.
      */
     public boolean getHsmAvailable() {
       return hsmAvailable_;
@@ -426,6 +434,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     * @param value The hsmAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setHsmAvailable(boolean value) {
       
@@ -441,6 +451,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hsm_available = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHsmAvailable() {
       

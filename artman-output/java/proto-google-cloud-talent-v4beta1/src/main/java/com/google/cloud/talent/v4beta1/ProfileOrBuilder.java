@@ -17,6 +17,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -29,6 +30,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -42,6 +44,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
@@ -53,6 +56,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
@@ -66,6 +70,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string source = 3;</code>
+   * @return The source.
    */
   java.lang.String getSource();
   /**
@@ -77,6 +82,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string source = 3;</code>
+   * @return The bytes for source.
    */
   com.google.protobuf.ByteString
       getSourceBytes();
@@ -88,6 +94,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string uri = 4;</code>
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
@@ -97,6 +104,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>string uri = 4;</code>
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString
       getUriBytes();
@@ -111,12 +119,12 @@ public interface ProfileOrBuilder extends
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   * @return The groupId.
    */
   java.lang.String getGroupId();
   /**
@@ -129,12 +137,12 @@ public interface ProfileOrBuilder extends
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   * @return The bytes for groupId.
    */
   com.google.protobuf.ByteString
       getGroupIdBytes();
@@ -145,6 +153,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   * @return Whether the isHirable field is set.
    */
   boolean hasIsHirable();
   /**
@@ -153,6 +162,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   * @return The isHirable.
    */
   com.google.protobuf.BoolValue getIsHirable();
   /**
@@ -170,6 +180,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -178,6 +189,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -195,6 +207,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -203,6 +216,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -227,17 +241,14 @@ public interface ProfileOrBuilder extends
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   * @return Whether the candidateUpdateTime field is set.
    */
   boolean hasCandidateUpdateTime();
   /**
@@ -253,17 +264,14 @@ public interface ProfileOrBuilder extends
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   * @return The candidateUpdateTime.
    */
   com.google.protobuf.Timestamp getCandidateUpdateTime();
   /**
@@ -279,14 +287,10 @@ public interface ProfileOrBuilder extends
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -299,12 +303,12 @@ public interface ProfileOrBuilder extends
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   * @return Whether the resumeUpdateTime field is set.
    */
   boolean hasResumeUpdateTime();
   /**
@@ -313,12 +317,12 @@ public interface ProfileOrBuilder extends
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   * @return The resumeUpdateTime.
    */
   com.google.protobuf.Timestamp getResumeUpdateTime();
   /**
@@ -327,9 +331,8 @@ public interface ProfileOrBuilder extends
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -342,6 +345,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   * @return Whether the resume field is set.
    */
   boolean hasResume();
   /**
@@ -350,6 +354,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   * @return The resume.
    */
   com.google.cloud.talent.v4beta1.Resume getResume();
   /**
@@ -415,29 +420,23 @@ public interface ProfileOrBuilder extends
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -449,29 +448,23 @@ public interface ProfileOrBuilder extends
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -482,29 +475,23 @@ public interface ProfileOrBuilder extends
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -515,29 +502,23 @@ public interface ProfileOrBuilder extends
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -549,29 +530,23 @@ public interface ProfileOrBuilder extends
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -713,12 +688,8 @@ public interface ProfileOrBuilder extends
 
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -727,12 +698,8 @@ public interface ProfileOrBuilder extends
       getAdditionalContactInfoList();
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -740,12 +707,8 @@ public interface ProfileOrBuilder extends
   com.google.cloud.talent.v4beta1.AdditionalContactInfo getAdditionalContactInfo(int index);
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -753,12 +716,8 @@ public interface ProfileOrBuilder extends
   int getAdditionalContactInfoCount();
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -767,12 +726,8 @@ public interface ProfileOrBuilder extends
       getAdditionalContactInfoOrBuilderList();
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -790,10 +745,8 @@ public interface ProfileOrBuilder extends
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -811,10 +764,8 @@ public interface ProfileOrBuilder extends
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -831,10 +782,8 @@ public interface ProfileOrBuilder extends
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -851,10 +800,8 @@ public interface ProfileOrBuilder extends
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -872,10 +819,8 @@ public interface ProfileOrBuilder extends
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -893,10 +838,8 @@ public interface ProfileOrBuilder extends
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -913,10 +856,8 @@ public interface ProfileOrBuilder extends
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -932,10 +873,8 @@ public interface ProfileOrBuilder extends
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -951,10 +890,8 @@ public interface ProfileOrBuilder extends
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -971,10 +908,8 @@ public interface ProfileOrBuilder extends
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1041,8 +976,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1054,8 +988,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1066,8 +999,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1078,8 +1010,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1091,8 +1022,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1244,6 +1174,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the applications.
    */
   java.util.List<java.lang.String>
       getApplicationsList();
@@ -1253,6 +1184,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of applications.
    */
   int getApplicationsCount();
   /**
@@ -1261,6 +1193,8 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The applications at the given index.
    */
   java.lang.String getApplications(int index);
   /**
@@ -1269,6 +1203,8 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the applications at the given index.
    */
   com.google.protobuf.ByteString
       getApplicationsBytes(int index);
@@ -1279,6 +1215,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the assignments.
    */
   java.util.List<java.lang.String>
       getAssignmentsList();
@@ -1288,6 +1225,7 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of assignments.
    */
   int getAssignmentsCount();
   /**
@@ -1296,6 +1234,8 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The assignments at the given index.
    */
   java.lang.String getAssignments(int index);
   /**
@@ -1304,6 +1244,8 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the assignments at the given index.
    */
   com.google.protobuf.ByteString
       getAssignmentsBytes(int index);
@@ -1312,8 +1254,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -1335,8 +1276,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -1365,8 +1305,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -1389,8 +1328,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -1415,8 +1353,7 @@ public interface ProfileOrBuilder extends
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -1445,27 +1382,28 @@ public interface ProfileOrBuilder extends
    * </pre>
    *
    * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The processed.
    */
   boolean getProcessed();
 
   /**
    * <pre>
    * Output only. Keyword snippet shows how the search result is related to a
-   * search query.  This is only returned in
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The keywordSnippet.
    */
   java.lang.String getKeywordSnippet();
   /**
    * <pre>
    * Output only. Keyword snippet shows how the search result is related to a
-   * search query.  This is only returned in
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for keywordSnippet.
    */
   com.google.protobuf.ByteString
       getKeywordSnippetBytes();
@@ -1516,11 +1454,8 @@ public interface ProfileOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -1530,11 +1465,8 @@ public interface ProfileOrBuilder extends
       getDerivedAddressesList();
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -1543,11 +1475,8 @@ public interface ProfileOrBuilder extends
   com.google.cloud.talent.v4beta1.Location getDerivedAddresses(int index);
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -1556,11 +1485,8 @@ public interface ProfileOrBuilder extends
   int getDerivedAddressesCount();
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -1570,11 +1496,8 @@ public interface ProfileOrBuilder extends
       getDerivedAddressesOrBuilderList();
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *

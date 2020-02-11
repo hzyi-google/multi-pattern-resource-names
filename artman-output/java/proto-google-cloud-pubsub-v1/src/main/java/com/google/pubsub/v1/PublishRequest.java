@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PublishRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -55,9 +62,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               messages_ = new java.util.ArrayList<com.google.pubsub.v1.PubsubMessage>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             messages_.add(
                 input.readMessage(com.google.pubsub.v1.PubsubMessage.parser(), extensionRegistry));
@@ -78,7 +85,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         messages_ = java.util.Collections.unmodifiableList(messages_);
       }
       this.unknownFields = unknownFields.build();
@@ -98,7 +105,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.PublishRequest.class, com.google.pubsub.v1.PublishRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TOPIC_FIELD_NUMBER = 1;
   private volatile java.lang.Object topic_;
   /**
@@ -108,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 1;</code>
+   * @return The topic.
    */
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
@@ -128,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 1;</code>
+   * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString
       getTopicBytes() {
@@ -412,7 +420,7 @@ private static final long serialVersionUID = 0L;
 
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         messagesBuilder_.clear();
       }
@@ -443,18 +451,16 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.PublishRequest buildPartial() {
       com.google.pubsub.v1.PublishRequest result = new com.google.pubsub.v1.PublishRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.topic_ = topic_;
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,7 +517,7 @@ private static final long serialVersionUID = 0L;
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -524,7 +530,7 @@ private static final long serialVersionUID = 0L;
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             messagesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMessagesFieldBuilder() : null;
@@ -571,6 +577,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -591,6 +598,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -612,6 +620,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @param value The topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopic(
         java.lang.String value) {
@@ -630,6 +640,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTopic() {
       
@@ -644,6 +655,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @param value The bytes for topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicBytes(
         com.google.protobuf.ByteString value) {
@@ -660,9 +673,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.pubsub.v1.PubsubMessage> messages_ =
       java.util.Collections.emptyList();
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         messages_ = new java.util.ArrayList<com.google.pubsub.v1.PubsubMessage>(messages_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -856,7 +869,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -961,7 +974,7 @@ private static final long serialVersionUID = 0L;
         messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.pubsub.v1.PubsubMessage, com.google.pubsub.v1.PubsubMessage.Builder, com.google.pubsub.v1.PubsubMessageOrBuilder>(
                 messages_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         messages_ = null;

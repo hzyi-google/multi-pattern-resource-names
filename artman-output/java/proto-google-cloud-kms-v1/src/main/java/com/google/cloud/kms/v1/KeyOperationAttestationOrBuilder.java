@@ -12,7 +12,8 @@ public interface KeyOperationAttestationOrBuilder extends
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
   /**
@@ -20,7 +21,8 @@ public interface KeyOperationAttestationOrBuilder extends
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The format.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat();
 
@@ -30,7 +32,8 @@ public interface KeyOperationAttestationOrBuilder extends
    * operation was performed.
    * </pre>
    *
-   * <code>bytes content = 5;</code>
+   * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The content.
    */
   com.google.protobuf.ByteString getContent();
 }

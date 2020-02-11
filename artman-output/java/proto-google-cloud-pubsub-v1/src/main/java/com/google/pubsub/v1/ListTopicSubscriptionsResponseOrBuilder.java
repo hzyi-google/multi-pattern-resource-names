@@ -13,6 +13,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
+   * @return A list containing the subscriptions.
    */
   java.util.List<java.lang.String>
       getSubscriptionsList();
@@ -22,6 +23,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
+   * @return The count of subscriptions.
    */
   int getSubscriptionsCount();
   /**
@@ -30,6 +32,8 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
+   * @param index The index of the element to return.
+   * @return The subscriptions at the given index.
    */
   java.lang.String getSubscriptions(int index);
   /**
@@ -38,6 +42,8 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the subscriptions at the given index.
    */
   com.google.protobuf.ByteString
       getSubscriptionsBytes(int index);
@@ -50,6 +56,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -60,6 +67,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();

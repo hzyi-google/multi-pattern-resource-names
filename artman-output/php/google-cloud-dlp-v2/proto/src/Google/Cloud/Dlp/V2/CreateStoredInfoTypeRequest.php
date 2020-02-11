@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CreateStoredInfoTypeRequest</code>
  */
-final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Message
+class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example projects/my-project-id or
@@ -21,13 +21,13 @@ final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $config = null;
+    protected $config = null;
     /**
      * The storedInfoType ID can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -36,14 +36,14 @@ final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string stored_info_type_id = 3;</code>
      */
-    private $stored_info_type_id = '';
+    protected $stored_info_type_id = '';
     /**
      * The geographic location to store the stored infoType. Reserved for
      * future extensions.
      *
      * Generated from protobuf field <code>string location_id = 4;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
      *           Required. The parent resource name, for example projects/my-project-id or
      *           organizations/my-org-id.
      *     @type \Google\Cloud\Dlp\V2\StoredInfoTypeConfig $config
-     *           Configuration of the storedInfoType to create.
+     *           Required. Configuration of the storedInfoType to create.
      *     @type string $stored_info_type_id
      *           The storedInfoType ID can contain uppercase and lowercase letters,
      *           numbers, and hyphens; that is, it must match the regular
@@ -100,9 +100,9 @@ final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Dlp\V2\StoredInfoTypeConfig
      */
     public function getConfig()
@@ -111,9 +111,9 @@ final class CreateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dlp\V2\StoredInfoTypeConfig $var
      * @return $this
      */

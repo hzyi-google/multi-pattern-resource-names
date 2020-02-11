@@ -13,6 +13,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -21,6 +22,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -33,6 +35,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
+   * @return Whether the deidentifyConfig field is set.
    */
   boolean hasDeidentifyConfig();
   /**
@@ -43,6 +46,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
+   * @return The deidentifyConfig.
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig();
   /**
@@ -64,6 +68,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -74,6 +79,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
@@ -93,6 +99,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   * @return Whether the item field is set.
    */
   boolean hasItem();
   /**
@@ -101,6 +108,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
+   * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
@@ -114,7 +122,7 @@ public interface DeidentifyContentRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -122,11 +130,12 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -134,13 +143,14 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string inspect_template_name = 5;</code>
+   * @return The bytes for inspectTemplateName.
    */
   com.google.protobuf.ByteString
       getInspectTemplateNameBytes();
 
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -148,11 +158,12 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string deidentify_template_name = 6;</code>
+   * @return The deidentifyTemplateName.
    */
   java.lang.String getDeidentifyTemplateName();
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -160,6 +171,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string deidentify_template_name = 6;</code>
+   * @return The bytes for deidentifyTemplateName.
    */
   com.google.protobuf.ByteString
       getDeidentifyTemplateNameBytes();
@@ -171,6 +183,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -180,6 +193,7 @@ public interface DeidentifyContentRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

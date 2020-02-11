@@ -13,6 +13,7 @@ public interface LargeCustomDictionaryStatsOrBuilder extends
    * </pre>
    *
    * <code>int64 approx_num_phrases = 1;</code>
+   * @return The approxNumPhrases.
    */
   long getApproxNumPhrases();
 }

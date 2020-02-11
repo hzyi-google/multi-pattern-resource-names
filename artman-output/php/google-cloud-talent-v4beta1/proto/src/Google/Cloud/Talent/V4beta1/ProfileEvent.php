@@ -14,17 +14,16 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.ProfileEvent</code>
  */
-final class ProfileEvent extends \Google\Protobuf\Internal\Message
+class ProfileEvent extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Type of event.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -33,8 +32,8 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
      */
     private $profiles;
     /**
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -52,14 +51,13 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           Required. Type of event.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $profiles
-     *           Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     *           associated with this client event.
+     *           Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      *           The format is
      *           "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      *           for example, "projects/foo/tenants/bar/profiles/baz".
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $jobs
-     *           The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     *           this client event. Leave it empty if the event isn't associated with a job.
+     *           The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     *           empty if the event isn't associated with a job.
      *           The format is
      *           "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      *           example, "projects/foo/tenants/bar/jobs/baz".
@@ -97,8 +95,7 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -112,8 +109,7 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -131,8 +127,8 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -146,8 +142,8 @@ final class ProfileEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".

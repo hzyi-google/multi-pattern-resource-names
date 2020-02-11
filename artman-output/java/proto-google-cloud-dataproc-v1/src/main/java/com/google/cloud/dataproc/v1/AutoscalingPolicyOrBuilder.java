@@ -16,6 +16,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -27,6 +28,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -44,6 +46,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -59,16 +62,19 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <code>.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the basicAlgorithm field is set.
    */
   boolean hasBasicAlgorithm();
   /**
    * <code>.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The basicAlgorithm.
    */
   com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm();
   /**
@@ -82,6 +88,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
   /**
@@ -90,6 +97,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The workerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getWorkerConfig();
   /**
@@ -107,6 +115,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the secondaryWorkerConfig field is set.
    */
   boolean hasSecondaryWorkerConfig();
   /**
@@ -115,6 +124,7 @@ public interface AutoscalingPolicyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The secondaryWorkerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getSecondaryWorkerConfig();
   /**

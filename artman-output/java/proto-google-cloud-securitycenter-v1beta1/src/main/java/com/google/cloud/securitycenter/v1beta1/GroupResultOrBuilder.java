@@ -67,6 +67,7 @@ public interface GroupResultOrBuilder extends
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   long getCount();
 }

@@ -21,26 +21,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket</code>
  */
-final class DeltaPresenceEstimationHistogramBucket extends \Google\Protobuf\Internal\Message
+class DeltaPresenceEstimationHistogramBucket extends \Google\Protobuf\Internal\Message
 {
     /**
      * Between 0 and 1.
      *
      * Generated from protobuf field <code>double min_probability = 1;</code>
      */
-    private $min_probability = 0.0;
+    protected $min_probability = 0.0;
     /**
      * Always greater than or equal to min_probability.
      *
      * Generated from protobuf field <code>double max_probability = 2;</code>
      */
-    private $max_probability = 0.0;
+    protected $max_probability = 0.0;
     /**
      * Number of records within these probability bounds.
      *
      * Generated from protobuf field <code>int64 bucket_size = 5;</code>
      */
-    private $bucket_size = 0;
+    protected $bucket_size = 0;
     /**
      * Sample of quasi-identifier tuple values in this bucket. The total
      * number of classes returned per bucket is capped at 20.
@@ -53,7 +53,7 @@ final class DeltaPresenceEstimationHistogramBucket extends \Google\Protobuf\Inte
      *
      * Generated from protobuf field <code>int64 bucket_value_count = 7;</code>
      */
-    private $bucket_value_count = 0;
+    protected $bucket_value_count = 0;
 
     /**
      * Constructor.

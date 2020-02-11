@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -74,9 +81,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               contentLocations_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             contentLocations_.add(
                 input.readMessage(com.google.privacy.dlp.v2.ContentLocation.parser(), extensionRegistry));
@@ -97,7 +104,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
       }
       this.unknownFields = unknownFields.build();
@@ -117,7 +124,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.Location.class, com.google.privacy.dlp.v2.Location.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BYTE_RANGE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Range byteRange_;
   /**
@@ -130,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+   * @return Whether the byteRange field is set.
    */
   public boolean hasByteRange() {
     return byteRange_ != null;
@@ -144,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+   * @return The byteRange.
    */
   public com.google.privacy.dlp.v2.Range getByteRange() {
     return byteRange_ == null ? com.google.privacy.dlp.v2.Range.getDefaultInstance() : byteRange_;
@@ -173,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+   * @return Whether the codepointRange field is set.
    */
   public boolean hasCodepointRange() {
     return codepointRange_ != null;
@@ -185,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+   * @return The codepointRange.
    */
   public com.google.privacy.dlp.v2.Range getCodepointRange() {
     return codepointRange_ == null ? com.google.privacy.dlp.v2.Range.getDefaultInstance() : codepointRange_;
@@ -508,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
       if (contentLocationsBuilder_ == null) {
         contentLocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         contentLocationsBuilder_.clear();
       }
@@ -539,7 +549,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.Location buildPartial() {
       com.google.privacy.dlp.v2.Location result = new com.google.privacy.dlp.v2.Location(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (byteRangeBuilder_ == null) {
         result.byteRange_ = byteRange_;
       } else {
@@ -551,15 +560,14 @@ private static final long serialVersionUID = 0L;
         result.codepointRange_ = codepointRangeBuilder_.build();
       }
       if (contentLocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.contentLocations_ = contentLocations_;
       } else {
         result.contentLocations_ = contentLocationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -618,7 +626,7 @@ private static final long serialVersionUID = 0L;
         if (!other.contentLocations_.isEmpty()) {
           if (contentLocations_.isEmpty()) {
             contentLocations_ = other.contentLocations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureContentLocationsIsMutable();
             contentLocations_.addAll(other.contentLocations_);
@@ -631,7 +639,7 @@ private static final long serialVersionUID = 0L;
             contentLocationsBuilder_.dispose();
             contentLocationsBuilder_ = null;
             contentLocations_ = other.contentLocations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             contentLocationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getContentLocationsFieldBuilder() : null;
@@ -683,6 +691,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+     * @return Whether the byteRange field is set.
      */
     public boolean hasByteRange() {
       return byteRangeBuilder_ != null || byteRange_ != null;
@@ -697,6 +706,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
+     * @return The byteRange.
      */
     public com.google.privacy.dlp.v2.Range getByteRange() {
       if (byteRangeBuilder_ == null) {
@@ -870,6 +880,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+     * @return Whether the codepointRange field is set.
      */
     public boolean hasCodepointRange() {
       return codepointRangeBuilder_ != null || codepointRange_ != null;
@@ -882,6 +893,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
+     * @return The codepointRange.
      */
     public com.google.privacy.dlp.v2.Range getCodepointRange() {
       if (codepointRangeBuilder_ == null) {
@@ -1033,9 +1045,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.ContentLocation> contentLocations_ =
       java.util.Collections.emptyList();
     private void ensureContentLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contentLocations_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>(contentLocations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1240,7 +1252,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearContentLocations() {
       if (contentLocationsBuilder_ == null) {
         contentLocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         contentLocationsBuilder_.clear();
@@ -1352,7 +1364,7 @@ private static final long serialVersionUID = 0L;
         contentLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.ContentLocation, com.google.privacy.dlp.v2.ContentLocation.Builder, com.google.privacy.dlp.v2.ContentLocationOrBuilder>(
                 contentLocations_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         contentLocations_ = null;

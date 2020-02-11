@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.UpdateSourceRequest</code>
  */
-final class UpdateSourceRequest extends \Google\Protobuf\Internal\Message
+class UpdateSourceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The source resource to update.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $source = null;
+    protected $source = null;
     /**
      * The FieldMask to use when updating the source resource.
      * If empty all mutable fields will be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

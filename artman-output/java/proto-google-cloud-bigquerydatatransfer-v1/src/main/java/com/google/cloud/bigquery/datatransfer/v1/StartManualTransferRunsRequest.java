@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StartManualTransferRunsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,6 +132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
@@ -137,6 +144,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
@@ -160,6 +168,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
     /**
@@ -171,6 +180,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
@@ -206,6 +216,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TimeRange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -218,7 +235,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -298,6 +314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTime_ != null;
@@ -311,6 +328,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -340,6 +358,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTime_ != null;
@@ -353,6 +372,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -733,6 +753,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
         return startTimeBuilder_ != null || startTime_ != null;
@@ -746,6 +767,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       * @return The startTime.
        */
       public com.google.protobuf.Timestamp getStartTime() {
         if (startTimeBuilder_ == null) {
@@ -913,6 +935,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
         return endTimeBuilder_ != null || endTime_ != null;
@@ -926,6 +949,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       * @return The endTime.
        */
       public com.google.protobuf.Timestamp getEndTime() {
         if (endTimeBuilder_ == null) {
@@ -1136,7 +1160,8 @@ private static final long serialVersionUID = 0L;
   private int timeCase_ = 0;
   private java.lang.Object time_;
   public enum TimeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REQUESTED_TIME_RANGE(3),
     REQUESTED_RUN_TIME(4),
     TIME_NOT_SET(0);
@@ -1145,6 +1170,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -1181,6 +1208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1202,6 +1230,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -1224,6 +1253,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+   * @return Whether the requestedTimeRange field is set.
    */
   public boolean hasRequestedTimeRange() {
     return timeCase_ == 3;
@@ -1234,6 +1264,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+   * @return The requestedTimeRange.
    */
   public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange getRequestedTimeRange() {
     if (timeCase_ == 3) {
@@ -1263,6 +1294,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+   * @return Whether the requestedRunTime field is set.
    */
   public boolean hasRequestedRunTime() {
     return timeCase_ == 4;
@@ -1274,6 +1306,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+   * @return The requestedRunTime.
    */
   public com.google.protobuf.Timestamp getRequestedRunTime() {
     if (timeCase_ == 4) {
@@ -1695,6 +1728,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1716,6 +1750,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -1738,6 +1773,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -1757,6 +1794,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -1772,6 +1810,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -1793,6 +1833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+     * @return Whether the requestedTimeRange field is set.
      */
     public boolean hasRequestedTimeRange() {
       return timeCase_ == 3;
@@ -1803,6 +1844,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
+     * @return The requestedTimeRange.
      */
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange getRequestedTimeRange() {
       if (requestedTimeRangeBuilder_ == null) {
@@ -1966,6 +2008,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+     * @return Whether the requestedRunTime field is set.
      */
     public boolean hasRequestedRunTime() {
       return timeCase_ == 4;
@@ -1977,6 +2020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
+     * @return The requestedRunTime.
      */
     public com.google.protobuf.Timestamp getRequestedRunTime() {
       if (requestedRunTimeBuilder_ == null) {

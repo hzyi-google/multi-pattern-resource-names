@@ -25,32 +25,33 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9nb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMS9hc3NldC5w",
-            "cm90bxIjZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxYmV0YTEaHGdv",
-            "b2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8aOGdvb2dsZS9jbG91ZC9zZWN1",
-            "cml0eWNlbnRlci92MWJldGExL3NlY3VyaXR5X21hcmtzLnByb3RvGhxnb29n",
-            "bGUvcHJvdG9idWYvc3RydWN0LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGlt",
-            "ZXN0YW1wLnByb3RvIvcECgVBc3NldBIMCgRuYW1lGAEgASgJEmcKGnNlY3Vy",
-            "aXR5X2NlbnRlcl9wcm9wZXJ0aWVzGAIgASgLMkMuZ29vZ2xlLmNsb3VkLnNl",
-            "Y3VyaXR5Y2VudGVyLnYxYmV0YTEuQXNzZXQuU2VjdXJpdHlDZW50ZXJQcm9w",
-            "ZXJ0aWVzEl8KE3Jlc291cmNlX3Byb3BlcnRpZXMYByADKAsyQi5nb29nbGUu",
-            "Y2xvdWQuc2VjdXJpdHljZW50ZXIudjFiZXRhMS5Bc3NldC5SZXNvdXJjZVBy",
-            "b3BlcnRpZXNFbnRyeRJKCg5zZWN1cml0eV9tYXJrcxgIIAEoCzIyLmdvb2ds",
-            "ZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExLlNlY3VyaXR5TWFya3MS",
-            "LwoLY3JlYXRlX3RpbWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wEi8KC3VwZGF0ZV90aW1lGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcBqUAQoYU2VjdXJpdHlDZW50ZXJQcm9wZXJ0aWVzEhUKDXJlc291",
-            "cmNlX25hbWUYASABKAkSFQoNcmVzb3VyY2VfdHlwZRgCIAEoCRIXCg9yZXNv",
-            "dXJjZV9wYXJlbnQYAyABKAkSGAoQcmVzb3VyY2VfcHJvamVjdBgEIAEoCRIX",
-            "Cg9yZXNvdXJjZV9vd25lcnMYBSADKAkaUQoXUmVzb3VyY2VQcm9wZXJ0aWVz",
-            "RW50cnkSCwoDa2V5GAEgASgJEiUKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnBy",
-            "b3RvYnVmLlZhbHVlOgI4AUJ+Cidjb20uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5",
-            "Y2VudGVyLnYxYmV0YTFQAVpRZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
-            "Z29vZ2xlYXBpcy9jbG91ZC9zZWN1cml0eWNlbnRlci92MWJldGExO3NlY3Vy",
-            "aXR5Y2VudGVyYgZwcm90bzM="));
+            "cm90bxIjZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxYmV0YTEaH2dv",
+            "b2dsZS9hcGkvZmllbGRfYmVoYXZpb3IucHJvdG8aOGdvb2dsZS9jbG91ZC9z",
+            "ZWN1cml0eWNlbnRlci92MWJldGExL3NlY3VyaXR5X21hcmtzLnByb3RvGhxn",
+            "b29nbGUvcHJvdG9idWYvc3RydWN0LnByb3RvGh9nb29nbGUvcHJvdG9idWYv",
+            "dGltZXN0YW1wLnByb3RvGhxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3Rv",
+            "IvwECgVBc3NldBIMCgRuYW1lGAEgASgJEmcKGnNlY3VyaXR5X2NlbnRlcl9w",
+            "cm9wZXJ0aWVzGAIgASgLMkMuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVy",
+            "LnYxYmV0YTEuQXNzZXQuU2VjdXJpdHlDZW50ZXJQcm9wZXJ0aWVzEl8KE3Jl",
+            "c291cmNlX3Byb3BlcnRpZXMYByADKAsyQi5nb29nbGUuY2xvdWQuc2VjdXJp",
+            "dHljZW50ZXIudjFiZXRhMS5Bc3NldC5SZXNvdXJjZVByb3BlcnRpZXNFbnRy",
+            "eRJKCg5zZWN1cml0eV9tYXJrcxgIIAEoCzIyLmdvb2dsZS5jbG91ZC5zZWN1",
+            "cml0eWNlbnRlci52MWJldGExLlNlY3VyaXR5TWFya3MSLwoLY3JlYXRlX3Rp",
+            "bWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC3VwZGF0",
+            "ZV90aW1lGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBqZAQoY",
+            "U2VjdXJpdHlDZW50ZXJQcm9wZXJ0aWVzEhoKDXJlc291cmNlX25hbWUYASAB",
+            "KAlCA+BBBRIVCg1yZXNvdXJjZV90eXBlGAIgASgJEhcKD3Jlc291cmNlX3Bh",
+            "cmVudBgDIAEoCRIYChByZXNvdXJjZV9wcm9qZWN0GAQgASgJEhcKD3Jlc291",
+            "cmNlX293bmVycxgFIAMoCRpRChdSZXNvdXJjZVByb3BlcnRpZXNFbnRyeRIL",
+            "CgNrZXkYASABKAkSJQoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJvdG9idWYu",
+            "VmFsdWU6AjgBQn4KJ2NvbS5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIu",
+            "djFiZXRhMVABWlFnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVh",
+            "cGlzL2Nsb3VkL3NlY3VyaXR5Y2VudGVyL3YxYmV0YTE7c2VjdXJpdHljZW50",
+            "ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarksReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Asset), global::Google.Cloud.Securitycenter.V1Beta1.Asset.Parser, new[]{ "Name", "SecurityCenterProperties", "ResourceProperties", "SecurityMarks", "CreateTime", "UpdateTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Asset.Types.SecurityCenterProperties), global::Google.Cloud.Securitycenter.V1Beta1.Asset.Types.SecurityCenterProperties.Parser, new[]{ "ResourceName", "ResourceType", "ResourceParent", "ResourceProject", "ResourceOwners" }, null, null, null),
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarksReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Asset), global::Google.Cloud.Securitycenter.V1Beta1.Asset.Parser, new[]{ "Name", "SecurityCenterProperties", "ResourceProperties", "SecurityMarks", "CreateTime", "UpdateTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Asset.Types.SecurityCenterProperties), global::Google.Cloud.Securitycenter.V1Beta1.Asset.Types.SecurityCenterProperties.Parser, new[]{ "ResourceName", "ResourceType", "ResourceParent", "ResourceProject", "ResourceOwners" }, null, null, null, null),
             null, })
           }));
     }
@@ -112,7 +113,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The relative resource name of this asset. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// Example:
-    /// "organizations/123/assets/456".
+    /// "organizations/{organization_id}/assets/{asset_id}".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -140,7 +141,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// <summary>Field number for the "resource_properties" field.</summary>
     public const int ResourcePropertiesFieldNumber = 7;
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_resourceProperties_codec
-        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 58);
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 58);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> resourceProperties_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
     /// <summary>
     /// Resource managed properties. These properties are managed and defined by
@@ -424,7 +425,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
         public const int ResourceNameFieldNumber = 1;
         private string resourceName_ = "";
         /// <summary>
-        /// The full resource name of the GCP resource this asset
+        /// Immutable. The full resource name of the GCP resource this asset
         /// represents. This field is immutable after create time. See:
         /// https://cloud.google.com/apis/design/resource_names#full_resource_name
         /// </summary>

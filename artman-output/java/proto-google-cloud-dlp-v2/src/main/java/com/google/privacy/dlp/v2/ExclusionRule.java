@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ExclusionRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,7 +137,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DICTIONARY(1),
     REGEX(2),
     EXCLUDE_INFO_TYPES(3),
@@ -141,6 +148,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -175,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+   * @return Whether the dictionary field is set.
    */
   public boolean hasDictionary() {
     return typeCase_ == 1;
@@ -185,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+   * @return The dictionary.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 1) {
@@ -213,6 +224,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+   * @return Whether the regex field is set.
    */
   public boolean hasRegex() {
     return typeCase_ == 2;
@@ -223,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+   * @return The regex.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 2) {
@@ -251,6 +264,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+   * @return Whether the excludeInfoTypes field is set.
    */
   public boolean hasExcludeInfoTypes() {
     return typeCase_ == 3;
@@ -261,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+   * @return The excludeInfoTypes.
    */
   public com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes() {
     if (typeCase_ == 3) {
@@ -290,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+   * @return The enum numeric value on the wire for matchingType.
    */
   public int getMatchingTypeValue() {
     return matchingType_;
@@ -300,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+   * @return The matchingType.
    */
   public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
     @SuppressWarnings("deprecation")
@@ -731,6 +748,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+     * @return Whether the dictionary field is set.
      */
     public boolean hasDictionary() {
       return typeCase_ == 1;
@@ -741,6 +759,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+     * @return The dictionary.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
       if (dictionaryBuilder_ == null) {
@@ -903,6 +922,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+     * @return Whether the regex field is set.
      */
     public boolean hasRegex() {
       return typeCase_ == 2;
@@ -913,6 +933,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+     * @return The regex.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
       if (regexBuilder_ == null) {
@@ -1075,6 +1096,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+     * @return Whether the excludeInfoTypes field is set.
      */
     public boolean hasExcludeInfoTypes() {
       return typeCase_ == 3;
@@ -1085,6 +1107,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+     * @return The excludeInfoTypes.
      */
     public com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes() {
       if (excludeInfoTypesBuilder_ == null) {
@@ -1246,6 +1269,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+     * @return The enum numeric value on the wire for matchingType.
      */
     public int getMatchingTypeValue() {
       return matchingType_;
@@ -1256,6 +1280,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+     * @param value The enum numeric value on the wire for matchingType to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchingTypeValue(int value) {
       matchingType_ = value;
@@ -1268,6 +1294,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+     * @return The matchingType.
      */
     public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
       @SuppressWarnings("deprecation")
@@ -1280,6 +1307,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+     * @param value The matchingType to set.
+     * @return This builder for chaining.
      */
     public Builder setMatchingType(com.google.privacy.dlp.v2.MatchingType value) {
       if (value == null) {
@@ -1296,6 +1325,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMatchingType() {
       

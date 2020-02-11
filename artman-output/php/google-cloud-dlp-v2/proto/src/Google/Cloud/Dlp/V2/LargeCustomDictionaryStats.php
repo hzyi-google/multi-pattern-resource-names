@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.LargeCustomDictionaryStats</code>
  */
-final class LargeCustomDictionaryStats extends \Google\Protobuf\Internal\Message
+class LargeCustomDictionaryStats extends \Google\Protobuf\Internal\Message
 {
     /**
      * Approximate number of distinct phrases in the dictionary.
      *
      * Generated from protobuf field <code>int64 approx_num_phrases = 1;</code>
      */
-    private $approx_num_phrases = 0;
+    protected $approx_num_phrases = 0;
 
     /**
      * Constructor.

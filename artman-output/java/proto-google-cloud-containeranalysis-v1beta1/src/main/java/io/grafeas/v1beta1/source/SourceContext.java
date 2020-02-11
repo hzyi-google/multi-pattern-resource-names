@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SourceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -90,10 +97,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -146,11 +153,11 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.source.SourceContext.class, io.grafeas.v1beta1.source.SourceContext.Builder.class);
   }
 
-  private int bitField0_;
   private int contextCase_ = 0;
   private java.lang.Object context_;
   public enum ContextCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_REPO(1),
     GERRIT(2),
     GIT(3),
@@ -160,6 +167,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -194,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+   * @return Whether the cloudRepo field is set.
    */
   public boolean hasCloudRepo() {
     return contextCase_ == 1;
@@ -204,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+   * @return The cloudRepo.
    */
   public io.grafeas.v1beta1.source.CloudRepoSourceContext getCloudRepo() {
     if (contextCase_ == 1) {
@@ -232,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+   * @return Whether the gerrit field is set.
    */
   public boolean hasGerrit() {
     return contextCase_ == 2;
@@ -242,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+   * @return The gerrit.
    */
   public io.grafeas.v1beta1.source.GerritSourceContext getGerrit() {
     if (contextCase_ == 2) {
@@ -270,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+   * @return Whether the git field is set.
    */
   public boolean hasGit() {
     return contextCase_ == 3;
@@ -280,6 +294,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+   * @return The git.
    */
   public io.grafeas.v1beta1.source.GitSourceContext getGit() {
     if (contextCase_ == 3) {
@@ -708,7 +723,6 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.source.SourceContext buildPartial() {
       io.grafeas.v1beta1.source.SourceContext result = new io.grafeas.v1beta1.source.SourceContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (contextCase_ == 1) {
         if (cloudRepoBuilder_ == null) {
           result.context_ = context_;
@@ -732,7 +746,6 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.contextCase_ = contextCase_;
       onBuilt();
       return result;
@@ -854,6 +867,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+     * @return Whether the cloudRepo field is set.
      */
     public boolean hasCloudRepo() {
       return contextCase_ == 1;
@@ -864,6 +878,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
+     * @return The cloudRepo.
      */
     public io.grafeas.v1beta1.source.CloudRepoSourceContext getCloudRepo() {
       if (cloudRepoBuilder_ == null) {
@@ -1026,6 +1041,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+     * @return Whether the gerrit field is set.
      */
     public boolean hasGerrit() {
       return contextCase_ == 2;
@@ -1036,6 +1052,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
+     * @return The gerrit.
      */
     public io.grafeas.v1beta1.source.GerritSourceContext getGerrit() {
       if (gerritBuilder_ == null) {
@@ -1198,6 +1215,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+     * @return Whether the git field is set.
      */
     public boolean hasGit() {
       return contextCase_ == 3;
@@ -1208,6 +1226,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
+     * @return The git.
      */
     public io.grafeas.v1beta1.source.GitSourceContext getGit() {
       if (gitBuilder_ == null) {

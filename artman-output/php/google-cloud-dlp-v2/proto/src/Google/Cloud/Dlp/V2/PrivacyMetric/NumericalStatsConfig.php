@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig</code>
  */
-final class NumericalStatsConfig extends \Google\Protobuf\Internal\Message
+class NumericalStatsConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Field to compute numerical stats on. Supported types are
@@ -22,7 +22,7 @@ final class NumericalStatsConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
-    private $field = null;
+    protected $field = null;
 
     /**
      * Constructor.

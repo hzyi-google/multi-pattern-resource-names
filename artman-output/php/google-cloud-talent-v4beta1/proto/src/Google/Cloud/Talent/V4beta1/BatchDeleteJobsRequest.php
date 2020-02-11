@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.BatchDeleteJobsRequest</code>
  */
-final class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
+class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the tenant under which the job is created.
@@ -21,9 +21,9 @@ final class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. The filter string specifies the jobs to be deleted.
      * Supported operator: =, AND
@@ -35,7 +35,7 @@ final class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $filter = '';
+    protected $filter = '';
 
     /**
      * Constructor.
@@ -69,7 +69,7 @@ final class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -83,7 +83,7 @@ final class BatchDeleteJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

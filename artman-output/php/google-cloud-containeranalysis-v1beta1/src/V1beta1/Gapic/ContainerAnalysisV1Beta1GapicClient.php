@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -565,7 +565,7 @@ class ContainerAnalysisV1Beta1GapicClient
      * }
      * ```
      *
-     * @param string $name         The name of the scan configuration in the form of
+     * @param string $name         Required. The name of the scan configuration in the form of
      *                             `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * @param array  $optionalArgs {
      *                             Optional.
@@ -631,13 +631,13 @@ class ContainerAnalysisV1Beta1GapicClient
      * }
      * ```
      *
-     * @param string $parent       The name of the project to list scan configurations for in the form of
+     * @param string $parent       Required. The name of the project to list scan configurations for in the form of
      *                             `projects/[PROJECT_ID]`.
      * @param array  $optionalArgs {
      *                             Optional.
      *
      *     @type string $filter
-     *          The filter expression.
+     *          Required. The filter expression.
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -703,9 +703,9 @@ class ContainerAnalysisV1Beta1GapicClient
      * }
      * ```
      *
-     * @param string     $name         The name of the scan configuration in the form of
+     * @param string     $name         Required. The name of the scan configuration in the form of
      *                                 `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-     * @param ScanConfig $scanConfig   The updated scan configuration.
+     * @param ScanConfig $scanConfig   Required. The updated scan configuration.
      * @param array      $optionalArgs {
      *                                 Optional.
      *

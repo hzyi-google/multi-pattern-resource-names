@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1233,13 +1233,12 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $name         Optional user-provided name for this snapshot.
-     *                             If the name is not provided in the request, the server will assign a random
-     *                             name for this snapshot on the same project as the subscription.
-     *                             Note that for REST API requests, you must specify a name.  See the
-     *                             <a href="https://cloud.google.com/pubsub/docs/admin#resource_names">
-     *                             resource name rules</a>.
-     *                             Format is `projects/{project}/snapshots/{snap}`.
+     * @param string $name         User-provided name for this snapshot. If the name is not provided in the
+     *                             request, the server will assign a random name for this snapshot on the same
+     *                             project as the subscription. Note that for REST API requests, you must
+     *                             specify a name.  See the <a
+     *                             href="https://cloud.google.com/pubsub/docs/admin#resource_names"> resource
+     *                             name rules</a>. Format is `projects/{project}/snapshots/{snap}`.
      * @param string $subscription The subscription whose backlog the snapshot retains.
      *                             Specifically, the created snapshot is guaranteed to retain:
      *                             (a) The existing backlog on the subscription. More precisely, this is

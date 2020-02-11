@@ -14,6 +14,7 @@ public interface RecordSuppressionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+   * @return Whether the condition field is set.
    */
   boolean hasCondition();
   /**
@@ -23,6 +24,7 @@ public interface RecordSuppressionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+   * @return The condition.
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
   /**

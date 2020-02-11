@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.PersonalUri</code>
  */
-final class PersonalUri extends \Google\Protobuf\Internal\Message
+class PersonalUri extends \Google\Protobuf\Internal\Message
 {
     /**
      * The personal URI.
@@ -21,7 +21,7 @@ final class PersonalUri extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string uri = 1;</code>
      */
-    private $uri = '';
+    protected $uri = '';
 
     /**
      * Constructor.

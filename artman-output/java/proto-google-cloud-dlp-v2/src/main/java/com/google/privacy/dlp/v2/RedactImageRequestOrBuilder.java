@@ -13,6 +13,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -21,6 +22,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -32,6 +34,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -41,6 +44,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();
@@ -51,6 +55,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -59,6 +64,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
@@ -121,6 +127,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>bool include_findings = 6;</code>
+   * @return The includeFindings.
    */
   boolean getIncludeFindings();
 
@@ -130,6 +137,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   * @return Whether the byteItem field is set.
    */
   boolean hasByteItem();
   /**
@@ -138,6 +146,7 @@ public interface RedactImageRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   * @return The byteItem.
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
   /**

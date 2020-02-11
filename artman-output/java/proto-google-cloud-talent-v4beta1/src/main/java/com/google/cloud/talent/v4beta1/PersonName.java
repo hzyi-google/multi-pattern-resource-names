@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PersonName();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,25 +118,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     * @return The givenName.
      */
     java.lang.String getGivenName();
     /**
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     * @return The bytes for givenName.
      */
     com.google.protobuf.ByteString
         getGivenNameBytes();
@@ -142,6 +146,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     * @return The preferredName.
      */
     java.lang.String getPreferredName();
     /**
@@ -151,6 +156,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     * @return The bytes for preferredName.
      */
     com.google.protobuf.ByteString
         getPreferredNameBytes();
@@ -158,25 +164,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     * @return The middleInitial.
      */
     java.lang.String getMiddleInitial();
     /**
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     * @return The bytes for middleInitial.
      */
     com.google.protobuf.ByteString
         getMiddleInitialBytes();
@@ -184,25 +188,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     * @return The familyName.
      */
     java.lang.String getFamilyName();
     /**
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     * @return The bytes for familyName.
      */
     com.google.protobuf.ByteString
         getFamilyNameBytes();
@@ -214,6 +216,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @return A list containing the suffixes.
      */
     java.util.List<java.lang.String>
         getSuffixesList();
@@ -224,6 +227,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @return The count of suffixes.
      */
     int getSuffixesCount();
     /**
@@ -233,6 +237,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @param index The index of the element to return.
+     * @return The suffixes at the given index.
      */
     java.lang.String getSuffixes(int index);
     /**
@@ -242,6 +248,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the suffixes at the given index.
      */
     com.google.protobuf.ByteString
         getSuffixesBytes(int index);
@@ -253,6 +261,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @return A list containing the prefixes.
      */
     java.util.List<java.lang.String>
         getPrefixesList();
@@ -263,6 +272,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @return The count of prefixes.
      */
     int getPrefixesCount();
     /**
@@ -272,6 +282,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @param index The index of the element to return.
+     * @return The prefixes at the given index.
      */
     java.lang.String getPrefixes(int index);
     /**
@@ -281,6 +293,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the prefixes at the given index.
      */
     com.google.protobuf.ByteString
         getPrefixesBytes(int index);
@@ -308,6 +322,13 @@ private static final long serialVersionUID = 0L;
       familyName_ = "";
       suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PersonStructuredName();
     }
 
     @java.lang.Override
@@ -354,18 +375,18 @@ private static final long serialVersionUID = 0L;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 suffixes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               suffixes_.add(s);
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 prefixes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               prefixes_.add(s);
               break;
@@ -391,10 +412,10 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -414,19 +435,17 @@ private static final long serialVersionUID = 0L;
               com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName.class, com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName.Builder.class);
     }
 
-    private int bitField0_;
     public static final int GIVEN_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object givenName_;
     /**
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     * @return The givenName.
      */
     public java.lang.String getGivenName() {
       java.lang.Object ref = givenName_;
@@ -443,13 +462,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string given_name = 1;</code>
+     * @return The bytes for givenName.
      */
     public com.google.protobuf.ByteString
         getGivenNameBytes() {
@@ -474,6 +492,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     * @return The preferredName.
      */
     public java.lang.String getPreferredName() {
       java.lang.Object ref = preferredName_;
@@ -494,6 +513,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string preferred_name = 6;</code>
+     * @return The bytes for preferredName.
      */
     public com.google.protobuf.ByteString
         getPreferredNameBytes() {
@@ -514,13 +534,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     * @return The middleInitial.
      */
     public java.lang.String getMiddleInitial() {
       java.lang.Object ref = middleInitial_;
@@ -537,13 +556,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
      * <code>string middle_initial = 2;</code>
+     * @return The bytes for middleInitial.
      */
     public com.google.protobuf.ByteString
         getMiddleInitialBytes() {
@@ -564,13 +582,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -587,13 +604,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string family_name = 3;</code>
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString
         getFamilyNameBytes() {
@@ -618,6 +634,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @return A list containing the suffixes.
      */
     public com.google.protobuf.ProtocolStringList
         getSuffixesList() {
@@ -630,6 +647,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @return The count of suffixes.
      */
     public int getSuffixesCount() {
       return suffixes_.size();
@@ -641,6 +659,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @param index The index of the element to return.
+     * @return The suffixes at the given index.
      */
     public java.lang.String getSuffixes(int index) {
       return suffixes_.get(index);
@@ -652,6 +672,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string suffixes = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the suffixes at the given index.
      */
     public com.google.protobuf.ByteString
         getSuffixesBytes(int index) {
@@ -667,6 +689,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @return A list containing the prefixes.
      */
     public com.google.protobuf.ProtocolStringList
         getPrefixesList() {
@@ -679,6 +702,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @return The count of prefixes.
      */
     public int getPrefixesCount() {
       return prefixes_.size();
@@ -690,6 +714,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @param index The index of the element to return.
+     * @return The prefixes at the given index.
      */
     public java.lang.String getPrefixes(int index) {
       return prefixes_.get(index);
@@ -701,6 +727,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string prefixes = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the prefixes at the given index.
      */
     public com.google.protobuf.ByteString
         getPrefixesBytes(int index) {
@@ -976,9 +1004,9 @@ private static final long serialVersionUID = 0L;
         familyName_ = "";
 
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1006,22 +1034,20 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName buildPartial() {
         com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName result = new com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.givenName_ = givenName_;
         result.preferredName_ = preferredName_;
         result.middleInitial_ = middleInitial_;
         result.familyName_ = familyName_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.suffixes_ = suffixes_;
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.prefixes_ = prefixes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1089,7 +1115,7 @@ private static final long serialVersionUID = 0L;
         if (!other.suffixes_.isEmpty()) {
           if (suffixes_.isEmpty()) {
             suffixes_ = other.suffixes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSuffixesIsMutable();
             suffixes_.addAll(other.suffixes_);
@@ -1099,7 +1125,7 @@ private static final long serialVersionUID = 0L;
         if (!other.prefixes_.isEmpty()) {
           if (prefixes_.isEmpty()) {
             prefixes_ = other.prefixes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePrefixesIsMutable();
             prefixes_.addAll(other.prefixes_);
@@ -1140,13 +1166,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       * @return The givenName.
        */
       public java.lang.String getGivenName() {
         java.lang.Object ref = givenName_;
@@ -1163,13 +1188,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       * @return The bytes for givenName.
        */
       public com.google.protobuf.ByteString
           getGivenNameBytes() {
@@ -1187,13 +1211,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       * @param value The givenName to set.
+       * @return This builder for chaining.
        */
       public Builder setGivenName(
           java.lang.String value) {
@@ -1208,13 +1232,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGivenName() {
         
@@ -1225,13 +1248,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string given_name = 1;</code>
+       * @param value The bytes for givenName to set.
+       * @return This builder for chaining.
        */
       public Builder setGivenNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1253,6 +1276,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       * @return The preferredName.
        */
       public java.lang.String getPreferredName() {
         java.lang.Object ref = preferredName_;
@@ -1273,6 +1297,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       * @return The bytes for preferredName.
        */
       public com.google.protobuf.ByteString
           getPreferredNameBytes() {
@@ -1294,6 +1319,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       * @param value The preferredName to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferredName(
           java.lang.String value) {
@@ -1312,6 +1339,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPreferredName() {
         
@@ -1326,6 +1354,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string preferred_name = 6;</code>
+       * @param value The bytes for preferredName to set.
+       * @return This builder for chaining.
        */
       public Builder setPreferredNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1343,13 +1373,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       * @return The middleInitial.
        */
       public java.lang.String getMiddleInitial() {
         java.lang.Object ref = middleInitial_;
@@ -1366,13 +1395,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       * @return The bytes for middleInitial.
        */
       public com.google.protobuf.ByteString
           getMiddleInitialBytes() {
@@ -1390,13 +1418,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       * @param value The middleInitial to set.
+       * @return This builder for chaining.
        */
       public Builder setMiddleInitial(
           java.lang.String value) {
@@ -1411,13 +1439,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMiddleInitial() {
         
@@ -1428,13 +1455,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
        * <code>string middle_initial = 2;</code>
+       * @param value The bytes for middleInitial to set.
+       * @return This builder for chaining.
        */
       public Builder setMiddleInitialBytes(
           com.google.protobuf.ByteString value) {
@@ -1452,13 +1479,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       * @return The familyName.
        */
       public java.lang.String getFamilyName() {
         java.lang.Object ref = familyName_;
@@ -1475,13 +1501,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       * @return The bytes for familyName.
        */
       public com.google.protobuf.ByteString
           getFamilyNameBytes() {
@@ -1499,13 +1524,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       * @param value The familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyName(
           java.lang.String value) {
@@ -1520,13 +1545,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
         
@@ -1537,13 +1561,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
        * <code>string family_name = 3;</code>
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1559,9 +1583,9 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.LazyStringList suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSuffixesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = new com.google.protobuf.LazyStringArrayList(suffixes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1571,6 +1595,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @return A list containing the suffixes.
        */
       public com.google.protobuf.ProtocolStringList
           getSuffixesList() {
@@ -1583,6 +1608,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @return The count of suffixes.
        */
       public int getSuffixesCount() {
         return suffixes_.size();
@@ -1594,6 +1620,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param index The index of the element to return.
+       * @return The suffixes at the given index.
        */
       public java.lang.String getSuffixes(int index) {
         return suffixes_.get(index);
@@ -1605,6 +1633,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the suffixes at the given index.
        */
       public com.google.protobuf.ByteString
           getSuffixesBytes(int index) {
@@ -1617,6 +1647,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The suffixes to set.
+       * @return This builder for chaining.
        */
       public Builder setSuffixes(
           int index, java.lang.String value) {
@@ -1635,6 +1668,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param value The suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addSuffixes(
           java.lang.String value) {
@@ -1653,6 +1688,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param values The suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSuffixes(
           java.lang.Iterable<java.lang.String> values) {
@@ -1669,10 +1706,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSuffixes() {
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1683,6 +1721,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string suffixes = 4;</code>
+       * @param value The bytes of the suffixes to add.
+       * @return This builder for chaining.
        */
       public Builder addSuffixesBytes(
           com.google.protobuf.ByteString value) {
@@ -1698,9 +1738,9 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.LazyStringList prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -1710,6 +1750,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @return A list containing the prefixes.
        */
       public com.google.protobuf.ProtocolStringList
           getPrefixesList() {
@@ -1722,6 +1763,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @return The count of prefixes.
        */
       public int getPrefixesCount() {
         return prefixes_.size();
@@ -1733,6 +1775,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param index The index of the element to return.
+       * @return The prefixes at the given index.
        */
       public java.lang.String getPrefixes(int index) {
         return prefixes_.get(index);
@@ -1744,6 +1788,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the prefixes at the given index.
        */
       public com.google.protobuf.ByteString
           getPrefixesBytes(int index) {
@@ -1756,6 +1802,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The prefixes to set.
+       * @return This builder for chaining.
        */
       public Builder setPrefixes(
           int index, java.lang.String value) {
@@ -1774,6 +1823,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param value The prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addPrefixes(
           java.lang.String value) {
@@ -1792,6 +1843,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param values The prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllPrefixes(
           java.lang.Iterable<java.lang.String> values) {
@@ -1808,10 +1861,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPrefixes() {
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1822,6 +1876,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string prefixes = 5;</code>
+       * @param value The bytes of the prefixes to add.
+       * @return This builder for chaining.
        */
       public Builder addPrefixesBytes(
           com.google.protobuf.ByteString value) {
@@ -1890,7 +1946,8 @@ private static final long serialVersionUID = 0L;
   private int personNameCase_ = 0;
   private java.lang.Object personName_;
   public enum PersonNameCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     FORMATTED_NAME(1),
     STRUCTURED_NAME(2),
     PERSONNAME_NOT_SET(0);
@@ -1899,6 +1956,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -1933,6 +1992,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   * @return The formattedName.
    */
   public java.lang.String getFormattedName() {
     java.lang.Object ref = "";
@@ -1958,6 +2018,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   * @return The bytes for formattedName.
    */
   public com.google.protobuf.ByteString
       getFormattedNameBytes() {
@@ -1986,6 +2047,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   * @return Whether the structuredName field is set.
    */
   public boolean hasStructuredName() {
     return personNameCase_ == 2;
@@ -1997,6 +2059,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   * @return The structuredName.
    */
   public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
     if (personNameCase_ == 2) {
@@ -2023,13 +2086,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object preferredName_;
   /**
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   * @return The preferredName.
    */
   public java.lang.String getPreferredName() {
     java.lang.Object ref = preferredName_;
@@ -2045,13 +2108,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   * @return The bytes for preferredName.
    */
   public com.google.protobuf.ByteString
       getPreferredNameBytes() {
@@ -2461,6 +2524,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     * @return The formattedName.
      */
     public java.lang.String getFormattedName() {
       java.lang.Object ref = "";
@@ -2486,6 +2550,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     * @return The bytes for formattedName.
      */
     public com.google.protobuf.ByteString
         getFormattedNameBytes() {
@@ -2512,6 +2577,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     * @param value The formattedName to set.
+     * @return This builder for chaining.
      */
     public Builder setFormattedName(
         java.lang.String value) {
@@ -2530,6 +2597,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFormattedName() {
       if (personNameCase_ == 1) {
@@ -2546,6 +2614,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string formatted_name = 1;</code>
+     * @param value The bytes for formattedName to set.
+     * @return This builder for chaining.
      */
     public Builder setFormattedNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2568,6 +2638,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+     * @return Whether the structuredName field is set.
      */
     public boolean hasStructuredName() {
       return personNameCase_ == 2;
@@ -2579,6 +2650,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+     * @return The structuredName.
      */
     public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
       if (structuredNameBuilder_ == null) {
@@ -2743,13 +2815,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object preferredName_ = "";
     /**
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     * @return The preferredName.
      */
     public java.lang.String getPreferredName() {
       java.lang.Object ref = preferredName_;
@@ -2765,13 +2837,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     * @return The bytes for preferredName.
      */
     public com.google.protobuf.ByteString
         getPreferredNameBytes() {
@@ -2788,13 +2860,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     * @param value The preferredName to set.
+     * @return This builder for chaining.
      */
     public Builder setPreferredName(
         java.lang.String value) {
@@ -2808,13 +2881,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPreferredName() {
       
@@ -2824,13 +2897,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
      *
      * <code>string preferred_name = 3;</code>
+     * @param value The bytes for preferredName to set.
+     * @return This builder for chaining.
      */
     public Builder setPreferredNameBytes(
         com.google.protobuf.ByteString value) {

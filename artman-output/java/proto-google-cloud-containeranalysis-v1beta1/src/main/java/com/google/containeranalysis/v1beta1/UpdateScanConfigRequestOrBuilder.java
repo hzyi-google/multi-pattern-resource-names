@@ -9,46 +9,50 @@ public interface UpdateScanConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The scanConfig.
    */
   com.google.containeranalysis.v1beta1.ScanConfig getScanConfig();
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder();
 }

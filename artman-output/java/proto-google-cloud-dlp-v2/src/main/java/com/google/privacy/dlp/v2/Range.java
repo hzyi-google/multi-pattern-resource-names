@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Range();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -96,6 +102,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 start = 1;</code>
+   * @return The start.
    */
   public long getStart() {
     return start_;
@@ -109,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 end = 2;</code>
+   * @return The end.
    */
   public long getEnd() {
     return end_;
@@ -446,6 +454,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 start = 1;</code>
+     * @return The start.
      */
     public long getStart() {
       return start_;
@@ -456,6 +465,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 start = 1;</code>
+     * @param value The start to set.
+     * @return This builder for chaining.
      */
     public Builder setStart(long value) {
       
@@ -469,6 +480,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 start = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStart() {
       
@@ -484,6 +496,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 end = 2;</code>
+     * @return The end.
      */
     public long getEnd() {
       return end_;
@@ -494,6 +507,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 end = 2;</code>
+     * @param value The end to set.
+     * @return This builder for chaining.
      */
     public Builder setEnd(long value) {
       
@@ -507,6 +522,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 end = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEnd() {
       

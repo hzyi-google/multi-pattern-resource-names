@@ -38,6 +38,14 @@ public enum ProtectionLevel
    * <code>HSM = 2;</code>
    */
   HSM(2),
+  /**
+   * <pre>
+   * Crypto operations are performed by an external key manager.
+   * </pre>
+   *
+   * <code>EXTERNAL = 3;</code>
+   */
+  EXTERNAL(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -65,6 +73,14 @@ public enum ProtectionLevel
    * <code>HSM = 2;</code>
    */
   public static final int HSM_VALUE = 2;
+  /**
+   * <pre>
+   * Crypto operations are performed by an external key manager.
+   * </pre>
+   *
+   * <code>EXTERNAL = 3;</code>
+   */
+  public static final int EXTERNAL_VALUE = 3;
 
 
   public final int getNumber() {
@@ -76,6 +92,8 @@ public enum ProtectionLevel
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -83,11 +101,16 @@ public enum ProtectionLevel
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static ProtectionLevel forNumber(int value) {
     switch (value) {
       case 0: return PROTECTION_LEVEL_UNSPECIFIED;
       case 1: return SOFTWARE;
       case 2: return HSM;
+      case 3: return EXTERNAL;
       default: return null;
     }
   }

@@ -14,10 +14,11 @@ public interface AutoscalingConfigOrBuilder extends
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The policyUri.
    */
   java.lang.String getPolicyUri();
   /**
@@ -27,10 +28,11 @@ public interface AutoscalingConfigOrBuilder extends
    * Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
-   * Note that the policy must be in the same project and Cloud Dataproc region.
+   * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
    * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for policyUri.
    */
   com.google.protobuf.ByteString
       getPolicyUriBytes();

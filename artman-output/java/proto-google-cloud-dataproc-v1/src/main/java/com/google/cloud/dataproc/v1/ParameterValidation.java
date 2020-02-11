@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ParameterValidation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,7 +115,8 @@ private static final long serialVersionUID = 0L;
   private int validationTypeCase_ = 0;
   private java.lang.Object validationType_;
   public enum ValidationTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REGEX(1),
     VALUES(2),
     VALIDATIONTYPE_NOT_SET(0);
@@ -118,6 +125,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -151,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.RegexValidation regex = 1;</code>
+   * @return Whether the regex field is set.
    */
   public boolean hasRegex() {
     return validationTypeCase_ == 1;
@@ -161,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.RegexValidation regex = 1;</code>
+   * @return The regex.
    */
   public com.google.cloud.dataproc.v1.RegexValidation getRegex() {
     if (validationTypeCase_ == 1) {
@@ -189,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ValueValidation values = 2;</code>
+   * @return Whether the values field is set.
    */
   public boolean hasValues() {
     return validationTypeCase_ == 2;
@@ -199,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ValueValidation values = 2;</code>
+   * @return The values.
    */
   public com.google.cloud.dataproc.v1.ValueValidation getValues() {
     if (validationTypeCase_ == 2) {
@@ -601,6 +614,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.RegexValidation regex = 1;</code>
+     * @return Whether the regex field is set.
      */
     public boolean hasRegex() {
       return validationTypeCase_ == 1;
@@ -611,6 +625,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.RegexValidation regex = 1;</code>
+     * @return The regex.
      */
     public com.google.cloud.dataproc.v1.RegexValidation getRegex() {
       if (regexBuilder_ == null) {
@@ -773,6 +788,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ValueValidation values = 2;</code>
+     * @return Whether the values field is set.
      */
     public boolean hasValues() {
       return validationTypeCase_ == 2;
@@ -783,6 +799,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ValueValidation values = 2;</code>
+     * @return The values.
      */
     public com.google.cloud.dataproc.v1.ValueValidation getValues() {
       if (valuesBuilder_ == null) {

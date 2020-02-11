@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.Job.ApplicationInfo</code>
  */
-final class ApplicationInfo extends \Google\Protobuf\Internal\Message
+class ApplicationInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Use this field to specify email address(es) to which resumes or
@@ -32,7 +32,7 @@ final class ApplicationInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string instruction = 2;</code>
      */
-    private $instruction = '';
+    protected $instruction = '';
     /**
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.ListSnapshotsResponse</code>
  */
-final class ListSnapshotsResponse extends \Google\Protobuf\Internal\Message
+class ListSnapshotsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resulting snapshots.
@@ -27,7 +27,7 @@ final class ListSnapshotsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

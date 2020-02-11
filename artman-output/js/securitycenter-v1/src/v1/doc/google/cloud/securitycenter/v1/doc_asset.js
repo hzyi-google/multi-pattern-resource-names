@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -95,6 +95,15 @@ const Asset = {
    *
    * @property {string[]} resourceOwners
    *   Owners of the Google Cloud resource.
+   *
+   * @property {string} resourceDisplayName
+   *   The user defined display name for this resource.
+   *
+   * @property {string} resourceParentDisplayName
+   *   The user defined display name for the parent of this resource.
+   *
+   * @property {string} resourceProjectDisplayName
+   *   The user defined display name for the project of this resource.
    *
    * @typedef SecurityCenterProperties
    * @memberof google.cloud.securitycenter.v1

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListSinksResponse</code>
  */
-final class ListSinksResponse extends \Google\Protobuf\Internal\Message
+class ListSinksResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of sinks.
@@ -28,7 +28,7 @@ final class ListSinksResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

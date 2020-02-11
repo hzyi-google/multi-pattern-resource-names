@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GroupResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -108,7 +115,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.securitycenter.v1.GroupResult.class, com.google.cloud.securitycenter.v1.GroupResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROPERTIES_FIELD_NUMBER = 1;
   private static final class PropertiesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -209,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   public long getCount() {
     return count_;
@@ -486,11 +493,9 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.securitycenter.v1.GroupResult buildPartial() {
       com.google.cloud.securitycenter.v1.GroupResult result = new com.google.cloud.securitycenter.v1.GroupResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
       result.count_ = count_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -732,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return The count.
      */
     public long getCount() {
       return count_;
@@ -742,6 +748,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(long value) {
       
@@ -755,6 +763,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       

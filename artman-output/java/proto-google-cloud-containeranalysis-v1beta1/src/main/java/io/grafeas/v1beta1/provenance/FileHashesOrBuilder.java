@@ -9,7 +9,7 @@ public interface FileHashesOrBuilder extends
 
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -18,7 +18,7 @@ public interface FileHashesOrBuilder extends
       getFileHashList();
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -26,7 +26,7 @@ public interface FileHashesOrBuilder extends
   io.grafeas.v1beta1.provenance.Hash getFileHash(int index);
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -34,7 +34,7 @@ public interface FileHashesOrBuilder extends
   int getFileHashCount();
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -43,7 +43,7 @@ public interface FileHashesOrBuilder extends
       getFileHashOrBuilderList();
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>

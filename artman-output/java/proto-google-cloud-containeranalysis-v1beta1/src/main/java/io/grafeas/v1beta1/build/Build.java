@@ -6,7 +6,7 @@ package io.grafeas.v1beta1.build;
 /**
  * <pre>
  * Note holding the version of the provider's builder and the signature of the
- * provenance message in linked BuildDetails.
+ * provenance message in the build details occurrence.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.build.Build}
@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Build();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -103,10 +109,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object builderVersion_;
   /**
    * <pre>
-   * Version of the builder which produced this Note.
+   * Required. Immutable. Version of the builder which produced this build.
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   * @return The builderVersion.
    */
   public java.lang.String getBuilderVersion() {
     java.lang.Object ref = builderVersion_;
@@ -122,10 +129,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Version of the builder which produced this Note.
+   * Required. Immutable. Version of the builder which produced this build.
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   * @return The bytes for builderVersion.
    */
   public com.google.protobuf.ByteString
       getBuilderVersionBytes() {
@@ -145,30 +153,32 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.build.BuildSignature signature_;
   /**
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   * @return Whether the signature field is set.
    */
   public boolean hasSignature() {
     return signature_ != null;
   }
   /**
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+   * @return The signature.
    */
   public io.grafeas.v1beta1.build.BuildSignature getSignature() {
     return signature_ == null ? io.grafeas.v1beta1.build.BuildSignature.getDefaultInstance() : signature_;
   }
   /**
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -350,7 +360,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Note holding the version of the provider's builder and the signature of the
-   * provenance message in linked BuildDetails.
+   * provenance message in the build details occurrence.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.build.Build}
@@ -517,10 +527,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object builderVersion_ = "";
     /**
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     * @return The builderVersion.
      */
     public java.lang.String getBuilderVersion() {
       java.lang.Object ref = builderVersion_;
@@ -536,10 +547,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     * @return The bytes for builderVersion.
      */
     public com.google.protobuf.ByteString
         getBuilderVersionBytes() {
@@ -556,10 +568,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     * @param value The builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersion(
         java.lang.String value) {
@@ -573,10 +587,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBuilderVersion() {
       
@@ -586,10 +601,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
+     * @param value The bytes for builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersionBytes(
         com.google.protobuf.ByteString value) {
@@ -608,22 +625,24 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.build.BuildSignature, io.grafeas.v1beta1.build.BuildSignature.Builder, io.grafeas.v1beta1.build.BuildSignatureOrBuilder> signatureBuilder_;
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return signatureBuilder_ != null || signature_ != null;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
+     * @return The signature.
      */
     public io.grafeas.v1beta1.build.BuildSignature getSignature() {
       if (signatureBuilder_ == null) {
@@ -634,8 +653,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -655,8 +674,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -674,8 +693,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -697,8 +716,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -716,8 +735,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -729,8 +748,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -745,8 +764,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>

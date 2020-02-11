@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.image.Layer</code>
  */
-final class Layer extends \Google\Protobuf\Internal\Message
+class Layer extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
      */
-    private $directive = 0;
+    protected $directive = 0;
     /**
      * The recovered arguments to the Dockerfile directive.
      *
      * Generated from protobuf field <code>string arguments = 2;</code>
      */
-    private $arguments = '';
+    protected $arguments = '';
 
     /**
      * Constructor.
@@ -35,7 +35,7 @@ final class Layer extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $directive
-     *           The recovered Dockerfile directive used to construct this layer.
+     *           Required. The recovered Dockerfile directive used to construct this layer.
      *     @type string $arguments
      *           The recovered arguments to the Dockerfile directive.
      * }
@@ -46,7 +46,7 @@ final class Layer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
      * @return int
@@ -57,7 +57,7 @@ final class Layer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
      * @param int $var

@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Rating();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double overall = 1;</code>
+   * @return The overall.
    */
   public double getOverall() {
     return overall_;
@@ -119,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double min = 2;</code>
+   * @return The min.
    */
   public double getMin() {
     return min_;
@@ -132,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double max = 3;</code>
+   * @return The max.
    */
   public double getMax() {
     return max_;
@@ -146,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double interval = 4;</code>
+   * @return The interval.
    */
   public double getInterval() {
     return interval_;
@@ -523,6 +533,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double overall = 1;</code>
+     * @return The overall.
      */
     public double getOverall() {
       return overall_;
@@ -533,6 +544,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double overall = 1;</code>
+     * @param value The overall to set.
+     * @return This builder for chaining.
      */
     public Builder setOverall(double value) {
       
@@ -546,6 +559,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double overall = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOverall() {
       
@@ -561,6 +575,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double min = 2;</code>
+     * @return The min.
      */
     public double getMin() {
       return min_;
@@ -571,6 +586,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double min = 2;</code>
+     * @param value The min to set.
+     * @return This builder for chaining.
      */
     public Builder setMin(double value) {
       
@@ -584,6 +601,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double min = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMin() {
       
@@ -599,6 +617,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double max = 3;</code>
+     * @return The max.
      */
     public double getMax() {
       return max_;
@@ -609,6 +628,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double max = 3;</code>
+     * @param value The max to set.
+     * @return This builder for chaining.
      */
     public Builder setMax(double value) {
       
@@ -622,6 +643,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double max = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMax() {
       
@@ -638,6 +660,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double interval = 4;</code>
+     * @return The interval.
      */
     public double getInterval() {
       return interval_;
@@ -649,6 +672,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double interval = 4;</code>
+     * @param value The interval to set.
+     * @return This builder for chaining.
      */
     public Builder setInterval(double value) {
       
@@ -663,6 +688,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double interval = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInterval() {
       

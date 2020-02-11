@@ -8,48 +8,88 @@ public interface TableOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> 
       getHeadersList();
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   com.google.privacy.dlp.v2.FieldId getHeaders(int index);
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   int getHeadersCount();
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
       getHeadersOrBuilderList();
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Table.Row> 
       getRowsList();
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   com.google.privacy.dlp.v2.Table.Row getRows(int index);
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   int getRowsCount();
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder> 
       getRowsOrBuilderList();
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(

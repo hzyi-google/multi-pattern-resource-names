@@ -13,6 +13,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>bool enable_kerberos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enableKerberos.
    */
   boolean getEnableKerberos();
 
@@ -23,6 +24,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The rootPrincipalPasswordUri.
    */
   java.lang.String getRootPrincipalPasswordUri();
   /**
@@ -32,6 +34,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for rootPrincipalPasswordUri.
    */
   com.google.protobuf.ByteString
       getRootPrincipalPasswordUriBytes();
@@ -43,6 +46,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The kmsKeyUri.
    */
   java.lang.String getKmsKeyUri();
   /**
@@ -52,6 +56,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for kmsKeyUri.
    */
   com.google.protobuf.ByteString
       getKmsKeyUriBytes();
@@ -64,6 +69,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keystoreUri.
    */
   java.lang.String getKeystoreUri();
   /**
@@ -74,6 +80,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keystoreUri.
    */
   com.google.protobuf.ByteString
       getKeystoreUriBytes();
@@ -86,6 +93,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The truststoreUri.
    */
   java.lang.String getTruststoreUri();
   /**
@@ -96,6 +104,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for truststoreUri.
    */
   com.google.protobuf.ByteString
       getTruststoreUriBytes();
@@ -108,6 +117,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keystorePasswordUri.
    */
   java.lang.String getKeystorePasswordUri();
   /**
@@ -118,6 +128,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keystorePasswordUri.
    */
   com.google.protobuf.ByteString
       getKeystorePasswordUriBytes();
@@ -130,6 +141,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keyPasswordUri.
    */
   java.lang.String getKeyPasswordUri();
   /**
@@ -140,6 +152,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keyPasswordUri.
    */
   com.google.protobuf.ByteString
       getKeyPasswordUriBytes();
@@ -152,6 +165,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The truststorePasswordUri.
    */
   java.lang.String getTruststorePasswordUri();
   /**
@@ -162,6 +176,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for truststorePasswordUri.
    */
   com.google.protobuf.ByteString
       getTruststorePasswordUriBytes();
@@ -173,6 +188,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustRealm.
    */
   java.lang.String getCrossRealmTrustRealm();
   /**
@@ -182,6 +198,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustRealm.
    */
   com.google.protobuf.ByteString
       getCrossRealmTrustRealmBytes();
@@ -193,6 +210,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustKdc.
    */
   java.lang.String getCrossRealmTrustKdc();
   /**
@@ -202,6 +220,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustKdc.
    */
   com.google.protobuf.ByteString
       getCrossRealmTrustKdcBytes();
@@ -213,6 +232,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustAdminServer.
    */
   java.lang.String getCrossRealmTrustAdminServer();
   /**
@@ -222,6 +242,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustAdminServer.
    */
   com.google.protobuf.ByteString
       getCrossRealmTrustAdminServerBytes();
@@ -234,6 +255,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustSharedPasswordUri.
    */
   java.lang.String getCrossRealmTrustSharedPasswordUri();
   /**
@@ -244,6 +266,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustSharedPasswordUri.
    */
   com.google.protobuf.ByteString
       getCrossRealmTrustSharedPasswordUriBytes();
@@ -255,6 +278,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The kdcDbKeyUri.
    */
   java.lang.String getKdcDbKeyUri();
   /**
@@ -264,6 +288,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for kdcDbKeyUri.
    */
   com.google.protobuf.ByteString
       getKdcDbKeyUriBytes();
@@ -276,6 +301,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>int32 tgt_lifetime_hours = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The tgtLifetimeHours.
    */
   int getTgtLifetimeHours();
 
@@ -286,6 +312,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The realm.
    */
   java.lang.String getRealm();
   /**
@@ -295,6 +322,7 @@ public interface KerberosConfigOrBuilder extends
    * </pre>
    *
    * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for realm.
    */
   com.google.protobuf.ByteString
       getRealmBytes();

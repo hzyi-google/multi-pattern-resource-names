@@ -13,6 +13,7 @@ public interface StoredInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -21,6 +22,7 @@ public interface StoredInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -31,6 +33,7 @@ public interface StoredInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   * @return Whether the currentVersion field is set.
    */
   boolean hasCurrentVersion();
   /**
@@ -39,6 +42,7 @@ public interface StoredInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   * @return The currentVersion.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion();
   /**

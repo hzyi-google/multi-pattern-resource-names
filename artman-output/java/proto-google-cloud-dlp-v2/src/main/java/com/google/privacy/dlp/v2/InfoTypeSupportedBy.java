@@ -13,6 +13,10 @@ package com.google.privacy.dlp.v2;
 public enum InfoTypeSupportedBy
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Unused.
+   * </pre>
+   *
    * <code>ENUM_TYPE_UNSPECIFIED = 0;</code>
    */
   ENUM_TYPE_UNSPECIFIED(0),
@@ -36,6 +40,10 @@ public enum InfoTypeSupportedBy
   ;
 
   /**
+   * <pre>
+   * Unused.
+   * </pre>
+   *
    * <code>ENUM_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENUM_TYPE_UNSPECIFIED_VALUE = 0;
@@ -66,6 +74,8 @@ public enum InfoTypeSupportedBy
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -73,6 +83,10 @@ public enum InfoTypeSupportedBy
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static InfoTypeSupportedBy forNumber(int value) {
     switch (value) {
       case 0: return ENUM_TYPE_UNSPECIFIED;
@@ -104,7 +118,7 @@ public enum InfoTypeSupportedBy
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final InfoTypeSupportedBy[] VALUES = values();

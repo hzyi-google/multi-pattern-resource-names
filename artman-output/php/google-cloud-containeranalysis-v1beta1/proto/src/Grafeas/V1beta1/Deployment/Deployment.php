@@ -13,38 +13,38 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.deployment.Deployment</code>
  */
-final class Deployment extends \Google\Protobuf\Internal\Message
+class Deployment extends \Google\Protobuf\Internal\Message
 {
     /**
      * Identity of the user that triggered this deployment.
      *
      * Generated from protobuf field <code>string user_email = 1;</code>
      */
-    private $user_email = '';
+    protected $user_email = '';
     /**
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      */
-    private $deploy_time = null;
+    protected $deploy_time = null;
     /**
      * End of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
      */
-    private $undeploy_time = null;
+    protected $undeploy_time = null;
     /**
      * Configuration used to create this deployment.
      *
      * Generated from protobuf field <code>string config = 4;</code>
      */
-    private $config = '';
+    protected $config = '';
     /**
      * Address of the runtime element hosting this deployment.
      *
      * Generated from protobuf field <code>string address = 5;</code>
      */
-    private $address = '';
+    protected $address = '';
     /**
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
@@ -57,7 +57,7 @@ final class Deployment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
      */
-    private $platform = 0;
+    protected $platform = 0;
 
     /**
      * Constructor.
@@ -68,7 +68,7 @@ final class Deployment extends \Google\Protobuf\Internal\Message
      *     @type string $user_email
      *           Identity of the user that triggered this deployment.
      *     @type \Google\Protobuf\Timestamp $deploy_time
-     *           Beginning of the lifetime of this deployment.
+     *           Required. Beginning of the lifetime of this deployment.
      *     @type \Google\Protobuf\Timestamp $undeploy_time
      *           End of the lifetime of this deployment.
      *     @type string $config
@@ -114,7 +114,7 @@ final class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      * @return \Google\Protobuf\Timestamp
@@ -125,7 +125,7 @@ final class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Beginning of the lifetime of this deployment.
+     * Required. Beginning of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TenantServiceStubSettings.Builder tenantServiceSettingsBuilder =
  *     TenantServiceStubSettings.newBuilder();
- * tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * tenantServiceSettingsBuilder
+ *     .createTenantSettings()
+ *     .setRetrySettings(
+ *         tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TenantServiceStubSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
  * </code>
  * </pre>
@@ -295,7 +299,7 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

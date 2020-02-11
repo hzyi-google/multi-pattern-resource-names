@@ -9,24 +9,26 @@ public interface ListFindingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Name of the source the findings belong to. Its format is
+   * Required. Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
    * sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Name of the source the findings belong to. Its format is
+   * Required. Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
    * sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -54,6 +56,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -79,6 +82,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -96,6 +100,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -111,6 +116,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
@@ -124,6 +130,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -135,6 +142,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -151,32 +159,31 @@ public interface ListFindingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
    * <pre>
-   * Optional.
-   * A field mask to specify the Finding fields to be listed in the response.
+   * Optional. A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
@@ -188,6 +195,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -198,6 +206,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 6;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -209,6 +218,7 @@ public interface ListFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 7;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 }

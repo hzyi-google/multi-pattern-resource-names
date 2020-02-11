@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.UpdateSnapshotRequest</code>
  */
-final class UpdateSnapshotRequest extends \Google\Protobuf\Internal\Message
+class UpdateSnapshotRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The updated snapshot object.
      *
      * Generated from protobuf field <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
      */
-    private $snapshot = null;
+    protected $snapshot = null;
     /**
      * Indicates which fields in the provided snapshot to update.
      * Must be specified and non-empty.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

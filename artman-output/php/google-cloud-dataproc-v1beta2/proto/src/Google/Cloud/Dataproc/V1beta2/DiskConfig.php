@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.DiskConfig</code>
  */
-final class DiskConfig extends \Google\Protobuf\Internal\Message
+class DiskConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Type of the boot disk (default is "pd-standard").
@@ -22,13 +22,13 @@ final class DiskConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $boot_disk_type = '';
+    protected $boot_disk_type = '';
     /**
      * Optional. Size in GB of the boot disk (default is 500GB).
      *
      * Generated from protobuf field <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $boot_disk_size_gb = 0;
+    protected $boot_disk_size_gb = 0;
     /**
      * Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
@@ -39,7 +39,7 @@ final class DiskConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 num_local_ssds = 2;</code>
      */
-    private $num_local_ssds = 0;
+    protected $num_local_ssds = 0;
 
     /**
      * Constructor.

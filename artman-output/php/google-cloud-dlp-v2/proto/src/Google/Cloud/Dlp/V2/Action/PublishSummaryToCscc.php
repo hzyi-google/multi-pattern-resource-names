@@ -22,7 +22,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Action.PublishSummaryToCscc</code>
  */
-final class PublishSummaryToCscc extends \Google\Protobuf\Internal\Message
+class PublishSummaryToCscc extends \Google\Protobuf\Internal\Message
 {
 
     /**

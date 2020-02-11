@@ -74,6 +74,8 @@ public enum ContentOption
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -81,6 +83,10 @@ public enum ContentOption
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static ContentOption forNumber(int value) {
     switch (value) {
       case 0: return CONTENT_UNSPECIFIED;
@@ -112,7 +118,7 @@ public enum ContentOption
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ContentOption[] VALUES = values();

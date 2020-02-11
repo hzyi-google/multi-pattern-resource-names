@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.Asset.IamPolicy</code>
  */
-final class IamPolicy extends \Google\Protobuf\Internal\Message
+class IamPolicy extends \Google\Protobuf\Internal\Message
 {
     /**
      * The JSON representation of the Policy associated with the asset.
@@ -24,7 +24,7 @@ final class IamPolicy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string policy_blob = 1;</code>
      */
-    private $policy_blob = '';
+    protected $policy_blob = '';
 
     /**
      * Constructor.

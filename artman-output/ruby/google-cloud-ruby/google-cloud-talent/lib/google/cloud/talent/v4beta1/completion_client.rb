@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -264,26 +264,6 @@ module Google
           #   For more information, see
           #   [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
           #
-          #   For
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType::JOB_TITLE CompletionType::JOB_TITLE}
-          #   type, only open jobs with the same
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest#language_codes language_codes}
-          #   are returned.
-          #
-          #   For
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType::COMPANY_NAME CompletionType::COMPANY_NAME}
-          #   type, only companies having open jobs with the same
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest#language_codes language_codes}
-          #   are returned.
-          #
-          #   For
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType::COMBINED CompletionType::COMBINED}
-          #   type, only open jobs with the same
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest#language_codes language_codes}
-          #   or companies having open jobs with the same
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest#language_codes language_codes}
-          #   are returned.
-          #
           #   The maximum number of allowed characters is 255.
           # @param company [String]
           #   If provided, restricts completion to specified company.
@@ -295,11 +275,9 @@ module Google
           #   If tenant id is unspecified, the default tenant is used, for
           #   example, "projects/foo".
           # @param scope [Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionScope]
-          #   The scope of the completion. The defaults is
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionScope::PUBLIC CompletionScope::PUBLIC}.
+          #   The scope of the completion. The defaults is {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionScope::PUBLIC CompletionScope::PUBLIC}.
           # @param type [Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType]
-          #   The completion topic. The default is
-          #   {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType::COMBINED CompletionType::COMBINED}.
+          #   The completion topic. The default is {Google::Cloud::Talent::V4beta1::CompleteQueryRequest::CompletionType::COMBINED CompletionType::COMBINED}.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.

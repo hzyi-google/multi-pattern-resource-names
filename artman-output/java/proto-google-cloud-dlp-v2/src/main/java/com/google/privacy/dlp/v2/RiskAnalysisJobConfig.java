@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RiskAnalysisJobConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -75,9 +82,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             actions_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Action.parser(), extensionRegistry));
@@ -98,7 +105,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         actions_ = java.util.Collections.unmodifiableList(actions_);
       }
       this.unknownFields = unknownFields.build();
@@ -118,7 +125,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.RiskAnalysisJobConfig.class, com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRIVACY_METRIC_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.PrivacyMetric privacyMetric_;
   /**
@@ -127,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+   * @return Whether the privacyMetric field is set.
    */
   public boolean hasPrivacyMetric() {
     return privacyMetric_ != null;
@@ -137,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+   * @return The privacyMetric.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric() {
     return privacyMetric_ == null ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance() : privacyMetric_;
@@ -160,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+   * @return Whether the sourceTable field is set.
    */
   public boolean hasSourceTable() {
     return sourceTable_ != null;
@@ -170,6 +179,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+   * @return The sourceTable.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getSourceTable() {
     return sourceTable_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : sourceTable_;
@@ -492,7 +502,7 @@ private static final long serialVersionUID = 0L;
       }
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         actionsBuilder_.clear();
       }
@@ -523,7 +533,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig buildPartial() {
       com.google.privacy.dlp.v2.RiskAnalysisJobConfig result = new com.google.privacy.dlp.v2.RiskAnalysisJobConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (privacyMetricBuilder_ == null) {
         result.privacyMetric_ = privacyMetric_;
       } else {
@@ -535,15 +544,14 @@ private static final long serialVersionUID = 0L;
         result.sourceTable_ = sourceTableBuilder_.build();
       }
       if (actionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.actions_ = actions_;
       } else {
         result.actions_ = actionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -602,7 +610,7 @@ private static final long serialVersionUID = 0L;
         if (!other.actions_.isEmpty()) {
           if (actions_.isEmpty()) {
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureActionsIsMutable();
             actions_.addAll(other.actions_);
@@ -615,7 +623,7 @@ private static final long serialVersionUID = 0L;
             actionsBuilder_.dispose();
             actionsBuilder_ = null;
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             actionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getActionsFieldBuilder() : null;
@@ -663,6 +671,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+     * @return Whether the privacyMetric field is set.
      */
     public boolean hasPrivacyMetric() {
       return privacyMetricBuilder_ != null || privacyMetric_ != null;
@@ -673,6 +682,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
+     * @return The privacyMetric.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric() {
       if (privacyMetricBuilder_ == null) {
@@ -816,6 +826,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+     * @return Whether the sourceTable field is set.
      */
     public boolean hasSourceTable() {
       return sourceTableBuilder_ != null || sourceTable_ != null;
@@ -826,6 +837,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
+     * @return The sourceTable.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getSourceTable() {
       if (sourceTableBuilder_ == null) {
@@ -963,9 +975,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Action> actions_ =
       java.util.Collections.emptyList();
     private void ensureActionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>(actions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1170,7 +1182,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearActions() {
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         actionsBuilder_.clear();
@@ -1282,7 +1294,7 @@ private static final long serialVersionUID = 0L;
         actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Action, com.google.privacy.dlp.v2.Action.Builder, com.google.privacy.dlp.v2.ActionOrBuilder>(
                 actions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         actions_ = null;

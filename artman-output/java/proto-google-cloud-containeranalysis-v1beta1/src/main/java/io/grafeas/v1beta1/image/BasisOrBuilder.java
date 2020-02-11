@@ -9,43 +9,47 @@ public interface BasisOrBuilder extends
 
   /**
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString
       getResourceUrlBytes();
 
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   * @return The fingerprint.
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>

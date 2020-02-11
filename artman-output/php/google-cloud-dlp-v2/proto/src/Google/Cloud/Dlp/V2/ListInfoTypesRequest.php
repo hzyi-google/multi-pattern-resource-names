@@ -13,30 +13,30 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListInfoTypesRequest</code>
  */
-final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
+class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      *
      * Generated from protobuf field <code>string language_code = 1;</code>
      */
-    private $language_code = '';
+    protected $language_code = '';
     /**
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * The geographic location to list info types. Reserved for future
      * extensions.
      *
      * Generated from protobuf field <code>string location_id = 3;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -45,11 +45,11 @@ final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $language_code
-     *           Optional BCP-47 language code for localized infoType friendly
+     *           BCP-47 language code for localized infoType friendly
      *           names. If omitted, or if localized strings are not available,
      *           en-US strings will be returned.
      *     @type string $filter
-     *           Optional filter to only return infoTypes supported by certain parts of the
+     *           filter to only return infoTypes supported by certain parts of the
      *           API. Defaults to supported_by=INSPECT.
      *     @type string $location_id
      *           The geographic location to list info types. Reserved for future
@@ -62,7 +62,7 @@ final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      *
@@ -75,7 +75,7 @@ final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      *
@@ -92,7 +92,7 @@ final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      *
      * Generated from protobuf field <code>string filter = 2;</code>
@@ -104,7 +104,7 @@ final class ListInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      *
      * Generated from protobuf field <code>string filter = 2;</code>

@@ -14,6 +14,7 @@ public interface GetTopicRequestOrBuilder extends
    * </pre>
    *
    * <code>string topic = 1;</code>
+   * @return The topic.
    */
   java.lang.String getTopic();
   /**
@@ -23,6 +24,7 @@ public interface GetTopicRequestOrBuilder extends
    * </pre>
    *
    * <code>string topic = 1;</code>
+   * @return The bytes for topic.
    */
   com.google.protobuf.ByteString
       getTopicBytes();

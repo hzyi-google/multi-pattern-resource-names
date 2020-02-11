@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SeekRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,7 +114,8 @@ private static final long serialVersionUID = 0L;
   private int targetCase_ = 0;
   private java.lang.Object target_;
   public enum TargetCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TIME(2),
     SNAPSHOT(3),
     TARGET_NOT_SET(0);
@@ -117,6 +124,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -151,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The subscription.
    */
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
@@ -170,6 +180,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
       getSubscriptionBytes() {
@@ -202,6 +213,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time = 2;</code>
+   * @return Whether the time field is set.
    */
   public boolean hasTime() {
     return targetCase_ == 2;
@@ -222,6 +234,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp time = 2;</code>
+   * @return The time.
    */
   public com.google.protobuf.Timestamp getTime() {
     if (targetCase_ == 2) {
@@ -262,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string snapshot = 3;</code>
+   * @return The snapshot.
    */
   public java.lang.String getSnapshot() {
     java.lang.Object ref = "";
@@ -288,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string snapshot = 3;</code>
+   * @return The bytes for snapshot.
    */
   public com.google.protobuf.ByteString
       getSnapshotBytes() {
@@ -702,6 +717,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The subscription.
      */
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
@@ -721,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
         getSubscriptionBytes() {
@@ -741,6 +758,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscription(
         java.lang.String value) {
@@ -758,6 +777,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSubscription() {
       
@@ -771,6 +791,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The bytes for subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -802,6 +824,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp time = 2;</code>
+     * @return Whether the time field is set.
      */
     public boolean hasTime() {
       return targetCase_ == 2;
@@ -822,6 +845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp time = 2;</code>
+     * @return The time.
      */
     public com.google.protobuf.Timestamp getTime() {
       if (timeBuilder_ == null) {
@@ -1054,6 +1078,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 3;</code>
+     * @return The snapshot.
      */
     public java.lang.String getSnapshot() {
       java.lang.Object ref = "";
@@ -1080,6 +1105,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 3;</code>
+     * @return The bytes for snapshot.
      */
     public com.google.protobuf.ByteString
         getSnapshotBytes() {
@@ -1107,6 +1133,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 3;</code>
+     * @param value The snapshot to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshot(
         java.lang.String value) {
@@ -1126,6 +1154,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSnapshot() {
       if (targetCase_ == 3) {
@@ -1143,6 +1172,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 3;</code>
+     * @param value The bytes for snapshot to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshotBytes(
         com.google.protobuf.ByteString value) {

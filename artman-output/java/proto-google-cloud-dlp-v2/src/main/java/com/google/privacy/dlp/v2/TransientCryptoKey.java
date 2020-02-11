@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TransientCryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -90,7 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Name of the key. [required]
+   * Required. Name of the key.
    * This is an arbitrary string used to differentiate different keys.
    * A unique key is generated per name: two separate `TransientCryptoKey`
    * protos share the same generated key if their names are the same.
@@ -98,7 +104,8 @@ private static final long serialVersionUID = 0L;
    * (repeating the api call will result in a different key being generated).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -114,7 +121,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the key. [required]
+   * Required. Name of the key.
    * This is an arbitrary string used to differentiate different keys.
    * A unique key is generated per name: two separate `TransientCryptoKey`
    * protos share the same generated key if their names are the same.
@@ -122,7 +129,8 @@ private static final long serialVersionUID = 0L;
    * (repeating the api call will result in a different key being generated).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -448,7 +456,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Name of the key. [required]
+     * Required. Name of the key.
      * This is an arbitrary string used to differentiate different keys.
      * A unique key is generated per name: two separate `TransientCryptoKey`
      * protos share the same generated key if their names are the same.
@@ -456,7 +464,8 @@ private static final long serialVersionUID = 0L;
      * (repeating the api call will result in a different key being generated).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -472,7 +481,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the key. [required]
+     * Required. Name of the key.
      * This is an arbitrary string used to differentiate different keys.
      * A unique key is generated per name: two separate `TransientCryptoKey`
      * protos share the same generated key if their names are the same.
@@ -480,7 +489,8 @@ private static final long serialVersionUID = 0L;
      * (repeating the api call will result in a different key being generated).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -497,7 +507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the key. [required]
+     * Required. Name of the key.
      * This is an arbitrary string used to differentiate different keys.
      * A unique key is generated per name: two separate `TransientCryptoKey`
      * protos share the same generated key if their names are the same.
@@ -505,7 +515,9 @@ private static final long serialVersionUID = 0L;
      * (repeating the api call will result in a different key being generated).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -519,7 +531,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the key. [required]
+     * Required. Name of the key.
      * This is an arbitrary string used to differentiate different keys.
      * A unique key is generated per name: two separate `TransientCryptoKey`
      * protos share the same generated key if their names are the same.
@@ -527,7 +539,8 @@ private static final long serialVersionUID = 0L;
      * (repeating the api call will result in a different key being generated).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -537,7 +550,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the key. [required]
+     * Required. Name of the key.
      * This is an arbitrary string used to differentiate different keys.
      * A unique key is generated per name: two separate `TransientCryptoKey`
      * protos share the same generated key if their names are the same.
@@ -545,7 +558,9 @@ private static final long serialVersionUID = 0L;
      * (repeating the api call will result in a different key being generated).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {

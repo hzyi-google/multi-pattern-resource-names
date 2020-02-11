@@ -9,35 +9,41 @@ public interface DeployableOrBuilder extends
 
   /**
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   * @return A list containing the resourceUri.
    */
   java.util.List<java.lang.String>
       getResourceUriList();
   /**
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   * @return The count of resourceUri.
    */
   int getResourceUriCount();
   /**
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   * @param index The index of the element to return.
+   * @return The resourceUri at the given index.
    */
   java.lang.String getResourceUri(int index);
   /**
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceUri at the given index.
    */
   com.google.protobuf.ByteString
       getResourceUriBytes(int index);

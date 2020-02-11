@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateDeidentifyTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -141,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -160,30 +168,32 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.DeidentifyTemplate deidentifyTemplate_;
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the deidentifyTemplate field is set.
    */
   public boolean hasDeidentifyTemplate() {
     return deidentifyTemplate_ != null;
   }
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The deidentifyTemplate.
    */
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
     return deidentifyTemplate_ == null ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance() : deidentifyTemplate_;
   }
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
     return getDeidentifyTemplate();
@@ -200,6 +210,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   * @return The templateId.
    */
   public java.lang.String getTemplateId() {
     java.lang.Object ref = templateId_;
@@ -222,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   * @return The bytes for templateId.
    */
   public com.google.protobuf.ByteString
       getTemplateIdBytes() {
@@ -246,6 +258,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -266,6 +279,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -659,6 +673,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -679,6 +694,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -700,6 +716,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -718,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -732,6 +751,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -750,20 +771,22 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.DeidentifyTemplate, com.google.privacy.dlp.v2.DeidentifyTemplate.Builder, com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder> deidentifyTemplateBuilder_;
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the deidentifyTemplate field is set.
      */
     public boolean hasDeidentifyTemplate() {
       return deidentifyTemplateBuilder_ != null || deidentifyTemplate_ != null;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The deidentifyTemplate.
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
       if (deidentifyTemplateBuilder_ == null) {
@@ -774,10 +797,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDeidentifyTemplate(com.google.privacy.dlp.v2.DeidentifyTemplate value) {
       if (deidentifyTemplateBuilder_ == null) {
@@ -794,10 +817,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDeidentifyTemplate(
         com.google.privacy.dlp.v2.DeidentifyTemplate.Builder builderForValue) {
@@ -812,10 +835,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeDeidentifyTemplate(com.google.privacy.dlp.v2.DeidentifyTemplate value) {
       if (deidentifyTemplateBuilder_ == null) {
@@ -834,10 +857,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDeidentifyTemplate() {
       if (deidentifyTemplateBuilder_ == null) {
@@ -852,10 +875,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate.Builder getDeidentifyTemplateBuilder() {
       
@@ -864,10 +887,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
       if (deidentifyTemplateBuilder_ != null) {
@@ -879,10 +902,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.DeidentifyTemplate, com.google.privacy.dlp.v2.DeidentifyTemplate.Builder, com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder> 
@@ -908,6 +931,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     * @return The templateId.
      */
     public java.lang.String getTemplateId() {
       java.lang.Object ref = templateId_;
@@ -930,6 +954,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     * @return The bytes for templateId.
      */
     public com.google.protobuf.ByteString
         getTemplateIdBytes() {
@@ -953,6 +978,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     * @param value The templateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateId(
         java.lang.String value) {
@@ -973,6 +1000,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTemplateId() {
       
@@ -989,6 +1017,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_id = 3;</code>
+     * @param value The bytes for templateId to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1010,6 +1040,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1030,6 +1061,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -1051,6 +1083,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -1069,6 +1103,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -1083,6 +1118,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 4;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

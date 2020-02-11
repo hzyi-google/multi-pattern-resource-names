@@ -9,26 +9,28 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
 
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 
@@ -51,6 +53,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -72,6 +75,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
@@ -97,11 +101,21 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
   com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder();
 
   /**
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * @return The enum numeric value on the wire for commonAlphabet.
    */
   int getCommonAlphabetValue();
   /**
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * @return The commonAlphabet.
    */
   com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet();
 
@@ -117,6 +131,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   * @return The customAlphabet.
    */
   java.lang.String getCustomAlphabet();
   /**
@@ -131,6 +146,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   * @return The bytes for customAlphabet.
    */
   com.google.protobuf.ByteString
       getCustomAlphabetBytes();
@@ -141,6 +157,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>int32 radix = 6;</code>
+   * @return The radix.
    */
   int getRadix();
 
@@ -171,6 +188,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   * @return Whether the surrogateInfoType field is set.
    */
   boolean hasSurrogateInfoType();
   /**
@@ -200,6 +218,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   * @return The surrogateInfoType.
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
   /**

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CompleteQueryResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -114,6 +121,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suggestion = 1;</code>
+     * @return The suggestion.
      */
     java.lang.String getSuggestion();
     /**
@@ -122,6 +130,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suggestion = 1;</code>
+     * @return The bytes for suggestion.
      */
     com.google.protobuf.ByteString
         getSuggestionBytes();
@@ -132,6 +141,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
@@ -140,6 +150,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+     * @return The type.
      */
     com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType();
 
@@ -150,6 +161,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     * @return The imageUri.
      */
     java.lang.String getImageUri();
     /**
@@ -159,6 +171,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     * @return The bytes for imageUri.
      */
     com.google.protobuf.ByteString
         getImageUriBytes();
@@ -186,6 +199,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompletionResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -198,7 +218,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -267,6 +286,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suggestion = 1;</code>
+     * @return The suggestion.
      */
     public java.lang.String getSuggestion() {
       java.lang.Object ref = suggestion_;
@@ -286,6 +306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suggestion = 1;</code>
+     * @return The bytes for suggestion.
      */
     public com.google.protobuf.ByteString
         getSuggestionBytes() {
@@ -309,6 +330,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -319,6 +341,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
       @SuppressWarnings("deprecation")
@@ -335,6 +358,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -355,6 +379,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 3;</code>
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString
         getImageUriBytes() {
@@ -716,6 +741,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string suggestion = 1;</code>
+       * @return The suggestion.
        */
       public java.lang.String getSuggestion() {
         java.lang.Object ref = suggestion_;
@@ -735,6 +761,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string suggestion = 1;</code>
+       * @return The bytes for suggestion.
        */
       public com.google.protobuf.ByteString
           getSuggestionBytes() {
@@ -755,6 +782,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string suggestion = 1;</code>
+       * @param value The suggestion to set.
+       * @return This builder for chaining.
        */
       public Builder setSuggestion(
           java.lang.String value) {
@@ -772,6 +801,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string suggestion = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSuggestion() {
         
@@ -785,6 +815,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string suggestion = 1;</code>
+       * @param value The bytes for suggestion to set.
+       * @return This builder for chaining.
        */
       public Builder setSuggestionBytes(
           com.google.protobuf.ByteString value) {
@@ -805,6 +837,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -815,6 +848,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -827,6 +862,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+       * @return The type.
        */
       public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
         @SuppressWarnings("deprecation")
@@ -839,6 +875,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType value) {
         if (value == null) {
@@ -855,6 +893,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -871,6 +910,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string image_uri = 3;</code>
+       * @return The imageUri.
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -891,6 +931,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string image_uri = 3;</code>
+       * @return The bytes for imageUri.
        */
       public com.google.protobuf.ByteString
           getImageUriBytes() {
@@ -912,6 +953,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string image_uri = 3;</code>
+       * @param value The imageUri to set.
+       * @return This builder for chaining.
        */
       public Builder setImageUri(
           java.lang.String value) {
@@ -930,6 +973,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string image_uri = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearImageUri() {
         
@@ -944,6 +988,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string image_uri = 3;</code>
+       * @param value The bytes for imageUri to set.
+       * @return This builder for chaining.
        */
       public Builder setImageUriBytes(
           com.google.protobuf.ByteString value) {
@@ -1009,7 +1055,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult> completionResults_;
   /**
@@ -1074,6 +1119,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -1085,6 +1131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance() : metadata_;
@@ -1356,7 +1403,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.CompleteQueryResponse buildPartial() {
       com.google.cloud.talent.v4beta1.CompleteQueryResponse result = new com.google.cloud.talent.v4beta1.CompleteQueryResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (completionResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
@@ -1371,7 +1417,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1801,6 +1846,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1812,6 +1858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {

@@ -13,16 +13,16 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.DeleteTenantRequest</code>
  */
-final class DeleteTenantRequest extends \Google\Protobuf\Internal\Message
+class DeleteTenantRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the tenant to be deleted.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/foo/tenants/bar".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -46,7 +46,7 @@ final class DeleteTenantRequest extends \Google\Protobuf\Internal\Message
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/foo/tenants/bar".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -59,7 +59,7 @@ final class DeleteTenantRequest extends \Google\Protobuf\Internal\Message
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
      * "projects/foo/tenants/bar".
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListMonitoredResourceDescriptorsRequest</code>
  */
-final class ListMonitoredResourceDescriptorsRequest extends \Google\Protobuf\Internal\Message
+class ListMonitoredResourceDescriptorsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The maximum number of results to return from this request.
@@ -22,7 +22,7 @@ final class ListMonitoredResourceDescriptorsRequest extends \Google\Protobuf\Int
      *
      * Generated from protobuf field <code>int32 page_size = 1;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * Optional. If present, then retrieve the next batch of results from the
      * preceding call to this method.  `pageToken` must be the value of
@@ -31,7 +31,7 @@ final class ListMonitoredResourceDescriptorsRequest extends \Google\Protobuf\Int
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
 
     /**
      * Constructor.

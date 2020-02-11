@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterOperation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The operationId.
    */
   public java.lang.String getOperationId() {
     java.lang.Object ref = operationId_;
@@ -124,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for operationId.
    */
   public com.google.protobuf.ByteString
       getOperationIdBytes() {
@@ -147,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The error.
    */
   public java.lang.String getError() {
     java.lang.Object ref = error_;
@@ -166,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for error.
    */
   public com.google.protobuf.ByteString
       getErrorBytes() {
@@ -189,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The done.
    */
   public boolean getDone() {
     return done_;
@@ -542,6 +553,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The operationId.
      */
     public java.lang.String getOperationId() {
       java.lang.Object ref = operationId_;
@@ -561,6 +573,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for operationId.
      */
     public com.google.protobuf.ByteString
         getOperationIdBytes() {
@@ -581,6 +594,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The operationId to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationId(
         java.lang.String value) {
@@ -598,6 +613,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearOperationId() {
       
@@ -611,6 +627,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for operationId to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationIdBytes(
         com.google.protobuf.ByteString value) {
@@ -631,6 +649,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The error.
      */
     public java.lang.String getError() {
       java.lang.Object ref = error_;
@@ -650,6 +669,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for error.
      */
     public com.google.protobuf.ByteString
         getErrorBytes() {
@@ -670,6 +690,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The error to set.
+     * @return This builder for chaining.
      */
     public Builder setError(
         java.lang.String value) {
@@ -687,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearError() {
       
@@ -700,6 +723,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for error to set.
+     * @return This builder for chaining.
      */
     public Builder setErrorBytes(
         com.google.protobuf.ByteString value) {
@@ -720,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The done.
      */
     public boolean getDone() {
       return done_;
@@ -730,6 +756,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The done to set.
+     * @return This builder for chaining.
      */
     public Builder setDone(boolean value) {
       
@@ -743,6 +771,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDone() {
       

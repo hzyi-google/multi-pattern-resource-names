@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,8 +62,12 @@ import org.threeten.bp.Duration;
  * <code>
  * EventServiceStubSettings.Builder eventServiceSettingsBuilder =
  *     EventServiceStubSettings.newBuilder();
- * eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * eventServiceSettingsBuilder
+ *     .createClientEventSettings()
+ *     .setRetrySettings(
+ *         eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * EventServiceStubSettings eventServiceSettings = eventServiceSettingsBuilder.build();
  * </code>
  * </pre>

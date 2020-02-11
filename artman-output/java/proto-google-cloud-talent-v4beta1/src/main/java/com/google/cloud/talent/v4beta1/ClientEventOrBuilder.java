@@ -15,6 +15,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -25,6 +26,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 1;</code>
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString
       getRequestIdBytes();
@@ -35,6 +37,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The eventId.
    */
   java.lang.String getEventId();
   /**
@@ -43,6 +46,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string event_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for eventId.
    */
   com.google.protobuf.ByteString
       getEventIdBytes();
@@ -53,6 +57,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -61,6 +66,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -79,6 +85,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+   * @return Whether the jobEvent field is set.
    */
   boolean hasJobEvent();
   /**
@@ -88,6 +95,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
+   * @return The jobEvent.
    */
   com.google.cloud.talent.v4beta1.JobEvent getJobEvent();
   /**
@@ -107,6 +115,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+   * @return Whether the profileEvent field is set.
    */
   boolean hasProfileEvent();
   /**
@@ -116,6 +125,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
+   * @return The profileEvent.
    */
   com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent();
   /**
@@ -135,6 +145,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string event_notes = 9;</code>
+   * @return The eventNotes.
    */
   java.lang.String getEventNotes();
   /**
@@ -144,6 +155,7 @@ public interface ClientEventOrBuilder extends
    * </pre>
    *
    * <code>string event_notes = 9;</code>
+   * @return The bytes for eventNotes.
    */
   com.google.protobuf.ByteString
       getEventNotesBytes();

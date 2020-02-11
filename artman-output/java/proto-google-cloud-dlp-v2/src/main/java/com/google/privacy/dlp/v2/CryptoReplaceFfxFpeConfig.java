@@ -34,6 +34,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CryptoReplaceFfxFpeConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -46,7 +53,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -157,6 +163,10 @@ private static final long serialVersionUID = 0L;
   public enum FfxCommonNativeAlphabet
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
      */
     FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED(0),
@@ -196,6 +206,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
      */
     public static final int FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED_VALUE = 0;
@@ -242,6 +256,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -249,6 +265,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static FfxCommonNativeAlphabet forNumber(int value) {
       switch (value) {
         case 0: return FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
@@ -311,7 +331,8 @@ private static final long serialVersionUID = 0L;
   private int alphabetCase_ = 0;
   private java.lang.Object alphabet_;
   public enum AlphabetCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMMON_ALPHABET(4),
     CUSTOM_ALPHABET(5),
     RADIX(6),
@@ -321,6 +342,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -352,30 +375,32 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
   /**
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
@@ -402,6 +427,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -425,6 +451,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
@@ -455,7 +482,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int COMMON_ALPHABET_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * @return The enum numeric value on the wire for commonAlphabet.
    */
   public int getCommonAlphabetValue() {
     if (alphabetCase_ == 4) {
@@ -464,7 +496,12 @@ private static final long serialVersionUID = 0L;
     return 0;
   }
   /**
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * @return The commonAlphabet.
    */
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
     if (alphabetCase_ == 4) {
@@ -489,6 +526,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   * @return The customAlphabet.
    */
   public java.lang.String getCustomAlphabet() {
     java.lang.Object ref = "";
@@ -519,6 +557,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string custom_alphabet = 5;</code>
+   * @return The bytes for customAlphabet.
    */
   public com.google.protobuf.ByteString
       getCustomAlphabetBytes() {
@@ -546,6 +585,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 radix = 6;</code>
+   * @return The radix.
    */
   public int getRadix() {
     if (alphabetCase_ == 6) {
@@ -583,6 +623,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   * @return Whether the surrogateInfoType field is set.
    */
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
@@ -614,6 +655,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+   * @return The surrogateInfoType.
    */
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : surrogateInfoType_;
@@ -1146,20 +1188,22 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder> cryptoKeyBuilder_;
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1170,10 +1214,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -1190,10 +1234,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKey(
         com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
@@ -1208,10 +1252,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -1230,10 +1274,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1248,10 +1292,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
       
@@ -1260,10 +1304,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
       if (cryptoKeyBuilder_ != null) {
@@ -1275,10 +1319,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder> 
@@ -1316,6 +1360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -1339,6 +1384,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {
@@ -1565,7 +1611,12 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * @return The enum numeric value on the wire for commonAlphabet.
      */
     public int getCommonAlphabetValue() {
       if (alphabetCase_ == 4) {
@@ -1574,7 +1625,13 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * @param value The enum numeric value on the wire for commonAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonAlphabetValue(int value) {
       alphabetCase_ = 4;
@@ -1583,7 +1640,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * @return The commonAlphabet.
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
       if (alphabetCase_ == 4) {
@@ -1595,7 +1657,13 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
     }
     /**
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * @param value The commonAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonAlphabet(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet value) {
       if (value == null) {
@@ -1607,7 +1675,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCommonAlphabet() {
       if (alphabetCase_ == 4) {
@@ -1630,6 +1703,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     * @return The customAlphabet.
      */
     public java.lang.String getCustomAlphabet() {
       java.lang.Object ref = "";
@@ -1660,6 +1734,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     * @return The bytes for customAlphabet.
      */
     public com.google.protobuf.ByteString
         getCustomAlphabetBytes() {
@@ -1691,6 +1766,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     * @param value The customAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAlphabet(
         java.lang.String value) {
@@ -1714,6 +1791,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCustomAlphabet() {
       if (alphabetCase_ == 5) {
@@ -1735,6 +1813,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_alphabet = 5;</code>
+     * @param value The bytes for customAlphabet to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomAlphabetBytes(
         com.google.protobuf.ByteString value) {
@@ -1754,6 +1834,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     * @return The radix.
      */
     public int getRadix() {
       if (alphabetCase_ == 6) {
@@ -1767,6 +1848,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     * @param value The radix to set.
+     * @return This builder for chaining.
      */
     public Builder setRadix(int value) {
       alphabetCase_ = 6;
@@ -1780,6 +1863,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 radix = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRadix() {
       if (alphabetCase_ == 6) {
@@ -1820,6 +1904,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+     * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
       return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
@@ -1851,6 +1936,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
+     * @return The surrogateInfoType.
      */
     public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
       if (surrogateInfoTypeBuilder_ == null) {

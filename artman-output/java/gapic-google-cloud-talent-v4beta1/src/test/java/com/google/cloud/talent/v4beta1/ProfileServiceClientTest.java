@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package com.google.cloud.talent.v4beta1;
 
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.ListProfilesPagedResponse;
+import static com.google.cloud.talent.v4beta1.ProfileServiceClient.SearchProfilesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -32,6 +33,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -63,7 +65,7 @@ public class ProfileServiceClientTest {
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockApplicationService,
                 mockCompanyService,
@@ -341,6 +343,71 @@ public class ProfileServiceClientTest {
       ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
 
       client.deleteProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchProfilesTest() {
+    long estimatedTotalSize = 1882144769L;
+    String nextPageToken = "";
+    String resultSetId = "resultSetId-770306950";
+    SummarizedProfile summarizedProfilesElement = SummarizedProfile.newBuilder().build();
+    List<SummarizedProfile> summarizedProfiles = Arrays.asList(summarizedProfilesElement);
+    SearchProfilesResponse expectedResponse =
+        SearchProfilesResponse.newBuilder()
+            .setEstimatedTotalSize(estimatedTotalSize)
+            .setNextPageToken(nextPageToken)
+            .setResultSetId(resultSetId)
+            .addAllSummarizedProfiles(summarizedProfiles)
+            .build();
+    mockProfileService.addResponse(expectedResponse);
+
+    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+    SearchProfilesRequest request =
+        SearchProfilesRequest.newBuilder()
+            .setParent(parent.toString())
+            .setRequestMetadata(requestMetadata)
+            .build();
+
+    SearchProfilesPagedResponse pagedListResponse = client.searchProfiles(request);
+
+    List<SummarizedProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSummarizedProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchProfilesRequest actualRequest = (SearchProfilesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
+    Assert.assertEquals(requestMetadata, actualRequest.getRequestMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchProfilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProfileService.addException(exception);
+
+    try {
+      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+      SearchProfilesRequest request =
+          SearchProfilesRequest.newBuilder()
+              .setParent(parent.toString())
+              .setRequestMetadata(requestMetadata)
+              .build();
+
+      client.searchProfiles(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.UpdateNoteRequest</code>
  */
-final class UpdateNoteRequest extends \Google\Protobuf\Internal\Message
+class UpdateNoteRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the note in the form of
@@ -21,19 +21,19 @@ final class UpdateNoteRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The updated note.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.Note note = 2;</code>
      */
-    private $note = null;
+    protected $note = null;
     /**
      * The fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

@@ -15,12 +15,12 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.attestation.PgpSignedAttestation</code>
  */
-final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
+class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -30,7 +30,7 @@ final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string signature = 1;</code>
      */
-    private $signature = '';
+    protected $signature = '';
     /**
      * Type (for example schema) of the attestation payload that was signed.
      * The verifier must ensure that the provided type is one that the verifier
@@ -39,7 +39,7 @@ final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
      */
-    private $content_type = 0;
+    protected $content_type = 0;
     protected $key_id;
 
     /**
@@ -49,9 +49,9 @@ final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $signature
-     *           The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     *           equivalent.  Since this message only supports attached signatures, the
-     *           payload that was signed must be attached. While the signature format
+     *           Required. The raw content of the signature, as output by GNU Privacy Guard
+     *           (GPG) or equivalent. Since this message only supports attached signatures,
+     *           the payload that was signed must be attached. While the signature format
      *           supported is dependent on the verification implementation, currently only
      *           ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      *           `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -88,9 +88,9 @@ final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -107,9 +107,9 @@ final class PgpSignedAttestation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor

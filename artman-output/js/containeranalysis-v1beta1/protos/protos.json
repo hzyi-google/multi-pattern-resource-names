@@ -11,6 +11,10 @@
           },
           "nested": {
             "GrafeasV1Beta1": {
+              "options": {
+                "(google.api.default_host)": "containeranalysis.googleapis.com",
+                "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform"
+              },
               "methods": {
                 "GetOccurrence": {
                   "requestType": "GetOccurrenceRequest",
@@ -622,6 +626,31 @@
                     }
                   }
                 },
+                "GenericSignedAttestation": {
+                  "fields": {
+                    "contentType": {
+                      "type": "ContentType",
+                      "id": 1
+                    },
+                    "serializedPayload": {
+                      "type": "bytes",
+                      "id": 2
+                    },
+                    "signatures": {
+                      "rule": "repeated",
+                      "type": "Signature",
+                      "id": 3
+                    }
+                  },
+                  "nested": {
+                    "ContentType": {
+                      "values": {
+                        "CONTENT_TYPE_UNSPECIFIED": 0,
+                        "SIMPLE_SIGNING_JSON": 1
+                      }
+                    }
+                  }
+                },
                 "Authority": {
                   "fields": {
                     "hint": {
@@ -652,7 +681,8 @@
                   "oneofs": {
                     "signature": {
                       "oneof": [
-                        "pgpSignedAttestation"
+                        "pgpSignedAttestation",
+                        "genericSignedAttestation"
                       ]
                     }
                   },
@@ -660,8 +690,48 @@
                     "pgpSignedAttestation": {
                       "type": "PgpSignedAttestation",
                       "id": 1
+                    },
+                    "genericSignedAttestation": {
+                      "type": "GenericSignedAttestation",
+                      "id": 2
                     }
                   }
+                }
+              }
+            },
+            "NoteKind": {
+              "values": {
+                "NOTE_KIND_UNSPECIFIED": 0,
+                "VULNERABILITY": 1,
+                "BUILD": 2,
+                "IMAGE": 3,
+                "PACKAGE": 4,
+                "DEPLOYMENT": 5,
+                "DISCOVERY": 6,
+                "ATTESTATION": 7
+              }
+            },
+            "RelatedUrl": {
+              "fields": {
+                "url": {
+                  "type": "string",
+                  "id": 1
+                },
+                "label": {
+                  "type": "string",
+                  "id": 2
+                }
+              }
+            },
+            "Signature": {
+              "fields": {
+                "signature": {
+                  "type": "bytes",
+                  "id": 1
+                },
+                "publicKeyId": {
+                  "type": "string",
+                  "id": 2
                 }
               }
             },
@@ -1054,30 +1124,6 @@
                 }
               }
             },
-            "NoteKind": {
-              "values": {
-                "NOTE_KIND_UNSPECIFIED": 0,
-                "VULNERABILITY": 1,
-                "BUILD": 2,
-                "IMAGE": 3,
-                "PACKAGE": 4,
-                "DEPLOYMENT": 5,
-                "DISCOVERY": 6,
-                "ATTESTATION": 7
-              }
-            },
-            "RelatedUrl": {
-              "fields": {
-                "url": {
-                  "type": "string",
-                  "id": 1
-                },
-                "label": {
-                  "type": "string",
-                  "id": 2
-                }
-              }
-            },
             "deployment": {
               "options": {
                 "go_package": "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/deployment;deployment",
@@ -1444,7 +1490,7 @@
             },
             "vulnerability": {
               "options": {
-                "go_package": "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/vulnerability;vulnerability",
+                "go_package": "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/cvss;cvss",
                 "java_multiple_files": true,
                 "java_package": "io.grafeas.v1beta1.vulnerability",
                 "objc_class_prefix": "GRA"
@@ -1474,6 +1520,19 @@
                       "rule": "repeated",
                       "type": "Detail",
                       "id": 3
+                    },
+                    "cvssV3": {
+                      "type": "CVSSv3",
+                      "id": 4
+                    },
+                    "windowsDetails": {
+                      "rule": "repeated",
+                      "type": "WindowsDetail",
+                      "id": 5
+                    },
+                    "sourceUpdateTime": {
+                      "type": "google.protobuf.Timestamp",
+                      "id": 6
                     }
                   },
                   "nested": {
@@ -1514,6 +1573,45 @@
                         "isObsolete": {
                           "type": "bool",
                           "id": 9
+                        },
+                        "sourceUpdateTime": {
+                          "type": "google.protobuf.Timestamp",
+                          "id": 10
+                        }
+                      }
+                    },
+                    "WindowsDetail": {
+                      "fields": {
+                        "cpeUri": {
+                          "type": "string",
+                          "id": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "id": 2
+                        },
+                        "description": {
+                          "type": "string",
+                          "id": 3
+                        },
+                        "fixingKbs": {
+                          "rule": "repeated",
+                          "type": "KnowledgeBase",
+                          "id": 4
+                        }
+                      },
+                      "nested": {
+                        "KnowledgeBase": {
+                          "fields": {
+                            "name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "url": {
+                              "type": "string",
+                              "id": 2
+                            }
+                          }
                         }
                       }
                     }
@@ -1550,6 +1648,10 @@
                       "rule": "repeated",
                       "type": "grafeas.v1beta1.RelatedUrl",
                       "id": 7
+                    },
+                    "effectiveSeverity": {
+                      "type": "Severity",
+                      "id": 8
                     }
                   }
                 },
@@ -1584,6 +1686,102 @@
                       "id": 3
                     }
                   }
+                },
+                "CVSSv3": {
+                  "fields": {
+                    "baseScore": {
+                      "type": "float",
+                      "id": 1
+                    },
+                    "exploitabilityScore": {
+                      "type": "float",
+                      "id": 2
+                    },
+                    "impactScore": {
+                      "type": "float",
+                      "id": 3
+                    },
+                    "attackVector": {
+                      "type": "AttackVector",
+                      "id": 5
+                    },
+                    "attackComplexity": {
+                      "type": "AttackComplexity",
+                      "id": 6
+                    },
+                    "privilegesRequired": {
+                      "type": "PrivilegesRequired",
+                      "id": 7
+                    },
+                    "userInteraction": {
+                      "type": "UserInteraction",
+                      "id": 8
+                    },
+                    "scope": {
+                      "type": "Scope",
+                      "id": 9
+                    },
+                    "confidentialityImpact": {
+                      "type": "Impact",
+                      "id": 10
+                    },
+                    "integrityImpact": {
+                      "type": "Impact",
+                      "id": 11
+                    },
+                    "availabilityImpact": {
+                      "type": "Impact",
+                      "id": 12
+                    }
+                  },
+                  "nested": {
+                    "AttackVector": {
+                      "values": {
+                        "ATTACK_VECTOR_UNSPECIFIED": 0,
+                        "ATTACK_VECTOR_NETWORK": 1,
+                        "ATTACK_VECTOR_ADJACENT": 2,
+                        "ATTACK_VECTOR_LOCAL": 3,
+                        "ATTACK_VECTOR_PHYSICAL": 4
+                      }
+                    },
+                    "AttackComplexity": {
+                      "values": {
+                        "ATTACK_COMPLEXITY_UNSPECIFIED": 0,
+                        "ATTACK_COMPLEXITY_LOW": 1,
+                        "ATTACK_COMPLEXITY_HIGH": 2
+                      }
+                    },
+                    "PrivilegesRequired": {
+                      "values": {
+                        "PRIVILEGES_REQUIRED_UNSPECIFIED": 0,
+                        "PRIVILEGES_REQUIRED_NONE": 1,
+                        "PRIVILEGES_REQUIRED_LOW": 2,
+                        "PRIVILEGES_REQUIRED_HIGH": 3
+                      }
+                    },
+                    "UserInteraction": {
+                      "values": {
+                        "USER_INTERACTION_UNSPECIFIED": 0,
+                        "USER_INTERACTION_NONE": 1,
+                        "USER_INTERACTION_REQUIRED": 2
+                      }
+                    },
+                    "Scope": {
+                      "values": {
+                        "SCOPE_UNSPECIFIED": 0,
+                        "SCOPE_UNCHANGED": 1,
+                        "SCOPE_CHANGED": 2
+                      }
+                    },
+                    "Impact": {
+                      "values": {
+                        "IMPACT_UNSPECIFIED": 0,
+                        "IMPACT_HIGH": 1,
+                        "IMPACT_LOW": 2,
+                        "IMPACT_NONE": 3
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -1606,6 +1804,10 @@
                   },
                   "nested": {
                     "ContainerAnalysisV1Beta1": {
+                      "options": {
+                        "(google.api.default_host)": "containeranalysis.googleapis.com",
+                        "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform"
+                      },
                       "methods": {
                         "SetIamPolicy": {
                           "requestType": "google.iam.v1.SetIamPolicyRequest",
@@ -1614,7 +1816,8 @@
                             "(google.api.http).post": "/v1beta1/{resource=projects/*/notes/*}:setIamPolicy",
                             "(google.api.http).body": "*",
                             "(google.api.http).additional_bindings.post": "/v1beta1/{resource=projects/*/occurrences/*}:setIamPolicy",
-                            "(google.api.http).additional_bindings.body": "*"
+                            "(google.api.http).additional_bindings.body": "*",
+                            "(google.api.method_signature)": "resource,policy"
                           }
                         },
                         "GetIamPolicy": {
@@ -1624,7 +1827,8 @@
                             "(google.api.http).post": "/v1beta1/{resource=projects/*/notes/*}:getIamPolicy",
                             "(google.api.http).body": "*",
                             "(google.api.http).additional_bindings.post": "/v1beta1/{resource=projects/*/occurrences/*}:getIamPolicy",
-                            "(google.api.http).additional_bindings.body": "*"
+                            "(google.api.http).additional_bindings.body": "*",
+                            "(google.api.method_signature)": "resource"
                           }
                         },
                         "TestIamPermissions": {
@@ -1634,21 +1838,24 @@
                             "(google.api.http).post": "/v1beta1/{resource=projects/*/notes/*}:testIamPermissions",
                             "(google.api.http).body": "*",
                             "(google.api.http).additional_bindings.post": "/v1beta1/{resource=projects/*/occurrences/*}:testIamPermissions",
-                            "(google.api.http).additional_bindings.body": "*"
+                            "(google.api.http).additional_bindings.body": "*",
+                            "(google.api.method_signature)": "resource,permissions"
                           }
                         },
                         "GetScanConfig": {
                           "requestType": "GetScanConfigRequest",
                           "responseType": "ScanConfig",
                           "options": {
-                            "(google.api.http).get": "/v1beta1/{name=projects/*/scanConfigs/*}"
+                            "(google.api.http).get": "/v1beta1/{name=projects/*/scanConfigs/*}",
+                            "(google.api.method_signature)": "name"
                           }
                         },
                         "ListScanConfigs": {
                           "requestType": "ListScanConfigsRequest",
                           "responseType": "ListScanConfigsResponse",
                           "options": {
-                            "(google.api.http).get": "/v1beta1/{parent=projects/*}/scanConfigs"
+                            "(google.api.http).get": "/v1beta1/{parent=projects/*}/scanConfigs",
+                            "(google.api.method_signature)": "parent,filter"
                           }
                         },
                         "UpdateScanConfig": {
@@ -1656,12 +1863,17 @@
                           "responseType": "ScanConfig",
                           "options": {
                             "(google.api.http).put": "/v1beta1/{name=projects/*/scanConfigs/*}",
-                            "(google.api.http).body": "scan_config"
+                            "(google.api.http).body": "scan_config",
+                            "(google.api.method_signature)": "name,scan_config"
                           }
                         }
                       }
                     },
                     "ScanConfig": {
+                      "options": {
+                        "(google.api.resource).type": "containeranalysis.googleapis.com/ScanConfig",
+                        "(google.api.resource).pattern": "projects/{project}/scanConfigs/{scan_config}"
+                      },
                       "fields": {
                         "name": {
                           "type": "string",
@@ -1689,7 +1901,11 @@
                       "fields": {
                         "name": {
                           "type": "string",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "REQUIRED",
+                            "(google.api.resource_reference).type": "containeranalysis.googleapis.com/ScanConfig"
+                          }
                         }
                       }
                     },
@@ -1697,11 +1913,18 @@
                       "fields": {
                         "parent": {
                           "type": "string",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "REQUIRED",
+                            "(google.api.resource_reference).type": "cloudresourcemanager.googleapis.com/Project"
+                          }
                         },
                         "filter": {
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "REQUIRED"
+                          }
                         },
                         "pageSize": {
                           "type": "int32",
@@ -1730,11 +1953,18 @@
                       "fields": {
                         "name": {
                           "type": "string",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "REQUIRED",
+                            "(google.api.resource_reference).type": "containeranalysis.googleapis.com/ScanConfig"
+                          }
                         },
                         "scanConfig": {
                           "type": "ScanConfig",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "REQUIRED"
+                          }
                         }
                       }
                     }
@@ -1748,7 +1978,7 @@
           "options": {
             "go_package": "google.golang.org/genproto/googleapis/api/annotations;annotations",
             "java_multiple_files": true,
-            "java_outer_classname": "ClientProto",
+            "java_outer_classname": "ResourceProto",
             "java_package": "com.google.api",
             "objc_class_prefix": "GAPI",
             "cc_enable_arenas": true
@@ -1856,6 +2086,88 @@
               "type": "string",
               "id": 1050,
               "extend": "google.protobuf.ServiceOptions"
+            },
+            "fieldBehavior": {
+              "rule": "repeated",
+              "type": "google.api.FieldBehavior",
+              "id": 1052,
+              "extend": "google.protobuf.FieldOptions"
+            },
+            "FieldBehavior": {
+              "values": {
+                "FIELD_BEHAVIOR_UNSPECIFIED": 0,
+                "OPTIONAL": 1,
+                "REQUIRED": 2,
+                "OUTPUT_ONLY": 3,
+                "INPUT_ONLY": 4,
+                "IMMUTABLE": 5
+              }
+            },
+            "resourceReference": {
+              "type": "google.api.ResourceReference",
+              "id": 1055,
+              "extend": "google.protobuf.FieldOptions"
+            },
+            "resourceDefinition": {
+              "rule": "repeated",
+              "type": "google.api.ResourceDescriptor",
+              "id": 1053,
+              "extend": "google.protobuf.FileOptions"
+            },
+            "resource": {
+              "type": "google.api.ResourceDescriptor",
+              "id": 1053,
+              "extend": "google.protobuf.MessageOptions"
+            },
+            "ResourceDescriptor": {
+              "fields": {
+                "type": {
+                  "type": "string",
+                  "id": 1
+                },
+                "pattern": {
+                  "rule": "repeated",
+                  "type": "string",
+                  "id": 2
+                },
+                "nameField": {
+                  "type": "string",
+                  "id": 3
+                },
+                "history": {
+                  "type": "History",
+                  "id": 4
+                },
+                "plural": {
+                  "type": "string",
+                  "id": 5
+                },
+                "singular": {
+                  "type": "string",
+                  "id": 6
+                }
+              },
+              "nested": {
+                "History": {
+                  "values": {
+                    "HISTORY_UNSPECIFIED": 0,
+                    "ORIGINALLY_SINGLE_PATTERN": 1,
+                    "FUTURE_MULTI_PATTERN": 2
+                  }
+                }
+              }
+            },
+            "ResourceReference": {
+              "fields": {
+                "type": {
+                  "type": "string",
+                  "id": 1
+                },
+                "childType": {
+                  "type": "string",
+                  "id": 2
+                }
+              }
             }
           }
         },
@@ -2836,11 +3148,18 @@
                   "fields": {
                     "resource": {
                       "type": "string",
-                      "id": 1
+                      "id": 1,
+                      "options": {
+                        "(google.api.field_behavior)": "REQUIRED",
+                        "(google.api.resource_reference).type": "*"
+                      }
                     },
                     "policy": {
                       "type": "Policy",
-                      "id": 2
+                      "id": 2,
+                      "options": {
+                        "(google.api.field_behavior)": "REQUIRED"
+                      }
                     }
                   }
                 },
@@ -2848,10 +3167,14 @@
                   "fields": {
                     "resource": {
                       "type": "string",
-                      "id": 1
+                      "id": 1,
+                      "options": {
+                        "(google.api.field_behavior)": "REQUIRED",
+                        "(google.api.resource_reference).type": "*"
+                      }
                     },
                     "options": {
-                      "type": "google.iam.v1.GetPolicyOptions",
+                      "type": "GetPolicyOptions",
                       "id": 2
                     }
                   }
@@ -2860,12 +3183,19 @@
                   "fields": {
                     "resource": {
                       "type": "string",
-                      "id": 1
+                      "id": 1,
+                      "options": {
+                        "(google.api.field_behavior)": "REQUIRED",
+                        "(google.api.resource_reference).type": "*"
+                      }
                     },
                     "permissions": {
                       "rule": "repeated",
                       "type": "string",
-                      "id": 2
+                      "id": 2,
+                      "options": {
+                        "(google.api.field_behavior)": "REQUIRED"
+                      }
                     }
                   }
                 },

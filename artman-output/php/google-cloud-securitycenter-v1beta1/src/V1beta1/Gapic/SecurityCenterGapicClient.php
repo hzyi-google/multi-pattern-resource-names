@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,9 +489,9 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent       Resource name of the new source's parent. Its format should be
+     * @param string $parent       Required. Resource name of the new source's parent. Its format should be
      *                             "organizations/[organization_id]".
-     * @param Source $source       The Source being created, only the display_name and description will be
+     * @param Source $source       Required. The Source being created, only the display_name and description will be
      *                             used. All other fields will be ignored.
      * @param array  $optionalArgs {
      *                             Optional.
@@ -546,12 +546,12 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string  $parent       Resource name of the new finding's parent. Its format should be
+     * @param string  $parent       Required. Resource name of the new finding's parent. Its format should be
      *                              "organizations/[organization_id]/sources/[source_id]".
-     * @param string  $findingId    Unique identifier provided by the client within the parent scope.
+     * @param string  $findingId    Required. Unique identifier provided by the client within the parent scope.
      *                              It must be alphanumeric and less than or equal to 32 characters and
      *                              greater than 0 characters in length.
-     * @param Finding $finding      The Finding being created. The name and security_marks will be ignored as
+     * @param Finding $finding      Required. The Finding being created. The name and security_marks will be ignored as
      *                              they are both output only fields on this resource.
      * @param array   $optionalArgs {
      *                              Optional.
@@ -661,7 +661,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $name         Name of the organization to get organization settings for. Its format is
+     * @param string $name         Required. Name of the organization to get organization settings for. Its format is
      *                             "organizations/[organization_id]/organizationSettings".
      * @param array  $optionalArgs {
      *                             Optional.
@@ -712,7 +712,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $name         Relative resource name of the source. Its format is
+     * @param string $name         Required. Relative resource name of the source. Its format is
      *                             "organizations/[organization_id]/source/[source_id]".
      * @param array  $optionalArgs {
      *                             Optional.
@@ -780,9 +780,9 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent  Name of the organization to groupBy. Its format is
+     * @param string $parent  Required. Name of the organization to groupBy. Its format is
      *                        "organizations/[organization_id]".
-     * @param string $groupBy Expression that defines what assets fields to use for grouping. The string
+     * @param string $groupBy Required. Expression that defines what assets fields to use for grouping. The string
      *                        value should follow SQL syntax: comma separated list of fields. For
      *                        example:
      *                        "security_center_properties.resource_project,security_center_properties.project".
@@ -916,7 +916,7 @@ class SecurityCenterGapicClient
      * specified properties.
      *
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      *
      * Sample code:
      * ```
@@ -945,11 +945,11 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent  Name of the source to groupBy. Its format is
+     * @param string $parent  Required. Name of the source to groupBy. Its format is
      *                        "organizations/[organization_id]/sources/[source_id]". To groupBy across
      *                        all sources provide a source_id of `-`. For example:
-     *                        organizations/123/sources/-
-     * @param string $groupBy Expression that defines what assets fields to use for grouping (including
+     *                        organizations/{organization_id}/sources/-
+     * @param string $groupBy Required. Expression that defines what assets fields to use for grouping (including
      *                        `state`). The string value should follow SQL syntax: comma separated list
      *                        of fields. For example:
      *                        "parent,resource_name".
@@ -1077,7 +1077,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent       Name of the organization assets should belong to. Its format is
+     * @param string $parent       Required. Name of the organization assets should belong to. Its format is
      *                             "organizations/[organization_id]".
      * @param array  $optionalArgs {
      *                             Optional.
@@ -1149,9 +1149,7 @@ class SecurityCenterGapicClient
      *          If compare_duration is not specified, then the only possible state is
      *          "UNUSED", which indicates that the asset is present at read_time.
      *     @type FieldMask $fieldMask
-     *          Optional.
-     *
-     *          A field mask to specify the ListAssetsResult fields to be listed in the
+     *          Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      *          response.
      *          An empty field mask will list all fields.
      *     @type string $pageToken
@@ -1220,7 +1218,7 @@ class SecurityCenterGapicClient
      * Lists an organization or source's findings.
      *
      * To list across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      *
      * Sample code:
      * ```
@@ -1248,10 +1246,10 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent       Name of the source the findings belong to. Its format is
+     * @param string $parent       Required. Name of the source the findings belong to. Its format is
      *                             "organizations/[organization_id]/sources/[source_id]". To list across all
      *                             sources provide a source_id of `-`. For example:
-     *                             organizations/123/sources/-
+     *                             organizations/{organization_id}/sources/-
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -1296,9 +1294,7 @@ class SecurityCenterGapicClient
      *          those at that specific time. Absence of this field will default to the
      *          API's version of NOW.
      *     @type FieldMask $fieldMask
-     *          Optional.
-     *
-     *          A field mask to specify the Finding fields to be listed in the response.
+     *          Optional. A field mask to specify the Finding fields to be listed in the response.
      *          An empty field mask will list all fields.
      *     @type string $pageToken
      *          A page token is used to specify a page of values to be returned.
@@ -1388,7 +1384,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent       Resource name of the parent of sources to list. Its format should be
+     * @param string $parent       Required. Resource name of the parent of sources to list. Its format should be
      *                             "organizations/[organization_id]".
      * @param array  $optionalArgs {
      *                             Optional.
@@ -1485,7 +1481,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string $parent       Name of the organization to run asset discovery for. Its format is
+     * @param string $parent       Required. Name of the organization to run asset discovery for. Its format is
      *                             "organizations/[organization_id]".
      * @param array  $optionalArgs {
      *                             Optional.
@@ -1538,13 +1534,13 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param string    $name         The relative resource name of the finding. See:
+     * @param string    $name         Required. The relative resource name of the finding. See:
      *                                https://cloud.google.com/apis/design/resource_names#relative_resource_name
      *                                Example:
-     *                                "organizations/123/sources/456/finding/789".
-     * @param int       $state        The desired State of the finding.
+     *                                "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+     * @param int       $state        Required. The desired State of the finding.
      *                                For allowed values, use constants defined on {@see \Google\Cloud\Securitycenter\V1beta1\Finding\State}
-     * @param Timestamp $startTime    The time at which the updated state takes effect.
+     * @param Timestamp $startTime    Required. The time at which the updated state takes effect.
      * @param array     $optionalArgs {
      *                                Optional.
      *
@@ -1711,7 +1707,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param Finding $finding The finding resource to update or create if it does not already exist.
+     * @param Finding $finding Required. The finding resource to update or create if it does not already exist.
      *                         parent, security_marks, and update_time will be ignored.
      *
      * In the case of creation, the finding id portion of the name must
@@ -1772,7 +1768,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param OrganizationSettings $organizationSettings The organization settings resource to update.
+     * @param OrganizationSettings $organizationSettings Required. The organization settings resource to update.
      * @param array                $optionalArgs         {
      *                                                   Optional.
      *
@@ -1827,7 +1823,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param Source $source       The source resource to update.
+     * @param Source $source       Required. The source resource to update.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -1882,7 +1878,7 @@ class SecurityCenterGapicClient
      * }
      * ```
      *
-     * @param SecurityMarks $securityMarks The security marks resource to update.
+     * @param SecurityMarks $securityMarks Required. The security marks resource to update.
      * @param array         $optionalArgs  {
      *                                     Optional.
      *

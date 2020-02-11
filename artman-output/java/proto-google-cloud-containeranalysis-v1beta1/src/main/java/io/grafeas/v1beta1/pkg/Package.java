@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Package();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -57,9 +64,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               distribution_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Distribution>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             distribution_.add(
                 input.readMessage(io.grafeas.v1beta1.pkg.Distribution.parser(), extensionRegistry));
@@ -80,7 +87,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         distribution_ = java.util.Collections.unmodifiableList(distribution_);
       }
       this.unknownFields = unknownFields.build();
@@ -100,15 +107,15 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.pkg.Package.class, io.grafeas.v1beta1.pkg.Package.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -124,10 +131,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -414,7 +422,7 @@ private static final long serialVersionUID = 0L;
 
       if (distributionBuilder_ == null) {
         distribution_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         distributionBuilder_.clear();
       }
@@ -445,18 +453,16 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.pkg.Package buildPartial() {
       io.grafeas.v1beta1.pkg.Package result = new io.grafeas.v1beta1.pkg.Package(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (distributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           distribution_ = java.util.Collections.unmodifiableList(distribution_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.distribution_ = distribution_;
       } else {
         result.distribution_ = distributionBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -513,7 +519,7 @@ private static final long serialVersionUID = 0L;
         if (!other.distribution_.isEmpty()) {
           if (distribution_.isEmpty()) {
             distribution_ = other.distribution_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureDistributionIsMutable();
             distribution_.addAll(other.distribution_);
@@ -526,7 +532,7 @@ private static final long serialVersionUID = 0L;
             distributionBuilder_.dispose();
             distributionBuilder_ = null;
             distribution_ = other.distribution_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             distributionBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDistributionFieldBuilder() : null;
@@ -568,10 +574,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -587,10 +594,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -607,10 +615,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -624,10 +634,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -637,10 +648,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -657,9 +670,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grafeas.v1beta1.pkg.Distribution> distribution_ =
       java.util.Collections.emptyList();
     private void ensureDistributionIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         distribution_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Distribution>(distribution_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -853,7 +866,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearDistribution() {
       if (distributionBuilder_ == null) {
         distribution_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         distributionBuilder_.clear();
@@ -958,7 +971,7 @@ private static final long serialVersionUID = 0L;
         distributionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grafeas.v1beta1.pkg.Distribution, io.grafeas.v1beta1.pkg.Distribution.Builder, io.grafeas.v1beta1.pkg.DistributionOrBuilder>(
                 distribution_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         distribution_ = null;

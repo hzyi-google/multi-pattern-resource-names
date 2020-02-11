@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,8 +113,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterStubSettings.newBuilder();
- * securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * securityCenterSettingsBuilder
+ *     .createSourceSettings()
+ *     .setRetrySettings(
+ *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
  * </code>
  * </pre>
@@ -700,9 +704,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(480000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(480000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);

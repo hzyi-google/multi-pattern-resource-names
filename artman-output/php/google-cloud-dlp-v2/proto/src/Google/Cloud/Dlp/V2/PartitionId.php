@@ -17,20 +17,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.PartitionId</code>
  */
-final class PartitionId extends \Google\Protobuf\Internal\Message
+class PartitionId extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the project to which the entities belong.
      *
      * Generated from protobuf field <code>string project_id = 2;</code>
      */
-    private $project_id = '';
+    protected $project_id = '';
     /**
      * If not empty, the ID of the namespace to which the entities belong.
      *
      * Generated from protobuf field <code>string namespace_id = 4;</code>
      */
-    private $namespace_id = '';
+    protected $namespace_id = '';
 
     /**
      * Constructor.

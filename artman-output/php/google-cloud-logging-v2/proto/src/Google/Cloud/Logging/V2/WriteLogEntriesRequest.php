@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.WriteLogEntriesRequest</code>
  */
-final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
+class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. A default log resource name that is assigned to all log entries
@@ -30,9 +30,9 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * new log entries, whether the resource is specified in
      * <code>logName</code> or in an individual log entry.
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.resource_reference) = {</code>
      */
-    private $log_name = '';
+    protected $log_name = '';
     /**
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -43,7 +43,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 2;</code>
      */
-    private $resource = null;
+    protected $resource = null;
     /**
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -75,7 +75,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * you should try to include several log entries in this list,
      * rather than calling this method for each individual log entry.
      *
-     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $entries;
     /**
@@ -87,7 +87,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool partial_success = 5;</code>
      */
-    private $partial_success = false;
+    protected $partial_success = false;
     /**
      * Optional. If true, the request should expect normal response, but the
      * entries won't be persisted nor exported. Useful for checking whether the
@@ -95,7 +95,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool dry_run = 6;</code>
      */
-    private $dry_run = false;
+    protected $dry_run = false;
 
     /**
      * Constructor.
@@ -182,7 +182,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * new log entries, whether the resource is specified in
      * <code>logName</code> or in an individual log entry.
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getLogName()
@@ -205,7 +205,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * new log entries, whether the resource is specified in
      * <code>logName</code> or in an individual log entry.
      *
-     * Generated from protobuf field <code>string log_name = 1;</code>
+     * Generated from protobuf field <code>string log_name = 1 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -307,7 +307,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * you should try to include several log entries in this list,
      * rather than calling this method for each individual log entry.
      *
-     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEntries()
@@ -337,7 +337,7 @@ final class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * you should try to include several log entries in this list,
      * rather than calling this method for each individual log entry.
      *
-     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * Generated from protobuf field <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Logging\V2\LogEntry[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

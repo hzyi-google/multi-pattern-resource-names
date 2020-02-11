@@ -33,6 +33,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Activity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -102,17 +109,17 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               teamMembers_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             teamMembers_.add(s);
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000002;
             }
             skillsUsed_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Skill.parser(), extensionRegistry));
@@ -132,9 +139,9 @@ private static final long serialVersionUID = 0L;
           }
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000004;
             }
             skillsUsedSnippet_.add(s);
             break;
@@ -154,13 +161,13 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -180,7 +187,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.Activity.class, com.google.cloud.talent.v4beta1.Activity.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object displayName_;
   /**
@@ -190,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -210,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -234,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -254,6 +263,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -278,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 3;</code>
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -298,6 +309,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 3;</code>
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString
       getUriBytes() {
@@ -321,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   * @return Whether the createDate field is set.
    */
   public boolean hasCreateDate() {
     return createDate_ != null;
@@ -331,6 +344,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
+   * @return The createDate.
    */
   public com.google.type.Date getCreateDate() {
     return createDate_ == null ? com.google.type.Date.getDefaultInstance() : createDate_;
@@ -354,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   * @return Whether the updateDate field is set.
    */
   public boolean hasUpdateDate() {
     return updateDate_ != null;
@@ -364,6 +379,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
+   * @return The updateDate.
    */
   public com.google.type.Date getUpdateDate() {
     return updateDate_ == null ? com.google.type.Date.getDefaultInstance() : updateDate_;
@@ -389,6 +405,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   * @return A list containing the teamMembers.
    */
   public com.google.protobuf.ProtocolStringList
       getTeamMembersList() {
@@ -402,6 +419,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   * @return The count of teamMembers.
    */
   public int getTeamMembersCount() {
     return teamMembers_.size();
@@ -414,6 +432,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   * @param index The index of the element to return.
+   * @return The teamMembers at the given index.
    */
   public java.lang.String getTeamMembers(int index) {
     return teamMembers_.get(index);
@@ -426,6 +446,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string team_members = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teamMembers at the given index.
    */
   public com.google.protobuf.ByteString
       getTeamMembersBytes(int index) {
@@ -496,14 +518,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object activityNameSnippet_;
   /**
    * <pre>
-   * Output only. Activity name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-   * related to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-   * related to the search query.
+   * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The activityNameSnippet.
    */
   public java.lang.String getActivityNameSnippet() {
     java.lang.Object ref = activityNameSnippet_;
@@ -519,14 +540,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Activity name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-   * related to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-   * related to the search query.
+   * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for activityNameSnippet.
    */
   public com.google.protobuf.ByteString
       getActivityNameSnippetBytes() {
@@ -547,13 +567,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Activity description snippet shows how the
-   * [description][google.cloud.talent.v4beta1.Activity.description] is related
-   * to a search query. It's empty if the
-   * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-   * related to the search query.
+   * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+   * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
    * </pre>
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The activityDescriptionSnippet.
    */
   public java.lang.String getActivityDescriptionSnippet() {
     java.lang.Object ref = activityDescriptionSnippet_;
@@ -570,13 +589,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Activity description snippet shows how the
-   * [description][google.cloud.talent.v4beta1.Activity.description] is related
-   * to a search query. It's empty if the
-   * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-   * related to the search query.
+   * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+   * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
    * </pre>
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for activityDescriptionSnippet.
    */
   public com.google.protobuf.ByteString
       getActivityDescriptionSnippetBytes() {
@@ -597,13 +615,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the skillsUsedSnippet.
    */
   public com.google.protobuf.ProtocolStringList
       getSkillsUsedSnippetList() {
@@ -612,13 +629,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of skillsUsedSnippet.
    */
   public int getSkillsUsedSnippetCount() {
     return skillsUsedSnippet_.size();
@@ -626,13 +642,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The skillsUsedSnippet at the given index.
    */
   public java.lang.String getSkillsUsedSnippet(int index) {
     return skillsUsedSnippet_.get(index);
@@ -640,13 +656,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the skillsUsedSnippet at the given index.
    */
   public com.google.protobuf.ByteString
       getSkillsUsedSnippetBytes(int index) {
@@ -990,10 +1006,10 @@ private static final long serialVersionUID = 0L;
         updateDateBuilder_ = null;
       }
       teamMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         skillsUsedBuilder_.clear();
       }
@@ -1002,7 +1018,7 @@ private static final long serialVersionUID = 0L;
       activityDescriptionSnippet_ = "";
 
       skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1030,7 +1046,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Activity buildPartial() {
       com.google.cloud.talent.v4beta1.Activity result = new com.google.cloud.talent.v4beta1.Activity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.uri_ = uri_;
@@ -1044,15 +1059,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updateDate_ = updateDateBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.teamMembers_ = teamMembers_;
       if (skillsUsedBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.skillsUsed_ = skillsUsed_;
       } else {
@@ -1060,12 +1075,11 @@ private static final long serialVersionUID = 0L;
       }
       result.activityNameSnippet_ = activityNameSnippet_;
       result.activityDescriptionSnippet_ = activityDescriptionSnippet_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.skillsUsedSnippet_ = skillsUsedSnippet_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1135,7 +1149,7 @@ private static final long serialVersionUID = 0L;
       if (!other.teamMembers_.isEmpty()) {
         if (teamMembers_.isEmpty()) {
           teamMembers_ = other.teamMembers_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTeamMembersIsMutable();
           teamMembers_.addAll(other.teamMembers_);
@@ -1146,7 +1160,7 @@ private static final long serialVersionUID = 0L;
         if (!other.skillsUsed_.isEmpty()) {
           if (skillsUsed_.isEmpty()) {
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillsUsedIsMutable();
             skillsUsed_.addAll(other.skillsUsed_);
@@ -1159,7 +1173,7 @@ private static final long serialVersionUID = 0L;
             skillsUsedBuilder_.dispose();
             skillsUsedBuilder_ = null;
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
             skillsUsedBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSkillsUsedFieldBuilder() : null;
@@ -1179,7 +1193,7 @@ private static final long serialVersionUID = 0L;
       if (!other.skillsUsedSnippet_.isEmpty()) {
         if (skillsUsedSnippet_.isEmpty()) {
           skillsUsedSnippet_ = other.skillsUsedSnippet_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSkillsUsedSnippetIsMutable();
           skillsUsedSnippet_.addAll(other.skillsUsedSnippet_);
@@ -1224,6 +1238,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1244,6 +1259,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -1265,6 +1281,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -1283,6 +1301,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -1297,6 +1316,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1318,6 +1339,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1338,6 +1360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1359,6 +1382,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1377,6 +1402,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1391,6 +1417,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1412,6 +1440,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 3;</code>
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -1432,6 +1461,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 3;</code>
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString
         getUriBytes() {
@@ -1453,6 +1483,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 3;</code>
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(
         java.lang.String value) {
@@ -1471,6 +1503,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
       
@@ -1485,6 +1518,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 3;</code>
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1507,6 +1542,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
+     * @return Whether the createDate field is set.
      */
     public boolean hasCreateDate() {
       return createDateBuilder_ != null || createDate_ != null;
@@ -1517,6 +1553,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date create_date = 4;</code>
+     * @return The createDate.
      */
     public com.google.type.Date getCreateDate() {
       if (createDateBuilder_ == null) {
@@ -1660,6 +1697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
+     * @return Whether the updateDate field is set.
      */
     public boolean hasUpdateDate() {
       return updateDateBuilder_ != null || updateDate_ != null;
@@ -1670,6 +1708,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date update_date = 5;</code>
+     * @return The updateDate.
      */
     public com.google.type.Date getUpdateDate() {
       if (updateDateBuilder_ == null) {
@@ -1806,9 +1845,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList teamMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureTeamMembersIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         teamMembers_ = new com.google.protobuf.LazyStringArrayList(teamMembers_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1819,6 +1858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @return A list containing the teamMembers.
      */
     public com.google.protobuf.ProtocolStringList
         getTeamMembersList() {
@@ -1832,6 +1872,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @return The count of teamMembers.
      */
     public int getTeamMembersCount() {
       return teamMembers_.size();
@@ -1844,6 +1885,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param index The index of the element to return.
+     * @return The teamMembers at the given index.
      */
     public java.lang.String getTeamMembers(int index) {
       return teamMembers_.get(index);
@@ -1856,6 +1899,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the teamMembers at the given index.
      */
     public com.google.protobuf.ByteString
         getTeamMembersBytes(int index) {
@@ -1869,6 +1914,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The teamMembers to set.
+     * @return This builder for chaining.
      */
     public Builder setTeamMembers(
         int index, java.lang.String value) {
@@ -1888,6 +1936,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param value The teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addTeamMembers(
         java.lang.String value) {
@@ -1907,6 +1957,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param values The teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTeamMembers(
         java.lang.Iterable<java.lang.String> values) {
@@ -1924,10 +1976,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTeamMembers() {
       teamMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1939,6 +1992,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string team_members = 6;</code>
+     * @param value The bytes of the teamMembers to add.
+     * @return This builder for chaining.
      */
     public Builder addTeamMembersBytes(
         com.google.protobuf.ByteString value) {
@@ -1955,9 +2010,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Skill> skillsUsed_ =
       java.util.Collections.emptyList();
     private void ensureSkillsUsedIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skillsUsed_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2162,7 +2217,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSkillsUsed() {
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         skillsUsedBuilder_.clear();
@@ -2274,7 +2329,7 @@ private static final long serialVersionUID = 0L;
         skillsUsedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Skill, com.google.cloud.talent.v4beta1.Skill.Builder, com.google.cloud.talent.v4beta1.SkillOrBuilder>(
                 skillsUsed_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         skillsUsed_ = null;
@@ -2285,14 +2340,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object activityNameSnippet_ = "";
     /**
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The activityNameSnippet.
      */
     public java.lang.String getActivityNameSnippet() {
       java.lang.Object ref = activityNameSnippet_;
@@ -2308,14 +2362,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for activityNameSnippet.
      */
     public com.google.protobuf.ByteString
         getActivityNameSnippetBytes() {
@@ -2332,14 +2385,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The activityNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityNameSnippet(
         java.lang.String value) {
@@ -2353,14 +2406,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearActivityNameSnippet() {
       
@@ -2370,14 +2422,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for activityNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityNameSnippetBytes(
         com.google.protobuf.ByteString value) {
@@ -2395,13 +2447,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The activityDescriptionSnippet.
      */
     public java.lang.String getActivityDescriptionSnippet() {
       java.lang.Object ref = activityDescriptionSnippet_;
@@ -2418,13 +2469,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for activityDescriptionSnippet.
      */
     public com.google.protobuf.ByteString
         getActivityDescriptionSnippetBytes() {
@@ -2442,13 +2492,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The activityDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityDescriptionSnippet(
         java.lang.String value) {
@@ -2463,13 +2513,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearActivityDescriptionSnippet() {
       
@@ -2480,13 +2529,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for activityDescriptionSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setActivityDescriptionSnippetBytes(
         com.google.protobuf.ByteString value) {
@@ -2502,21 +2551,20 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureSkillsUsedSnippetIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList(skillsUsedSnippet_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return A list containing the skillsUsedSnippet.
      */
     public com.google.protobuf.ProtocolStringList
         getSkillsUsedSnippetList() {
@@ -2525,13 +2573,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The count of skillsUsedSnippet.
      */
     public int getSkillsUsedSnippetCount() {
       return skillsUsedSnippet_.size();
@@ -2539,13 +2586,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the element to return.
+     * @return The skillsUsedSnippet at the given index.
      */
     public java.lang.String getSkillsUsedSnippet(int index) {
       return skillsUsedSnippet_.get(index);
@@ -2553,13 +2600,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the skillsUsedSnippet at the given index.
      */
     public com.google.protobuf.ByteString
         getSkillsUsedSnippetBytes(int index) {
@@ -2568,13 +2615,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index to set the value at.
+     * @param value The skillsUsedSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillsUsedSnippet(
         int index, java.lang.String value) {
@@ -2589,13 +2637,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addSkillsUsedSnippet(
         java.lang.String value) {
@@ -2610,13 +2658,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param values The skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSkillsUsedSnippet(
         java.lang.Iterable<java.lang.String> values) {
@@ -2629,30 +2677,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSkillsUsedSnippet() {
       skillsUsedSnippet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes of the skillsUsedSnippet to add.
+     * @return This builder for chaining.
      */
     public Builder addSkillsUsedSnippetBytes(
         com.google.protobuf.ByteString value) {

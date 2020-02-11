@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.BatchCreateJobsRequest</code>
  */
-final class BatchCreateJobsRequest extends \Google\Protobuf\Internal\Message
+class BatchCreateJobsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the tenant under which the job is created.
@@ -21,9 +21,9 @@ final class BatchCreateJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. The jobs to be created.
      *
@@ -57,7 +57,7 @@ final class BatchCreateJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -71,7 +71,7 @@ final class BatchCreateJobsRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

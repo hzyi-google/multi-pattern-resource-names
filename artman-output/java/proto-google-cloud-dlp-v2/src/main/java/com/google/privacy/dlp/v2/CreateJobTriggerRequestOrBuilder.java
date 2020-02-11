@@ -13,6 +13,7 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -21,32 +22,35 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the jobTrigger field is set.
    */
   boolean hasJobTrigger();
   /**
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobTrigger.
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
   /**
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder();
 
@@ -59,6 +63,7 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string trigger_id = 3;</code>
+   * @return The triggerId.
    */
   java.lang.String getTriggerId();
   /**
@@ -70,6 +75,7 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string trigger_id = 3;</code>
+   * @return The bytes for triggerId.
    */
   com.google.protobuf.ByteString
       getTriggerIdBytes();
@@ -81,6 +87,7 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -90,6 +97,7 @@ public interface CreateJobTriggerRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

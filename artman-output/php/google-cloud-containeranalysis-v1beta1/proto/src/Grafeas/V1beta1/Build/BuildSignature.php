@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.build.BuildSignature</code>
  */
-final class BuildSignature extends \Google\Protobuf\Internal\Message
+class BuildSignature extends \Google\Protobuf\Internal\Message
 {
     /**
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -30,30 +30,30 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string public_key = 1;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
     /**
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      *
      * Generated from protobuf field <code>bytes signature = 2;</code>
      */
-    private $signature = '';
+    protected $signature = '';
     /**
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      *
      * Generated from protobuf field <code>string key_id = 3;</code>
      */
-    private $key_id = '';
+    protected $key_id = '';
     /**
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
      */
-    private $key_type = 0;
+    protected $key_type = 0;
 
     /**
      * Constructor.
@@ -66,24 +66,24 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
      *           findings are valid and unchanged. If `key_type` is empty, this defaults
      *           to PEM encoded public keys.
      *           This field may be empty if `key_id` references an external key.
-     *           For Cloud Container Builder based signatures, this is a PEM encoded public
-     *           key. To verify the Cloud Container Builder signature, place the contents of
+     *           For Cloud Build based signatures, this is a PEM encoded public
+     *           key. To verify the Cloud Build signature, place the contents of
      *           this field into a file (public.pem). The signature field is base64-decoded
      *           into its binary representation in signature.bin, and the provenance bytes
      *           from `BuildDetails` are base64-decoded into a binary representation in
      *           signed.bin. OpenSSL can then verify the signature:
      *           `openssl sha256 -verify public.pem -signature signature.bin signed.bin`
      *     @type string $signature
-     *           Signature of the related `BuildProvenance`. In JSON, this is base-64
-     *           encoded.
+     *           Required. Signature of the related `BuildProvenance`. In JSON, this is
+     *           base-64 encoded.
      *     @type string $key_id
-     *           An ID for the key used to sign. This could be either an Id for the key
-     *           stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     *           An ID for the key used to sign. This could be either an ID for the key
+     *           stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      *           CN for a cert), or a reference to an external key (such as a reference to a
      *           key in Cloud Key Management Service).
      *     @type int $key_type
      *           The type of the key, either stored in `public_key` or referenced in
-     *           `key_id`
+     *           `key_id`.
      * }
      */
     public function __construct($data = NULL) {
@@ -96,8 +96,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -117,8 +117,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -138,8 +138,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      *
      * Generated from protobuf field <code>bytes signature = 2;</code>
      * @return string
@@ -150,8 +150,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      *
      * Generated from protobuf field <code>bytes signature = 2;</code>
      * @param string $var
@@ -166,8 +166,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      *
@@ -180,8 +180,8 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      *
@@ -199,7 +199,7 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
      * @return int
@@ -211,7 +211,7 @@ final class BuildSignature extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
      * @param int $var

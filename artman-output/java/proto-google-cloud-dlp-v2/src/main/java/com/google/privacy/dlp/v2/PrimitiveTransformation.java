@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PrimitiveTransformation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -235,7 +241,8 @@ private static final long serialVersionUID = 0L;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
   public enum TransformationCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REPLACE_CONFIG(1),
     REDACT_CONFIG(2),
     CHARACTER_MASK_CONFIG(3),
@@ -253,6 +260,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -290,13 +299,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int REPLACE_CONFIG_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * Replace
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+   * @return Whether the replaceConfig field is set.
    */
   public boolean hasReplaceConfig() {
     return transformationCase_ == 1;
   }
   /**
+   * <pre>
+   * Replace
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+   * @return The replaceConfig.
    */
   public com.google.privacy.dlp.v2.ReplaceValueConfig getReplaceConfig() {
     if (transformationCase_ == 1) {
@@ -305,6 +324,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Replace
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
    */
   public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
@@ -316,13 +339,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int REDACT_CONFIG_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Redact
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+   * @return Whether the redactConfig field is set.
    */
   public boolean hasRedactConfig() {
     return transformationCase_ == 2;
   }
   /**
+   * <pre>
+   * Redact
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+   * @return The redactConfig.
    */
   public com.google.privacy.dlp.v2.RedactConfig getRedactConfig() {
     if (transformationCase_ == 2) {
@@ -331,6 +364,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Redact
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
    */
   public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
@@ -342,13 +379,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CHARACTER_MASK_CONFIG_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * Mask
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+   * @return Whether the characterMaskConfig field is set.
    */
   public boolean hasCharacterMaskConfig() {
     return transformationCase_ == 3;
   }
   /**
+   * <pre>
+   * Mask
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+   * @return The characterMaskConfig.
    */
   public com.google.privacy.dlp.v2.CharacterMaskConfig getCharacterMaskConfig() {
     if (transformationCase_ == 3) {
@@ -357,6 +404,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Mask
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
    */
   public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder getCharacterMaskConfigOrBuilder() {
@@ -368,13 +419,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CRYPTO_REPLACE_FFX_FPE_CONFIG_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
+   * @return Whether the cryptoReplaceFfxFpeConfig field is set.
    */
   public boolean hasCryptoReplaceFfxFpeConfig() {
     return transformationCase_ == 4;
   }
   /**
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
+   * @return The cryptoReplaceFfxFpeConfig.
    */
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getCryptoReplaceFfxFpeConfig() {
     if (transformationCase_ == 4) {
@@ -383,6 +444,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
    */
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder getCryptoReplaceFfxFpeConfigOrBuilder() {
@@ -394,13 +459,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int FIXED_SIZE_BUCKETING_CONFIG_FIELD_NUMBER = 5;
   /**
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
+   * @return Whether the fixedSizeBucketingConfig field is set.
    */
   public boolean hasFixedSizeBucketingConfig() {
     return transformationCase_ == 5;
   }
   /**
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
+   * @return The fixedSizeBucketingConfig.
    */
   public com.google.privacy.dlp.v2.FixedSizeBucketingConfig getFixedSizeBucketingConfig() {
     if (transformationCase_ == 5) {
@@ -409,6 +484,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.FixedSizeBucketingConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
    */
   public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder getFixedSizeBucketingConfigOrBuilder() {
@@ -420,13 +499,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int BUCKETING_CONFIG_FIELD_NUMBER = 6;
   /**
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+   * @return Whether the bucketingConfig field is set.
    */
   public boolean hasBucketingConfig() {
     return transformationCase_ == 6;
   }
   /**
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+   * @return The bucketingConfig.
    */
   public com.google.privacy.dlp.v2.BucketingConfig getBucketingConfig() {
     if (transformationCase_ == 6) {
@@ -435,6 +524,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
    */
   public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
@@ -446,13 +539,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int REPLACE_WITH_INFO_TYPE_CONFIG_FIELD_NUMBER = 7;
   /**
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
+   * @return Whether the replaceWithInfoTypeConfig field is set.
    */
   public boolean hasReplaceWithInfoTypeConfig() {
     return transformationCase_ == 7;
   }
   /**
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
+   * @return The replaceWithInfoTypeConfig.
    */
   public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig getReplaceWithInfoTypeConfig() {
     if (transformationCase_ == 7) {
@@ -461,6 +564,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
    */
   public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder getReplaceWithInfoTypeConfigOrBuilder() {
@@ -472,13 +579,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int TIME_PART_CONFIG_FIELD_NUMBER = 8;
   /**
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+   * @return Whether the timePartConfig field is set.
    */
   public boolean hasTimePartConfig() {
     return transformationCase_ == 8;
   }
   /**
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+   * @return The timePartConfig.
    */
   public com.google.privacy.dlp.v2.TimePartConfig getTimePartConfig() {
     if (transformationCase_ == 8) {
@@ -487,6 +604,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
    */
   public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
@@ -498,13 +619,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CRYPTO_HASH_CONFIG_FIELD_NUMBER = 9;
   /**
+   * <pre>
+   * Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+   * @return Whether the cryptoHashConfig field is set.
    */
   public boolean hasCryptoHashConfig() {
     return transformationCase_ == 9;
   }
   /**
+   * <pre>
+   * Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+   * @return The cryptoHashConfig.
    */
   public com.google.privacy.dlp.v2.CryptoHashConfig getCryptoHashConfig() {
     if (transformationCase_ == 9) {
@@ -513,6 +644,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
    */
   public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
@@ -524,13 +659,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int DATE_SHIFT_CONFIG_FIELD_NUMBER = 11;
   /**
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+   * @return Whether the dateShiftConfig field is set.
    */
   public boolean hasDateShiftConfig() {
     return transformationCase_ == 11;
   }
   /**
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+   * @return The dateShiftConfig.
    */
   public com.google.privacy.dlp.v2.DateShiftConfig getDateShiftConfig() {
     if (transformationCase_ == 11) {
@@ -539,6 +684,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
    */
   public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
@@ -550,13 +699,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER = 12;
   /**
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   * @return Whether the cryptoDeterministicConfig field is set.
    */
   public boolean hasCryptoDeterministicConfig() {
     return transformationCase_ == 12;
   }
   /**
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   * @return The cryptoDeterministicConfig.
    */
   public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
     if (transformationCase_ == 12) {
@@ -565,6 +724,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
    */
   public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder getCryptoDeterministicConfigOrBuilder() {
@@ -1184,13 +1347,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.ReplaceValueConfig, com.google.privacy.dlp.v2.ReplaceValueConfig.Builder, com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder> replaceConfigBuilder_;
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     * @return Whether the replaceConfig field is set.
      */
     public boolean hasReplaceConfig() {
       return transformationCase_ == 1;
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     * @return The replaceConfig.
      */
     public com.google.privacy.dlp.v2.ReplaceValueConfig getReplaceConfig() {
       if (replaceConfigBuilder_ == null) {
@@ -1206,6 +1379,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public Builder setReplaceConfig(com.google.privacy.dlp.v2.ReplaceValueConfig value) {
@@ -1222,6 +1399,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public Builder setReplaceConfig(
@@ -1236,6 +1417,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public Builder mergeReplaceConfig(com.google.privacy.dlp.v2.ReplaceValueConfig value) {
@@ -1258,6 +1443,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public Builder clearReplaceConfig() {
@@ -1277,12 +1466,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.ReplaceValueConfig.Builder getReplaceConfigBuilder() {
       return getReplaceConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
@@ -1296,6 +1493,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1320,13 +1521,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.RedactConfig, com.google.privacy.dlp.v2.RedactConfig.Builder, com.google.privacy.dlp.v2.RedactConfigOrBuilder> redactConfigBuilder_;
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     * @return Whether the redactConfig field is set.
      */
     public boolean hasRedactConfig() {
       return transformationCase_ == 2;
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     * @return The redactConfig.
      */
     public com.google.privacy.dlp.v2.RedactConfig getRedactConfig() {
       if (redactConfigBuilder_ == null) {
@@ -1342,6 +1553,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public Builder setRedactConfig(com.google.privacy.dlp.v2.RedactConfig value) {
@@ -1358,6 +1573,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public Builder setRedactConfig(
@@ -1372,6 +1591,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public Builder mergeRedactConfig(com.google.privacy.dlp.v2.RedactConfig value) {
@@ -1394,6 +1617,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public Builder clearRedactConfig() {
@@ -1413,12 +1640,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.RedactConfig.Builder getRedactConfigBuilder() {
       return getRedactConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
@@ -1432,6 +1667,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1456,13 +1695,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CharacterMaskConfig, com.google.privacy.dlp.v2.CharacterMaskConfig.Builder, com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder> characterMaskConfigBuilder_;
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     * @return Whether the characterMaskConfig field is set.
      */
     public boolean hasCharacterMaskConfig() {
       return transformationCase_ == 3;
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     * @return The characterMaskConfig.
      */
     public com.google.privacy.dlp.v2.CharacterMaskConfig getCharacterMaskConfig() {
       if (characterMaskConfigBuilder_ == null) {
@@ -1478,6 +1727,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public Builder setCharacterMaskConfig(com.google.privacy.dlp.v2.CharacterMaskConfig value) {
@@ -1494,6 +1747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public Builder setCharacterMaskConfig(
@@ -1508,6 +1765,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public Builder mergeCharacterMaskConfig(com.google.privacy.dlp.v2.CharacterMaskConfig value) {
@@ -1530,6 +1791,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public Builder clearCharacterMaskConfig() {
@@ -1549,12 +1814,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.CharacterMaskConfig.Builder getCharacterMaskConfigBuilder() {
       return getCharacterMaskConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder getCharacterMaskConfigOrBuilder() {
@@ -1568,6 +1841,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1592,13 +1869,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig, com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder, com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder> cryptoReplaceFfxFpeConfigBuilder_;
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
+     * @return Whether the cryptoReplaceFfxFpeConfig field is set.
      */
     public boolean hasCryptoReplaceFfxFpeConfig() {
       return transformationCase_ == 4;
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
+     * @return The cryptoReplaceFfxFpeConfig.
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getCryptoReplaceFfxFpeConfig() {
       if (cryptoReplaceFfxFpeConfigBuilder_ == null) {
@@ -1614,6 +1901,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public Builder setCryptoReplaceFfxFpeConfig(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig value) {
@@ -1630,6 +1921,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public Builder setCryptoReplaceFfxFpeConfig(
@@ -1644,6 +1939,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public Builder mergeCryptoReplaceFfxFpeConfig(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig value) {
@@ -1666,6 +1965,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public Builder clearCryptoReplaceFfxFpeConfig() {
@@ -1685,12 +1988,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder getCryptoReplaceFfxFpeConfigBuilder() {
       return getCryptoReplaceFfxFpeConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder getCryptoReplaceFfxFpeConfigOrBuilder() {
@@ -1704,6 +2015,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1728,13 +2043,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.FixedSizeBucketingConfig, com.google.privacy.dlp.v2.FixedSizeBucketingConfig.Builder, com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder> fixedSizeBucketingConfigBuilder_;
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
+     * @return Whether the fixedSizeBucketingConfig field is set.
      */
     public boolean hasFixedSizeBucketingConfig() {
       return transformationCase_ == 5;
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
+     * @return The fixedSizeBucketingConfig.
      */
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfig getFixedSizeBucketingConfig() {
       if (fixedSizeBucketingConfigBuilder_ == null) {
@@ -1750,6 +2075,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder setFixedSizeBucketingConfig(com.google.privacy.dlp.v2.FixedSizeBucketingConfig value) {
@@ -1766,6 +2095,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder setFixedSizeBucketingConfig(
@@ -1780,6 +2113,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder mergeFixedSizeBucketingConfig(com.google.privacy.dlp.v2.FixedSizeBucketingConfig value) {
@@ -1802,6 +2139,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder clearFixedSizeBucketingConfig() {
@@ -1821,12 +2162,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfig.Builder getFixedSizeBucketingConfigBuilder() {
       return getFixedSizeBucketingConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder getFixedSizeBucketingConfigOrBuilder() {
@@ -1840,6 +2189,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1864,13 +2217,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.BucketingConfig, com.google.privacy.dlp.v2.BucketingConfig.Builder, com.google.privacy.dlp.v2.BucketingConfigOrBuilder> bucketingConfigBuilder_;
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     * @return Whether the bucketingConfig field is set.
      */
     public boolean hasBucketingConfig() {
       return transformationCase_ == 6;
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     * @return The bucketingConfig.
      */
     public com.google.privacy.dlp.v2.BucketingConfig getBucketingConfig() {
       if (bucketingConfigBuilder_ == null) {
@@ -1886,6 +2249,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public Builder setBucketingConfig(com.google.privacy.dlp.v2.BucketingConfig value) {
@@ -1902,6 +2269,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public Builder setBucketingConfig(
@@ -1916,6 +2287,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public Builder mergeBucketingConfig(com.google.privacy.dlp.v2.BucketingConfig value) {
@@ -1938,6 +2313,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public Builder clearBucketingConfig() {
@@ -1957,12 +2336,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public com.google.privacy.dlp.v2.BucketingConfig.Builder getBucketingConfigBuilder() {
       return getBucketingConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
@@ -1976,6 +2363,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2000,13 +2391,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig, com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.Builder, com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder> replaceWithInfoTypeConfigBuilder_;
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
+     * @return Whether the replaceWithInfoTypeConfig field is set.
      */
     public boolean hasReplaceWithInfoTypeConfig() {
       return transformationCase_ == 7;
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
+     * @return The replaceWithInfoTypeConfig.
      */
     public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig getReplaceWithInfoTypeConfig() {
       if (replaceWithInfoTypeConfigBuilder_ == null) {
@@ -2022,6 +2423,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public Builder setReplaceWithInfoTypeConfig(com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig value) {
@@ -2038,6 +2443,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public Builder setReplaceWithInfoTypeConfig(
@@ -2052,6 +2461,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public Builder mergeReplaceWithInfoTypeConfig(com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig value) {
@@ -2074,6 +2487,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public Builder clearReplaceWithInfoTypeConfig() {
@@ -2093,12 +2510,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.Builder getReplaceWithInfoTypeConfigBuilder() {
       return getReplaceWithInfoTypeConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder getReplaceWithInfoTypeConfigOrBuilder() {
@@ -2112,6 +2537,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2136,13 +2565,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.TimePartConfig, com.google.privacy.dlp.v2.TimePartConfig.Builder, com.google.privacy.dlp.v2.TimePartConfigOrBuilder> timePartConfigBuilder_;
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     * @return Whether the timePartConfig field is set.
      */
     public boolean hasTimePartConfig() {
       return transformationCase_ == 8;
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     * @return The timePartConfig.
      */
     public com.google.privacy.dlp.v2.TimePartConfig getTimePartConfig() {
       if (timePartConfigBuilder_ == null) {
@@ -2158,6 +2597,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public Builder setTimePartConfig(com.google.privacy.dlp.v2.TimePartConfig value) {
@@ -2174,6 +2617,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public Builder setTimePartConfig(
@@ -2188,6 +2635,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public Builder mergeTimePartConfig(com.google.privacy.dlp.v2.TimePartConfig value) {
@@ -2210,6 +2661,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public Builder clearTimePartConfig() {
@@ -2229,12 +2684,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public com.google.privacy.dlp.v2.TimePartConfig.Builder getTimePartConfigBuilder() {
       return getTimePartConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
@@ -2248,6 +2711,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2272,13 +2739,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CryptoHashConfig, com.google.privacy.dlp.v2.CryptoHashConfig.Builder, com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder> cryptoHashConfigBuilder_;
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     * @return Whether the cryptoHashConfig field is set.
      */
     public boolean hasCryptoHashConfig() {
       return transformationCase_ == 9;
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     * @return The cryptoHashConfig.
      */
     public com.google.privacy.dlp.v2.CryptoHashConfig getCryptoHashConfig() {
       if (cryptoHashConfigBuilder_ == null) {
@@ -2294,6 +2771,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public Builder setCryptoHashConfig(com.google.privacy.dlp.v2.CryptoHashConfig value) {
@@ -2310,6 +2791,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public Builder setCryptoHashConfig(
@@ -2324,6 +2809,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public Builder mergeCryptoHashConfig(com.google.privacy.dlp.v2.CryptoHashConfig value) {
@@ -2346,6 +2835,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public Builder clearCryptoHashConfig() {
@@ -2365,12 +2858,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public com.google.privacy.dlp.v2.CryptoHashConfig.Builder getCryptoHashConfigBuilder() {
       return getCryptoHashConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
@@ -2384,6 +2885,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2408,13 +2913,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.DateShiftConfig, com.google.privacy.dlp.v2.DateShiftConfig.Builder, com.google.privacy.dlp.v2.DateShiftConfigOrBuilder> dateShiftConfigBuilder_;
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     * @return Whether the dateShiftConfig field is set.
      */
     public boolean hasDateShiftConfig() {
       return transformationCase_ == 11;
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     * @return The dateShiftConfig.
      */
     public com.google.privacy.dlp.v2.DateShiftConfig getDateShiftConfig() {
       if (dateShiftConfigBuilder_ == null) {
@@ -2430,6 +2945,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public Builder setDateShiftConfig(com.google.privacy.dlp.v2.DateShiftConfig value) {
@@ -2446,6 +2965,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public Builder setDateShiftConfig(
@@ -2460,6 +2983,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public Builder mergeDateShiftConfig(com.google.privacy.dlp.v2.DateShiftConfig value) {
@@ -2482,6 +3009,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public Builder clearDateShiftConfig() {
@@ -2501,12 +3032,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public com.google.privacy.dlp.v2.DateShiftConfig.Builder getDateShiftConfigBuilder() {
       return getDateShiftConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
@@ -2520,6 +3059,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2544,13 +3087,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CryptoDeterministicConfig, com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder, com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder> cryptoDeterministicConfigBuilder_;
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+     * @return Whether the cryptoDeterministicConfig field is set.
      */
     public boolean hasCryptoDeterministicConfig() {
       return transformationCase_ == 12;
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+     * @return The cryptoDeterministicConfig.
      */
     public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
       if (cryptoDeterministicConfigBuilder_ == null) {
@@ -2566,6 +3119,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public Builder setCryptoDeterministicConfig(com.google.privacy.dlp.v2.CryptoDeterministicConfig value) {
@@ -2582,6 +3139,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public Builder setCryptoDeterministicConfig(
@@ -2596,6 +3157,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public Builder mergeCryptoDeterministicConfig(com.google.privacy.dlp.v2.CryptoDeterministicConfig value) {
@@ -2618,6 +3183,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public Builder clearCryptoDeterministicConfig() {
@@ -2637,12 +3206,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder getCryptoDeterministicConfigBuilder() {
       return getCryptoDeterministicConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder getCryptoDeterministicConfigOrBuilder() {
@@ -2656,6 +3233,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

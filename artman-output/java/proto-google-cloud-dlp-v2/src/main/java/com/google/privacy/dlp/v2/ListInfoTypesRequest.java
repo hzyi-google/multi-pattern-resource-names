@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListInfoTypesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -103,12 +109,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object languageCode_;
   /**
    * <pre>
-   * Optional BCP-47 language code for localized infoType friendly
+   * BCP-47 language code for localized infoType friendly
    * names. If omitted, or if localized strings are not available,
    * en-US strings will be returned.
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -124,12 +131,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional BCP-47 language code for localized infoType friendly
+   * BCP-47 language code for localized infoType friendly
    * names. If omitted, or if localized strings are not available,
    * en-US strings will be returned.
    * </pre>
    *
    * <code>string language_code = 1;</code>
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString
       getLanguageCodeBytes() {
@@ -149,11 +157,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Optional filter to only return infoTypes supported by certain parts of the
+   * filter to only return infoTypes supported by certain parts of the
    * API. Defaults to supported_by=INSPECT.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -169,11 +178,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional filter to only return infoTypes supported by certain parts of the
+   * filter to only return infoTypes supported by certain parts of the
    * API. Defaults to supported_by=INSPECT.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
       getFilterBytes() {
@@ -198,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -218,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 3;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -576,12 +588,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object languageCode_ = "";
     /**
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -597,12 +610,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString
         getLanguageCodeBytes() {
@@ -619,12 +633,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(
         java.lang.String value) {
@@ -638,12 +654,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
       
@@ -653,12 +670,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
      *
      * <code>string language_code = 1;</code>
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -675,11 +694,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -695,11 +715,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
         getFilterBytes() {
@@ -716,11 +737,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(
         java.lang.String value) {
@@ -734,11 +757,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
       
@@ -748,11 +772,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(
         com.google.protobuf.ByteString value) {
@@ -774,6 +800,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -794,6 +821,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -815,6 +843,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -833,6 +863,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -847,6 +878,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 3;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

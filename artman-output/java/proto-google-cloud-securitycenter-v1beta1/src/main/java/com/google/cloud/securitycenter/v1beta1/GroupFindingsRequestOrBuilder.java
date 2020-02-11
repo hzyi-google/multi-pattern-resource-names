@@ -9,24 +9,26 @@ public interface GroupFindingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Name of the source to groupBy. Its format is
+   * Required. Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
    * all sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Name of the source to groupBy. Its format is
+   * Required. Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
    * all sources provide a source_id of `-`. For example:
-   * organizations/123/sources/-
+   * organizations/{organization_id}/sources/-
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -54,6 +56,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -79,13 +82,14 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
 
   /**
    * <pre>
-   * Expression that defines what assets fields to use for grouping (including
+   * Required. Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
    * of fields. For example:
    * "parent,resource_name".
@@ -96,12 +100,13 @@ public interface GroupFindingsRequestOrBuilder extends
    * * parent
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The groupBy.
    */
   java.lang.String getGroupBy();
   /**
    * <pre>
-   * Expression that defines what assets fields to use for grouping (including
+   * Required. Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
    * of fields. For example:
    * "parent,resource_name".
@@ -112,7 +117,8 @@ public interface GroupFindingsRequestOrBuilder extends
    * * parent
    * </pre>
    *
-   * <code>string group_by = 3;</code>
+   * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for groupBy.
    */
   com.google.protobuf.ByteString
       getGroupByBytes();
@@ -126,6 +132,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -137,6 +144,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -159,6 +167,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -169,6 +178,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 5;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -180,6 +190,7 @@ public interface GroupFindingsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 6;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 }

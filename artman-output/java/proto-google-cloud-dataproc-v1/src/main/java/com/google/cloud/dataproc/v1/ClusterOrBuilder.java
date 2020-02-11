@@ -12,7 +12,8 @@ public interface ClusterOrBuilder extends
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -20,7 +21,8 @@ public interface ClusterOrBuilder extends
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -31,7 +33,8 @@ public interface ClusterOrBuilder extends
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -40,36 +43,39 @@ public interface ClusterOrBuilder extends
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
 
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The config.
    */
   com.google.cloud.dataproc.v1.ClusterConfig getConfig();
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder();
 
@@ -163,6 +169,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -171,6 +178,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatus();
   /**
@@ -228,20 +236,22 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString
       getClusterUuidBytes();
@@ -254,6 +264,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
   /**
@@ -264,6 +275,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * @return The metrics.
    */
   com.google.cloud.dataproc.v1.ClusterMetrics getMetrics();
   /**

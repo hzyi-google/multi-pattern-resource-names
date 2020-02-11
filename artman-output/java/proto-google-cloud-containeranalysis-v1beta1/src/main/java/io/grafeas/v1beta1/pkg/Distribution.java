@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Distribution();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -41,7 +48,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,11 +137,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cpeUri_;
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The cpeUri.
    */
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
@@ -151,11 +158,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The bytes for cpeUri.
    */
   public com.google.protobuf.ByteString
       getCpeUriBytes() {
@@ -180,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+   * @return The enum numeric value on the wire for architecture.
    */
   public int getArchitectureValue() {
     return architecture_;
@@ -191,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+   * @return The architecture.
    */
   public io.grafeas.v1beta1.pkg.Architecture getArchitecture() {
     @SuppressWarnings("deprecation")
@@ -202,30 +212,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.pkg.Version latestVersion_;
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+   * @return Whether the latestVersion field is set.
    */
   public boolean hasLatestVersion() {
     return latestVersion_ != null;
   }
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+   * @return The latestVersion.
    */
   public io.grafeas.v1beta1.pkg.Version getLatestVersion() {
     return latestVersion_ == null ? io.grafeas.v1beta1.pkg.Version.getDefaultInstance() : latestVersion_;
   }
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -242,6 +251,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   * @return The maintainer.
    */
   public java.lang.String getMaintainer() {
     java.lang.Object ref = maintainer_;
@@ -261,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   * @return The bytes for maintainer.
    */
   public com.google.protobuf.ByteString
       getMaintainerBytes() {
@@ -284,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -303,6 +315,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString
       getUrlBytes() {
@@ -326,6 +339,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 6;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -345,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 6;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -767,11 +782,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cpeUri_ = "";
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
@@ -787,11 +803,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return The bytes for cpeUri.
      */
     public com.google.protobuf.ByteString
         getCpeUriBytes() {
@@ -808,11 +825,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @param value The cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUri(
         java.lang.String value) {
@@ -826,11 +845,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
       
@@ -840,11 +860,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     * @param value The bytes for cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUriBytes(
         com.google.protobuf.ByteString value) {
@@ -866,6 +888,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+     * @return The enum numeric value on the wire for architecture.
      */
     public int getArchitectureValue() {
       return architecture_;
@@ -877,6 +900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+     * @param value The enum numeric value on the wire for architecture to set.
+     * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
       architecture_ = value;
@@ -890,6 +915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+     * @return The architecture.
      */
     public io.grafeas.v1beta1.pkg.Architecture getArchitecture() {
       @SuppressWarnings("deprecation")
@@ -903,6 +929,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+     * @param value The architecture to set.
+     * @return This builder for chaining.
      */
     public Builder setArchitecture(io.grafeas.v1beta1.pkg.Architecture value) {
       if (value == null) {
@@ -920,6 +948,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
       
@@ -933,22 +962,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.pkg.Version, io.grafeas.v1beta1.pkg.Version.Builder, io.grafeas.v1beta1.pkg.VersionOrBuilder> latestVersionBuilder_;
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+     * @return Whether the latestVersion field is set.
      */
     public boolean hasLatestVersion() {
       return latestVersionBuilder_ != null || latestVersion_ != null;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+     * @return The latestVersion.
      */
     public io.grafeas.v1beta1.pkg.Version getLatestVersion() {
       if (latestVersionBuilder_ == null) {
@@ -959,8 +988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -980,8 +1008,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -999,8 +1026,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1022,8 +1048,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1041,8 +1066,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1054,8 +1078,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1070,8 +1093,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1097,6 +1119,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     * @return The maintainer.
      */
     public java.lang.String getMaintainer() {
       java.lang.Object ref = maintainer_;
@@ -1116,6 +1139,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     * @return The bytes for maintainer.
      */
     public com.google.protobuf.ByteString
         getMaintainerBytes() {
@@ -1136,6 +1160,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     * @param value The maintainer to set.
+     * @return This builder for chaining.
      */
     public Builder setMaintainer(
         java.lang.String value) {
@@ -1153,6 +1179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMaintainer() {
       
@@ -1166,6 +1193,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     * @param value The bytes for maintainer to set.
+     * @return This builder for chaining.
      */
     public Builder setMaintainerBytes(
         com.google.protobuf.ByteString value) {
@@ -1186,6 +1215,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 5;</code>
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -1205,6 +1235,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 5;</code>
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString
         getUrlBytes() {
@@ -1225,6 +1256,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 5;</code>
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(
         java.lang.String value) {
@@ -1242,6 +1275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
       
@@ -1255,6 +1289,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 5;</code>
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -1275,6 +1311,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 6;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1294,6 +1331,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 6;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1314,6 +1352,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 6;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1331,6 +1371,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1344,6 +1385,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 6;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {

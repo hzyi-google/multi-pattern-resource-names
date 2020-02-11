@@ -13,17 +13,17 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.build.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
      */
-    private $provenance = null;
+    protected $provenance = null;
     /**
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -35,7 +35,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string provenance_bytes = 2;</code>
      */
-    private $provenance_bytes = '';
+    protected $provenance_bytes = '';
 
     /**
      * Constructor.
@@ -44,10 +44,10 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Provenance\BuildProvenance $provenance
-     *           The actual provenance for the build.
+     *           Required. The actual provenance for the build.
      *     @type string $provenance_bytes
      *           Serialized JSON representation of the provenance, used in generating the
-     *           `BuildSignature` in the corresponding Result. After verifying the
+     *           build signature in the corresponding build note. After verifying the
      *           signature, `provenance_bytes` can be unmarshalled and compared to the
      *           provenance to confirm that it is unchanged. A base64-encoded string
      *           representation of the provenance bytes is used for the signature in order
@@ -64,7 +64,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
      * @return \Grafeas\V1beta1\Provenance\BuildProvenance
@@ -75,7 +75,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The actual provenance for the build.
+     * Required. The actual provenance for the build.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
      * @param \Grafeas\V1beta1\Provenance\BuildProvenance $var
@@ -91,7 +91,7 @@ final class Details extends \Google\Protobuf\Internal\Message
 
     /**
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order
@@ -111,7 +111,7 @@ final class Details extends \Google\Protobuf\Internal\Message
 
     /**
      * Serialized JSON representation of the provenance, used in generating the
-     * `BuildSignature` in the corresponding Result. After verifying the
+     * build signature in the corresponding build note. After verifying the
      * signature, `provenance_bytes` can be unmarshalled and compared to the
      * provenance to confirm that it is unchanged. A base64-encoded string
      * representation of the provenance bytes is used for the signature in order

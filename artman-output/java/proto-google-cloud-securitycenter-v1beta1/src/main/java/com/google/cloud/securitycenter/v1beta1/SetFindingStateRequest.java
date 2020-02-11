@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SetFindingStateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,13 +115,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -131,13 +138,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -157,20 +165,22 @@ private static final long serialVersionUID = 0L;
   private int state_;
   /**
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
   }
   /**
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The state.
    */
   public com.google.cloud.securitycenter.v1beta1.Finding.State getState() {
     @SuppressWarnings("deprecation")
@@ -182,30 +192,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp startTime_;
   /**
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
   }
   /**
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
@@ -566,13 +578,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -588,13 +601,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -611,13 +625,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -631,13 +647,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -647,13 +664,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The relative resource name of the finding. See:
+     * Required. The relative resource name of the finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/finding/789".
+     * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -670,20 +689,23 @@ private static final long serialVersionUID = 0L;
     private int state_ = 0;
     /**
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
     }
     /**
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -692,10 +714,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The state.
      */
     public com.google.cloud.securitycenter.v1beta1.Finding.State getState() {
       @SuppressWarnings("deprecation")
@@ -704,10 +727,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.securitycenter.v1beta1.Finding.State value) {
       if (value == null) {
@@ -720,10 +745,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The desired State of the finding.
+     * Required. The desired State of the finding.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -737,20 +763,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -761,10 +789,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -781,10 +809,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStartTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -799,10 +827,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -821,10 +849,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
@@ -839,10 +867,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
       
@@ -851,10 +879,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
@@ -866,10 +894,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the updated state takes effect.
+     * Required. The time at which the updated state takes effect.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.HiveJob</code>
  */
-final class HiveJob extends \Google\Protobuf\Internal\Message
+class HiveJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Whether to continue executing queries if a query fails.
@@ -23,7 +23,7 @@ final class HiveJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool continue_on_failure = 3;</code>
      */
-    private $continue_on_failure = false;
+    protected $continue_on_failure = false;
     /**
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).

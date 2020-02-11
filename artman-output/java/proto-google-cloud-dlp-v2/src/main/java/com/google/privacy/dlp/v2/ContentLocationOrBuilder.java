@@ -12,14 +12,15 @@ public interface ContentLocationOrBuilder extends
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
-   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-   * * Datastore namespace: &lt;namespace&gt;
+   * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+   * * Cloud Storage files: `gs://{bucket}/{path}`
+   * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
    * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   * @return The containerName.
    */
   java.lang.String getContainerName();
   /**
@@ -27,14 +28,15 @@ public interface ContentLocationOrBuilder extends
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
-   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-   * * Datastore namespace: &lt;namespace&gt;
+   * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+   * * Cloud Storage files: `gs://{bucket}/{path}`
+   * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
    * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   * @return The bytes for containerName.
    */
   com.google.protobuf.ByteString
       getContainerNameBytes();
@@ -45,6 +47,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   * @return Whether the recordLocation field is set.
    */
   boolean hasRecordLocation();
   /**
@@ -53,6 +56,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   * @return The recordLocation.
    */
   com.google.privacy.dlp.v2.RecordLocation getRecordLocation();
   /**
@@ -70,6 +74,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   * @return Whether the imageLocation field is set.
    */
   boolean hasImageLocation();
   /**
@@ -78,6 +83,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   * @return The imageLocation.
    */
   com.google.privacy.dlp.v2.ImageLocation getImageLocation();
   /**
@@ -95,6 +101,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   * @return Whether the documentLocation field is set.
    */
   boolean hasDocumentLocation();
   /**
@@ -103,6 +110,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   * @return The documentLocation.
    */
   com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation();
   /**
@@ -123,6 +131,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   * @return Whether the containerTimestamp field is set.
    */
   boolean hasContainerTimestamp();
   /**
@@ -134,6 +143,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   * @return The containerTimestamp.
    */
   com.google.protobuf.Timestamp getContainerTimestamp();
   /**
@@ -155,6 +165,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   * @return The containerVersion.
    */
   java.lang.String getContainerVersion();
   /**
@@ -164,6 +175,7 @@ public interface ContentLocationOrBuilder extends
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   * @return The bytes for containerVersion.
    */
   com.google.protobuf.ByteString
       getContainerVersionBytes();

@@ -13,6 +13,7 @@ public interface UpdateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the source field is set.
    */
   boolean hasSource();
   /**
@@ -21,6 +22,7 @@ public interface UpdateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The source.
    */
   com.google.cloud.securitycenter.v1.Source getSource();
   /**
@@ -39,6 +41,7 @@ public interface UpdateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -48,6 +51,7 @@ public interface UpdateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

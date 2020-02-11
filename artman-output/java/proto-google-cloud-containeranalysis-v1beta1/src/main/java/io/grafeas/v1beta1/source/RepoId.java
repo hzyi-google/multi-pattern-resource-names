@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RepoId();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -101,7 +107,8 @@ private static final long serialVersionUID = 0L;
   private int idCase_ = 0;
   private java.lang.Object id_;
   public enum IdCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROJECT_REPO_ID(1),
     UID(2),
     ID_NOT_SET(0);
@@ -110,6 +117,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -143,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+   * @return Whether the projectRepoId field is set.
    */
   public boolean hasProjectRepoId() {
     return idCase_ == 1;
@@ -153,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+   * @return The projectRepoId.
    */
   public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
     if (idCase_ == 1) {
@@ -181,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uid = 2;</code>
+   * @return The uid.
    */
   public java.lang.String getUid() {
     java.lang.Object ref = "";
@@ -205,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uid = 2;</code>
+   * @return The bytes for uid.
    */
   public com.google.protobuf.ByteString
       getUidBytes() {
@@ -603,6 +616,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+     * @return Whether the projectRepoId field is set.
      */
     public boolean hasProjectRepoId() {
       return idCase_ == 1;
@@ -613,6 +627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
+     * @return The projectRepoId.
      */
     public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
       if (projectRepoIdBuilder_ == null) {
@@ -773,6 +788,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uid = 2;</code>
+     * @return The uid.
      */
     public java.lang.String getUid() {
       java.lang.Object ref = "";
@@ -797,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uid = 2;</code>
+     * @return The bytes for uid.
      */
     public com.google.protobuf.ByteString
         getUidBytes() {
@@ -822,6 +839,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uid = 2;</code>
+     * @param value The uid to set.
+     * @return This builder for chaining.
      */
     public Builder setUid(
         java.lang.String value) {
@@ -839,6 +858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uid = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUid() {
       if (idCase_ == 2) {
@@ -854,6 +874,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uid = 2;</code>
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
      */
     public Builder setUidBytes(
         com.google.protobuf.ByteString value) {

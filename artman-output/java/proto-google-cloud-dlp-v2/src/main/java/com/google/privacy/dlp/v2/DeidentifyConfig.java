@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DeidentifyConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,7 +115,8 @@ private static final long serialVersionUID = 0L;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
   public enum TransformationCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INFO_TYPE_TRANSFORMATIONS(1),
     RECORD_TRANSFORMATIONS(2),
     TRANSFORMATION_NOT_SET(0);
@@ -118,6 +125,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -152,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+   * @return Whether the infoTypeTransformations field is set.
    */
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 1;
@@ -163,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+   * @return The infoTypeTransformations.
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 1) {
@@ -194,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+   * @return Whether the recordTransformations field is set.
    */
   public boolean hasRecordTransformations() {
     return transformationCase_ == 2;
@@ -206,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+   * @return The recordTransformations.
    */
   public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
     if (transformationCase_ == 2) {
@@ -611,6 +624,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+     * @return Whether the infoTypeTransformations field is set.
      */
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 1;
@@ -622,6 +636,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
+     * @return The infoTypeTransformations.
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
       if (infoTypeTransformationsBuilder_ == null) {
@@ -793,6 +808,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+     * @return Whether the recordTransformations field is set.
      */
     public boolean hasRecordTransformations() {
       return transformationCase_ == 2;
@@ -805,6 +821,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
+     * @return The recordTransformations.
      */
     public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
       if (recordTransformationsBuilder_ == null) {

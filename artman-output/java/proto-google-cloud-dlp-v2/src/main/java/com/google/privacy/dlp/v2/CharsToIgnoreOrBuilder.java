@@ -8,21 +8,43 @@ public interface CharsToIgnoreOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
+   * @return The charactersToSkip.
    */
   java.lang.String getCharactersToSkip();
   /**
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
+   * @return The bytes for charactersToSkip.
    */
   com.google.protobuf.ByteString
       getCharactersToSkipBytes();
 
   /**
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * @return The enum numeric value on the wire for commonCharactersToIgnore.
    */
   int getCommonCharactersToIgnoreValue();
   /**
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * @return The commonCharactersToIgnore.
    */
   com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore();
 

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.BasicAutoscalingAlgorithm</code>
  */
-final class BasicAutoscalingAlgorithm extends \Google\Protobuf\Internal\Message
+class BasicAutoscalingAlgorithm extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. YARN autoscaling configuration.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $yarn_config = null;
+    protected $yarn_config = null;
     /**
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
@@ -28,7 +28,7 @@ final class BasicAutoscalingAlgorithm extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $cooldown_period = null;
+    protected $cooldown_period = null;
 
     /**
      * Constructor.

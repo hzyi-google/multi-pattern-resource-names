@@ -13,6 +13,7 @@ public interface TimestampRangeOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -21,6 +22,7 @@ public interface TimestampRangeOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -38,6 +40,7 @@ public interface TimestampRangeOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -46,6 +49,7 @@ public interface TimestampRangeOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

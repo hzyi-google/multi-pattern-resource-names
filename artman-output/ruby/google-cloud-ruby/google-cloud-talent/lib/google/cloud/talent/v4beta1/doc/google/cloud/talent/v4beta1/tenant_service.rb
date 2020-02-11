@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,21 +40,16 @@ module Google
         # Request for updating a specified tenant.
         # @!attribute [rw] tenant
         #   @return [Google::Cloud::Talent::V4beta1::Tenant]
-        #     Required. The tenant resource to replace the current resource in the
-        #     system.
+        #     Required. The tenant resource to replace the current resource in the system.
         # @!attribute [rw] update_mask
         #   @return [Google::Protobuf::FieldMask]
         #     Strongly recommended for the best service experience.
         #
-        #     If
-        #     {Google::Cloud::Talent::V4beta1::UpdateTenantRequest#update_mask update_mask}
-        #     is provided, only the specified fields in
-        #     {Google::Cloud::Talent::V4beta1::UpdateTenantRequest#tenant tenant} are
-        #     updated. Otherwise all the fields are updated.
+        #     If {Google::Cloud::Talent::V4beta1::UpdateTenantRequest#update_mask update_mask} is provided, only the specified fields in
+        #     {Google::Cloud::Talent::V4beta1::UpdateTenantRequest#tenant tenant} are updated. Otherwise all the fields are updated.
         #
         #     A field mask to specify the tenant fields to be updated. Only
-        #     top level fields of {Google::Cloud::Talent::V4beta1::Tenant Tenant} are
-        #     supported.
+        #     top level fields of {Google::Cloud::Talent::V4beta1::Tenant Tenant} are supported.
         class UpdateTenantRequest; end
 
         # Request to delete a tenant.

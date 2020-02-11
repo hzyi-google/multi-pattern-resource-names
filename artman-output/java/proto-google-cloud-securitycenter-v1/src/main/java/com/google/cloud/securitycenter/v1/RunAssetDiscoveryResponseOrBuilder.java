@@ -13,6 +13,7 @@ public interface RunAssetDiscoveryResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -21,6 +22,7 @@ public interface RunAssetDiscoveryResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+   * @return The state.
    */
   com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State getState();
 
@@ -30,6 +32,7 @@ public interface RunAssetDiscoveryResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   * @return Whether the duration field is set.
    */
   boolean hasDuration();
   /**
@@ -38,6 +41,7 @@ public interface RunAssetDiscoveryResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
   /**

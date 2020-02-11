@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new EducationRecord();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -194,7 +200,8 @@ private static final long serialVersionUID = 0L;
   private int degreeCase_ = 0;
   private java.lang.Object degree_;
   public enum DegreeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEGREE_DESCRIPTION(6),
     STRUCTURED_DEGREE(7),
     DEGREE_NOT_SET(0);
@@ -203,6 +210,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -237,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return Whether the startDate field is set.
    */
   public boolean hasStartDate() {
     return startDate_ != null;
@@ -247,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return The startDate.
    */
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
@@ -270,6 +281,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return Whether the endDate field is set.
    */
   public boolean hasEndDate() {
     return endDate_ != null;
@@ -280,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return The endDate.
    */
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
@@ -303,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date expected_graduation_date = 3;</code>
+   * @return Whether the expectedGraduationDate field is set.
    */
   public boolean hasExpectedGraduationDate() {
     return expectedGraduationDate_ != null;
@@ -313,6 +327,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date expected_graduation_date = 3;</code>
+   * @return The expectedGraduationDate.
    */
   public com.google.type.Date getExpectedGraduationDate() {
     return expectedGraduationDate_ == null ? com.google.type.Date.getDefaultInstance() : expectedGraduationDate_;
@@ -338,6 +353,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string school_name = 4;</code>
+   * @return The schoolName.
    */
   public java.lang.String getSchoolName() {
     java.lang.Object ref = schoolName_;
@@ -359,6 +375,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string school_name = 4;</code>
+   * @return The bytes for schoolName.
    */
   public com.google.protobuf.ByteString
       getSchoolNameBytes() {
@@ -382,6 +399,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   * @return Whether the address field is set.
    */
   public boolean hasAddress() {
     return address_ != null;
@@ -392,6 +410,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   * @return The address.
    */
   public com.google.cloud.talent.v4beta1.Address getAddress() {
     return address_ == null ? com.google.cloud.talent.v4beta1.Address.getDefaultInstance() : address_;
@@ -416,6 +435,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string degree_description = 6;</code>
+   * @return The degreeDescription.
    */
   public java.lang.String getDegreeDescription() {
     java.lang.Object ref = "";
@@ -442,6 +462,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string degree_description = 6;</code>
+   * @return The bytes for degreeDescription.
    */
   public com.google.protobuf.ByteString
       getDegreeDescriptionBytes() {
@@ -469,6 +490,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+   * @return Whether the structuredDegree field is set.
    */
   public boolean hasStructuredDegree() {
     return degreeCase_ == 7;
@@ -479,6 +501,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+   * @return The structuredDegree.
    */
   public com.google.cloud.talent.v4beta1.Degree getStructuredDegree() {
     if (degreeCase_ == 7) {
@@ -509,6 +532,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 8;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -529,6 +553,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 8;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -552,6 +577,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 9;</code>
+   * @return Whether the isCurrent field is set.
    */
   public boolean hasIsCurrent() {
     return isCurrent_ != null;
@@ -562,6 +588,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 9;</code>
+   * @return The isCurrent.
    */
   public com.google.protobuf.BoolValue getIsCurrent() {
     return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
@@ -581,14 +608,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object schoolNameSnippet_;
   /**
    * <pre>
-   * Output only. The school name snippet shows how the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-   * related to a search query in search result. It's empty if the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-   * isn't related to the search query.
+   * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+   * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The schoolNameSnippet.
    */
   public java.lang.String getSchoolNameSnippet() {
     java.lang.Object ref = schoolNameSnippet_;
@@ -604,14 +630,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The school name snippet shows how the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-   * related to a search query in search result. It's empty if the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-   * isn't related to the search query.
+   * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+   * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for schoolNameSnippet.
    */
   public com.google.protobuf.ByteString
       getSchoolNameSnippetBytes() {
@@ -631,14 +656,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object degreeSnippet_;
   /**
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-   * in search result. It's empty if the
-   * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-   * query.
+   * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+   * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The degreeSnippet.
    */
   public java.lang.String getDegreeSnippet() {
     java.lang.Object ref = degreeSnippet_;
@@ -654,14 +678,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-   * in search result. It's empty if the
-   * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-   * query.
+   * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+   * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for degreeSnippet.
    */
   public com.google.protobuf.ByteString
       getDegreeSnippetBytes() {
@@ -1274,6 +1297,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
       return startDateBuilder_ != null || startDate_ != null;
@@ -1284,6 +1308,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     * @return The startDate.
      */
     public com.google.type.Date getStartDate() {
       if (startDateBuilder_ == null) {
@@ -1427,6 +1452,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
       return endDateBuilder_ != null || endDate_ != null;
@@ -1437,6 +1463,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     * @return The endDate.
      */
     public com.google.type.Date getEndDate() {
       if (endDateBuilder_ == null) {
@@ -1580,6 +1607,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date expected_graduation_date = 3;</code>
+     * @return Whether the expectedGraduationDate field is set.
      */
     public boolean hasExpectedGraduationDate() {
       return expectedGraduationDateBuilder_ != null || expectedGraduationDate_ != null;
@@ -1590,6 +1618,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date expected_graduation_date = 3;</code>
+     * @return The expectedGraduationDate.
      */
     public com.google.type.Date getExpectedGraduationDate() {
       if (expectedGraduationDateBuilder_ == null) {
@@ -1733,6 +1762,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school_name = 4;</code>
+     * @return The schoolName.
      */
     public java.lang.String getSchoolName() {
       java.lang.Object ref = schoolName_;
@@ -1754,6 +1784,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school_name = 4;</code>
+     * @return The bytes for schoolName.
      */
     public com.google.protobuf.ByteString
         getSchoolNameBytes() {
@@ -1776,6 +1807,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school_name = 4;</code>
+     * @param value The schoolName to set.
+     * @return This builder for chaining.
      */
     public Builder setSchoolName(
         java.lang.String value) {
@@ -1795,6 +1828,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school_name = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSchoolName() {
       
@@ -1810,6 +1844,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school_name = 4;</code>
+     * @param value The bytes for schoolName to set.
+     * @return This builder for chaining.
      */
     public Builder setSchoolNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1832,6 +1868,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+     * @return Whether the address field is set.
      */
     public boolean hasAddress() {
       return addressBuilder_ != null || address_ != null;
@@ -1842,6 +1879,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+     * @return The address.
      */
     public com.google.cloud.talent.v4beta1.Address getAddress() {
       if (addressBuilder_ == null) {
@@ -1984,6 +2022,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string degree_description = 6;</code>
+     * @return The degreeDescription.
      */
     public java.lang.String getDegreeDescription() {
       java.lang.Object ref = "";
@@ -2010,6 +2049,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string degree_description = 6;</code>
+     * @return The bytes for degreeDescription.
      */
     public com.google.protobuf.ByteString
         getDegreeDescriptionBytes() {
@@ -2037,6 +2077,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string degree_description = 6;</code>
+     * @param value The degreeDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeDescription(
         java.lang.String value) {
@@ -2056,6 +2098,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string degree_description = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDegreeDescription() {
       if (degreeCase_ == 6) {
@@ -2073,6 +2116,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string degree_description = 6;</code>
+     * @param value The bytes for degreeDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2094,6 +2139,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+     * @return Whether the structuredDegree field is set.
      */
     public boolean hasStructuredDegree() {
       return degreeCase_ == 7;
@@ -2104,6 +2150,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
+     * @return The structuredDegree.
      */
     public com.google.cloud.talent.v4beta1.Degree getStructuredDegree() {
       if (structuredDegreeBuilder_ == null) {
@@ -2266,6 +2313,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 8;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2286,6 +2334,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 8;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -2307,6 +2356,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 8;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -2325,6 +2376,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -2339,6 +2391,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 8;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2361,6 +2415,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_current = 9;</code>
+     * @return Whether the isCurrent field is set.
      */
     public boolean hasIsCurrent() {
       return isCurrentBuilder_ != null || isCurrent_ != null;
@@ -2371,6 +2426,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_current = 9;</code>
+     * @return The isCurrent.
      */
     public com.google.protobuf.BoolValue getIsCurrent() {
       if (isCurrentBuilder_ == null) {
@@ -2508,14 +2564,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object schoolNameSnippet_ = "";
     /**
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The schoolNameSnippet.
      */
     public java.lang.String getSchoolNameSnippet() {
       java.lang.Object ref = schoolNameSnippet_;
@@ -2531,14 +2586,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for schoolNameSnippet.
      */
     public com.google.protobuf.ByteString
         getSchoolNameSnippetBytes() {
@@ -2555,14 +2609,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The schoolNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSchoolNameSnippet(
         java.lang.String value) {
@@ -2576,14 +2630,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSchoolNameSnippet() {
       
@@ -2593,14 +2646,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for schoolNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSchoolNameSnippetBytes(
         com.google.protobuf.ByteString value) {
@@ -2617,14 +2670,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object degreeSnippet_ = "";
     /**
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The degreeSnippet.
      */
     public java.lang.String getDegreeSnippet() {
       java.lang.Object ref = degreeSnippet_;
@@ -2640,14 +2692,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for degreeSnippet.
      */
     public com.google.protobuf.ByteString
         getDegreeSnippetBytes() {
@@ -2664,14 +2715,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The degreeSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeSnippet(
         java.lang.String value) {
@@ -2685,14 +2736,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDegreeSnippet() {
       
@@ -2702,14 +2752,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for degreeSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeSnippetBytes(
         com.google.protobuf.ByteString value) {

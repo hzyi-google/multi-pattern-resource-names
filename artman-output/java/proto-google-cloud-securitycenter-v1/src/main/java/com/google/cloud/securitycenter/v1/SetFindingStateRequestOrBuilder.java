@@ -16,6 +16,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -27,6 +28,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -37,6 +39,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -45,6 +48,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The state.
    */
   com.google.cloud.securitycenter.v1.Finding.State getState();
 
@@ -54,6 +58,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -62,6 +67,7 @@ public interface SetFindingStateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**

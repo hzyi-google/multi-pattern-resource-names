@@ -15,14 +15,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.discovery.Discovery</code>
  */
-final class Discovery extends \Google\Protobuf\Internal\Message
+class Discovery extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
      */
-    private $analysis_kind = 0;
+    protected $analysis_kind = 0;
 
     /**
      * Constructor.
@@ -31,7 +32,8 @@ final class Discovery extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $analysis_kind
-     *           The kind of analysis that is handled by this discovery.
+     *           Required. Immutable. The kind of analysis that is handled by this
+     *           discovery.
      * }
      */
     public function __construct($data = NULL) {
@@ -40,7 +42,8 @@ final class Discovery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
      * @return int
@@ -51,7 +54,8 @@ final class Discovery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
      * @param int $var

@@ -13,6 +13,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus.State state = 1;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -21,6 +22,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus.State state = 1;</code>
+   * @return The state.
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.State getState();
 
@@ -30,6 +32,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>string inner_state = 2;</code>
+   * @return The innerState.
    */
   java.lang.String getInnerState();
   /**
@@ -38,6 +41,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>string inner_state = 2;</code>
+   * @return The bytes for innerState.
    */
   com.google.protobuf.ByteString
       getInnerStateBytes();
@@ -48,6 +52,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The details.
    */
   java.lang.String getDetails();
   /**
@@ -56,6 +61,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The bytes for details.
    */
   com.google.protobuf.ByteString
       getDetailsBytes();
@@ -66,6 +72,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
   /**
@@ -74,6 +81,7 @@ public interface ClusterOperationStatusOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**

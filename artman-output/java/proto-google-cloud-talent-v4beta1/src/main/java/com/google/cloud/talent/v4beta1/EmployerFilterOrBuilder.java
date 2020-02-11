@@ -13,6 +13,7 @@ public interface EmployerFilterOrBuilder extends
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The employer.
    */
   java.lang.String getEmployer();
   /**
@@ -21,32 +22,29 @@ public interface EmployerFilterOrBuilder extends
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for employer.
    */
   com.google.protobuf.ByteString
       getEmployerBytes();
 
   /**
    * <pre>
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
   /**
    * <pre>
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   * @return The mode.
    */
   com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode();
 
@@ -57,6 +55,7 @@ public interface EmployerFilterOrBuilder extends
    * </pre>
    *
    * <code>bool negated = 3;</code>
+   * @return The negated.
    */
   boolean getNegated();
 }

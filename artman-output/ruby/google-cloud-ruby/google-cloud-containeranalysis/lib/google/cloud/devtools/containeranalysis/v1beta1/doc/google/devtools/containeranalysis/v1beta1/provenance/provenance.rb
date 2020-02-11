@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ module Grafeas
       # details about the build from source to completion.
       # @!attribute [rw] id
       #   @return [String]
-      #     Unique identifier of the build.
+      #     Required. Unique identifier of the build.
       # @!attribute [rw] project_id
       #   @return [String]
       #     ID of the project.
@@ -87,22 +87,22 @@ module Grafeas
       #     the context field.
       class Source; end
 
-      # Container message for hashes of byte content of files, used in Source
+      # Container message for hashes of byte content of files, used in source
       # messages to verify integrity of source input to the build.
       # @!attribute [rw] file_hash
       #   @return [Array<Grafeas::V1beta1::Provenance::Hash>]
-      #     Collection of file hashes.
+      #     Required. Collection of file hashes.
       class FileHashes; end
 
       # Container message for hash values.
       # @!attribute [rw] type
       #   @return [Grafeas::V1beta1::Provenance::Hash::HashType]
-      #     The type of hash that was performed.
+      #     Required. The type of hash that was performed.
       # @!attribute [rw] value
       #   @return [String]
-      #     The hash value.
+      #     Required. The hash value.
       class Hash
-        # Specifies the hash algorithm, if any.
+        # Specifies the hash algorithm.
         module HashType
           # Unknown.
           HASH_TYPE_UNSPECIFIED = 0
@@ -115,8 +115,8 @@ module Grafeas
       # Command describes a step performed as part of the build pipeline.
       # @!attribute [rw] name
       #   @return [String]
-      #     Name of the command, as presented on the command line, or if the command is
-      #     packaged as a Docker container, as presented to `docker pull`.
+      #     Required. Name of the command, as presented on the command line, or if the
+      #     command is packaged as a Docker container, as presented to `docker pull`.
       # @!attribute [rw] env
       #   @return [Array<String>]
       #     Environment variables set before running this command.

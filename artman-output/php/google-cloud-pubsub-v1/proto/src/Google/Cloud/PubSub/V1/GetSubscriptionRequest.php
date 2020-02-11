@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.GetSubscriptionRequest</code>
  */
-final class GetSubscriptionRequest extends \Google\Protobuf\Internal\Message
+class GetSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the subscription to get.
@@ -21,7 +21,7 @@ final class GetSubscriptionRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string subscription = 1;</code>
      */
-    private $subscription = '';
+    protected $subscription = '';
 
     /**
      * Constructor.

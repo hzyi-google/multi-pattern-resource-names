@@ -15,29 +15,27 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.Source</code>
  */
-final class Source extends \Google\Protobuf\Internal\Message
+class Source extends \Google\Protobuf\Internal\Message
 {
     /**
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      */
-    private $display_name = '';
+    protected $display_name = '';
     /**
      * The description of the source (max of 1024 characters).
      * Example:
@@ -49,7 +47,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.
@@ -61,15 +59,13 @@ final class Source extends \Google\Protobuf\Internal\Message
      *           The relative resource name of this source. See:
      *           https://cloud.google.com/apis/design/resource_names#relative_resource_name
      *           Example:
-     *           "organizations/123/sources/456"
+     *           "organizations/{organization_id}/sources/{source_id}"
      *     @type string $display_name
      *           The source's display name.
      *           A source's display name must be unique amongst its siblings, for example,
      *           two sources with the same parent can't share the same display name.
-     *           The display name must start and end with a letter or digit, may contain
-     *           letters, digits, spaces, hyphens, and underscores, and can be no longer
-     *           than 32 characters. This is captured by the regular expression:
-     *           [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+     *           The display name must have a length between 1 and 64 characters
+     *           (inclusive).
      *     @type string $description
      *           The description of the source (max of 1024 characters).
      *           Example:
@@ -89,7 +85,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -103,7 +99,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -121,10 +117,8 @@ final class Source extends \Google\Protobuf\Internal\Message
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      * @return string
@@ -138,10 +132,8 @@ final class Source extends \Google\Protobuf\Internal\Message
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      * @param string $var

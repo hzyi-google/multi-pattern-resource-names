@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateFindingRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -134,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -159,6 +167,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The findingId.
    */
   public java.lang.String getFindingId() {
     java.lang.Object ref = findingId_;
@@ -180,6 +189,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for findingId.
    */
   public com.google.protobuf.ByteString
       getFindingIdBytes() {
@@ -204,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the finding field is set.
    */
   public boolean hasFinding() {
     return finding_ != null;
@@ -215,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The finding.
    */
   public com.google.cloud.securitycenter.v1.Finding getFinding() {
     return finding_ == null ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance() : finding_;
@@ -592,6 +604,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -612,6 +625,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -633,6 +647,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -651,6 +667,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -665,6 +682,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -687,6 +706,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The findingId.
      */
     public java.lang.String getFindingId() {
       java.lang.Object ref = findingId_;
@@ -708,6 +728,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for findingId.
      */
     public com.google.protobuf.ByteString
         getFindingIdBytes() {
@@ -730,6 +751,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The findingId to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingId(
         java.lang.String value) {
@@ -749,6 +772,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFindingId() {
       
@@ -764,6 +788,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for findingId to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingIdBytes(
         com.google.protobuf.ByteString value) {
@@ -787,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the finding field is set.
      */
     public boolean hasFinding() {
       return findingBuilder_ != null || finding_ != null;
@@ -798,6 +825,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The finding.
      */
     public com.google.cloud.securitycenter.v1.Finding getFinding() {
       if (findingBuilder_ == null) {

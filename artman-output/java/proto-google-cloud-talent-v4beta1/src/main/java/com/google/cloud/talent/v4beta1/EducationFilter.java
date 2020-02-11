@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new EducationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string school = 1;</code>
+   * @return The school.
    */
   public java.lang.String getSchool() {
     java.lang.Object ref = school_;
@@ -131,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string school = 1;</code>
+   * @return The bytes for school.
    */
   public com.google.protobuf.ByteString
       getSchoolBytes() {
@@ -156,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string field_of_study = 2;</code>
+   * @return The fieldOfStudy.
    */
   public java.lang.String getFieldOfStudy() {
     java.lang.Object ref = fieldOfStudy_;
@@ -177,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string field_of_study = 2;</code>
+   * @return The bytes for fieldOfStudy.
    */
   public com.google.protobuf.ByteString
       getFieldOfStudyBytes() {
@@ -202,6 +212,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+   * @return The enum numeric value on the wire for degreeType.
    */
   public int getDegreeTypeValue() {
     return degreeType_;
@@ -214,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+   * @return The degreeType.
    */
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
     @SuppressWarnings("deprecation")
@@ -230,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negated = 6;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -599,6 +612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school = 1;</code>
+     * @return The school.
      */
     public java.lang.String getSchool() {
       java.lang.Object ref = school_;
@@ -618,6 +632,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school = 1;</code>
+     * @return The bytes for school.
      */
     public com.google.protobuf.ByteString
         getSchoolBytes() {
@@ -638,6 +653,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school = 1;</code>
+     * @param value The school to set.
+     * @return This builder for chaining.
      */
     public Builder setSchool(
         java.lang.String value) {
@@ -655,6 +672,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSchool() {
       
@@ -668,6 +686,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string school = 1;</code>
+     * @param value The bytes for school to set.
+     * @return This builder for chaining.
      */
     public Builder setSchoolBytes(
         com.google.protobuf.ByteString value) {
@@ -690,6 +710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string field_of_study = 2;</code>
+     * @return The fieldOfStudy.
      */
     public java.lang.String getFieldOfStudy() {
       java.lang.Object ref = fieldOfStudy_;
@@ -711,6 +732,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string field_of_study = 2;</code>
+     * @return The bytes for fieldOfStudy.
      */
     public com.google.protobuf.ByteString
         getFieldOfStudyBytes() {
@@ -733,6 +755,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string field_of_study = 2;</code>
+     * @param value The fieldOfStudy to set.
+     * @return This builder for chaining.
      */
     public Builder setFieldOfStudy(
         java.lang.String value) {
@@ -752,6 +776,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string field_of_study = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFieldOfStudy() {
       
@@ -767,6 +792,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string field_of_study = 2;</code>
+     * @param value The bytes for fieldOfStudy to set.
+     * @return This builder for chaining.
      */
     public Builder setFieldOfStudyBytes(
         com.google.protobuf.ByteString value) {
@@ -789,6 +816,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+     * @return The enum numeric value on the wire for degreeType.
      */
     public int getDegreeTypeValue() {
       return degreeType_;
@@ -801,6 +829,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+     * @param value The enum numeric value on the wire for degreeType to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeTypeValue(int value) {
       degreeType_ = value;
@@ -815,6 +845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+     * @return The degreeType.
      */
     public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
       @SuppressWarnings("deprecation")
@@ -829,6 +860,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+     * @param value The degreeType to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeType(com.google.cloud.talent.v4beta1.DegreeType value) {
       if (value == null) {
@@ -847,6 +880,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDegreeType() {
       
@@ -863,6 +897,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -874,6 +909,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -888,6 +925,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

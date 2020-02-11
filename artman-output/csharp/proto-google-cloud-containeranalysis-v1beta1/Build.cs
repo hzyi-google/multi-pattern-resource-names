@@ -42,10 +42,10 @@ namespace Grafeas.V1Beta1.Build {
             "aWxkogIDR1JBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grafeas.V1Beta1.Provenance.ProvenanceReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.Build), global::Grafeas.V1Beta1.Build.Build.Parser, new[]{ "BuilderVersion", "Signature" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.BuildSignature), global::Grafeas.V1Beta1.Build.BuildSignature.Parser, new[]{ "PublicKey", "Signature", "KeyId", "KeyType" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.Details), global::Grafeas.V1Beta1.Build.Details.Parser, new[]{ "Provenance", "ProvenanceBytes" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.Build), global::Grafeas.V1Beta1.Build.Build.Parser, new[]{ "BuilderVersion", "Signature" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.BuildSignature), global::Grafeas.V1Beta1.Build.BuildSignature.Parser, new[]{ "PublicKey", "Signature", "KeyId", "KeyType" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Build.Details), global::Grafeas.V1Beta1.Build.Details.Parser, new[]{ "Provenance", "ProvenanceBytes" }, null, null, null, null)
           }));
     }
     #endregion
@@ -54,7 +54,7 @@ namespace Grafeas.V1Beta1.Build {
   #region Messages
   /// <summary>
   /// Note holding the version of the provider's builder and the signature of the
-  /// provenance message in linked BuildDetails.
+  /// provenance message in the build details occurrence.
   /// </summary>
   public sealed partial class Build : pb::IMessage<Build> {
     private static readonly pb::MessageParser<Build> _parser = new pb::MessageParser<Build>(() => new Build());
@@ -95,7 +95,7 @@ namespace Grafeas.V1Beta1.Build {
     public const int BuilderVersionFieldNumber = 1;
     private string builderVersion_ = "";
     /// <summary>
-    /// Version of the builder which produced this Note.
+    /// Required. Immutable. Version of the builder which produced this build.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BuilderVersion {
@@ -109,8 +109,8 @@ namespace Grafeas.V1Beta1.Build {
     public const int SignatureFieldNumber = 2;
     private global::Grafeas.V1Beta1.Build.BuildSignature signature_;
     /// <summary>
-    /// Signature of the build in Occurrences pointing to the Note containing this
-    /// `BuilderDetails`.
+    /// Signature of the build in occurrences pointing to this build note
+    /// containing build details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Build.BuildSignature Signature {
@@ -276,8 +276,8 @@ namespace Grafeas.V1Beta1.Build {
     ///
     /// This field may be empty if `key_id` references an external key.
     ///
-    /// For Cloud Container Builder based signatures, this is a PEM encoded public
-    /// key. To verify the Cloud Container Builder signature, place the contents of
+    /// For Cloud Build based signatures, this is a PEM encoded public
+    /// key. To verify the Cloud Build signature, place the contents of
     /// this field into a file (public.pem). The signature field is base64-decoded
     /// into its binary representation in signature.bin, and the provenance bytes
     /// from `BuildDetails` are base64-decoded into a binary representation in
@@ -296,8 +296,8 @@ namespace Grafeas.V1Beta1.Build {
     public const int SignatureFieldNumber = 2;
     private pb::ByteString signature_ = pb::ByteString.Empty;
     /// <summary>
-    /// Signature of the related `BuildProvenance`. In JSON, this is base-64
-    /// encoded.
+    /// Required. Signature of the related `BuildProvenance`. In JSON, this is
+    /// base-64 encoded.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Signature {
@@ -311,8 +311,8 @@ namespace Grafeas.V1Beta1.Build {
     public const int KeyIdFieldNumber = 3;
     private string keyId_ = "";
     /// <summary>
-    /// An ID for the key used to sign. This could be either an Id for the key
-    /// stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+    /// An ID for the key used to sign. This could be either an ID for the key
+    /// stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
     /// CN for a cert), or a reference to an external key (such as a reference to a
     /// key in Cloud Key Management Service).
     /// </summary>
@@ -326,10 +326,10 @@ namespace Grafeas.V1Beta1.Build {
 
     /// <summary>Field number for the "key_type" field.</summary>
     public const int KeyTypeFieldNumber = 4;
-    private global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType keyType_ = 0;
+    private global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType keyType_ = global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType.Unspecified;
     /// <summary>
     /// The type of the key, either stored in `public_key` or referenced in
-    /// `key_id`
+    /// `key_id`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType KeyType {
@@ -365,7 +365,7 @@ namespace Grafeas.V1Beta1.Build {
       if (PublicKey.Length != 0) hash ^= PublicKey.GetHashCode();
       if (Signature.Length != 0) hash ^= Signature.GetHashCode();
       if (KeyId.Length != 0) hash ^= KeyId.GetHashCode();
-      if (KeyType != 0) hash ^= KeyType.GetHashCode();
+      if (KeyType != global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType.Unspecified) hash ^= KeyType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -391,7 +391,7 @@ namespace Grafeas.V1Beta1.Build {
         output.WriteRawTag(26);
         output.WriteString(KeyId);
       }
-      if (KeyType != 0) {
+      if (KeyType != global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) KeyType);
       }
@@ -412,7 +412,7 @@ namespace Grafeas.V1Beta1.Build {
       if (KeyId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyId);
       }
-      if (KeyType != 0) {
+      if (KeyType != global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) KeyType);
       }
       if (_unknownFields != null) {
@@ -435,7 +435,7 @@ namespace Grafeas.V1Beta1.Build {
       if (other.KeyId.Length != 0) {
         KeyId = other.KeyId;
       }
-      if (other.KeyType != 0) {
+      if (other.KeyType != global::Grafeas.V1Beta1.Build.BuildSignature.Types.KeyType.Unspecified) {
         KeyType = other.KeyType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -474,7 +474,7 @@ namespace Grafeas.V1Beta1.Build {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       /// <summary>
-      /// Public key formats
+      /// Public key formats.
       /// </summary>
       public enum KeyType {
         /// <summary>
@@ -538,7 +538,7 @@ namespace Grafeas.V1Beta1.Build {
     public const int ProvenanceFieldNumber = 1;
     private global::Grafeas.V1Beta1.Provenance.BuildProvenance provenance_;
     /// <summary>
-    /// The actual provenance for the build.
+    /// Required. The actual provenance for the build.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Provenance.BuildProvenance Provenance {
@@ -553,7 +553,7 @@ namespace Grafeas.V1Beta1.Build {
     private string provenanceBytes_ = "";
     /// <summary>
     /// Serialized JSON representation of the provenance, used in generating the
-    /// `BuildSignature` in the corresponding Result. After verifying the
+    /// build signature in the corresponding build note. After verifying the
     /// signature, `provenance_bytes` can be unmarshalled and compared to the
     /// provenance to confirm that it is unchanged. A base64-encoded string
     /// representation of the provenance bytes is used for the signature in order

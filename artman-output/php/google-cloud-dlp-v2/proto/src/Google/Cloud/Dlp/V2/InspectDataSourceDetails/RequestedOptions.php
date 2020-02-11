@@ -9,9 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Snapshot of the inspection configuration.
+ *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions</code>
  */
-final class RequestedOptions extends \Google\Protobuf\Internal\Message
+class RequestedOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * If run with an InspectTemplate, a snapshot of its state at the time of
@@ -19,11 +21,13 @@ final class RequestedOptions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
      */
-    private $snapshot_inspect_template = null;
+    protected $snapshot_inspect_template = null;
     /**
+     * Inspect config.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      */
-    private $job_config = null;
+    protected $job_config = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ final class RequestedOptions extends \Google\Protobuf\Internal\Message
      *           If run with an InspectTemplate, a snapshot of its state at the time of
      *           this run.
      *     @type \Google\Cloud\Dlp\V2\InspectJobConfig $job_config
+     *           Inspect config.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +76,8 @@ final class RequestedOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Inspect config.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      * @return \Google\Cloud\Dlp\V2\InspectJobConfig
      */
@@ -80,6 +87,8 @@ final class RequestedOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Inspect config.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      * @param \Google\Cloud\Dlp\V2\InspectJobConfig $var
      * @return $this

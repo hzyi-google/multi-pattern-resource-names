@@ -14,20 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity</code>
  */
-final class Proximity extends \Google\Protobuf\Internal\Message
+class Proximity extends \Google\Protobuf\Internal\Message
 {
     /**
      * Number of characters before the finding to consider.
      *
      * Generated from protobuf field <code>int32 window_before = 1;</code>
      */
-    private $window_before = 0;
+    protected $window_before = 0;
     /**
      * Number of characters after the finding to consider.
      *
      * Generated from protobuf field <code>int32 window_after = 2;</code>
      */
-    private $window_after = 0;
+    protected $window_after = 0;
 
     /**
      * Constructor.

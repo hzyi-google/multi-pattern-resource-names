@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RequestMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,9 +129,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object domain_;
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -139,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string domain = 1;</code>
+   * @return The domain.
    */
   public java.lang.String getDomain() {
     java.lang.Object ref = domain_;
@@ -154,9 +159,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -170,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string domain = 1;</code>
+   * @return The bytes for domain.
    */
   public com.google.protobuf.ByteString
       getDomainBytes() {
@@ -189,9 +193,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object sessionId_;
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -203,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   * @return The sessionId.
    */
   public java.lang.String getSessionId() {
     java.lang.Object ref = sessionId_;
@@ -218,9 +221,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -232,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string session_id = 2;</code>
+   * @return The bytes for sessionId.
    */
   public com.google.protobuf.ByteString
       getSessionIdBytes() {
@@ -251,9 +253,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -265,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -280,9 +281,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required if
-   * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-   * is unset or `false`.
+   * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -294,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 3;</code>
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
@@ -313,19 +313,14 @@ private static final long serialVersionUID = 0L;
   private boolean allowMissingIds_;
   /**
    * <pre>
-   * Only set when any of
-   * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-   * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+   * Only set when any of [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
    * available for some reason. It is highly recommended not to set this field
-   * and provide accurate
-   * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-   * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-   * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
-   * service experience.
+   * and provide accurate [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the
+   * best service experience.
    * </pre>
    *
    * <code>bool allow_missing_ids = 4;</code>
+   * @return The allowMissingIds.
    */
   public boolean getAllowMissingIds() {
     return allowMissingIds_;
@@ -340,6 +335,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   * @return Whether the deviceInfo field is set.
    */
   public boolean hasDeviceInfo() {
     return deviceInfo_ != null;
@@ -351,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+   * @return The deviceInfo.
    */
   public com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo() {
     return deviceInfo_ == null ? com.google.cloud.talent.v4beta1.DeviceInfo.getDefaultInstance() : deviceInfo_;
@@ -760,9 +757,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object domain_ = "";
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -776,6 +771,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string domain = 1;</code>
+     * @return The domain.
      */
     public java.lang.String getDomain() {
       java.lang.Object ref = domain_;
@@ -791,9 +787,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -807,6 +801,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string domain = 1;</code>
+     * @return The bytes for domain.
      */
     public com.google.protobuf.ByteString
         getDomainBytes() {
@@ -823,9 +818,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -839,6 +832,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string domain = 1;</code>
+     * @param value The domain to set.
+     * @return This builder for chaining.
      */
     public Builder setDomain(
         java.lang.String value) {
@@ -852,9 +847,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -868,6 +861,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string domain = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDomain() {
       
@@ -877,9 +871,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -893,6 +885,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string domain = 1;</code>
+     * @param value The bytes for domain to set.
+     * @return This builder for chaining.
      */
     public Builder setDomainBytes(
         com.google.protobuf.ByteString value) {
@@ -909,9 +903,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object sessionId_ = "";
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -923,6 +915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     * @return The sessionId.
      */
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
@@ -938,9 +931,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -952,6 +943,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     * @return The bytes for sessionId.
      */
     public com.google.protobuf.ByteString
         getSessionIdBytes() {
@@ -968,9 +960,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -982,6 +972,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     * @param value The sessionId to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionId(
         java.lang.String value) {
@@ -995,9 +987,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -1009,6 +999,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSessionId() {
       
@@ -1018,9 +1009,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -1032,6 +1021,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string session_id = 2;</code>
+     * @param value The bytes for sessionId to set.
+     * @return This builder for chaining.
      */
     public Builder setSessionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1048,9 +1039,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1062,6 +1051,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -1077,9 +1067,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1091,6 +1079,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -1107,9 +1096,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1121,6 +1108,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(
         java.lang.String value) {
@@ -1134,9 +1123,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1148,6 +1135,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
       
@@ -1157,9 +1145,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required if
-     * [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids]
-     * is unset or `false`.
+     * Required if [allow_missing_ids][google.cloud.talent.v4beta1.RequestMetadata.allow_missing_ids] is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1171,6 +1157,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 3;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1187,38 +1175,29 @@ private static final long serialVersionUID = 0L;
     private boolean allowMissingIds_ ;
     /**
      * <pre>
-     * Only set when any of
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+     * Only set when any of [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
      * available for some reason. It is highly recommended not to set this field
-     * and provide accurate
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
-     * service experience.
+     * and provide accurate [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the
+     * best service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     * @return The allowMissingIds.
      */
     public boolean getAllowMissingIds() {
       return allowMissingIds_;
     }
     /**
      * <pre>
-     * Only set when any of
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+     * Only set when any of [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
      * available for some reason. It is highly recommended not to set this field
-     * and provide accurate
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
-     * service experience.
+     * and provide accurate [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the
+     * best service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     * @param value The allowMissingIds to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowMissingIds(boolean value) {
       
@@ -1228,19 +1207,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only set when any of
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
+     * Only set when any of [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] isn't
      * available for some reason. It is highly recommended not to set this field
-     * and provide accurate
-     * [domain][google.cloud.talent.v4beta1.RequestMetadata.domain],
-     * [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and
-     * [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the best
-     * service experience.
+     * and provide accurate [domain][google.cloud.talent.v4beta1.RequestMetadata.domain], [session_id][google.cloud.talent.v4beta1.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4beta1.RequestMetadata.user_id] for the
+     * best service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAllowMissingIds() {
       
@@ -1259,6 +1233,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+     * @return Whether the deviceInfo field is set.
      */
     public boolean hasDeviceInfo() {
       return deviceInfoBuilder_ != null || deviceInfo_ != null;
@@ -1270,6 +1245,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
+     * @return The deviceInfo.
      */
     public com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo() {
       if (deviceInfoBuilder_ == null) {

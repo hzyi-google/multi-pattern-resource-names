@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ModifyAckDeadlineRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -61,9 +68,9 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               ackIds_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             ackIds_.add(s);
             break;
@@ -83,7 +90,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -103,7 +110,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.ModifyAckDeadlineRequest.class, com.google.pubsub.v1.ModifyAckDeadlineRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object subscription_;
   /**
@@ -113,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The subscription.
    */
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
@@ -133,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
       getSubscriptionBytes() {
@@ -156,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
+   * @return A list containing the ackIds.
    */
   public com.google.protobuf.ProtocolStringList
       getAckIdsList() {
@@ -167,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
+   * @return The count of ackIds.
    */
   public int getAckIdsCount() {
     return ackIds_.size();
@@ -177,6 +187,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
+   * @param index The index of the element to return.
+   * @return The ackIds at the given index.
    */
   public java.lang.String getAckIds(int index) {
     return ackIds_.get(index);
@@ -187,6 +199,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ackIds at the given index.
    */
   public com.google.protobuf.ByteString
       getAckIdsBytes(int index) {
@@ -208,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 ack_deadline_seconds = 3;</code>
+   * @return The ackDeadlineSeconds.
    */
   public int getAckDeadlineSeconds() {
     return ackDeadlineSeconds_;
@@ -440,7 +455,7 @@ private static final long serialVersionUID = 0L;
       subscription_ = "";
 
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       ackDeadlineSeconds_ = 0;
 
       return this;
@@ -470,15 +485,13 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.ModifyAckDeadlineRequest buildPartial() {
       com.google.pubsub.v1.ModifyAckDeadlineRequest result = new com.google.pubsub.v1.ModifyAckDeadlineRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.subscription_ = subscription_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ackIds_ = ackIds_;
       result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -534,7 +547,7 @@ private static final long serialVersionUID = 0L;
       if (!other.ackIds_.isEmpty()) {
         if (ackIds_.isEmpty()) {
           ackIds_ = other.ackIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAckIdsIsMutable();
           ackIds_.addAll(other.ackIds_);
@@ -582,6 +595,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The subscription.
      */
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
@@ -602,6 +616,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
         getSubscriptionBytes() {
@@ -623,6 +638,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscription(
         java.lang.String value) {
@@ -641,6 +658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSubscription() {
       
@@ -655,6 +673,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The bytes for subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -670,9 +690,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -681,6 +701,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @return A list containing the ackIds.
      */
     public com.google.protobuf.ProtocolStringList
         getAckIdsList() {
@@ -692,6 +713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @return The count of ackIds.
      */
     public int getAckIdsCount() {
       return ackIds_.size();
@@ -702,6 +724,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
      */
     public java.lang.String getAckIds(int index) {
       return ackIds_.get(index);
@@ -712,6 +736,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
      */
     public com.google.protobuf.ByteString
         getAckIdsBytes(int index) {
@@ -723,6 +749,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The ackIds to set.
+     * @return This builder for chaining.
      */
     public Builder setAckIds(
         int index, java.lang.String value) {
@@ -740,6 +769,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param value The ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAckIds(
         java.lang.String value) {
@@ -757,6 +788,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param values The ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAckIds(
         java.lang.Iterable<java.lang.String> values) {
@@ -772,10 +805,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAckIds() {
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -785,6 +819,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string ack_ids = 4;</code>
+     * @param value The bytes of the ackIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAckIdsBytes(
         com.google.protobuf.ByteString value) {
@@ -812,6 +848,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3;</code>
+     * @return The ackDeadlineSeconds.
      */
     public int getAckDeadlineSeconds() {
       return ackDeadlineSeconds_;
@@ -829,6 +866,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3;</code>
+     * @param value The ackDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setAckDeadlineSeconds(int value) {
       
@@ -849,6 +888,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAckDeadlineSeconds() {
       

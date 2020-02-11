@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateKeyRingRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,7 +119,8 @@ private static final long serialVersionUID = 0L;
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -133,7 +140,8 @@ private static final long serialVersionUID = 0L;
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -157,7 +165,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string key_ring_id = 2;</code>
+   * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The keyRingId.
    */
   public java.lang.String getKeyRingId() {
     java.lang.Object ref = keyRingId_;
@@ -177,7 +186,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string key_ring_id = 2;</code>
+   * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for keyRingId.
    */
   public com.google.protobuf.ByteString
       getKeyRingIdBytes() {
@@ -197,30 +207,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.kms.v1.KeyRing keyRing_;
   /**
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the keyRing field is set.
    */
   public boolean hasKeyRing() {
     return keyRing_ != null;
   }
   /**
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The keyRing.
    */
   public com.google.cloud.kms.v1.KeyRing getKeyRing() {
     return keyRing_ == null ? com.google.cloud.kms.v1.KeyRing.getDefaultInstance() : keyRing_;
   }
   /**
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingOrBuilder() {
     return getKeyRing();
@@ -586,7 +598,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -606,7 +619,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -627,7 +641,9 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -645,7 +661,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -659,7 +676,9 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -680,7 +699,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The keyRingId.
      */
     public java.lang.String getKeyRingId() {
       java.lang.Object ref = keyRingId_;
@@ -700,7 +720,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for keyRingId.
      */
     public com.google.protobuf.ByteString
         getKeyRingIdBytes() {
@@ -721,7 +742,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The keyRingId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyRingId(
         java.lang.String value) {
@@ -739,7 +762,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeyRingId() {
       
@@ -753,7 +777,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for keyRingId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyRingIdBytes(
         com.google.protobuf.ByteString value) {
@@ -772,20 +798,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.kms.v1.KeyRing, com.google.cloud.kms.v1.KeyRing.Builder, com.google.cloud.kms.v1.KeyRingOrBuilder> keyRingBuilder_;
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the keyRing field is set.
      */
     public boolean hasKeyRing() {
       return keyRingBuilder_ != null || keyRing_ != null;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The keyRing.
      */
     public com.google.cloud.kms.v1.KeyRing getKeyRing() {
       if (keyRingBuilder_ == null) {
@@ -796,10 +824,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeyRing(com.google.cloud.kms.v1.KeyRing value) {
       if (keyRingBuilder_ == null) {
@@ -816,10 +844,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeyRing(
         com.google.cloud.kms.v1.KeyRing.Builder builderForValue) {
@@ -834,10 +862,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeKeyRing(com.google.cloud.kms.v1.KeyRing value) {
       if (keyRingBuilder_ == null) {
@@ -856,10 +884,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearKeyRing() {
       if (keyRingBuilder_ == null) {
@@ -874,10 +902,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.KeyRing.Builder getKeyRingBuilder() {
       
@@ -886,10 +914,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingOrBuilder() {
       if (keyRingBuilder_ != null) {
@@ -901,10 +929,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.KeyRing, com.google.cloud.kms.v1.KeyRing.Builder, com.google.cloud.kms.v1.KeyRingOrBuilder> 

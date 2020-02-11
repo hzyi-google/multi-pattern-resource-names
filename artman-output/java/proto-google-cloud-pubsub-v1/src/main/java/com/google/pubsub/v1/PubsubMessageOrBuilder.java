@@ -14,12 +14,14 @@ public interface PubsubMessageOrBuilder extends
    * </pre>
    *
    * <code>bytes data = 1;</code>
+   * @return The data.
    */
   com.google.protobuf.ByteString getData();
 
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -27,7 +29,8 @@ public interface PubsubMessageOrBuilder extends
   int getAttributesCount();
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -42,7 +45,8 @@ public interface PubsubMessageOrBuilder extends
   getAttributes();
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -51,7 +55,8 @@ public interface PubsubMessageOrBuilder extends
   getAttributesMap();
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -62,7 +67,8 @@ public interface PubsubMessageOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -80,6 +86,7 @@ public interface PubsubMessageOrBuilder extends
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   * @return The messageId.
    */
   java.lang.String getMessageId();
   /**
@@ -91,6 +98,7 @@ public interface PubsubMessageOrBuilder extends
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   * @return The bytes for messageId.
    */
   com.google.protobuf.ByteString
       getMessageIdBytes();
@@ -103,6 +111,7 @@ public interface PubsubMessageOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   * @return Whether the publishTime field is set.
    */
   boolean hasPublishTime();
   /**
@@ -113,6 +122,7 @@ public interface PubsubMessageOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   * @return The publishTime.
    */
   com.google.protobuf.Timestamp getPublishTime();
   /**
@@ -128,30 +138,36 @@ public interface PubsubMessageOrBuilder extends
 
   /**
    * <pre>
-   * Identifies related messages for which publish order should be respected.
-   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-   * published with the same `ordering_key` value will be delivered to
-   * subscribers in the order in which they are received by the Pub/Sub system.
+   * If non-empty, identifies related messages for which publish order should be
+   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+   * messages published with the same non-empty `ordering_key` value will be
+   * delivered to subscribers in the order in which they are received by the
+   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+   * must specify the same `ordering_key` value.
    * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
    * API might be changed in backward-incompatible ways and is not recommended
    * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   * @return The orderingKey.
    */
   java.lang.String getOrderingKey();
   /**
    * <pre>
-   * Identifies related messages for which publish order should be respected.
-   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-   * published with the same `ordering_key` value will be delivered to
-   * subscribers in the order in which they are received by the Pub/Sub system.
+   * If non-empty, identifies related messages for which publish order should be
+   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+   * messages published with the same non-empty `ordering_key` value will be
+   * delivered to subscribers in the order in which they are received by the
+   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+   * must specify the same `ordering_key` value.
    * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
    * API might be changed in backward-incompatible ways and is not recommended
    * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   * @return The bytes for orderingKey.
    */
   com.google.protobuf.ByteString
       getOrderingKeyBytes();

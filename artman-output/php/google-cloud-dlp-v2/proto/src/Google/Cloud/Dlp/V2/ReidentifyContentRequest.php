@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ReidentifyContentRequest</code>
  */
-final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
+class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Configuration for the re-identification of the content item.
      * This field shares the same proto message type that is used for
@@ -34,21 +34,21 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.DeidentifyConfig reidentify_config = 2;</code>
      */
-    private $reidentify_config = null;
+    protected $reidentify_config = null;
     /**
      * Configuration for the inspector.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
      */
-    private $inspect_config = null;
+    protected $inspect_config = null;
     /**
      * The item to re-identify. Will be treated as text.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
      */
-    private $item = null;
+    protected $item = null;
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -56,9 +56,9 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string inspect_template_name = 5;</code>
      */
-    private $inspect_template_name = '';
+    protected $inspect_template_name = '';
     /**
-     * Optional template to use. References an instance of `DeidentifyTemplate`.
+     * Template to use. References an instance of `DeidentifyTemplate`.
      * Any configuration directly specified in `reidentify_config` or
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
@@ -67,14 +67,14 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string reidentify_template_name = 6;</code>
      */
-    private $reidentify_template_name = '';
+    protected $reidentify_template_name = '';
     /**
      * The geographic location to process content reidentification.  Reserved for
      * future extensions.
      *
      * Generated from protobuf field <code>string location_id = 7;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -99,13 +99,13 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dlp\V2\ContentItem $item
      *           The item to re-identify. Will be treated as text.
      *     @type string $inspect_template_name
-     *           Optional template to use. Any configuration directly specified in
+     *           Template to use. Any configuration directly specified in
      *           `inspect_config` will override those set in the template. Singular fields
      *           that are set in this request will replace their corresponding fields in the
      *           template. Repeated fields are appended. Singular sub-messages and groups
      *           are recursively merged.
      *     @type string $reidentify_template_name
-     *           Optional template to use. References an instance of `DeidentifyTemplate`.
+     *           Template to use. References an instance of `DeidentifyTemplate`.
      *           Any configuration directly specified in `reidentify_config` or
      *           `inspect_config` will override those set in the template. Singular fields
      *           that are set in this request will replace their corresponding fields in the
@@ -242,7 +242,7 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -257,7 +257,7 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -276,7 +276,7 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. References an instance of `DeidentifyTemplate`.
+     * Template to use. References an instance of `DeidentifyTemplate`.
      * Any configuration directly specified in `reidentify_config` or
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
@@ -292,7 +292,7 @@ final class ReidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. References an instance of `DeidentifyTemplate`.
+     * Template to use. References an instance of `DeidentifyTemplate`.
      * Any configuration directly specified in `reidentify_config` or
      * `inspect_config` will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the

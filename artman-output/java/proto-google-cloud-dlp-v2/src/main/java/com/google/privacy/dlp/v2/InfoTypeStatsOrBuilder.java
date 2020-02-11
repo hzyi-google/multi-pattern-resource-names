@@ -13,6 +13,7 @@ public interface InfoTypeStatsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
   /**
@@ -21,6 +22,7 @@ public interface InfoTypeStatsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
@@ -38,6 +40,7 @@ public interface InfoTypeStatsOrBuilder extends
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   long getCount();
 }

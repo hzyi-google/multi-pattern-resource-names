@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ module Grafeas
     # @!attribute [rw] note_name
     #   @return [String]
     #     Required. Immutable. The analysis note associated with this occurrence, in
-    #     the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-    #     as a filter in list requests.
+    #     the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+    #     used as a filter in list requests.
     # @!attribute [rw] kind
     #   @return [Grafeas::V1beta1::NoteKind]
     #     Output only. This explicitly denotes which of the occurrence details are
@@ -71,7 +71,7 @@ module Grafeas
     #     "Debian".
     # @!attribute [rw] uri
     #   @return [String]
-    #     The unique URI of the resource. For example,
+    #     Required. The unique URI of the resource. For example,
     #     `https://gcr.io/project/image@sha256:foo` for a Docker image.
     # @!attribute [rw] content_hash
     #   @return [Grafeas::V1beta1::Provenance::Hash]
@@ -344,7 +344,7 @@ module Grafeas
     #   @return [Array<Grafeas::V1beta1::VulnerabilityOccurrencesSummary::FixableTotalByDigest>]
     #     A listing by resource of the number of fixable and total vulnerabilities.
     class VulnerabilityOccurrencesSummary
-      # Per resource and severity counts of fixable and total vulnerabilites.
+      # Per resource and severity counts of fixable and total vulnerabilities.
       # @!attribute [rw] resource
       #   @return [Grafeas::V1beta1::Resource]
       #     The affected resource.

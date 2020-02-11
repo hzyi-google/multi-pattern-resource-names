@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Note();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -77,9 +84,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             relatedUrl_.add(
                 input.readMessage(io.grafeas.v1beta1.common.RelatedUrl.parser(), extensionRegistry));
@@ -126,9 +133,9 @@ private static final long serialVersionUID = 0L;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000002;
             }
             relatedNoteNames_.add(s);
             break;
@@ -246,10 +253,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -269,11 +276,11 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.Note.class, io.grafeas.v1beta1.Note.Builder.class);
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VULNERABILITY(10),
     BUILD(11),
     BASE_IMAGE(12),
@@ -287,6 +294,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -327,6 +336,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -347,6 +357,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -370,6 +381,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string short_description = 2;</code>
+   * @return The shortDescription.
    */
   public java.lang.String getShortDescription() {
     java.lang.Object ref = shortDescription_;
@@ -389,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string short_description = 2;</code>
+   * @return The bytes for shortDescription.
    */
   public com.google.protobuf.ByteString
       getShortDescriptionBytes() {
@@ -412,6 +425,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string long_description = 3;</code>
+   * @return The longDescription.
    */
   public java.lang.String getLongDescription() {
     java.lang.Object ref = longDescription_;
@@ -431,6 +445,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string long_description = 3;</code>
+   * @return The bytes for longDescription.
    */
   public com.google.protobuf.ByteString
       getLongDescriptionBytes() {
@@ -455,6 +470,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+   * @return The enum numeric value on the wire for kind.
    */
   public int getKindValue() {
     return kind_;
@@ -466,6 +482,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+   * @return The kind.
    */
   public io.grafeas.v1beta1.common.NoteKind getKind() {
     @SuppressWarnings("deprecation")
@@ -536,6 +553,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   * @return Whether the expirationTime field is set.
    */
   public boolean hasExpirationTime() {
     return expirationTime_ != null;
@@ -546,6 +564,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   * @return The expirationTime.
    */
   public com.google.protobuf.Timestamp getExpirationTime() {
     return expirationTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expirationTime_;
@@ -570,6 +589,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -581,6 +601,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -606,6 +627,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -617,6 +639,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -641,6 +664,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   * @return A list containing the relatedNoteNames.
    */
   public com.google.protobuf.ProtocolStringList
       getRelatedNoteNamesList() {
@@ -652,6 +676,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   * @return The count of relatedNoteNames.
    */
   public int getRelatedNoteNamesCount() {
     return relatedNoteNames_.size();
@@ -662,6 +687,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   * @param index The index of the element to return.
+   * @return The relatedNoteNames at the given index.
    */
   public java.lang.String getRelatedNoteNames(int index) {
     return relatedNoteNames_.get(index);
@@ -672,6 +699,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the relatedNoteNames at the given index.
    */
   public com.google.protobuf.ByteString
       getRelatedNoteNamesBytes(int index) {
@@ -685,6 +714,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
+   * @return Whether the vulnerability field is set.
    */
   public boolean hasVulnerability() {
     return typeCase_ == 10;
@@ -695,6 +725,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
+   * @return The vulnerability.
    */
   public io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability() {
     if (typeCase_ == 10) {
@@ -723,6 +754,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.Build build = 11;</code>
+   * @return Whether the build field is set.
    */
   public boolean hasBuild() {
     return typeCase_ == 11;
@@ -733,6 +765,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.Build build = 11;</code>
+   * @return The build.
    */
   public io.grafeas.v1beta1.build.Build getBuild() {
     if (typeCase_ == 11) {
@@ -761,6 +794,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
+   * @return Whether the baseImage field is set.
    */
   public boolean hasBaseImage() {
     return typeCase_ == 12;
@@ -771,6 +805,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
+   * @return The baseImage.
    */
   public io.grafeas.v1beta1.image.Basis getBaseImage() {
     if (typeCase_ == 12) {
@@ -799,6 +834,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Package package = 13;</code>
+   * @return Whether the package field is set.
    */
   public boolean hasPackage() {
     return typeCase_ == 13;
@@ -809,6 +845,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Package package = 13;</code>
+   * @return The package.
    */
   public io.grafeas.v1beta1.pkg.Package getPackage() {
     if (typeCase_ == 13) {
@@ -837,6 +874,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
+   * @return Whether the deployable field is set.
    */
   public boolean hasDeployable() {
     return typeCase_ == 14;
@@ -847,6 +885,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
+   * @return The deployable.
    */
   public io.grafeas.v1beta1.deployment.Deployable getDeployable() {
     if (typeCase_ == 14) {
@@ -875,6 +914,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
+   * @return Whether the discovery field is set.
    */
   public boolean hasDiscovery() {
     return typeCase_ == 15;
@@ -885,6 +925,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
+   * @return The discovery.
    */
   public io.grafeas.v1beta1.discovery.Discovery getDiscovery() {
     if (typeCase_ == 15) {
@@ -913,6 +954,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
+   * @return Whether the attestationAuthority field is set.
    */
   public boolean hasAttestationAuthority() {
     return typeCase_ == 16;
@@ -923,6 +965,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
+   * @return The attestationAuthority.
    */
   public io.grafeas.v1beta1.attestation.Authority getAttestationAuthority() {
     if (typeCase_ == 16) {
@@ -1373,7 +1416,7 @@ private static final long serialVersionUID = 0L;
 
       if (relatedUrlBuilder_ == null) {
         relatedUrl_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         relatedUrlBuilder_.clear();
       }
@@ -1396,7 +1439,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_ = null;
       }
       relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000002);
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1426,15 +1469,14 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.Note buildPartial() {
       io.grafeas.v1beta1.Note result = new io.grafeas.v1beta1.Note(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.shortDescription_ = shortDescription_;
       result.longDescription_ = longDescription_;
       result.kind_ = kind_;
       if (relatedUrlBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.relatedUrl_ = relatedUrl_;
       } else {
@@ -1455,9 +1497,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.relatedNoteNames_ = relatedNoteNames_;
       if (typeCase_ == 10) {
@@ -1509,7 +1551,6 @@ private static final long serialVersionUID = 0L;
           result.type_ = attestationAuthorityBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1578,7 +1619,7 @@ private static final long serialVersionUID = 0L;
         if (!other.relatedUrl_.isEmpty()) {
           if (relatedUrl_.isEmpty()) {
             relatedUrl_ = other.relatedUrl_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRelatedUrlIsMutable();
             relatedUrl_.addAll(other.relatedUrl_);
@@ -1591,7 +1632,7 @@ private static final long serialVersionUID = 0L;
             relatedUrlBuilder_.dispose();
             relatedUrlBuilder_ = null;
             relatedUrl_ = other.relatedUrl_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             relatedUrlBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRelatedUrlFieldBuilder() : null;
@@ -1612,7 +1653,7 @@ private static final long serialVersionUID = 0L;
       if (!other.relatedNoteNames_.isEmpty()) {
         if (relatedNoteNames_.isEmpty()) {
           relatedNoteNames_ = other.relatedNoteNames_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureRelatedNoteNamesIsMutable();
           relatedNoteNames_.addAll(other.relatedNoteNames_);
@@ -1705,6 +1746,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1725,6 +1767,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1746,6 +1789,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1764,6 +1809,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1778,6 +1824,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1798,6 +1846,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string short_description = 2;</code>
+     * @return The shortDescription.
      */
     public java.lang.String getShortDescription() {
       java.lang.Object ref = shortDescription_;
@@ -1817,6 +1866,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string short_description = 2;</code>
+     * @return The bytes for shortDescription.
      */
     public com.google.protobuf.ByteString
         getShortDescriptionBytes() {
@@ -1837,6 +1887,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string short_description = 2;</code>
+     * @param value The shortDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setShortDescription(
         java.lang.String value) {
@@ -1854,6 +1906,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string short_description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearShortDescription() {
       
@@ -1867,6 +1920,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string short_description = 2;</code>
+     * @param value The bytes for shortDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setShortDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1887,6 +1942,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string long_description = 3;</code>
+     * @return The longDescription.
      */
     public java.lang.String getLongDescription() {
       java.lang.Object ref = longDescription_;
@@ -1906,6 +1962,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string long_description = 3;</code>
+     * @return The bytes for longDescription.
      */
     public com.google.protobuf.ByteString
         getLongDescriptionBytes() {
@@ -1926,6 +1983,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string long_description = 3;</code>
+     * @param value The longDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setLongDescription(
         java.lang.String value) {
@@ -1943,6 +2002,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string long_description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLongDescription() {
       
@@ -1956,6 +2016,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string long_description = 3;</code>
+     * @param value The bytes for longDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setLongDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1977,6 +2039,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     * @return The enum numeric value on the wire for kind.
      */
     public int getKindValue() {
       return kind_;
@@ -1988,6 +2051,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     * @param value The enum numeric value on the wire for kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
       kind_ = value;
@@ -2001,6 +2066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     * @return The kind.
      */
     public io.grafeas.v1beta1.common.NoteKind getKind() {
       @SuppressWarnings("deprecation")
@@ -2014,6 +2080,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     * @param value The kind to set.
+     * @return This builder for chaining.
      */
     public Builder setKind(io.grafeas.v1beta1.common.NoteKind value) {
       if (value == null) {
@@ -2031,6 +2099,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKind() {
       
@@ -2042,9 +2111,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grafeas.v1beta1.common.RelatedUrl> relatedUrl_ =
       java.util.Collections.emptyList();
     private void ensureRelatedUrlIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>(relatedUrl_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2238,7 +2307,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearRelatedUrl() {
       if (relatedUrlBuilder_ == null) {
         relatedUrl_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         relatedUrlBuilder_.clear();
@@ -2343,7 +2412,7 @@ private static final long serialVersionUID = 0L;
         relatedUrlBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grafeas.v1beta1.common.RelatedUrl, io.grafeas.v1beta1.common.RelatedUrl.Builder, io.grafeas.v1beta1.common.RelatedUrlOrBuilder>(
                 relatedUrl_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         relatedUrl_ = null;
@@ -2360,6 +2429,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+     * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
       return expirationTimeBuilder_ != null || expirationTime_ != null;
@@ -2370,6 +2440,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+     * @return The expirationTime.
      */
     public com.google.protobuf.Timestamp getExpirationTime() {
       if (expirationTimeBuilder_ == null) {
@@ -2514,6 +2585,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2525,6 +2597,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2676,6 +2749,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -2687,6 +2761,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2830,9 +2905,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureRelatedNoteNamesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList(relatedNoteNames_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -2841,6 +2916,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @return A list containing the relatedNoteNames.
      */
     public com.google.protobuf.ProtocolStringList
         getRelatedNoteNamesList() {
@@ -2852,6 +2928,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @return The count of relatedNoteNames.
      */
     public int getRelatedNoteNamesCount() {
       return relatedNoteNames_.size();
@@ -2862,6 +2939,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param index The index of the element to return.
+     * @return The relatedNoteNames at the given index.
      */
     public java.lang.String getRelatedNoteNames(int index) {
       return relatedNoteNames_.get(index);
@@ -2872,6 +2951,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the relatedNoteNames at the given index.
      */
     public com.google.protobuf.ByteString
         getRelatedNoteNamesBytes(int index) {
@@ -2883,6 +2964,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The relatedNoteNames to set.
+     * @return This builder for chaining.
      */
     public Builder setRelatedNoteNames(
         int index, java.lang.String value) {
@@ -2900,6 +2984,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param value The relatedNoteNames to add.
+     * @return This builder for chaining.
      */
     public Builder addRelatedNoteNames(
         java.lang.String value) {
@@ -2917,6 +3003,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param values The relatedNoteNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRelatedNoteNames(
         java.lang.Iterable<java.lang.String> values) {
@@ -2932,10 +3020,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRelatedNoteNames() {
       relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2945,6 +3034,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
+     * @param value The bytes of the relatedNoteNames to add.
+     * @return This builder for chaining.
      */
     public Builder addRelatedNoteNamesBytes(
         com.google.protobuf.ByteString value) {
@@ -2966,6 +3057,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
+     * @return Whether the vulnerability field is set.
      */
     public boolean hasVulnerability() {
       return typeCase_ == 10;
@@ -2976,6 +3068,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
+     * @return The vulnerability.
      */
     public io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability() {
       if (vulnerabilityBuilder_ == null) {
@@ -3138,6 +3231,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.Build build = 11;</code>
+     * @return Whether the build field is set.
      */
     public boolean hasBuild() {
       return typeCase_ == 11;
@@ -3148,6 +3242,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.Build build = 11;</code>
+     * @return The build.
      */
     public io.grafeas.v1beta1.build.Build getBuild() {
       if (buildBuilder_ == null) {
@@ -3310,6 +3405,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
+     * @return Whether the baseImage field is set.
      */
     public boolean hasBaseImage() {
       return typeCase_ == 12;
@@ -3320,6 +3416,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
+     * @return The baseImage.
      */
     public io.grafeas.v1beta1.image.Basis getBaseImage() {
       if (baseImageBuilder_ == null) {
@@ -3482,6 +3579,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Package package = 13;</code>
+     * @return Whether the package field is set.
      */
     public boolean hasPackage() {
       return typeCase_ == 13;
@@ -3492,6 +3590,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Package package = 13;</code>
+     * @return The package.
      */
     public io.grafeas.v1beta1.pkg.Package getPackage() {
       if (packageBuilder_ == null) {
@@ -3654,6 +3753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
+     * @return Whether the deployable field is set.
      */
     public boolean hasDeployable() {
       return typeCase_ == 14;
@@ -3664,6 +3764,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
+     * @return The deployable.
      */
     public io.grafeas.v1beta1.deployment.Deployable getDeployable() {
       if (deployableBuilder_ == null) {
@@ -3826,6 +3927,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
+     * @return Whether the discovery field is set.
      */
     public boolean hasDiscovery() {
       return typeCase_ == 15;
@@ -3836,6 +3938,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
+     * @return The discovery.
      */
     public io.grafeas.v1beta1.discovery.Discovery getDiscovery() {
       if (discoveryBuilder_ == null) {
@@ -3998,6 +4101,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
+     * @return Whether the attestationAuthority field is set.
      */
     public boolean hasAttestationAuthority() {
       return typeCase_ == 16;
@@ -4008,6 +4112,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
+     * @return The attestationAuthority.
      */
     public io.grafeas.v1beta1.attestation.Authority getAttestationAuthority() {
       if (attestationAuthorityBuilder_ == null) {

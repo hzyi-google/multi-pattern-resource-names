@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Resume();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -167,6 +173,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -174,6 +182,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ResumeType forNumber(int value) {
       switch (value) {
         case 0: return RESUME_TYPE_UNSPECIFIED;
@@ -235,20 +247,19 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object structuredResume_;
   /**
    * <pre>
-   * Users can create a profile with only this field field, if
-   * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-   * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-   * the API parses this field and creates a profile with all structured fields
-   * populated.
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-   * An error is thrown if this field cannot be parsed.
+   * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+   * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+   * creates a profile
+   * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+   * parsed.
    * Note that the use of the functionality offered by this field to extract
    * data from resumes is an Alpha feature and as such is not covered by any
    * SLA.
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
+   * @return The structuredResume.
    */
   public java.lang.String getStructuredResume() {
     java.lang.Object ref = structuredResume_;
@@ -264,20 +275,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Users can create a profile with only this field field, if
-   * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-   * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-   * the API parses this field and creates a profile with all structured fields
-   * populated.
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-   * An error is thrown if this field cannot be parsed.
+   * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+   * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+   * creates a profile
+   * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+   * parsed.
    * Note that the use of the functionality offered by this field to extract
    * data from resumes is an Alpha feature and as such is not covered by any
    * SLA.
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
+   * @return The bytes for structuredResume.
    */
   public com.google.protobuf.ByteString
       getStructuredResumeBytes() {
@@ -297,22 +307,22 @@ private static final long serialVersionUID = 0L;
   private int resumeType_;
   /**
    * <pre>
-   * The format of
-   * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+   * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+   * @return The enum numeric value on the wire for resumeType.
    */
   public int getResumeTypeValue() {
     return resumeType_;
   }
   /**
    * <pre>
-   * The format of
-   * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+   * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+   * @return The resumeType.
    */
   public com.google.cloud.talent.v4beta1.Resume.ResumeType getResumeType() {
     @SuppressWarnings("deprecation")
@@ -645,20 +655,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object structuredResume_ = "";
     /**
      * <pre>
-     * Users can create a profile with only this field field, if
-     * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-     * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-     * the API parses this field and creates a profile with all structured fields
-     * populated.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-     * An error is thrown if this field cannot be parsed.
+     * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+     * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+     * creates a profile
+     * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+     * parsed.
      * Note that the use of the functionality offered by this field to extract
      * data from resumes is an Alpha feature and as such is not covered by any
      * SLA.
      * </pre>
      *
      * <code>string structured_resume = 1;</code>
+     * @return The structuredResume.
      */
     public java.lang.String getStructuredResume() {
       java.lang.Object ref = structuredResume_;
@@ -674,20 +683,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Users can create a profile with only this field field, if
-     * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-     * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-     * the API parses this field and creates a profile with all structured fields
-     * populated.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-     * An error is thrown if this field cannot be parsed.
+     * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+     * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+     * creates a profile
+     * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+     * parsed.
      * Note that the use of the functionality offered by this field to extract
      * data from resumes is an Alpha feature and as such is not covered by any
      * SLA.
      * </pre>
      *
      * <code>string structured_resume = 1;</code>
+     * @return The bytes for structuredResume.
      */
     public com.google.protobuf.ByteString
         getStructuredResumeBytes() {
@@ -704,20 +712,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Users can create a profile with only this field field, if
-     * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-     * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-     * the API parses this field and creates a profile with all structured fields
-     * populated.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-     * An error is thrown if this field cannot be parsed.
+     * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+     * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+     * creates a profile
+     * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+     * parsed.
      * Note that the use of the functionality offered by this field to extract
      * data from resumes is an Alpha feature and as such is not covered by any
      * SLA.
      * </pre>
      *
      * <code>string structured_resume = 1;</code>
+     * @param value The structuredResume to set.
+     * @return This builder for chaining.
      */
     public Builder setStructuredResume(
         java.lang.String value) {
@@ -731,20 +739,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Users can create a profile with only this field field, if
-     * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-     * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-     * the API parses this field and creates a profile with all structured fields
-     * populated.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-     * An error is thrown if this field cannot be parsed.
+     * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+     * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+     * creates a profile
+     * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+     * parsed.
      * Note that the use of the functionality offered by this field to extract
      * data from resumes is an Alpha feature and as such is not covered by any
      * SLA.
      * </pre>
      *
      * <code>string structured_resume = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStructuredResume() {
       
@@ -754,20 +761,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Users can create a profile with only this field field, if
-     * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
-     * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
-     * the API parses this field and creates a profile with all structured fields
-     * populated.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
-     * An error is thrown if this field cannot be parsed.
+     * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
+     * is [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example, the API parses this field and
+     * creates a profile
+     * with all structured fields populated. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
+     * parsed.
      * Note that the use of the functionality offered by this field to extract
      * data from resumes is an Alpha feature and as such is not covered by any
      * SLA.
      * </pre>
      *
      * <code>string structured_resume = 1;</code>
+     * @param value The bytes for structuredResume to set.
+     * @return This builder for chaining.
      */
     public Builder setStructuredResumeBytes(
         com.google.protobuf.ByteString value) {
@@ -784,22 +791,23 @@ private static final long serialVersionUID = 0L;
     private int resumeType_ = 0;
     /**
      * <pre>
-     * The format of
-     * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+     * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+     * @return The enum numeric value on the wire for resumeType.
      */
     public int getResumeTypeValue() {
       return resumeType_;
     }
     /**
      * <pre>
-     * The format of
-     * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+     * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+     * @param value The enum numeric value on the wire for resumeType to set.
+     * @return This builder for chaining.
      */
     public Builder setResumeTypeValue(int value) {
       resumeType_ = value;
@@ -808,11 +816,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The format of
-     * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+     * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+     * @return The resumeType.
      */
     public com.google.cloud.talent.v4beta1.Resume.ResumeType getResumeType() {
       @SuppressWarnings("deprecation")
@@ -821,11 +829,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The format of
-     * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+     * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+     * @param value The resumeType to set.
+     * @return This builder for chaining.
      */
     public Builder setResumeType(com.google.cloud.talent.v4beta1.Resume.ResumeType value) {
       if (value == null) {
@@ -838,11 +847,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The format of
-     * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+     * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResumeType() {
       

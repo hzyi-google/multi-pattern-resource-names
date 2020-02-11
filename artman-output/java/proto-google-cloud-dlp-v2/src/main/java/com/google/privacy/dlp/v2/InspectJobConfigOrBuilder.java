@@ -13,6 +13,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+   * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
   /**
@@ -21,6 +22,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
+   * @return The storageConfig.
    */
   com.google.privacy.dlp.v2.StorageConfig getStorageConfig();
   /**
@@ -38,6 +40,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -46,6 +49,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
@@ -65,6 +69,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>string inspect_template_name = 3;</code>
+   * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
   /**
@@ -75,6 +80,7 @@ public interface InspectJobConfigOrBuilder extends
    * </pre>
    *
    * <code>string inspect_template_name = 3;</code>
+   * @return The bytes for inspectTemplateName.
    */
   com.google.protobuf.ByteString
       getInspectTemplateNameBytes();

@@ -6,8 +6,7 @@ package com.google.cloud.talent.v4beta1;
 /**
  * <pre>
  * Metadata used for long running operations returned by CTS batch APIs.
- * It's used to replace
- * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+ * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.BatchOperationMetadata}
@@ -27,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BatchOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -197,8 +202,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -207,9 +211,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called. Any items processed before cancelling are returned in the
-     * response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
+     * processed before cancelling are returned in the response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -262,8 +265,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -272,9 +274,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called. Any items processed before cancelling are returned in the
-     * response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
+     * processed before cancelling are returned in the response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -291,6 +292,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -298,6 +301,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0: return STATE_UNSPECIFIED;
@@ -367,6 +374,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -377,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+   * @return The state.
    */
   public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
@@ -392,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   * @return The stateDescription.
    */
   public java.lang.String getStateDescription() {
     java.lang.Object ref = stateDescription_;
@@ -411,6 +421,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string state_description = 2;</code>
+   * @return The bytes for stateDescription.
    */
   public com.google.protobuf.ByteString
       getStateDescriptionBytes() {
@@ -434,6 +445,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 success_count = 3;</code>
+   * @return The successCount.
    */
   public int getSuccessCount() {
     return successCount_;
@@ -447,6 +459,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 failure_count = 4;</code>
+   * @return The failureCount.
    */
   public int getFailureCount() {
     return failureCount_;
@@ -460,6 +473,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 total_count = 5;</code>
+   * @return The totalCount.
    */
   public int getTotalCount() {
     return totalCount_;
@@ -473,6 +487,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -483,6 +498,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -503,11 +519,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -515,11 +532,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -527,8 +545,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -542,11 +560,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -554,11 +572,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -566,8 +584,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -824,8 +841,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Metadata used for long running operations returned by CTS batch APIs.
-   * It's used to replace
-   * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+   * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.BatchOperationMetadata}
@@ -1048,6 +1064,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1058,6 +1075,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1070,6 +1089,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     * @return The state.
      */
     public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
@@ -1082,6 +1102,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.talent.v4beta1.BatchOperationMetadata.State value) {
       if (value == null) {
@@ -1098,6 +1120,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.BatchOperationMetadata.State state = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -1113,6 +1136,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     * @return The stateDescription.
      */
     public java.lang.String getStateDescription() {
       java.lang.Object ref = stateDescription_;
@@ -1132,6 +1156,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     * @return The bytes for stateDescription.
      */
     public com.google.protobuf.ByteString
         getStateDescriptionBytes() {
@@ -1152,6 +1177,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     * @param value The stateDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setStateDescription(
         java.lang.String value) {
@@ -1169,6 +1196,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStateDescription() {
       
@@ -1182,6 +1210,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string state_description = 2;</code>
+     * @param value The bytes for stateDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setStateDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1202,6 +1232,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     * @return The successCount.
      */
     public int getSuccessCount() {
       return successCount_;
@@ -1212,6 +1243,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     * @param value The successCount to set.
+     * @return This builder for chaining.
      */
     public Builder setSuccessCount(int value) {
       
@@ -1225,6 +1258,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 success_count = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSuccessCount() {
       
@@ -1240,6 +1274,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     * @return The failureCount.
      */
     public int getFailureCount() {
       return failureCount_;
@@ -1250,6 +1285,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     * @param value The failureCount to set.
+     * @return This builder for chaining.
      */
     public Builder setFailureCount(int value) {
       
@@ -1263,6 +1300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failure_count = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFailureCount() {
       
@@ -1278,6 +1316,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     * @return The totalCount.
      */
     public int getTotalCount() {
       return totalCount_;
@@ -1288,6 +1327,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     * @param value The totalCount to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalCount(int value) {
       
@@ -1301,6 +1342,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 total_count = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTotalCount() {
       
@@ -1318,6 +1360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1328,6 +1371,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1468,11 +1512,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1480,11 +1525,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1496,8 +1542,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1518,8 +1564,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1538,8 +1584,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1562,8 +1608,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1582,8 +1628,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1596,8 +1642,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1613,8 +1659,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-     * is refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1639,11 +1685,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1651,11 +1697,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1667,8 +1713,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1689,8 +1734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1709,8 +1753,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1733,8 +1776,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1753,8 +1795,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1767,8 +1808,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1784,8 +1824,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>

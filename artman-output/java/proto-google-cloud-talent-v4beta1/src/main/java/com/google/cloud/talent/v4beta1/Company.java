@@ -35,6 +35,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Company();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -119,9 +126,9 @@ private static final long serialVersionUID = 0L;
           }
           case 90: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               keywordSearchableJobCustomAttributes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000001;
             }
             keywordSearchableJobCustomAttributes_.add(s);
             break;
@@ -159,7 +166,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -186,28 +193,27 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+     * @return Whether the headquartersLocation field is set.
      */
     boolean hasHeadquartersLocation();
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+     * @return The headquartersLocation.
      */
     com.google.cloud.talent.v4beta1.Location getHeadquartersLocation();
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -234,6 +240,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DerivedInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -246,7 +259,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -307,11 +319,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+     * @return Whether the headquartersLocation field is set.
      */
     public boolean hasHeadquartersLocation() {
       return headquartersLocation_ != null;
@@ -319,11 +331,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+     * @return The headquartersLocation.
      */
     public com.google.cloud.talent.v4beta1.Location getHeadquartersLocation() {
       return headquartersLocation_ == null ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance() : headquartersLocation_;
@@ -331,8 +343,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A structured headquarters location of the company, resolved from
-     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-     * if provided.
+     * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -666,11 +677,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+       * @return Whether the headquartersLocation field is set.
        */
       public boolean hasHeadquartersLocation() {
         return headquartersLocationBuilder_ != null || headquartersLocation_ != null;
@@ -678,11 +689,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
+       * @return The headquartersLocation.
        */
       public com.google.cloud.talent.v4beta1.Location getHeadquartersLocation() {
         if (headquartersLocationBuilder_ == null) {
@@ -694,8 +705,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -716,8 +726,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -736,8 +745,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -760,8 +768,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -780,8 +787,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -794,8 +800,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -811,8 +816,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * A structured headquarters location of the company, resolved from
-       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address]
-       * if provided.
+       * [Company.headquarters_address][google.cloud.talent.v4beta1.Company.headquarters_address] if provided.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
@@ -883,7 +887,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -899,6 +902,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -925,6 +929,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -948,6 +953,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -967,6 +973,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -992,6 +999,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The externalId.
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -1013,6 +1021,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
       getExternalIdBytes() {
@@ -1036,6 +1045,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+   * @return The enum numeric value on the wire for size.
    */
   public int getSizeValue() {
     return size_;
@@ -1046,6 +1056,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+   * @return The size.
    */
   public com.google.cloud.talent.v4beta1.CompanySize getSize() {
     @SuppressWarnings("deprecation")
@@ -1060,11 +1071,11 @@ private static final long serialVersionUID = 0L;
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in
-   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
+   * @return The headquartersAddress.
    */
   public java.lang.String getHeadquartersAddress() {
     java.lang.Object ref = headquartersAddress_;
@@ -1083,11 +1094,11 @@ private static final long serialVersionUID = 0L;
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in
-   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
+   * @return The bytes for headquartersAddress.
    */
   public com.google.protobuf.ByteString
       getHeadquartersAddressBytes() {
@@ -1113,6 +1124,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool hiring_agency = 6;</code>
+   * @return The hiringAgency.
    */
   public boolean getHiringAgency() {
     return hiringAgency_;
@@ -1129,6 +1141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string eeo_text = 7;</code>
+   * @return The eeoText.
    */
   public java.lang.String getEeoText() {
     java.lang.Object ref = eeoText_;
@@ -1151,6 +1164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string eeo_text = 7;</code>
+   * @return The bytes for eeoText.
    */
   public com.google.protobuf.ByteString
       getEeoTextBytes() {
@@ -1176,6 +1190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string website_uri = 8;</code>
+   * @return The websiteUri.
    */
   public java.lang.String getWebsiteUri() {
     java.lang.Object ref = websiteUri_;
@@ -1197,6 +1212,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string website_uri = 8;</code>
+   * @return The bytes for websiteUri.
    */
   public com.google.protobuf.ByteString
       getWebsiteUriBytes() {
@@ -1221,6 +1237,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
+   * @return The careerSiteUri.
    */
   public java.lang.String getCareerSiteUri() {
     java.lang.Object ref = careerSiteUri_;
@@ -1241,6 +1258,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
+   * @return The bytes for careerSiteUri.
    */
   public com.google.protobuf.ByteString
       getCareerSiteUriBytes() {
@@ -1264,6 +1282,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_uri = 10;</code>
+   * @return The imageUri.
    */
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
@@ -1283,6 +1302,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_uri = 10;</code>
+   * @return The bytes for imageUri.
    */
   public com.google.protobuf.ByteString
       getImageUriBytes() {
@@ -1302,9 +1322,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList keywordSearchableJobCustomAttributes_;
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1312,6 +1331,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @return A list containing the keywordSearchableJobCustomAttributes.
    */
   public com.google.protobuf.ProtocolStringList
       getKeywordSearchableJobCustomAttributesList() {
@@ -1319,9 +1339,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1329,15 +1348,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @return The count of keywordSearchableJobCustomAttributes.
    */
   public int getKeywordSearchableJobCustomAttributesCount() {
     return keywordSearchableJobCustomAttributes_.size();
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1345,15 +1364,16 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @param index The index of the element to return.
+   * @return The keywordSearchableJobCustomAttributes at the given index.
    */
   public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
     return keywordSearchableJobCustomAttributes_.get(index);
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -1361,6 +1381,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
    */
   public com.google.protobuf.ByteString
       getKeywordSearchableJobCustomAttributesBytes(int index) {
@@ -1375,6 +1397,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the derivedInfo field is set.
    */
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
@@ -1385,6 +1408,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The derivedInfo.
    */
   public com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null ? com.google.cloud.talent.v4beta1.Company.DerivedInfo.getDefaultInstance() : derivedInfo_;
@@ -1410,6 +1434,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The suspended.
    */
   public boolean getSuspended() {
     return suspended_;
@@ -1771,7 +1796,7 @@ private static final long serialVersionUID = 0L;
       imageUri_ = "";
 
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (derivedInfoBuilder_ == null) {
         derivedInfo_ = null;
       } else {
@@ -1807,7 +1832,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Company buildPartial() {
       com.google.cloud.talent.v4beta1.Company result = new com.google.cloud.talent.v4beta1.Company(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.externalId_ = externalId_;
@@ -1818,9 +1842,9 @@ private static final long serialVersionUID = 0L;
       result.websiteUri_ = websiteUri_;
       result.careerSiteUri_ = careerSiteUri_;
       result.imageUri_ = imageUri_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_;
       if (derivedInfoBuilder_ == null) {
@@ -1829,7 +1853,6 @@ private static final long serialVersionUID = 0L;
         result.derivedInfo_ = derivedInfoBuilder_.build();
       }
       result.suspended_ = suspended_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1919,7 +1942,7 @@ private static final long serialVersionUID = 0L;
       if (!other.keywordSearchableJobCustomAttributes_.isEmpty()) {
         if (keywordSearchableJobCustomAttributes_.isEmpty()) {
           keywordSearchableJobCustomAttributes_ = other.keywordSearchableJobCustomAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureKeywordSearchableJobCustomAttributesIsMutable();
           keywordSearchableJobCustomAttributes_.addAll(other.keywordSearchableJobCustomAttributes_);
@@ -1976,6 +1999,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2002,6 +2026,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2029,6 +2054,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -2053,6 +2080,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -2073,6 +2101,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2093,6 +2123,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2112,6 +2143,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -2132,6 +2164,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -2149,6 +2183,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -2162,6 +2197,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2184,6 +2221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The externalId.
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -2205,6 +2243,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
         getExternalIdBytes() {
@@ -2227,6 +2266,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalId(
         java.lang.String value) {
@@ -2246,6 +2287,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearExternalId() {
       
@@ -2261,6 +2303,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2281,6 +2325,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+     * @return The enum numeric value on the wire for size.
      */
     public int getSizeValue() {
       return size_;
@@ -2291,6 +2336,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+     * @param value The enum numeric value on the wire for size to set.
+     * @return This builder for chaining.
      */
     public Builder setSizeValue(int value) {
       size_ = value;
@@ -2303,6 +2350,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+     * @return The size.
      */
     public com.google.cloud.talent.v4beta1.CompanySize getSize() {
       @SuppressWarnings("deprecation")
@@ -2315,6 +2363,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+     * @param value The size to set.
+     * @return This builder for chaining.
      */
     public Builder setSize(com.google.cloud.talent.v4beta1.CompanySize value) {
       if (value == null) {
@@ -2331,6 +2381,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSize() {
       
@@ -2345,11 +2396,11 @@ private static final long serialVersionUID = 0L;
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in
-     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
+     * @return The headquartersAddress.
      */
     public java.lang.String getHeadquartersAddress() {
       java.lang.Object ref = headquartersAddress_;
@@ -2368,11 +2419,11 @@ private static final long serialVersionUID = 0L;
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in
-     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
+     * @return The bytes for headquartersAddress.
      */
     public com.google.protobuf.ByteString
         getHeadquartersAddressBytes() {
@@ -2392,11 +2443,12 @@ private static final long serialVersionUID = 0L;
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in
-     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
+     * @param value The headquartersAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setHeadquartersAddress(
         java.lang.String value) {
@@ -2413,11 +2465,11 @@ private static final long serialVersionUID = 0L;
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in
-     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHeadquartersAddress() {
       
@@ -2430,11 +2482,12 @@ private static final long serialVersionUID = 0L;
      * The street address of the company's main headquarters, which may be
      * different from the job location. The service attempts
      * to geolocate the provided address, and populates a more specific
-     * location wherever possible in
-     * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+     * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
      * <code>string headquarters_address = 5;</code>
+     * @param value The bytes for headquartersAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setHeadquartersAddressBytes(
         com.google.protobuf.ByteString value) {
@@ -2457,6 +2510,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hiring_agency = 6;</code>
+     * @return The hiringAgency.
      */
     public boolean getHiringAgency() {
       return hiringAgency_;
@@ -2469,6 +2523,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hiring_agency = 6;</code>
+     * @param value The hiringAgency to set.
+     * @return This builder for chaining.
      */
     public Builder setHiringAgency(boolean value) {
       
@@ -2484,6 +2540,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool hiring_agency = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHiringAgency() {
       
@@ -2502,6 +2559,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string eeo_text = 7;</code>
+     * @return The eeoText.
      */
     public java.lang.String getEeoText() {
       java.lang.Object ref = eeoText_;
@@ -2524,6 +2582,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string eeo_text = 7;</code>
+     * @return The bytes for eeoText.
      */
     public com.google.protobuf.ByteString
         getEeoTextBytes() {
@@ -2547,6 +2606,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string eeo_text = 7;</code>
+     * @param value The eeoText to set.
+     * @return This builder for chaining.
      */
     public Builder setEeoText(
         java.lang.String value) {
@@ -2567,6 +2628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string eeo_text = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEeoText() {
       
@@ -2583,6 +2645,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string eeo_text = 7;</code>
+     * @param value The bytes for eeoText to set.
+     * @return This builder for chaining.
      */
     public Builder setEeoTextBytes(
         com.google.protobuf.ByteString value) {
@@ -2605,6 +2669,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string website_uri = 8;</code>
+     * @return The websiteUri.
      */
     public java.lang.String getWebsiteUri() {
       java.lang.Object ref = websiteUri_;
@@ -2626,6 +2691,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string website_uri = 8;</code>
+     * @return The bytes for websiteUri.
      */
     public com.google.protobuf.ByteString
         getWebsiteUriBytes() {
@@ -2648,6 +2714,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string website_uri = 8;</code>
+     * @param value The websiteUri to set.
+     * @return This builder for chaining.
      */
     public Builder setWebsiteUri(
         java.lang.String value) {
@@ -2667,6 +2735,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string website_uri = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWebsiteUri() {
       
@@ -2682,6 +2751,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string website_uri = 8;</code>
+     * @param value The bytes for websiteUri to set.
+     * @return This builder for chaining.
      */
     public Builder setWebsiteUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2703,6 +2774,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
+     * @return The careerSiteUri.
      */
     public java.lang.String getCareerSiteUri() {
       java.lang.Object ref = careerSiteUri_;
@@ -2723,6 +2795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
+     * @return The bytes for careerSiteUri.
      */
     public com.google.protobuf.ByteString
         getCareerSiteUriBytes() {
@@ -2744,6 +2817,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
+     * @param value The careerSiteUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCareerSiteUri(
         java.lang.String value) {
@@ -2762,6 +2837,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCareerSiteUri() {
       
@@ -2776,6 +2852,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
+     * @param value The bytes for careerSiteUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCareerSiteUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2796,6 +2874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 10;</code>
+     * @return The imageUri.
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -2815,6 +2894,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 10;</code>
+     * @return The bytes for imageUri.
      */
     public com.google.protobuf.ByteString
         getImageUriBytes() {
@@ -2835,6 +2915,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 10;</code>
+     * @param value The imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUri(
         java.lang.String value) {
@@ -2852,6 +2934,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearImageUri() {
       
@@ -2865,6 +2948,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_uri = 10;</code>
+     * @param value The bytes for imageUri to set.
+     * @return This builder for chaining.
      */
     public Builder setImageUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2880,16 +2965,15 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureKeywordSearchableJobCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ = new com.google.protobuf.LazyStringArrayList(keywordSearchableJobCustomAttributes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2897,6 +2981,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @return A list containing the keywordSearchableJobCustomAttributes.
      */
     public com.google.protobuf.ProtocolStringList
         getKeywordSearchableJobCustomAttributesList() {
@@ -2904,9 +2989,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2914,15 +2998,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @return The count of keywordSearchableJobCustomAttributes.
      */
     public int getKeywordSearchableJobCustomAttributesCount() {
       return keywordSearchableJobCustomAttributes_.size();
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2930,15 +3014,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param index The index of the element to return.
+     * @return The keywordSearchableJobCustomAttributes at the given index.
      */
     public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
       return keywordSearchableJobCustomAttributes_.get(index);
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2946,6 +3031,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
      */
     public com.google.protobuf.ByteString
         getKeywordSearchableJobCustomAttributesBytes(int index) {
@@ -2953,9 +3040,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2963,6 +3049,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param index The index to set the value at.
+     * @param value The keywordSearchableJobCustomAttributes to set.
+     * @return This builder for chaining.
      */
     public Builder setKeywordSearchableJobCustomAttributes(
         int index, java.lang.String value) {
@@ -2976,9 +3065,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -2986,6 +3074,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param value The keywordSearchableJobCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addKeywordSearchableJobCustomAttributes(
         java.lang.String value) {
@@ -2999,9 +3089,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3009,6 +3098,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param values The keywordSearchableJobCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllKeywordSearchableJobCustomAttributes(
         java.lang.Iterable<java.lang.String> values) {
@@ -3020,9 +3111,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3030,18 +3120,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeywordSearchableJobCustomAttributes() {
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Jobs with
+     * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
@@ -3049,6 +3139,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * @param value The bytes of the keywordSearchableJobCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addKeywordSearchableJobCustomAttributesBytes(
         com.google.protobuf.ByteString value) {
@@ -3071,6 +3163,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the derivedInfo field is set.
      */
     public boolean hasDerivedInfo() {
       return derivedInfoBuilder_ != null || derivedInfo_ != null;
@@ -3081,6 +3174,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The derivedInfo.
      */
     public com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -3224,6 +3318,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The suspended.
      */
     public boolean getSuspended() {
       return suspended_;
@@ -3236,6 +3331,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The suspended to set.
+     * @return This builder for chaining.
      */
     public Builder setSuspended(boolean value) {
       
@@ -3251,6 +3348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSuspended() {
       

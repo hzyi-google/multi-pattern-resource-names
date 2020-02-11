@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -446,10 +446,8 @@ class JobServiceClient {
    * @param {Object} [request.updateMask]
    *   Strongly recommended for the best service experience.
    *
-   *   If update_mask
-   *   is provided, only the specified fields in
-   *   job are updated.
-   *   Otherwise all the fields are updated.
+   *   If update_mask is provided, only the specified fields in
+   *   job are updated. Otherwise all the fields are updated.
    *
    *   A field mask to restrict the fields that are updated. Only
    *   top level fields of Job are supported.
@@ -594,9 +592,8 @@ class JobServiceClient {
    *   resources in a page.
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the
-   *   search response. Defaults to
-   *   JobView.JOB_VIEW_FULL
-   *   if no value is specified.
+   *   search response. Defaults to JobView.JOB_VIEW_FULL if no value is
+   *   specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {Object} [options]
@@ -745,9 +742,8 @@ class JobServiceClient {
    *   resources in a page.
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the
-   *   search response. Defaults to
-   *   JobView.JOB_VIEW_FULL
-   *   if no value is specified.
+   *   search response. Defaults to JobView.JOB_VIEW_FULL if no value is
+   *   specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {Object} [options]
@@ -854,13 +850,11 @@ class JobServiceClient {
   }
 
   /**
-   * Searches for jobs using the provided
-   * SearchJobsRequest.
+   * Searches for jobs using the provided SearchJobsRequest.
    *
-   * This call constrains the
-   * visibility of jobs present in
-   * the database, and only returns jobs that the caller has permission to
-   * search against.
+   * This call constrains the visibility of jobs
+   * present in the database, and only returns jobs that the caller has
+   * permission to search against.
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -871,16 +865,15 @@ class JobServiceClient {
    *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    *   is created. For example, "projects/foo".
    * @param {Object} request.requestMetadata
-   *   Required. The meta information collected about the job searcher, used to
-   *   improve the search quality of the service. The identifiers (such as
-   *   `user_id`) are provided by users, and must be unique and consistent.
+   *   Required. The meta information collected about the job searcher, used to improve the
+   *   search quality of the service. The identifiers (such as `user_id`) are
+   *   provided by users, and must be unique and consistent.
    *
    *   This object should have the same structure as [RequestMetadata]{@link google.cloud.talent.v4beta1.RequestMetadata}
    * @param {number} [request.searchMode]
    *   Mode of a search.
    *
-   *   Defaults to
-   *   SearchMode.JOB_SEARCH.
+   *   Defaults to SearchMode.JOB_SEARCH.
    *
    *   The number should be among the values of [SearchMode]{@link google.cloud.talent.v4beta1.SearchMode}
    * @param {Object} [request.jobQuery]
@@ -936,30 +929,20 @@ class JobServiceClient {
    *
    *   Job histogram facets:
    *
-   *   * company_display_name: histogram by
-   *   [Job.company_display_name.
-   *   * employment_type: histogram by
-   *   Job.employment_types,
-   *   for example,
+   *   * company_display_name: histogram by [Job.company_display_name.
+   *   * employment_type: histogram by Job.employment_types, for example,
    *     "FULL_TIME", "PART_TIME".
-   *   * company_size: histogram by
-   *   CompanySize, for example,
-   *   "SMALL", "MEDIUM", "BIG".
-   *   * publish_time_in_month: histogram by the
-   *   Job.posting_publish_time
+   *   * company_size: histogram by CompanySize, for example, "SMALL",
+   *   "MEDIUM", "BIG".
+   *   * publish_time_in_month: histogram by the Job.posting_publish_time
    *     in months.
    *     Must specify list of numeric buckets in spec.
-   *   * publish_time_in_year: histogram by the
-   *   Job.posting_publish_time
+   *   * publish_time_in_year: histogram by the Job.posting_publish_time
    *     in years.
    *     Must specify list of numeric buckets in spec.
-   *   * degree_types: histogram by the
-   *   Job.degree_types, for
-   *   example,
+   *   * degree_types: histogram by the Job.degree_types, for example,
    *     "Bachelors", "Masters".
-   *   * job_level: histogram by the
-   *   Job.job_level, for example,
-   *   "Entry
+   *   * job_level: histogram by the Job.job_level, for example, "Entry
    *     Level".
    *   * country: histogram by the country code of jobs, for example, "US", "FR".
    *   * admin1: histogram by the admin1 code of jobs, which is a global
@@ -974,31 +957,25 @@ class JobServiceClient {
    *     and longitude), for example, 37.4038522,-122.0987765. Since the
    *     coordinates of a city center can change, customers may need to refresh
    *     them periodically.
-   *   * locale: histogram by the
-   *   Job.language_code, for
-   *   example, "en-US",
+   *   * locale: histogram by the Job.language_code, for example, "en-US",
    *     "fr-FR".
-   *   * language: histogram by the language subtag of the
-   *   Job.language_code,
+   *   * language: histogram by the language subtag of the Job.language_code,
    *     for example, "en", "fr".
-   *   * category: histogram by the
-   *   JobCategory, for example,
+   *   * category: histogram by the JobCategory, for example,
    *     "COMPUTER_AND_IT", "HEALTHCARE".
    *   * base_compensation_unit: histogram by the
-   *     CompensationInfo.CompensationUnit
-   *     of base salary, for example, "WEEKLY", "MONTHLY".
+   *     CompensationInfo.CompensationUnit of base
+   *     salary, for example, "WEEKLY", "MONTHLY".
    *   * base_compensation: histogram by the base salary. Must specify list of
    *     numeric buckets to group results by.
    *   * annualized_base_compensation: histogram by the base annualized salary.
    *     Must specify list of numeric buckets to group results by.
    *   * annualized_total_compensation: histogram by the total annualized salary.
    *     Must specify list of numeric buckets to group results by.
-   *   * string_custom_attribute: histogram by string
-   *   Job.custom_attributes.
+   *   * string_custom_attribute: histogram by string Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     string_custom_attribute["key1"].
-   *   * numeric_custom_attribute: histogram by numeric
-   *   Job.custom_attributes.
+   *   * numeric_custom_attribute: histogram by numeric Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *     group results by.
@@ -1015,17 +992,17 @@ class JobServiceClient {
    *   This object should have the same structure as [HistogramQuery]{@link google.cloud.talent.v4beta1.HistogramQuery}
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the search response.
-   *   Defaults to
-   *   JobView.JOB_VIEW_SMALL
-   *   if no value is specified.
+   *   Defaults to JobView.JOB_VIEW_SMALL if no value is specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {number} [request.offset]
    *   An integer that specifies the current offset (that is, starting result
    *   location, amongst the jobs deemed by the API as relevant) in search
-   *   results. This field is only considered if
-   *   page_token is
-   *   unset.
+   *   results. This field is only considered if page_token is unset.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
@@ -1046,37 +1023,33 @@ class JobServiceClient {
    *   * `"relevance desc"`: By relevance descending, as determined by the API
    *     algorithms. Relevance thresholding of query results is only available
    *     with this ordering.
-   *   * `"posting_publish_time desc"`: By
-   *   Job.posting_publish_time
+   *   * `"posting_publish_time desc"`: By Job.posting_publish_time
    *     descending.
-   *   * `"posting_update_time desc"`: By
-   *   Job.posting_update_time
+   *   * `"posting_update_time desc"`: By Job.posting_update_time
    *     descending.
-   *   * `"title"`: By Job.title
-   *   ascending.
-   *   * `"title desc"`: By Job.title
-   *   descending.
+   *   * `"title"`: By Job.title ascending.
+   *   * `"title desc"`: By Job.title descending.
    *   * `"annualized_base_compensation"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_base_compensation desc"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation desc"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"custom_ranking desc"`: By the relevance score adjusted to the
-   *     SearchJobsRequest.CustomRankingInfo.ranking_expression
-   *     with weight factor assigned by
-   *     SearchJobsRequest.CustomRankingInfo.importance_level
-   *     in descending order.
+   *     SearchJobsRequest.CustomRankingInfo.ranking_expression with weight
+   *     factor assigned by
+   *     SearchJobsRequest.CustomRankingInfo.importance_level in descending
+   *     order.
    *   * Location sorting: Use the special syntax to order jobs by distance:<br>
    *     `"distance_from('Hawaii')"`: Order by distance from Hawaii.<br>
    *     `"distance_from(19.89, 155.5)"`: Order by distance from a coordinate.<br>
@@ -1100,9 +1073,8 @@ class JobServiceClient {
    *   displayed to the job seeker higher up in the results, with the other jobs
    *   being displayed lower down in the results.
    *
-   *   Defaults to
-   *   DiversificationLevel.SIMPLE
-   *   if no value is specified.
+   *   Defaults to DiversificationLevel.SIMPLE if no value
+   *   is specified.
    *
    *   The number should be among the values of [DiversificationLevel]{@link google.cloud.talent.v4beta1.DiversificationLevel}
    * @param {Object} [request.customRankingInfo]
@@ -1111,27 +1083,22 @@ class JobServiceClient {
    *
    *   This object should have the same structure as [CustomRankingInfo]{@link google.cloud.talent.v4beta1.CustomRankingInfo}
    * @param {boolean} [request.disableKeywordMatch]
-   *   Controls whether to disable exact keyword match on
-   *   Job.title,
-   *   Job.description,
-   *   Job.company_display_name,
-   *   Job.addresses,
-   *   Job.qualifications. When
-   *   disable keyword match is turned off, a keyword match returns jobs that do
-   *   not match given category filters when there are matching keywords. For
-   *   example, for the query "program manager," a result is returned even if the
-   *   job posting has the title "software developer," which doesn't fall into
-   *   "program manager" ontology, but does have "program manager" appearing in
-   *   its description.
+   *   Controls whether to disable exact keyword match on Job.title,
+   *   Job.description, Job.company_display_name, Job.addresses,
+   *   Job.qualifications. When disable keyword match is turned off, a
+   *   keyword match returns jobs that do not match given category filters when
+   *   there are matching keywords. For example, for the query "program manager,"
+   *   a result is returned even if the job posting has the title "software
+   *   developer," which doesn't fall into "program manager" ontology, but does
+   *   have "program manager" appearing in its description.
    *
    *   For queries like "cloud" that don't contain title or
    *   location specific ontology, jobs with "cloud" keyword matches are returned
    *   regardless of this flag's value.
    *
-   *   Use
-   *   Company.keyword_searchable_job_custom_attributes
-   *   if company-specific globally matched custom field/attribute string values
-   *   are needed. Enabling keyword match improves recall of subsequent search
+   *   Use Company.keyword_searchable_job_custom_attributes if
+   *   company-specific globally matched custom field/attribute string values are
+   *   needed. Enabling keyword match improves recall of subsequent search
    *   requests.
    *
    *   Defaults to false.
@@ -1255,16 +1222,15 @@ class JobServiceClient {
    *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    *   is created. For example, "projects/foo".
    * @param {Object} request.requestMetadata
-   *   Required. The meta information collected about the job searcher, used to
-   *   improve the search quality of the service. The identifiers (such as
-   *   `user_id`) are provided by users, and must be unique and consistent.
+   *   Required. The meta information collected about the job searcher, used to improve the
+   *   search quality of the service. The identifiers (such as `user_id`) are
+   *   provided by users, and must be unique and consistent.
    *
    *   This object should have the same structure as [RequestMetadata]{@link google.cloud.talent.v4beta1.RequestMetadata}
    * @param {number} [request.searchMode]
    *   Mode of a search.
    *
-   *   Defaults to
-   *   SearchMode.JOB_SEARCH.
+   *   Defaults to SearchMode.JOB_SEARCH.
    *
    *   The number should be among the values of [SearchMode]{@link google.cloud.talent.v4beta1.SearchMode}
    * @param {Object} [request.jobQuery]
@@ -1320,30 +1286,20 @@ class JobServiceClient {
    *
    *   Job histogram facets:
    *
-   *   * company_display_name: histogram by
-   *   [Job.company_display_name.
-   *   * employment_type: histogram by
-   *   Job.employment_types,
-   *   for example,
+   *   * company_display_name: histogram by [Job.company_display_name.
+   *   * employment_type: histogram by Job.employment_types, for example,
    *     "FULL_TIME", "PART_TIME".
-   *   * company_size: histogram by
-   *   CompanySize, for example,
-   *   "SMALL", "MEDIUM", "BIG".
-   *   * publish_time_in_month: histogram by the
-   *   Job.posting_publish_time
+   *   * company_size: histogram by CompanySize, for example, "SMALL",
+   *   "MEDIUM", "BIG".
+   *   * publish_time_in_month: histogram by the Job.posting_publish_time
    *     in months.
    *     Must specify list of numeric buckets in spec.
-   *   * publish_time_in_year: histogram by the
-   *   Job.posting_publish_time
+   *   * publish_time_in_year: histogram by the Job.posting_publish_time
    *     in years.
    *     Must specify list of numeric buckets in spec.
-   *   * degree_types: histogram by the
-   *   Job.degree_types, for
-   *   example,
+   *   * degree_types: histogram by the Job.degree_types, for example,
    *     "Bachelors", "Masters".
-   *   * job_level: histogram by the
-   *   Job.job_level, for example,
-   *   "Entry
+   *   * job_level: histogram by the Job.job_level, for example, "Entry
    *     Level".
    *   * country: histogram by the country code of jobs, for example, "US", "FR".
    *   * admin1: histogram by the admin1 code of jobs, which is a global
@@ -1358,31 +1314,25 @@ class JobServiceClient {
    *     and longitude), for example, 37.4038522,-122.0987765. Since the
    *     coordinates of a city center can change, customers may need to refresh
    *     them periodically.
-   *   * locale: histogram by the
-   *   Job.language_code, for
-   *   example, "en-US",
+   *   * locale: histogram by the Job.language_code, for example, "en-US",
    *     "fr-FR".
-   *   * language: histogram by the language subtag of the
-   *   Job.language_code,
+   *   * language: histogram by the language subtag of the Job.language_code,
    *     for example, "en", "fr".
-   *   * category: histogram by the
-   *   JobCategory, for example,
+   *   * category: histogram by the JobCategory, for example,
    *     "COMPUTER_AND_IT", "HEALTHCARE".
    *   * base_compensation_unit: histogram by the
-   *     CompensationInfo.CompensationUnit
-   *     of base salary, for example, "WEEKLY", "MONTHLY".
+   *     CompensationInfo.CompensationUnit of base
+   *     salary, for example, "WEEKLY", "MONTHLY".
    *   * base_compensation: histogram by the base salary. Must specify list of
    *     numeric buckets to group results by.
    *   * annualized_base_compensation: histogram by the base annualized salary.
    *     Must specify list of numeric buckets to group results by.
    *   * annualized_total_compensation: histogram by the total annualized salary.
    *     Must specify list of numeric buckets to group results by.
-   *   * string_custom_attribute: histogram by string
-   *   Job.custom_attributes.
+   *   * string_custom_attribute: histogram by string Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     string_custom_attribute["key1"].
-   *   * numeric_custom_attribute: histogram by numeric
-   *   Job.custom_attributes.
+   *   * numeric_custom_attribute: histogram by numeric Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *     group results by.
@@ -1399,17 +1349,17 @@ class JobServiceClient {
    *   This object should have the same structure as [HistogramQuery]{@link google.cloud.talent.v4beta1.HistogramQuery}
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the search response.
-   *   Defaults to
-   *   JobView.JOB_VIEW_SMALL
-   *   if no value is specified.
+   *   Defaults to JobView.JOB_VIEW_SMALL if no value is specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {number} [request.offset]
    *   An integer that specifies the current offset (that is, starting result
    *   location, amongst the jobs deemed by the API as relevant) in search
-   *   results. This field is only considered if
-   *   page_token is
-   *   unset.
+   *   results. This field is only considered if page_token is unset.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
@@ -1430,37 +1380,33 @@ class JobServiceClient {
    *   * `"relevance desc"`: By relevance descending, as determined by the API
    *     algorithms. Relevance thresholding of query results is only available
    *     with this ordering.
-   *   * `"posting_publish_time desc"`: By
-   *   Job.posting_publish_time
+   *   * `"posting_publish_time desc"`: By Job.posting_publish_time
    *     descending.
-   *   * `"posting_update_time desc"`: By
-   *   Job.posting_update_time
+   *   * `"posting_update_time desc"`: By Job.posting_update_time
    *     descending.
-   *   * `"title"`: By Job.title
-   *   ascending.
-   *   * `"title desc"`: By Job.title
-   *   descending.
+   *   * `"title"`: By Job.title ascending.
+   *   * `"title desc"`: By Job.title descending.
    *   * `"annualized_base_compensation"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_base_compensation desc"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation desc"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"custom_ranking desc"`: By the relevance score adjusted to the
-   *     SearchJobsRequest.CustomRankingInfo.ranking_expression
-   *     with weight factor assigned by
-   *     SearchJobsRequest.CustomRankingInfo.importance_level
-   *     in descending order.
+   *     SearchJobsRequest.CustomRankingInfo.ranking_expression with weight
+   *     factor assigned by
+   *     SearchJobsRequest.CustomRankingInfo.importance_level in descending
+   *     order.
    *   * Location sorting: Use the special syntax to order jobs by distance:<br>
    *     `"distance_from('Hawaii')"`: Order by distance from Hawaii.<br>
    *     `"distance_from(19.89, 155.5)"`: Order by distance from a coordinate.<br>
@@ -1484,9 +1430,8 @@ class JobServiceClient {
    *   displayed to the job seeker higher up in the results, with the other jobs
    *   being displayed lower down in the results.
    *
-   *   Defaults to
-   *   DiversificationLevel.SIMPLE
-   *   if no value is specified.
+   *   Defaults to DiversificationLevel.SIMPLE if no value
+   *   is specified.
    *
    *   The number should be among the values of [DiversificationLevel]{@link google.cloud.talent.v4beta1.DiversificationLevel}
    * @param {Object} [request.customRankingInfo]
@@ -1495,27 +1440,22 @@ class JobServiceClient {
    *
    *   This object should have the same structure as [CustomRankingInfo]{@link google.cloud.talent.v4beta1.CustomRankingInfo}
    * @param {boolean} [request.disableKeywordMatch]
-   *   Controls whether to disable exact keyword match on
-   *   Job.title,
-   *   Job.description,
-   *   Job.company_display_name,
-   *   Job.addresses,
-   *   Job.qualifications. When
-   *   disable keyword match is turned off, a keyword match returns jobs that do
-   *   not match given category filters when there are matching keywords. For
-   *   example, for the query "program manager," a result is returned even if the
-   *   job posting has the title "software developer," which doesn't fall into
-   *   "program manager" ontology, but does have "program manager" appearing in
-   *   its description.
+   *   Controls whether to disable exact keyword match on Job.title,
+   *   Job.description, Job.company_display_name, Job.addresses,
+   *   Job.qualifications. When disable keyword match is turned off, a
+   *   keyword match returns jobs that do not match given category filters when
+   *   there are matching keywords. For example, for the query "program manager,"
+   *   a result is returned even if the job posting has the title "software
+   *   developer," which doesn't fall into "program manager" ontology, but does
+   *   have "program manager" appearing in its description.
    *
    *   For queries like "cloud" that don't contain title or
    *   location specific ontology, jobs with "cloud" keyword matches are returned
    *   regardless of this flag's value.
    *
-   *   Use
-   *   Company.keyword_searchable_job_custom_attributes
-   *   if company-specific globally matched custom field/attribute string values
-   *   are needed. Enabling keyword match improves recall of subsequent search
+   *   Use Company.keyword_searchable_job_custom_attributes if
+   *   company-specific globally matched custom field/attribute string values are
+   *   needed. Enabling keyword match improves recall of subsequent search
    *   requests.
    *
    *   Defaults to false.
@@ -1557,18 +1497,16 @@ class JobServiceClient {
   };
 
   /**
-   * Searches for jobs using the provided
-   * SearchJobsRequest.
+   * Searches for jobs using the provided SearchJobsRequest.
    *
    * This API call is intended for the use case of targeting passive job
    * seekers (for example, job seekers who have signed up to receive email
    * alerts about potential job opportunities), and has different algorithmic
    * adjustments that are targeted to passive job seekers.
    *
-   * This call constrains the
-   * visibility of jobs present in
-   * the database, and only returns jobs the caller has permission to search
-   * against.
+   * This call constrains the visibility of jobs
+   * present in the database, and only returns jobs the caller has
+   * permission to search against.
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -1579,16 +1517,15 @@ class JobServiceClient {
    *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    *   is created. For example, "projects/foo".
    * @param {Object} request.requestMetadata
-   *   Required. The meta information collected about the job searcher, used to
-   *   improve the search quality of the service. The identifiers (such as
-   *   `user_id`) are provided by users, and must be unique and consistent.
+   *   Required. The meta information collected about the job searcher, used to improve the
+   *   search quality of the service. The identifiers (such as `user_id`) are
+   *   provided by users, and must be unique and consistent.
    *
    *   This object should have the same structure as [RequestMetadata]{@link google.cloud.talent.v4beta1.RequestMetadata}
    * @param {number} [request.searchMode]
    *   Mode of a search.
    *
-   *   Defaults to
-   *   SearchMode.JOB_SEARCH.
+   *   Defaults to SearchMode.JOB_SEARCH.
    *
    *   The number should be among the values of [SearchMode]{@link google.cloud.talent.v4beta1.SearchMode}
    * @param {Object} [request.jobQuery]
@@ -1644,30 +1581,20 @@ class JobServiceClient {
    *
    *   Job histogram facets:
    *
-   *   * company_display_name: histogram by
-   *   [Job.company_display_name.
-   *   * employment_type: histogram by
-   *   Job.employment_types,
-   *   for example,
+   *   * company_display_name: histogram by [Job.company_display_name.
+   *   * employment_type: histogram by Job.employment_types, for example,
    *     "FULL_TIME", "PART_TIME".
-   *   * company_size: histogram by
-   *   CompanySize, for example,
-   *   "SMALL", "MEDIUM", "BIG".
-   *   * publish_time_in_month: histogram by the
-   *   Job.posting_publish_time
+   *   * company_size: histogram by CompanySize, for example, "SMALL",
+   *   "MEDIUM", "BIG".
+   *   * publish_time_in_month: histogram by the Job.posting_publish_time
    *     in months.
    *     Must specify list of numeric buckets in spec.
-   *   * publish_time_in_year: histogram by the
-   *   Job.posting_publish_time
+   *   * publish_time_in_year: histogram by the Job.posting_publish_time
    *     in years.
    *     Must specify list of numeric buckets in spec.
-   *   * degree_types: histogram by the
-   *   Job.degree_types, for
-   *   example,
+   *   * degree_types: histogram by the Job.degree_types, for example,
    *     "Bachelors", "Masters".
-   *   * job_level: histogram by the
-   *   Job.job_level, for example,
-   *   "Entry
+   *   * job_level: histogram by the Job.job_level, for example, "Entry
    *     Level".
    *   * country: histogram by the country code of jobs, for example, "US", "FR".
    *   * admin1: histogram by the admin1 code of jobs, which is a global
@@ -1682,31 +1609,25 @@ class JobServiceClient {
    *     and longitude), for example, 37.4038522,-122.0987765. Since the
    *     coordinates of a city center can change, customers may need to refresh
    *     them periodically.
-   *   * locale: histogram by the
-   *   Job.language_code, for
-   *   example, "en-US",
+   *   * locale: histogram by the Job.language_code, for example, "en-US",
    *     "fr-FR".
-   *   * language: histogram by the language subtag of the
-   *   Job.language_code,
+   *   * language: histogram by the language subtag of the Job.language_code,
    *     for example, "en", "fr".
-   *   * category: histogram by the
-   *   JobCategory, for example,
+   *   * category: histogram by the JobCategory, for example,
    *     "COMPUTER_AND_IT", "HEALTHCARE".
    *   * base_compensation_unit: histogram by the
-   *     CompensationInfo.CompensationUnit
-   *     of base salary, for example, "WEEKLY", "MONTHLY".
+   *     CompensationInfo.CompensationUnit of base
+   *     salary, for example, "WEEKLY", "MONTHLY".
    *   * base_compensation: histogram by the base salary. Must specify list of
    *     numeric buckets to group results by.
    *   * annualized_base_compensation: histogram by the base annualized salary.
    *     Must specify list of numeric buckets to group results by.
    *   * annualized_total_compensation: histogram by the total annualized salary.
    *     Must specify list of numeric buckets to group results by.
-   *   * string_custom_attribute: histogram by string
-   *   Job.custom_attributes.
+   *   * string_custom_attribute: histogram by string Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     string_custom_attribute["key1"].
-   *   * numeric_custom_attribute: histogram by numeric
-   *   Job.custom_attributes.
+   *   * numeric_custom_attribute: histogram by numeric Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *     group results by.
@@ -1723,17 +1644,17 @@ class JobServiceClient {
    *   This object should have the same structure as [HistogramQuery]{@link google.cloud.talent.v4beta1.HistogramQuery}
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the search response.
-   *   Defaults to
-   *   JobView.JOB_VIEW_SMALL
-   *   if no value is specified.
+   *   Defaults to JobView.JOB_VIEW_SMALL if no value is specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {number} [request.offset]
    *   An integer that specifies the current offset (that is, starting result
    *   location, amongst the jobs deemed by the API as relevant) in search
-   *   results. This field is only considered if
-   *   page_token is
-   *   unset.
+   *   results. This field is only considered if page_token is unset.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
@@ -1754,37 +1675,33 @@ class JobServiceClient {
    *   * `"relevance desc"`: By relevance descending, as determined by the API
    *     algorithms. Relevance thresholding of query results is only available
    *     with this ordering.
-   *   * `"posting_publish_time desc"`: By
-   *   Job.posting_publish_time
+   *   * `"posting_publish_time desc"`: By Job.posting_publish_time
    *     descending.
-   *   * `"posting_update_time desc"`: By
-   *   Job.posting_update_time
+   *   * `"posting_update_time desc"`: By Job.posting_update_time
    *     descending.
-   *   * `"title"`: By Job.title
-   *   ascending.
-   *   * `"title desc"`: By Job.title
-   *   descending.
+   *   * `"title"`: By Job.title ascending.
+   *   * `"title desc"`: By Job.title descending.
    *   * `"annualized_base_compensation"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_base_compensation desc"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation desc"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"custom_ranking desc"`: By the relevance score adjusted to the
-   *     SearchJobsRequest.CustomRankingInfo.ranking_expression
-   *     with weight factor assigned by
-   *     SearchJobsRequest.CustomRankingInfo.importance_level
-   *     in descending order.
+   *     SearchJobsRequest.CustomRankingInfo.ranking_expression with weight
+   *     factor assigned by
+   *     SearchJobsRequest.CustomRankingInfo.importance_level in descending
+   *     order.
    *   * Location sorting: Use the special syntax to order jobs by distance:<br>
    *     `"distance_from('Hawaii')"`: Order by distance from Hawaii.<br>
    *     `"distance_from(19.89, 155.5)"`: Order by distance from a coordinate.<br>
@@ -1808,9 +1725,8 @@ class JobServiceClient {
    *   displayed to the job seeker higher up in the results, with the other jobs
    *   being displayed lower down in the results.
    *
-   *   Defaults to
-   *   DiversificationLevel.SIMPLE
-   *   if no value is specified.
+   *   Defaults to DiversificationLevel.SIMPLE if no value
+   *   is specified.
    *
    *   The number should be among the values of [DiversificationLevel]{@link google.cloud.talent.v4beta1.DiversificationLevel}
    * @param {Object} [request.customRankingInfo]
@@ -1819,27 +1735,22 @@ class JobServiceClient {
    *
    *   This object should have the same structure as [CustomRankingInfo]{@link google.cloud.talent.v4beta1.CustomRankingInfo}
    * @param {boolean} [request.disableKeywordMatch]
-   *   Controls whether to disable exact keyword match on
-   *   Job.title,
-   *   Job.description,
-   *   Job.company_display_name,
-   *   Job.addresses,
-   *   Job.qualifications. When
-   *   disable keyword match is turned off, a keyword match returns jobs that do
-   *   not match given category filters when there are matching keywords. For
-   *   example, for the query "program manager," a result is returned even if the
-   *   job posting has the title "software developer," which doesn't fall into
-   *   "program manager" ontology, but does have "program manager" appearing in
-   *   its description.
+   *   Controls whether to disable exact keyword match on Job.title,
+   *   Job.description, Job.company_display_name, Job.addresses,
+   *   Job.qualifications. When disable keyword match is turned off, a
+   *   keyword match returns jobs that do not match given category filters when
+   *   there are matching keywords. For example, for the query "program manager,"
+   *   a result is returned even if the job posting has the title "software
+   *   developer," which doesn't fall into "program manager" ontology, but does
+   *   have "program manager" appearing in its description.
    *
    *   For queries like "cloud" that don't contain title or
    *   location specific ontology, jobs with "cloud" keyword matches are returned
    *   regardless of this flag's value.
    *
-   *   Use
-   *   Company.keyword_searchable_job_custom_attributes
-   *   if company-specific globally matched custom field/attribute string values
-   *   are needed. Enabling keyword match improves recall of subsequent search
+   *   Use Company.keyword_searchable_job_custom_attributes if
+   *   company-specific globally matched custom field/attribute string values are
+   *   needed. Enabling keyword match improves recall of subsequent search
    *   requests.
    *
    *   Defaults to false.
@@ -1963,16 +1874,15 @@ class JobServiceClient {
    *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    *   is created. For example, "projects/foo".
    * @param {Object} request.requestMetadata
-   *   Required. The meta information collected about the job searcher, used to
-   *   improve the search quality of the service. The identifiers (such as
-   *   `user_id`) are provided by users, and must be unique and consistent.
+   *   Required. The meta information collected about the job searcher, used to improve the
+   *   search quality of the service. The identifiers (such as `user_id`) are
+   *   provided by users, and must be unique and consistent.
    *
    *   This object should have the same structure as [RequestMetadata]{@link google.cloud.talent.v4beta1.RequestMetadata}
    * @param {number} [request.searchMode]
    *   Mode of a search.
    *
-   *   Defaults to
-   *   SearchMode.JOB_SEARCH.
+   *   Defaults to SearchMode.JOB_SEARCH.
    *
    *   The number should be among the values of [SearchMode]{@link google.cloud.talent.v4beta1.SearchMode}
    * @param {Object} [request.jobQuery]
@@ -2028,30 +1938,20 @@ class JobServiceClient {
    *
    *   Job histogram facets:
    *
-   *   * company_display_name: histogram by
-   *   [Job.company_display_name.
-   *   * employment_type: histogram by
-   *   Job.employment_types,
-   *   for example,
+   *   * company_display_name: histogram by [Job.company_display_name.
+   *   * employment_type: histogram by Job.employment_types, for example,
    *     "FULL_TIME", "PART_TIME".
-   *   * company_size: histogram by
-   *   CompanySize, for example,
-   *   "SMALL", "MEDIUM", "BIG".
-   *   * publish_time_in_month: histogram by the
-   *   Job.posting_publish_time
+   *   * company_size: histogram by CompanySize, for example, "SMALL",
+   *   "MEDIUM", "BIG".
+   *   * publish_time_in_month: histogram by the Job.posting_publish_time
    *     in months.
    *     Must specify list of numeric buckets in spec.
-   *   * publish_time_in_year: histogram by the
-   *   Job.posting_publish_time
+   *   * publish_time_in_year: histogram by the Job.posting_publish_time
    *     in years.
    *     Must specify list of numeric buckets in spec.
-   *   * degree_types: histogram by the
-   *   Job.degree_types, for
-   *   example,
+   *   * degree_types: histogram by the Job.degree_types, for example,
    *     "Bachelors", "Masters".
-   *   * job_level: histogram by the
-   *   Job.job_level, for example,
-   *   "Entry
+   *   * job_level: histogram by the Job.job_level, for example, "Entry
    *     Level".
    *   * country: histogram by the country code of jobs, for example, "US", "FR".
    *   * admin1: histogram by the admin1 code of jobs, which is a global
@@ -2066,31 +1966,25 @@ class JobServiceClient {
    *     and longitude), for example, 37.4038522,-122.0987765. Since the
    *     coordinates of a city center can change, customers may need to refresh
    *     them periodically.
-   *   * locale: histogram by the
-   *   Job.language_code, for
-   *   example, "en-US",
+   *   * locale: histogram by the Job.language_code, for example, "en-US",
    *     "fr-FR".
-   *   * language: histogram by the language subtag of the
-   *   Job.language_code,
+   *   * language: histogram by the language subtag of the Job.language_code,
    *     for example, "en", "fr".
-   *   * category: histogram by the
-   *   JobCategory, for example,
+   *   * category: histogram by the JobCategory, for example,
    *     "COMPUTER_AND_IT", "HEALTHCARE".
    *   * base_compensation_unit: histogram by the
-   *     CompensationInfo.CompensationUnit
-   *     of base salary, for example, "WEEKLY", "MONTHLY".
+   *     CompensationInfo.CompensationUnit of base
+   *     salary, for example, "WEEKLY", "MONTHLY".
    *   * base_compensation: histogram by the base salary. Must specify list of
    *     numeric buckets to group results by.
    *   * annualized_base_compensation: histogram by the base annualized salary.
    *     Must specify list of numeric buckets to group results by.
    *   * annualized_total_compensation: histogram by the total annualized salary.
    *     Must specify list of numeric buckets to group results by.
-   *   * string_custom_attribute: histogram by string
-   *   Job.custom_attributes.
+   *   * string_custom_attribute: histogram by string Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     string_custom_attribute["key1"].
-   *   * numeric_custom_attribute: histogram by numeric
-   *   Job.custom_attributes.
+   *   * numeric_custom_attribute: histogram by numeric Job.custom_attributes.
    *     Values can be accessed via square bracket notations like
    *     numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *     group results by.
@@ -2107,17 +2001,17 @@ class JobServiceClient {
    *   This object should have the same structure as [HistogramQuery]{@link google.cloud.talent.v4beta1.HistogramQuery}
    * @param {number} [request.jobView]
    *   The desired job attributes returned for jobs in the search response.
-   *   Defaults to
-   *   JobView.JOB_VIEW_SMALL
-   *   if no value is specified.
+   *   Defaults to JobView.JOB_VIEW_SMALL if no value is specified.
    *
    *   The number should be among the values of [JobView]{@link google.cloud.talent.v4beta1.JobView}
    * @param {number} [request.offset]
    *   An integer that specifies the current offset (that is, starting result
    *   location, amongst the jobs deemed by the API as relevant) in search
-   *   results. This field is only considered if
-   *   page_token is
-   *   unset.
+   *   results. This field is only considered if page_token is unset.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
+   *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
@@ -2138,37 +2032,33 @@ class JobServiceClient {
    *   * `"relevance desc"`: By relevance descending, as determined by the API
    *     algorithms. Relevance thresholding of query results is only available
    *     with this ordering.
-   *   * `"posting_publish_time desc"`: By
-   *   Job.posting_publish_time
+   *   * `"posting_publish_time desc"`: By Job.posting_publish_time
    *     descending.
-   *   * `"posting_update_time desc"`: By
-   *   Job.posting_update_time
+   *   * `"posting_update_time desc"`: By Job.posting_update_time
    *     descending.
-   *   * `"title"`: By Job.title
-   *   ascending.
-   *   * `"title desc"`: By Job.title
-   *   descending.
+   *   * `"title"`: By Job.title ascending.
+   *   * `"title desc"`: By Job.title descending.
    *   * `"annualized_base_compensation"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_base_compensation desc"`: By job's
-   *     CompensationInfo.annualized_base_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_base_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     ascending. Jobs whose annualized base compensation is unspecified are put
-   *     at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range ascending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"annualized_total_compensation desc"`: By job's
-   *     CompensationInfo.annualized_total_compensation_range
-   *     descending. Jobs whose annualized base compensation is unspecified are
-   *     put at the end of search results.
+   *     CompensationInfo.annualized_total_compensation_range descending. Jobs
+   *     whose annualized base compensation is unspecified are put at the end of
+   *     search results.
    *   * `"custom_ranking desc"`: By the relevance score adjusted to the
-   *     SearchJobsRequest.CustomRankingInfo.ranking_expression
-   *     with weight factor assigned by
-   *     SearchJobsRequest.CustomRankingInfo.importance_level
-   *     in descending order.
+   *     SearchJobsRequest.CustomRankingInfo.ranking_expression with weight
+   *     factor assigned by
+   *     SearchJobsRequest.CustomRankingInfo.importance_level in descending
+   *     order.
    *   * Location sorting: Use the special syntax to order jobs by distance:<br>
    *     `"distance_from('Hawaii')"`: Order by distance from Hawaii.<br>
    *     `"distance_from(19.89, 155.5)"`: Order by distance from a coordinate.<br>
@@ -2192,9 +2082,8 @@ class JobServiceClient {
    *   displayed to the job seeker higher up in the results, with the other jobs
    *   being displayed lower down in the results.
    *
-   *   Defaults to
-   *   DiversificationLevel.SIMPLE
-   *   if no value is specified.
+   *   Defaults to DiversificationLevel.SIMPLE if no value
+   *   is specified.
    *
    *   The number should be among the values of [DiversificationLevel]{@link google.cloud.talent.v4beta1.DiversificationLevel}
    * @param {Object} [request.customRankingInfo]
@@ -2203,27 +2092,22 @@ class JobServiceClient {
    *
    *   This object should have the same structure as [CustomRankingInfo]{@link google.cloud.talent.v4beta1.CustomRankingInfo}
    * @param {boolean} [request.disableKeywordMatch]
-   *   Controls whether to disable exact keyword match on
-   *   Job.title,
-   *   Job.description,
-   *   Job.company_display_name,
-   *   Job.addresses,
-   *   Job.qualifications. When
-   *   disable keyword match is turned off, a keyword match returns jobs that do
-   *   not match given category filters when there are matching keywords. For
-   *   example, for the query "program manager," a result is returned even if the
-   *   job posting has the title "software developer," which doesn't fall into
-   *   "program manager" ontology, but does have "program manager" appearing in
-   *   its description.
+   *   Controls whether to disable exact keyword match on Job.title,
+   *   Job.description, Job.company_display_name, Job.addresses,
+   *   Job.qualifications. When disable keyword match is turned off, a
+   *   keyword match returns jobs that do not match given category filters when
+   *   there are matching keywords. For example, for the query "program manager,"
+   *   a result is returned even if the job posting has the title "software
+   *   developer," which doesn't fall into "program manager" ontology, but does
+   *   have "program manager" appearing in its description.
    *
    *   For queries like "cloud" that don't contain title or
    *   location specific ontology, jobs with "cloud" keyword matches are returned
    *   regardless of this flag's value.
    *
-   *   Use
-   *   Company.keyword_searchable_job_custom_attributes
-   *   if company-specific globally matched custom field/attribute string values
-   *   are needed. Enabling keyword match improves recall of subsequent search
+   *   Use Company.keyword_searchable_job_custom_attributes if
+   *   company-specific globally matched custom field/attribute string values are
+   *   needed. Enabling keyword match improves recall of subsequent search
    *   requests.
    *
    *   Defaults to false.
@@ -2403,22 +2287,17 @@ class JobServiceClient {
    *   Strongly recommended for the best service experience. Be aware that it will
    *   also increase latency when checking the status of a batch operation.
    *
-   *   If
-   *   update_mask
-   *   is provided, only the specified fields in
-   *   Job are updated. Otherwise all the
-   *   fields are updated.
+   *   If update_mask is provided, only the specified fields in
+   *   Job are updated. Otherwise all the fields are updated.
    *
    *   A field mask to restrict the fields that are updated. Only
    *   top level fields of Job are supported.
    *
-   *   If
-   *   update_mask
-   *   is provided, The Job inside
+   *   If update_mask is provided, The Job inside
    *   JobResult
    *   will only contains fields that is updated, plus the Id of the Job.
-   *   Otherwise,  Job will include all fields,
-   *   which can yield a very large response.
+   *   Otherwise,  Job will include all fields, which can yield a very
+   *   large response.
    *
    *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
    * @param {Object} [options]

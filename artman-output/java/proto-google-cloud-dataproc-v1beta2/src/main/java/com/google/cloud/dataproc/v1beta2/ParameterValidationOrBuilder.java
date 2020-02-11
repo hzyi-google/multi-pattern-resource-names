@@ -13,6 +13,7 @@ public interface ParameterValidationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.RegexValidation regex = 1;</code>
+   * @return Whether the regex field is set.
    */
   boolean hasRegex();
   /**
@@ -21,6 +22,7 @@ public interface ParameterValidationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.RegexValidation regex = 1;</code>
+   * @return The regex.
    */
   com.google.cloud.dataproc.v1beta2.RegexValidation getRegex();
   /**
@@ -38,6 +40,7 @@ public interface ParameterValidationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ValueValidation values = 2;</code>
+   * @return Whether the values field is set.
    */
   boolean hasValues();
   /**
@@ -46,6 +49,7 @@ public interface ParameterValidationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ValueValidation values = 2;</code>
+   * @return The values.
    */
   com.google.cloud.dataproc.v1beta2.ValueValidation getValues();
   /**

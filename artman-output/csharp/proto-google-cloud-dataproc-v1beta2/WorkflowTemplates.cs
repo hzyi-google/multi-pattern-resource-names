@@ -129,96 +129,95 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
             "QjDgQQL6QSoSKGRhdGFwcm9jLmdvb2dsZWFwaXMuY29tL1dvcmtmbG93VGVt",
             "cGxhdGUSRgoIdGVtcGxhdGUYAiABKAsyLy5nb29nbGUuY2xvdWQuZGF0YXBy",
             "b2MudjFiZXRhMi5Xb3JrZmxvd1RlbXBsYXRlQgPgQQISEwoLaW5zdGFuY2Vf",
-            "aWQYAyABKAkSEgoKcmVxdWVzdF9pZBgEIAEoCSKUAQodVXBkYXRlV29ya2Zs",
-            "b3dUZW1wbGF0ZVJlcXVlc3QScwoIdGVtcGxhdGUYASABKAsyLy5nb29nbGUu",
-            "Y2xvdWQuZGF0YXByb2MudjFiZXRhMi5Xb3JrZmxvd1RlbXBsYXRlQjDgQQL6",
-            "QSoKKGRhdGFwcm9jLmdvb2dsZWFwaXMuY29tL1dvcmtmbG93VGVtcGxhdGUi",
-            "WgocTGlzdFdvcmtmbG93VGVtcGxhdGVzUmVxdWVzdBITCgZwYXJlbnQYASAB",
-            "KAlCA+BBAhIRCglwYWdlX3NpemUYAiABKAUSEgoKcGFnZV90b2tlbhgDIAEo",
-            "CSKGAQodTGlzdFdvcmtmbG93VGVtcGxhdGVzUmVzcG9uc2USRwoJdGVtcGxh",
-            "dGVzGAEgAygLMi8uZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuV29y",
-            "a2Zsb3dUZW1wbGF0ZUID4EEDEhwKD25leHRfcGFnZV90b2tlbhgCIAEoCUID",
-            "4EEDInAKHURlbGV0ZVdvcmtmbG93VGVtcGxhdGVSZXF1ZXN0Ej4KBG5hbWUY",
-            "ASABKAlCMOBBAvpBKgooZGF0YXByb2MuZ29vZ2xlYXBpcy5jb20vV29ya2Zs",
-            "b3dUZW1wbGF0ZRIPCgd2ZXJzaW9uGAIgASgFMukRChdXb3JrZmxvd1RlbXBs",
-            "YXRlU2VydmljZRKwAgoWQ3JlYXRlV29ya2Zsb3dUZW1wbGF0ZRI8Lmdvb2ds",
-            "ZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkNyZWF0ZVdvcmtmbG93VGVtcGxh",
-            "dGVSZXF1ZXN0Gi8uZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuV29y",
-            "a2Zsb3dUZW1wbGF0ZSKmAYLT5JMCjAEiOC92MWJldGEyL3twYXJlbnQ9cHJv",
-            "amVjdHMvKi9yZWdpb25zLyp9L3dvcmtmbG93VGVtcGxhdGVzOgh0ZW1wbGF0",
-            "ZVpGIjovdjFiZXRhMi97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9",
-            "L3dvcmtmbG93VGVtcGxhdGVzOgh0ZW1wbGF0ZdpBEHBhcmVudCwgdGVtcGxh",
-            "dGUSiQIKE0dldFdvcmtmbG93VGVtcGxhdGUSOS5nb29nbGUuY2xvdWQuZGF0",
-            "YXByb2MudjFiZXRhMi5HZXRXb3JrZmxvd1RlbXBsYXRlUmVxdWVzdBovLmdv",
-            "b2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLldvcmtmbG93VGVtcGxhdGUi",
-            "hQGC0+STAngSOC92MWJldGEyL3tuYW1lPXByb2plY3RzLyovcmVnaW9ucy8q",
-            "L3dvcmtmbG93VGVtcGxhdGVzLyp9WjwSOi92MWJldGEyL3tuYW1lPXByb2pl",
-            "Y3RzLyovbG9jYXRpb25zLyovd29ya2Zsb3dUZW1wbGF0ZXMvKn3aQQRuYW1l",
-            "EuUCChtJbnN0YW50aWF0ZVdvcmtmbG93VGVtcGxhdGUSQS5nb29nbGUuY2xv",
-            "dWQuZGF0YXByb2MudjFiZXRhMi5JbnN0YW50aWF0ZVdvcmtmbG93VGVtcGxh",
-            "dGVSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiLjAYLT",
-            "5JMClgEiRC92MWJldGEyL3tuYW1lPXByb2plY3RzLyovcmVnaW9ucy8qL3dv",
-            "cmtmbG93VGVtcGxhdGVzLyp9Omluc3RhbnRpYXRlOgEqWksiRi92MWJldGEy",
-            "L3tuYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovd29ya2Zsb3dUZW1wbGF0",
-            "ZXMvKn06aW5zdGFudGlhdGU6ASraQQRuYW1l2kEQbmFtZSwgcGFyYW1ldGVy",
-            "c8pBKQoVZ29vZ2xlLnByb3RvYnVmLkVtcHR5EhBXb3JrZmxvd01ldGFkYXRh",
-            "EoQDCiFJbnN0YW50aWF0ZUlubGluZVdvcmtmbG93VGVtcGxhdGUSRy5nb29n",
-            "bGUuY2xvdWQuZGF0YXByb2MudjFiZXRhMi5JbnN0YW50aWF0ZUlubGluZVdv",
-            "cmtmbG93VGVtcGxhdGVSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9w",
-            "ZXJhdGlvbiL2AYLT5JMCsAEiTC92MWJldGEyL3twYXJlbnQ9cHJvamVjdHMv",
-            "Ki9sb2NhdGlvbnMvKn0vd29ya2Zsb3dUZW1wbGF0ZXM6aW5zdGFudGlhdGVJ",
-            "bmxpbmU6CHRlbXBsYXRlWlYiSi92MWJldGEyL3twYXJlbnQ9cHJvamVjdHMv",
-            "Ki9yZWdpb25zLyp9L3dvcmtmbG93VGVtcGxhdGVzOmluc3RhbnRpYXRlSW5s",
-            "aW5lOgh0ZW1wbGF0ZdpBEHBhcmVudCwgdGVtcGxhdGXKQSkKFWdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eRIQV29ya2Zsb3dNZXRhZGF0YRK6AgoWVXBkYXRlV29y",
-            "a2Zsb3dUZW1wbGF0ZRI8Lmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEy",
-            "LlVwZGF0ZVdvcmtmbG93VGVtcGxhdGVSZXF1ZXN0Gi8uZ29vZ2xlLmNsb3Vk",
-            "LmRhdGFwcm9jLnYxYmV0YTIuV29ya2Zsb3dUZW1wbGF0ZSKwAYLT5JMCngEa",
-            "QS92MWJldGEyL3t0ZW1wbGF0ZS5uYW1lPXByb2plY3RzLyovcmVnaW9ucy8q",
-            "L3dvcmtmbG93VGVtcGxhdGVzLyp9Ogh0ZW1wbGF0ZVpPGkMvdjFiZXRhMi97",
-            "dGVtcGxhdGUubmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3dvcmtmbG93",
-            "VGVtcGxhdGVzLyp9Ogh0ZW1wbGF0ZdpBCHRlbXBsYXRlEpwCChVMaXN0V29y",
-            "a2Zsb3dUZW1wbGF0ZXMSOy5nb29nbGUuY2xvdWQuZGF0YXByb2MudjFiZXRh",
-            "Mi5MaXN0V29ya2Zsb3dUZW1wbGF0ZXNSZXF1ZXN0GjwuZ29vZ2xlLmNsb3Vk",
-            "LmRhdGFwcm9jLnYxYmV0YTIuTGlzdFdvcmtmbG93VGVtcGxhdGVzUmVzcG9u",
-            "c2UihwGC0+STAngSOC92MWJldGEyL3twYXJlbnQ9cHJvamVjdHMvKi9yZWdp",
-            "b25zLyp9L3dvcmtmbG93VGVtcGxhdGVzWjwSOi92MWJldGEyL3twYXJlbnQ9",
-            "cHJvamVjdHMvKi9sb2NhdGlvbnMvKn0vd29ya2Zsb3dUZW1wbGF0ZXPaQQZw",
-            "YXJlbnQS9gEKFkRlbGV0ZVdvcmtmbG93VGVtcGxhdGUSPC5nb29nbGUuY2xv",
-            "dWQuZGF0YXByb2MudjFiZXRhMi5EZWxldGVXb3JrZmxvd1RlbXBsYXRlUmVx",
-            "dWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSKFAYLT5JMCeCo4L3YxYmV0",
-            "YTIve25hbWU9cHJvamVjdHMvKi9yZWdpb25zLyovd29ya2Zsb3dUZW1wbGF0",
-            "ZXMvKn1aPCo6L3YxYmV0YTIve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMv",
-            "Ki93b3JrZmxvd1RlbXBsYXRlcy8qfdpBBG5hbWUaS8pBF2RhdGFwcm9jLmdv",
-            "b2dsZWFwaXMuY29t0kEuaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0",
-            "aC9jbG91ZC1wbGF0Zm9ybUKEAQohY29tLmdvb2dsZS5jbG91ZC5kYXRhcHJv",
-            "Yy52MWJldGEyQhZXb3JrZmxvd1RlbXBsYXRlc1Byb3RvUAFaRWdvb2dsZS5n",
-            "b2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvZGF0YXByb2Mv",
-            "djFiZXRhMjtkYXRhcHJvY2IGcHJvdG8z"));
+            "aWQYAyABKAkSEgoKcmVxdWVzdF9pZBgEIAEoCSJnCh1VcGRhdGVXb3JrZmxv",
+            "d1RlbXBsYXRlUmVxdWVzdBJGCgh0ZW1wbGF0ZRgBIAEoCzIvLmdvb2dsZS5j",
+            "bG91ZC5kYXRhcHJvYy52MWJldGEyLldvcmtmbG93VGVtcGxhdGVCA+BBAiJa",
+            "ChxMaXN0V29ya2Zsb3dUZW1wbGF0ZXNSZXF1ZXN0EhMKBnBhcmVudBgBIAEo",
+            "CUID4EECEhEKCXBhZ2Vfc2l6ZRgCIAEoBRISCgpwYWdlX3Rva2VuGAMgASgJ",
+            "IoYBCh1MaXN0V29ya2Zsb3dUZW1wbGF0ZXNSZXNwb25zZRJHCgl0ZW1wbGF0",
+            "ZXMYASADKAsyLy5nb29nbGUuY2xvdWQuZGF0YXByb2MudjFiZXRhMi5Xb3Jr",
+            "Zmxvd1RlbXBsYXRlQgPgQQMSHAoPbmV4dF9wYWdlX3Rva2VuGAIgASgJQgPg",
+            "QQMicAodRGVsZXRlV29ya2Zsb3dUZW1wbGF0ZVJlcXVlc3QSPgoEbmFtZRgB",
+            "IAEoCUIw4EEC+kEqCihkYXRhcHJvYy5nb29nbGVhcGlzLmNvbS9Xb3JrZmxv",
+            "d1RlbXBsYXRlEg8KB3ZlcnNpb24YAiABKAUy6REKF1dvcmtmbG93VGVtcGxh",
+            "dGVTZXJ2aWNlErACChZDcmVhdGVXb3JrZmxvd1RlbXBsYXRlEjwuZ29vZ2xl",
+            "LmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuQ3JlYXRlV29ya2Zsb3dUZW1wbGF0",
+            "ZVJlcXVlc3QaLy5nb29nbGUuY2xvdWQuZGF0YXByb2MudjFiZXRhMi5Xb3Jr",
+            "Zmxvd1RlbXBsYXRlIqYBgtPkkwKMASI4L3YxYmV0YTIve3BhcmVudD1wcm9q",
+            "ZWN0cy8qL3JlZ2lvbnMvKn0vd29ya2Zsb3dUZW1wbGF0ZXM6CHRlbXBsYXRl",
+            "WkYiOi92MWJldGEyL3twYXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMvKn0v",
+            "d29ya2Zsb3dUZW1wbGF0ZXM6CHRlbXBsYXRl2kEQcGFyZW50LCB0ZW1wbGF0",
+            "ZRKJAgoTR2V0V29ya2Zsb3dUZW1wbGF0ZRI5Lmdvb2dsZS5jbG91ZC5kYXRh",
+            "cHJvYy52MWJldGEyLkdldFdvcmtmbG93VGVtcGxhdGVSZXF1ZXN0Gi8uZ29v",
+            "Z2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuV29ya2Zsb3dUZW1wbGF0ZSKF",
+            "AYLT5JMCeBI4L3YxYmV0YTIve25hbWU9cHJvamVjdHMvKi9yZWdpb25zLyov",
+            "d29ya2Zsb3dUZW1wbGF0ZXMvKn1aPBI6L3YxYmV0YTIve25hbWU9cHJvamVj",
+            "dHMvKi9sb2NhdGlvbnMvKi93b3JrZmxvd1RlbXBsYXRlcy8qfdpBBG5hbWUS",
+            "5QIKG0luc3RhbnRpYXRlV29ya2Zsb3dUZW1wbGF0ZRJBLmdvb2dsZS5jbG91",
+            "ZC5kYXRhcHJvYy52MWJldGEyLkluc3RhbnRpYXRlV29ya2Zsb3dUZW1wbGF0",
+            "ZVJlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIuMBgtPk",
+            "kwKWASJEL3YxYmV0YTIve25hbWU9cHJvamVjdHMvKi9yZWdpb25zLyovd29y",
+            "a2Zsb3dUZW1wbGF0ZXMvKn06aW5zdGFudGlhdGU6ASpaSyJGL3YxYmV0YTIv",
+            "e25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi93b3JrZmxvd1RlbXBsYXRl",
+            "cy8qfTppbnN0YW50aWF0ZToBKtpBBG5hbWXaQRBuYW1lLCBwYXJhbWV0ZXJz",
+            "ykEpChVnb29nbGUucHJvdG9idWYuRW1wdHkSEFdvcmtmbG93TWV0YWRhdGES",
+            "hAMKIUluc3RhbnRpYXRlSW5saW5lV29ya2Zsb3dUZW1wbGF0ZRJHLmdvb2ds",
+            "ZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkluc3RhbnRpYXRlSW5saW5lV29y",
+            "a2Zsb3dUZW1wbGF0ZVJlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3Bl",
+            "cmF0aW9uIvYBgtPkkwKwASJML3YxYmV0YTIve3BhcmVudD1wcm9qZWN0cy8q",
+            "L2xvY2F0aW9ucy8qfS93b3JrZmxvd1RlbXBsYXRlczppbnN0YW50aWF0ZUlu",
+            "bGluZToIdGVtcGxhdGVaViJKL3YxYmV0YTIve3BhcmVudD1wcm9qZWN0cy8q",
+            "L3JlZ2lvbnMvKn0vd29ya2Zsb3dUZW1wbGF0ZXM6aW5zdGFudGlhdGVJbmxp",
+            "bmU6CHRlbXBsYXRl2kEQcGFyZW50LCB0ZW1wbGF0ZcpBKQoVZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5EhBXb3JrZmxvd01ldGFkYXRhEroCChZVcGRhdGVXb3Jr",
+            "Zmxvd1RlbXBsYXRlEjwuZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIu",
+            "VXBkYXRlV29ya2Zsb3dUZW1wbGF0ZVJlcXVlc3QaLy5nb29nbGUuY2xvdWQu",
+            "ZGF0YXByb2MudjFiZXRhMi5Xb3JrZmxvd1RlbXBsYXRlIrABgtPkkwKeARpB",
+            "L3YxYmV0YTIve3RlbXBsYXRlLm5hbWU9cHJvamVjdHMvKi9yZWdpb25zLyov",
+            "d29ya2Zsb3dUZW1wbGF0ZXMvKn06CHRlbXBsYXRlWk8aQy92MWJldGEyL3t0",
+            "ZW1wbGF0ZS5uYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovd29ya2Zsb3dU",
+            "ZW1wbGF0ZXMvKn06CHRlbXBsYXRl2kEIdGVtcGxhdGUSnAIKFUxpc3RXb3Jr",
+            "Zmxvd1RlbXBsYXRlcxI7Lmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEy",
+            "Lkxpc3RXb3JrZmxvd1RlbXBsYXRlc1JlcXVlc3QaPC5nb29nbGUuY2xvdWQu",
+            "ZGF0YXByb2MudjFiZXRhMi5MaXN0V29ya2Zsb3dUZW1wbGF0ZXNSZXNwb25z",
+            "ZSKHAYLT5JMCeBI4L3YxYmV0YTIve3BhcmVudD1wcm9qZWN0cy8qL3JlZ2lv",
+            "bnMvKn0vd29ya2Zsb3dUZW1wbGF0ZXNaPBI6L3YxYmV0YTIve3BhcmVudD1w",
+            "cm9qZWN0cy8qL2xvY2F0aW9ucy8qfS93b3JrZmxvd1RlbXBsYXRlc9pBBnBh",
+            "cmVudBL2AQoWRGVsZXRlV29ya2Zsb3dUZW1wbGF0ZRI8Lmdvb2dsZS5jbG91",
+            "ZC5kYXRhcHJvYy52MWJldGEyLkRlbGV0ZVdvcmtmbG93VGVtcGxhdGVSZXF1",
+            "ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IoUBgtPkkwJ4KjgvdjFiZXRh",
+            "Mi97bmFtZT1wcm9qZWN0cy8qL3JlZ2lvbnMvKi93b3JrZmxvd1RlbXBsYXRl",
+            "cy8qfVo8KjovdjFiZXRhMi97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8q",
+            "L3dvcmtmbG93VGVtcGxhdGVzLyp92kEEbmFtZRpLykEXZGF0YXByb2MuZ29v",
+            "Z2xlYXBpcy5jb23SQS5odHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRo",
+            "L2Nsb3VkLXBsYXRmb3JtQoQBCiFjb20uZ29vZ2xlLmNsb3VkLmRhdGFwcm9j",
+            "LnYxYmV0YTJCFldvcmtmbG93VGVtcGxhdGVzUHJvdG9QAVpFZ29vZ2xlLmdv",
+            "bGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9kYXRhcHJvYy92",
+            "MWJldGEyO2RhdGFwcm9jYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Dataproc.V1Beta2.ClustersReflection.Descriptor, global::Google.Cloud.Dataproc.V1Beta2.JobsReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplate), global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplate.Parser, new[]{ "Id", "Name", "Version", "CreateTime", "UpdateTime", "Labels", "Placement", "Jobs", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplatePlacement), global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplatePlacement.Parser, new[]{ "ManagedCluster", "ClusterSelector" }, new[]{ "Placement" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ManagedCluster), global::Google.Cloud.Dataproc.V1Beta2.ManagedCluster.Parser, new[]{ "ClusterName", "Config", "Labels" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterSelector), global::Google.Cloud.Dataproc.V1Beta2.ClusterSelector.Parser, new[]{ "Zone", "ClusterLabels" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.OrderedJob), global::Google.Cloud.Dataproc.V1Beta2.OrderedJob.Parser, new[]{ "StepId", "HadoopJob", "SparkJob", "PysparkJob", "HiveJob", "PigJob", "SparkSqlJob", "Labels", "Scheduling", "PrerequisiteStepIds" }, new[]{ "JobType" }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.TemplateParameter), global::Google.Cloud.Dataproc.V1Beta2.TemplateParameter.Parser, new[]{ "Name", "Fields", "Description", "Validation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ParameterValidation), global::Google.Cloud.Dataproc.V1Beta2.ParameterValidation.Parser, new[]{ "Regex", "Values" }, new[]{ "ValidationType" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.RegexValidation), global::Google.Cloud.Dataproc.V1Beta2.RegexValidation.Parser, new[]{ "Regexes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ValueValidation), global::Google.Cloud.Dataproc.V1Beta2.ValueValidation.Parser, new[]{ "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata), global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Parser, new[]{ "Template", "Version", "CreateCluster", "Graph", "DeleteCluster", "State", "ClusterName", "Parameters", "StartTime", "EndTime", "ClusterUuid" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State) }, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterOperation), global::Google.Cloud.Dataproc.V1Beta2.ClusterOperation.Parser, new[]{ "OperationId", "Error", "Done" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowGraph), global::Google.Cloud.Dataproc.V1Beta2.WorkflowGraph.Parser, new[]{ "Nodes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode), global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Parser, new[]{ "StepId", "PrerequisiteStepIds", "JobId", "State", "Error" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.CreateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.CreateWorkflowTemplateRequest.Parser, new[]{ "Parent", "Template" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GetWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.GetWorkflowTemplateRequest.Parser, new[]{ "Name", "Version" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstantiateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.InstantiateWorkflowTemplateRequest.Parser, new[]{ "Name", "Version", "InstanceId", "RequestId", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstantiateInlineWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.InstantiateInlineWorkflowTemplateRequest.Parser, new[]{ "Parent", "Template", "InstanceId", "RequestId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.UpdateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.UpdateWorkflowTemplateRequest.Parser, new[]{ "Template" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesRequest), global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesResponse), global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesResponse.Parser, new[]{ "Templates", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DeleteWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.DeleteWorkflowTemplateRequest.Parser, new[]{ "Name", "Version" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplate), global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplate.Parser, new[]{ "Id", "Name", "Version", "CreateTime", "UpdateTime", "Labels", "Placement", "Jobs", "Parameters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplatePlacement), global::Google.Cloud.Dataproc.V1Beta2.WorkflowTemplatePlacement.Parser, new[]{ "ManagedCluster", "ClusterSelector" }, new[]{ "Placement" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ManagedCluster), global::Google.Cloud.Dataproc.V1Beta2.ManagedCluster.Parser, new[]{ "ClusterName", "Config", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterSelector), global::Google.Cloud.Dataproc.V1Beta2.ClusterSelector.Parser, new[]{ "Zone", "ClusterLabels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.OrderedJob), global::Google.Cloud.Dataproc.V1Beta2.OrderedJob.Parser, new[]{ "StepId", "HadoopJob", "SparkJob", "PysparkJob", "HiveJob", "PigJob", "SparkSqlJob", "Labels", "Scheduling", "PrerequisiteStepIds" }, new[]{ "JobType" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.TemplateParameter), global::Google.Cloud.Dataproc.V1Beta2.TemplateParameter.Parser, new[]{ "Name", "Fields", "Description", "Validation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ParameterValidation), global::Google.Cloud.Dataproc.V1Beta2.ParameterValidation.Parser, new[]{ "Regex", "Values" }, new[]{ "ValidationType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.RegexValidation), global::Google.Cloud.Dataproc.V1Beta2.RegexValidation.Parser, new[]{ "Regexes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ValueValidation), global::Google.Cloud.Dataproc.V1Beta2.ValueValidation.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata), global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Parser, new[]{ "Template", "Version", "CreateCluster", "Graph", "DeleteCluster", "State", "ClusterName", "Parameters", "StartTime", "EndTime", "ClusterUuid" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State) }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterOperation), global::Google.Cloud.Dataproc.V1Beta2.ClusterOperation.Parser, new[]{ "OperationId", "Error", "Done" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowGraph), global::Google.Cloud.Dataproc.V1Beta2.WorkflowGraph.Parser, new[]{ "Nodes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode), global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Parser, new[]{ "StepId", "PrerequisiteStepIds", "JobId", "State", "Error" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.CreateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.CreateWorkflowTemplateRequest.Parser, new[]{ "Parent", "Template" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GetWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.GetWorkflowTemplateRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstantiateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.InstantiateWorkflowTemplateRequest.Parser, new[]{ "Name", "Version", "InstanceId", "RequestId", "Parameters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstantiateInlineWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.InstantiateInlineWorkflowTemplateRequest.Parser, new[]{ "Parent", "Template", "InstanceId", "RequestId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.UpdateWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.UpdateWorkflowTemplateRequest.Parser, new[]{ "Template" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesRequest), global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesResponse), global::Google.Cloud.Dataproc.V1Beta2.ListWorkflowTemplatesResponse.Parser, new[]{ "Templates", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DeleteWorkflowTemplateRequest), global::Google.Cloud.Dataproc.V1Beta2.DeleteWorkflowTemplateRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null)
           }));
     }
     #endregion
@@ -366,7 +365,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "labels" field.</summary>
     public const int LabelsFieldNumber = 6;
     private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 50);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 50);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. The labels to associate with this template. These labels
@@ -931,7 +930,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "labels" field.</summary>
     public const int LabelsFieldNumber = 4;
     private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. The labels to associate with this cluster.
@@ -1124,7 +1123,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "cluster_labels" field.</summary>
     public const int ClusterLabelsFieldNumber = 2;
     private static readonly pbc::MapField<string, string>.Codec _map_clusterLabels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 18);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
     private readonly pbc::MapField<string, string> clusterLabels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Required. The cluster labels. Cluster must have all labels
@@ -1400,7 +1399,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "labels" field.</summary>
     public const int LabelsFieldNumber = 8;
     private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 66);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. The labels to associate with this job.
@@ -2625,7 +2624,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 6;
-    private global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State state_ = 0;
+    private global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State state_ = global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State.Unknown;
     /// <summary>
     /// Output only. The workflow state.
     /// </summary>
@@ -2654,7 +2653,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "parameters" field.</summary>
     public const int ParametersFieldNumber = 8;
     private static readonly pbc::MapField<string, string>.Codec _map_parameters_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 66);
     private readonly pbc::MapField<string, string> parameters_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Map from parameter names to values that were used for those parameters.
@@ -2741,7 +2740,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (createCluster_ != null) hash ^= CreateCluster.GetHashCode();
       if (graph_ != null) hash ^= Graph.GetHashCode();
       if (deleteCluster_ != null) hash ^= DeleteCluster.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State.Unknown) hash ^= State.GetHashCode();
       if (ClusterName.Length != 0) hash ^= ClusterName.GetHashCode();
       hash ^= Parameters.GetHashCode();
       if (startTime_ != null) hash ^= StartTime.GetHashCode();
@@ -2780,7 +2779,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
         output.WriteRawTag(42);
         output.WriteMessage(DeleteCluster);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State.Unknown) {
         output.WriteRawTag(48);
         output.WriteEnum((int) State);
       }
@@ -2824,7 +2823,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (deleteCluster_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeleteCluster);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State.Unknown) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (ClusterName.Length != 0) {
@@ -2875,7 +2874,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
         }
         DeleteCluster.MergeFrom(other.DeleteCluster);
       }
-      if (other.State != 0) {
+      if (other.State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowMetadata.Types.State.Unknown) {
         State = other.State;
       }
       if (other.ClusterName.Length != 0) {
@@ -3410,7 +3409,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 5;
-    private global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState state_ = 0;
+    private global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState state_ = global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState.NodeStatusUnspecified;
     /// <summary>
     /// Output only. The node state.
     /// </summary>
@@ -3463,7 +3462,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (StepId.Length != 0) hash ^= StepId.GetHashCode();
       hash ^= prerequisiteStepIds_.GetHashCode();
       if (JobId.Length != 0) hash ^= JobId.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState.NodeStatusUnspecified) hash ^= State.GetHashCode();
       if (Error.Length != 0) hash ^= Error.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3487,7 +3486,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
         output.WriteRawTag(26);
         output.WriteString(JobId);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState.NodeStatusUnspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) State);
       }
@@ -3510,7 +3509,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (JobId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(JobId);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState.NodeStatusUnspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (Error.Length != 0) {
@@ -3534,7 +3533,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (other.JobId.Length != 0) {
         JobId = other.JobId;
       }
-      if (other.State != 0) {
+      if (other.State != global::Google.Cloud.Dataproc.V1Beta2.WorkflowNode.Types.NodeState.NodeStatusUnspecified) {
         State = other.State;
       }
       if (other.Error.Length != 0) {
@@ -4097,7 +4096,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "parameters" field.</summary>
     public const int ParametersFieldNumber = 4;
     private static readonly pbc::MapField<string, string>.Codec _map_parameters_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
     private readonly pbc::MapField<string, string> parameters_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. Map from parameter names to values that should be used for those

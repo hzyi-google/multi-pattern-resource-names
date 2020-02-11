@@ -11,23 +11,23 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Note kind that represents a logical attestation "role" or "authority". For
  * example, an organization might have one `Authority` for "QA" and one for
- * "build". This Note is intended to act strictly as a grouping mechanism for
- * the attached Occurrences (Attestations). This grouping mechanism also
+ * "build". This note is intended to act strictly as a grouping mechanism for
+ * the attached occurrences (Attestations). This grouping mechanism also
  * provides a security boundary, since IAM ACLs gate the ability for a principle
- * to attach an Occurrence to a given Note. It also provides a single point of
- * lookup to find all attached Attestation Occurrences, even if they don't all
+ * to attach an occurrence to a given note. It also provides a single point of
+ * lookup to find all attached attestation occurrences, even if they don't all
  * live in the same project.
  *
  * Generated from protobuf message <code>grafeas.v1beta1.attestation.Authority</code>
  */
-final class Authority extends \Google\Protobuf\Internal\Message
+class Authority extends \Google\Protobuf\Internal\Message
 {
     /**
      * Hint hints at the purpose of the attestation authority.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
      */
-    private $hint = null;
+    protected $hint = null;
 
     /**
      * Constructor.

@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DecryptRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,7 +111,8 @@ private static final long serialVersionUID = 0L;
    * The server will choose the appropriate version.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -125,7 +132,8 @@ private static final long serialVersionUID = 0L;
    * The server will choose the appropriate version.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -149,7 +157,8 @@ private static final long serialVersionUID = 0L;
    * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
    * </pre>
    *
-   * <code>bytes ciphertext = 2;</code>
+   * <code>bytes ciphertext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The ciphertext.
    */
   public com.google.protobuf.ByteString getCiphertext() {
     return ciphertext_;
@@ -159,11 +168,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString additionalAuthenticatedData_;
   /**
    * <pre>
-   * Optional data that must match the data originally supplied in
+   * Optional. Optional data that must match the data originally supplied in
    * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
    * </pre>
    *
-   * <code>bytes additional_authenticated_data = 3;</code>
+   * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The additionalAuthenticatedData.
    */
   public com.google.protobuf.ByteString getAdditionalAuthenticatedData() {
     return additionalAuthenticatedData_;
@@ -516,7 +526,8 @@ private static final long serialVersionUID = 0L;
      * The server will choose the appropriate version.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -536,7 +547,8 @@ private static final long serialVersionUID = 0L;
      * The server will choose the appropriate version.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -557,7 +569,9 @@ private static final long serialVersionUID = 0L;
      * The server will choose the appropriate version.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -575,7 +589,8 @@ private static final long serialVersionUID = 0L;
      * The server will choose the appropriate version.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -589,7 +604,9 @@ private static final long serialVersionUID = 0L;
      * The server will choose the appropriate version.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -610,7 +627,8 @@ private static final long serialVersionUID = 0L;
      * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
      * </pre>
      *
-     * <code>bytes ciphertext = 2;</code>
+     * <code>bytes ciphertext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The ciphertext.
      */
     public com.google.protobuf.ByteString getCiphertext() {
       return ciphertext_;
@@ -621,7 +639,9 @@ private static final long serialVersionUID = 0L;
      * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
      * </pre>
      *
-     * <code>bytes ciphertext = 2;</code>
+     * <code>bytes ciphertext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The ciphertext to set.
+     * @return This builder for chaining.
      */
     public Builder setCiphertext(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -638,7 +658,8 @@ private static final long serialVersionUID = 0L;
      * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
      * </pre>
      *
-     * <code>bytes ciphertext = 2;</code>
+     * <code>bytes ciphertext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCiphertext() {
       
@@ -650,22 +671,25 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString additionalAuthenticatedData_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * Optional data that must match the data originally supplied in
+     * Optional. Optional data that must match the data originally supplied in
      * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The additionalAuthenticatedData.
      */
     public com.google.protobuf.ByteString getAdditionalAuthenticatedData() {
       return additionalAuthenticatedData_;
     }
     /**
      * <pre>
-     * Optional data that must match the data originally supplied in
+     * Optional. Optional data that must match the data originally supplied in
      * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The additionalAuthenticatedData to set.
+     * @return This builder for chaining.
      */
     public Builder setAdditionalAuthenticatedData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -678,11 +702,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional data that must match the data originally supplied in
+     * Optional. Optional data that must match the data originally supplied in
      * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAdditionalAuthenticatedData() {
       

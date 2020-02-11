@@ -26,181 +26,184 @@ namespace Grafeas.V1Beta1 {
           string.Concat(
             "Cj9nb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9n",
             "cmFmZWFzL2dyYWZlYXMucHJvdG8SD2dyYWZlYXMudjFiZXRhMRocZ29vZ2xl",
-            "L2FwaS9hbm5vdGF0aW9ucy5wcm90bxpHZ29vZ2xlL2RldnRvb2xzL2NvbnRh",
-            "aW5lcmFuYWx5c2lzL3YxYmV0YTEvYXR0ZXN0YXRpb24vYXR0ZXN0YXRpb24u",
-            "cHJvdG8aO2dvb2dsZS9kZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJl",
-            "dGExL2J1aWxkL2J1aWxkLnByb3RvGj1nb29nbGUvZGV2dG9vbHMvY29udGFp",
-            "bmVyYW5hbHlzaXMvdjFiZXRhMS9jb21tb24vY29tbW9uLnByb3RvGkVnb29n",
-            "bGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9kZXBsb3lt",
-            "ZW50L2RlcGxveW1lbnQucHJvdG8aQ2dvb2dsZS9kZXZ0b29scy9jb250YWlu",
-            "ZXJhbmFseXNpcy92MWJldGExL2Rpc2NvdmVyeS9kaXNjb3ZlcnkucHJvdG8a",
-            "O2dvb2dsZS9kZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJldGExL2lt",
-            "YWdlL2ltYWdlLnByb3RvGj9nb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5h",
-            "bHlzaXMvdjFiZXRhMS9wYWNrYWdlL3BhY2thZ2UucHJvdG8aRWdvb2dsZS9k",
-            "ZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJldGExL3Byb3ZlbmFuY2Uv",
-            "cHJvdmVuYW5jZS5wcm90bxpLZ29vZ2xlL2RldnRvb2xzL2NvbnRhaW5lcmFu",
-            "YWx5c2lzL3YxYmV0YTEvdnVsbmVyYWJpbGl0eS92dWxuZXJhYmlsaXR5LnBy",
-            "b3RvGhtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8aIGdvb2dsZS9wcm90",
-            "b2J1Zi9maWVsZF9tYXNrLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0",
-            "YW1wLnByb3RvIpwFCgpPY2N1cnJlbmNlEgwKBG5hbWUYASABKAkSKwoIcmVz",
-            "b3VyY2UYAiABKAsyGS5ncmFmZWFzLnYxYmV0YTEuUmVzb3VyY2USEQoJbm90",
-            "ZV9uYW1lGAMgASgJEicKBGtpbmQYBCABKA4yGS5ncmFmZWFzLnYxYmV0YTEu",
-            "Tm90ZUtpbmQSEwoLcmVtZWRpYXRpb24YBSABKAkSLwoLY3JlYXRlX3RpbWUY",
-            "BiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC3VwZGF0ZV90",
-            "aW1lGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI/Cg12dWxu",
-            "ZXJhYmlsaXR5GAggASgLMiYuZ3JhZmVhcy52MWJldGExLnZ1bG5lcmFiaWxp",
-            "dHkuRGV0YWlsc0gAEi8KBWJ1aWxkGAkgASgLMh4uZ3JhZmVhcy52MWJldGEx",
-            "LmJ1aWxkLkRldGFpbHNIABI3Cg1kZXJpdmVkX2ltYWdlGAogASgLMh4uZ3Jh",
-            "ZmVhcy52MWJldGExLmltYWdlLkRldGFpbHNIABI4CgxpbnN0YWxsYXRpb24Y",
-            "CyABKAsyIC5ncmFmZWFzLnYxYmV0YTEucGFja2FnZS5EZXRhaWxzSAASOQoK",
-            "ZGVwbG95bWVudBgMIAEoCzIjLmdyYWZlYXMudjFiZXRhMS5kZXBsb3ltZW50",
-            "LkRldGFpbHNIABI4CgpkaXNjb3ZlcmVkGA0gASgLMiIuZ3JhZmVhcy52MWJl",
-            "dGExLmRpc2NvdmVyeS5EZXRhaWxzSAASOwoLYXR0ZXN0YXRpb24YDiABKAsy",
-            "JC5ncmFmZWFzLnYxYmV0YTEuYXR0ZXN0YXRpb24uRGV0YWlsc0gAQgkKB2Rl",
-            "dGFpbHMiXQoIUmVzb3VyY2USDAoEbmFtZRgBIAEoCRILCgN1cmkYAiABKAkS",
-            "NgoMY29udGVudF9oYXNoGAMgASgLMiAuZ3JhZmVhcy52MWJldGExLnByb3Zl",
-            "bmFuY2UuSGFzaCKABgoETm90ZRIMCgRuYW1lGAEgASgJEhkKEXNob3J0X2Rl",
-            "c2NyaXB0aW9uGAIgASgJEhgKEGxvbmdfZGVzY3JpcHRpb24YAyABKAkSJwoE",
-            "a2luZBgEIAEoDjIZLmdyYWZlYXMudjFiZXRhMS5Ob3RlS2luZBIwCgtyZWxh",
-            "dGVkX3VybBgFIAMoCzIbLmdyYWZlYXMudjFiZXRhMS5SZWxhdGVkVXJsEjMK",
-            "D2V4cGlyYXRpb25fdGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
-            "c3RhbXASLwoLY3JlYXRlX3RpbWUYByABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wEi8KC3VwZGF0ZV90aW1lGAggASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcBIaChJyZWxhdGVkX25vdGVfbmFtZXMYCSADKAkSRQoN",
-            "dnVsbmVyYWJpbGl0eRgKIAEoCzIsLmdyYWZlYXMudjFiZXRhMS52dWxuZXJh",
-            "YmlsaXR5LlZ1bG5lcmFiaWxpdHlIABItCgVidWlsZBgLIAEoCzIcLmdyYWZl",
-            "YXMudjFiZXRhMS5idWlsZC5CdWlsZEgAEjIKCmJhc2VfaW1hZ2UYDCABKAsy",
-            "HC5ncmFmZWFzLnYxYmV0YTEuaW1hZ2UuQmFzaXNIABIzCgdwYWNrYWdlGA0g",
-            "ASgLMiAuZ3JhZmVhcy52MWJldGExLnBhY2thZ2UuUGFja2FnZUgAEjwKCmRl",
-            "cGxveWFibGUYDiABKAsyJi5ncmFmZWFzLnYxYmV0YTEuZGVwbG95bWVudC5E",
-            "ZXBsb3lhYmxlSAASOQoJZGlzY292ZXJ5GA8gASgLMiQuZ3JhZmVhcy52MWJl",
-            "dGExLmRpc2NvdmVyeS5EaXNjb3ZlcnlIABJHChVhdHRlc3RhdGlvbl9hdXRo",
-            "b3JpdHkYECABKAsyJi5ncmFmZWFzLnYxYmV0YTEuYXR0ZXN0YXRpb24uQXV0",
-            "aG9yaXR5SABCBgoEdHlwZSIkChRHZXRPY2N1cnJlbmNlUmVxdWVzdBIMCgRu",
-            "YW1lGAEgASgJIl8KFkxpc3RPY2N1cnJlbmNlc1JlcXVlc3QSDgoGcGFyZW50",
-            "GAEgASgJEg4KBmZpbHRlchgCIAEoCRIRCglwYWdlX3NpemUYAyABKAUSEgoK",
-            "cGFnZV90b2tlbhgEIAEoCSJkChdMaXN0T2NjdXJyZW5jZXNSZXNwb25zZRIw",
-            "CgtvY2N1cnJlbmNlcxgBIAMoCzIbLmdyYWZlYXMudjFiZXRhMS5PY2N1cnJl",
-            "bmNlEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCSInChdEZWxldGVPY2N1cnJl",
-            "bmNlUmVxdWVzdBIMCgRuYW1lGAEgASgJIloKF0NyZWF0ZU9jY3VycmVuY2VS",
-            "ZXF1ZXN0Eg4KBnBhcmVudBgBIAEoCRIvCgpvY2N1cnJlbmNlGAIgASgLMhsu",
-            "Z3JhZmVhcy52MWJldGExLk9jY3VycmVuY2UiiQEKF1VwZGF0ZU9jY3VycmVu",
-            "Y2VSZXF1ZXN0EgwKBG5hbWUYASABKAkSLwoKb2NjdXJyZW5jZRgCIAEoCzIb",
-            "LmdyYWZlYXMudjFiZXRhMS5PY2N1cnJlbmNlEi8KC3VwZGF0ZV9tYXNrGAMg",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFzayIeCg5HZXROb3RlUmVx",
-            "dWVzdBIMCgRuYW1lGAEgASgJIigKGEdldE9jY3VycmVuY2VOb3RlUmVxdWVz",
-            "dBIMCgRuYW1lGAEgASgJIlkKEExpc3ROb3Rlc1JlcXVlc3QSDgoGcGFyZW50",
-            "GAEgASgJEg4KBmZpbHRlchgCIAEoCRIRCglwYWdlX3NpemUYAyABKAUSEgoK",
-            "cGFnZV90b2tlbhgEIAEoCSJSChFMaXN0Tm90ZXNSZXNwb25zZRIkCgVub3Rl",
-            "cxgBIAMoCzIVLmdyYWZlYXMudjFiZXRhMS5Ob3RlEhcKD25leHRfcGFnZV90",
-            "b2tlbhgCIAEoCSIhChFEZWxldGVOb3RlUmVxdWVzdBIMCgRuYW1lGAEgASgJ",
-            "IlkKEUNyZWF0ZU5vdGVSZXF1ZXN0Eg4KBnBhcmVudBgBIAEoCRIPCgdub3Rl",
-            "X2lkGAIgASgJEiMKBG5vdGUYAyABKAsyFS5ncmFmZWFzLnYxYmV0YTEuTm90",
-            "ZSJ3ChFVcGRhdGVOb3RlUmVxdWVzdBIMCgRuYW1lGAEgASgJEiMKBG5vdGUY",
-            "AiABKAsyFS5ncmFmZWFzLnYxYmV0YTEuTm90ZRIvCgt1cGRhdGVfbWFzaxgD",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2siYQoaTGlzdE5vdGVP",
-            "Y2N1cnJlbmNlc1JlcXVlc3QSDAoEbmFtZRgBIAEoCRIOCgZmaWx0ZXIYAiAB",
-            "KAkSEQoJcGFnZV9zaXplGAMgASgFEhIKCnBhZ2VfdG9rZW4YBCABKAkiaAob",
-            "TGlzdE5vdGVPY2N1cnJlbmNlc1Jlc3BvbnNlEjAKC29jY3VycmVuY2VzGAEg",
-            "AygLMhsuZ3JhZmVhcy52MWJldGExLk9jY3VycmVuY2USFwoPbmV4dF9wYWdl",
-            "X3Rva2VuGAIgASgJIrIBChdCYXRjaENyZWF0ZU5vdGVzUmVxdWVzdBIOCgZw",
-            "YXJlbnQYASABKAkSQgoFbm90ZXMYAiADKAsyMy5ncmFmZWFzLnYxYmV0YTEu",
-            "QmF0Y2hDcmVhdGVOb3Rlc1JlcXVlc3QuTm90ZXNFbnRyeRpDCgpOb3Rlc0Vu",
-            "dHJ5EgsKA2tleRgBIAEoCRIkCgV2YWx1ZRgCIAEoCzIVLmdyYWZlYXMudjFi",
-            "ZXRhMS5Ob3RlOgI4ASJAChhCYXRjaENyZWF0ZU5vdGVzUmVzcG9uc2USJAoF",
-            "bm90ZXMYASADKAsyFS5ncmFmZWFzLnYxYmV0YTEuTm90ZSJhCh1CYXRjaENy",
-            "ZWF0ZU9jY3VycmVuY2VzUmVxdWVzdBIOCgZwYXJlbnQYASABKAkSMAoLb2Nj",
-            "dXJyZW5jZXMYAiADKAsyGy5ncmFmZWFzLnYxYmV0YTEuT2NjdXJyZW5jZSJS",
-            "Ch5CYXRjaENyZWF0ZU9jY3VycmVuY2VzUmVzcG9uc2USMAoLb2NjdXJyZW5j",
-            "ZXMYASADKAsyGy5ncmFmZWFzLnYxYmV0YTEuT2NjdXJyZW5jZSJLCilHZXRW",
-            "dWxuZXJhYmlsaXR5T2NjdXJyZW5jZXNTdW1tYXJ5UmVxdWVzdBIOCgZwYXJl",
-            "bnQYASABKAkSDgoGZmlsdGVyGAIgASgJIqUCCh9WdWxuZXJhYmlsaXR5T2Nj",
-            "dXJyZW5jZXNTdW1tYXJ5ElUKBmNvdW50cxgBIAMoCzJFLmdyYWZlYXMudjFi",
-            "ZXRhMS5WdWxuZXJhYmlsaXR5T2NjdXJyZW5jZXNTdW1tYXJ5LkZpeGFibGVU",
-            "b3RhbEJ5RGlnZXN0GqoBChRGaXhhYmxlVG90YWxCeURpZ2VzdBIrCghyZXNv",
-            "dXJjZRgBIAEoCzIZLmdyYWZlYXMudjFiZXRhMS5SZXNvdXJjZRI5CghzZXZl",
-            "cml0eRgCIAEoDjInLmdyYWZlYXMudjFiZXRhMS52dWxuZXJhYmlsaXR5LlNl",
-            "dmVyaXR5EhUKDWZpeGFibGVfY291bnQYAyABKAMSEwoLdG90YWxfY291bnQY",
-            "BCABKAMywhEKDkdyYWZlYXNWMUJldGExEoUBCg1HZXRPY2N1cnJlbmNlEiUu",
-            "Z3JhZmVhcy52MWJldGExLkdldE9jY3VycmVuY2VSZXF1ZXN0GhsuZ3JhZmVh",
-            "cy52MWJldGExLk9jY3VycmVuY2UiMILT5JMCKhIoL3YxYmV0YTEve25hbWU9",
-            "cHJvamVjdHMvKi9vY2N1cnJlbmNlcy8qfRKWAQoPTGlzdE9jY3VycmVuY2Vz",
-            "EicuZ3JhZmVhcy52MWJldGExLkxpc3RPY2N1cnJlbmNlc1JlcXVlc3QaKC5n",
-            "cmFmZWFzLnYxYmV0YTEuTGlzdE9jY3VycmVuY2VzUmVzcG9uc2UiMILT5JMC",
-            "KhIoL3YxYmV0YTEve3BhcmVudD1wcm9qZWN0cy8qfS9vY2N1cnJlbmNlcxKG",
-            "AQoQRGVsZXRlT2NjdXJyZW5jZRIoLmdyYWZlYXMudjFiZXRhMS5EZWxldGVP",
-            "Y2N1cnJlbmNlUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIwgtPk",
-            "kwIqKigvdjFiZXRhMS97bmFtZT1wcm9qZWN0cy8qL29jY3VycmVuY2VzLyp9",
-            "EpcBChBDcmVhdGVPY2N1cnJlbmNlEiguZ3JhZmVhcy52MWJldGExLkNyZWF0",
-            "ZU9jY3VycmVuY2VSZXF1ZXN0GhsuZ3JhZmVhcy52MWJldGExLk9jY3VycmVu",
-            "Y2UiPILT5JMCNiIoL3YxYmV0YTEve3BhcmVudD1wcm9qZWN0cy8qfS9vY2N1",
-            "cnJlbmNlczoKb2NjdXJyZW5jZRK6AQoWQmF0Y2hDcmVhdGVPY2N1cnJlbmNl",
-            "cxIuLmdyYWZlYXMudjFiZXRhMS5CYXRjaENyZWF0ZU9jY3VycmVuY2VzUmVx",
-            "dWVzdBovLmdyYWZlYXMudjFiZXRhMS5CYXRjaENyZWF0ZU9jY3VycmVuY2Vz",
-            "UmVzcG9uc2UiP4LT5JMCOSI0L3YxYmV0YTEve3BhcmVudD1wcm9qZWN0cy8q",
-            "fS9vY2N1cnJlbmNlczpiYXRjaENyZWF0ZToBKhKXAQoQVXBkYXRlT2NjdXJy",
-            "ZW5jZRIoLmdyYWZlYXMudjFiZXRhMS5VcGRhdGVPY2N1cnJlbmNlUmVxdWVz",
-            "dBobLmdyYWZlYXMudjFiZXRhMS5PY2N1cnJlbmNlIjyC0+STAjYyKC92MWJl",
-            "dGExL3tuYW1lPXByb2plY3RzLyovb2NjdXJyZW5jZXMvKn06Cm9jY3VycmVu",
-            "Y2USjQEKEUdldE9jY3VycmVuY2VOb3RlEikuZ3JhZmVhcy52MWJldGExLkdl",
-            "dE9jY3VycmVuY2VOb3RlUmVxdWVzdBoVLmdyYWZlYXMudjFiZXRhMS5Ob3Rl",
-            "IjaC0+STAjASLi92MWJldGExL3tuYW1lPXByb2plY3RzLyovb2NjdXJyZW5j",
-            "ZXMvKn0vbm90ZXMSbQoHR2V0Tm90ZRIfLmdyYWZlYXMudjFiZXRhMS5HZXRO",
-            "b3RlUmVxdWVzdBoVLmdyYWZlYXMudjFiZXRhMS5Ob3RlIiqC0+STAiQSIi92",
-            "MWJldGExL3tuYW1lPXByb2plY3RzLyovbm90ZXMvKn0SfgoJTGlzdE5vdGVz",
-            "EiEuZ3JhZmVhcy52MWJldGExLkxpc3ROb3Rlc1JlcXVlc3QaIi5ncmFmZWFz",
-            "LnYxYmV0YTEuTGlzdE5vdGVzUmVzcG9uc2UiKoLT5JMCJBIiL3YxYmV0YTEv",
-            "e3BhcmVudD1wcm9qZWN0cy8qfS9ub3RlcxJ0CgpEZWxldGVOb3RlEiIuZ3Jh",
-            "ZmVhcy52MWJldGExLkRlbGV0ZU5vdGVSZXF1ZXN0GhYuZ29vZ2xlLnByb3Rv",
-            "YnVmLkVtcHR5IiqC0+STAiQqIi92MWJldGExL3tuYW1lPXByb2plY3RzLyov",
-            "bm90ZXMvKn0SeQoKQ3JlYXRlTm90ZRIiLmdyYWZlYXMudjFiZXRhMS5DcmVh",
-            "dGVOb3RlUmVxdWVzdBoVLmdyYWZlYXMudjFiZXRhMS5Ob3RlIjCC0+STAioi",
-            "Ii92MWJldGExL3twYXJlbnQ9cHJvamVjdHMvKn0vbm90ZXM6BG5vdGUSogEK",
-            "EEJhdGNoQ3JlYXRlTm90ZXMSKC5ncmFmZWFzLnYxYmV0YTEuQmF0Y2hDcmVh",
-            "dGVOb3Rlc1JlcXVlc3QaKS5ncmFmZWFzLnYxYmV0YTEuQmF0Y2hDcmVhdGVO",
-            "b3Rlc1Jlc3BvbnNlIjmC0+STAjMiLi92MWJldGExL3twYXJlbnQ9cHJvamVj",
-            "dHMvKn0vbm90ZXM6YmF0Y2hDcmVhdGU6ASoSeQoKVXBkYXRlTm90ZRIiLmdy",
-            "YWZlYXMudjFiZXRhMS5VcGRhdGVOb3RlUmVxdWVzdBoVLmdyYWZlYXMudjFi",
-            "ZXRhMS5Ob3RlIjCC0+STAioyIi92MWJldGExL3tuYW1lPXByb2plY3RzLyov",
-            "bm90ZXMvKn06BG5vdGUSqAEKE0xpc3ROb3RlT2NjdXJyZW5jZXMSKy5ncmFm",
-            "ZWFzLnYxYmV0YTEuTGlzdE5vdGVPY2N1cnJlbmNlc1JlcXVlc3QaLC5ncmFm",
-            "ZWFzLnYxYmV0YTEuTGlzdE5vdGVPY2N1cnJlbmNlc1Jlc3BvbnNlIjaC0+ST",
-            "AjASLi92MWJldGExL3tuYW1lPXByb2plY3RzLyovbm90ZXMvKn0vb2NjdXJy",
-            "ZW5jZXMS2QEKIkdldFZ1bG5lcmFiaWxpdHlPY2N1cnJlbmNlc1N1bW1hcnkS",
-            "Oi5ncmFmZWFzLnYxYmV0YTEuR2V0VnVsbmVyYWJpbGl0eU9jY3VycmVuY2Vz",
-            "U3VtbWFyeVJlcXVlc3QaMC5ncmFmZWFzLnYxYmV0YTEuVnVsbmVyYWJpbGl0",
-            "eU9jY3VycmVuY2VzU3VtbWFyeSJFgtPkkwI/Ej0vdjFiZXRhMS97cGFyZW50",
-            "PXByb2plY3RzLyp9L29jY3VycmVuY2VzOnZ1bG5lcmFiaWxpdHlTdW1tYXJ5",
-            "QnYKEmlvLmdyYWZlYXMudjFiZXRhMVABWlhnb29nbGUuZ29sYW5nLm9yZy9n",
-            "ZW5wcm90by9nb29nbGVhcGlzL2RldnRvb2xzL2NvbnRhaW5lcmFuYWx5c2lz",
-            "L3YxYmV0YTEvZ3JhZmVhcztncmFmZWFzogIDR1JBYgZwcm90bzM="));
+            "L2FwaS9hbm5vdGF0aW9ucy5wcm90bxoXZ29vZ2xlL2FwaS9jbGllbnQucHJv",
+            "dG8aR2dvb2dsZS9kZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJldGEx",
+            "L2F0dGVzdGF0aW9uL2F0dGVzdGF0aW9uLnByb3RvGjtnb29nbGUvZGV2dG9v",
+            "bHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9idWlsZC9idWlsZC5wcm90",
+            "bxo9Z29vZ2xlL2RldnRvb2xzL2NvbnRhaW5lcmFuYWx5c2lzL3YxYmV0YTEv",
+            "Y29tbW9uL2NvbW1vbi5wcm90bxpFZ29vZ2xlL2RldnRvb2xzL2NvbnRhaW5l",
+            "cmFuYWx5c2lzL3YxYmV0YTEvZGVwbG95bWVudC9kZXBsb3ltZW50LnByb3Rv",
+            "GkNnb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9k",
+            "aXNjb3ZlcnkvZGlzY292ZXJ5LnByb3RvGjtnb29nbGUvZGV2dG9vbHMvY29u",
+            "dGFpbmVyYW5hbHlzaXMvdjFiZXRhMS9pbWFnZS9pbWFnZS5wcm90bxo/Z29v",
+            "Z2xlL2RldnRvb2xzL2NvbnRhaW5lcmFuYWx5c2lzL3YxYmV0YTEvcGFja2Fn",
+            "ZS9wYWNrYWdlLnByb3RvGkVnb29nbGUvZGV2dG9vbHMvY29udGFpbmVyYW5h",
+            "bHlzaXMvdjFiZXRhMS9wcm92ZW5hbmNlL3Byb3ZlbmFuY2UucHJvdG8aS2dv",
+            "b2dsZS9kZXZ0b29scy9jb250YWluZXJhbmFseXNpcy92MWJldGExL3Z1bG5l",
+            "cmFiaWxpdHkvdnVsbmVyYWJpbGl0eS5wcm90bxobZ29vZ2xlL3Byb3RvYnVm",
+            "L2VtcHR5LnByb3RvGiBnb29nbGUvcHJvdG9idWYvZmllbGRfbWFzay5wcm90",
+            "bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byKcBQoKT2NjdXJy",
+            "ZW5jZRIMCgRuYW1lGAEgASgJEisKCHJlc291cmNlGAIgASgLMhkuZ3JhZmVh",
+            "cy52MWJldGExLlJlc291cmNlEhEKCW5vdGVfbmFtZRgDIAEoCRInCgRraW5k",
+            "GAQgASgOMhkuZ3JhZmVhcy52MWJldGExLk5vdGVLaW5kEhMKC3JlbWVkaWF0",
+            "aW9uGAUgASgJEi8KC2NyZWF0ZV90aW1lGAYgASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcBIvCgt1cGRhdGVfdGltZRgHIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXASPwoNdnVsbmVyYWJpbGl0eRgIIAEoCzImLmdy",
+            "YWZlYXMudjFiZXRhMS52dWxuZXJhYmlsaXR5LkRldGFpbHNIABIvCgVidWls",
+            "ZBgJIAEoCzIeLmdyYWZlYXMudjFiZXRhMS5idWlsZC5EZXRhaWxzSAASNwoN",
+            "ZGVyaXZlZF9pbWFnZRgKIAEoCzIeLmdyYWZlYXMudjFiZXRhMS5pbWFnZS5E",
+            "ZXRhaWxzSAASOAoMaW5zdGFsbGF0aW9uGAsgASgLMiAuZ3JhZmVhcy52MWJl",
+            "dGExLnBhY2thZ2UuRGV0YWlsc0gAEjkKCmRlcGxveW1lbnQYDCABKAsyIy5n",
+            "cmFmZWFzLnYxYmV0YTEuZGVwbG95bWVudC5EZXRhaWxzSAASOAoKZGlzY292",
+            "ZXJlZBgNIAEoCzIiLmdyYWZlYXMudjFiZXRhMS5kaXNjb3ZlcnkuRGV0YWls",
+            "c0gAEjsKC2F0dGVzdGF0aW9uGA4gASgLMiQuZ3JhZmVhcy52MWJldGExLmF0",
+            "dGVzdGF0aW9uLkRldGFpbHNIAEIJCgdkZXRhaWxzIl0KCFJlc291cmNlEgwK",
+            "BG5hbWUYASABKAkSCwoDdXJpGAIgASgJEjYKDGNvbnRlbnRfaGFzaBgDIAEo",
+            "CzIgLmdyYWZlYXMudjFiZXRhMS5wcm92ZW5hbmNlLkhhc2gigAYKBE5vdGUS",
+            "DAoEbmFtZRgBIAEoCRIZChFzaG9ydF9kZXNjcmlwdGlvbhgCIAEoCRIYChBs",
+            "b25nX2Rlc2NyaXB0aW9uGAMgASgJEicKBGtpbmQYBCABKA4yGS5ncmFmZWFz",
+            "LnYxYmV0YTEuTm90ZUtpbmQSMAoLcmVsYXRlZF91cmwYBSADKAsyGy5ncmFm",
+            "ZWFzLnYxYmV0YTEuUmVsYXRlZFVybBIzCg9leHBpcmF0aW9uX3RpbWUYBiAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC2NyZWF0ZV90aW1l",
+            "GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgt1cGRhdGVf",
+            "dGltZRgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGgoScmVs",
+            "YXRlZF9ub3RlX25hbWVzGAkgAygJEkUKDXZ1bG5lcmFiaWxpdHkYCiABKAsy",
+            "LC5ncmFmZWFzLnYxYmV0YTEudnVsbmVyYWJpbGl0eS5WdWxuZXJhYmlsaXR5",
+            "SAASLQoFYnVpbGQYCyABKAsyHC5ncmFmZWFzLnYxYmV0YTEuYnVpbGQuQnVp",
+            "bGRIABIyCgpiYXNlX2ltYWdlGAwgASgLMhwuZ3JhZmVhcy52MWJldGExLmlt",
+            "YWdlLkJhc2lzSAASMwoHcGFja2FnZRgNIAEoCzIgLmdyYWZlYXMudjFiZXRh",
+            "MS5wYWNrYWdlLlBhY2thZ2VIABI8CgpkZXBsb3lhYmxlGA4gASgLMiYuZ3Jh",
+            "ZmVhcy52MWJldGExLmRlcGxveW1lbnQuRGVwbG95YWJsZUgAEjkKCWRpc2Nv",
+            "dmVyeRgPIAEoCzIkLmdyYWZlYXMudjFiZXRhMS5kaXNjb3ZlcnkuRGlzY292",
+            "ZXJ5SAASRwoVYXR0ZXN0YXRpb25fYXV0aG9yaXR5GBAgASgLMiYuZ3JhZmVh",
+            "cy52MWJldGExLmF0dGVzdGF0aW9uLkF1dGhvcml0eUgAQgYKBHR5cGUiJAoU",
+            "R2V0T2NjdXJyZW5jZVJlcXVlc3QSDAoEbmFtZRgBIAEoCSJfChZMaXN0T2Nj",
+            "dXJyZW5jZXNSZXF1ZXN0Eg4KBnBhcmVudBgBIAEoCRIOCgZmaWx0ZXIYAiAB",
+            "KAkSEQoJcGFnZV9zaXplGAMgASgFEhIKCnBhZ2VfdG9rZW4YBCABKAkiZAoX",
+            "TGlzdE9jY3VycmVuY2VzUmVzcG9uc2USMAoLb2NjdXJyZW5jZXMYASADKAsy",
+            "Gy5ncmFmZWFzLnYxYmV0YTEuT2NjdXJyZW5jZRIXCg9uZXh0X3BhZ2VfdG9r",
+            "ZW4YAiABKAkiJwoXRGVsZXRlT2NjdXJyZW5jZVJlcXVlc3QSDAoEbmFtZRgB",
+            "IAEoCSJaChdDcmVhdGVPY2N1cnJlbmNlUmVxdWVzdBIOCgZwYXJlbnQYASAB",
+            "KAkSLwoKb2NjdXJyZW5jZRgCIAEoCzIbLmdyYWZlYXMudjFiZXRhMS5PY2N1",
+            "cnJlbmNlIokBChdVcGRhdGVPY2N1cnJlbmNlUmVxdWVzdBIMCgRuYW1lGAEg",
+            "ASgJEi8KCm9jY3VycmVuY2UYAiABKAsyGy5ncmFmZWFzLnYxYmV0YTEuT2Nj",
+            "dXJyZW5jZRIvCgt1cGRhdGVfbWFzaxgDIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5GaWVsZE1hc2siHgoOR2V0Tm90ZVJlcXVlc3QSDAoEbmFtZRgBIAEoCSIo",
+            "ChhHZXRPY2N1cnJlbmNlTm90ZVJlcXVlc3QSDAoEbmFtZRgBIAEoCSJZChBM",
+            "aXN0Tm90ZXNSZXF1ZXN0Eg4KBnBhcmVudBgBIAEoCRIOCgZmaWx0ZXIYAiAB",
+            "KAkSEQoJcGFnZV9zaXplGAMgASgFEhIKCnBhZ2VfdG9rZW4YBCABKAkiUgoR",
+            "TGlzdE5vdGVzUmVzcG9uc2USJAoFbm90ZXMYASADKAsyFS5ncmFmZWFzLnYx",
+            "YmV0YTEuTm90ZRIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiIQoRRGVsZXRl",
+            "Tm90ZVJlcXVlc3QSDAoEbmFtZRgBIAEoCSJZChFDcmVhdGVOb3RlUmVxdWVz",
+            "dBIOCgZwYXJlbnQYASABKAkSDwoHbm90ZV9pZBgCIAEoCRIjCgRub3RlGAMg",
+            "ASgLMhUuZ3JhZmVhcy52MWJldGExLk5vdGUidwoRVXBkYXRlTm90ZVJlcXVl",
+            "c3QSDAoEbmFtZRgBIAEoCRIjCgRub3RlGAIgASgLMhUuZ3JhZmVhcy52MWJl",
+            "dGExLk5vdGUSLwoLdXBkYXRlX21hc2sYAyABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuRmllbGRNYXNrImEKGkxpc3ROb3RlT2NjdXJyZW5jZXNSZXF1ZXN0EgwK",
+            "BG5hbWUYASABKAkSDgoGZmlsdGVyGAIgASgJEhEKCXBhZ2Vfc2l6ZRgDIAEo",
+            "BRISCgpwYWdlX3Rva2VuGAQgASgJImgKG0xpc3ROb3RlT2NjdXJyZW5jZXNS",
+            "ZXNwb25zZRIwCgtvY2N1cnJlbmNlcxgBIAMoCzIbLmdyYWZlYXMudjFiZXRh",
+            "MS5PY2N1cnJlbmNlEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCSKyAQoXQmF0",
+            "Y2hDcmVhdGVOb3Rlc1JlcXVlc3QSDgoGcGFyZW50GAEgASgJEkIKBW5vdGVz",
+            "GAIgAygLMjMuZ3JhZmVhcy52MWJldGExLkJhdGNoQ3JlYXRlTm90ZXNSZXF1",
+            "ZXN0Lk5vdGVzRW50cnkaQwoKTm90ZXNFbnRyeRILCgNrZXkYASABKAkSJAoF",
+            "dmFsdWUYAiABKAsyFS5ncmFmZWFzLnYxYmV0YTEuTm90ZToCOAEiQAoYQmF0",
+            "Y2hDcmVhdGVOb3Rlc1Jlc3BvbnNlEiQKBW5vdGVzGAEgAygLMhUuZ3JhZmVh",
+            "cy52MWJldGExLk5vdGUiYQodQmF0Y2hDcmVhdGVPY2N1cnJlbmNlc1JlcXVl",
+            "c3QSDgoGcGFyZW50GAEgASgJEjAKC29jY3VycmVuY2VzGAIgAygLMhsuZ3Jh",
+            "ZmVhcy52MWJldGExLk9jY3VycmVuY2UiUgoeQmF0Y2hDcmVhdGVPY2N1cnJl",
+            "bmNlc1Jlc3BvbnNlEjAKC29jY3VycmVuY2VzGAEgAygLMhsuZ3JhZmVhcy52",
+            "MWJldGExLk9jY3VycmVuY2UiSwopR2V0VnVsbmVyYWJpbGl0eU9jY3VycmVu",
+            "Y2VzU3VtbWFyeVJlcXVlc3QSDgoGcGFyZW50GAEgASgJEg4KBmZpbHRlchgC",
+            "IAEoCSKlAgofVnVsbmVyYWJpbGl0eU9jY3VycmVuY2VzU3VtbWFyeRJVCgZj",
+            "b3VudHMYASADKAsyRS5ncmFmZWFzLnYxYmV0YTEuVnVsbmVyYWJpbGl0eU9j",
+            "Y3VycmVuY2VzU3VtbWFyeS5GaXhhYmxlVG90YWxCeURpZ2VzdBqqAQoURml4",
+            "YWJsZVRvdGFsQnlEaWdlc3QSKwoIcmVzb3VyY2UYASABKAsyGS5ncmFmZWFz",
+            "LnYxYmV0YTEuUmVzb3VyY2USOQoIc2V2ZXJpdHkYAiABKA4yJy5ncmFmZWFz",
+            "LnYxYmV0YTEudnVsbmVyYWJpbGl0eS5TZXZlcml0eRIVCg1maXhhYmxlX2Nv",
+            "dW50GAMgASgDEhMKC3RvdGFsX2NvdW50GAQgASgDMpgSCg5HcmFmZWFzVjFC",
+            "ZXRhMRKFAQoNR2V0T2NjdXJyZW5jZRIlLmdyYWZlYXMudjFiZXRhMS5HZXRP",
+            "Y2N1cnJlbmNlUmVxdWVzdBobLmdyYWZlYXMudjFiZXRhMS5PY2N1cnJlbmNl",
+            "IjCC0+STAioSKC92MWJldGExL3tuYW1lPXByb2plY3RzLyovb2NjdXJyZW5j",
+            "ZXMvKn0SlgEKD0xpc3RPY2N1cnJlbmNlcxInLmdyYWZlYXMudjFiZXRhMS5M",
+            "aXN0T2NjdXJyZW5jZXNSZXF1ZXN0GiguZ3JhZmVhcy52MWJldGExLkxpc3RP",
+            "Y2N1cnJlbmNlc1Jlc3BvbnNlIjCC0+STAioSKC92MWJldGExL3twYXJlbnQ9",
+            "cHJvamVjdHMvKn0vb2NjdXJyZW5jZXMShgEKEERlbGV0ZU9jY3VycmVuY2US",
+            "KC5ncmFmZWFzLnYxYmV0YTEuRGVsZXRlT2NjdXJyZW5jZVJlcXVlc3QaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkiMILT5JMCKiooL3YxYmV0YTEve25hbWU9",
+            "cHJvamVjdHMvKi9vY2N1cnJlbmNlcy8qfRKXAQoQQ3JlYXRlT2NjdXJyZW5j",
+            "ZRIoLmdyYWZlYXMudjFiZXRhMS5DcmVhdGVPY2N1cnJlbmNlUmVxdWVzdBob",
+            "LmdyYWZlYXMudjFiZXRhMS5PY2N1cnJlbmNlIjyC0+STAjYiKC92MWJldGEx",
+            "L3twYXJlbnQ9cHJvamVjdHMvKn0vb2NjdXJyZW5jZXM6Cm9jY3VycmVuY2US",
+            "ugEKFkJhdGNoQ3JlYXRlT2NjdXJyZW5jZXMSLi5ncmFmZWFzLnYxYmV0YTEu",
+            "QmF0Y2hDcmVhdGVPY2N1cnJlbmNlc1JlcXVlc3QaLy5ncmFmZWFzLnYxYmV0",
+            "YTEuQmF0Y2hDcmVhdGVPY2N1cnJlbmNlc1Jlc3BvbnNlIj+C0+STAjkiNC92",
+            "MWJldGExL3twYXJlbnQ9cHJvamVjdHMvKn0vb2NjdXJyZW5jZXM6YmF0Y2hD",
+            "cmVhdGU6ASoSlwEKEFVwZGF0ZU9jY3VycmVuY2USKC5ncmFmZWFzLnYxYmV0",
+            "YTEuVXBkYXRlT2NjdXJyZW5jZVJlcXVlc3QaGy5ncmFmZWFzLnYxYmV0YTEu",
+            "T2NjdXJyZW5jZSI8gtPkkwI2MigvdjFiZXRhMS97bmFtZT1wcm9qZWN0cy8q",
+            "L29jY3VycmVuY2VzLyp9OgpvY2N1cnJlbmNlEo0BChFHZXRPY2N1cnJlbmNl",
+            "Tm90ZRIpLmdyYWZlYXMudjFiZXRhMS5HZXRPY2N1cnJlbmNlTm90ZVJlcXVl",
+            "c3QaFS5ncmFmZWFzLnYxYmV0YTEuTm90ZSI2gtPkkwIwEi4vdjFiZXRhMS97",
+            "bmFtZT1wcm9qZWN0cy8qL29jY3VycmVuY2VzLyp9L25vdGVzEm0KB0dldE5v",
+            "dGUSHy5ncmFmZWFzLnYxYmV0YTEuR2V0Tm90ZVJlcXVlc3QaFS5ncmFmZWFz",
+            "LnYxYmV0YTEuTm90ZSIqgtPkkwIkEiIvdjFiZXRhMS97bmFtZT1wcm9qZWN0",
+            "cy8qL25vdGVzLyp9En4KCUxpc3ROb3RlcxIhLmdyYWZlYXMudjFiZXRhMS5M",
+            "aXN0Tm90ZXNSZXF1ZXN0GiIuZ3JhZmVhcy52MWJldGExLkxpc3ROb3Rlc1Jl",
+            "c3BvbnNlIiqC0+STAiQSIi92MWJldGExL3twYXJlbnQ9cHJvamVjdHMvKn0v",
+            "bm90ZXMSdAoKRGVsZXRlTm90ZRIiLmdyYWZlYXMudjFiZXRhMS5EZWxldGVO",
+            "b3RlUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIqgtPkkwIkKiIv",
+            "djFiZXRhMS97bmFtZT1wcm9qZWN0cy8qL25vdGVzLyp9EnkKCkNyZWF0ZU5v",
+            "dGUSIi5ncmFmZWFzLnYxYmV0YTEuQ3JlYXRlTm90ZVJlcXVlc3QaFS5ncmFm",
+            "ZWFzLnYxYmV0YTEuTm90ZSIwgtPkkwIqIiIvdjFiZXRhMS97cGFyZW50PXBy",
+            "b2plY3RzLyp9L25vdGVzOgRub3RlEqIBChBCYXRjaENyZWF0ZU5vdGVzEigu",
+            "Z3JhZmVhcy52MWJldGExLkJhdGNoQ3JlYXRlTm90ZXNSZXF1ZXN0GikuZ3Jh",
+            "ZmVhcy52MWJldGExLkJhdGNoQ3JlYXRlTm90ZXNSZXNwb25zZSI5gtPkkwIz",
+            "Ii4vdjFiZXRhMS97cGFyZW50PXByb2plY3RzLyp9L25vdGVzOmJhdGNoQ3Jl",
+            "YXRlOgEqEnkKClVwZGF0ZU5vdGUSIi5ncmFmZWFzLnYxYmV0YTEuVXBkYXRl",
+            "Tm90ZVJlcXVlc3QaFS5ncmFmZWFzLnYxYmV0YTEuTm90ZSIwgtPkkwIqMiIv",
+            "djFiZXRhMS97bmFtZT1wcm9qZWN0cy8qL25vdGVzLyp9OgRub3RlEqgBChNM",
+            "aXN0Tm90ZU9jY3VycmVuY2VzEisuZ3JhZmVhcy52MWJldGExLkxpc3ROb3Rl",
+            "T2NjdXJyZW5jZXNSZXF1ZXN0GiwuZ3JhZmVhcy52MWJldGExLkxpc3ROb3Rl",
+            "T2NjdXJyZW5jZXNSZXNwb25zZSI2gtPkkwIwEi4vdjFiZXRhMS97bmFtZT1w",
+            "cm9qZWN0cy8qL25vdGVzLyp9L29jY3VycmVuY2VzEtkBCiJHZXRWdWxuZXJh",
+            "YmlsaXR5T2NjdXJyZW5jZXNTdW1tYXJ5EjouZ3JhZmVhcy52MWJldGExLkdl",
+            "dFZ1bG5lcmFiaWxpdHlPY2N1cnJlbmNlc1N1bW1hcnlSZXF1ZXN0GjAuZ3Jh",
+            "ZmVhcy52MWJldGExLlZ1bG5lcmFiaWxpdHlPY2N1cnJlbmNlc1N1bW1hcnki",
+            "RYLT5JMCPxI9L3YxYmV0YTEve3BhcmVudD1wcm9qZWN0cy8qfS9vY2N1cnJl",
+            "bmNlczp2dWxuZXJhYmlsaXR5U3VtbWFyeRpUykEgY29udGFpbmVyYW5hbHlz",
+            "aXMuZ29vZ2xlYXBpcy5jb23SQS5odHRwczovL3d3dy5nb29nbGVhcGlzLmNv",
+            "bS9hdXRoL2Nsb3VkLXBsYXRmb3JtQnYKEmlvLmdyYWZlYXMudjFiZXRhMVAB",
+            "Wlhnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2RldnRv",
+            "b2xzL2NvbnRhaW5lcmFuYWx5c2lzL3YxYmV0YTEvZ3JhZmVhcztncmFmZWFz",
+            "ogIDR1JBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor, global::Grafeas.V1Beta1.Build.BuildReflection.Descriptor, global::Grafeas.V1Beta1.CommonReflection.Descriptor, global::Grafeas.V1Beta1.Deployment.DeploymentReflection.Descriptor, global::Grafeas.V1Beta1.Discovery.DiscoveryReflection.Descriptor, global::Grafeas.V1Beta1.Image.ImageReflection.Descriptor, global::Grafeas.V1Beta1.Package.PackageReflection.Descriptor, global::Grafeas.V1Beta1.Provenance.ProvenanceReflection.Descriptor, global::Grafeas.V1Beta1.Vulnerability.VulnerabilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Occurrence), global::Grafeas.V1Beta1.Occurrence.Parser, new[]{ "Name", "Resource", "NoteName", "Kind", "Remediation", "CreateTime", "UpdateTime", "Vulnerability", "Build", "DerivedImage", "Installation", "Deployment", "Discovered", "Attestation" }, new[]{ "Details" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Resource), global::Grafeas.V1Beta1.Resource.Parser, new[]{ "Name", "Uri", "ContentHash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Note), global::Grafeas.V1Beta1.Note.Parser, new[]{ "Name", "ShortDescription", "LongDescription", "Kind", "RelatedUrl", "ExpirationTime", "CreateTime", "UpdateTime", "RelatedNoteNames", "Vulnerability", "Build", "BaseImage", "Package", "Deployable", "Discovery", "AttestationAuthority" }, new[]{ "Type" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetOccurrenceRequest), global::Grafeas.V1Beta1.GetOccurrenceRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListOccurrencesRequest), global::Grafeas.V1Beta1.ListOccurrencesRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListOccurrencesResponse), global::Grafeas.V1Beta1.ListOccurrencesResponse.Parser, new[]{ "Occurrences", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.DeleteOccurrenceRequest), global::Grafeas.V1Beta1.DeleteOccurrenceRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.CreateOccurrenceRequest), global::Grafeas.V1Beta1.CreateOccurrenceRequest.Parser, new[]{ "Parent", "Occurrence" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.UpdateOccurrenceRequest), global::Grafeas.V1Beta1.UpdateOccurrenceRequest.Parser, new[]{ "Name", "Occurrence", "UpdateMask" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetNoteRequest), global::Grafeas.V1Beta1.GetNoteRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetOccurrenceNoteRequest), global::Grafeas.V1Beta1.GetOccurrenceNoteRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNotesRequest), global::Grafeas.V1Beta1.ListNotesRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNotesResponse), global::Grafeas.V1Beta1.ListNotesResponse.Parser, new[]{ "Notes", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.DeleteNoteRequest), global::Grafeas.V1Beta1.DeleteNoteRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.CreateNoteRequest), global::Grafeas.V1Beta1.CreateNoteRequest.Parser, new[]{ "Parent", "NoteId", "Note" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.UpdateNoteRequest), global::Grafeas.V1Beta1.UpdateNoteRequest.Parser, new[]{ "Name", "Note", "UpdateMask" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNoteOccurrencesRequest), global::Grafeas.V1Beta1.ListNoteOccurrencesRequest.Parser, new[]{ "Name", "Filter", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNoteOccurrencesResponse), global::Grafeas.V1Beta1.ListNoteOccurrencesResponse.Parser, new[]{ "Occurrences", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateNotesRequest), global::Grafeas.V1Beta1.BatchCreateNotesRequest.Parser, new[]{ "Parent", "Notes" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateNotesResponse), global::Grafeas.V1Beta1.BatchCreateNotesResponse.Parser, new[]{ "Notes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateOccurrencesRequest), global::Grafeas.V1Beta1.BatchCreateOccurrencesRequest.Parser, new[]{ "Parent", "Occurrences" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateOccurrencesResponse), global::Grafeas.V1Beta1.BatchCreateOccurrencesResponse.Parser, new[]{ "Occurrences" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetVulnerabilityOccurrencesSummaryRequest), global::Grafeas.V1Beta1.GetVulnerabilityOccurrencesSummaryRequest.Parser, new[]{ "Parent", "Filter" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary), global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Parser, new[]{ "Counts" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Types.FixableTotalByDigest), global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Types.FixableTotalByDigest.Parser, new[]{ "Resource", "Severity", "FixableCount", "TotalCount" }, null, null, null)})
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Grafeas.V1Beta1.Attestation.AttestationReflection.Descriptor, global::Grafeas.V1Beta1.Build.BuildReflection.Descriptor, global::Grafeas.V1Beta1.CommonReflection.Descriptor, global::Grafeas.V1Beta1.Deployment.DeploymentReflection.Descriptor, global::Grafeas.V1Beta1.Discovery.DiscoveryReflection.Descriptor, global::Grafeas.V1Beta1.Image.ImageReflection.Descriptor, global::Grafeas.V1Beta1.Package.PackageReflection.Descriptor, global::Grafeas.V1Beta1.Provenance.ProvenanceReflection.Descriptor, global::Grafeas.V1Beta1.Vulnerability.VulnerabilityReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Occurrence), global::Grafeas.V1Beta1.Occurrence.Parser, new[]{ "Name", "Resource", "NoteName", "Kind", "Remediation", "CreateTime", "UpdateTime", "Vulnerability", "Build", "DerivedImage", "Installation", "Deployment", "Discovered", "Attestation" }, new[]{ "Details" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Resource), global::Grafeas.V1Beta1.Resource.Parser, new[]{ "Name", "Uri", "ContentHash" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Note), global::Grafeas.V1Beta1.Note.Parser, new[]{ "Name", "ShortDescription", "LongDescription", "Kind", "RelatedUrl", "ExpirationTime", "CreateTime", "UpdateTime", "RelatedNoteNames", "Vulnerability", "Build", "BaseImage", "Package", "Deployable", "Discovery", "AttestationAuthority" }, new[]{ "Type" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetOccurrenceRequest), global::Grafeas.V1Beta1.GetOccurrenceRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListOccurrencesRequest), global::Grafeas.V1Beta1.ListOccurrencesRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListOccurrencesResponse), global::Grafeas.V1Beta1.ListOccurrencesResponse.Parser, new[]{ "Occurrences", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.DeleteOccurrenceRequest), global::Grafeas.V1Beta1.DeleteOccurrenceRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.CreateOccurrenceRequest), global::Grafeas.V1Beta1.CreateOccurrenceRequest.Parser, new[]{ "Parent", "Occurrence" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.UpdateOccurrenceRequest), global::Grafeas.V1Beta1.UpdateOccurrenceRequest.Parser, new[]{ "Name", "Occurrence", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetNoteRequest), global::Grafeas.V1Beta1.GetNoteRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetOccurrenceNoteRequest), global::Grafeas.V1Beta1.GetOccurrenceNoteRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNotesRequest), global::Grafeas.V1Beta1.ListNotesRequest.Parser, new[]{ "Parent", "Filter", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNotesResponse), global::Grafeas.V1Beta1.ListNotesResponse.Parser, new[]{ "Notes", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.DeleteNoteRequest), global::Grafeas.V1Beta1.DeleteNoteRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.CreateNoteRequest), global::Grafeas.V1Beta1.CreateNoteRequest.Parser, new[]{ "Parent", "NoteId", "Note" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.UpdateNoteRequest), global::Grafeas.V1Beta1.UpdateNoteRequest.Parser, new[]{ "Name", "Note", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNoteOccurrencesRequest), global::Grafeas.V1Beta1.ListNoteOccurrencesRequest.Parser, new[]{ "Name", "Filter", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.ListNoteOccurrencesResponse), global::Grafeas.V1Beta1.ListNoteOccurrencesResponse.Parser, new[]{ "Occurrences", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateNotesRequest), global::Grafeas.V1Beta1.BatchCreateNotesRequest.Parser, new[]{ "Parent", "Notes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateNotesResponse), global::Grafeas.V1Beta1.BatchCreateNotesResponse.Parser, new[]{ "Notes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateOccurrencesRequest), global::Grafeas.V1Beta1.BatchCreateOccurrencesRequest.Parser, new[]{ "Parent", "Occurrences" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.BatchCreateOccurrencesResponse), global::Grafeas.V1Beta1.BatchCreateOccurrencesResponse.Parser, new[]{ "Occurrences" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.GetVulnerabilityOccurrencesSummaryRequest), global::Grafeas.V1Beta1.GetVulnerabilityOccurrencesSummaryRequest.Parser, new[]{ "Parent", "Filter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary), global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Parser, new[]{ "Counts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Types.FixableTotalByDigest), global::Grafeas.V1Beta1.VulnerabilityOccurrencesSummary.Types.FixableTotalByDigest.Parser, new[]{ "Resource", "Severity", "FixableCount", "TotalCount" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -308,8 +311,8 @@ namespace Grafeas.V1Beta1 {
     private string noteName_ = "";
     /// <summary>
     /// Required. Immutable. The analysis note associated with this occurrence, in
-    /// the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-    /// as a filter in list requests.
+    /// the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+    /// used as a filter in list requests.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string NoteName {
@@ -321,7 +324,7 @@ namespace Grafeas.V1Beta1 {
 
     /// <summary>Field number for the "kind" field.</summary>
     public const int KindFieldNumber = 4;
-    private global::Grafeas.V1Beta1.NoteKind kind_ = 0;
+    private global::Grafeas.V1Beta1.NoteKind kind_ = global::Grafeas.V1Beta1.NoteKind.Unspecified;
     /// <summary>
     /// Output only. This explicitly denotes which of the occurrence details are
     /// specified. This field can be used as a filter in list requests.
@@ -536,7 +539,7 @@ namespace Grafeas.V1Beta1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (resource_ != null) hash ^= Resource.GetHashCode();
       if (NoteName.Length != 0) hash ^= NoteName.GetHashCode();
-      if (Kind != 0) hash ^= Kind.GetHashCode();
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) hash ^= Kind.GetHashCode();
       if (Remediation.Length != 0) hash ^= Remediation.GetHashCode();
       if (createTime_ != null) hash ^= CreateTime.GetHashCode();
       if (updateTime_ != null) hash ^= UpdateTime.GetHashCode();
@@ -573,7 +576,7 @@ namespace Grafeas.V1Beta1 {
         output.WriteRawTag(26);
         output.WriteString(NoteName);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Kind);
       }
@@ -634,7 +637,7 @@ namespace Grafeas.V1Beta1 {
       if (NoteName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NoteName);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
       if (Remediation.Length != 0) {
@@ -690,7 +693,7 @@ namespace Grafeas.V1Beta1 {
       if (other.NoteName.Length != 0) {
         NoteName = other.NoteName;
       }
-      if (other.Kind != 0) {
+      if (other.Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         Kind = other.Kind;
       }
       if (other.Remediation.Length != 0) {
@@ -928,7 +931,7 @@ namespace Grafeas.V1Beta1 {
     public const int UriFieldNumber = 2;
     private string uri_ = "";
     /// <summary>
-    /// The unique URI of the resource. For example,
+    /// Required. The unique URI of the resource. For example,
     /// `https://gcr.io/project/image@sha256:foo` for a Docker image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1189,7 +1192,7 @@ namespace Grafeas.V1Beta1 {
 
     /// <summary>Field number for the "kind" field.</summary>
     public const int KindFieldNumber = 4;
-    private global::Grafeas.V1Beta1.NoteKind kind_ = 0;
+    private global::Grafeas.V1Beta1.NoteKind kind_ = global::Grafeas.V1Beta1.NoteKind.Unspecified;
     /// <summary>
     /// Output only. The type of analysis. This field can be used as a filter in
     /// list requests.
@@ -1433,7 +1436,7 @@ namespace Grafeas.V1Beta1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (ShortDescription.Length != 0) hash ^= ShortDescription.GetHashCode();
       if (LongDescription.Length != 0) hash ^= LongDescription.GetHashCode();
-      if (Kind != 0) hash ^= Kind.GetHashCode();
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) hash ^= Kind.GetHashCode();
       hash ^= relatedUrl_.GetHashCode();
       if (expirationTime_ != null) hash ^= ExpirationTime.GetHashCode();
       if (createTime_ != null) hash ^= CreateTime.GetHashCode();
@@ -1472,7 +1475,7 @@ namespace Grafeas.V1Beta1 {
         output.WriteRawTag(26);
         output.WriteString(LongDescription);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Kind);
       }
@@ -1535,7 +1538,7 @@ namespace Grafeas.V1Beta1 {
       if (LongDescription.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(LongDescription);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
       size += relatedUrl_.CalculateSize(_repeated_relatedUrl_codec);
@@ -1590,7 +1593,7 @@ namespace Grafeas.V1Beta1 {
       if (other.LongDescription.Length != 0) {
         LongDescription = other.LongDescription;
       }
-      if (other.Kind != 0) {
+      if (other.Kind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         Kind = other.Kind;
       }
       relatedUrl_.Add(other.relatedUrl_);
@@ -4481,7 +4484,7 @@ namespace Grafeas.V1Beta1 {
     /// <summary>Field number for the "notes" field.</summary>
     public const int NotesFieldNumber = 2;
     private static readonly pbc::MapField<string, global::Grafeas.V1Beta1.Note>.Codec _map_notes_codec
-        = new pbc::MapField<string, global::Grafeas.V1Beta1.Note>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Grafeas.V1Beta1.Note.Parser), 18);
+        = new pbc::MapField<string, global::Grafeas.V1Beta1.Note>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Grafeas.V1Beta1.Note.Parser), 18);
     private readonly pbc::MapField<string, global::Grafeas.V1Beta1.Note> notes_ = new pbc::MapField<string, global::Grafeas.V1Beta1.Note>();
     /// <summary>
     /// The notes to create.
@@ -5295,7 +5298,7 @@ namespace Grafeas.V1Beta1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       /// <summary>
-      /// Per resource and severity counts of fixable and total vulnerabilites.
+      /// Per resource and severity counts of fixable and total vulnerabilities.
       /// </summary>
       public sealed partial class FixableTotalByDigest : pb::IMessage<FixableTotalByDigest> {
         private static readonly pb::MessageParser<FixableTotalByDigest> _parser = new pb::MessageParser<FixableTotalByDigest>(() => new FixableTotalByDigest());
@@ -5350,7 +5353,7 @@ namespace Grafeas.V1Beta1 {
 
         /// <summary>Field number for the "severity" field.</summary>
         public const int SeverityFieldNumber = 2;
-        private global::Grafeas.V1Beta1.Vulnerability.Severity severity_ = 0;
+        private global::Grafeas.V1Beta1.Vulnerability.Severity severity_ = global::Grafeas.V1Beta1.Vulnerability.Severity.Unspecified;
         /// <summary>
         /// The severity for this count. SEVERITY_UNSPECIFIED indicates total across
         /// all severities.
@@ -5415,7 +5418,7 @@ namespace Grafeas.V1Beta1 {
         public override int GetHashCode() {
           int hash = 1;
           if (resource_ != null) hash ^= Resource.GetHashCode();
-          if (Severity != 0) hash ^= Severity.GetHashCode();
+          if (Severity != global::Grafeas.V1Beta1.Vulnerability.Severity.Unspecified) hash ^= Severity.GetHashCode();
           if (FixableCount != 0L) hash ^= FixableCount.GetHashCode();
           if (TotalCount != 0L) hash ^= TotalCount.GetHashCode();
           if (_unknownFields != null) {
@@ -5435,7 +5438,7 @@ namespace Grafeas.V1Beta1 {
             output.WriteRawTag(10);
             output.WriteMessage(Resource);
           }
-          if (Severity != 0) {
+          if (Severity != global::Grafeas.V1Beta1.Vulnerability.Severity.Unspecified) {
             output.WriteRawTag(16);
             output.WriteEnum((int) Severity);
           }
@@ -5458,7 +5461,7 @@ namespace Grafeas.V1Beta1 {
           if (resource_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Resource);
           }
-          if (Severity != 0) {
+          if (Severity != global::Grafeas.V1Beta1.Vulnerability.Severity.Unspecified) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Severity);
           }
           if (FixableCount != 0L) {
@@ -5484,7 +5487,7 @@ namespace Grafeas.V1Beta1 {
             }
             Resource.MergeFrom(other.Resource);
           }
-          if (other.Severity != 0) {
+          if (other.Severity != global::Grafeas.V1Beta1.Vulnerability.Severity.Unspecified) {
             Severity = other.Severity;
           }
           if (other.FixableCount != 0L) {

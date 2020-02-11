@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AnalyzeDataSourceRiskDetails();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -198,6 +204,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+     * @return Whether the minValue field is set.
      */
     boolean hasMinValue();
     /**
@@ -206,6 +213,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+     * @return The minValue.
      */
     com.google.privacy.dlp.v2.Value getMinValue();
     /**
@@ -223,6 +231,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+     * @return Whether the maxValue field is set.
      */
     boolean hasMaxValue();
     /**
@@ -231,6 +240,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+     * @return The maxValue.
      */
     com.google.privacy.dlp.v2.Value getMaxValue();
     /**
@@ -312,6 +322,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NumericalStatsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -362,9 +379,9 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 quantileValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               quantileValues_.add(
                   input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry));
@@ -385,7 +402,7 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           quantileValues_ = java.util.Collections.unmodifiableList(quantileValues_);
         }
         this.unknownFields = unknownFields.build();
@@ -405,7 +422,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MIN_VALUE_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.Value minValue_;
     /**
@@ -414,6 +430,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+     * @return Whether the minValue field is set.
      */
     public boolean hasMinValue() {
       return minValue_ != null;
@@ -424,6 +441,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+     * @return The minValue.
      */
     public com.google.privacy.dlp.v2.Value getMinValue() {
       return minValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : minValue_;
@@ -447,6 +465,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+     * @return Whether the maxValue field is set.
      */
     public boolean hasMaxValue() {
       return maxValue_ != null;
@@ -457,6 +476,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+     * @return The maxValue.
      */
     public com.google.privacy.dlp.v2.Value getMaxValue() {
       return maxValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : maxValue_;
@@ -778,7 +798,7 @@ private static final long serialVersionUID = 0L;
         }
         if (quantileValuesBuilder_ == null) {
           quantileValues_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           quantileValuesBuilder_.clear();
         }
@@ -809,7 +829,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (minValueBuilder_ == null) {
           result.minValue_ = minValue_;
         } else {
@@ -821,15 +840,14 @@ private static final long serialVersionUID = 0L;
           result.maxValue_ = maxValueBuilder_.build();
         }
         if (quantileValuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             quantileValues_ = java.util.Collections.unmodifiableList(quantileValues_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.quantileValues_ = quantileValues_;
         } else {
           result.quantileValues_ = quantileValuesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -888,7 +906,7 @@ private static final long serialVersionUID = 0L;
           if (!other.quantileValues_.isEmpty()) {
             if (quantileValues_.isEmpty()) {
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureQuantileValuesIsMutable();
               quantileValues_.addAll(other.quantileValues_);
@@ -901,7 +919,7 @@ private static final long serialVersionUID = 0L;
               quantileValuesBuilder_.dispose();
               quantileValuesBuilder_ = null;
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               quantileValuesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getQuantileValuesFieldBuilder() : null;
@@ -949,6 +967,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+       * @return Whether the minValue field is set.
        */
       public boolean hasMinValue() {
         return minValueBuilder_ != null || minValue_ != null;
@@ -959,6 +978,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
+       * @return The minValue.
        */
       public com.google.privacy.dlp.v2.Value getMinValue() {
         if (minValueBuilder_ == null) {
@@ -1102,6 +1122,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+       * @return Whether the maxValue field is set.
        */
       public boolean hasMaxValue() {
         return maxValueBuilder_ != null || maxValue_ != null;
@@ -1112,6 +1133,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
+       * @return The maxValue.
        */
       public com.google.privacy.dlp.v2.Value getMaxValue() {
         if (maxValueBuilder_ == null) {
@@ -1249,9 +1271,9 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.privacy.dlp.v2.Value> quantileValues_ =
         java.util.Collections.emptyList();
       private void ensureQuantileValuesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           quantileValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>(quantileValues_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1456,7 +1478,7 @@ private static final long serialVersionUID = 0L;
       public Builder clearQuantileValues() {
         if (quantileValuesBuilder_ == null) {
           quantileValues_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           quantileValuesBuilder_.clear();
@@ -1568,7 +1590,7 @@ private static final long serialVersionUID = 0L;
           quantileValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder>(
                   quantileValues_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           quantileValues_ = null;
@@ -1697,6 +1719,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CategoricalStatsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1774,6 +1803,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 value_frequency_lower_bound = 1;</code>
+       * @return The valueFrequencyLowerBound.
        */
       long getValueFrequencyLowerBound();
 
@@ -1783,6 +1813,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 value_frequency_upper_bound = 2;</code>
+       * @return The valueFrequencyUpperBound.
        */
       long getValueFrequencyUpperBound();
 
@@ -1792,6 +1823,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       long getBucketSize();
 
@@ -1850,10 +1882,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       long getBucketValueCount();
     }
     /**
+     * <pre>
+     * Histogram of value frequencies in the column.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket}
      */
     public  static final class CategoricalStatsHistogramBucket extends
@@ -1867,6 +1904,13 @@ private static final long serialVersionUID = 0L;
       }
       private CategoricalStatsHistogramBucket() {
         bucketValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new CategoricalStatsHistogramBucket();
       }
 
       @java.lang.Override
@@ -1909,9 +1953,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 bucketValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.ValueFrequency.parser(), extensionRegistry));
@@ -1937,7 +1981,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -1957,7 +2001,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
       private long valueFrequencyLowerBound_;
       /**
@@ -1966,6 +2009,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 value_frequency_lower_bound = 1;</code>
+       * @return The valueFrequencyLowerBound.
        */
       public long getValueFrequencyLowerBound() {
         return valueFrequencyLowerBound_;
@@ -1979,6 +2023,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 value_frequency_upper_bound = 2;</code>
+       * @return The valueFrequencyUpperBound.
        */
       public long getValueFrequencyUpperBound() {
         return valueFrequencyUpperBound_;
@@ -1992,6 +2037,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       public long getBucketSize() {
         return bucketSize_;
@@ -2065,6 +2111,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       public long getBucketValueCount() {
         return bucketValueCount_;
@@ -2276,6 +2323,10 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       * <pre>
+       * Histogram of value frequencies in the column.
+       * </pre>
+       *
        * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket}
        */
       public static final class Builder extends
@@ -2322,7 +2373,7 @@ private static final long serialVersionUID = 0L;
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -2355,21 +2406,19 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.valueFrequencyLowerBound_ = valueFrequencyLowerBound_;
           result.valueFrequencyUpperBound_ = valueFrequencyUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -2431,7 +2480,7 @@ private static final long serialVersionUID = 0L;
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -2444,7 +2493,7 @@ private static final long serialVersionUID = 0L;
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getBucketValuesFieldBuilder() : null;
@@ -2493,6 +2542,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_lower_bound = 1;</code>
+         * @return The valueFrequencyLowerBound.
          */
         public long getValueFrequencyLowerBound() {
           return valueFrequencyLowerBound_;
@@ -2503,6 +2553,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_lower_bound = 1;</code>
+         * @param value The valueFrequencyLowerBound to set.
+         * @return This builder for chaining.
          */
         public Builder setValueFrequencyLowerBound(long value) {
           
@@ -2516,6 +2568,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_lower_bound = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearValueFrequencyLowerBound() {
           
@@ -2531,6 +2584,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_upper_bound = 2;</code>
+         * @return The valueFrequencyUpperBound.
          */
         public long getValueFrequencyUpperBound() {
           return valueFrequencyUpperBound_;
@@ -2541,6 +2595,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_upper_bound = 2;</code>
+         * @param value The valueFrequencyUpperBound to set.
+         * @return This builder for chaining.
          */
         public Builder setValueFrequencyUpperBound(long value) {
           
@@ -2554,6 +2610,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 value_frequency_upper_bound = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearValueFrequencyUpperBound() {
           
@@ -2569,6 +2626,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return The bucketSize.
          */
         public long getBucketSize() {
           return bucketSize_;
@@ -2579,6 +2637,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @param value The bucketSize to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketSize(long value) {
           
@@ -2592,6 +2652,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
           
@@ -2603,9 +2664,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.ValueFrequency> bucketValues_ =
           java.util.Collections.emptyList();
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -2810,7 +2871,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -2922,7 +2983,7 @@ private static final long serialVersionUID = 0L;
             bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.ValueFrequency, com.google.privacy.dlp.v2.ValueFrequency.Builder, com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -2937,6 +2998,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return The bucketValueCount.
          */
         public long getBucketValueCount() {
           return bucketValueCount_;
@@ -2947,6 +3009,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @param value The bucketValueCount to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketValueCount(long value) {
           
@@ -2960,6 +3024,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
           
@@ -3854,6 +3919,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KAnonymityResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3986,6 +4058,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size = 2;</code>
+       * @return The equivalenceClassSize.
        */
       long getEquivalenceClassSize();
     }
@@ -4007,6 +4080,13 @@ private static final long serialVersionUID = 0L;
       }
       private KAnonymityEquivalenceClass() {
         quasiIdsValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new KAnonymityEquivalenceClass();
       }
 
       @java.lang.Override
@@ -4082,7 +4162,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -4157,6 +4236,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size = 2;</code>
+       * @return The equivalenceClassSize.
        */
       public long getEquivalenceClassSize() {
         return equivalenceClassSize_;
@@ -4409,7 +4489,6 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -4420,7 +4499,6 @@ private static final long serialVersionUID = 0L;
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.equivalenceClassSize_ = equivalenceClassSize_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -4884,6 +4962,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @return The equivalenceClassSize.
          */
         public long getEquivalenceClassSize() {
           return equivalenceClassSize_;
@@ -4895,6 +4974,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @param value The equivalenceClassSize to set.
+         * @return This builder for chaining.
          */
         public Builder setEquivalenceClassSize(long value) {
           
@@ -4909,6 +4990,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSize() {
           
@@ -4979,6 +5061,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size_lower_bound = 1;</code>
+       * @return The equivalenceClassSizeLowerBound.
        */
       long getEquivalenceClassSizeLowerBound();
 
@@ -4988,6 +5071,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size_upper_bound = 2;</code>
+       * @return The equivalenceClassSizeUpperBound.
        */
       long getEquivalenceClassSizeUpperBound();
 
@@ -4997,6 +5081,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       long getBucketSize();
 
@@ -5055,10 +5140,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       long getBucketValueCount();
     }
     /**
+     * <pre>
+     * Histogram of k-anonymity equivalence classes.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket}
      */
     public  static final class KAnonymityHistogramBucket extends
@@ -5072,6 +5162,13 @@ private static final long serialVersionUID = 0L;
       }
       private KAnonymityHistogramBucket() {
         bucketValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new KAnonymityHistogramBucket();
       }
 
       @java.lang.Override
@@ -5114,9 +5211,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 bucketValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass.parser(), extensionRegistry));
@@ -5142,7 +5239,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -5162,7 +5259,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int EQUIVALENCE_CLASS_SIZE_LOWER_BOUND_FIELD_NUMBER = 1;
       private long equivalenceClassSizeLowerBound_;
       /**
@@ -5171,6 +5267,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size_lower_bound = 1;</code>
+       * @return The equivalenceClassSizeLowerBound.
        */
       public long getEquivalenceClassSizeLowerBound() {
         return equivalenceClassSizeLowerBound_;
@@ -5184,6 +5281,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size_upper_bound = 2;</code>
+       * @return The equivalenceClassSizeUpperBound.
        */
       public long getEquivalenceClassSizeUpperBound() {
         return equivalenceClassSizeUpperBound_;
@@ -5197,6 +5295,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       public long getBucketSize() {
         return bucketSize_;
@@ -5270,6 +5369,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       public long getBucketValueCount() {
         return bucketValueCount_;
@@ -5481,6 +5581,10 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       * <pre>
+       * Histogram of k-anonymity equivalence classes.
+       * </pre>
+       *
        * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket}
        */
       public static final class Builder extends
@@ -5527,7 +5631,7 @@ private static final long serialVersionUID = 0L;
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -5560,21 +5664,19 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.equivalenceClassSizeLowerBound_ = equivalenceClassSizeLowerBound_;
           result.equivalenceClassSizeUpperBound_ = equivalenceClassSizeUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -5636,7 +5738,7 @@ private static final long serialVersionUID = 0L;
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -5649,7 +5751,7 @@ private static final long serialVersionUID = 0L;
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getBucketValuesFieldBuilder() : null;
@@ -5698,6 +5800,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_lower_bound = 1;</code>
+         * @return The equivalenceClassSizeLowerBound.
          */
         public long getEquivalenceClassSizeLowerBound() {
           return equivalenceClassSizeLowerBound_;
@@ -5708,6 +5811,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_lower_bound = 1;</code>
+         * @param value The equivalenceClassSizeLowerBound to set.
+         * @return This builder for chaining.
          */
         public Builder setEquivalenceClassSizeLowerBound(long value) {
           
@@ -5721,6 +5826,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_lower_bound = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSizeLowerBound() {
           
@@ -5736,6 +5842,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_upper_bound = 2;</code>
+         * @return The equivalenceClassSizeUpperBound.
          */
         public long getEquivalenceClassSizeUpperBound() {
           return equivalenceClassSizeUpperBound_;
@@ -5746,6 +5853,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_upper_bound = 2;</code>
+         * @param value The equivalenceClassSizeUpperBound to set.
+         * @return This builder for chaining.
          */
         public Builder setEquivalenceClassSizeUpperBound(long value) {
           
@@ -5759,6 +5868,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size_upper_bound = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSizeUpperBound() {
           
@@ -5774,6 +5884,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return The bucketSize.
          */
         public long getBucketSize() {
           return bucketSize_;
@@ -5784,6 +5895,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @param value The bucketSize to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketSize(long value) {
           
@@ -5797,6 +5910,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
           
@@ -5808,9 +5922,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass> bucketValues_ =
           java.util.Collections.emptyList();
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -6015,7 +6129,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -6127,7 +6241,7 @@ private static final long serialVersionUID = 0L;
             bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -6142,6 +6256,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return The bucketValueCount.
          */
         public long getBucketValueCount() {
           return bucketValueCount_;
@@ -6152,6 +6267,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @param value The bucketValueCount to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketValueCount(long value) {
           
@@ -6165,6 +6282,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
           
@@ -7059,6 +7177,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LDiversityResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -7185,6 +7310,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size = 2;</code>
+       * @return The equivalenceClassSize.
        */
       long getEquivalenceClassSize();
 
@@ -7194,6 +7320,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 num_distinct_sensitive_values = 3;</code>
+       * @return The numDistinctSensitiveValues.
        */
       long getNumDistinctSensitiveValues();
 
@@ -7263,6 +7390,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new LDiversityEquivalenceClass();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -7306,9 +7440,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   topSensitiveValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 topSensitiveValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.ValueFrequency.parser(), extensionRegistry));
@@ -7332,7 +7466,7 @@ private static final long serialVersionUID = 0L;
           if (((mutable_bitField0_ & 0x00000001) != 0)) {
             quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
           }
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             topSensitiveValues_ = java.util.Collections.unmodifiableList(topSensitiveValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -7352,7 +7486,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -7421,6 +7554,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 equivalence_class_size = 2;</code>
+       * @return The equivalenceClassSize.
        */
       public long getEquivalenceClassSize() {
         return equivalenceClassSize_;
@@ -7434,6 +7568,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 num_distinct_sensitive_values = 3;</code>
+       * @return The numDistinctSensitiveValues.
        */
       public long getNumDistinctSensitiveValues() {
         return numDistinctSensitiveValues_;
@@ -7744,7 +7879,7 @@ private static final long serialVersionUID = 0L;
 
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             topSensitiveValuesBuilder_.clear();
           }
@@ -7775,7 +7910,6 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -7788,15 +7922,14 @@ private static final long serialVersionUID = 0L;
           result.equivalenceClassSize_ = equivalenceClassSize_;
           result.numDistinctSensitiveValues_ = numDistinctSensitiveValues_;
           if (topSensitiveValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               topSensitiveValues_ = java.util.Collections.unmodifiableList(topSensitiveValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.topSensitiveValues_ = topSensitiveValues_;
           } else {
             result.topSensitiveValues_ = topSensitiveValuesBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -7881,7 +8014,7 @@ private static final long serialVersionUID = 0L;
             if (!other.topSensitiveValues_.isEmpty()) {
               if (topSensitiveValues_.isEmpty()) {
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureTopSensitiveValuesIsMutable();
                 topSensitiveValues_.addAll(other.topSensitiveValues_);
@@ -7894,7 +8027,7 @@ private static final long serialVersionUID = 0L;
                 topSensitiveValuesBuilder_.dispose();
                 topSensitiveValuesBuilder_ = null;
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 topSensitiveValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getTopSensitiveValuesFieldBuilder() : null;
@@ -8270,6 +8403,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @return The equivalenceClassSize.
          */
         public long getEquivalenceClassSize() {
           return equivalenceClassSize_;
@@ -8280,6 +8414,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @param value The equivalenceClassSize to set.
+         * @return This builder for chaining.
          */
         public Builder setEquivalenceClassSize(long value) {
           
@@ -8293,6 +8429,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 equivalence_class_size = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEquivalenceClassSize() {
           
@@ -8308,6 +8445,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 num_distinct_sensitive_values = 3;</code>
+         * @return The numDistinctSensitiveValues.
          */
         public long getNumDistinctSensitiveValues() {
           return numDistinctSensitiveValues_;
@@ -8318,6 +8456,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 num_distinct_sensitive_values = 3;</code>
+         * @param value The numDistinctSensitiveValues to set.
+         * @return This builder for chaining.
          */
         public Builder setNumDistinctSensitiveValues(long value) {
           
@@ -8331,6 +8471,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 num_distinct_sensitive_values = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearNumDistinctSensitiveValues() {
           
@@ -8342,9 +8483,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.ValueFrequency> topSensitiveValues_ =
           java.util.Collections.emptyList();
         private void ensureTopSensitiveValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             topSensitiveValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(topSensitiveValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000002;
            }
         }
 
@@ -8538,7 +8679,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearTopSensitiveValues() {
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             topSensitiveValuesBuilder_.clear();
@@ -8643,7 +8784,7 @@ private static final long serialVersionUID = 0L;
             topSensitiveValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.ValueFrequency, com.google.privacy.dlp.v2.ValueFrequency.Builder, com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     topSensitiveValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             topSensitiveValues_ = null;
@@ -8714,6 +8855,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 sensitive_value_frequency_lower_bound = 1;</code>
+       * @return The sensitiveValueFrequencyLowerBound.
        */
       long getSensitiveValueFrequencyLowerBound();
 
@@ -8724,6 +8866,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 sensitive_value_frequency_upper_bound = 2;</code>
+       * @return The sensitiveValueFrequencyUpperBound.
        */
       long getSensitiveValueFrequencyUpperBound();
 
@@ -8733,6 +8876,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       long getBucketSize();
 
@@ -8791,10 +8935,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       long getBucketValueCount();
     }
     /**
+     * <pre>
+     * Histogram of l-diversity equivalence class sensitive value frequencies.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket}
      */
     public  static final class LDiversityHistogramBucket extends
@@ -8808,6 +8957,13 @@ private static final long serialVersionUID = 0L;
       }
       private LDiversityHistogramBucket() {
         bucketValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new LDiversityHistogramBucket();
       }
 
       @java.lang.Override
@@ -8850,9 +9006,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 bucketValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass.parser(), extensionRegistry));
@@ -8878,7 +9034,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -8898,7 +9054,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int SENSITIVE_VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
       private long sensitiveValueFrequencyLowerBound_;
       /**
@@ -8908,6 +9063,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 sensitive_value_frequency_lower_bound = 1;</code>
+       * @return The sensitiveValueFrequencyLowerBound.
        */
       public long getSensitiveValueFrequencyLowerBound() {
         return sensitiveValueFrequencyLowerBound_;
@@ -8922,6 +9078,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 sensitive_value_frequency_upper_bound = 2;</code>
+       * @return The sensitiveValueFrequencyUpperBound.
        */
       public long getSensitiveValueFrequencyUpperBound() {
         return sensitiveValueFrequencyUpperBound_;
@@ -8935,6 +9092,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 3;</code>
+       * @return The bucketSize.
        */
       public long getBucketSize() {
         return bucketSize_;
@@ -9008,6 +9166,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 5;</code>
+       * @return The bucketValueCount.
        */
       public long getBucketValueCount() {
         return bucketValueCount_;
@@ -9219,6 +9378,10 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       * <pre>
+       * Histogram of l-diversity equivalence class sensitive value frequencies.
+       * </pre>
+       *
        * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket}
        */
       public static final class Builder extends
@@ -9265,7 +9428,7 @@ private static final long serialVersionUID = 0L;
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -9298,21 +9461,19 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.sensitiveValueFrequencyLowerBound_ = sensitiveValueFrequencyLowerBound_;
           result.sensitiveValueFrequencyUpperBound_ = sensitiveValueFrequencyUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -9374,7 +9535,7 @@ private static final long serialVersionUID = 0L;
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -9387,7 +9548,7 @@ private static final long serialVersionUID = 0L;
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getBucketValuesFieldBuilder() : null;
@@ -9437,6 +9598,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_lower_bound = 1;</code>
+         * @return The sensitiveValueFrequencyLowerBound.
          */
         public long getSensitiveValueFrequencyLowerBound() {
           return sensitiveValueFrequencyLowerBound_;
@@ -9448,6 +9610,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_lower_bound = 1;</code>
+         * @param value The sensitiveValueFrequencyLowerBound to set.
+         * @return This builder for chaining.
          */
         public Builder setSensitiveValueFrequencyLowerBound(long value) {
           
@@ -9462,6 +9626,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_lower_bound = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearSensitiveValueFrequencyLowerBound() {
           
@@ -9478,6 +9643,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_upper_bound = 2;</code>
+         * @return The sensitiveValueFrequencyUpperBound.
          */
         public long getSensitiveValueFrequencyUpperBound() {
           return sensitiveValueFrequencyUpperBound_;
@@ -9489,6 +9655,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_upper_bound = 2;</code>
+         * @param value The sensitiveValueFrequencyUpperBound to set.
+         * @return This builder for chaining.
          */
         public Builder setSensitiveValueFrequencyUpperBound(long value) {
           
@@ -9503,6 +9671,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 sensitive_value_frequency_upper_bound = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearSensitiveValueFrequencyUpperBound() {
           
@@ -9518,6 +9687,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return The bucketSize.
          */
         public long getBucketSize() {
           return bucketSize_;
@@ -9528,6 +9698,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @param value The bucketSize to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketSize(long value) {
           
@@ -9541,6 +9713,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
           
@@ -9552,9 +9725,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass> bucketValues_ =
           java.util.Collections.emptyList();
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -9759,7 +9932,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -9871,7 +10044,7 @@ private static final long serialVersionUID = 0L;
             bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -9886,6 +10059,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return The bucketValueCount.
          */
         public long getBucketValueCount() {
           return bucketValueCount_;
@@ -9896,6 +10070,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @param value The bucketValueCount to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketValueCount(long value) {
           
@@ -9909,6 +10085,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
           
@@ -10839,6 +11016,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KMapEstimationResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -10960,6 +11144,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 estimated_anonymity = 2;</code>
+       * @return The estimatedAnonymity.
        */
       long getEstimatedAnonymity();
     }
@@ -10981,6 +11166,13 @@ private static final long serialVersionUID = 0L;
       }
       private KMapEstimationQuasiIdValues() {
         quasiIdsValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new KMapEstimationQuasiIdValues();
       }
 
       @java.lang.Override
@@ -11056,7 +11248,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -11120,6 +11311,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 estimated_anonymity = 2;</code>
+       * @return The estimatedAnonymity.
        */
       public long getEstimatedAnonymity() {
         return estimatedAnonymity_;
@@ -11372,7 +11564,6 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -11383,7 +11574,6 @@ private static final long serialVersionUID = 0L;
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.estimatedAnonymity_ = estimatedAnonymity_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -11810,6 +12000,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 estimated_anonymity = 2;</code>
+         * @return The estimatedAnonymity.
          */
         public long getEstimatedAnonymity() {
           return estimatedAnonymity_;
@@ -11820,6 +12011,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 estimated_anonymity = 2;</code>
+         * @param value The estimatedAnonymity to set.
+         * @return This builder for chaining.
          */
         public Builder setEstimatedAnonymity(long value) {
           
@@ -11833,6 +12026,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 estimated_anonymity = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEstimatedAnonymity() {
           
@@ -11903,6 +12097,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 min_anonymity = 1;</code>
+       * @return The minAnonymity.
        */
       long getMinAnonymity();
 
@@ -11912,6 +12107,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 max_anonymity = 2;</code>
+       * @return The maxAnonymity.
        */
       long getMaxAnonymity();
 
@@ -11921,6 +12117,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 5;</code>
+       * @return The bucketSize.
        */
       long getBucketSize();
 
@@ -11979,6 +12176,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 7;</code>
+       * @return The bucketValueCount.
        */
       long getBucketValueCount();
     }
@@ -12007,6 +12205,13 @@ private static final long serialVersionUID = 0L;
       }
       private KMapEstimationHistogramBucket() {
         bucketValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new KMapEstimationHistogramBucket();
       }
 
       @java.lang.Override
@@ -12049,9 +12254,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 50: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 bucketValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues.parser(), extensionRegistry));
@@ -12077,7 +12282,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -12097,7 +12302,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int MIN_ANONYMITY_FIELD_NUMBER = 1;
       private long minAnonymity_;
       /**
@@ -12106,6 +12310,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 min_anonymity = 1;</code>
+       * @return The minAnonymity.
        */
       public long getMinAnonymity() {
         return minAnonymity_;
@@ -12119,6 +12324,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 max_anonymity = 2;</code>
+       * @return The maxAnonymity.
        */
       public long getMaxAnonymity() {
         return maxAnonymity_;
@@ -12132,6 +12338,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 5;</code>
+       * @return The bucketSize.
        */
       public long getBucketSize() {
         return bucketSize_;
@@ -12205,6 +12412,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 7;</code>
+       * @return The bucketValueCount.
        */
       public long getBucketValueCount() {
         return bucketValueCount_;
@@ -12473,7 +12681,7 @@ private static final long serialVersionUID = 0L;
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -12506,21 +12714,19 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.minAnonymity_ = minAnonymity_;
           result.maxAnonymity_ = maxAnonymity_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -12582,7 +12788,7 @@ private static final long serialVersionUID = 0L;
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -12595,7 +12801,7 @@ private static final long serialVersionUID = 0L;
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getBucketValuesFieldBuilder() : null;
@@ -12644,6 +12850,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 min_anonymity = 1;</code>
+         * @return The minAnonymity.
          */
         public long getMinAnonymity() {
           return minAnonymity_;
@@ -12654,6 +12861,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 min_anonymity = 1;</code>
+         * @param value The minAnonymity to set.
+         * @return This builder for chaining.
          */
         public Builder setMinAnonymity(long value) {
           
@@ -12667,6 +12876,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 min_anonymity = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMinAnonymity() {
           
@@ -12682,6 +12892,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 max_anonymity = 2;</code>
+         * @return The maxAnonymity.
          */
         public long getMaxAnonymity() {
           return maxAnonymity_;
@@ -12692,6 +12903,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 max_anonymity = 2;</code>
+         * @param value The maxAnonymity to set.
+         * @return This builder for chaining.
          */
         public Builder setMaxAnonymity(long value) {
           
@@ -12705,6 +12918,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 max_anonymity = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMaxAnonymity() {
           
@@ -12720,6 +12934,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @return The bucketSize.
          */
         public long getBucketSize() {
           return bucketSize_;
@@ -12730,6 +12945,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @param value The bucketSize to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketSize(long value) {
           
@@ -12743,6 +12960,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
           
@@ -12754,9 +12972,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues> bucketValues_ =
           java.util.Collections.emptyList();
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -12961,7 +13179,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -13073,7 +13291,7 @@ private static final long serialVersionUID = 0L;
             bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -13088,6 +13306,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @return The bucketValueCount.
          */
         public long getBucketValueCount() {
           return bucketValueCount_;
@@ -13098,6 +13317,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @param value The bucketValueCount to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketValueCount(long value) {
           
@@ -13111,6 +13332,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
           
@@ -14203,6 +14425,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeltaPresenceEstimationResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -14331,6 +14560,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double estimated_probability = 2;</code>
+       * @return The estimatedProbability.
        */
       double getEstimatedProbability();
     }
@@ -14352,6 +14582,13 @@ private static final long serialVersionUID = 0L;
       }
       private DeltaPresenceEstimationQuasiIdValues() {
         quasiIdsValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new DeltaPresenceEstimationQuasiIdValues();
       }
 
       @java.lang.Override
@@ -14427,7 +14664,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -14498,6 +14734,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double estimated_probability = 2;</code>
+       * @return The estimatedProbability.
        */
       public double getEstimatedProbability() {
         return estimatedProbability_;
@@ -14751,7 +14988,6 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -14762,7 +14998,6 @@ private static final long serialVersionUID = 0L;
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.estimatedProbability_ = estimatedProbability_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -15196,6 +15431,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double estimated_probability = 2;</code>
+         * @return The estimatedProbability.
          */
         public double getEstimatedProbability() {
           return estimatedProbability_;
@@ -15213,6 +15449,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double estimated_probability = 2;</code>
+         * @param value The estimatedProbability to set.
+         * @return This builder for chaining.
          */
         public Builder setEstimatedProbability(double value) {
           
@@ -15233,6 +15471,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double estimated_probability = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEstimatedProbability() {
           
@@ -15303,6 +15542,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double min_probability = 1;</code>
+       * @return The minProbability.
        */
       double getMinProbability();
 
@@ -15312,6 +15552,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double max_probability = 2;</code>
+       * @return The maxProbability.
        */
       double getMaxProbability();
 
@@ -15321,6 +15562,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 5;</code>
+       * @return The bucketSize.
        */
       long getBucketSize();
 
@@ -15379,6 +15621,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 7;</code>
+       * @return The bucketValueCount.
        */
       long getBucketValueCount();
     }
@@ -15408,6 +15651,13 @@ private static final long serialVersionUID = 0L;
       }
       private DeltaPresenceEstimationHistogramBucket() {
         bucketValues_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new DeltaPresenceEstimationHistogramBucket();
       }
 
       @java.lang.Override
@@ -15450,9 +15700,9 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               case 50: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 bucketValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.parser(), extensionRegistry));
@@ -15478,7 +15728,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -15498,7 +15748,6 @@ private static final long serialVersionUID = 0L;
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int MIN_PROBABILITY_FIELD_NUMBER = 1;
       private double minProbability_;
       /**
@@ -15507,6 +15756,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double min_probability = 1;</code>
+       * @return The minProbability.
        */
       public double getMinProbability() {
         return minProbability_;
@@ -15520,6 +15770,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double max_probability = 2;</code>
+       * @return The maxProbability.
        */
       public double getMaxProbability() {
         return maxProbability_;
@@ -15533,6 +15784,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_size = 5;</code>
+       * @return The bucketSize.
        */
       public long getBucketSize() {
         return bucketSize_;
@@ -15606,6 +15858,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 bucket_value_count = 7;</code>
+       * @return The bucketValueCount.
        */
       public long getBucketValueCount() {
         return bucketValueCount_;
@@ -15877,7 +16130,7 @@ private static final long serialVersionUID = 0L;
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -15910,21 +16163,19 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.minProbability_ = minProbability_;
           result.maxProbability_ = maxProbability_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -15986,7 +16237,7 @@ private static final long serialVersionUID = 0L;
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -15999,7 +16250,7 @@ private static final long serialVersionUID = 0L;
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getBucketValuesFieldBuilder() : null;
@@ -16048,6 +16299,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double min_probability = 1;</code>
+         * @return The minProbability.
          */
         public double getMinProbability() {
           return minProbability_;
@@ -16058,6 +16310,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double min_probability = 1;</code>
+         * @param value The minProbability to set.
+         * @return This builder for chaining.
          */
         public Builder setMinProbability(double value) {
           
@@ -16071,6 +16325,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double min_probability = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMinProbability() {
           
@@ -16086,6 +16341,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double max_probability = 2;</code>
+         * @return The maxProbability.
          */
         public double getMaxProbability() {
           return maxProbability_;
@@ -16096,6 +16352,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double max_probability = 2;</code>
+         * @param value The maxProbability to set.
+         * @return This builder for chaining.
          */
         public Builder setMaxProbability(double value) {
           
@@ -16109,6 +16367,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double max_probability = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearMaxProbability() {
           
@@ -16124,6 +16383,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @return The bucketSize.
          */
         public long getBucketSize() {
           return bucketSize_;
@@ -16134,6 +16394,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @param value The bucketSize to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketSize(long value) {
           
@@ -16147,6 +16409,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_size = 5;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketSize() {
           
@@ -16158,9 +16421,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> bucketValues_ =
           java.util.Collections.emptyList();
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -16365,7 +16628,7 @@ private static final long serialVersionUID = 0L;
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -16477,7 +16740,7 @@ private static final long serialVersionUID = 0L;
             bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -16492,6 +16755,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @return The bucketValueCount.
          */
         public long getBucketValueCount() {
           return bucketValueCount_;
@@ -16502,6 +16766,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @param value The bucketValueCount to set.
+         * @return This builder for chaining.
          */
         public Builder setBucketValueCount(long value) {
           
@@ -16515,6 +16781,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int64 bucket_value_count = 7;</code>
+         * @return This builder for chaining.
          */
         public Builder clearBucketValueCount() {
           
@@ -17505,7 +17772,8 @@ private static final long serialVersionUID = 0L;
   private int resultCase_ = 0;
   private java.lang.Object result_;
   public enum ResultCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     NUMERICAL_STATS_RESULT(3),
     CATEGORICAL_STATS_RESULT(4),
     K_ANONYMITY_RESULT(5),
@@ -17518,6 +17786,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -17556,6 +17826,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+   * @return Whether the requestedPrivacyMetric field is set.
    */
   public boolean hasRequestedPrivacyMetric() {
     return requestedPrivacyMetric_ != null;
@@ -17566,6 +17837,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+   * @return The requestedPrivacyMetric.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric getRequestedPrivacyMetric() {
     return requestedPrivacyMetric_ == null ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance() : requestedPrivacyMetric_;
@@ -17589,6 +17861,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+   * @return Whether the requestedSourceTable field is set.
    */
   public boolean hasRequestedSourceTable() {
     return requestedSourceTable_ != null;
@@ -17599,6 +17872,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+   * @return The requestedSourceTable.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getRequestedSourceTable() {
     return requestedSourceTable_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : requestedSourceTable_;
@@ -17616,13 +17890,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int NUMERICAL_STATS_RESULT_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
+   * @return Whether the numericalStatsResult field is set.
    */
   public boolean hasNumericalStatsResult() {
     return resultCase_ == 3;
   }
   /**
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
+   * @return The numericalStatsResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult getNumericalStatsResult() {
     if (resultCase_ == 3) {
@@ -17631,6 +17915,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder getNumericalStatsResultOrBuilder() {
@@ -17642,13 +17930,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CATEGORICAL_STATS_RESULT_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
+   * @return Whether the categoricalStatsResult field is set.
    */
   public boolean hasCategoricalStatsResult() {
     return resultCase_ == 4;
   }
   /**
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
+   * @return The categoricalStatsResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult getCategoricalStatsResult() {
     if (resultCase_ == 4) {
@@ -17657,6 +17955,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder getCategoricalStatsResultOrBuilder() {
@@ -17668,13 +17970,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int K_ANONYMITY_RESULT_FIELD_NUMBER = 5;
   /**
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
+   * @return Whether the kAnonymityResult field is set.
    */
   public boolean hasKAnonymityResult() {
     return resultCase_ == 5;
   }
   /**
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
+   * @return The kAnonymityResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getKAnonymityResult() {
     if (resultCase_ == 5) {
@@ -17683,6 +17995,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder getKAnonymityResultOrBuilder() {
@@ -17694,13 +18010,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int L_DIVERSITY_RESULT_FIELD_NUMBER = 6;
   /**
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
+   * @return Whether the lDiversityResult field is set.
    */
   public boolean hasLDiversityResult() {
     return resultCase_ == 6;
   }
   /**
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
+   * @return The lDiversityResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getLDiversityResult() {
     if (resultCase_ == 6) {
@@ -17709,6 +18035,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder getLDiversityResultOrBuilder() {
@@ -17720,13 +18050,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int K_MAP_ESTIMATION_RESULT_FIELD_NUMBER = 7;
   /**
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
+   * @return Whether the kMapEstimationResult field is set.
    */
   public boolean hasKMapEstimationResult() {
     return resultCase_ == 7;
   }
   /**
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
+   * @return The kMapEstimationResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult getKMapEstimationResult() {
     if (resultCase_ == 7) {
@@ -17735,6 +18075,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder getKMapEstimationResultOrBuilder() {
@@ -17746,13 +18090,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int DELTA_PRESENCE_ESTIMATION_RESULT_FIELD_NUMBER = 9;
   /**
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   * @return Whether the deltaPresenceEstimationResult field is set.
    */
   public boolean hasDeltaPresenceEstimationResult() {
     return resultCase_ == 9;
   }
   /**
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   * @return The deltaPresenceEstimationResult.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDeltaPresenceEstimationResult() {
     if (resultCase_ == 9) {
@@ -17761,6 +18115,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder getDeltaPresenceEstimationResultOrBuilder() {
@@ -18316,6 +18674,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+     * @return Whether the requestedPrivacyMetric field is set.
      */
     public boolean hasRequestedPrivacyMetric() {
       return requestedPrivacyMetricBuilder_ != null || requestedPrivacyMetric_ != null;
@@ -18326,6 +18685,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
+     * @return The requestedPrivacyMetric.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric getRequestedPrivacyMetric() {
       if (requestedPrivacyMetricBuilder_ == null) {
@@ -18469,6 +18829,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+     * @return Whether the requestedSourceTable field is set.
      */
     public boolean hasRequestedSourceTable() {
       return requestedSourceTableBuilder_ != null || requestedSourceTable_ != null;
@@ -18479,6 +18840,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
+     * @return The requestedSourceTable.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getRequestedSourceTable() {
       if (requestedSourceTableBuilder_ == null) {
@@ -18616,13 +18978,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder> numericalStatsResultBuilder_;
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
+     * @return Whether the numericalStatsResult field is set.
      */
     public boolean hasNumericalStatsResult() {
       return resultCase_ == 3;
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
+     * @return The numericalStatsResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult getNumericalStatsResult() {
       if (numericalStatsResultBuilder_ == null) {
@@ -18638,6 +19010,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public Builder setNumericalStatsResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult value) {
@@ -18654,6 +19030,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public Builder setNumericalStatsResult(
@@ -18668,6 +19048,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public Builder mergeNumericalStatsResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult value) {
@@ -18690,6 +19074,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public Builder clearNumericalStatsResult() {
@@ -18709,12 +19097,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.Builder getNumericalStatsResultBuilder() {
       return getNumericalStatsResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder getNumericalStatsResultOrBuilder() {
@@ -18728,6 +19124,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -18752,13 +19152,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder> categoricalStatsResultBuilder_;
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
+     * @return Whether the categoricalStatsResult field is set.
      */
     public boolean hasCategoricalStatsResult() {
       return resultCase_ == 4;
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
+     * @return The categoricalStatsResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult getCategoricalStatsResult() {
       if (categoricalStatsResultBuilder_ == null) {
@@ -18774,6 +19184,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public Builder setCategoricalStatsResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult value) {
@@ -18790,6 +19204,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public Builder setCategoricalStatsResult(
@@ -18804,6 +19222,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public Builder mergeCategoricalStatsResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult value) {
@@ -18826,6 +19248,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public Builder clearCategoricalStatsResult() {
@@ -18845,12 +19271,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.Builder getCategoricalStatsResultBuilder() {
       return getCategoricalStatsResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder getCategoricalStatsResultOrBuilder() {
@@ -18864,6 +19298,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -18888,13 +19326,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder> kAnonymityResultBuilder_;
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
+     * @return Whether the kAnonymityResult field is set.
      */
     public boolean hasKAnonymityResult() {
       return resultCase_ == 5;
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
+     * @return The kAnonymityResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getKAnonymityResult() {
       if (kAnonymityResultBuilder_ == null) {
@@ -18910,6 +19358,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public Builder setKAnonymityResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult value) {
@@ -18926,6 +19378,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public Builder setKAnonymityResult(
@@ -18940,6 +19396,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public Builder mergeKAnonymityResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult value) {
@@ -18962,6 +19422,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public Builder clearKAnonymityResult() {
@@ -18981,12 +19445,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.Builder getKAnonymityResultBuilder() {
       return getKAnonymityResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder getKAnonymityResultOrBuilder() {
@@ -19000,6 +19472,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -19024,13 +19500,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder> lDiversityResultBuilder_;
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
+     * @return Whether the lDiversityResult field is set.
      */
     public boolean hasLDiversityResult() {
       return resultCase_ == 6;
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
+     * @return The lDiversityResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getLDiversityResult() {
       if (lDiversityResultBuilder_ == null) {
@@ -19046,6 +19532,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public Builder setLDiversityResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult value) {
@@ -19062,6 +19552,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public Builder setLDiversityResult(
@@ -19076,6 +19570,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public Builder mergeLDiversityResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult value) {
@@ -19098,6 +19596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public Builder clearLDiversityResult() {
@@ -19117,12 +19619,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.Builder getLDiversityResultBuilder() {
       return getLDiversityResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder getLDiversityResultOrBuilder() {
@@ -19136,6 +19646,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -19160,13 +19674,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder> kMapEstimationResultBuilder_;
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
+     * @return Whether the kMapEstimationResult field is set.
      */
     public boolean hasKMapEstimationResult() {
       return resultCase_ == 7;
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
+     * @return The kMapEstimationResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult getKMapEstimationResult() {
       if (kMapEstimationResultBuilder_ == null) {
@@ -19182,6 +19706,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public Builder setKMapEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult value) {
@@ -19198,6 +19726,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public Builder setKMapEstimationResult(
@@ -19212,6 +19744,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public Builder mergeKMapEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult value) {
@@ -19234,6 +19770,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public Builder clearKMapEstimationResult() {
@@ -19253,12 +19793,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.Builder getKMapEstimationResultBuilder() {
       return getKMapEstimationResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder getKMapEstimationResultOrBuilder() {
@@ -19272,6 +19820,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -19296,13 +19848,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder> deltaPresenceEstimationResultBuilder_;
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     * @return Whether the deltaPresenceEstimationResult field is set.
      */
     public boolean hasDeltaPresenceEstimationResult() {
       return resultCase_ == 9;
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     * @return The deltaPresenceEstimationResult.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDeltaPresenceEstimationResult() {
       if (deltaPresenceEstimationResultBuilder_ == null) {
@@ -19318,6 +19880,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public Builder setDeltaPresenceEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult value) {
@@ -19334,6 +19900,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public Builder setDeltaPresenceEstimationResult(
@@ -19348,6 +19918,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public Builder mergeDeltaPresenceEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult value) {
@@ -19370,6 +19944,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public Builder clearDeltaPresenceEstimationResult() {
@@ -19389,12 +19967,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder getDeltaPresenceEstimationResultBuilder() {
       return getDeltaPresenceEstimationResultFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder getDeltaPresenceEstimationResultOrBuilder() {
@@ -19408,6 +19994,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.RelatedUrl</code>
  */
-final class RelatedUrl extends \Google\Protobuf\Internal\Message
+class RelatedUrl extends \Google\Protobuf\Internal\Message
 {
     /**
      * Specific URL associated with the resource.
      *
      * Generated from protobuf field <code>string url = 1;</code>
      */
-    private $url = '';
+    protected $url = '';
     /**
      * Label to describe usage of the URL.
      *
      * Generated from protobuf field <code>string label = 2;</code>
      */
-    private $label = '';
+    protected $label = '';
 
     /**
      * Constructor.

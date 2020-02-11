@@ -13,6 +13,7 @@ public interface AvailabilityFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for signalType.
    */
   int getSignalTypeValue();
   /**
@@ -21,6 +22,7 @@ public interface AvailabilityFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The signalType.
    */
   com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType();
 
@@ -30,6 +32,7 @@ public interface AvailabilityFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the range field is set.
    */
   boolean hasRange();
   /**
@@ -38,6 +41,7 @@ public interface AvailabilityFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The range.
    */
   com.google.cloud.talent.v4beta1.TimestampRange getRange();
   /**
@@ -51,16 +55,14 @@ public interface AvailabilityFilterOrBuilder extends
 
   /**
    * <pre>
-   * If multiple
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-   * provided, the default behavior is to OR all filters, but if this field is
-   * set to true, this particular
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-   * be AND'ed against other
+   * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+   * behavior is to OR all filters, but if this field is set to true, this
+   * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
    * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
    * </pre>
    *
    * <code>bool required = 3;</code>
+   * @return The required.
    */
   boolean getRequired();
 }

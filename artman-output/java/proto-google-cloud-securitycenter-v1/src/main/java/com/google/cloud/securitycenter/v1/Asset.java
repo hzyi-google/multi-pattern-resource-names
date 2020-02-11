@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Asset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -71,10 +78,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               resourceProperties_ = com.google.protobuf.MapField.newMapField(
                   ResourcePropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
             resourceProperties__ = input.readMessage(
@@ -191,6 +198,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     * @return The resourceName.
      */
     java.lang.String getResourceName();
     /**
@@ -201,6 +209,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     * @return The bytes for resourceName.
      */
     com.google.protobuf.ByteString
         getResourceNameBytes();
@@ -214,6 +223,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     * @return The resourceType.
      */
     java.lang.String getResourceType();
     /**
@@ -225,6 +235,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     * @return The bytes for resourceType.
      */
     com.google.protobuf.ByteString
         getResourceTypeBytes();
@@ -236,6 +247,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     * @return The resourceParent.
      */
     java.lang.String getResourceParent();
     /**
@@ -245,6 +257,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     * @return The bytes for resourceParent.
      */
     com.google.protobuf.ByteString
         getResourceParentBytes();
@@ -256,6 +269,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     * @return The resourceProject.
      */
     java.lang.String getResourceProject();
     /**
@@ -265,6 +279,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     * @return The bytes for resourceProject.
      */
     com.google.protobuf.ByteString
         getResourceProjectBytes();
@@ -275,6 +290,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @return A list containing the resourceOwners.
      */
     java.util.List<java.lang.String>
         getResourceOwnersList();
@@ -284,6 +300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @return The count of resourceOwners.
      */
     int getResourceOwnersCount();
     /**
@@ -292,6 +309,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @param index The index of the element to return.
+     * @return The resourceOwners at the given index.
      */
     java.lang.String getResourceOwners(int index);
     /**
@@ -300,9 +319,71 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceOwners at the given index.
      */
     com.google.protobuf.ByteString
         getResourceOwnersBytes(int index);
+
+    /**
+     * <pre>
+     * The user defined display name for this resource.
+     * </pre>
+     *
+     * <code>string resource_display_name = 6;</code>
+     * @return The resourceDisplayName.
+     */
+    java.lang.String getResourceDisplayName();
+    /**
+     * <pre>
+     * The user defined display name for this resource.
+     * </pre>
+     *
+     * <code>string resource_display_name = 6;</code>
+     * @return The bytes for resourceDisplayName.
+     */
+    com.google.protobuf.ByteString
+        getResourceDisplayNameBytes();
+
+    /**
+     * <pre>
+     * The user defined display name for the parent of this resource.
+     * </pre>
+     *
+     * <code>string resource_parent_display_name = 7;</code>
+     * @return The resourceParentDisplayName.
+     */
+    java.lang.String getResourceParentDisplayName();
+    /**
+     * <pre>
+     * The user defined display name for the parent of this resource.
+     * </pre>
+     *
+     * <code>string resource_parent_display_name = 7;</code>
+     * @return The bytes for resourceParentDisplayName.
+     */
+    com.google.protobuf.ByteString
+        getResourceParentDisplayNameBytes();
+
+    /**
+     * <pre>
+     * The user defined display name for the project of this resource.
+     * </pre>
+     *
+     * <code>string resource_project_display_name = 8;</code>
+     * @return The resourceProjectDisplayName.
+     */
+    java.lang.String getResourceProjectDisplayName();
+    /**
+     * <pre>
+     * The user defined display name for the project of this resource.
+     * </pre>
+     *
+     * <code>string resource_project_display_name = 8;</code>
+     * @return The bytes for resourceProjectDisplayName.
+     */
+    com.google.protobuf.ByteString
+        getResourceProjectDisplayNameBytes();
   }
   /**
    * <pre>
@@ -327,6 +408,16 @@ private static final long serialVersionUID = 0L;
       resourceParent_ = "";
       resourceProject_ = "";
       resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceDisplayName_ = "";
+      resourceParentDisplayName_ = "";
+      resourceProjectDisplayName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SecurityCenterProperties();
     }
 
     @java.lang.Override
@@ -379,11 +470,29 @@ private static final long serialVersionUID = 0L;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resourceOwners_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               resourceOwners_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceDisplayName_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceParentDisplayName_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceProjectDisplayName_ = s;
               break;
             }
             default: {
@@ -401,7 +510,7 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -421,7 +530,6 @@ private static final long serialVersionUID = 0L;
               com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties.class, com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties.Builder.class);
     }
 
-    private int bitField0_;
     public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object resourceName_;
     /**
@@ -432,6 +540,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     * @return The resourceName.
      */
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
@@ -453,6 +562,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_name = 1;</code>
+     * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString
         getResourceNameBytes() {
@@ -479,6 +589,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     * @return The resourceType.
      */
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
@@ -501,6 +612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     * @return The bytes for resourceType.
      */
     public com.google.protobuf.ByteString
         getResourceTypeBytes() {
@@ -525,6 +637,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     * @return The resourceParent.
      */
     public java.lang.String getResourceParent() {
       java.lang.Object ref = resourceParent_;
@@ -545,6 +658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     * @return The bytes for resourceParent.
      */
     public com.google.protobuf.ByteString
         getResourceParentBytes() {
@@ -569,6 +683,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     * @return The resourceProject.
      */
     public java.lang.String getResourceProject() {
       java.lang.Object ref = resourceProject_;
@@ -589,6 +704,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     * @return The bytes for resourceProject.
      */
     public com.google.protobuf.ByteString
         getResourceProjectBytes() {
@@ -612,6 +728,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @return A list containing the resourceOwners.
      */
     public com.google.protobuf.ProtocolStringList
         getResourceOwnersList() {
@@ -623,6 +740,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @return The count of resourceOwners.
      */
     public int getResourceOwnersCount() {
       return resourceOwners_.size();
@@ -633,6 +751,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @param index The index of the element to return.
+     * @return The resourceOwners at the given index.
      */
     public java.lang.String getResourceOwners(int index) {
       return resourceOwners_.get(index);
@@ -643,10 +763,144 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceOwners at the given index.
      */
     public com.google.protobuf.ByteString
         getResourceOwnersBytes(int index) {
       return resourceOwners_.getByteString(index);
+    }
+
+    public static final int RESOURCE_DISPLAY_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object resourceDisplayName_;
+    /**
+     * <pre>
+     * The user defined display name for this resource.
+     * </pre>
+     *
+     * <code>string resource_display_name = 6;</code>
+     * @return The resourceDisplayName.
+     */
+    public java.lang.String getResourceDisplayName() {
+      java.lang.Object ref = resourceDisplayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceDisplayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user defined display name for this resource.
+     * </pre>
+     *
+     * <code>string resource_display_name = 6;</code>
+     * @return The bytes for resourceDisplayName.
+     */
+    public com.google.protobuf.ByteString
+        getResourceDisplayNameBytes() {
+      java.lang.Object ref = resourceDisplayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_PARENT_DISPLAY_NAME_FIELD_NUMBER = 7;
+    private volatile java.lang.Object resourceParentDisplayName_;
+    /**
+     * <pre>
+     * The user defined display name for the parent of this resource.
+     * </pre>
+     *
+     * <code>string resource_parent_display_name = 7;</code>
+     * @return The resourceParentDisplayName.
+     */
+    public java.lang.String getResourceParentDisplayName() {
+      java.lang.Object ref = resourceParentDisplayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceParentDisplayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user defined display name for the parent of this resource.
+     * </pre>
+     *
+     * <code>string resource_parent_display_name = 7;</code>
+     * @return The bytes for resourceParentDisplayName.
+     */
+    public com.google.protobuf.ByteString
+        getResourceParentDisplayNameBytes() {
+      java.lang.Object ref = resourceParentDisplayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceParentDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_PROJECT_DISPLAY_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object resourceProjectDisplayName_;
+    /**
+     * <pre>
+     * The user defined display name for the project of this resource.
+     * </pre>
+     *
+     * <code>string resource_project_display_name = 8;</code>
+     * @return The resourceProjectDisplayName.
+     */
+    public java.lang.String getResourceProjectDisplayName() {
+      java.lang.Object ref = resourceProjectDisplayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceProjectDisplayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user defined display name for the project of this resource.
+     * </pre>
+     *
+     * <code>string resource_project_display_name = 8;</code>
+     * @return The bytes for resourceProjectDisplayName.
+     */
+    public com.google.protobuf.ByteString
+        getResourceProjectDisplayNameBytes() {
+      java.lang.Object ref = resourceProjectDisplayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceProjectDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -678,6 +932,15 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < resourceOwners_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourceOwners_.getRaw(i));
       }
+      if (!getResourceDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, resourceDisplayName_);
+      }
+      if (!getResourceParentDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resourceParentDisplayName_);
+      }
+      if (!getResourceProjectDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceProjectDisplayName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -707,6 +970,15 @@ private static final long serialVersionUID = 0L;
         size += dataSize;
         size += 1 * getResourceOwnersList().size();
       }
+      if (!getResourceDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, resourceDisplayName_);
+      }
+      if (!getResourceParentDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resourceParentDisplayName_);
+      }
+      if (!getResourceProjectDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resourceProjectDisplayName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -732,6 +1004,12 @@ private static final long serialVersionUID = 0L;
           .equals(other.getResourceProject())) return false;
       if (!getResourceOwnersList()
           .equals(other.getResourceOwnersList())) return false;
+      if (!getResourceDisplayName()
+          .equals(other.getResourceDisplayName())) return false;
+      if (!getResourceParentDisplayName()
+          .equals(other.getResourceParentDisplayName())) return false;
+      if (!getResourceProjectDisplayName()
+          .equals(other.getResourceProjectDisplayName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -755,6 +1033,12 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + RESOURCE_OWNERS_FIELD_NUMBER;
         hash = (53 * hash) + getResourceOwnersList().hashCode();
       }
+      hash = (37 * hash) + RESOURCE_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceDisplayName().hashCode();
+      hash = (37 * hash) + RESOURCE_PARENT_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceParentDisplayName().hashCode();
+      hash = (37 * hash) + RESOURCE_PROJECT_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceProjectDisplayName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -902,7 +1186,13 @@ private static final long serialVersionUID = 0L;
         resourceProject_ = "";
 
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resourceDisplayName_ = "";
+
+        resourceParentDisplayName_ = "";
+
+        resourceProjectDisplayName_ = "";
+
         return this;
       }
 
@@ -930,17 +1220,18 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties buildPartial() {
         com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties result = new com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.resourceName_ = resourceName_;
         result.resourceType_ = resourceType_;
         result.resourceParent_ = resourceParent_;
         result.resourceProject_ = resourceProject_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.resourceOwners_ = resourceOwners_;
-        result.bitField0_ = to_bitField0_;
+        result.resourceDisplayName_ = resourceDisplayName_;
+        result.resourceParentDisplayName_ = resourceParentDisplayName_;
+        result.resourceProjectDisplayName_ = resourceProjectDisplayName_;
         onBuilt();
         return result;
       }
@@ -1008,11 +1299,23 @@ private static final long serialVersionUID = 0L;
         if (!other.resourceOwners_.isEmpty()) {
           if (resourceOwners_.isEmpty()) {
             resourceOwners_ = other.resourceOwners_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResourceOwnersIsMutable();
             resourceOwners_.addAll(other.resourceOwners_);
           }
+          onChanged();
+        }
+        if (!other.getResourceDisplayName().isEmpty()) {
+          resourceDisplayName_ = other.resourceDisplayName_;
+          onChanged();
+        }
+        if (!other.getResourceParentDisplayName().isEmpty()) {
+          resourceParentDisplayName_ = other.resourceParentDisplayName_;
+          onChanged();
+        }
+        if (!other.getResourceProjectDisplayName().isEmpty()) {
+          resourceProjectDisplayName_ = other.resourceProjectDisplayName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1054,6 +1357,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       * @return The resourceName.
        */
       public java.lang.String getResourceName() {
         java.lang.Object ref = resourceName_;
@@ -1075,6 +1379,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       * @return The bytes for resourceName.
        */
       public com.google.protobuf.ByteString
           getResourceNameBytes() {
@@ -1097,6 +1402,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       * @param value The resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceName(
           java.lang.String value) {
@@ -1116,6 +1423,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResourceName() {
         
@@ -1131,6 +1439,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_name = 1;</code>
+       * @param value The bytes for resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1154,6 +1464,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       * @return The resourceType.
        */
       public java.lang.String getResourceType() {
         java.lang.Object ref = resourceType_;
@@ -1176,6 +1487,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       * @return The bytes for resourceType.
        */
       public com.google.protobuf.ByteString
           getResourceTypeBytes() {
@@ -1199,6 +1511,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       * @param value The resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceType(
           java.lang.String value) {
@@ -1219,6 +1533,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResourceType() {
         
@@ -1235,6 +1550,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       * @param value The bytes for resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -1256,6 +1573,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       * @return The resourceParent.
        */
       public java.lang.String getResourceParent() {
         java.lang.Object ref = resourceParent_;
@@ -1276,6 +1594,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       * @return The bytes for resourceParent.
        */
       public com.google.protobuf.ByteString
           getResourceParentBytes() {
@@ -1297,6 +1616,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       * @param value The resourceParent to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceParent(
           java.lang.String value) {
@@ -1315,6 +1636,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResourceParent() {
         
@@ -1329,6 +1651,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       * @param value The bytes for resourceParent to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceParentBytes(
           com.google.protobuf.ByteString value) {
@@ -1350,6 +1674,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       * @return The resourceProject.
        */
       public java.lang.String getResourceProject() {
         java.lang.Object ref = resourceProject_;
@@ -1370,6 +1695,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       * @return The bytes for resourceProject.
        */
       public com.google.protobuf.ByteString
           getResourceProjectBytes() {
@@ -1391,6 +1717,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       * @param value The resourceProject to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceProject(
           java.lang.String value) {
@@ -1409,6 +1737,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResourceProject() {
         
@@ -1423,6 +1752,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       * @param value The bytes for resourceProject to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceProjectBytes(
           com.google.protobuf.ByteString value) {
@@ -1438,9 +1769,9 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.LazyStringList resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureResourceOwnersIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = new com.google.protobuf.LazyStringArrayList(resourceOwners_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1449,6 +1780,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @return A list containing the resourceOwners.
        */
       public com.google.protobuf.ProtocolStringList
           getResourceOwnersList() {
@@ -1460,6 +1792,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @return The count of resourceOwners.
        */
       public int getResourceOwnersCount() {
         return resourceOwners_.size();
@@ -1470,6 +1803,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param index The index of the element to return.
+       * @return The resourceOwners at the given index.
        */
       public java.lang.String getResourceOwners(int index) {
         return resourceOwners_.get(index);
@@ -1480,6 +1815,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the resourceOwners at the given index.
        */
       public com.google.protobuf.ByteString
           getResourceOwnersBytes(int index) {
@@ -1491,6 +1828,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The resourceOwners to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceOwners(
           int index, java.lang.String value) {
@@ -1508,6 +1848,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param value The resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addResourceOwners(
           java.lang.String value) {
@@ -1525,6 +1867,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param values The resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addAllResourceOwners(
           java.lang.Iterable<java.lang.String> values) {
@@ -1540,10 +1884,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResourceOwners() {
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1553,6 +1898,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       * @param value The bytes of the resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addResourceOwnersBytes(
           com.google.protobuf.ByteString value) {
@@ -1562,6 +1909,294 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
         ensureResourceOwnersIsMutable();
         resourceOwners_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceDisplayName_ = "";
+      /**
+       * <pre>
+       * The user defined display name for this resource.
+       * </pre>
+       *
+       * <code>string resource_display_name = 6;</code>
+       * @return The resourceDisplayName.
+       */
+      public java.lang.String getResourceDisplayName() {
+        java.lang.Object ref = resourceDisplayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceDisplayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for this resource.
+       * </pre>
+       *
+       * <code>string resource_display_name = 6;</code>
+       * @return The bytes for resourceDisplayName.
+       */
+      public com.google.protobuf.ByteString
+          getResourceDisplayNameBytes() {
+        java.lang.Object ref = resourceDisplayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for this resource.
+       * </pre>
+       *
+       * <code>string resource_display_name = 6;</code>
+       * @param value The resourceDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceDisplayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for this resource.
+       * </pre>
+       *
+       * <code>string resource_display_name = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceDisplayName() {
+        
+        resourceDisplayName_ = getDefaultInstance().getResourceDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for this resource.
+       * </pre>
+       *
+       * <code>string resource_display_name = 6;</code>
+       * @param value The bytes for resourceDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceDisplayName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceParentDisplayName_ = "";
+      /**
+       * <pre>
+       * The user defined display name for the parent of this resource.
+       * </pre>
+       *
+       * <code>string resource_parent_display_name = 7;</code>
+       * @return The resourceParentDisplayName.
+       */
+      public java.lang.String getResourceParentDisplayName() {
+        java.lang.Object ref = resourceParentDisplayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceParentDisplayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for the parent of this resource.
+       * </pre>
+       *
+       * <code>string resource_parent_display_name = 7;</code>
+       * @return The bytes for resourceParentDisplayName.
+       */
+      public com.google.protobuf.ByteString
+          getResourceParentDisplayNameBytes() {
+        java.lang.Object ref = resourceParentDisplayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceParentDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for the parent of this resource.
+       * </pre>
+       *
+       * <code>string resource_parent_display_name = 7;</code>
+       * @param value The resourceParentDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceParentDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceParentDisplayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for the parent of this resource.
+       * </pre>
+       *
+       * <code>string resource_parent_display_name = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceParentDisplayName() {
+        
+        resourceParentDisplayName_ = getDefaultInstance().getResourceParentDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for the parent of this resource.
+       * </pre>
+       *
+       * <code>string resource_parent_display_name = 7;</code>
+       * @param value The bytes for resourceParentDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceParentDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceParentDisplayName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceProjectDisplayName_ = "";
+      /**
+       * <pre>
+       * The user defined display name for the project of this resource.
+       * </pre>
+       *
+       * <code>string resource_project_display_name = 8;</code>
+       * @return The resourceProjectDisplayName.
+       */
+      public java.lang.String getResourceProjectDisplayName() {
+        java.lang.Object ref = resourceProjectDisplayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceProjectDisplayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for the project of this resource.
+       * </pre>
+       *
+       * <code>string resource_project_display_name = 8;</code>
+       * @return The bytes for resourceProjectDisplayName.
+       */
+      public com.google.protobuf.ByteString
+          getResourceProjectDisplayNameBytes() {
+        java.lang.Object ref = resourceProjectDisplayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceProjectDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user defined display name for the project of this resource.
+       * </pre>
+       *
+       * <code>string resource_project_display_name = 8;</code>
+       * @param value The resourceProjectDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceProjectDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceProjectDisplayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for the project of this resource.
+       * </pre>
+       *
+       * <code>string resource_project_display_name = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceProjectDisplayName() {
+        
+        resourceProjectDisplayName_ = getDefaultInstance().getResourceProjectDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user defined display name for the project of this resource.
+       * </pre>
+       *
+       * <code>string resource_project_display_name = 8;</code>
+       * @param value The bytes for resourceProjectDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceProjectDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceProjectDisplayName_ = value;
         onChanged();
         return this;
       }
@@ -1630,6 +2265,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string policy_blob = 1;</code>
+     * @return The policyBlob.
      */
     java.lang.String getPolicyBlob();
     /**
@@ -1640,6 +2276,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string policy_blob = 1;</code>
+     * @return The bytes for policyBlob.
      */
     com.google.protobuf.ByteString
         getPolicyBlobBytes();
@@ -1667,6 +2304,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IamPolicy();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1679,7 +2323,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1738,6 +2381,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string policy_blob = 1;</code>
+     * @return The policyBlob.
      */
     public java.lang.String getPolicyBlob() {
       java.lang.Object ref = policyBlob_;
@@ -1759,6 +2403,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string policy_blob = 1;</code>
+     * @return The bytes for policyBlob.
      */
     public com.google.protobuf.ByteString
         getPolicyBlobBytes() {
@@ -2091,6 +2736,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string policy_blob = 1;</code>
+       * @return The policyBlob.
        */
       public java.lang.String getPolicyBlob() {
         java.lang.Object ref = policyBlob_;
@@ -2112,6 +2758,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string policy_blob = 1;</code>
+       * @return The bytes for policyBlob.
        */
       public com.google.protobuf.ByteString
           getPolicyBlobBytes() {
@@ -2134,6 +2781,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string policy_blob = 1;</code>
+       * @param value The policyBlob to set.
+       * @return This builder for chaining.
        */
       public Builder setPolicyBlob(
           java.lang.String value) {
@@ -2153,6 +2802,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string policy_blob = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPolicyBlob() {
         
@@ -2168,6 +2818,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string policy_blob = 1;</code>
+       * @param value The bytes for policyBlob to set.
+       * @return This builder for chaining.
        */
       public Builder setPolicyBlobBytes(
           com.google.protobuf.ByteString value) {
@@ -2233,7 +2885,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -2245,6 +2896,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -2267,6 +2919,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -2291,6 +2944,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * @return Whether the securityCenterProperties field is set.
    */
   public boolean hasSecurityCenterProperties() {
     return securityCenterProperties_ != null;
@@ -2302,6 +2956,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * @return The securityCenterProperties.
    */
   public com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties getSecurityCenterProperties() {
     return securityCenterProperties_ == null ? com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties.getDefaultInstance() : securityCenterProperties_;
@@ -2423,6 +3078,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+   * @return Whether the securityMarks field is set.
    */
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
@@ -2434,6 +3090,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+   * @return The securityMarks.
    */
   public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null ? com.google.cloud.securitycenter.v1.SecurityMarks.getDefaultInstance() : securityMarks_;
@@ -2458,6 +3115,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -2468,6 +3126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -2492,6 +3151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -2503,6 +3163,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -2529,6 +3190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
+   * @return Whether the iamPolicy field is set.
    */
   public boolean hasIamPolicy() {
     return iamPolicy_ != null;
@@ -2541,6 +3203,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
+   * @return The iamPolicy.
    */
   public com.google.cloud.securitycenter.v1.Asset.IamPolicy getIamPolicy() {
     return iamPolicy_ == null ? com.google.cloud.securitycenter.v1.Asset.IamPolicy.getDefaultInstance() : iamPolicy_;
@@ -2942,7 +3605,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.securitycenter.v1.Asset buildPartial() {
       com.google.cloud.securitycenter.v1.Asset result = new com.google.cloud.securitycenter.v1.Asset(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (securityCenterPropertiesBuilder_ == null) {
         result.securityCenterProperties_ = securityCenterProperties_;
@@ -2971,7 +3633,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.iamPolicy_ = iamPolicyBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3081,6 +3742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -3103,6 +3765,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -3126,6 +3789,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -3146,6 +3811,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -3162,6 +3828,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -3185,6 +3853,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * @return Whether the securityCenterProperties field is set.
      */
     public boolean hasSecurityCenterProperties() {
       return securityCenterPropertiesBuilder_ != null || securityCenterProperties_ != null;
@@ -3196,6 +3865,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * @return The securityCenterProperties.
      */
     public com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties getSecurityCenterProperties() {
       if (securityCenterPropertiesBuilder_ == null) {
@@ -3505,6 +4175,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * @return Whether the securityMarks field is set.
      */
     public boolean hasSecurityMarks() {
       return securityMarksBuilder_ != null || securityMarks_ != null;
@@ -3516,6 +4187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
+     * @return The securityMarks.
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -3666,6 +4338,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3676,6 +4349,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3820,6 +4494,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -3831,6 +4506,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3983,6 +4659,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
+     * @return Whether the iamPolicy field is set.
      */
     public boolean hasIamPolicy() {
       return iamPolicyBuilder_ != null || iamPolicy_ != null;
@@ -3995,6 +4672,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
+     * @return The iamPolicy.
      */
     public com.google.cloud.securitycenter.v1.Asset.IamPolicy getIamPolicy() {
       if (iamPolicyBuilder_ == null) {

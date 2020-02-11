@@ -13,33 +13,33 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.devtools.containeranalysis.v1beta1.ListScanConfigsRequest</code>
  */
-final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
+class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * The filter expression.
+     * Required. The filter expression.
      *
-     * Generated from protobuf field <code>string filter = 2;</code>
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * The number of scan configs to return in the list.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * Token to provide to skip to a particular spot in the list.
      *
      * Generated from protobuf field <code>string page_token = 4;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
 
     /**
      * Constructor.
@@ -48,10 +48,10 @@ final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           The name of the project to list scan configurations for in the form of
+     *           Required. The name of the project to list scan configurations for in the form of
      *           `projects/[PROJECT_ID]`.
      *     @type string $filter
-     *           The filter expression.
+     *           Required. The filter expression.
      *     @type int $page_size
      *           The number of scan configs to return in the list.
      *     @type string $page_token
@@ -64,10 +64,10 @@ final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -76,10 +76,10 @@ final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -92,9 +92,9 @@ final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter expression.
+     * Required. The filter expression.
      *
-     * Generated from protobuf field <code>string filter = 2;</code>
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getFilter()
@@ -103,9 +103,9 @@ final class ListScanConfigsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter expression.
+     * Required. The filter expression.
      *
-     * Generated from protobuf field <code>string filter = 2;</code>
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

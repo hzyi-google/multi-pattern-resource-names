@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new WorkflowTemplatePlacement();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -110,7 +116,8 @@ private static final long serialVersionUID = 0L;
   private int placementCase_ = 0;
   private java.lang.Object placement_;
   public enum PlacementCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MANAGED_CLUSTER(1),
     CLUSTER_SELECTOR(2),
     PLACEMENT_NOT_SET(0);
@@ -119,6 +126,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -152,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
+   * @return Whether the managedCluster field is set.
    */
   public boolean hasManagedCluster() {
     return placementCase_ == 1;
@@ -162,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
+   * @return The managedCluster.
    */
   public com.google.cloud.dataproc.v1.ManagedCluster getManagedCluster() {
     if (placementCase_ == 1) {
@@ -192,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
+   * @return Whether the clusterSelector field is set.
    */
   public boolean hasClusterSelector() {
     return placementCase_ == 2;
@@ -204,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
+   * @return The clusterSelector.
    */
   public com.google.cloud.dataproc.v1.ClusterSelector getClusterSelector() {
     if (placementCase_ == 2) {
@@ -609,6 +622,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
+     * @return Whether the managedCluster field is set.
      */
     public boolean hasManagedCluster() {
       return placementCase_ == 1;
@@ -619,6 +633,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
+     * @return The managedCluster.
      */
     public com.google.cloud.dataproc.v1.ManagedCluster getManagedCluster() {
       if (managedClusterBuilder_ == null) {
@@ -783,6 +798,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
+     * @return Whether the clusterSelector field is set.
      */
     public boolean hasClusterSelector() {
       return placementCase_ == 2;
@@ -795,6 +811,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
+     * @return The clusterSelector.
      */
     public com.google.cloud.dataproc.v1.ClusterSelector getClusterSelector() {
       if (clusterSelectorBuilder_ == null) {

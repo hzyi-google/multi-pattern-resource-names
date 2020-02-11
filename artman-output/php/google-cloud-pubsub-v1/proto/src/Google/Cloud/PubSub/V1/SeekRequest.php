@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.SeekRequest</code>
  */
-final class SeekRequest extends \Google\Protobuf\Internal\Message
+class SeekRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The subscription to affect.
      *
      * Generated from protobuf field <code>string subscription = 1;</code>
      */
-    private $subscription = '';
+    protected $subscription = '';
     protected $target;
 
     /**

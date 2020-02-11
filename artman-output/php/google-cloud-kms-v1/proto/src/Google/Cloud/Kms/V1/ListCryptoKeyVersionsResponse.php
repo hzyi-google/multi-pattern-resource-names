@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.ListCryptoKeyVersionsResponse</code>
  */
-final class ListCryptoKeyVersionsResponse extends \Google\Protobuf\Internal\Message
+class ListCryptoKeyVersionsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
@@ -28,14 +28,14 @@ final class ListCryptoKeyVersionsResponse extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
     /**
      * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
      * query.
      *
      * Generated from protobuf field <code>int32 total_size = 3;</code>
      */
-    private $total_size = 0;
+    protected $total_size = 0;
 
     /**
      * Constructor.

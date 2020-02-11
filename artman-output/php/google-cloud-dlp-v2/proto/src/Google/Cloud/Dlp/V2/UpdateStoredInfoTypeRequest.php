@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.UpdateStoredInfoTypeRequest</code>
  */
-final class UpdateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Message
+class UpdateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Resource name of organization and storedInfoType to be updated, for
@@ -22,7 +22,7 @@ final class UpdateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Updated configuration for the storedInfoType. If not provided, a new
      * version of the storedInfoType will be created with the existing
@@ -30,13 +30,13 @@ final class UpdateStoredInfoTypeRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
      */
-    private $config = null;
+    protected $config = null;
     /**
      * Mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

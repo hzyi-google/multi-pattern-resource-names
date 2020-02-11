@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ReplaceValueConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -99,6 +105,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   * @return Whether the newValue field is set.
    */
   public boolean hasNewValue() {
     return newValue_ != null;
@@ -109,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   * @return The newValue.
    */
   public com.google.privacy.dlp.v2.Value getNewValue() {
     return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
@@ -452,6 +460,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+     * @return Whether the newValue field is set.
      */
     public boolean hasNewValue() {
       return newValueBuilder_ != null || newValue_ != null;
@@ -462,6 +471,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+     * @return The newValue.
      */
     public com.google.privacy.dlp.v2.Value getNewValue() {
       if (newValueBuilder_ == null) {

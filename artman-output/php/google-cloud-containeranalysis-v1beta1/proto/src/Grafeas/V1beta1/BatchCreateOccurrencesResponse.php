@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.BatchCreateOccurrencesResponse</code>
  */
-final class BatchCreateOccurrencesResponse extends \Google\Protobuf\Internal\Message
+class BatchCreateOccurrencesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The occurrences that were created.

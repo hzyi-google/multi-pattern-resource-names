@@ -13,6 +13,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The enum numeric value on the wire for usage.
    */
   int getUsageValue();
   /**
@@ -21,6 +22,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The usage.
    */
   com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage();
 
@@ -30,6 +32,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -38,6 +41,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.Phone.PhoneType getType();
 
@@ -52,6 +56,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>string number = 3;</code>
+   * @return The number.
    */
   java.lang.String getNumber();
   /**
@@ -65,6 +70,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>string number = 3;</code>
+   * @return The bytes for number.
    */
   com.google.protobuf.ByteString
       getNumberBytes();
@@ -76,6 +82,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   * @return The whenAvailable.
    */
   java.lang.String getWhenAvailable();
   /**
@@ -85,6 +92,7 @@ public interface PhoneOrBuilder extends
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   * @return The bytes for whenAvailable.
    */
   com.google.protobuf.ByteString
       getWhenAvailableBytes();

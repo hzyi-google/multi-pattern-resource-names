@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.PigJob</code>
  */
-final class PigJob extends \Google\Protobuf\Internal\Message
+class PigJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Whether to continue executing queries if a query fails.
@@ -23,7 +23,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool continue_on_failure = 3;</code>
      */
-    private $continue_on_failure = false;
+    protected $continue_on_failure = false;
     /**
      * Optional. Mapping of query variable names to values (equivalent to the Pig
      * command: `name=[value]`).
@@ -52,7 +52,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7;</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
     protected $queries;
 
     /**

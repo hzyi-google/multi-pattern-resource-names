@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new WorkflowTemplate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -94,10 +101,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -120,18 +127,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.OrderedJob>();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000002;
             }
             jobs_.add(
                 input.readMessage(com.google.cloud.dataproc.v1beta2.OrderedJob.parser(), extensionRegistry));
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               parameters_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000004;
             }
             parameters_.add(
                 input.readMessage(com.google.cloud.dataproc.v1beta2.TemplateParameter.parser(), extensionRegistry));
@@ -152,10 +159,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
@@ -187,7 +194,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.WorkflowTemplate.class, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object id_;
   /**
@@ -200,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -223,6 +230,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -253,6 +261,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -279,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -309,6 +319,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The version.
    */
   public int getVersion() {
     return version_;
@@ -322,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -332,6 +344,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -355,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -365,6 +379,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -512,6 +527,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+   * @return Whether the placement field is set.
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -522,6 +538,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+   * @return The placement.
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement() {
     return placement_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance() : placement_;
@@ -1021,13 +1038,13 @@ private static final long serialVersionUID = 0L;
       }
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         jobsBuilder_.clear();
       }
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         parametersBuilder_.clear();
       }
@@ -1058,7 +1075,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate buildPartial() {
       com.google.cloud.dataproc.v1beta2.WorkflowTemplate result = new com.google.cloud.dataproc.v1beta2.WorkflowTemplate(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       result.version_ = version_;
@@ -1080,24 +1096,23 @@ private static final long serialVersionUID = 0L;
         result.placement_ = placementBuilder_.build();
       }
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.jobs_ = jobs_;
       } else {
         result.jobs_ = jobsBuilder_.build();
       }
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1172,7 +1187,7 @@ private static final long serialVersionUID = 0L;
         if (!other.jobs_.isEmpty()) {
           if (jobs_.isEmpty()) {
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureJobsIsMutable();
             jobs_.addAll(other.jobs_);
@@ -1185,7 +1200,7 @@ private static final long serialVersionUID = 0L;
             jobsBuilder_.dispose();
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
             jobsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getJobsFieldBuilder() : null;
@@ -1198,7 +1213,7 @@ private static final long serialVersionUID = 0L;
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -1211,7 +1226,7 @@ private static final long serialVersionUID = 0L;
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000004);
             parametersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParametersFieldBuilder() : null;
@@ -1261,6 +1276,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1284,6 +1300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1308,6 +1325,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1329,6 +1348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1346,6 +1366,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1373,6 +1395,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1399,6 +1422,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1426,6 +1450,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1450,6 +1476,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1470,6 +1497,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1497,6 +1526,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The version.
      */
     public int getVersion() {
       return version_;
@@ -1514,6 +1544,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
       
@@ -1534,6 +1566,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
       
@@ -1551,6 +1584,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1561,6 +1595,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1704,6 +1739,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1714,6 +1750,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2064,6 +2101,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+     * @return Whether the placement field is set.
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2074,6 +2112,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+     * @return The placement.
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2211,9 +2250,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> jobs_ =
       java.util.Collections.emptyList();
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.OrderedJob>(jobs_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2407,7 +2446,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         jobsBuilder_.clear();
@@ -2512,7 +2551,7 @@ private static final long serialVersionUID = 0L;
         jobsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.OrderedJob, com.google.cloud.dataproc.v1beta2.OrderedJob.Builder, com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>(
                 jobs_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         jobs_ = null;
@@ -2523,9 +2562,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> parameters_ =
       java.util.Collections.emptyList();
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         parameters_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>(parameters_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -2741,7 +2780,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -2860,7 +2899,7 @@ private static final long serialVersionUID = 0L;
         parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.TemplateParameter, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder, com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>(
                 parameters_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         parameters_ = null;

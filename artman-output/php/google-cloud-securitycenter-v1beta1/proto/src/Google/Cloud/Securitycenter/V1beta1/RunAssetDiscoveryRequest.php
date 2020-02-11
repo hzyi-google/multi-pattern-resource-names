@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest</code>
  */
-final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
+class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the organization to run asset discovery for. Its format is
+     * Required. Name of the organization to run asset discovery for. Its format is
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Name of the organization to run asset discovery for. Its format is
+     *           Required. Name of the organization to run asset discovery for. Its format is
      *           "organizations/[organization_id]".
      * }
      */
@@ -40,10 +40,10 @@ final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the organization to run asset discovery for. Its format is
+     * Required. Name of the organization to run asset discovery for. Its format is
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -52,10 +52,10 @@ final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the organization to run asset discovery for. Its format is
+     * Required. Name of the organization to run asset discovery for. Its format is
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

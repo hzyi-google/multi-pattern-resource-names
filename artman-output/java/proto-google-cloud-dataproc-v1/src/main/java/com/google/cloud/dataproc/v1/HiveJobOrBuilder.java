@@ -13,6 +13,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
   /**
@@ -21,6 +22,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return The bytes for queryFileUri.
    */
   com.google.protobuf.ByteString
       getQueryFileUriBytes();
@@ -31,6 +33,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
   /**
@@ -39,6 +42,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   * @return The queryList.
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
   /**
@@ -58,6 +62,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The continueOnFailure.
    */
   boolean getContinueOnFailure();
 
@@ -123,7 +128,7 @@ public interface HiveJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -134,7 +139,7 @@ public interface HiveJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -152,7 +157,7 @@ public interface HiveJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -164,7 +169,7 @@ public interface HiveJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -178,7 +183,7 @@ public interface HiveJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
@@ -197,6 +202,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String>
       getJarFileUrisList();
@@ -208,6 +214,7 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
   /**
@@ -218,6 +225,8 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
   /**
@@ -228,6 +237,8 @@ public interface HiveJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   com.google.protobuf.ByteString
       getJarFileUrisBytes(int index);

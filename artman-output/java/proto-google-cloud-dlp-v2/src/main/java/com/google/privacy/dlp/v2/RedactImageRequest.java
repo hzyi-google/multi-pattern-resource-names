@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RedactImageRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -70,9 +77,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               imageRedactionConfigs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             imageRedactionConfigs_.add(
                 input.readMessage(com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.parser(), extensionRegistry));
@@ -117,7 +124,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -150,6 +157,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return Whether the infoType field is set.
      */
     boolean hasInfoType();
     /**
@@ -161,6 +169,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return The infoType.
      */
     com.google.privacy.dlp.v2.InfoType getInfoType();
     /**
@@ -182,6 +191,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
+     * @return The redactAllText.
      */
     boolean getRedactAllText();
 
@@ -192,6 +202,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     * @return Whether the redactionColor field is set.
      */
     boolean hasRedactionColor();
     /**
@@ -201,6 +212,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     * @return The redactionColor.
      */
     com.google.privacy.dlp.v2.Color getRedactionColor();
     /**
@@ -235,6 +247,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ImageRedactionConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -247,7 +266,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -325,7 +343,8 @@ private static final long serialVersionUID = 0L;
     private int targetCase_ = 0;
     private java.lang.Object target_;
     public enum TargetCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       INFO_TYPE(1),
       REDACT_ALL_TEXT(2),
       TARGET_NOT_SET(0);
@@ -334,6 +353,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -370,6 +391,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return targetCase_ == 1;
@@ -383,6 +405,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (targetCase_ == 1) {
@@ -415,6 +438,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
+     * @return The redactAllText.
      */
     public boolean getRedactAllText() {
       if (targetCase_ == 2) {
@@ -432,6 +456,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     * @return Whether the redactionColor field is set.
      */
     public boolean hasRedactionColor() {
       return redactionColor_ != null;
@@ -443,6 +468,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+     * @return The redactionColor.
      */
     public com.google.privacy.dlp.v2.Color getRedactionColor() {
       return redactionColor_ == null ? com.google.privacy.dlp.v2.Color.getDefaultInstance() : redactionColor_;
@@ -872,6 +898,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       * @return Whether the infoType field is set.
        */
       public boolean hasInfoType() {
         return targetCase_ == 1;
@@ -885,6 +912,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       * @return The infoType.
        */
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (infoTypeBuilder_ == null) {
@@ -1067,6 +1095,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       * @return The redactAllText.
        */
       public boolean getRedactAllText() {
         if (targetCase_ == 2) {
@@ -1081,6 +1110,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       * @param value The redactAllText to set.
+       * @return This builder for chaining.
        */
       public Builder setRedactAllText(boolean value) {
         targetCase_ = 2;
@@ -1095,6 +1126,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRedactAllText() {
         if (targetCase_ == 2) {
@@ -1115,6 +1147,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+       * @return Whether the redactionColor field is set.
        */
       public boolean hasRedactionColor() {
         return redactionColorBuilder_ != null || redactionColor_ != null;
@@ -1126,6 +1159,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
+       * @return The redactionColor.
        */
       public com.google.privacy.dlp.v2.Color getRedactionColor() {
         if (redactionColorBuilder_ == null) {
@@ -1319,7 +1353,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -1328,6 +1361,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1347,6 +1381,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -1371,6 +1406,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -1391,6 +1427,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 8;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -1414,6 +1451,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -1424,6 +1462,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
@@ -1503,6 +1542,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool include_findings = 6;</code>
+   * @return The includeFindings.
    */
   public boolean getIncludeFindings() {
     return includeFindings_;
@@ -1516,6 +1556,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   * @return Whether the byteItem field is set.
    */
   public boolean hasByteItem() {
     return byteItem_ != null;
@@ -1526,6 +1567,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+   * @return The byteItem.
    */
   public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
     return byteItem_ == null ? com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance() : byteItem_;
@@ -1818,7 +1860,7 @@ private static final long serialVersionUID = 0L;
       }
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         imageRedactionConfigsBuilder_.clear();
       }
@@ -1857,7 +1899,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.RedactImageRequest buildPartial() {
       com.google.privacy.dlp.v2.RedactImageRequest result = new com.google.privacy.dlp.v2.RedactImageRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.locationId_ = locationId_;
       if (inspectConfigBuilder_ == null) {
@@ -1866,9 +1907,9 @@ private static final long serialVersionUID = 0L;
         result.inspectConfig_ = inspectConfigBuilder_.build();
       }
       if (imageRedactionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.imageRedactionConfigs_ = imageRedactionConfigs_;
       } else {
@@ -1880,7 +1921,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.byteItem_ = byteItemBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1944,7 +1984,7 @@ private static final long serialVersionUID = 0L;
         if (!other.imageRedactionConfigs_.isEmpty()) {
           if (imageRedactionConfigs_.isEmpty()) {
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureImageRedactionConfigsIsMutable();
             imageRedactionConfigs_.addAll(other.imageRedactionConfigs_);
@@ -1957,7 +1997,7 @@ private static final long serialVersionUID = 0L;
             imageRedactionConfigsBuilder_.dispose();
             imageRedactionConfigsBuilder_ = null;
             imageRedactionConfigs_ = other.imageRedactionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             imageRedactionConfigsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getImageRedactionConfigsFieldBuilder() : null;
@@ -2009,6 +2049,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -2028,6 +2069,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -2048,6 +2090,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -2065,6 +2109,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -2078,6 +2123,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -2099,6 +2146,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -2119,6 +2167,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -2140,6 +2189,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -2158,6 +2209,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -2172,6 +2224,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 8;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2194,6 +2248,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -2204,6 +2259,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
@@ -2341,9 +2397,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig> imageRedactionConfigs_ =
       java.util.Collections.emptyList();
     private void ensureImageRedactionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         imageRedactionConfigs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>(imageRedactionConfigs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2537,7 +2593,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearImageRedactionConfigs() {
       if (imageRedactionConfigsBuilder_ == null) {
         imageRedactionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         imageRedactionConfigsBuilder_.clear();
@@ -2642,7 +2698,7 @@ private static final long serialVersionUID = 0L;
         imageRedactionConfigsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig, com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.Builder, com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>(
                 imageRedactionConfigs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         imageRedactionConfigs_ = null;
@@ -2658,6 +2714,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     * @return The includeFindings.
      */
     public boolean getIncludeFindings() {
       return includeFindings_;
@@ -2669,6 +2726,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     * @param value The includeFindings to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeFindings(boolean value) {
       
@@ -2683,6 +2742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_findings = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIncludeFindings() {
       
@@ -2700,6 +2760,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+     * @return Whether the byteItem field is set.
      */
     public boolean hasByteItem() {
       return byteItemBuilder_ != null || byteItem_ != null;
@@ -2710,6 +2771,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
+     * @return The byteItem.
      */
     public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
       if (byteItemBuilder_ == null) {

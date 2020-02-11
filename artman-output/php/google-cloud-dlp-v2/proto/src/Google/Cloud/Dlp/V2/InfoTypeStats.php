@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InfoTypeStats</code>
  */
-final class InfoTypeStats extends \Google\Protobuf\Internal\Message
+class InfoTypeStats extends \Google\Protobuf\Internal\Message
 {
     /**
      * The type of finding this stat is for.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
-    private $info_type = null;
+    protected $info_type = null;
     /**
      * Number of findings for this infoType.
      *
      * Generated from protobuf field <code>int64 count = 2;</code>
      */
-    private $count = 0;
+    protected $count = 0;
 
     /**
      * Constructor.

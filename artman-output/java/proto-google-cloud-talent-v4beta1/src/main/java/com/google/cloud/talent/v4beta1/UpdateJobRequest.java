@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the job field is set.
    */
   public boolean hasJob() {
     return job_ != null;
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The job.
    */
   public com.google.cloud.talent.v4beta1.Job getJob() {
     return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
@@ -142,15 +150,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-   * is provided, only the specified fields in
-   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-   * Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -158,15 +165,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-   * is provided, only the specified fields in
-   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-   * Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -174,10 +180,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-   * is provided, only the specified fields in
-   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-   * Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+   * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
    * </pre>
@@ -546,6 +550,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -556,6 +561,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The job.
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -696,15 +702,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -712,15 +717,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -732,10 +736,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -758,10 +760,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -782,10 +782,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -810,10 +808,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -834,10 +830,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -852,10 +846,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>
@@ -873,10 +865,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]
-     * is provided, only the specified fields in
-     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated.
-     * Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask] is provided, only the specified fields in
+     * [job][google.cloud.talent.v4beta1.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
      * </pre>

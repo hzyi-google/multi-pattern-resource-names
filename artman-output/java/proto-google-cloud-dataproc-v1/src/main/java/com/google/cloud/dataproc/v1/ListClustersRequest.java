@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListClustersRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -140,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -159,10 +167,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object region_;
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -178,10 +187,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString
       getRegionBytes() {
@@ -219,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -252,6 +263,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
       getFilterBytes() {
@@ -275,6 +287,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -288,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -307,6 +321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -704,6 +719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -724,6 +740,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -745,6 +762,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -763,6 +782,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -777,6 +797,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -793,10 +815,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object region_ = "";
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -812,10 +835,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
@@ -832,10 +856,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(
         java.lang.String value) {
@@ -849,10 +875,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
       
@@ -862,10 +889,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(
         com.google.protobuf.ByteString value) {
@@ -900,6 +929,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -933,6 +963,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
         getFilterBytes() {
@@ -967,6 +998,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(
         java.lang.String value) {
@@ -998,6 +1031,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
       
@@ -1025,6 +1059,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(
         com.google.protobuf.ByteString value) {
@@ -1045,6 +1081,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1055,6 +1092,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -1068,6 +1107,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       
@@ -1083,6 +1123,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1102,6 +1143,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -1122,6 +1164,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -1139,6 +1183,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -1152,6 +1197,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {

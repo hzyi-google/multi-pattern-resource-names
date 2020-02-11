@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.Certification</code>
  */
-final class Certification extends \Google\Protobuf\Internal\Message
+class Certification extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of license or certification.
@@ -21,33 +21,33 @@ final class Certification extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string display_name = 1;</code>
      */
-    private $display_name = '';
+    protected $display_name = '';
     /**
      * Acquisition date or effective date of license or certification.
      *
      * Generated from protobuf field <code>.google.type.Date acquire_date = 2;</code>
      */
-    private $acquire_date = null;
+    protected $acquire_date = null;
     /**
      * Expiration date of license of certification.
      *
      * Generated from protobuf field <code>.google.type.Date expire_date = 3;</code>
      */
-    private $expire_date = null;
+    protected $expire_date = null;
     /**
      * Authority of license, such as government.
      * Number of characters allowed is 100.
      *
      * Generated from protobuf field <code>string authority = 4;</code>
      */
-    private $authority = '';
+    protected $authority = '';
     /**
      * Description of license or certification.
      * Number of characters allowed is 100,000.
      *
      * Generated from protobuf field <code>string description = 5;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.

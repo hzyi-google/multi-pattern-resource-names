@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues</code>
  */
-final class DeltaPresenceEstimationQuasiIdValues extends \Google\Protobuf\Internal\Message
+class DeltaPresenceEstimationQuasiIdValues extends \Google\Protobuf\Internal\Message
 {
     /**
      * The quasi-identifier values.
@@ -33,7 +33,7 @@ final class DeltaPresenceEstimationQuasiIdValues extends \Google\Protobuf\Intern
      *
      * Generated from protobuf field <code>double estimated_probability = 2;</code>
      */
-    private $estimated_probability = 0.0;
+    protected $estimated_probability = 0.0;
 
     /**
      * Constructor.

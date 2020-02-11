@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RecordSuppression();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -101,6 +107,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+   * @return Whether the condition field is set.
    */
   public boolean hasCondition() {
     return condition_ != null;
@@ -112,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+   * @return The condition.
    */
   public com.google.privacy.dlp.v2.RecordCondition getCondition() {
     return condition_ == null ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance() : condition_;
@@ -458,6 +466,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+     * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
       return conditionBuilder_ != null || condition_ != null;
@@ -469,6 +478,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
+     * @return The condition.
      */
     public com.google.privacy.dlp.v2.RecordCondition getCondition() {
       if (conditionBuilder_ == null) {

@@ -13,6 +13,7 @@ public interface BigQueryOptionsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return Whether the tableReference field is set.
    */
   boolean hasTableReference();
   /**
@@ -21,6 +22,7 @@ public interface BigQueryOptionsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return The tableReference.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
   /**
@@ -90,6 +92,7 @@ public interface BigQueryOptionsOrBuilder extends
    * </pre>
    *
    * <code>int64 rows_limit = 3;</code>
+   * @return The rowsLimit.
    */
   long getRowsLimit();
 
@@ -103,15 +106,18 @@ public interface BigQueryOptionsOrBuilder extends
    * </pre>
    *
    * <code>int32 rows_limit_percent = 6;</code>
+   * @return The rowsLimitPercent.
    */
   int getRowsLimitPercent();
 
   /**
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   * @return The enum numeric value on the wire for sampleMethod.
    */
   int getSampleMethodValue();
   /**
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   * @return The sampleMethod.
    */
   com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod();
 

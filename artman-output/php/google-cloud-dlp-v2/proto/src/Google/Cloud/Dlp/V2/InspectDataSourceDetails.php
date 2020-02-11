@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectDataSourceDetails</code>
  */
-final class InspectDataSourceDetails extends \Google\Protobuf\Internal\Message
+class InspectDataSourceDetails extends \Google\Protobuf\Internal\Message
 {
     /**
      * The configuration used for this job.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
      */
-    private $requested_options = null;
+    protected $requested_options = null;
     /**
      * A summary of the outcome of this inspect job.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

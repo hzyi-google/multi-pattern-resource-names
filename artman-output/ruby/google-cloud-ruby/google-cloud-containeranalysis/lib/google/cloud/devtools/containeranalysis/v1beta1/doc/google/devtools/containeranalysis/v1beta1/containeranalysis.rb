@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,18 +41,18 @@ module Google
         # Request to get a scan configuration.
         # @!attribute [rw] name
         #   @return [String]
-        #     The name of the scan configuration in the form of
+        #     Required. The name of the scan configuration in the form of
         #     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         class GetScanConfigRequest; end
 
         # Request to list scan configurations.
         # @!attribute [rw] parent
         #   @return [String]
-        #     The name of the project to list scan configurations for in the form of
+        #     Required. The name of the project to list scan configurations for in the form of
         #     `projects/[PROJECT_ID]`.
         # @!attribute [rw] filter
         #   @return [String]
-        #     The filter expression.
+        #     Required. The filter expression.
         # @!attribute [rw] page_size
         #   @return [Integer]
         #     The number of scan configs to return in the list.
@@ -75,11 +75,11 @@ module Google
         # A request to update a scan configuration.
         # @!attribute [rw] name
         #   @return [String]
-        #     The name of the scan configuration in the form of
+        #     Required. The name of the scan configuration in the form of
         #     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         # @!attribute [rw] scan_config
         #   @return [Google::Devtools::Containeranalysis::V1beta1::ScanConfig]
-        #     The updated scan configuration.
+        #     Required. The updated scan configuration.
         class UpdateScanConfigRequest; end
       end
     end

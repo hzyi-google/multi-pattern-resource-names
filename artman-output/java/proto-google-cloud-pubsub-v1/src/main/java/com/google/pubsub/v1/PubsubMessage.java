@@ -33,6 +33,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PubsubMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -62,10 +69,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               attributes_ = com.google.protobuf.MapField.newMapField(
                   AttributesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             attributes__ = input.readMessage(
@@ -143,7 +150,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.PubsubMessage.class, com.google.pubsub.v1.PubsubMessage.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_;
   /**
@@ -153,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes data = 1;</code>
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -186,7 +193,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -206,7 +214,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -217,7 +226,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -233,7 +243,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional attributes for this message.
+   * Attributes for this message. If this field is empty, the message must
+   * contain non-empty data.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -261,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   * @return The messageId.
    */
   public java.lang.String getMessageId() {
     java.lang.Object ref = messageId_;
@@ -283,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message_id = 3;</code>
+   * @return The bytes for messageId.
    */
   public com.google.protobuf.ByteString
       getMessageIdBytes() {
@@ -308,6 +321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   * @return Whether the publishTime field is set.
    */
   public boolean hasPublishTime() {
     return publishTime_ != null;
@@ -320,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+   * @return The publishTime.
    */
   public com.google.protobuf.Timestamp getPublishTime() {
     return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
@@ -341,16 +356,19 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderingKey_;
   /**
    * <pre>
-   * Identifies related messages for which publish order should be respected.
-   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-   * published with the same `ordering_key` value will be delivered to
-   * subscribers in the order in which they are received by the Pub/Sub system.
+   * If non-empty, identifies related messages for which publish order should be
+   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+   * messages published with the same non-empty `ordering_key` value will be
+   * delivered to subscribers in the order in which they are received by the
+   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+   * must specify the same `ordering_key` value.
    * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
    * API might be changed in backward-incompatible ways and is not recommended
    * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   * @return The orderingKey.
    */
   public java.lang.String getOrderingKey() {
     java.lang.Object ref = orderingKey_;
@@ -366,16 +384,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Identifies related messages for which publish order should be respected.
-   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-   * published with the same `ordering_key` value will be delivered to
-   * subscribers in the order in which they are received by the Pub/Sub system.
+   * If non-empty, identifies related messages for which publish order should be
+   * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+   * messages published with the same non-empty `ordering_key` value will be
+   * delivered to subscribers in the order in which they are received by the
+   * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+   * must specify the same `ordering_key` value.
    * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
    * API might be changed in backward-incompatible ways and is not recommended
    * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
+   * @return The bytes for orderingKey.
    */
   public com.google.protobuf.ByteString
       getOrderingKeyBytes() {
@@ -715,7 +736,6 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.PubsubMessage buildPartial() {
       com.google.pubsub.v1.PubsubMessage result = new com.google.pubsub.v1.PubsubMessage(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.data_ = data_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
@@ -726,7 +746,6 @@ private static final long serialVersionUID = 0L;
         result.publishTime_ = publishTimeBuilder_.build();
       }
       result.orderingKey_ = orderingKey_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -829,6 +848,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -840,6 +860,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -857,6 +879,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearData() {
       
@@ -893,7 +916,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -913,7 +937,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -924,7 +949,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -940,7 +966,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -964,7 +991,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -987,7 +1015,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1003,7 +1032,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional attributes for this message.
+     * Attributes for this message. If this field is empty, the message must
+     * contain non-empty data.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1026,6 +1056,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     * @return The messageId.
      */
     public java.lang.String getMessageId() {
       java.lang.Object ref = messageId_;
@@ -1048,6 +1079,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     * @return The bytes for messageId.
      */
     public com.google.protobuf.ByteString
         getMessageIdBytes() {
@@ -1071,6 +1103,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     * @param value The messageId to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageId(
         java.lang.String value) {
@@ -1091,6 +1125,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessageId() {
       
@@ -1107,6 +1142,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_id = 3;</code>
+     * @param value The bytes for messageId to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1131,6 +1168,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+     * @return Whether the publishTime field is set.
      */
     public boolean hasPublishTime() {
       return publishTimeBuilder_ != null || publishTime_ != null;
@@ -1143,6 +1181,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp publish_time = 4;</code>
+     * @return The publishTime.
      */
     public com.google.protobuf.Timestamp getPublishTime() {
       if (publishTimeBuilder_ == null) {
@@ -1294,16 +1333,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderingKey_ = "";
     /**
      * <pre>
-     * Identifies related messages for which publish order should be respected.
-     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-     * published with the same `ordering_key` value will be delivered to
-     * subscribers in the order in which they are received by the Pub/Sub system.
+     * If non-empty, identifies related messages for which publish order should be
+     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+     * messages published with the same non-empty `ordering_key` value will be
+     * delivered to subscribers in the order in which they are received by the
+     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+     * must specify the same `ordering_key` value.
      * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
      * API might be changed in backward-incompatible ways and is not recommended
      * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     * @return The orderingKey.
      */
     public java.lang.String getOrderingKey() {
       java.lang.Object ref = orderingKey_;
@@ -1319,16 +1361,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies related messages for which publish order should be respected.
-     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-     * published with the same `ordering_key` value will be delivered to
-     * subscribers in the order in which they are received by the Pub/Sub system.
+     * If non-empty, identifies related messages for which publish order should be
+     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+     * messages published with the same non-empty `ordering_key` value will be
+     * delivered to subscribers in the order in which they are received by the
+     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+     * must specify the same `ordering_key` value.
      * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
      * API might be changed in backward-incompatible ways and is not recommended
      * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     * @return The bytes for orderingKey.
      */
     public com.google.protobuf.ByteString
         getOrderingKeyBytes() {
@@ -1345,16 +1390,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies related messages for which publish order should be respected.
-     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-     * published with the same `ordering_key` value will be delivered to
-     * subscribers in the order in which they are received by the Pub/Sub system.
+     * If non-empty, identifies related messages for which publish order should be
+     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+     * messages published with the same non-empty `ordering_key` value will be
+     * delivered to subscribers in the order in which they are received by the
+     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+     * must specify the same `ordering_key` value.
      * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
      * API might be changed in backward-incompatible ways and is not recommended
      * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     * @param value The orderingKey to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderingKey(
         java.lang.String value) {
@@ -1368,16 +1417,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies related messages for which publish order should be respected.
-     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-     * published with the same `ordering_key` value will be delivered to
-     * subscribers in the order in which they are received by the Pub/Sub system.
+     * If non-empty, identifies related messages for which publish order should be
+     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+     * messages published with the same non-empty `ordering_key` value will be
+     * delivered to subscribers in the order in which they are received by the
+     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+     * must specify the same `ordering_key` value.
      * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
      * API might be changed in backward-incompatible ways and is not recommended
      * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOrderingKey() {
       
@@ -1387,16 +1439,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies related messages for which publish order should be respected.
-     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
-     * published with the same `ordering_key` value will be delivered to
-     * subscribers in the order in which they are received by the Pub/Sub system.
+     * If non-empty, identifies related messages for which publish order should be
+     * respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+     * messages published with the same non-empty `ordering_key` value will be
+     * delivered to subscribers in the order in which they are received by the
+     * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+     * must specify the same `ordering_key` value.
      * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
      * API might be changed in backward-incompatible ways and is not recommended
      * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
+     * @param value The bytes for orderingKey to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderingKeyBytes(
         com.google.protobuf.ByteString value) {

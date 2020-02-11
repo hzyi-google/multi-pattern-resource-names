@@ -25,31 +25,35 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFnb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMS9maW5kaW5n",
-            "LnByb3RvEiNnb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjFiZXRhMRoc",
-            "Z29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90bxo4Z29vZ2xlL2Nsb3VkL3Nl",
-            "Y3VyaXR5Y2VudGVyL3YxYmV0YTEvc2VjdXJpdHlfbWFya3MucHJvdG8aHGdv",
-            "b2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90",
-            "aW1lc3RhbXAucHJvdG8iwAQKB0ZpbmRpbmcSDAoEbmFtZRgBIAEoCRIOCgZw",
-            "YXJlbnQYAiABKAkSFQoNcmVzb3VyY2VfbmFtZRgDIAEoCRJBCgVzdGF0ZRgE",
-            "IAEoDjIyLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExLkZp",
-            "bmRpbmcuU3RhdGUSEAoIY2F0ZWdvcnkYBSABKAkSFAoMZXh0ZXJuYWxfdXJp",
-            "GAYgASgJEl0KEXNvdXJjZV9wcm9wZXJ0aWVzGAcgAygLMkIuZ29vZ2xlLmNs",
-            "b3VkLnNlY3VyaXR5Y2VudGVyLnYxYmV0YTEuRmluZGluZy5Tb3VyY2VQcm9w",
-            "ZXJ0aWVzRW50cnkSSgoOc2VjdXJpdHlfbWFya3MYCCABKAsyMi5nb29nbGUu",
-            "Y2xvdWQuc2VjdXJpdHljZW50ZXIudjFiZXRhMS5TZWN1cml0eU1hcmtzEi4K",
-            "CmV2ZW50X3RpbWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "Ei8KC2NyZWF0ZV90aW1lGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
-            "dGFtcBpPChVTb3VyY2VQcm9wZXJ0aWVzRW50cnkSCwoDa2V5GAEgASgJEiUK",
-            "BXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlOgI4ASI4CgVT",
-            "dGF0ZRIVChFTVEFURV9VTlNQRUNJRklFRBAAEgoKBkFDVElWRRABEgwKCElO",
-            "QUNUSVZFEAJCfgonY29tLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52",
+            "LnByb3RvEiNnb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjFiZXRhMRof",
+            "Z29vZ2xlL2FwaS9maWVsZF9iZWhhdmlvci5wcm90bxoZZ29vZ2xlL2FwaS9y",
+            "ZXNvdXJjZS5wcm90bxo4Z29vZ2xlL2Nsb3VkL3NlY3VyaXR5Y2VudGVyL3Yx",
+            "YmV0YTEvc2VjdXJpdHlfbWFya3MucHJvdG8aHGdvb2dsZS9wcm90b2J1Zi9z",
+            "dHJ1Y3QucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8a",
+            "HGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8iuAUKB0ZpbmRpbmcSDAoE",
+            "bmFtZRgBIAEoCRITCgZwYXJlbnQYAiABKAlCA+BBBRIVCg1yZXNvdXJjZV9u",
+            "YW1lGAMgASgJEkEKBXN0YXRlGAQgASgOMjIuZ29vZ2xlLmNsb3VkLnNlY3Vy",
+            "aXR5Y2VudGVyLnYxYmV0YTEuRmluZGluZy5TdGF0ZRIQCghjYXRlZ29yeRgF",
+            "IAEoCRIUCgxleHRlcm5hbF91cmkYBiABKAkSXQoRc291cmNlX3Byb3BlcnRp",
+            "ZXMYByADKAsyQi5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjFiZXRh",
+            "MS5GaW5kaW5nLlNvdXJjZVByb3BlcnRpZXNFbnRyeRJPCg5zZWN1cml0eV9t",
+            "YXJrcxgIIAEoCzIyLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJl",
+            "dGExLlNlY3VyaXR5TWFya3NCA+BBAxIuCgpldmVudF90aW1lGAkgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgtjcmVhdGVfdGltZRgKIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAaTwoVU291cmNlUHJvcGVy",
+            "dGllc0VudHJ5EgsKA2tleRgBIAEoCRIlCgV2YWx1ZRgCIAEoCzIWLmdvb2ds",
+            "ZS5wcm90b2J1Zi5WYWx1ZToCOAEiOAoFU3RhdGUSFQoRU1RBVEVfVU5TUEVD",
+            "SUZJRUQQABIKCgZBQ1RJVkUQARIMCghJTkFDVElWRRACOmzqQWkKJXNlY3Vy",
+            "aXR5Y2VudGVyLmdvb2dsZWFwaXMuY29tL0ZpbmRpbmcSQG9yZ2FuaXphdGlv",
+            "bnMve29yZ2FuaXphdGlvbn0vc291cmNlcy97c291cmNlfS9maW5kaW5ncy97",
+            "ZmluZGluZ31CfgonY29tLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52",
             "MWJldGExUAFaUWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
             "aXMvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMTtzZWN1cml0eWNlbnRl",
             "cmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarksReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Finding), global::Google.Cloud.Securitycenter.V1Beta1.Finding.Parser, new[]{ "Name", "Parent", "ResourceName", "State", "Category", "ExternalUri", "SourceProperties", "SecurityMarks", "EventTime", "CreateTime" }, null, new[]{ typeof(global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State) }, new pbr::GeneratedClrTypeInfo[] { null, })
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarksReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Finding), global::Google.Cloud.Securitycenter.V1Beta1.Finding.Parser, new[]{ "Name", "Parent", "ResourceName", "State", "Category", "ExternalUri", "SourceProperties", "SecurityMarks", "EventTime", "CreateTime" }, null, new[]{ typeof(global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State) }, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -114,7 +118,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The relative resource name of this finding. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// Example:
-    /// "organizations/123/sources/456/findings/789"
+    /// "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -128,11 +132,11 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     public const int ParentFieldNumber = 2;
     private string parent_ = "";
     /// <summary>
-    /// The relative resource name of the source the finding belongs to. See:
+    /// Immutable. The relative resource name of the source the finding belongs to. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// This field is immutable after creation time.
     /// For example:
-    /// "organizations/123/sources/456"
+    /// "organizations/{organization_id}/sources/{source_id}"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -146,9 +150,11 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     public const int ResourceNameFieldNumber = 3;
     private string resourceName_ = "";
     /// <summary>
-    /// The full resource name of the Google Cloud Platform (GCP) resource this
-    /// finding is for. See:
+    /// For findings on Google Cloud Platform (GCP) resources, the full resource
+    /// name of the GCP resource this finding is for. See:
     /// https://cloud.google.com/apis/design/resource_names#full_resource_name
+    /// When the finding is for a non-GCP resource, the resourceName can be a
+    /// customer or partner defined string.
     /// This field is immutable after creation time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,7 +167,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 4;
-    private global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State state_ = 0;
+    private global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State state_ = global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State.Unspecified;
     /// <summary>
     /// The state of the finding.
     /// </summary>
@@ -208,7 +214,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// <summary>Field number for the "source_properties" field.</summary>
     public const int SourcePropertiesFieldNumber = 7;
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_sourceProperties_codec
-        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 58);
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 58);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> sourceProperties_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
     /// <summary>
     /// Source specific properties. These properties are managed by the source
@@ -242,8 +248,8 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     private global::Google.Protobuf.WellKnownTypes.Timestamp eventTime_;
     /// <summary>
     /// The time at which the event took place. For example, if the finding
-    /// represents an open firewall it would capture the time the open firewall was
-    /// detected.
+    /// represents an open firewall it would capture the time the detector believes
+    /// the firewall became open. The accuracy is determined by the detector.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
@@ -299,7 +305,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Parent.Length != 0) hash ^= Parent.GetHashCode();
       if (ResourceName.Length != 0) hash ^= ResourceName.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State.Unspecified) hash ^= State.GetHashCode();
       if (Category.Length != 0) hash ^= Category.GetHashCode();
       if (ExternalUri.Length != 0) hash ^= ExternalUri.GetHashCode();
       hash ^= SourceProperties.GetHashCode();
@@ -331,7 +337,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
         output.WriteRawTag(26);
         output.WriteString(ResourceName);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) State);
       }
@@ -373,7 +379,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       if (ResourceName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ResourceName);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (Category.Length != 0) {
@@ -412,7 +418,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       if (other.ResourceName.Length != 0) {
         ResourceName = other.ResourceName;
       }
-      if (other.State != 0) {
+      if (other.State != global::Google.Cloud.Securitycenter.V1Beta1.Finding.Types.State.Unspecified) {
         State = other.State;
       }
       if (other.Category.Length != 0) {

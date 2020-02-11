@@ -17,6 +17,7 @@ public interface PersonNameFilterOrBuilder extends
    * </pre>
    *
    * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The personName.
    */
   java.lang.String getPersonName();
   /**
@@ -29,6 +30,7 @@ public interface PersonNameFilterOrBuilder extends
    * </pre>
    *
    * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for personName.
    */
   com.google.protobuf.ByteString
       getPersonNameBytes();

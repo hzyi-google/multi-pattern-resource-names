@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new NodeInitializationAction();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +113,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The executableFile.
    */
   public java.lang.String getExecutableFile() {
     java.lang.Object ref = executableFile_;
@@ -126,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for executableFile.
    */
   public com.google.protobuf.ByteString
       getExecutableFileBytes() {
@@ -152,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the executionTimeout field is set.
    */
   public boolean hasExecutionTimeout() {
     return executionTimeout_ != null;
@@ -165,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The executionTimeout.
    */
   public com.google.protobuf.Duration getExecutionTimeout() {
     return executionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : executionTimeout_;
@@ -527,6 +537,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The executableFile.
      */
     public java.lang.String getExecutableFile() {
       java.lang.Object ref = executableFile_;
@@ -546,6 +557,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for executableFile.
      */
     public com.google.protobuf.ByteString
         getExecutableFileBytes() {
@@ -566,6 +578,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The executableFile to set.
+     * @return This builder for chaining.
      */
     public Builder setExecutableFile(
         java.lang.String value) {
@@ -583,6 +597,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearExecutableFile() {
       
@@ -596,6 +611,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for executableFile to set.
+     * @return This builder for chaining.
      */
     public Builder setExecutableFileBytes(
         com.google.protobuf.ByteString value) {
@@ -621,6 +638,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
       return executionTimeoutBuilder_ != null || executionTimeout_ != null;
@@ -634,6 +652,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The executionTimeout.
      */
     public com.google.protobuf.Duration getExecutionTimeout() {
       if (executionTimeoutBuilder_ == null) {

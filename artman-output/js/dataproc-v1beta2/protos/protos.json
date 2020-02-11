@@ -311,7 +311,7 @@
                           "requestType": "CreateClusterRequest",
                           "responseType": "google.longrunning.Operation",
                           "options": {
-                            "(google.api.http).post": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters",
+                            "(google.api.http).post": "/v1beta2/projects/{project_id}/regions/{region}/clusters",
                             "(google.api.http).body": "cluster",
                             "(google.api.method_signature)": "project_id, region, cluster",
                             "(google.longrunning.operation_info).response_type": "Cluster",
@@ -322,7 +322,7 @@
                           "requestType": "UpdateClusterRequest",
                           "responseType": "google.longrunning.Operation",
                           "options": {
-                            "(google.api.http).patch": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters/{cluster_name=*}",
+                            "(google.api.http).patch": "/v1beta2/projects/{project_id}/regions/{region}/clusters/{cluster_name}",
                             "(google.api.http).body": "cluster",
                             "(google.api.method_signature)": "project_id, region, cluster_name, cluster, update_mask",
                             "(google.longrunning.operation_info).response_type": "Cluster",
@@ -333,7 +333,7 @@
                           "requestType": "DeleteClusterRequest",
                           "responseType": "google.longrunning.Operation",
                           "options": {
-                            "(google.api.http).delete": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters/{cluster_name=*}",
+                            "(google.api.http).delete": "/v1beta2/projects/{project_id}/regions/{region}/clusters/{cluster_name}",
                             "(google.api.method_signature)": "project_id, region, cluster_name",
                             "(google.longrunning.operation_info).response_type": "google.protobuf.Empty",
                             "(google.longrunning.operation_info).metadata_type": "google.cloud.dataproc.v1beta2.ClusterOperationMetadata"
@@ -343,7 +343,7 @@
                           "requestType": "GetClusterRequest",
                           "responseType": "Cluster",
                           "options": {
-                            "(google.api.http).get": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters/{cluster_name=*}",
+                            "(google.api.http).get": "/v1beta2/projects/{project_id}/regions/{region}/clusters/{cluster_name}",
                             "(google.api.method_signature)": "project_id, region, cluster_name"
                           }
                         },
@@ -351,7 +351,7 @@
                           "requestType": "ListClustersRequest",
                           "responseType": "ListClustersResponse",
                           "options": {
-                            "(google.api.http).get": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters",
+                            "(google.api.http).get": "/v1beta2/projects/{project_id}/regions/{region}/clusters",
                             "(google.api.method_signature)": "project_id, region, filter"
                           }
                         },
@@ -359,7 +359,7 @@
                           "requestType": "DiagnoseClusterRequest",
                           "responseType": "google.longrunning.Operation",
                           "options": {
-                            "(google.api.http).post": "/v1beta2/projects/{project_id=*}/regions/{region=*}/clusters/{cluster_name=*}:diagnose",
+                            "(google.api.http).post": "/v1beta2/projects/{project_id}/regions/{region}/clusters/{cluster_name}:diagnose",
                             "(google.api.http).body": "*",
                             "(google.api.method_signature)": "project_id, region, cluster_name",
                             "(google.longrunning.operation_info).response_type": "google.protobuf.Empty",
@@ -1371,7 +1371,7 @@
                           "requestType": "SubmitJobRequest",
                           "responseType": "Job",
                           "options": {
-                            "(google.api.http).post": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs:submit",
+                            "(google.api.http).post": "/v1beta2/projects/{project_id}/regions/{region}/jobs:submit",
                             "(google.api.http).body": "*",
                             "(google.api.method_signature)": "project_id, region, job"
                           }
@@ -1380,7 +1380,7 @@
                           "requestType": "GetJobRequest",
                           "responseType": "Job",
                           "options": {
-                            "(google.api.http).get": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs/{job_id=*}",
+                            "(google.api.http).get": "/v1beta2/projects/{project_id}/regions/{region}/jobs/{job_id}",
                             "(google.api.method_signature)": "project_id, region, job_id"
                           }
                         },
@@ -1388,7 +1388,7 @@
                           "requestType": "ListJobsRequest",
                           "responseType": "ListJobsResponse",
                           "options": {
-                            "(google.api.http).get": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs",
+                            "(google.api.http).get": "/v1beta2/projects/{project_id}/regions/{region}/jobs",
                             "(google.api.method_signature)": "project_id, region, filter"
                           }
                         },
@@ -1396,7 +1396,7 @@
                           "requestType": "UpdateJobRequest",
                           "responseType": "Job",
                           "options": {
-                            "(google.api.http).patch": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs/{job_id=*}",
+                            "(google.api.http).patch": "/v1beta2/projects/{project_id}/regions/{region}/jobs/{job_id}",
                             "(google.api.http).body": "job"
                           }
                         },
@@ -1404,7 +1404,7 @@
                           "requestType": "CancelJobRequest",
                           "responseType": "Job",
                           "options": {
-                            "(google.api.http).post": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs/{job_id=*}:cancel",
+                            "(google.api.http).post": "/v1beta2/projects/{project_id}/regions/{region}/jobs/{job_id}:cancel",
                             "(google.api.http).body": "*",
                             "(google.api.method_signature)": "project_id, region, job_id"
                           }
@@ -1413,7 +1413,7 @@
                           "requestType": "DeleteJobRequest",
                           "responseType": "google.protobuf.Empty",
                           "options": {
-                            "(google.api.http).delete": "/v1beta2/projects/{project_id=*}/regions/{region=*}/jobs/{job_id=*}",
+                            "(google.api.http).delete": "/v1beta2/projects/{project_id}/regions/{region}/jobs/{job_id}",
                             "(google.api.method_signature)": "project_id, region, job_id"
                           }
                         }
@@ -2778,8 +2778,7 @@
                           "type": "WorkflowTemplate",
                           "id": 1,
                           "options": {
-                            "(google.api.field_behavior)": "REQUIRED",
-                            "(google.api.resource_reference).type": "dataproc.googleapis.com/WorkflowTemplate"
+                            "(google.api.field_behavior)": "REQUIRED"
                           }
                         }
                       }
@@ -2978,6 +2977,12 @@
               "id": 1055,
               "extend": "google.protobuf.FieldOptions"
             },
+            "resourceDefinition": {
+              "rule": "repeated",
+              "type": "google.api.ResourceDescriptor",
+              "id": 1053,
+              "extend": "google.protobuf.FileOptions"
+            },
             "resource": {
               "type": "google.api.ResourceDescriptor",
               "id": 1053,
@@ -3001,6 +3006,14 @@
                 "history": {
                   "type": "History",
                   "id": 4
+                },
+                "plural": {
+                  "type": "string",
+                  "id": 5
+                },
+                "singular": {
+                  "type": "string",
+                  "id": 6
                 }
               },
               "nested": {

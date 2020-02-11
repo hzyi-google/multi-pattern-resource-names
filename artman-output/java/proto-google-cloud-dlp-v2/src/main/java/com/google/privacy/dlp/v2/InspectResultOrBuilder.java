@@ -62,6 +62,7 @@ public interface InspectResultOrBuilder extends
    * </pre>
    *
    * <code>bool findings_truncated = 2;</code>
+   * @return The findingsTruncated.
    */
   boolean getFindingsTruncated();
 }

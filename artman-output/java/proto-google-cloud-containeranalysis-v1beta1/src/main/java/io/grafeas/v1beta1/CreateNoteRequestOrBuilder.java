@@ -14,6 +14,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -23,6 +24,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -33,6 +35,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   * @return The noteId.
    */
   java.lang.String getNoteId();
   /**
@@ -41,6 +44,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   * @return The bytes for noteId.
    */
   com.google.protobuf.ByteString
       getNoteIdBytes();
@@ -51,6 +55,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   * @return Whether the note field is set.
    */
   boolean hasNote();
   /**
@@ -59,6 +64,7 @@ public interface CreateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   * @return The note.
    */
   io.grafeas.v1beta1.Note getNote();
   /**

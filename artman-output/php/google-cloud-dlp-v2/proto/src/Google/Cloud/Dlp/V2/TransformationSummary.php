@@ -15,26 +15,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.TransformationSummary</code>
  */
-final class TransformationSummary extends \Google\Protobuf\Internal\Message
+class TransformationSummary extends \Google\Protobuf\Internal\Message
 {
     /**
      * Set if the transformation was limited to a specific InfoType.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
-    private $info_type = null;
+    protected $info_type = null;
     /**
      * Set if the transformation was limited to a specific FieldId.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
      */
-    private $field = null;
+    protected $field = null;
     /**
      * The specific transformation these stats apply to.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
      */
-    private $transformation = null;
+    protected $transformation = null;
     /**
      * The field transformation that was applied.
      * If multiple field transformations are requested for a single field,
@@ -48,8 +48,10 @@ final class TransformationSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
      */
-    private $record_suppress = null;
+    protected $record_suppress = null;
     /**
+     * Collection of all transformations that took place or had an error.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     private $results;
@@ -58,7 +60,7 @@ final class TransformationSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 transformed_bytes = 7;</code>
      */
-    private $transformed_bytes = 0;
+    protected $transformed_bytes = 0;
 
     /**
      * Constructor.
@@ -79,6 +81,7 @@ final class TransformationSummary extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dlp\V2\RecordSuppression $record_suppress
      *           The specific suppression option these stats apply to.
      *     @type \Google\Cloud\Dlp\V2\TransformationSummary\SummaryResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *           Collection of all transformations that took place or had an error.
      *     @type int|string $transformed_bytes
      *           Total size in bytes that were transformed in some way.
      * }
@@ -223,6 +226,8 @@ final class TransformationSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Collection of all transformations that took place or had an error.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -232,6 +237,8 @@ final class TransformationSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Collection of all transformations that took place or had an error.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      * @param \Google\Cloud\Dlp\V2\TransformationSummary\SummaryResult[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

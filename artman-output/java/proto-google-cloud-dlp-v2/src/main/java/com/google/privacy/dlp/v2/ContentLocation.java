@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ContentLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -150,7 +156,8 @@ private static final long serialVersionUID = 0L;
   private int locationCase_ = 0;
   private java.lang.Object location_;
   public enum LocationCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RECORD_LOCATION(2),
     IMAGE_LOCATION(3),
     DOCUMENT_LOCATION(5),
@@ -160,6 +167,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -194,14 +203,15 @@ private static final long serialVersionUID = 0L;
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
-   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-   * * Datastore namespace: &lt;namespace&gt;
+   * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+   * * Cloud Storage files: `gs://{bucket}/{path}`
+   * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
    * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   * @return The containerName.
    */
   public java.lang.String getContainerName() {
     java.lang.Object ref = containerName_;
@@ -220,14 +230,15 @@ private static final long serialVersionUID = 0L;
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
-   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-   * * Datastore namespace: &lt;namespace&gt;
+   * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+   * * Cloud Storage files: `gs://{bucket}/{path}`
+   * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
    * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
+   * @return The bytes for containerName.
    */
   public com.google.protobuf.ByteString
       getContainerNameBytes() {
@@ -250,6 +261,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   * @return Whether the recordLocation field is set.
    */
   public boolean hasRecordLocation() {
     return locationCase_ == 2;
@@ -260,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+   * @return The recordLocation.
    */
   public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
     if (locationCase_ == 2) {
@@ -288,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   * @return Whether the imageLocation field is set.
    */
   public boolean hasImageLocation() {
     return locationCase_ == 3;
@@ -298,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+   * @return The imageLocation.
    */
   public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
     if (locationCase_ == 3) {
@@ -326,6 +341,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   * @return Whether the documentLocation field is set.
    */
   public boolean hasDocumentLocation() {
     return locationCase_ == 5;
@@ -336,6 +352,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+   * @return The documentLocation.
    */
   public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
     if (locationCase_ == 5) {
@@ -368,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   * @return Whether the containerTimestamp field is set.
    */
   public boolean hasContainerTimestamp() {
     return containerTimestamp_ != null;
@@ -381,6 +399,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+   * @return The containerTimestamp.
    */
   public com.google.protobuf.Timestamp getContainerTimestamp() {
     return containerTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : containerTimestamp_;
@@ -408,6 +427,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   * @return The containerVersion.
    */
   public java.lang.String getContainerVersion() {
     java.lang.Object ref = containerVersion_;
@@ -428,6 +448,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string container_version = 7;</code>
+   * @return The bytes for containerVersion.
    */
   public com.google.protobuf.ByteString
       getContainerVersionBytes() {
@@ -912,14 +933,15 @@ private static final long serialVersionUID = 0L;
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-     * * Datastore namespace: &lt;namespace&gt;
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     * @return The containerName.
      */
     public java.lang.String getContainerName() {
       java.lang.Object ref = containerName_;
@@ -938,14 +960,15 @@ private static final long serialVersionUID = 0L;
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-     * * Datastore namespace: &lt;namespace&gt;
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     * @return The bytes for containerName.
      */
     public com.google.protobuf.ByteString
         getContainerNameBytes() {
@@ -965,14 +988,16 @@ private static final long serialVersionUID = 0L;
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-     * * Datastore namespace: &lt;namespace&gt;
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     * @param value The containerName to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerName(
         java.lang.String value) {
@@ -989,14 +1014,15 @@ private static final long serialVersionUID = 0L;
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-     * * Datastore namespace: &lt;namespace&gt;
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContainerName() {
       
@@ -1009,14 +1035,16 @@ private static final long serialVersionUID = 0L;
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
-     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
-     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
-     * * Datastore namespace: &lt;namespace&gt;
+     * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+     * * Cloud Storage files: `gs://{bucket}/{path}`
+     * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
      * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
+     * @param value The bytes for containerName to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1038,6 +1066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+     * @return Whether the recordLocation field is set.
      */
     public boolean hasRecordLocation() {
       return locationCase_ == 2;
@@ -1048,6 +1077,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
+     * @return The recordLocation.
      */
     public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
       if (recordLocationBuilder_ == null) {
@@ -1210,6 +1240,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+     * @return Whether the imageLocation field is set.
      */
     public boolean hasImageLocation() {
       return locationCase_ == 3;
@@ -1220,6 +1251,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
+     * @return The imageLocation.
      */
     public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
       if (imageLocationBuilder_ == null) {
@@ -1382,6 +1414,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+     * @return Whether the documentLocation field is set.
      */
     public boolean hasDocumentLocation() {
       return locationCase_ == 5;
@@ -1392,6 +1425,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
+     * @return The documentLocation.
      */
     public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
       if (documentLocationBuilder_ == null) {
@@ -1558,6 +1592,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+     * @return Whether the containerTimestamp field is set.
      */
     public boolean hasContainerTimestamp() {
       return containerTimestampBuilder_ != null || containerTimestamp_ != null;
@@ -1571,6 +1606,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
+     * @return The containerTimestamp.
      */
     public com.google.protobuf.Timestamp getContainerTimestamp() {
       if (containerTimestampBuilder_ == null) {
@@ -1734,6 +1770,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     * @return The containerVersion.
      */
     public java.lang.String getContainerVersion() {
       java.lang.Object ref = containerVersion_;
@@ -1754,6 +1791,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     * @return The bytes for containerVersion.
      */
     public com.google.protobuf.ByteString
         getContainerVersionBytes() {
@@ -1775,6 +1813,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     * @param value The containerVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerVersion(
         java.lang.String value) {
@@ -1793,6 +1833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContainerVersion() {
       
@@ -1807,6 +1848,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string container_version = 7;</code>
+     * @param value The bytes for containerVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setContainerVersionBytes(
         com.google.protobuf.ByteString value) {

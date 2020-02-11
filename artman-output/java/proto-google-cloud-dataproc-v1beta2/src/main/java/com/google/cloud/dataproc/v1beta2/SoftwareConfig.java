@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SoftwareConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -55,10 +62,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               properties_ = com.google.protobuf.MapField.newMapField(
                   PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             properties__ = input.readMessage(
@@ -69,9 +76,9 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000002;
             }
             optionalComponents_.add(rawValue);
             break;
@@ -81,9 +88,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               optionalComponents_.add(rawValue);
             }
@@ -105,7 +112,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
       }
       this.unknownFields = unknownFields.build();
@@ -137,7 +144,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.SoftwareConfig.class, com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object imageVersion_;
   /**
@@ -152,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The imageVersion.
    */
   public java.lang.String getImageVersion() {
     java.lang.Object ref = imageVersion_;
@@ -177,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for imageVersion.
    */
   public com.google.protobuf.ByteString
       getImageVersionBytes() {
@@ -358,6 +366,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   * @return A list containing the optionalComponents.
    */
   public java.util.List<com.google.cloud.dataproc.v1beta2.Component> getOptionalComponentsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -369,6 +378,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   * @return The count of optionalComponents.
    */
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
@@ -379,6 +389,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   * @param index The index of the element to return.
+   * @return The optionalComponents at the given index.
    */
   public com.google.cloud.dataproc.v1beta2.Component getOptionalComponents(int index) {
     return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -389,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
   public java.util.List<java.lang.Integer>
   getOptionalComponentsValueList() {
@@ -400,6 +413,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of optionalComponents at the given index.
    */
   public int getOptionalComponentsValue(int index) {
     return optionalComponents_.get(index);
@@ -675,7 +690,7 @@ private static final long serialVersionUID = 0L;
 
       internalGetMutableProperties().clear();
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -703,16 +718,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.SoftwareConfig buildPartial() {
       com.google.cloud.dataproc.v1beta2.SoftwareConfig result = new com.google.cloud.dataproc.v1beta2.SoftwareConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.imageVersion_ = imageVersion_;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.optionalComponents_ = optionalComponents_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -770,7 +783,7 @@ private static final long serialVersionUID = 0L;
       if (!other.optionalComponents_.isEmpty()) {
         if (optionalComponents_.isEmpty()) {
           optionalComponents_ = other.optionalComponents_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureOptionalComponentsIsMutable();
           optionalComponents_.addAll(other.optionalComponents_);
@@ -820,6 +833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The imageVersion.
      */
     public java.lang.String getImageVersion() {
       java.lang.Object ref = imageVersion_;
@@ -845,6 +859,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for imageVersion.
      */
     public com.google.protobuf.ByteString
         getImageVersionBytes() {
@@ -871,6 +886,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The imageVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setImageVersion(
         java.lang.String value) {
@@ -894,6 +911,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
       
@@ -913,6 +931,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for imageVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setImageVersionBytes(
         com.google.protobuf.ByteString value) {
@@ -1178,9 +1198,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> optionalComponents_ =
       java.util.Collections.emptyList();
     private void ensureOptionalComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = new java.util.ArrayList<java.lang.Integer>(optionalComponents_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1189,6 +1209,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @return A list containing the optionalComponents.
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.Component> getOptionalComponentsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1200,6 +1221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @return The count of optionalComponents.
      */
     public int getOptionalComponentsCount() {
       return optionalComponents_.size();
@@ -1210,6 +1232,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param index The index of the element to return.
+     * @return The optionalComponents at the given index.
      */
     public com.google.cloud.dataproc.v1beta2.Component getOptionalComponents(int index) {
       return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -1220,6 +1244,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The optionalComponents to set.
+     * @return This builder for chaining.
      */
     public Builder setOptionalComponents(
         int index, com.google.cloud.dataproc.v1beta2.Component value) {
@@ -1237,6 +1264,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param value The optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addOptionalComponents(com.google.cloud.dataproc.v1beta2.Component value) {
       if (value == null) {
@@ -1253,6 +1282,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param values The optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addAllOptionalComponents(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.Component> values) {
@@ -1269,10 +1300,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOptionalComponents() {
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1282,6 +1314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @return A list containing the enum numeric values on the wire for optionalComponents.
      */
     public java.util.List<java.lang.Integer>
     getOptionalComponentsValueList() {
@@ -1293,6 +1326,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of optionalComponents at the given index.
      */
     public int getOptionalComponentsValue(int index) {
       return optionalComponents_.get(index);
@@ -1303,6 +1338,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of optionalComponents at the given index.
+     * @return This builder for chaining.
      */
     public Builder setOptionalComponentsValue(
         int index, int value) {
@@ -1317,6 +1355,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param value The enum numeric value on the wire for optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addOptionalComponentsValue(int value) {
       ensureOptionalComponentsIsMutable();
@@ -1330,6 +1370,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+     * @param values The enum numeric values on the wire for optionalComponents to add.
+     * @return This builder for chaining.
      */
     public Builder addAllOptionalComponentsValue(
         java.lang.Iterable<java.lang.Integer> values) {

@@ -13,7 +13,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -22,7 +23,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -33,7 +35,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The importJobId.
    */
   java.lang.String getImportJobId();
   /**
@@ -42,7 +45,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for importJobId.
    */
   com.google.protobuf.ByteString
       getImportJobIdBytes();
@@ -52,7 +56,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the importJob field is set.
    */
   boolean hasImportJob();
   /**
@@ -60,7 +65,8 @@ public interface CreateImportJobRequestOrBuilder extends
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The importJob.
    */
   com.google.cloud.kms.v1.ImportJob getImportJob();
   /**
@@ -68,7 +74,7 @@ public interface CreateImportJobRequestOrBuilder extends
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder();
 }

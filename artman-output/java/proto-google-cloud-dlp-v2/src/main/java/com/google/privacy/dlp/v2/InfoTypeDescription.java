@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InfoTypeDescription();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -64,9 +71,9 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             supportedBy_.add(rawValue);
             break;
@@ -76,9 +83,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               supportedBy_.add(rawValue);
             }
@@ -106,7 +113,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
       }
       this.unknownFields = unknownFields.build();
@@ -126,7 +133,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.InfoTypeDescription.class, com.google.privacy.dlp.v2.InfoTypeDescription.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -135,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -154,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -177,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -196,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -229,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   * @return A list containing the supportedBy.
    */
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -240,6 +251,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   * @return The count of supportedBy.
    */
   public int getSupportedByCount() {
     return supportedBy_.size();
@@ -250,6 +262,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   * @param index The index of the element to return.
+   * @return The supportedBy at the given index.
    */
   public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
     return supportedBy_converter_.convert(supportedBy_.get(index));
@@ -260,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   * @return A list containing the enum numeric values on the wire for supportedBy.
    */
   public java.util.List<java.lang.Integer>
   getSupportedByValueList() {
@@ -271,6 +286,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedBy at the given index.
    */
   public int getSupportedByValue(int index) {
     return supportedBy_.get(index);
@@ -286,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -306,6 +324,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -567,7 +586,7 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
 
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       return this;
@@ -597,16 +616,14 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.InfoTypeDescription buildPartial() {
       com.google.privacy.dlp.v2.InfoTypeDescription result = new com.google.privacy.dlp.v2.InfoTypeDescription(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.supportedBy_ = supportedBy_;
       result.description_ = description_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -666,7 +683,7 @@ private static final long serialVersionUID = 0L;
       if (!other.supportedBy_.isEmpty()) {
         if (supportedBy_.isEmpty()) {
           supportedBy_ = other.supportedBy_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureSupportedByIsMutable();
           supportedBy_.addAll(other.supportedBy_);
@@ -714,6 +731,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -733,6 +751,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -753,6 +772,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -770,6 +791,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -783,6 +805,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -803,6 +827,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -822,6 +847,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -842,6 +868,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -859,6 +887,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -872,6 +901,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -888,9 +919,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> supportedBy_ =
       java.util.Collections.emptyList();
     private void ensureSupportedByIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = new java.util.ArrayList<java.lang.Integer>(supportedBy_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -899,6 +930,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @return A list containing the supportedBy.
      */
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -910,6 +942,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @return The count of supportedBy.
      */
     public int getSupportedByCount() {
       return supportedBy_.size();
@@ -920,6 +953,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param index The index of the element to return.
+     * @return The supportedBy at the given index.
      */
     public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
       return supportedBy_converter_.convert(supportedBy_.get(index));
@@ -930,6 +965,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The supportedBy to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportedBy(
         int index, com.google.privacy.dlp.v2.InfoTypeSupportedBy value) {
@@ -947,6 +985,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param value The supportedBy to add.
+     * @return This builder for chaining.
      */
     public Builder addSupportedBy(com.google.privacy.dlp.v2.InfoTypeSupportedBy value) {
       if (value == null) {
@@ -963,6 +1003,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param values The supportedBy to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSupportedBy(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoTypeSupportedBy> values) {
@@ -979,10 +1021,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSupportedBy() {
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -992,6 +1035,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @return A list containing the enum numeric values on the wire for supportedBy.
      */
     public java.util.List<java.lang.Integer>
     getSupportedByValueList() {
@@ -1003,6 +1047,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedBy at the given index.
      */
     public int getSupportedByValue(int index) {
       return supportedBy_.get(index);
@@ -1013,6 +1059,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedBy at the given index.
+     * @return This builder for chaining.
      */
     public Builder setSupportedByValue(
         int index, int value) {
@@ -1027,6 +1076,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param value The enum numeric value on the wire for supportedBy to add.
+     * @return This builder for chaining.
      */
     public Builder addSupportedByValue(int value) {
       ensureSupportedByIsMutable();
@@ -1040,6 +1091,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
+     * @param values The enum numeric values on the wire for supportedBy to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSupportedByValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -1059,6 +1112,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1079,6 +1133,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1100,6 +1155,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1118,6 +1175,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1132,6 +1190,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {

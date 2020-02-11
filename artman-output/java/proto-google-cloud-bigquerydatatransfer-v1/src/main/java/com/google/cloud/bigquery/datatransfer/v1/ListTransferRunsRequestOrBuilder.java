@@ -16,6 +16,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -27,6 +28,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -37,6 +39,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   * @return A list containing the states.
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList();
   /**
@@ -45,6 +48,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   * @return The count of states.
    */
   int getStatesCount();
   /**
@@ -53,6 +57,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   * @param index The index of the element to return.
+   * @return The states at the given index.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index);
   /**
@@ -61,6 +67,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   * @return A list containing the enum numeric values on the wire for states.
    */
   java.util.List<java.lang.Integer>
   getStatesValueList();
@@ -70,6 +77,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of states at the given index.
    */
   int getStatesValue(int index);
 
@@ -83,6 +92,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -95,6 +105,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -105,6 +116,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -114,6 +126,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;</code>
+   * @return The enum numeric value on the wire for runAttempt.
    */
   int getRunAttemptValue();
   /**
@@ -122,6 +135,7 @@ public interface ListTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;</code>
+   * @return The runAttempt.
    */
   com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt getRunAttempt();
 }

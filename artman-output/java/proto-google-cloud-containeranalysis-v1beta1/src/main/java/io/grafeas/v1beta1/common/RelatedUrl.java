@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RelatedUrl();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -100,6 +106,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -119,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString
       getUrlBytes() {
@@ -142,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string label = 2;</code>
+   * @return The label.
    */
   public java.lang.String getLabel() {
     java.lang.Object ref = label_;
@@ -161,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string label = 2;</code>
+   * @return The bytes for label.
    */
   public com.google.protobuf.ByteString
       getLabelBytes() {
@@ -506,6 +516,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -525,6 +536,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString
         getUrlBytes() {
@@ -545,6 +557,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(
         java.lang.String value) {
@@ -562,6 +576,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
       
@@ -575,6 +590,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -595,6 +612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string label = 2;</code>
+     * @return The label.
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -614,6 +632,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string label = 2;</code>
+     * @return The bytes for label.
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -634,6 +653,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string label = 2;</code>
+     * @param value The label to set.
+     * @return This builder for chaining.
      */
     public Builder setLabel(
         java.lang.String value) {
@@ -651,6 +672,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string label = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLabel() {
       
@@ -664,6 +686,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string label = 2;</code>
+     * @param value The bytes for label to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelBytes(
         com.google.protobuf.ByteString value) {

@@ -13,6 +13,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the transferConfig field is set.
    */
   boolean hasTransferConfig();
   /**
@@ -21,6 +22,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The transferConfig.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
   /**
@@ -52,6 +54,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   * @return The authorizationCode.
    */
   java.lang.String getAuthorizationCode();
   /**
@@ -74,6 +77,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string authorization_code = 3;</code>
+   * @return The bytes for authorizationCode.
    */
   com.google.protobuf.ByteString
       getAuthorizationCodeBytes();
@@ -84,6 +88,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -92,6 +97,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -114,6 +120,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   * @return The versionInfo.
    */
   java.lang.String getVersionInfo();
   /**
@@ -127,6 +134,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string version_info = 5;</code>
+   * @return The bytes for versionInfo.
    */
   com.google.protobuf.ByteString
       getVersionInfoBytes();
@@ -141,6 +149,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   * @return The serviceAccountName.
    */
   java.lang.String getServiceAccountName();
   /**
@@ -153,6 +162,7 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
+   * @return The bytes for serviceAccountName.
    */
   com.google.protobuf.ByteString
       getServiceAccountNameBytes();

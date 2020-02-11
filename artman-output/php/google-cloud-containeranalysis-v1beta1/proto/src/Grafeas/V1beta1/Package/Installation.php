@@ -14,16 +14,16 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.package.Installation</code>
  */
-final class Installation extends \Google\Protobuf\Internal\Message
+class Installation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The name of the installed package.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
@@ -39,7 +39,7 @@ final class Installation extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Output only. The name of the installed package.
      *     @type \Grafeas\V1beta1\Package\Location[]|\Google\Protobuf\Internal\RepeatedField $location
-     *           All of the places within the filesystem versions of this package
+     *           Required. All of the places within the filesystem versions of this package
      *           have been found.
      * }
      */
@@ -75,7 +75,7 @@ final class Installation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
@@ -87,7 +87,7 @@ final class Installation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>

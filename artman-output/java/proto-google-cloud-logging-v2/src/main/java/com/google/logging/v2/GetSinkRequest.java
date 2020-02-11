@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetSinkRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -97,7 +103,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The sinkName.
    */
   public java.lang.String getSinkName() {
     java.lang.Object ref = sinkName_;
@@ -121,7 +128,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for sinkName.
    */
   public com.google.protobuf.ByteString
       getSinkNameBytes() {
@@ -454,7 +462,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The sinkName.
      */
     public java.lang.String getSinkName() {
       java.lang.Object ref = sinkName_;
@@ -478,7 +487,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for sinkName.
      */
     public com.google.protobuf.ByteString
         getSinkNameBytes() {
@@ -503,7 +513,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkName(
         java.lang.String value) {
@@ -525,7 +537,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearSinkName() {
       
@@ -543,7 +556,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkNameBytes(
         com.google.protobuf.ByteString value) {

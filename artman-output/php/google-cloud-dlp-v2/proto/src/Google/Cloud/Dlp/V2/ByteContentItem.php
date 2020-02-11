@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ByteContentItem</code>
  */
-final class ByteContentItem extends \Google\Protobuf\Internal\Message
+class ByteContentItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The type of data stored in the bytes string. Default will be TEXT_UTF8.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Content data to inspect or redact.
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
-    private $data = '';
+    protected $data = '';
 
     /**
      * Constructor.

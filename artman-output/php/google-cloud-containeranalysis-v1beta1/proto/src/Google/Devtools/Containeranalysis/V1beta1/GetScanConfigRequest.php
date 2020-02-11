@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.devtools.containeranalysis.v1beta1.GetScanConfigRequest</code>
  */
-final class GetScanConfigRequest extends \Google\Protobuf\Internal\Message
+class GetScanConfigRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ final class GetScanConfigRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The name of the scan configuration in the form of
+     *           Required. The name of the scan configuration in the form of
      *           `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * }
      */
@@ -40,10 +40,10 @@ final class GetScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -52,10 +52,10 @@ final class GetScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

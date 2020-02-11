@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ByteContentItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,39 +98,75 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * <pre>
+   * The type of data being sent to in data.
+   * </pre>
+   *
    * Protobuf enum {@code google.privacy.dlp.v2.ByteContentItem.BytesType}
    */
   public enum BytesType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused
+     * </pre>
+     *
      * <code>BYTES_TYPE_UNSPECIFIED = 0;</code>
      */
     BYTES_TYPE_UNSPECIFIED(0),
     /**
+     * <pre>
+     * Any image type.
+     * </pre>
+     *
      * <code>IMAGE = 6;</code>
      */
     IMAGE(6),
     /**
+     * <pre>
+     * jpeg
+     * </pre>
+     *
      * <code>IMAGE_JPEG = 1;</code>
      */
     IMAGE_JPEG(1),
     /**
+     * <pre>
+     * bmp
+     * </pre>
+     *
      * <code>IMAGE_BMP = 2;</code>
      */
     IMAGE_BMP(2),
     /**
+     * <pre>
+     * png
+     * </pre>
+     *
      * <code>IMAGE_PNG = 3;</code>
      */
     IMAGE_PNG(3),
     /**
+     * <pre>
+     * svg
+     * </pre>
+     *
      * <code>IMAGE_SVG = 4;</code>
      */
     IMAGE_SVG(4),
     /**
+     * <pre>
+     * plain text
+     * </pre>
+     *
      * <code>TEXT_UTF8 = 5;</code>
      */
     TEXT_UTF8(5),
     /**
+     * <pre>
+     * avro
+     * </pre>
+     *
      * <code>AVRO = 11;</code>
      */
     AVRO(11),
@@ -132,34 +174,66 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused
+     * </pre>
+     *
      * <code>BYTES_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BYTES_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     * <pre>
+     * Any image type.
+     * </pre>
+     *
      * <code>IMAGE = 6;</code>
      */
     public static final int IMAGE_VALUE = 6;
     /**
+     * <pre>
+     * jpeg
+     * </pre>
+     *
      * <code>IMAGE_JPEG = 1;</code>
      */
     public static final int IMAGE_JPEG_VALUE = 1;
     /**
+     * <pre>
+     * bmp
+     * </pre>
+     *
      * <code>IMAGE_BMP = 2;</code>
      */
     public static final int IMAGE_BMP_VALUE = 2;
     /**
+     * <pre>
+     * png
+     * </pre>
+     *
      * <code>IMAGE_PNG = 3;</code>
      */
     public static final int IMAGE_PNG_VALUE = 3;
     /**
+     * <pre>
+     * svg
+     * </pre>
+     *
      * <code>IMAGE_SVG = 4;</code>
      */
     public static final int IMAGE_SVG_VALUE = 4;
     /**
+     * <pre>
+     * plain text
+     * </pre>
+     *
      * <code>TEXT_UTF8 = 5;</code>
      */
     public static final int TEXT_UTF8_VALUE = 5;
     /**
+     * <pre>
+     * avro
+     * </pre>
+     *
      * <code>AVRO = 11;</code>
      */
     public static final int AVRO_VALUE = 11;
@@ -174,6 +248,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -181,6 +257,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static BytesType forNumber(int value) {
       switch (value) {
         case 0: return BYTES_TYPE_UNSPECIFIED;
@@ -251,6 +331,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -261,6 +342,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+   * @return The type.
    */
   public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
     @SuppressWarnings("deprecation")
@@ -276,6 +358,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes data = 2;</code>
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -610,6 +693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -620,6 +704,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -632,6 +718,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     * @return The type.
      */
     public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
       @SuppressWarnings("deprecation")
@@ -644,6 +731,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.privacy.dlp.v2.ByteContentItem.BytesType value) {
       if (value == null) {
@@ -660,6 +749,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem.BytesType type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -675,6 +765,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -685,6 +776,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -701,6 +794,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearData() {
       

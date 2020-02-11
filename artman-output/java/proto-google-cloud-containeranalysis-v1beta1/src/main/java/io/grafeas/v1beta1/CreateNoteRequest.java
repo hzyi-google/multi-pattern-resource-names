@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateNoteRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -134,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -157,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   * @return The noteId.
    */
   public java.lang.String getNoteId() {
     java.lang.Object ref = noteId_;
@@ -176,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string note_id = 2;</code>
+   * @return The bytes for noteId.
    */
   public com.google.protobuf.ByteString
       getNoteIdBytes() {
@@ -199,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   * @return Whether the note field is set.
    */
   public boolean hasNote() {
     return note_ != null;
@@ -209,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
+   * @return The note.
    */
   public io.grafeas.v1beta1.Note getNote() {
     return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
@@ -585,6 +597,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -605,6 +618,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -626,6 +640,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -644,6 +660,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -658,6 +675,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -678,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     * @return The noteId.
      */
     public java.lang.String getNoteId() {
       java.lang.Object ref = noteId_;
@@ -697,6 +717,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     * @return The bytes for noteId.
      */
     public com.google.protobuf.ByteString
         getNoteIdBytes() {
@@ -717,6 +738,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     * @param value The noteId to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteId(
         java.lang.String value) {
@@ -734,6 +757,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNoteId() {
       
@@ -747,6 +771,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string note_id = 2;</code>
+     * @param value The bytes for noteId to set.
+     * @return This builder for chaining.
      */
     public Builder setNoteIdBytes(
         com.google.protobuf.ByteString value) {
@@ -769,6 +795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Note note = 3;</code>
+     * @return Whether the note field is set.
      */
     public boolean hasNote() {
       return noteBuilder_ != null || note_ != null;
@@ -779,6 +806,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.Note note = 3;</code>
+     * @return The note.
      */
     public io.grafeas.v1beta1.Note getNote() {
       if (noteBuilder_ == null) {

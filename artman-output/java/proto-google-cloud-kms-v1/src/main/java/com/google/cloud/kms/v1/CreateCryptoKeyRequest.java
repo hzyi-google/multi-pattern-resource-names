@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateCryptoKeyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,7 +124,8 @@ private static final long serialVersionUID = 0L;
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -138,7 +145,8 @@ private static final long serialVersionUID = 0L;
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -162,7 +170,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyId.
    */
   public java.lang.String getCryptoKeyId() {
     java.lang.Object ref = cryptoKeyId_;
@@ -182,7 +191,8 @@ private static final long serialVersionUID = 0L;
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for cryptoKeyId.
    */
   public com.google.protobuf.ByteString
       getCryptoKeyIdBytes() {
@@ -202,30 +212,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.kms.v1.CryptoKey cryptoKey_;
   /**
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
   /**
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKey.
    */
   public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
   /**
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
@@ -243,6 +255,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool skip_initial_version_creation = 5;</code>
+   * @return The skipInitialVersionCreation.
    */
   public boolean getSkipInitialVersionCreation() {
     return skipInitialVersionCreation_;
@@ -626,7 +639,8 @@ private static final long serialVersionUID = 0L;
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -646,7 +660,8 @@ private static final long serialVersionUID = 0L;
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -667,7 +682,9 @@ private static final long serialVersionUID = 0L;
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -685,7 +702,8 @@ private static final long serialVersionUID = 0L;
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -699,7 +717,9 @@ private static final long serialVersionUID = 0L;
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -720,7 +740,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKeyId.
      */
     public java.lang.String getCryptoKeyId() {
       java.lang.Object ref = cryptoKeyId_;
@@ -740,7 +761,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for cryptoKeyId.
      */
     public com.google.protobuf.ByteString
         getCryptoKeyIdBytes() {
@@ -761,7 +783,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The cryptoKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyId(
         java.lang.String value) {
@@ -779,7 +803,8 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCryptoKeyId() {
       
@@ -793,7 +818,9 @@ private static final long serialVersionUID = 0L;
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for cryptoKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyIdBytes(
         com.google.protobuf.ByteString value) {
@@ -812,20 +839,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.kms.v1.CryptoKey, com.google.cloud.kms.v1.CryptoKey.Builder, com.google.cloud.kms.v1.CryptoKeyOrBuilder> cryptoKeyBuilder_;
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKey.
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -836,10 +865,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKey(com.google.cloud.kms.v1.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -856,10 +885,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKey(
         com.google.cloud.kms.v1.CryptoKey.Builder builderForValue) {
@@ -874,10 +903,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeCryptoKey(com.google.cloud.kms.v1.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -896,10 +925,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -914,10 +943,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKey.Builder getCryptoKeyBuilder() {
       
@@ -926,10 +955,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
       if (cryptoKeyBuilder_ != null) {
@@ -941,10 +970,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.CryptoKey, com.google.cloud.kms.v1.CryptoKey.Builder, com.google.cloud.kms.v1.CryptoKeyOrBuilder> 
@@ -971,6 +1000,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     * @return The skipInitialVersionCreation.
      */
     public boolean getSkipInitialVersionCreation() {
       return skipInitialVersionCreation_;
@@ -985,6 +1015,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     * @param value The skipInitialVersionCreation to set.
+     * @return This builder for chaining.
      */
     public Builder setSkipInitialVersionCreation(boolean value) {
       
@@ -1002,6 +1034,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool skip_initial_version_creation = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSkipInitialVersionCreation() {
       

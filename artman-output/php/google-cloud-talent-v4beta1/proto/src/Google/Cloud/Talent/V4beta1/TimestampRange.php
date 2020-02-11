@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.TimestampRange</code>
  */
-final class TimestampRange extends \Google\Protobuf\Internal\Message
+class TimestampRange extends \Google\Protobuf\Internal\Message
 {
     /**
      * Begin of the period (inclusive).
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
-    private $start_time = null;
+    protected $start_time = null;
     /**
      * End of the period (exclusive).
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
-    private $end_time = null;
+    protected $end_time = null;
 
     /**
      * Constructor.

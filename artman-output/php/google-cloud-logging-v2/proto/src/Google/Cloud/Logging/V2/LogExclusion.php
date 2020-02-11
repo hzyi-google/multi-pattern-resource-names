@@ -18,22 +18,23 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.LogExclusion</code>
  */
-final class LogExclusion extends \Google\Protobuf\Internal\Message
+class LogExclusion extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. A client-assigned identifier, such as
      * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
      * can include only letters, digits, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Optional. A description of this exclusion.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
@@ -45,7 +46,7 @@ final class LogExclusion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 3;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * Optional. If set to True, then this exclusion is disabled and it does not
      * exclude any log entries. You can [update an
@@ -54,21 +55,21 @@ final class LogExclusion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool disabled = 4;</code>
      */
-    private $disabled = false;
+    protected $disabled = false;
     /**
      * Output only. The creation timestamp of the exclusion.
      * This field may not be present for older exclusions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
     /**
      * Output only. The last update timestamp of the exclusion.
      * This field may not be present for older exclusions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
-    private $update_time = null;
+    protected $update_time = null;
 
     /**
      * Constructor.
@@ -80,6 +81,7 @@ final class LogExclusion extends \Google\Protobuf\Internal\Message
      *           Required. A client-assigned identifier, such as
      *           `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
      *           can include only letters, digits, underscores, hyphens, and periods.
+     *           First character has to be alphanumeric.
      *     @type string $description
      *           Optional. A description of this exclusion.
      *     @type string $filter
@@ -112,6 +114,7 @@ final class LogExclusion extends \Google\Protobuf\Internal\Message
      * Required. A client-assigned identifier, such as
      * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
      * can include only letters, digits, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -125,6 +128,7 @@ final class LogExclusion extends \Google\Protobuf\Internal\Message
      * Required. A client-assigned identifier, such as
      * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
      * can include only letters, digits, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

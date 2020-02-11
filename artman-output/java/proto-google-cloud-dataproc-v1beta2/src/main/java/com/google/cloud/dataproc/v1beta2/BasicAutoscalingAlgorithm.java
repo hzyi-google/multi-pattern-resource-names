@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BasicAutoscalingAlgorithm();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the yarnConfig field is set.
    */
   public boolean hasYarnConfig() {
     return yarnConfig_ != null;
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The yarnConfig.
    */
   public com.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig getYarnConfig() {
     return yarnConfig_ == null ? com.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig.getDefaultInstance() : yarnConfig_;
@@ -147,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the cooldownPeriod field is set.
    */
   public boolean hasCooldownPeriod() {
     return cooldownPeriod_ != null;
@@ -159,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The cooldownPeriod.
    */
   public com.google.protobuf.Duration getCooldownPeriod() {
     return cooldownPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : cooldownPeriod_;
@@ -534,6 +544,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the yarnConfig field is set.
      */
     public boolean hasYarnConfig() {
       return yarnConfigBuilder_ != null || yarnConfig_ != null;
@@ -544,6 +555,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The yarnConfig.
      */
     public com.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig getYarnConfig() {
       if (yarnConfigBuilder_ == null) {
@@ -689,6 +701,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the cooldownPeriod field is set.
      */
     public boolean hasCooldownPeriod() {
       return cooldownPeriodBuilder_ != null || cooldownPeriod_ != null;
@@ -701,6 +714,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The cooldownPeriod.
      */
     public com.google.protobuf.Duration getCooldownPeriod() {
       if (cooldownPeriodBuilder_ == null) {

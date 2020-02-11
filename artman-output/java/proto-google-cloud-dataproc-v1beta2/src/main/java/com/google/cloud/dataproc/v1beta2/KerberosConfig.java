@@ -36,6 +36,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new KerberosConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -48,7 +55,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -187,6 +193,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool enable_kerberos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enableKerberos.
    */
   public boolean getEnableKerberos() {
     return enableKerberos_;
@@ -201,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The rootPrincipalPasswordUri.
    */
   public java.lang.String getRootPrincipalPasswordUri() {
     java.lang.Object ref = rootPrincipalPasswordUri_;
@@ -221,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for rootPrincipalPasswordUri.
    */
   public com.google.protobuf.ByteString
       getRootPrincipalPasswordUriBytes() {
@@ -245,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The kmsKeyUri.
    */
   public java.lang.String getKmsKeyUri() {
     java.lang.Object ref = kmsKeyUri_;
@@ -265,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for kmsKeyUri.
    */
   public com.google.protobuf.ByteString
       getKmsKeyUriBytes() {
@@ -290,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keystoreUri.
    */
   public java.lang.String getKeystoreUri() {
     java.lang.Object ref = keystoreUri_;
@@ -311,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keystoreUri.
    */
   public com.google.protobuf.ByteString
       getKeystoreUriBytes() {
@@ -336,6 +349,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The truststoreUri.
    */
   public java.lang.String getTruststoreUri() {
     java.lang.Object ref = truststoreUri_;
@@ -357,6 +371,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for truststoreUri.
    */
   public com.google.protobuf.ByteString
       getTruststoreUriBytes() {
@@ -382,6 +397,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keystorePasswordUri.
    */
   public java.lang.String getKeystorePasswordUri() {
     java.lang.Object ref = keystorePasswordUri_;
@@ -403,6 +419,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keystorePasswordUri.
    */
   public com.google.protobuf.ByteString
       getKeystorePasswordUriBytes() {
@@ -428,6 +445,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The keyPasswordUri.
    */
   public java.lang.String getKeyPasswordUri() {
     java.lang.Object ref = keyPasswordUri_;
@@ -449,6 +467,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for keyPasswordUri.
    */
   public com.google.protobuf.ByteString
       getKeyPasswordUriBytes() {
@@ -474,6 +493,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The truststorePasswordUri.
    */
   public java.lang.String getTruststorePasswordUri() {
     java.lang.Object ref = truststorePasswordUri_;
@@ -495,6 +515,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for truststorePasswordUri.
    */
   public com.google.protobuf.ByteString
       getTruststorePasswordUriBytes() {
@@ -519,6 +540,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustRealm.
    */
   public java.lang.String getCrossRealmTrustRealm() {
     java.lang.Object ref = crossRealmTrustRealm_;
@@ -539,6 +561,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustRealm.
    */
   public com.google.protobuf.ByteString
       getCrossRealmTrustRealmBytes() {
@@ -563,6 +586,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustKdc.
    */
   public java.lang.String getCrossRealmTrustKdc() {
     java.lang.Object ref = crossRealmTrustKdc_;
@@ -583,6 +607,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustKdc.
    */
   public com.google.protobuf.ByteString
       getCrossRealmTrustKdcBytes() {
@@ -607,6 +632,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustAdminServer.
    */
   public java.lang.String getCrossRealmTrustAdminServer() {
     java.lang.Object ref = crossRealmTrustAdminServer_;
@@ -627,6 +653,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustAdminServer.
    */
   public com.google.protobuf.ByteString
       getCrossRealmTrustAdminServerBytes() {
@@ -652,6 +679,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The crossRealmTrustSharedPasswordUri.
    */
   public java.lang.String getCrossRealmTrustSharedPasswordUri() {
     java.lang.Object ref = crossRealmTrustSharedPasswordUri_;
@@ -673,6 +701,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for crossRealmTrustSharedPasswordUri.
    */
   public com.google.protobuf.ByteString
       getCrossRealmTrustSharedPasswordUriBytes() {
@@ -697,6 +726,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The kdcDbKeyUri.
    */
   public java.lang.String getKdcDbKeyUri() {
     java.lang.Object ref = kdcDbKeyUri_;
@@ -717,6 +747,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for kdcDbKeyUri.
    */
   public com.google.protobuf.ByteString
       getKdcDbKeyUriBytes() {
@@ -742,6 +773,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 tgt_lifetime_hours = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The tgtLifetimeHours.
    */
   public int getTgtLifetimeHours() {
     return tgtLifetimeHours_;
@@ -756,6 +788,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The realm.
    */
   public java.lang.String getRealm() {
     java.lang.Object ref = realm_;
@@ -776,6 +809,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for realm.
    */
   public com.google.protobuf.ByteString
       getRealmBytes() {
@@ -1343,6 +1377,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_kerberos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enableKerberos.
      */
     public boolean getEnableKerberos() {
       return enableKerberos_;
@@ -1353,6 +1388,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_kerberos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enableKerberos to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableKerberos(boolean value) {
       
@@ -1366,6 +1403,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_kerberos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearEnableKerberos() {
       
@@ -1382,6 +1420,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The rootPrincipalPasswordUri.
      */
     public java.lang.String getRootPrincipalPasswordUri() {
       java.lang.Object ref = rootPrincipalPasswordUri_;
@@ -1402,6 +1441,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for rootPrincipalPasswordUri.
      */
     public com.google.protobuf.ByteString
         getRootPrincipalPasswordUriBytes() {
@@ -1423,6 +1463,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The rootPrincipalPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setRootPrincipalPasswordUri(
         java.lang.String value) {
@@ -1441,6 +1483,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRootPrincipalPasswordUri() {
       
@@ -1455,6 +1498,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for rootPrincipalPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setRootPrincipalPasswordUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1476,6 +1521,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The kmsKeyUri.
      */
     public java.lang.String getKmsKeyUri() {
       java.lang.Object ref = kmsKeyUri_;
@@ -1496,6 +1542,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for kmsKeyUri.
      */
     public com.google.protobuf.ByteString
         getKmsKeyUriBytes() {
@@ -1517,6 +1564,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The kmsKeyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyUri(
         java.lang.String value) {
@@ -1535,6 +1584,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKmsKeyUri() {
       
@@ -1549,6 +1599,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for kmsKeyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKmsKeyUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1571,6 +1623,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The keystoreUri.
      */
     public java.lang.String getKeystoreUri() {
       java.lang.Object ref = keystoreUri_;
@@ -1592,6 +1645,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for keystoreUri.
      */
     public com.google.protobuf.ByteString
         getKeystoreUriBytes() {
@@ -1614,6 +1668,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The keystoreUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeystoreUri(
         java.lang.String value) {
@@ -1633,6 +1689,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeystoreUri() {
       
@@ -1648,6 +1705,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for keystoreUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeystoreUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1670,6 +1729,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The truststoreUri.
      */
     public java.lang.String getTruststoreUri() {
       java.lang.Object ref = truststoreUri_;
@@ -1691,6 +1751,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for truststoreUri.
      */
     public com.google.protobuf.ByteString
         getTruststoreUriBytes() {
@@ -1713,6 +1774,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The truststoreUri to set.
+     * @return This builder for chaining.
      */
     public Builder setTruststoreUri(
         java.lang.String value) {
@@ -1732,6 +1795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTruststoreUri() {
       
@@ -1747,6 +1811,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for truststoreUri to set.
+     * @return This builder for chaining.
      */
     public Builder setTruststoreUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1769,6 +1835,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The keystorePasswordUri.
      */
     public java.lang.String getKeystorePasswordUri() {
       java.lang.Object ref = keystorePasswordUri_;
@@ -1790,6 +1857,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for keystorePasswordUri.
      */
     public com.google.protobuf.ByteString
         getKeystorePasswordUriBytes() {
@@ -1812,6 +1880,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The keystorePasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeystorePasswordUri(
         java.lang.String value) {
@@ -1831,6 +1901,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeystorePasswordUri() {
       
@@ -1846,6 +1917,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keystore_password_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for keystorePasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeystorePasswordUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1868,6 +1941,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The keyPasswordUri.
      */
     public java.lang.String getKeyPasswordUri() {
       java.lang.Object ref = keyPasswordUri_;
@@ -1889,6 +1963,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for keyPasswordUri.
      */
     public com.google.protobuf.ByteString
         getKeyPasswordUriBytes() {
@@ -1911,6 +1986,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The keyPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyPasswordUri(
         java.lang.String value) {
@@ -1930,6 +2007,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeyPasswordUri() {
       
@@ -1945,6 +2023,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string key_password_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for keyPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyPasswordUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1967,6 +2047,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The truststorePasswordUri.
      */
     public java.lang.String getTruststorePasswordUri() {
       java.lang.Object ref = truststorePasswordUri_;
@@ -1988,6 +2069,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for truststorePasswordUri.
      */
     public com.google.protobuf.ByteString
         getTruststorePasswordUriBytes() {
@@ -2010,6 +2092,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The truststorePasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setTruststorePasswordUri(
         java.lang.String value) {
@@ -2029,6 +2113,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTruststorePasswordUri() {
       
@@ -2044,6 +2129,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string truststore_password_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for truststorePasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setTruststorePasswordUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2065,6 +2152,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The crossRealmTrustRealm.
      */
     public java.lang.String getCrossRealmTrustRealm() {
       java.lang.Object ref = crossRealmTrustRealm_;
@@ -2085,6 +2173,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for crossRealmTrustRealm.
      */
     public com.google.protobuf.ByteString
         getCrossRealmTrustRealmBytes() {
@@ -2106,6 +2195,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The crossRealmTrustRealm to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustRealm(
         java.lang.String value) {
@@ -2124,6 +2215,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustRealm() {
       
@@ -2138,6 +2230,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_realm = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for crossRealmTrustRealm to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustRealmBytes(
         com.google.protobuf.ByteString value) {
@@ -2159,6 +2253,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The crossRealmTrustKdc.
      */
     public java.lang.String getCrossRealmTrustKdc() {
       java.lang.Object ref = crossRealmTrustKdc_;
@@ -2179,6 +2274,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for crossRealmTrustKdc.
      */
     public com.google.protobuf.ByteString
         getCrossRealmTrustKdcBytes() {
@@ -2200,6 +2296,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The crossRealmTrustKdc to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustKdc(
         java.lang.String value) {
@@ -2218,6 +2316,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustKdc() {
       
@@ -2232,6 +2331,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_kdc = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for crossRealmTrustKdc to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustKdcBytes(
         com.google.protobuf.ByteString value) {
@@ -2253,6 +2354,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The crossRealmTrustAdminServer.
      */
     public java.lang.String getCrossRealmTrustAdminServer() {
       java.lang.Object ref = crossRealmTrustAdminServer_;
@@ -2273,6 +2375,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for crossRealmTrustAdminServer.
      */
     public com.google.protobuf.ByteString
         getCrossRealmTrustAdminServerBytes() {
@@ -2294,6 +2397,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The crossRealmTrustAdminServer to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustAdminServer(
         java.lang.String value) {
@@ -2312,6 +2417,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustAdminServer() {
       
@@ -2326,6 +2432,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_admin_server = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for crossRealmTrustAdminServer to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustAdminServerBytes(
         com.google.protobuf.ByteString value) {
@@ -2348,6 +2456,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The crossRealmTrustSharedPasswordUri.
      */
     public java.lang.String getCrossRealmTrustSharedPasswordUri() {
       java.lang.Object ref = crossRealmTrustSharedPasswordUri_;
@@ -2369,6 +2478,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for crossRealmTrustSharedPasswordUri.
      */
     public com.google.protobuf.ByteString
         getCrossRealmTrustSharedPasswordUriBytes() {
@@ -2391,6 +2501,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The crossRealmTrustSharedPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustSharedPasswordUri(
         java.lang.String value) {
@@ -2410,6 +2522,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCrossRealmTrustSharedPasswordUri() {
       
@@ -2425,6 +2538,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cross_realm_trust_shared_password_uri = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for crossRealmTrustSharedPasswordUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCrossRealmTrustSharedPasswordUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2446,6 +2561,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The kdcDbKeyUri.
      */
     public java.lang.String getKdcDbKeyUri() {
       java.lang.Object ref = kdcDbKeyUri_;
@@ -2466,6 +2582,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for kdcDbKeyUri.
      */
     public com.google.protobuf.ByteString
         getKdcDbKeyUriBytes() {
@@ -2487,6 +2604,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The kdcDbKeyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKdcDbKeyUri(
         java.lang.String value) {
@@ -2505,6 +2624,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKdcDbKeyUri() {
       
@@ -2519,6 +2639,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kdc_db_key_uri = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for kdcDbKeyUri to set.
+     * @return This builder for chaining.
      */
     public Builder setKdcDbKeyUriBytes(
         com.google.protobuf.ByteString value) {
@@ -2541,6 +2663,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 tgt_lifetime_hours = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The tgtLifetimeHours.
      */
     public int getTgtLifetimeHours() {
       return tgtLifetimeHours_;
@@ -2553,6 +2676,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 tgt_lifetime_hours = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The tgtLifetimeHours to set.
+     * @return This builder for chaining.
      */
     public Builder setTgtLifetimeHours(int value) {
       
@@ -2568,6 +2693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 tgt_lifetime_hours = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTgtLifetimeHours() {
       
@@ -2584,6 +2710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The realm.
      */
     public java.lang.String getRealm() {
       java.lang.Object ref = realm_;
@@ -2604,6 +2731,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for realm.
      */
     public com.google.protobuf.ByteString
         getRealmBytes() {
@@ -2625,6 +2753,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The realm to set.
+     * @return This builder for chaining.
      */
     public Builder setRealm(
         java.lang.String value) {
@@ -2643,6 +2773,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRealm() {
       
@@ -2657,6 +2788,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string realm = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for realm to set.
+     * @return This builder for chaining.
      */
     public Builder setRealmBytes(
         com.google.protobuf.ByteString value) {

@@ -6,13 +6,9 @@ package com.google.cloud.talent.v4beta1;
 /**
  * <pre>
  * Application Date Range Filter.
- * The API matches profiles with
- * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
- * between start date and end date (both boundaries are inclusive). The filter
- * is ignored if both
- * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]
- * and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date]
- * are missing.
+ * The API matches profiles with [Application.application_date][google.cloud.talent.v4beta1.Application.application_date] between
+ * start date and end date (both boundaries are inclusive). The filter is
+ * ignored if both [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date] and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date] are missing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationDateFilter}
@@ -30,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ApplicationDateFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return Whether the startDate field is set.
    */
   public boolean hasStartDate() {
     return startDate_ != null;
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return The startDate.
    */
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
@@ -156,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return Whether the endDate field is set.
    */
   public boolean hasEndDate() {
     return endDate_ != null;
@@ -167,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return The endDate.
    */
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
@@ -362,13 +368,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Application Date Range Filter.
-   * The API matches profiles with
-   * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
-   * between start date and end date (both boundaries are inclusive). The filter
-   * is ignored if both
-   * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]
-   * and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date]
-   * are missing.
+   * The API matches profiles with [Application.application_date][google.cloud.talent.v4beta1.Application.application_date] between
+   * start date and end date (both boundaries are inclusive). The filter is
+   * ignored if both [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date] and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date] are missing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationDateFilter}
@@ -549,6 +551,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
       return startDateBuilder_ != null || startDate_ != null;
@@ -560,6 +563,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     * @return The startDate.
      */
     public com.google.type.Date getStartDate() {
       if (startDateBuilder_ == null) {
@@ -711,6 +715,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
       return endDateBuilder_ != null || endDate_ != null;
@@ -722,6 +727,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     * @return The endDate.
      */
     public com.google.type.Date getEndDate() {
       if (endDateBuilder_ == null) {

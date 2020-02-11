@@ -20,26 +20,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket</code>
  */
-final class KMapEstimationHistogramBucket extends \Google\Protobuf\Internal\Message
+class KMapEstimationHistogramBucket extends \Google\Protobuf\Internal\Message
 {
     /**
      * Always positive.
      *
      * Generated from protobuf field <code>int64 min_anonymity = 1;</code>
      */
-    private $min_anonymity = 0;
+    protected $min_anonymity = 0;
     /**
      * Always greater than or equal to min_anonymity.
      *
      * Generated from protobuf field <code>int64 max_anonymity = 2;</code>
      */
-    private $max_anonymity = 0;
+    protected $max_anonymity = 0;
     /**
      * Number of records within these anonymity bounds.
      *
      * Generated from protobuf field <code>int64 bucket_size = 5;</code>
      */
-    private $bucket_size = 0;
+    protected $bucket_size = 0;
     /**
      * Sample of quasi-identifier tuple values in this bucket. The total
      * number of classes returned per bucket is capped at 20.
@@ -52,7 +52,7 @@ final class KMapEstimationHistogramBucket extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>int64 bucket_value_count = 7;</code>
      */
-    private $bucket_value_count = 0;
+    protected $bucket_value_count = 0;
 
     /**
      * Constructor.

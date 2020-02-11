@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InfoTypeStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,6 +110,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return infoType_ != null;
@@ -114,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
@@ -137,6 +145,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   public long getCount() {
     return count_;
@@ -488,6 +497,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return infoTypeBuilder_ != null || infoType_ != null;
@@ -498,6 +508,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -639,6 +650,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return The count.
      */
     public long getCount() {
       return count_;
@@ -649,6 +661,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(long value) {
       
@@ -662,6 +676,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       

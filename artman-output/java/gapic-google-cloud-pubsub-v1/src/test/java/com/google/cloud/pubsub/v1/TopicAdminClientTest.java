@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -47,12 +48,14 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -76,7 +79,7 @@ public class TopicAdminClientTest {
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
     serviceHelper.start();
   }
@@ -138,6 +141,54 @@ public class TopicAdminClientTest {
       ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
       client.createTopic(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateTopicTest() {
+    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    String kmsKeyName = "kmsKeyName2094986649";
+    Topic expectedResponse =
+        Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
+    mockPublisher.addResponse(expectedResponse);
+
+    Topic topic = Topic.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+    UpdateTopicRequest request =
+        UpdateTopicRequest.newBuilder().setTopic(topic).setUpdateMask(updateMask).build();
+
+    Topic actualResponse = client.updateTopic(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateTopicRequest actualRequest = (UpdateTopicRequest) actualRequests.get(0);
+
+    Assert.assertEquals(topic, actualRequest.getTopic());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateTopicExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPublisher.addException(exception);
+
+    try {
+      Topic topic = Topic.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      UpdateTopicRequest request =
+          UpdateTopicRequest.newBuilder().setTopic(topic).setUpdateMask(updateMask).build();
+
+      client.updateTopic(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

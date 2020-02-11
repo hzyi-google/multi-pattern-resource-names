@@ -13,6 +13,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
   /**
@@ -21,6 +22,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
@@ -38,6 +40,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
+   * @return Whether the field field is set.
    */
   boolean hasField();
   /**
@@ -46,6 +49,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
+   * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**
@@ -63,6 +67,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
+   * @return Whether the transformation field is set.
    */
   boolean hasTransformation();
   /**
@@ -71,6 +76,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
+   * @return The transformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getTransformation();
   /**
@@ -142,6 +148,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
+   * @return Whether the recordSuppress field is set.
    */
   boolean hasRecordSuppress();
   /**
@@ -150,6 +157,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
+   * @return The recordSuppress.
    */
   com.google.privacy.dlp.v2.RecordSuppression getRecordSuppress();
   /**
@@ -162,24 +170,44 @@ public interface TransformationSummaryOrBuilder extends
   com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressOrBuilder();
 
   /**
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult> 
       getResultsList();
   /**
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index);
   /**
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   int getResultsCount();
   /**
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder> 
       getResultsOrBuilderList();
   /**
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder getResultsOrBuilder(
@@ -191,6 +219,7 @@ public interface TransformationSummaryOrBuilder extends
    * </pre>
    *
    * <code>int64 transformed_bytes = 7;</code>
+   * @return The transformedBytes.
    */
   long getTransformedBytes();
 }

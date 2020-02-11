@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.ListWorkflowTemplatesRequest</code>
  */
-final class ListWorkflowTemplatesRequest extends \Google\Protobuf\Internal\Message
+class ListWorkflowTemplatesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the region or location, as described
@@ -27,20 +27,20 @@ final class ListWorkflowTemplatesRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Optional. The maximum number of results to return in each response.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
 
     /**
      * Constructor.

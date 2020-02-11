@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ValueFrequency</code>
  */
-final class ValueFrequency extends \Google\Protobuf\Internal\Message
+class ValueFrequency extends \Google\Protobuf\Internal\Message
 {
     /**
      * A value contained in the field in question.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.Value value = 1;</code>
      */
-    private $value = null;
+    protected $value = null;
     /**
      * How many times the value is contained in the field.
      *
      * Generated from protobuf field <code>int64 count = 2;</code>
      */
-    private $count = 0;
+    protected $count = 0;
 
     /**
      * Constructor.

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.PublicKey</code>
  */
-final class PublicKey extends \Google\Protobuf\Internal\Message
+class PublicKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * The public key, encoded in PEM format. For more information, see the
@@ -25,14 +25,14 @@ final class PublicKey extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string pem = 1;</code>
      */
-    private $pem = '';
+    protected $pem = '';
     /**
      * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
      * with this key.
      *
      * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
      */
-    private $algorithm = 0;
+    protected $algorithm = 0;
 
     /**
      * Constructor.

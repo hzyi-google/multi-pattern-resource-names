@@ -13,6 +13,7 @@ public interface InspectionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+   * @return Whether the hotwordRule field is set.
    */
   boolean hasHotwordRule();
   /**
@@ -21,6 +22,7 @@ public interface InspectionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+   * @return The hotwordRule.
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule();
   /**
@@ -38,6 +40,7 @@ public interface InspectionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExclusionRule exclusion_rule = 2;</code>
+   * @return Whether the exclusionRule field is set.
    */
   boolean hasExclusionRule();
   /**
@@ -46,6 +49,7 @@ public interface InspectionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExclusionRule exclusion_rule = 2;</code>
+   * @return The exclusionRule.
    */
   com.google.privacy.dlp.v2.ExclusionRule getExclusionRule();
   /**

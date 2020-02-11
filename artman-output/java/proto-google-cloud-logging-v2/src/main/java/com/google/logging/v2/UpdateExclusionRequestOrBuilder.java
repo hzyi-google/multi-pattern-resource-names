@@ -17,7 +17,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -30,7 +31,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -41,7 +43,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
   /**
@@ -50,7 +53,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
   /**
@@ -59,7 +63,7 @@ public interface UpdateExclusionRequestOrBuilder extends
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder();
 
@@ -73,7 +77,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -86,7 +91,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -99,7 +105,7 @@ public interface UpdateExclusionRequestOrBuilder extends
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

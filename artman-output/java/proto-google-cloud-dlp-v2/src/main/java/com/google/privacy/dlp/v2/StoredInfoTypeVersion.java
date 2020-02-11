@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StoredInfoTypeVersion();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -82,9 +89,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             errors_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -118,7 +125,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -138,7 +145,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.StoredInfoTypeVersion.class, com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
   /**
@@ -147,6 +153,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -157,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+   * @return The config.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance() : config_;
@@ -181,6 +189,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -192,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -217,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -228,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * @return The state.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
     @SuppressWarnings("deprecation")
@@ -243,10 +255,10 @@ private static final long serialVersionUID = 0L;
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -263,10 +275,10 @@ private static final long serialVersionUID = 0L;
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -284,10 +296,10 @@ private static final long serialVersionUID = 0L;
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -304,10 +316,10 @@ private static final long serialVersionUID = 0L;
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -324,10 +336,10 @@ private static final long serialVersionUID = 0L;
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
-   * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+   * For example, some of the data for stored custom dictionaries is put in
    * the user's Google Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
-   * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+   * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
    * not the source of the error.
@@ -348,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * @return Whether the stats field is set.
    */
   public boolean hasStats() {
     return stats_ != null;
@@ -358,6 +371,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * @return The stats.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeStats getStats() {
     return stats_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance() : stats_;
@@ -648,7 +662,7 @@ private static final long serialVersionUID = 0L;
 
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         errorsBuilder_.clear();
       }
@@ -685,7 +699,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion buildPartial() {
       com.google.privacy.dlp.v2.StoredInfoTypeVersion result = new com.google.privacy.dlp.v2.StoredInfoTypeVersion(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (configBuilder_ == null) {
         result.config_ = config_;
       } else {
@@ -698,9 +711,9 @@ private static final long serialVersionUID = 0L;
       }
       result.state_ = state_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.errors_ = errors_;
       } else {
@@ -711,7 +724,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.stats_ = statsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -773,7 +785,7 @@ private static final long serialVersionUID = 0L;
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -786,7 +798,7 @@ private static final long serialVersionUID = 0L;
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             errorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getErrorsFieldBuilder() : null;
@@ -837,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -847,6 +860,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
+     * @return The config.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
       if (configBuilder_ == null) {
@@ -991,6 +1005,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1002,6 +1017,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1151,6 +1167,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1162,6 +1179,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1175,6 +1194,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * @return The state.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
       @SuppressWarnings("deprecation")
@@ -1188,6 +1208,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.privacy.dlp.v2.StoredInfoTypeState value) {
       if (value == null) {
@@ -1205,6 +1227,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -1216,9 +1239,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Error> errors_ =
       java.util.Collections.emptyList();
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1231,10 +1254,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1255,10 +1278,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1279,10 +1302,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1303,10 +1326,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1334,10 +1357,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1362,10 +1385,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1392,10 +1415,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1423,10 +1446,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1451,10 +1474,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1479,10 +1502,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1508,10 +1531,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1522,7 +1545,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -1535,10 +1558,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1562,10 +1585,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1583,10 +1606,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1607,10 +1630,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1632,10 +1655,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1653,10 +1676,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1675,10 +1698,10 @@ private static final long serialVersionUID = 0L;
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * &lt;p&gt;For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * &lt;p&gt;If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -1697,7 +1720,7 @@ private static final long serialVersionUID = 0L;
         errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder>(
                 errors_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         errors_ = null;
@@ -1714,6 +1737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * @return Whether the stats field is set.
      */
     public boolean hasStats() {
       return statsBuilder_ != null || stats_ != null;
@@ -1724,6 +1748,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * @return The stats.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeStats getStats() {
       if (statsBuilder_ == null) {

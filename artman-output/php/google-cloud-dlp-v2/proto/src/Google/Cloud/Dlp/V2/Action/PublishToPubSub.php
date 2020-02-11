@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Action.PublishToPubSub</code>
  */
-final class PublishToPubSub extends \Google\Protobuf\Internal\Message
+class PublishToPubSub extends \Google\Protobuf\Internal\Message
 {
     /**
      * Cloud Pub/Sub topic to send notifications to. The topic must have given
@@ -27,7 +27,7 @@ final class PublishToPubSub extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string topic = 1;</code>
      */
-    private $topic = '';
+    protected $topic = '';
 
     /**
      * Constructor.

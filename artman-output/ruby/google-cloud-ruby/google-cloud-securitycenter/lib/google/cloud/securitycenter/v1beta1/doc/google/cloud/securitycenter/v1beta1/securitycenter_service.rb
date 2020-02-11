@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,48 +19,48 @@ module Google
         # Request message for creating a finding.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Resource name of the new finding's parent. Its format should be
+        #     Required. Resource name of the new finding's parent. Its format should be
         #     "organizations/[organization_id]/sources/[source_id]".
         # @!attribute [rw] finding_id
         #   @return [String]
-        #     Unique identifier provided by the client within the parent scope.
+        #     Required. Unique identifier provided by the client within the parent scope.
         #     It must be alphanumeric and less than or equal to 32 characters and
         #     greater than 0 characters in length.
         # @!attribute [rw] finding
         #   @return [Google::Cloud::Securitycenter::V1beta1::Finding]
-        #     The Finding being created. The name and security_marks will be ignored as
+        #     Required. The Finding being created. The name and security_marks will be ignored as
         #     they are both output only fields on this resource.
         class CreateFindingRequest; end
 
         # Request message for creating a source.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Resource name of the new source's parent. Its format should be
+        #     Required. Resource name of the new source's parent. Its format should be
         #     "organizations/[organization_id]".
         # @!attribute [rw] source
         #   @return [Google::Cloud::Securitycenter::V1beta1::Source]
-        #     The Source being created, only the display_name and description will be
+        #     Required. The Source being created, only the display_name and description will be
         #     used. All other fields will be ignored.
         class CreateSourceRequest; end
 
         # Request message for getting organization settings.
         # @!attribute [rw] name
         #   @return [String]
-        #     Name of the organization to get organization settings for. Its format is
+        #     Required. Name of the organization to get organization settings for. Its format is
         #     "organizations/[organization_id]/organizationSettings".
         class GetOrganizationSettingsRequest; end
 
         # Request message for getting a source.
         # @!attribute [rw] name
         #   @return [String]
-        #     Relative resource name of the source. Its format is
+        #     Required. Relative resource name of the source. Its format is
         #     "organizations/[organization_id]/source/[source_id]".
         class GetSourceRequest; end
 
         # Request message for grouping by assets.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Name of the organization to groupBy. Its format is
+        #     Required. Name of the organization to groupBy. Its format is
         #     "organizations/[organization_id]".
         # @!attribute [rw] filter
         #   @return [String]
@@ -93,7 +93,7 @@ module Google
         #     For example, `resource_properties.size = 100` is a valid filter string.
         # @!attribute [rw] group_by
         #   @return [String]
-        #     Expression that defines what assets fields to use for grouping. The string
+        #     Required. Expression that defines what assets fields to use for grouping. The string
         #     value should follow SQL syntax: comma separated list of fields. For
         #     example:
         #     "security_center_properties.resource_project,security_center_properties.project".
@@ -165,10 +165,10 @@ module Google
         # Request message for grouping by findings.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Name of the source to groupBy. Its format is
+        #     Required. Name of the source to groupBy. Its format is
         #     "organizations/[organization_id]/sources/[source_id]". To groupBy across
         #     all sources provide a source_id of `-`. For example:
-        #     organizations/123/sources/-
+        #     organizations/{organization_id}/sources/-
         # @!attribute [rw] filter
         #   @return [String]
         #     Expression that defines the filter to apply across findings.
@@ -198,7 +198,7 @@ module Google
         #     For example, `source_properties.size = 100` is a valid filter string.
         # @!attribute [rw] group_by
         #   @return [String]
-        #     Expression that defines what assets fields to use for grouping (including
+        #     Required. Expression that defines what assets fields to use for grouping (including
         #     `state`). The string value should follow SQL syntax: comma separated list
         #     of fields. For example:
         #     "parent,resource_name".
@@ -253,7 +253,7 @@ module Google
         # Request message for listing sources.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Resource name of the parent of sources to list. Its format should be
+        #     Required. Resource name of the parent of sources to list. Its format should be
         #     "organizations/[organization_id]".
         # @!attribute [rw] page_token
         #   @return [String]
@@ -279,7 +279,7 @@ module Google
         # Request message for listing assets.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Name of the organization assets should belong to. Its format is
+        #     Required. Name of the organization assets should belong to. Its format is
         #     "organizations/[organization_id]".
         # @!attribute [rw] filter
         #   @return [String]
@@ -353,9 +353,7 @@ module Google
         #     "UNUSED", which indicates that the asset is present at read_time.
         # @!attribute [rw] field_mask
         #   @return [Google::Protobuf::FieldMask]
-        #     Optional.
-        #
-        #     A field mask to specify the ListAssetsResult fields to be listed in the
+        #     Optional. A field mask to specify the ListAssetsResult fields to be listed in the
         #     response.
         #     An empty field mask will list all fields.
         # @!attribute [rw] page_token
@@ -420,10 +418,10 @@ module Google
         # Request message for listing findings.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Name of the source the findings belong to. Its format is
+        #     Required. Name of the source the findings belong to. Its format is
         #     "organizations/[organization_id]/sources/[source_id]". To list across all
         #     sources provide a source_id of `-`. For example:
-        #     organizations/123/sources/-
+        #     organizations/{organization_id}/sources/-
         # @!attribute [rw] filter
         #   @return [String]
         #     Expression that defines the filter to apply across findings.
@@ -469,9 +467,7 @@ module Google
         #     API's version of NOW.
         # @!attribute [rw] field_mask
         #   @return [Google::Protobuf::FieldMask]
-        #     Optional.
-        #
-        #     A field mask to specify the Finding fields to be listed in the response.
+        #     Optional. A field mask to specify the Finding fields to be listed in the response.
         #     An empty field mask will list all fields.
         # @!attribute [rw] page_token
         #   @return [String]
@@ -503,29 +499,29 @@ module Google
         # Request message for updating a finding's state.
         # @!attribute [rw] name
         #   @return [String]
-        #     The relative resource name of the finding. See:
+        #     Required. The relative resource name of the finding. See:
         #     https://cloud.google.com/apis/design/resource_names#relative_resource_name
         #     Example:
-        #     "organizations/123/sources/456/finding/789".
+        #     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
         # @!attribute [rw] state
         #   @return [Google::Cloud::Securitycenter::V1beta1::Finding::State]
-        #     The desired State of the finding.
+        #     Required. The desired State of the finding.
         # @!attribute [rw] start_time
         #   @return [Google::Protobuf::Timestamp]
-        #     The time at which the updated state takes effect.
+        #     Required. The time at which the updated state takes effect.
         class SetFindingStateRequest; end
 
         # Request message for running asset discovery for an organization.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Name of the organization to run asset discovery for. Its format is
+        #     Required. Name of the organization to run asset discovery for. Its format is
         #     "organizations/[organization_id]".
         class RunAssetDiscoveryRequest; end
 
         # Request message for updating or creating a finding.
         # @!attribute [rw] finding
         #   @return [Google::Cloud::Securitycenter::V1beta1::Finding]
-        #     The finding resource to update or create if it does not already exist.
+        #     Required. The finding resource to update or create if it does not already exist.
         #     parent, security_marks, and update_time will be ignored.
         #
         #     In the case of creation, the finding id portion of the name must
@@ -540,7 +536,7 @@ module Google
         # Request message for updating an organization's settings.
         # @!attribute [rw] organization_settings
         #   @return [Google::Cloud::Securitycenter::V1beta1::OrganizationSettings]
-        #     The organization settings resource to update.
+        #     Required. The organization settings resource to update.
         # @!attribute [rw] update_mask
         #   @return [Google::Protobuf::FieldMask]
         #     The FieldMask to use when updating the settings resource.
@@ -549,7 +545,7 @@ module Google
         # Request message for updating a source.
         # @!attribute [rw] source
         #   @return [Google::Cloud::Securitycenter::V1beta1::Source]
-        #     The source resource to update.
+        #     Required. The source resource to update.
         # @!attribute [rw] update_mask
         #   @return [Google::Protobuf::FieldMask]
         #     The FieldMask to use when updating the source resource.
@@ -558,7 +554,7 @@ module Google
         # Request message for updating a SecurityMarks resource.
         # @!attribute [rw] security_marks
         #   @return [Google::Cloud::Securitycenter::V1beta1::SecurityMarks]
-        #     The security marks resource to update.
+        #     Required. The security marks resource to update.
         # @!attribute [rw] update_mask
         #   @return [Google::Protobuf::FieldMask]
         #     The FieldMask to use when updating the security marks resource.

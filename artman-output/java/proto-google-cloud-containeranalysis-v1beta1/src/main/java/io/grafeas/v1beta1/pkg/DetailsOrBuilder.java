@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   * @return Whether the installation field is set.
    */
   boolean hasInstallation();
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   * @return The installation.
    */
   io.grafeas.v1beta1.pkg.Installation getInstallation();
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>

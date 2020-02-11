@@ -25,17 +25,19 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBnb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMS9zb3VyY2Uu",
-            "cHJvdG8SI2dvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExGhxn",
-            "b29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIkEKBlNvdXJjZRIMCgRuYW1l",
-            "GAEgASgJEhQKDGRpc3BsYXlfbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgD",
-            "IAEoCUJ+Cidjb20uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxYmV0",
-            "YTFQAVpRZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9j",
-            "bG91ZC9zZWN1cml0eWNlbnRlci92MWJldGExO3NlY3VyaXR5Y2VudGVyYgZw",
-            "cm90bzM="));
+            "cHJvdG8SI2dvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExGhln",
+            "b29nbGUvYXBpL3Jlc291cmNlLnByb3RvGhxnb29nbGUvYXBpL2Fubm90YXRp",
+            "b25zLnByb3RvIpsBCgZTb3VyY2USDAoEbmFtZRgBIAEoCRIUCgxkaXNwbGF5",
+            "X25hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAk6WOpBVQokc2VjdXJp",
+            "dHljZW50ZXIuZ29vZ2xlYXBpcy5jb20vU291cmNlEi1vcmdhbml6YXRpb25z",
+            "L3tvcmdhbml6YXRpb259L3NvdXJjZXMve3NvdXJjZX1CfgonY29tLmdvb2ds",
+            "ZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExUAFaUWdvb2dsZS5nb2xh",
+            "bmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvc2VjdXJpdHljZW50",
+            "ZXIvdjFiZXRhMTtzZWN1cml0eWNlbnRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Source), global::Google.Cloud.Securitycenter.V1Beta1.Source.Parser, new[]{ "Name", "DisplayName", "Description" }, null, null, null)
+          new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.Source), global::Google.Cloud.Securitycenter.V1Beta1.Source.Parser, new[]{ "Name", "DisplayName", "Description" }, null, null, null, null)
           }));
     }
     #endregion
@@ -90,7 +92,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The relative resource name of this source. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// Example:
-    /// "organizations/123/sources/456"
+    /// "organizations/{organization_id}/sources/{source_id}"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -107,10 +109,8 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The source's display name.
     /// A source's display name must be unique amongst its siblings, for example,
     /// two sources with the same parent can't share the same display name.
-    /// The display name must start and end with a letter or digit, may contain
-    /// letters, digits, spaces, hyphens, and underscores, and can be no longer
-    /// than 32 characters. This is captured by the regular expression:
-    /// [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+    /// The display name must have a length between 1 and 64 characters
+    /// (inclusive).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DisplayName {

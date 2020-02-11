@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,13 +20,14 @@ module Grafeas
       # consumer's project at the start of analysis.
       # @!attribute [rw] analysis_kind
       #   @return [Grafeas::V1beta1::NoteKind]
-      #     The kind of analysis that is handled by this discovery.
+      #     Required. Immutable. The kind of analysis that is handled by this
+      #     discovery.
       class Discovery; end
 
       # Details of a discovery occurrence.
       # @!attribute [rw] discovered
       #   @return [Grafeas::V1beta1::Discovery::Discovered]
-      #     Analysis status for the discovered resource.
+      #     Required. Analysis status for the discovered resource.
       class Details; end
 
       # Provides information about the analysis status of a discovered resource.

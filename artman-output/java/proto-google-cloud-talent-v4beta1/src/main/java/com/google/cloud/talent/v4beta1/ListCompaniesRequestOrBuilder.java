@@ -16,7 +16,8 @@ public interface ListCompaniesRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -28,7 +29,8 @@ public interface ListCompaniesRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -39,6 +41,7 @@ public interface ListCompaniesRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -47,6 +50,7 @@ public interface ListCompaniesRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -58,6 +62,7 @@ public interface ListCompaniesRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -65,12 +70,12 @@ public interface ListCompaniesRequestOrBuilder extends
    * <pre>
    * Set to true if the companies requested must have open jobs.
    * Defaults to false.
-   * If true, at most
-   * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
-   * companies are fetched, among which only those with open jobs are returned.
+   * If true, at most [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of companies are fetched, among which
+   * only those with open jobs are returned.
    * </pre>
    *
    * <code>bool require_open_jobs = 4;</code>
+   * @return The requireOpenJobs.
    */
   boolean getRequireOpenJobs();
 }

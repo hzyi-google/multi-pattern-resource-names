@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new KmsWrappedCryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -41,7 +48,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -99,10 +105,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString wrappedKey_;
   /**
    * <pre>
-   * The wrapped data crypto key. [required]
+   * Required. The wrapped data crypto key.
    * </pre>
    *
-   * <code>bytes wrapped_key = 1;</code>
+   * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The wrappedKey.
    */
   public com.google.protobuf.ByteString getWrappedKey() {
     return wrappedKey_;
@@ -112,10 +119,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cryptoKeyName_;
   /**
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyName.
    */
   public java.lang.String getCryptoKeyName() {
     java.lang.Object ref = cryptoKeyName_;
@@ -131,10 +139,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for cryptoKeyName.
    */
   public com.google.protobuf.ByteString
       getCryptoKeyNameBytes() {
@@ -480,20 +489,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The wrappedKey.
      */
     public com.google.protobuf.ByteString getWrappedKey() {
       return wrappedKey_;
     }
     /**
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The wrappedKey to set.
+     * @return This builder for chaining.
      */
     public Builder setWrappedKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -506,10 +518,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearWrappedKey() {
       
@@ -521,10 +534,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cryptoKeyName_ = "";
     /**
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKeyName.
      */
     public java.lang.String getCryptoKeyName() {
       java.lang.Object ref = cryptoKeyName_;
@@ -540,10 +554,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for cryptoKeyName.
      */
     public com.google.protobuf.ByteString
         getCryptoKeyNameBytes() {
@@ -560,10 +575,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The cryptoKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyName(
         java.lang.String value) {
@@ -577,10 +594,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCryptoKeyName() {
       
@@ -590,10 +608,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for cryptoKeyName to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyNameBytes(
         com.google.protobuf.ByteString value) {

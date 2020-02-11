@@ -17,24 +17,24 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.Asset</code>
  */
-final class Asset extends \Google\Protobuf\Internal\Message
+class Asset extends \Google\Protobuf\Internal\Message
 {
     /**
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
      */
-    private $security_center_properties = null;
+    protected $security_center_properties = null;
     /**
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -48,20 +48,20 @@ final class Asset extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
      */
-    private $security_marks = null;
+    protected $security_marks = null;
     /**
      * The time at which the asset was created in Cloud SCC.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 9;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
     /**
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 10;</code>
      */
-    private $update_time = null;
+    protected $update_time = null;
 
     /**
      * Constructor.
@@ -73,7 +73,7 @@ final class Asset extends \Google\Protobuf\Internal\Message
      *           The relative resource name of this asset. See:
      *           https://cloud.google.com/apis/design/resource_names#relative_resource_name
      *           Example:
-     *           "organizations/123/assets/456".
+     *           "organizations/{organization_id}/assets/{asset_id}".
      *     @type \Google\Cloud\Securitycenter\V1beta1\Asset\SecurityCenterProperties $security_center_properties
      *           Cloud SCC managed properties. These properties are managed by
      *           Cloud SCC and cannot be modified by the user.
@@ -99,7 +99,7 @@ final class Asset extends \Google\Protobuf\Internal\Message
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -113,7 +113,7 @@ final class Asset extends \Google\Protobuf\Internal\Message
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

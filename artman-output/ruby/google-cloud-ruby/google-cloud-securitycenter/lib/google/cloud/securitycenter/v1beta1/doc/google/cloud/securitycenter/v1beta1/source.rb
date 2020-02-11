@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,16 +24,14 @@ module Google
         #     The relative resource name of this source. See:
         #     https://cloud.google.com/apis/design/resource_names#relative_resource_name
         #     Example:
-        #     "organizations/123/sources/456"
+        #     "organizations/{organization_id}/sources/{source_id}"
         # @!attribute [rw] display_name
         #   @return [String]
         #     The source's display name.
         #     A source's display name must be unique amongst its siblings, for example,
         #     two sources with the same parent can't share the same display name.
-        #     The display name must start and end with a letter or digit, may contain
-        #     letters, digits, spaces, hyphens, and underscores, and can be no longer
-        #     than 32 characters. This is captured by the regular expression:
-        #     [\p{L}\p{N}](https://cloud.google.com{\p{L}\p{N}_- ]{0,30}[\p{L}\p{N}])?.
+        #     The display name must have a length between 1 and 64 characters
+        #     (inclusive).
         # @!attribute [rw] description
         #   @return [String]
         #     The description of the source (max of 1024 characters).

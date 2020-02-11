@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.UnwrappedCryptoKey</code>
  */
-final class UnwrappedCryptoKey extends \Google\Protobuf\Internal\Message
+class UnwrappedCryptoKey extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      *
-     * Generated from protobuf field <code>bytes key = 1;</code>
+     * Generated from protobuf field <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $key = '';
+    protected $key = '';
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ final class UnwrappedCryptoKey extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key
-     *           A 128/192/256 bit key. [required]
+     *           Required. A 128/192/256 bit key.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,9 +39,9 @@ final class UnwrappedCryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      *
-     * Generated from protobuf field <code>bytes key = 1;</code>
+     * Generated from protobuf field <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getKey()
@@ -50,9 +50,9 @@ final class UnwrappedCryptoKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      *
-     * Generated from protobuf field <code>bytes key = 1;</code>
+     * Generated from protobuf field <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

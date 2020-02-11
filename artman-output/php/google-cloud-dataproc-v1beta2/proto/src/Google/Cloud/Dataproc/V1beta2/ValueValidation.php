@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.ValueValidation</code>
  */
-final class ValueValidation extends \Google\Protobuf\Internal\Message
+class ValueValidation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. List of allowed values for the parameter.

@@ -12,10 +12,11 @@ public interface AssetOrBuilder extends
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -23,10 +24,11 @@ public interface AssetOrBuilder extends
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -38,6 +40,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * @return Whether the securityCenterProperties field is set.
    */
   boolean hasSecurityCenterProperties();
   /**
@@ -47,6 +50,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * @return The securityCenterProperties.
    */
   com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getSecurityCenterProperties();
   /**
@@ -125,6 +129,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+   * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
   /**
@@ -134,6 +139,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+   * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
   /**
@@ -152,6 +158,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -160,6 +167,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -178,6 +186,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -187,6 +196,7 @@ public interface AssetOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**

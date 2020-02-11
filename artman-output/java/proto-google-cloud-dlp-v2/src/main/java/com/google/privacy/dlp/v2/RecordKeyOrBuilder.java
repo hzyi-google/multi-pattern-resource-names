@@ -9,10 +9,12 @@ public interface RecordKeyOrBuilder extends
 
   /**
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   * @return Whether the datastoreKey field is set.
    */
   boolean hasDatastoreKey();
   /**
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   * @return The datastoreKey.
    */
   com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey();
   /**
@@ -22,10 +24,12 @@ public interface RecordKeyOrBuilder extends
 
   /**
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   * @return Whether the bigQueryKey field is set.
    */
   boolean hasBigQueryKey();
   /**
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   * @return The bigQueryKey.
    */
   com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey();
   /**
@@ -40,6 +44,7 @@ public interface RecordKeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @return A list containing the idValues.
    */
   java.util.List<java.lang.String>
       getIdValuesList();
@@ -50,6 +55,7 @@ public interface RecordKeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @return The count of idValues.
    */
   int getIdValuesCount();
   /**
@@ -59,6 +65,8 @@ public interface RecordKeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @param index The index of the element to return.
+   * @return The idValues at the given index.
    */
   java.lang.String getIdValues(int index);
   /**
@@ -68,6 +76,8 @@ public interface RecordKeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the idValues at the given index.
    */
   com.google.protobuf.ByteString
       getIdValuesBytes(int index);

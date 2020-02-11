@@ -9,18 +9,20 @@ public interface LayerOrBuilder extends
 
   /**
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   * @return The enum numeric value on the wire for directive.
    */
   int getDirectiveValue();
   /**
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   * @return The directive.
    */
   io.grafeas.v1beta1.image.Layer.Directive getDirective();
 
@@ -30,6 +32,7 @@ public interface LayerOrBuilder extends
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   * @return The arguments.
    */
   java.lang.String getArguments();
   /**
@@ -38,6 +41,7 @@ public interface LayerOrBuilder extends
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   * @return The bytes for arguments.
    */
   com.google.protobuf.ByteString
       getArgumentsBytes();

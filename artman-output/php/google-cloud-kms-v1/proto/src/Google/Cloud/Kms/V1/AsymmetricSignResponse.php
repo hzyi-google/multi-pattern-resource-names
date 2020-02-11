@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.AsymmetricSignResponse</code>
  */
-final class AsymmetricSignResponse extends \Google\Protobuf\Internal\Message
+class AsymmetricSignResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The created signature.
      *
      * Generated from protobuf field <code>bytes signature = 1;</code>
      */
-    private $signature = '';
+    protected $signature = '';
 
     /**
      * Constructor.

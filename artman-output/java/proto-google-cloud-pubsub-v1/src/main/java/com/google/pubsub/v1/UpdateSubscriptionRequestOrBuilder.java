@@ -13,6 +13,7 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
   /**
@@ -21,6 +22,7 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * @return The subscription.
    */
   com.google.pubsub.v1.Subscription getSubscription();
   /**
@@ -39,6 +41,7 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -48,6 +51,7 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

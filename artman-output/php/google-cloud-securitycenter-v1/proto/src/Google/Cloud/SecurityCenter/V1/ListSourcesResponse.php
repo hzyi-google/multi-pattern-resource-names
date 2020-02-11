@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.ListSourcesResponse</code>
  */
-final class ListSourcesResponse extends \Google\Protobuf\Internal\Message
+class ListSourcesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Sources belonging to the requested parent.
@@ -27,7 +27,7 @@ final class ListSourcesResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

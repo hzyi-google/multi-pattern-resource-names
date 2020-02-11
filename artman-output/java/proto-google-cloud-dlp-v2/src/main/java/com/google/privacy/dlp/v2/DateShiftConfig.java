@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DateShiftConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,7 +126,8 @@ private static final long serialVersionUID = 0L;
   private int methodCase_ = 0;
   private java.lang.Object method_;
   public enum MethodCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CRYPTO_KEY(4),
     METHOD_NOT_SET(0);
     private final int value;
@@ -128,6 +135,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -157,14 +166,14 @@ private static final long serialVersionUID = 0L;
   private int upperBoundDays_;
   /**
    * <pre>
-   * Range of shift in days. Actual shift will be selected at random within this
+   * Required. Range of shift in days. Actual shift will be selected at random within this
    * range (inclusive ends). Negative means shift to earlier in time. Must not
    * be more than 365250 days (1000 years) each direction.
    * For example, 3 means shift date to at most 3 days into the future.
-   * [Required]
    * </pre>
    *
-   * <code>int32 upper_bound_days = 1;</code>
+   * <code>int32 upper_bound_days = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The upperBoundDays.
    */
   public int getUpperBoundDays() {
     return upperBoundDays_;
@@ -174,11 +183,11 @@ private static final long serialVersionUID = 0L;
   private int lowerBoundDays_;
   /**
    * <pre>
-   * For example, -5 means shift date to at most 5 days back in the past.
-   * [Required]
+   * Required. For example, -5 means shift date to at most 5 days back in the past.
    * </pre>
    *
-   * <code>int32 lower_bound_days = 2;</code>
+   * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The lowerBoundDays.
    */
   public int getLowerBoundDays() {
     return lowerBoundDays_;
@@ -194,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return Whether the context field is set.
    */
   public boolean hasContext() {
     return context_ != null;
@@ -206,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return The context.
    */
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
@@ -232,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   * @return Whether the cryptoKey field is set.
    */
   public boolean hasCryptoKey() {
     return methodCase_ == 4;
@@ -244,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   * @return The cryptoKey.
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     if (methodCase_ == 4) {
@@ -683,28 +696,29 @@ private static final long serialVersionUID = 0L;
     private int upperBoundDays_ ;
     /**
      * <pre>
-     * Range of shift in days. Actual shift will be selected at random within this
+     * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
      * For example, 3 means shift date to at most 3 days into the future.
-     * [Required]
      * </pre>
      *
-     * <code>int32 upper_bound_days = 1;</code>
+     * <code>int32 upper_bound_days = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The upperBoundDays.
      */
     public int getUpperBoundDays() {
       return upperBoundDays_;
     }
     /**
      * <pre>
-     * Range of shift in days. Actual shift will be selected at random within this
+     * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
      * For example, 3 means shift date to at most 3 days into the future.
-     * [Required]
      * </pre>
      *
-     * <code>int32 upper_bound_days = 1;</code>
+     * <code>int32 upper_bound_days = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The upperBoundDays to set.
+     * @return This builder for chaining.
      */
     public Builder setUpperBoundDays(int value) {
       
@@ -714,14 +728,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Range of shift in days. Actual shift will be selected at random within this
+     * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
      * For example, 3 means shift date to at most 3 days into the future.
-     * [Required]
      * </pre>
      *
-     * <code>int32 upper_bound_days = 1;</code>
+     * <code>int32 upper_bound_days = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearUpperBoundDays() {
       
@@ -733,22 +747,23 @@ private static final long serialVersionUID = 0L;
     private int lowerBoundDays_ ;
     /**
      * <pre>
-     * For example, -5 means shift date to at most 5 days back in the past.
-     * [Required]
+     * Required. For example, -5 means shift date to at most 5 days back in the past.
      * </pre>
      *
-     * <code>int32 lower_bound_days = 2;</code>
+     * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The lowerBoundDays.
      */
     public int getLowerBoundDays() {
       return lowerBoundDays_;
     }
     /**
      * <pre>
-     * For example, -5 means shift date to at most 5 days back in the past.
-     * [Required]
+     * Required. For example, -5 means shift date to at most 5 days back in the past.
      * </pre>
      *
-     * <code>int32 lower_bound_days = 2;</code>
+     * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The lowerBoundDays to set.
+     * @return This builder for chaining.
      */
     public Builder setLowerBoundDays(int value) {
       
@@ -758,11 +773,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For example, -5 means shift date to at most 5 days back in the past.
-     * [Required]
+     * Required. For example, -5 means shift date to at most 5 days back in the past.
      * </pre>
      *
-     * <code>int32 lower_bound_days = 2;</code>
+     * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLowerBoundDays() {
       
@@ -782,6 +797,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     * @return Whether the context field is set.
      */
     public boolean hasContext() {
       return contextBuilder_ != null || context_ != null;
@@ -794,6 +810,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+     * @return The context.
      */
     public com.google.privacy.dlp.v2.FieldId getContext() {
       if (contextBuilder_ == null) {
@@ -952,6 +969,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+     * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
       return methodCase_ == 4;
@@ -964,6 +982,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+     * @return The cryptoKey.
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {

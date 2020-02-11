@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.PersonNameFilter</code>
  */
-final class PersonNameFilter extends \Google\Protobuf\Internal\Message
+class PersonNameFilter extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The person name. For example, "John Smith".
@@ -24,7 +24,7 @@ final class PersonNameFilter extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $person_name = '';
+    protected $person_name = '';
 
     /**
      * Constructor.

@@ -49,13 +49,13 @@ namespace Grafeas.V1Beta1.Package {
             "aXMvdjFiZXRhMS9wYWNrYWdlO3BhY2thZ2WiAgNHUkFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grafeas.V1Beta1.Package.Architecture), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Distribution), global::Grafeas.V1Beta1.Package.Distribution.Parser, new[]{ "CpeUri", "Architecture", "LatestVersion", "Maintainer", "Url", "Description" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Location), global::Grafeas.V1Beta1.Package.Location.Parser, new[]{ "CpeUri", "Version", "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Package), global::Grafeas.V1Beta1.Package.Package.Parser, new[]{ "Name", "Distribution" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Details), global::Grafeas.V1Beta1.Package.Details.Parser, new[]{ "Installation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Installation), global::Grafeas.V1Beta1.Package.Installation.Parser, new[]{ "Name", "Location" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Version), global::Grafeas.V1Beta1.Package.Version.Parser, new[]{ "Epoch", "Name", "Revision", "Kind" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Package.Version.Types.VersionKind) }, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grafeas.V1Beta1.Package.Architecture), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Distribution), global::Grafeas.V1Beta1.Package.Distribution.Parser, new[]{ "CpeUri", "Architecture", "LatestVersion", "Maintainer", "Url", "Description" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Location), global::Grafeas.V1Beta1.Package.Location.Parser, new[]{ "CpeUri", "Version", "Path" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Package), global::Grafeas.V1Beta1.Package.Package.Parser, new[]{ "Name", "Distribution" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Details), global::Grafeas.V1Beta1.Package.Details.Parser, new[]{ "Installation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Installation), global::Grafeas.V1Beta1.Package.Installation.Parser, new[]{ "Name", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Package.Version), global::Grafeas.V1Beta1.Package.Version.Parser, new[]{ "Epoch", "Name", "Revision", "Kind" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Package.Version.Types.VersionKind) }, null, null)
           }));
     }
     #endregion
@@ -130,7 +130,7 @@ namespace Grafeas.V1Beta1.Package {
     public const int CpeUriFieldNumber = 1;
     private string cpeUri_ = "";
     /// <summary>
-    /// The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+    /// Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
     /// denoting the package manager version distributing a package.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +143,7 @@ namespace Grafeas.V1Beta1.Package {
 
     /// <summary>Field number for the "architecture" field.</summary>
     public const int ArchitectureFieldNumber = 2;
-    private global::Grafeas.V1Beta1.Package.Architecture architecture_ = 0;
+    private global::Grafeas.V1Beta1.Package.Architecture architecture_ = global::Grafeas.V1Beta1.Package.Architecture.Unspecified;
     /// <summary>
     /// The CPU architecture for which packages in this distribution channel were
     /// built.
@@ -160,8 +160,7 @@ namespace Grafeas.V1Beta1.Package {
     public const int LatestVersionFieldNumber = 3;
     private global::Grafeas.V1Beta1.Package.Version latestVersion_;
     /// <summary>
-    /// The latest available version of this package in this distribution
-    /// channel.
+    /// The latest available version of this package in this distribution channel.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Package.Version LatestVersion {
@@ -239,7 +238,7 @@ namespace Grafeas.V1Beta1.Package {
     public override int GetHashCode() {
       int hash = 1;
       if (CpeUri.Length != 0) hash ^= CpeUri.GetHashCode();
-      if (Architecture != 0) hash ^= Architecture.GetHashCode();
+      if (Architecture != global::Grafeas.V1Beta1.Package.Architecture.Unspecified) hash ^= Architecture.GetHashCode();
       if (latestVersion_ != null) hash ^= LatestVersion.GetHashCode();
       if (Maintainer.Length != 0) hash ^= Maintainer.GetHashCode();
       if (Url.Length != 0) hash ^= Url.GetHashCode();
@@ -261,7 +260,7 @@ namespace Grafeas.V1Beta1.Package {
         output.WriteRawTag(10);
         output.WriteString(CpeUri);
       }
-      if (Architecture != 0) {
+      if (Architecture != global::Grafeas.V1Beta1.Package.Architecture.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Architecture);
       }
@@ -292,7 +291,7 @@ namespace Grafeas.V1Beta1.Package {
       if (CpeUri.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CpeUri);
       }
-      if (Architecture != 0) {
+      if (Architecture != global::Grafeas.V1Beta1.Package.Architecture.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Architecture);
       }
       if (latestVersion_ != null) {
@@ -321,7 +320,7 @@ namespace Grafeas.V1Beta1.Package {
       if (other.CpeUri.Length != 0) {
         CpeUri = other.CpeUri;
       }
-      if (other.Architecture != 0) {
+      if (other.Architecture != global::Grafeas.V1Beta1.Package.Architecture.Unspecified) {
         Architecture = other.Architecture;
       }
       if (other.latestVersion_ != null) {
@@ -385,7 +384,7 @@ namespace Grafeas.V1Beta1.Package {
 
   /// <summary>
   /// An occurrence of a particular package installation found within a system's
-  /// filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+  /// filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
   /// </summary>
   public sealed partial class Location : pb::IMessage<Location> {
     private static readonly pb::MessageParser<Location> _parser = new pb::MessageParser<Location>(() => new Location());
@@ -427,7 +426,7 @@ namespace Grafeas.V1Beta1.Package {
     public const int CpeUriFieldNumber = 1;
     private string cpeUri_ = "";
     /// <summary>
-    /// The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+    /// Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
     /// denoting the package manager version distributing a package.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -632,7 +631,7 @@ namespace Grafeas.V1Beta1.Package {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// The name of the package.
+    /// Required. Immutable. The name of the package.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -789,7 +788,7 @@ namespace Grafeas.V1Beta1.Package {
     public const int InstallationFieldNumber = 1;
     private global::Grafeas.V1Beta1.Package.Installation installation_;
     /// <summary>
-    /// Where the package was installed.
+    /// Required. Where the package was installed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Package.Installation Installation {
@@ -948,7 +947,7 @@ namespace Grafeas.V1Beta1.Package {
         = pb::FieldCodec.ForMessage(18, global::Grafeas.V1Beta1.Package.Location.Parser);
     private readonly pbc::RepeatedField<global::Grafeas.V1Beta1.Package.Location> location_ = new pbc::RepeatedField<global::Grafeas.V1Beta1.Package.Location>();
     /// <summary>
-    /// All of the places within the filesystem versions of this package
+    /// Required. All of the places within the filesystem versions of this package
     /// have been found.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1107,7 +1106,8 @@ namespace Grafeas.V1Beta1.Package {
     public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
-    /// The main part of the version name.
+    /// Required only when version kind is NORMAL. The main part of the version
+    /// name.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -1133,10 +1133,10 @@ namespace Grafeas.V1Beta1.Package {
 
     /// <summary>Field number for the "kind" field.</summary>
     public const int KindFieldNumber = 4;
-    private global::Grafeas.V1Beta1.Package.Version.Types.VersionKind kind_ = 0;
+    private global::Grafeas.V1Beta1.Package.Version.Types.VersionKind kind_ = global::Grafeas.V1Beta1.Package.Version.Types.VersionKind.Unspecified;
     /// <summary>
-    /// Distinguish between sentinel MIN/MAX versions and normal versions. If
-    /// kind is not NORMAL, then the other fields are ignored.
+    /// Required. Distinguishes between sentinel MIN/MAX versions and normal
+    /// versions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Package.Version.Types.VersionKind Kind {
@@ -1172,7 +1172,7 @@ namespace Grafeas.V1Beta1.Package {
       if (Epoch != 0) hash ^= Epoch.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Revision.Length != 0) hash ^= Revision.GetHashCode();
-      if (Kind != 0) hash ^= Kind.GetHashCode();
+      if (Kind != global::Grafeas.V1Beta1.Package.Version.Types.VersionKind.Unspecified) hash ^= Kind.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1198,7 +1198,7 @@ namespace Grafeas.V1Beta1.Package {
         output.WriteRawTag(26);
         output.WriteString(Revision);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.Package.Version.Types.VersionKind.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Kind);
       }
@@ -1219,7 +1219,7 @@ namespace Grafeas.V1Beta1.Package {
       if (Revision.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Revision);
       }
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.Package.Version.Types.VersionKind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
       if (_unknownFields != null) {
@@ -1242,7 +1242,7 @@ namespace Grafeas.V1Beta1.Package {
       if (other.Revision.Length != 0) {
         Revision = other.Revision;
       }
-      if (other.Kind != 0) {
+      if (other.Kind != global::Grafeas.V1Beta1.Package.Version.Types.VersionKind.Unspecified) {
         Kind = other.Kind;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1289,17 +1289,15 @@ namespace Grafeas.V1Beta1.Package {
         /// </summary>
         [pbr::OriginalName("VERSION_KIND_UNSPECIFIED")] Unspecified = 0,
         /// <summary>
-        /// A standard package version, defined by the other fields.
+        /// A standard package version.
         /// </summary>
         [pbr::OriginalName("NORMAL")] Normal = 1,
         /// <summary>
-        /// A special version representing negative infinity, other fields are
-        /// ignored.
+        /// A special version representing negative infinity.
         /// </summary>
         [pbr::OriginalName("MINIMUM")] Minimum = 2,
         /// <summary>
-        /// A special version representing positive infinity, other fields are
-        /// ignored.
+        /// A special version representing positive infinity.
         /// </summary>
         [pbr::OriginalName("MAXIMUM")] Maximum = 3,
       }

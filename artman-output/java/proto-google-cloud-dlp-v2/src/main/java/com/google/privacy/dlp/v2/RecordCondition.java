@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RecordCondition();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -98,65 +104,71 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the field field is set.
      */
     boolean hasField();
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The field.
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
     /**
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for operator.
      */
     int getOperatorValue();
     /**
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The operator.
      */
     com.google.privacy.dlp.v2.RelationalOperator getOperator();
 
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     * @return Whether the value field is set.
      */
     boolean hasValue();
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     * @return The value.
      */
     com.google.privacy.dlp.v2.Value getValue();
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -200,6 +212,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Condition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -212,7 +231,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -291,30 +309,32 @@ private static final long serialVersionUID = 0L;
     private com.google.privacy.dlp.v2.FieldId field_;
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return field_ != null;
     }
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
     /**
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
@@ -324,20 +344,22 @@ private static final long serialVersionUID = 0L;
     private int operator_;
     /**
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for operator.
      */
     public int getOperatorValue() {
       return operator_;
     }
     /**
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The operator.
      */
     public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
       @SuppressWarnings("deprecation")
@@ -349,27 +371,29 @@ private static final long serialVersionUID = 0L;
     private com.google.privacy.dlp.v2.Value value_;
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+     * @return The value.
      */
     public com.google.privacy.dlp.v2.Value getValue() {
       return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
     }
     /**
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -764,20 +788,22 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the field field is set.
        */
       public boolean hasField() {
         return fieldBuilder_ != null || field_ != null;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The field.
        */
       public com.google.privacy.dlp.v2.FieldId getField() {
         if (fieldBuilder_ == null) {
@@ -788,10 +814,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
@@ -808,10 +834,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setField(
           com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -826,10 +852,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
@@ -848,10 +874,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearField() {
         if (fieldBuilder_ == null) {
@@ -866,10 +892,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
         
@@ -878,10 +904,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         if (fieldBuilder_ != null) {
@@ -893,10 +919,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -915,20 +941,23 @@ private static final long serialVersionUID = 0L;
       private int operator_ = 0;
       /**
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The enum numeric value on the wire for operator.
        */
       public int getOperatorValue() {
         return operator_;
       }
       /**
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The enum numeric value on the wire for operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatorValue(int value) {
         operator_ = value;
@@ -937,10 +966,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The operator.
        */
       public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
         @SuppressWarnings("deprecation")
@@ -949,10 +979,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The operator to set.
+       * @return This builder for chaining.
        */
       public Builder setOperator(com.google.privacy.dlp.v2.RelationalOperator value) {
         if (value == null) {
@@ -965,10 +997,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperator() {
         
@@ -982,20 +1015,22 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> valueBuilder_;
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+       * @return Whether the value field is set.
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
+       * @return The value.
        */
       public com.google.privacy.dlp.v2.Value getValue() {
         if (valueBuilder_ == null) {
@@ -1006,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1026,7 +1061,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1044,7 +1079,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1066,7 +1101,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1084,7 +1119,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1096,7 +1131,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1111,7 +1146,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1187,24 +1222,44 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> 
         getConditionsList();
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index);
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     int getConditionsCount();
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder> 
         getConditionsOrBuilderList();
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(
@@ -1228,6 +1283,13 @@ private static final long serialVersionUID = 0L;
     }
     private Conditions() {
       conditions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Conditions();
     }
 
     @java.lang.Override
@@ -1301,12 +1363,20 @@ private static final long serialVersionUID = 0L;
     public static final int CONDITIONS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> conditions_;
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> getConditionsList() {
       return conditions_;
     }
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder> 
@@ -1314,18 +1384,30 @@ private static final long serialVersionUID = 0L;
       return conditions_;
     }
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     public int getConditionsCount() {
       return conditions_.size();
     }
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index) {
       return conditions_.get(index);
     }
     /**
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(
@@ -1692,6 +1774,10 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.RecordCondition.Condition, com.google.privacy.dlp.v2.RecordCondition.Condition.Builder, com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder> conditionsBuilder_;
 
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> getConditionsList() {
@@ -1702,6 +1788,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public int getConditionsCount() {
@@ -1712,6 +1802,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index) {
@@ -1722,6 +1816,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder setConditions(
@@ -1739,6 +1837,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder setConditions(
@@ -1753,6 +1855,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder addConditions(com.google.privacy.dlp.v2.RecordCondition.Condition value) {
@@ -1769,6 +1875,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder addConditions(
@@ -1786,6 +1896,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder addConditions(
@@ -1800,6 +1914,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder addConditions(
@@ -1814,6 +1932,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder addAllConditions(
@@ -1829,6 +1951,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder clearConditions() {
@@ -1842,6 +1968,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public Builder removeConditions(int index) {
@@ -1855,6 +1985,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder getConditionsBuilder(
@@ -1862,6 +1996,10 @@ private static final long serialVersionUID = 0L;
         return getConditionsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(
@@ -1872,6 +2010,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder> 
@@ -1883,6 +2025,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder addConditionsBuilder() {
@@ -1890,6 +2036,10 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.RecordCondition.Condition.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder addConditionsBuilder(
@@ -1898,6 +2048,10 @@ private static final long serialVersionUID = 0L;
             index, com.google.privacy.dlp.v2.RecordCondition.Condition.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition.Builder> 
@@ -1982,6 +2136,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+     * @return The enum numeric value on the wire for logicalOperator.
      */
     int getLogicalOperatorValue();
     /**
@@ -1991,18 +2146,33 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+     * @return The logicalOperator.
      */
     com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator getLogicalOperator();
 
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     * @return Whether the conditions field is set.
      */
     boolean hasConditions();
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     * @return The conditions.
      */
     com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions();
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      */
     com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder();
@@ -2030,6 +2200,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Expressions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2042,7 +2219,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2106,15 +2282,27 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * Logical operators for conditional checks.
+     * </pre>
+     *
      * Protobuf enum {@code google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator}
      */
     public enum LogicalOperator
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       * Unused
+       * </pre>
+       *
        * <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code>
        */
       LOGICAL_OPERATOR_UNSPECIFIED(0),
       /**
+       * <pre>
+       * Conditional AND
+       * </pre>
+       *
        * <code>AND = 1;</code>
        */
       AND(1),
@@ -2122,10 +2310,18 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       * <pre>
+       * Unused
+       * </pre>
+       *
        * <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int LOGICAL_OPERATOR_UNSPECIFIED_VALUE = 0;
       /**
+       * <pre>
+       * Conditional AND
+       * </pre>
+       *
        * <code>AND = 1;</code>
        */
       public static final int AND_VALUE = 1;
@@ -2140,6 +2336,8 @@ private static final long serialVersionUID = 0L;
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2147,6 +2345,10 @@ private static final long serialVersionUID = 0L;
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static LogicalOperator forNumber(int value) {
         switch (value) {
           case 0: return LOGICAL_OPERATOR_UNSPECIFIED;
@@ -2206,7 +2408,8 @@ private static final long serialVersionUID = 0L;
     private int typeCase_ = 0;
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITIONS(3),
       TYPE_NOT_SET(0);
       private final int value;
@@ -2214,6 +2417,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2248,6 +2453,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+     * @return The enum numeric value on the wire for logicalOperator.
      */
     public int getLogicalOperatorValue() {
       return logicalOperator_;
@@ -2259,6 +2465,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+     * @return The logicalOperator.
      */
     public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator getLogicalOperator() {
       @SuppressWarnings("deprecation")
@@ -2268,13 +2475,23 @@ private static final long serialVersionUID = 0L;
 
     public static final int CONDITIONS_FIELD_NUMBER = 3;
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     * @return Whether the conditions field is set.
      */
     public boolean hasConditions() {
       return typeCase_ == 3;
     }
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     * @return The conditions.
      */
     public com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions() {
       if (typeCase_ == 3) {
@@ -2283,6 +2500,10 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.RecordCondition.Conditions.getDefaultInstance();
     }
     /**
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder() {
@@ -2663,6 +2884,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+       * @return The enum numeric value on the wire for logicalOperator.
        */
       public int getLogicalOperatorValue() {
         return logicalOperator_;
@@ -2674,6 +2896,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+       * @param value The enum numeric value on the wire for logicalOperator to set.
+       * @return This builder for chaining.
        */
       public Builder setLogicalOperatorValue(int value) {
         logicalOperator_ = value;
@@ -2687,6 +2911,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+       * @return The logicalOperator.
        */
       public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator getLogicalOperator() {
         @SuppressWarnings("deprecation")
@@ -2700,6 +2925,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+       * @param value The logicalOperator to set.
+       * @return This builder for chaining.
        */
       public Builder setLogicalOperator(com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator value) {
         if (value == null) {
@@ -2717,6 +2944,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator logical_operator = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLogicalOperator() {
         
@@ -2728,13 +2956,23 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.privacy.dlp.v2.RecordCondition.Conditions, com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder, com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder> conditionsBuilder_;
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       * @return Whether the conditions field is set.
        */
       public boolean hasConditions() {
         return typeCase_ == 3;
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       * @return The conditions.
        */
       public com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions() {
         if (conditionsBuilder_ == null) {
@@ -2750,6 +2988,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public Builder setConditions(com.google.privacy.dlp.v2.RecordCondition.Conditions value) {
@@ -2766,6 +3008,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public Builder setConditions(
@@ -2780,6 +3026,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public Builder mergeConditions(com.google.privacy.dlp.v2.RecordCondition.Conditions value) {
@@ -2802,6 +3052,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public Builder clearConditions() {
@@ -2821,12 +3075,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder getConditionsBuilder() {
         return getConditionsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       public com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder() {
@@ -2840,6 +3102,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2921,6 +3187,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   * @return Whether the expressions field is set.
    */
   public boolean hasExpressions() {
     return expressions_ != null;
@@ -2931,6 +3198,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   * @return The expressions.
    */
   public com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions() {
     return expressions_ == null ? com.google.privacy.dlp.v2.RecordCondition.Expressions.getDefaultInstance() : expressions_;
@@ -3275,6 +3543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+     * @return Whether the expressions field is set.
      */
     public boolean hasExpressions() {
       return expressionsBuilder_ != null || expressions_ != null;
@@ -3285,6 +3554,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+     * @return The expressions.
      */
     public com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions() {
       if (expressionsBuilder_ == null) {

@@ -14,6 +14,7 @@ package com.google.cloud.talent.v4beta1;
    * </pre>
    *
    * <code>bool negated = 1;</code>
+   * @return The negated.
    */
   boolean getNegated();
 }

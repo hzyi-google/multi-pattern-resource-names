@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,27 +101,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.discovery.Discovered discovered_;
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   * @return Whether the discovered field is set.
    */
   public boolean hasDiscovered() {
     return discovered_ != null;
   }
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+   * @return The discovered.
    */
   public io.grafeas.v1beta1.discovery.Discovered getDiscovered() {
     return discovered_ == null ? io.grafeas.v1beta1.discovery.Discovered.getDefaultInstance() : discovered_;
   }
   /**
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -448,20 +456,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.discovery.Discovered, io.grafeas.v1beta1.discovery.Discovered.Builder, io.grafeas.v1beta1.discovery.DiscoveredOrBuilder> discoveredBuilder_;
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+     * @return Whether the discovered field is set.
      */
     public boolean hasDiscovered() {
       return discoveredBuilder_ != null || discovered_ != null;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
+     * @return The discovered.
      */
     public io.grafeas.v1beta1.discovery.Discovered getDiscovered() {
       if (discoveredBuilder_ == null) {
@@ -472,7 +482,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -492,7 +502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -510,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -532,7 +542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -550,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -562,7 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -577,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>

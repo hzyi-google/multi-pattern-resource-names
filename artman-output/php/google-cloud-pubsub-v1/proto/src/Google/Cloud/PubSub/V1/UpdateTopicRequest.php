@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.UpdateTopicRequest</code>
  */
-final class UpdateTopicRequest extends \Google\Protobuf\Internal\Message
+class UpdateTopicRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The updated topic object.
      *
      * Generated from protobuf field <code>.google.pubsub.v1.Topic topic = 1;</code>
      */
-    private $topic = null;
+    protected $topic = null;
     /**
      * Indicates which fields in the provided topic to update. Must be specified
      * and non-empty. Note that if `update_mask` contains
@@ -30,7 +30,7 @@ final class UpdateTopicRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

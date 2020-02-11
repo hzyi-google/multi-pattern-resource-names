@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.source.SourceContext</code>
  */
-final class SourceContext extends \Google\Protobuf\Internal\Message
+class SourceContext extends \Google\Protobuf\Internal\Message
 {
     /**
      * Labels with user defined metadata.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.CreateClusterRequest</code>
  */
-final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
+class CreateClusterRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The ID of the Google Cloud Platform project that the cluster
@@ -21,19 +21,19 @@ final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $project_id = '';
+    protected $project_id = '';
     /**
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      *
      * Generated from protobuf field <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $region = '';
+    protected $region = '';
     /**
      * Required. The cluster to create.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.Cluster cluster = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $cluster = null;
+    protected $cluster = null;
     /**
      * Optional. A unique id used to identify the request. If the server
      * receives two [CreateClusterRequest][google.cloud.dataproc.v1.CreateClusterRequest] requests  with the same
@@ -47,7 +47,7 @@ final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $request_id = '';
+    protected $request_id = '';
 
     /**
      * Constructor.
@@ -59,7 +59,7 @@ final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
      *           Required. The ID of the Google Cloud Platform project that the cluster
      *           belongs to.
      *     @type string $region
-     *           Required. The Cloud Dataproc region in which to handle the request.
+     *           Required. The Dataproc region in which to handle the request.
      *     @type \Google\Cloud\Dataproc\V1\Cluster $cluster
      *           Required. The cluster to create.
      *     @type string $request_id
@@ -108,7 +108,7 @@ final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      *
      * Generated from protobuf field <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -119,7 +119,7 @@ final class CreateClusterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      *
      * Generated from protobuf field <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

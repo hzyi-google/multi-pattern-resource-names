@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Table();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -111,30 +118,54 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     java.util.List<com.google.privacy.dlp.v2.Value> 
         getValuesList();
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     com.google.privacy.dlp.v2.Value getValues(int index);
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     int getValuesCount();
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
         getValuesOrBuilderList();
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Values of the row.
+   * </pre>
+   *
    * Protobuf type {@code google.privacy.dlp.v2.Table.Row}
    */
   public  static final class Row extends
@@ -148,6 +179,13 @@ private static final long serialVersionUID = 0L;
     }
     private Row() {
       values_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Row();
     }
 
     @java.lang.Override
@@ -221,12 +259,20 @@ private static final long serialVersionUID = 0L;
     public static final int VALUES_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.Value> values_;
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
       return values_;
     }
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
@@ -234,18 +280,30 @@ private static final long serialVersionUID = 0L;
       return values_;
     }
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     public int getValuesCount() {
       return values_.size();
     }
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     public com.google.privacy.dlp.v2.Value getValues(int index) {
       return values_.get(index);
     }
     /**
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     public com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(
@@ -411,6 +469,10 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     * <pre>
+     * Values of the row.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.Table.Row}
      */
     public static final class Builder extends
@@ -608,6 +670,10 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> valuesBuilder_;
 
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
@@ -618,6 +684,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public int getValuesCount() {
@@ -628,6 +698,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value getValues(int index) {
@@ -638,6 +712,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder setValues(
@@ -655,6 +733,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder setValues(
@@ -669,6 +751,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder addValues(com.google.privacy.dlp.v2.Value value) {
@@ -685,6 +771,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder addValues(
@@ -702,6 +792,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder addValues(
@@ -716,6 +810,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder addValues(
@@ -730,6 +828,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder addAllValues(
@@ -745,6 +847,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder clearValues() {
@@ -758,6 +864,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public Builder removeValues(int index) {
@@ -771,6 +881,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getValuesBuilder(
@@ -778,6 +892,10 @@ private static final long serialVersionUID = 0L;
         return getValuesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(
@@ -788,6 +906,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
@@ -799,6 +921,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder addValuesBuilder() {
@@ -806,6 +932,10 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder addValuesBuilder(
@@ -814,6 +944,10 @@ private static final long serialVersionUID = 0L;
             index, com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
        * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.Value.Builder> 
@@ -890,12 +1024,20 @@ private static final long serialVersionUID = 0L;
   public static final int HEADERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.FieldId> headers_;
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
     return headers_;
   }
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -903,18 +1045,30 @@ private static final long serialVersionUID = 0L;
     return headers_;
   }
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   public int getHeadersCount() {
     return headers_.size();
   }
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
     return headers_.get(index);
   }
   /**
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(
@@ -925,12 +1079,20 @@ private static final long serialVersionUID = 0L;
   public static final int ROWS_FIELD_NUMBER = 2;
   private java.util.List<com.google.privacy.dlp.v2.Table.Row> rows_;
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
     return rows_;
   }
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder> 
@@ -938,18 +1100,30 @@ private static final long serialVersionUID = 0L;
     return rows_;
   }
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   public int getRowsCount() {
     return rows_.size();
   }
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
     return rows_.get(index);
   }
   /**
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
   public com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(
@@ -1373,6 +1547,10 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> headersBuilder_;
 
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
@@ -1383,6 +1561,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public int getHeadersCount() {
@@ -1393,6 +1575,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
@@ -1403,6 +1589,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder setHeaders(
@@ -1420,6 +1610,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder setHeaders(
@@ -1434,6 +1628,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder addHeaders(com.google.privacy.dlp.v2.FieldId value) {
@@ -1450,6 +1648,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder addHeaders(
@@ -1467,6 +1669,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder addHeaders(
@@ -1481,6 +1687,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder addHeaders(
@@ -1495,6 +1705,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder addAllHeaders(
@@ -1510,6 +1724,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder clearHeaders() {
@@ -1523,6 +1741,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public Builder removeHeaders(int index) {
@@ -1536,6 +1758,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getHeadersBuilder(
@@ -1543,6 +1769,10 @@ private static final long serialVersionUID = 0L;
       return getHeadersFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(
@@ -1553,6 +1783,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -1564,6 +1798,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addHeadersBuilder() {
@@ -1571,6 +1809,10 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addHeadersBuilder(
@@ -1579,6 +1821,10 @@ private static final long serialVersionUID = 0L;
           index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
     /**
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
@@ -1613,6 +1859,10 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.Table.Row, com.google.privacy.dlp.v2.Table.Row.Builder, com.google.privacy.dlp.v2.Table.RowOrBuilder> rowsBuilder_;
 
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
@@ -1623,6 +1873,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public int getRowsCount() {
@@ -1633,6 +1887,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
@@ -1643,6 +1901,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder setRows(
@@ -1660,6 +1922,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder setRows(
@@ -1674,6 +1940,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder addRows(com.google.privacy.dlp.v2.Table.Row value) {
@@ -1690,6 +1960,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder addRows(
@@ -1707,6 +1981,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder addRows(
@@ -1721,6 +1999,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder addRows(
@@ -1735,6 +2017,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder addAllRows(
@@ -1750,6 +2036,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder clearRows() {
@@ -1763,6 +2053,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public Builder removeRows(int index) {
@@ -1776,6 +2070,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public com.google.privacy.dlp.v2.Table.Row.Builder getRowsBuilder(
@@ -1783,6 +2081,10 @@ private static final long serialVersionUID = 0L;
       return getRowsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(
@@ -1793,6 +2095,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder> 
@@ -1804,6 +2110,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public com.google.privacy.dlp.v2.Table.Row.Builder addRowsBuilder() {
@@ -1811,6 +2121,10 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public com.google.privacy.dlp.v2.Table.Row.Builder addRowsBuilder(
@@ -1819,6 +2133,10 @@ private static final long serialVersionUID = 0L;
           index, com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
     /**
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Table.Row.Builder> 

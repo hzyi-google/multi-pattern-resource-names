@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,16 +22,11 @@ module Google
         #     An expression specifies a histogram request against matching resources
         #     (for example, jobs, profiles) for searches.
         #
-        #     See
-        #     {Google::Cloud::Talent::V4beta1::SearchJobsRequest#histogram_queries SearchJobsRequest#histogram_queries}
-        #     and
-        #     {Google::Cloud::Talent::V4beta1::SearchProfilesRequest#histogram_queries SearchProfilesRequest#histogram_queries}
-        #     for details about syntax.
+        #     See {Google::Cloud::Talent::V4beta1::SearchJobsRequest#histogram_queries SearchJobsRequest#histogram_queries} and
+        #     {Google::Cloud::Talent::V4beta1::SearchProfilesRequest#histogram_queries SearchProfilesRequest#histogram_queries} for details about syntax.
         class HistogramQuery; end
 
-        # Histogram result that matches
-        # {Google::Cloud::Talent::V4beta1::HistogramQuery HistogramQuery} specified in
-        # searches.
+        # Histogram result that matches {Google::Cloud::Talent::V4beta1::HistogramQuery HistogramQuery} specified in searches.
         # @!attribute [rw] histogram_query
         #   @return [String]
         #     Requested histogram expression.

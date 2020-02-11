@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RecordTransformations();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -165,7 +172,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -176,7 +183,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -188,7 +195,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -199,7 +206,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -210,7 +217,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -949,7 +956,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -964,7 +971,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -979,7 +986,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -994,7 +1001,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1016,7 +1023,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1035,7 +1042,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1056,7 +1063,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1078,7 +1085,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1097,7 +1104,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1116,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1136,7 +1143,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1154,7 +1161,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1172,7 +1179,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1184,7 +1191,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1199,7 +1206,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1215,7 +1222,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1227,7 +1234,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1240,7 +1247,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>

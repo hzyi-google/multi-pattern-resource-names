@@ -9,9 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Configuration to control the number of findings returned.
+ *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectConfig.FindingLimits</code>
  */
-final class FindingLimits extends \Google\Protobuf\Internal\Message
+class FindingLimits extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of findings that will be returned for each item scanned.
@@ -21,7 +23,7 @@ final class FindingLimits extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 max_findings_per_item = 1;</code>
      */
-    private $max_findings_per_item = 0;
+    protected $max_findings_per_item = 0;
     /**
      * Max number of findings that will be returned per request/job.
      * When set within `InspectContentRequest`, the maximum returned is 2000
@@ -29,7 +31,7 @@ final class FindingLimits extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 max_findings_per_request = 2;</code>
      */
-    private $max_findings_per_request = 0;
+    protected $max_findings_per_request = 0;
     /**
      * Configuration of findings limit given for specified infoTypes.
      *

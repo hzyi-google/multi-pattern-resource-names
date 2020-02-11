@@ -13,6 +13,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
@@ -21,6 +22,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
@@ -38,7 +40,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -46,7 +48,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -63,6 +65,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   * @return Whether the surrogateInfoType field is set.
    */
   boolean hasSurrogateInfoType();
   /**
@@ -71,7 +74,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -79,7 +82,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -96,6 +99,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
+   * @return The surrogateInfoType.
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
   /**
@@ -104,7 +108,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -112,7 +116,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -134,7 +138,7 @@ public interface CryptoDeterministicConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -151,11 +155,12 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -172,11 +177,12 @@ public interface CryptoDeterministicConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is

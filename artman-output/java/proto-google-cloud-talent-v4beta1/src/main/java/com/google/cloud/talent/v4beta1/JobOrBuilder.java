@@ -18,11 +18,11 @@ public interface JobOrBuilder extends
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -36,11 +36,11 @@ public interface JobOrBuilder extends
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -55,7 +55,8 @@ public interface JobOrBuilder extends
    * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The company.
    */
   java.lang.String getCompany();
   /**
@@ -68,39 +69,38 @@ public interface JobOrBuilder extends
    * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for company.
    */
   com.google.protobuf.ByteString
       getCompanyBytes();
 
   /**
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is
-   * assigned by the client to identify a job. This field is intended to be used
-   * by clients for client identification and tracking of postings. A job isn't
-   * allowed to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+   * client to identify a job. This field is intended to be used by clients
+   * for client identification and tracking of postings. A job isn't allowed
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The requisitionId.
    */
   java.lang.String getRequisitionId();
   /**
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is
-   * assigned by the client to identify a job. This field is intended to be used
-   * by clients for client identification and tracking of postings. A job isn't
-   * allowed to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+   * client to identify a job. This field is intended to be used by clients
+   * for client identification and tracking of postings. A job isn't allowed
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for requisitionId.
    */
   com.google.protobuf.ByteString
       getRequisitionIdBytes();
@@ -112,6 +112,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The title.
    */
   java.lang.String getTitle();
   /**
@@ -121,40 +122,41 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for title.
    */
   com.google.protobuf.ByteString
       getTitleBytes();
 
   /**
    * <pre>
-   * Required. The description of the job, which typically includes a
-   * multi-paragraph description of the company and related information.
-   * Separate fields are provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a multi-paragraph
+   * description of the company and related information. Separate fields are
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
    * <pre>
-   * Required. The description of the job, which typically includes a
-   * multi-paragraph description of the company and related information.
-   * Separate fields are provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a multi-paragraph
+   * description of the company and related information. Separate fields are
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -167,20 +169,17 @@ public interface JobOrBuilder extends
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @return A list containing the addresses.
    */
   java.util.List<java.lang.String>
       getAddressesList();
@@ -192,20 +191,17 @@ public interface JobOrBuilder extends
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @return The count of addresses.
    */
   int getAddressesCount();
   /**
@@ -216,20 +212,18 @@ public interface JobOrBuilder extends
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @param index The index of the element to return.
+   * @return The addresses at the given index.
    */
   java.lang.String getAddresses(int index);
   /**
@@ -240,20 +234,18 @@ public interface JobOrBuilder extends
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addresses at the given index.
    */
   com.google.protobuf.ByteString
       getAddressesBytes(int index);
@@ -264,6 +256,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   * @return Whether the applicationInfo field is set.
    */
   boolean hasApplicationInfo();
   /**
@@ -272,6 +265,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   * @return The applicationInfo.
    */
   com.google.cloud.talent.v4beta1.Job.ApplicationInfo getApplicationInfo();
   /**
@@ -289,6 +283,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return A list containing the jobBenefits.
    */
   java.util.List<com.google.cloud.talent.v4beta1.JobBenefit> getJobBenefitsList();
   /**
@@ -297,6 +292,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return The count of jobBenefits.
    */
   int getJobBenefitsCount();
   /**
@@ -305,6 +301,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @param index The index of the element to return.
+   * @return The jobBenefits at the given index.
    */
   com.google.cloud.talent.v4beta1.JobBenefit getJobBenefits(int index);
   /**
@@ -313,6 +311,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return A list containing the enum numeric values on the wire for jobBenefits.
    */
   java.util.List<java.lang.Integer>
   getJobBenefitsValueList();
@@ -322,6 +321,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of jobBenefits at the given index.
    */
   int getJobBenefitsValue(int index);
 
@@ -332,6 +333,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   * @return Whether the compensationInfo field is set.
    */
   boolean hasCompensationInfo();
   /**
@@ -341,6 +343,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   * @return The compensationInfo.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo getCompensationInfo();
   /**
@@ -458,6 +461,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return A list containing the degreeTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.DegreeType> getDegreeTypesList();
   /**
@@ -466,6 +470,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return The count of degreeTypes.
    */
   int getDegreeTypesCount();
   /**
@@ -474,6 +479,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @param index The index of the element to return.
+   * @return The degreeTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.DegreeType getDegreeTypes(int index);
   /**
@@ -482,6 +489,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return A list containing the enum numeric values on the wire for degreeTypes.
    */
   java.util.List<java.lang.Integer>
   getDegreeTypesValueList();
@@ -491,6 +499,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of degreeTypes at the given index.
    */
   int getDegreeTypesValue(int index);
 
@@ -502,6 +512,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string department = 12;</code>
+   * @return The department.
    */
   java.lang.String getDepartment();
   /**
@@ -512,6 +523,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string department = 12;</code>
+   * @return The bytes for department.
    */
   com.google.protobuf.ByteString
       getDepartmentBytes();
@@ -524,6 +536,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return A list containing the employmentTypes.
    */
   java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList();
   /**
@@ -534,6 +547,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return The count of employmentTypes.
    */
   int getEmploymentTypesCount();
   /**
@@ -544,6 +558,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @param index The index of the element to return.
+   * @return The employmentTypes at the given index.
    */
   com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index);
   /**
@@ -554,6 +570,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   java.util.List<java.lang.Integer>
   getEmploymentTypesValueList();
@@ -565,6 +582,8 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
   int getEmploymentTypesValue(int index);
 
@@ -576,6 +595,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   * @return The incentives.
    */
   java.lang.String getIncentives();
   /**
@@ -586,6 +606,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   * @return The bytes for incentives.
    */
   com.google.protobuf.ByteString
       getIncentivesBytes();
@@ -598,14 +619,13 @@ public interface JobOrBuilder extends
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   * @return The languageCode.
    */
   java.lang.String getLanguageCode();
   /**
@@ -616,14 +636,13 @@ public interface JobOrBuilder extends
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString
       getLanguageCodeBytes();
@@ -634,6 +653,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   * @return The enum numeric value on the wire for jobLevel.
    */
   int getJobLevelValue();
   /**
@@ -642,6 +662,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   * @return The jobLevel.
    */
   com.google.cloud.talent.v4beta1.JobLevel getJobLevel();
 
@@ -656,6 +677,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>int32 promotion_value = 17;</code>
+   * @return The promotionValue.
    */
   int getPromotionValue();
 
@@ -663,28 +685,28 @@ public interface JobOrBuilder extends
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   * @return The qualifications.
    */
   java.lang.String getQualifications();
   /**
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   * @return The bytes for qualifications.
    */
   com.google.protobuf.ByteString
       getQualificationsBytes();
@@ -692,63 +714,61 @@ public interface JobOrBuilder extends
   /**
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   * @return The responsibilities.
    */
   java.lang.String getResponsibilities();
   /**
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   * @return The bytes for responsibilities.
    */
   com.google.protobuf.ByteString
       getResponsibilitiesBytes();
 
   /**
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   * @return The enum numeric value on the wire for postingRegion.
    */
   int getPostingRegionValue();
   /**
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   * @return The postingRegion.
    */
   com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion();
 
@@ -756,24 +776,22 @@ public interface JobOrBuilder extends
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Deprecated int getVisibilityValue();
   /**
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   * @return The visibility.
    */
   @java.lang.Deprecated com.google.cloud.talent.v4beta1.Visibility getVisibility();
 
@@ -784,6 +802,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   * @return Whether the jobStartTime field is set.
    */
   boolean hasJobStartTime();
   /**
@@ -793,6 +812,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   * @return The jobStartTime.
    */
   com.google.protobuf.Timestamp getJobStartTime();
   /**
@@ -812,6 +832,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   * @return Whether the jobEndTime field is set.
    */
   boolean hasJobEndTime();
   /**
@@ -821,6 +842,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   * @return The jobEndTime.
    */
   com.google.protobuf.Timestamp getJobEndTime();
   /**
@@ -841,6 +863,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   * @return Whether the postingPublishTime field is set.
    */
   boolean hasPostingPublishTime();
   /**
@@ -851,6 +874,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   * @return The postingPublishTime.
    */
   com.google.protobuf.Timestamp getPostingPublishTime();
   /**
@@ -869,18 +893,13 @@ public interface JobOrBuilder extends
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -891,28 +910,25 @@ public interface JobOrBuilder extends
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   * @return Whether the postingExpireTime field is set.
    */
   boolean hasPostingExpireTime();
   /**
@@ -920,18 +936,13 @@ public interface JobOrBuilder extends
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -942,28 +953,25 @@ public interface JobOrBuilder extends
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   * @return The postingExpireTime.
    */
   com.google.protobuf.Timestamp getPostingExpireTime();
   /**
@@ -971,18 +979,13 @@ public interface JobOrBuilder extends
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -993,25 +996,21 @@ public interface JobOrBuilder extends
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -1024,6 +1023,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the postingCreateTime field is set.
    */
   boolean hasPostingCreateTime();
   /**
@@ -1032,6 +1032,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The postingCreateTime.
    */
   com.google.protobuf.Timestamp getPostingCreateTime();
   /**
@@ -1049,6 +1050,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the postingUpdateTime field is set.
    */
   boolean hasPostingUpdateTime();
   /**
@@ -1057,6 +1059,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The postingUpdateTime.
    */
   com.google.protobuf.Timestamp getPostingUpdateTime();
   /**
@@ -1074,6 +1077,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The companyDisplayName.
    */
   java.lang.String getCompanyDisplayName();
   /**
@@ -1082,6 +1086,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for companyDisplayName.
    */
   com.google.protobuf.ByteString
       getCompanyDisplayNameBytes();
@@ -1092,6 +1097,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the derivedInfo field is set.
    */
   boolean hasDerivedInfo();
   /**
@@ -1100,6 +1106,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The derivedInfo.
    */
   com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo();
   /**
@@ -1117,6 +1124,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   * @return Whether the processingOptions field is set.
    */
   boolean hasProcessingOptions();
   /**
@@ -1125,6 +1133,7 @@ public interface JobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   * @return The processingOptions.
    */
   com.google.cloud.talent.v4beta1.Job.ProcessingOptions getProcessingOptions();
   /**

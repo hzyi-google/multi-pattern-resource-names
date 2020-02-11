@@ -13,17 +13,17 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.ListFindingsRequest</code>
  */
-final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
+class ListFindingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the source the findings belong to. Its format is
+     * Required. Name of the source the findings belong to. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To list across all
      * sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -46,7 +46,7 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * Expression that defines what fields and order to use for sorting. The
      * string value should follow SQL syntax: comma separated list of fields. For
@@ -59,7 +59,7 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string order_by = 3;</code>
      */
-    private $order_by = '';
+    protected $order_by = '';
     /**
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -68,15 +68,14 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
-    private $read_time = null;
+    protected $read_time = null;
     /**
-     * Optional.
-     * A field mask to specify the Finding fields to be listed in the response.
+     * Optional. A field mask to specify the Finding fields to be listed in the response.
      * An empty field mask will list all fields.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $field_mask = null;
+    protected $field_mask = null;
     /**
      * The value returned by the last `ListFindingsResponse`; indicates
      * that this is a continuation of a prior `ListFindings` call, and
@@ -84,14 +83,14 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 6;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
      *
      * Generated from protobuf field <code>int32 page_size = 7;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.
@@ -100,10 +99,10 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Name of the source the findings belong to. Its format is
+     *           Required. Name of the source the findings belong to. Its format is
      *           "organizations/[organization_id]/sources/[source_id]". To list across all
      *           sources provide a source_id of `-`. For example:
-     *           organizations/123/sources/-
+     *           organizations/{organization_id}/sources/-
      *     @type string $filter
      *           Expression that defines the filter to apply across findings.
      *           The expression is a list of one or more restrictions combined via logical
@@ -138,8 +137,7 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      *           those at that specific time. Absence of this field will default to the
      *           API's version of NOW.
      *     @type \Google\Protobuf\FieldMask $field_mask
-     *           Optional.
-     *           A field mask to specify the Finding fields to be listed in the response.
+     *           Optional. A field mask to specify the Finding fields to be listed in the response.
      *           An empty field mask will list all fields.
      *     @type string $page_token
      *           The value returned by the last `ListFindingsResponse`; indicates
@@ -156,12 +154,12 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the source the findings belong to. Its format is
+     * Required. Name of the source the findings belong to. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To list across all
      * sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -170,12 +168,12 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the source the findings belong to. Its format is
+     * Required. Name of the source the findings belong to. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To list across all
      * sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -320,11 +318,10 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.
-     * A field mask to specify the Finding fields to be listed in the response.
+     * Optional. A field mask to specify the Finding fields to be listed in the response.
      * An empty field mask will list all fields.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\FieldMask
      */
     public function getFieldMask()
@@ -333,11 +330,10 @@ final class ListFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.
-     * A field mask to specify the Finding fields to be listed in the response.
+     * Optional. A field mask to specify the Finding fields to be listed in the response.
      * An empty field mask will list all fields.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

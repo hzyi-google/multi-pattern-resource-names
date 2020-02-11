@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.attestation.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
      */
-    private $attestation = null;
+    protected $attestation = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Attestation\Attestation $attestation
-     *           Attestation for the resource.
+     *           Required. Attestation for the resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
      * @return \Grafeas\V1beta1\Attestation\Attestation
@@ -49,7 +49,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
      * @param \Grafeas\V1beta1\Attestation\Attestation $var

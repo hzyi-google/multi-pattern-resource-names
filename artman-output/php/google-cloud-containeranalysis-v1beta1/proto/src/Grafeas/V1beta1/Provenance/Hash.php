@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.provenance.Hash</code>
  */
-final class Hash extends \Google\Protobuf\Internal\Message
+class Hash extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
-     * The hash value.
+     * Required. The hash value.
      *
      * Generated from protobuf field <code>bytes value = 2;</code>
      */
-    private $value = '';
+    protected $value = '';
 
     /**
      * Constructor.
@@ -35,9 +35,9 @@ final class Hash extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $type
-     *           The type of hash that was performed.
+     *           Required. The type of hash that was performed.
      *     @type string $value
-     *           The hash value.
+     *           Required. The hash value.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ final class Hash extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
      * @return int
@@ -57,7 +57,7 @@ final class Hash extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
      * @param int $var
@@ -72,7 +72,7 @@ final class Hash extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The hash value.
+     * Required. The hash value.
      *
      * Generated from protobuf field <code>bytes value = 2;</code>
      * @return string
@@ -83,7 +83,7 @@ final class Hash extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The hash value.
+     * Required. The hash value.
      *
      * Generated from protobuf field <code>bytes value = 2;</code>
      * @param string $var

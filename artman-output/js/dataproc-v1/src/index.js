@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ const gapic = Object.freeze({
  *   {@link v1.JobControllerClient}
  * - `WorkflowTemplateServiceClient` - Reference to
  *   {@link v1.WorkflowTemplateServiceClient}
+ * - `AutoscalingPolicyServiceClient` - Reference to
+ *   {@link v1.AutoscalingPolicyServiceClient}
  * - `v1` - This is used for selecting or pinning a
  *   particular backend service version. It exports:
  *     - `ClusterControllerClient` - Reference to
@@ -49,6 +51,8 @@ const gapic = Object.freeze({
  *       {@link v1.JobControllerClient}
  *     - `WorkflowTemplateServiceClient` - Reference to
  *       {@link v1.WorkflowTemplateServiceClient}
+ *     - `AutoscalingPolicyServiceClient` - Reference to
+ *       {@link v1.AutoscalingPolicyServiceClient}
  *
  * @module {object} @google-cloud/dataproc
  * @alias nodejs-dataproc
@@ -77,6 +81,8 @@ const gapic = Object.freeze({
  *   Reference to {@link v1.JobControllerClient}
  * @property {constructor} WorkflowTemplateServiceClient
  *   Reference to {@link v1.WorkflowTemplateServiceClient}
+ * @property {constructor} AutoscalingPolicyServiceClient
+ *   Reference to {@link v1.AutoscalingPolicyServiceClient}
  */
 module.exports = gapic.v1;
 
@@ -88,6 +94,8 @@ module.exports = gapic.v1;
  *   Reference to {@link v1.JobControllerClient}
  * @property {constructor} WorkflowTemplateServiceClient
  *   Reference to {@link v1.WorkflowTemplateServiceClient}
+ * @property {constructor} AutoscalingPolicyServiceClient
+ *   Reference to {@link v1.AutoscalingPolicyServiceClient}
  */
 module.exports.v1 = gapic.v1;
 

@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Basis();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,11 +112,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object resourceUrl_;
   /**
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   * @return The resourceUrl.
    */
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
@@ -126,11 +133,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   * @return The bytes for resourceUrl.
    */
   public com.google.protobuf.ByteString
       getResourceUrlBytes() {
@@ -150,27 +158,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.image.Fingerprint fingerprint_;
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   * @return Whether the fingerprint field is set.
    */
   public boolean hasFingerprint() {
     return fingerprint_ != null;
   }
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+   * @return The fingerprint.
    */
   public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
     return fingerprint_ == null ? io.grafeas.v1beta1.image.Fingerprint.getDefaultInstance() : fingerprint_;
   }
   /**
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -522,11 +532,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object resourceUrl_ = "";
     /**
      * <pre>
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     * @return The resourceUrl.
      */
     public java.lang.String getResourceUrl() {
       java.lang.Object ref = resourceUrl_;
@@ -542,11 +553,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     * @return The bytes for resourceUrl.
      */
     public com.google.protobuf.ByteString
         getResourceUrlBytes() {
@@ -563,11 +575,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     * @param value The resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrl(
         java.lang.String value) {
@@ -581,11 +595,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
       
@@ -595,11 +610,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     * @param value The bytes for resourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setResourceUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -618,20 +635,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.image.Fingerprint, io.grafeas.v1beta1.image.Fingerprint.Builder, io.grafeas.v1beta1.image.FingerprintOrBuilder> fingerprintBuilder_;
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+     * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
       return fingerprintBuilder_ != null || fingerprint_ != null;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
+     * @return The fingerprint.
      */
     public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
       if (fingerprintBuilder_ == null) {
@@ -642,7 +661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -662,7 +681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -680,7 +699,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -702,7 +721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -720,7 +739,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -732,7 +751,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -747,7 +766,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>

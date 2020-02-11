@@ -9,78 +9,80 @@ public interface FixedSizeBucketingConfigOrBuilder extends
 
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the lowerBound field is set.
    */
   boolean hasLowerBound();
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The lowerBound.
    */
   com.google.privacy.dlp.v2.Value getLowerBound();
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder();
 
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the upperBound field is set.
    */
   boolean hasUpperBound();
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The upperBound.
    */
   com.google.privacy.dlp.v2.Value getUpperBound();
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder();
 
   /**
    * <pre>
-   * Size of each bucket (except for minimum and maximum buckets). So if
+   * Required. Size of each bucket (except for minimum and maximum buckets). So if
    * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
    * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
-   * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. [Required].
+   * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
    * </pre>
    *
-   * <code>double bucket_size = 3;</code>
+   * <code>double bucket_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bucketSize.
    */
   double getBucketSize();
 }

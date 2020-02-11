@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LargeCustomDictionaryConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,7 +133,8 @@ private static final long serialVersionUID = 0L;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
   public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_STORAGE_FILE_SET(2),
     BIG_QUERY_FIELD(3),
     SOURCE_NOT_SET(0);
@@ -136,6 +143,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -173,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+   * @return Whether the outputPath field is set.
    */
   public boolean hasOutputPath() {
     return outputPath_ != null;
@@ -186,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+   * @return The outputPath.
    */
   public com.google.privacy.dlp.v2.CloudStoragePath getOutputPath() {
     return outputPath_ == null ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance() : outputPath_;
@@ -211,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+   * @return Whether the cloudStorageFileSet field is set.
    */
   public boolean hasCloudStorageFileSet() {
     return sourceCase_ == 2;
@@ -221,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+   * @return The cloudStorageFileSet.
    */
   public com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet() {
     if (sourceCase_ == 2) {
@@ -249,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+   * @return Whether the bigQueryField field is set.
    */
   public boolean hasBigQueryField() {
     return sourceCase_ == 3;
@@ -259,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+   * @return The bigQueryField.
    */
   public com.google.privacy.dlp.v2.BigQueryField getBigQueryField() {
     if (sourceCase_ == 3) {
@@ -700,6 +715,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+     * @return Whether the outputPath field is set.
      */
     public boolean hasOutputPath() {
       return outputPathBuilder_ != null || outputPath_ != null;
@@ -713,6 +729,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
+     * @return The outputPath.
      */
     public com.google.privacy.dlp.v2.CloudStoragePath getOutputPath() {
       if (outputPathBuilder_ == null) {
@@ -876,6 +893,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+     * @return Whether the cloudStorageFileSet field is set.
      */
     public boolean hasCloudStorageFileSet() {
       return sourceCase_ == 2;
@@ -886,6 +904,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
+     * @return The cloudStorageFileSet.
      */
     public com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet() {
       if (cloudStorageFileSetBuilder_ == null) {
@@ -1048,6 +1067,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+     * @return Whether the bigQueryField field is set.
      */
     public boolean hasBigQueryField() {
       return sourceCase_ == 3;
@@ -1058,6 +1078,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
+     * @return The bigQueryField.
      */
     public com.google.privacy.dlp.v2.BigQueryField getBigQueryField() {
       if (bigQueryFieldBuilder_ == null) {

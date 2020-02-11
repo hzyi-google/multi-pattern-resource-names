@@ -1,3 +1,18 @@
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import * as Long from "long";
 import * as $protobuf from "protobufjs";
 /** Namespace google. */
 export namespace google {
@@ -738,10 +753,10 @@ export namespace google {
                     applicationDate?: (google.type.IDate|null);
 
                     /** Application stage */
-                    stage?: (google.cloud.talent.v4beta1.Application.ApplicationStage|null);
+                    stage?: (google.cloud.talent.v4beta1.Application.ApplicationStage|keyof typeof google.cloud.talent.v4beta1.Application.ApplicationStage|null);
 
                     /** Application state */
-                    state?: (google.cloud.talent.v4beta1.Application.ApplicationState|null);
+                    state?: (google.cloud.talent.v4beta1.Application.ApplicationState|keyof typeof google.cloud.talent.v4beta1.Application.ApplicationState|null);
 
                     /** Application interviews */
                     interviews?: (google.cloud.talent.v4beta1.IInterview[]|null);
@@ -759,7 +774,7 @@ export namespace google {
                     outcomeNotes?: (string|null);
 
                     /** Application outcome */
-                    outcome?: (google.cloud.talent.v4beta1.Outcome|null);
+                    outcome?: (google.cloud.talent.v4beta1.Outcome|keyof typeof google.cloud.talent.v4beta1.Outcome|null);
 
                     /** Application isMatch */
                     isMatch?: (google.protobuf.IBoolValue|null);
@@ -796,10 +811,10 @@ export namespace google {
                     public applicationDate?: (google.type.IDate|null);
 
                     /** Application stage. */
-                    public stage: google.cloud.talent.v4beta1.Application.ApplicationStage;
+                    public stage: (google.cloud.talent.v4beta1.Application.ApplicationStage|keyof typeof google.cloud.talent.v4beta1.Application.ApplicationStage);
 
                     /** Application state. */
-                    public state: google.cloud.talent.v4beta1.Application.ApplicationState;
+                    public state: (google.cloud.talent.v4beta1.Application.ApplicationState|keyof typeof google.cloud.talent.v4beta1.Application.ApplicationState);
 
                     /** Application interviews. */
                     public interviews: google.cloud.talent.v4beta1.IInterview[];
@@ -817,7 +832,7 @@ export namespace google {
                     public outcomeNotes: string;
 
                     /** Application outcome. */
-                    public outcome: google.cloud.talent.v4beta1.Outcome;
+                    public outcome: (google.cloud.talent.v4beta1.Outcome|keyof typeof google.cloud.talent.v4beta1.Outcome);
 
                     /** Application isMatch. */
                     public isMatch?: (google.protobuf.IBoolValue|null);
@@ -1021,7 +1036,7 @@ export namespace google {
                 interface ILocation {
 
                     /** Location locationType */
-                    locationType?: (google.cloud.talent.v4beta1.Location.LocationType|null);
+                    locationType?: (google.cloud.talent.v4beta1.Location.LocationType|keyof typeof google.cloud.talent.v4beta1.Location.LocationType|null);
 
                     /** Location postalAddress */
                     postalAddress?: (google.type.IPostalAddress|null);
@@ -1043,7 +1058,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.ILocation);
 
                     /** Location locationType. */
-                    public locationType: google.cloud.talent.v4beta1.Location.LocationType;
+                    public locationType: (google.cloud.talent.v4beta1.Location.LocationType|keyof typeof google.cloud.talent.v4beta1.Location.LocationType);
 
                     /** Location postalAddress. */
                     public postalAddress?: (google.type.IPostalAddress|null);
@@ -1492,7 +1507,7 @@ export namespace google {
                 interface IDeviceInfo {
 
                     /** DeviceInfo deviceType */
-                    deviceType?: (google.cloud.talent.v4beta1.DeviceInfo.DeviceType|null);
+                    deviceType?: (google.cloud.talent.v4beta1.DeviceInfo.DeviceType|keyof typeof google.cloud.talent.v4beta1.DeviceInfo.DeviceType|null);
 
                     /** DeviceInfo id */
                     id?: (string|null);
@@ -1508,7 +1523,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IDeviceInfo);
 
                     /** DeviceInfo deviceType. */
-                    public deviceType: google.cloud.talent.v4beta1.DeviceInfo.DeviceType;
+                    public deviceType: (google.cloud.talent.v4beta1.DeviceInfo.DeviceType|keyof typeof google.cloud.talent.v4beta1.DeviceInfo.DeviceType);
 
                     /** DeviceInfo id. */
                     public id: string;
@@ -1605,7 +1620,7 @@ export namespace google {
                     stringValues?: (string[]|null);
 
                     /** CustomAttribute longValues */
-                    longValues?: ((number|Long)[]|null);
+                    longValues?: ((number|Long|string)[]|null);
 
                     /** CustomAttribute filterable */
                     filterable?: (boolean|null);
@@ -1624,7 +1639,7 @@ export namespace google {
                     public stringValues: string[];
 
                     /** CustomAttribute longValues. */
-                    public longValues: (number|Long)[];
+                    public longValues: (number|Long|string)[];
 
                     /** CustomAttribute filterable. */
                     public filterable: boolean;
@@ -1910,10 +1925,10 @@ export namespace google {
                     interface ICompensationEntry {
 
                         /** CompensationEntry type */
-                        type?: (google.cloud.talent.v4beta1.CompensationInfo.CompensationType|null);
+                        type?: (google.cloud.talent.v4beta1.CompensationInfo.CompensationType|keyof typeof google.cloud.talent.v4beta1.CompensationInfo.CompensationType|null);
 
                         /** CompensationEntry unit */
-                        unit?: (google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit|null);
+                        unit?: (google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit|keyof typeof google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit|null);
 
                         /** CompensationEntry amount */
                         amount?: (google.type.IMoney|null);
@@ -1938,10 +1953,10 @@ export namespace google {
                         constructor(properties?: google.cloud.talent.v4beta1.CompensationInfo.ICompensationEntry);
 
                         /** CompensationEntry type. */
-                        public type: google.cloud.talent.v4beta1.CompensationInfo.CompensationType;
+                        public type: (google.cloud.talent.v4beta1.CompensationInfo.CompensationType|keyof typeof google.cloud.talent.v4beta1.CompensationInfo.CompensationType);
 
                         /** CompensationEntry unit. */
-                        public unit: google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit;
+                        public unit: (google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit|keyof typeof google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit);
 
                         /** CompensationEntry amount. */
                         public amount?: (google.type.IMoney|null);
@@ -2275,7 +2290,7 @@ export namespace google {
                     lastUsedDate?: (google.type.IDate|null);
 
                     /** Skill level */
-                    level?: (google.cloud.talent.v4beta1.SkillProficiencyLevel|null);
+                    level?: (google.cloud.talent.v4beta1.SkillProficiencyLevel|keyof typeof google.cloud.talent.v4beta1.SkillProficiencyLevel|null);
 
                     /** Skill context */
                     context?: (string|null);
@@ -2300,7 +2315,7 @@ export namespace google {
                     public lastUsedDate?: (google.type.IDate|null);
 
                     /** Skill level. */
-                    public level: google.cloud.talent.v4beta1.SkillProficiencyLevel;
+                    public level: (google.cloud.talent.v4beta1.SkillProficiencyLevel|keyof typeof google.cloud.talent.v4beta1.SkillProficiencyLevel);
 
                     /** Skill context. */
                     public context: string;
@@ -2386,7 +2401,7 @@ export namespace google {
                     rating?: (google.cloud.talent.v4beta1.IRating|null);
 
                     /** Interview outcome */
-                    outcome?: (google.cloud.talent.v4beta1.Outcome|null);
+                    outcome?: (google.cloud.talent.v4beta1.Outcome|keyof typeof google.cloud.talent.v4beta1.Outcome|null);
                 }
 
                 /** Represents an Interview. */
@@ -2402,7 +2417,7 @@ export namespace google {
                     public rating?: (google.cloud.talent.v4beta1.IRating|null);
 
                     /** Interview outcome. */
-                    public outcome: google.cloud.talent.v4beta1.Outcome;
+                    public outcome: (google.cloud.talent.v4beta1.Outcome|keyof typeof google.cloud.talent.v4beta1.Outcome);
 
                     /**
                      * Creates a new Interview instance using the specified properties.
@@ -2587,7 +2602,7 @@ export namespace google {
                 interface IBatchOperationMetadata {
 
                     /** BatchOperationMetadata state */
-                    state?: (google.cloud.talent.v4beta1.BatchOperationMetadata.State|null);
+                    state?: (google.cloud.talent.v4beta1.BatchOperationMetadata.State|keyof typeof google.cloud.talent.v4beta1.BatchOperationMetadata.State|null);
 
                     /** BatchOperationMetadata stateDescription */
                     stateDescription?: (string|null);
@@ -2621,7 +2636,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IBatchOperationMetadata);
 
                     /** BatchOperationMetadata state. */
-                    public state: google.cloud.talent.v4beta1.BatchOperationMetadata.State;
+                    public state: (google.cloud.talent.v4beta1.BatchOperationMetadata.State|keyof typeof google.cloud.talent.v4beta1.BatchOperationMetadata.State);
 
                     /** BatchOperationMetadata stateDescription. */
                     public stateDescription: string;
@@ -3482,7 +3497,7 @@ export namespace google {
                     externalId?: (string|null);
 
                     /** Company size */
-                    size?: (google.cloud.talent.v4beta1.CompanySize|null);
+                    size?: (google.cloud.talent.v4beta1.CompanySize|keyof typeof google.cloud.talent.v4beta1.CompanySize|null);
 
                     /** Company headquartersAddress */
                     headquartersAddress?: (string|null);
@@ -3531,7 +3546,7 @@ export namespace google {
                     public externalId: string;
 
                     /** Company size. */
-                    public size: google.cloud.talent.v4beta1.CompanySize;
+                    public size: (google.cloud.talent.v4beta1.CompanySize|keyof typeof google.cloud.talent.v4beta1.CompanySize);
 
                     /** Company headquartersAddress. */
                     public headquartersAddress: string;
@@ -3788,10 +3803,10 @@ export namespace google {
                     company?: (string|null);
 
                     /** CompleteQueryRequest scope */
-                    scope?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope|null);
+                    scope?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope|null);
 
                     /** CompleteQueryRequest type */
-                    type?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|null);
+                    type?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|null);
                 }
 
                 /** Represents a CompleteQueryRequest. */
@@ -3819,10 +3834,10 @@ export namespace google {
                     public company: string;
 
                     /** CompleteQueryRequest scope. */
-                    public scope: google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope;
+                    public scope: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope);
 
                     /** CompleteQueryRequest type. */
-                    public type: google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType;
+                    public type: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType);
 
                     /**
                      * Creates a new CompleteQueryRequest instance using the specified properties.
@@ -4018,7 +4033,7 @@ export namespace google {
                         suggestion?: (string|null);
 
                         /** CompletionResult type */
-                        type?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|null);
+                        type?: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|null);
 
                         /** CompletionResult imageUri */
                         imageUri?: (string|null);
@@ -4037,7 +4052,7 @@ export namespace google {
                         public suggestion: string;
 
                         /** CompletionResult type. */
-                        public type: google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType;
+                        public type: (google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType|keyof typeof google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType);
 
                         /** CompletionResult imageUri. */
                         public imageUri: string;
@@ -4382,7 +4397,7 @@ export namespace google {
                 interface IJobEvent {
 
                     /** JobEvent type */
-                    type?: (google.cloud.talent.v4beta1.JobEvent.JobEventType|null);
+                    type?: (google.cloud.talent.v4beta1.JobEvent.JobEventType|keyof typeof google.cloud.talent.v4beta1.JobEvent.JobEventType|null);
 
                     /** JobEvent jobs */
                     jobs?: (string[]|null);
@@ -4401,7 +4416,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IJobEvent);
 
                     /** JobEvent type. */
-                    public type: google.cloud.talent.v4beta1.JobEvent.JobEventType;
+                    public type: (google.cloud.talent.v4beta1.JobEvent.JobEventType|keyof typeof google.cloud.talent.v4beta1.JobEvent.JobEventType);
 
                     /** JobEvent jobs. */
                     public jobs: string[];
@@ -4507,7 +4522,7 @@ export namespace google {
                 interface IProfileEvent {
 
                     /** ProfileEvent type */
-                    type?: (google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType|null);
+                    type?: (google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType|keyof typeof google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType|null);
 
                     /** ProfileEvent profiles */
                     profiles?: (string[]|null);
@@ -4526,7 +4541,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IProfileEvent);
 
                     /** ProfileEvent type. */
-                    public type: google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType;
+                    public type: (google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType|keyof typeof google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType);
 
                     /** ProfileEvent profiles. */
                     public profiles: string[];
@@ -5334,7 +5349,7 @@ export namespace google {
                     pageSize?: (number|null);
 
                     /** ListJobsRequest jobView */
-                    jobView?: (google.cloud.talent.v4beta1.JobView|null);
+                    jobView?: (google.cloud.talent.v4beta1.JobView|keyof typeof google.cloud.talent.v4beta1.JobView|null);
                 }
 
                 /** Represents a ListJobsRequest. */
@@ -5359,7 +5374,7 @@ export namespace google {
                     public pageSize: number;
 
                     /** ListJobsRequest jobView. */
-                    public jobView: google.cloud.talent.v4beta1.JobView;
+                    public jobView: (google.cloud.talent.v4beta1.JobView|keyof typeof google.cloud.talent.v4beta1.JobView);
 
                     /**
                      * Creates a new ListJobsRequest instance using the specified properties.
@@ -5550,7 +5565,7 @@ export namespace google {
                     parent?: (string|null);
 
                     /** SearchJobsRequest searchMode */
-                    searchMode?: (google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode|null);
+                    searchMode?: (google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode|null);
 
                     /** SearchJobsRequest requestMetadata */
                     requestMetadata?: (google.cloud.talent.v4beta1.IRequestMetadata|null);
@@ -5568,7 +5583,7 @@ export namespace google {
                     histogramQueries?: (google.cloud.talent.v4beta1.IHistogramQuery[]|null);
 
                     /** SearchJobsRequest jobView */
-                    jobView?: (google.cloud.talent.v4beta1.JobView|null);
+                    jobView?: (google.cloud.talent.v4beta1.JobView|keyof typeof google.cloud.talent.v4beta1.JobView|null);
 
                     /** SearchJobsRequest offset */
                     offset?: (number|null);
@@ -5583,7 +5598,7 @@ export namespace google {
                     orderBy?: (string|null);
 
                     /** SearchJobsRequest diversificationLevel */
-                    diversificationLevel?: (google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel|null);
+                    diversificationLevel?: (google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel|null);
 
                     /** SearchJobsRequest customRankingInfo */
                     customRankingInfo?: (google.cloud.talent.v4beta1.SearchJobsRequest.ICustomRankingInfo|null);
@@ -5605,7 +5620,7 @@ export namespace google {
                     public parent: string;
 
                     /** SearchJobsRequest searchMode. */
-                    public searchMode: google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode;
+                    public searchMode: (google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode);
 
                     /** SearchJobsRequest requestMetadata. */
                     public requestMetadata?: (google.cloud.talent.v4beta1.IRequestMetadata|null);
@@ -5623,7 +5638,7 @@ export namespace google {
                     public histogramQueries: google.cloud.talent.v4beta1.IHistogramQuery[];
 
                     /** SearchJobsRequest jobView. */
-                    public jobView: google.cloud.talent.v4beta1.JobView;
+                    public jobView: (google.cloud.talent.v4beta1.JobView|keyof typeof google.cloud.talent.v4beta1.JobView);
 
                     /** SearchJobsRequest offset. */
                     public offset: number;
@@ -5638,7 +5653,7 @@ export namespace google {
                     public orderBy: string;
 
                     /** SearchJobsRequest diversificationLevel. */
-                    public diversificationLevel: google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel;
+                    public diversificationLevel: (google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel);
 
                     /** SearchJobsRequest customRankingInfo. */
                     public customRankingInfo?: (google.cloud.talent.v4beta1.SearchJobsRequest.ICustomRankingInfo|null);
@@ -5723,7 +5738,7 @@ export namespace google {
                     interface ICustomRankingInfo {
 
                         /** CustomRankingInfo importanceLevel */
-                        importanceLevel?: (google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel|null);
+                        importanceLevel?: (google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel|null);
 
                         /** CustomRankingInfo rankingExpression */
                         rankingExpression?: (string|null);
@@ -5739,7 +5754,7 @@ export namespace google {
                         constructor(properties?: google.cloud.talent.v4beta1.SearchJobsRequest.ICustomRankingInfo);
 
                         /** CustomRankingInfo importanceLevel. */
-                        public importanceLevel: google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel;
+                        public importanceLevel: (google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel|keyof typeof google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel);
 
                         /** CustomRankingInfo rankingExpression. */
                         public rankingExpression: string;
@@ -6946,7 +6961,7 @@ export namespace google {
                     distanceInMiles?: (number|null);
 
                     /** LocationFilter telecommutePreference */
-                    telecommutePreference?: (google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference|null);
+                    telecommutePreference?: (google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference|keyof typeof google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference|null);
 
                     /** LocationFilter negated */
                     negated?: (boolean|null);
@@ -6974,7 +6989,7 @@ export namespace google {
                     public distanceInMiles: number;
 
                     /** LocationFilter telecommutePreference. */
-                    public telecommutePreference: google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference;
+                    public telecommutePreference: (google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference|keyof typeof google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference);
 
                     /** LocationFilter negated. */
                     public negated: boolean;
@@ -7064,7 +7079,7 @@ export namespace google {
                 interface ICompensationFilter {
 
                     /** CompensationFilter type */
-                    type?: (google.cloud.talent.v4beta1.CompensationFilter.FilterType|null);
+                    type?: (google.cloud.talent.v4beta1.CompensationFilter.FilterType|keyof typeof google.cloud.talent.v4beta1.CompensationFilter.FilterType|null);
 
                     /** CompensationFilter units */
                     units?: (google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit[]|null);
@@ -7086,7 +7101,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.ICompensationFilter);
 
                     /** CompensationFilter type. */
-                    public type: google.cloud.talent.v4beta1.CompensationFilter.FilterType;
+                    public type: (google.cloud.talent.v4beta1.CompensationFilter.FilterType|keyof typeof google.cloud.talent.v4beta1.CompensationFilter.FilterType);
 
                     /** CompensationFilter units. */
                     public units: google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit[];
@@ -7184,7 +7199,7 @@ export namespace google {
                 interface ICommuteFilter {
 
                     /** CommuteFilter commuteMethod */
-                    commuteMethod?: (google.cloud.talent.v4beta1.CommuteMethod|null);
+                    commuteMethod?: (google.cloud.talent.v4beta1.CommuteMethod|keyof typeof google.cloud.talent.v4beta1.CommuteMethod|null);
 
                     /** CommuteFilter startCoordinates */
                     startCoordinates?: (google.type.ILatLng|null);
@@ -7196,7 +7211,7 @@ export namespace google {
                     allowImpreciseAddresses?: (boolean|null);
 
                     /** CommuteFilter roadTraffic */
-                    roadTraffic?: (google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic|null);
+                    roadTraffic?: (google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic|keyof typeof google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic|null);
 
                     /** CommuteFilter departureTime */
                     departureTime?: (google.type.ITimeOfDay|null);
@@ -7212,7 +7227,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.ICommuteFilter);
 
                     /** CommuteFilter commuteMethod. */
-                    public commuteMethod: google.cloud.talent.v4beta1.CommuteMethod;
+                    public commuteMethod: (google.cloud.talent.v4beta1.CommuteMethod|keyof typeof google.cloud.talent.v4beta1.CommuteMethod);
 
                     /** CommuteFilter startCoordinates. */
                     public startCoordinates?: (google.type.ILatLng|null);
@@ -7224,7 +7239,7 @@ export namespace google {
                     public allowImpreciseAddresses: boolean;
 
                     /** CommuteFilter roadTraffic. */
-                    public roadTraffic: google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic;
+                    public roadTraffic: (google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic|keyof typeof google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic);
 
                     /** CommuteFilter departureTime. */
                     public departureTime?: (google.type.ITimeOfDay|null);
@@ -7512,7 +7527,7 @@ export namespace google {
                     employer?: (string|null);
 
                     /** EmployerFilter mode */
-                    mode?: (google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode|null);
+                    mode?: (google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode|keyof typeof google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode|null);
 
                     /** EmployerFilter negated */
                     negated?: (boolean|null);
@@ -7531,7 +7546,7 @@ export namespace google {
                     public employer: string;
 
                     /** EmployerFilter mode. */
-                    public mode: google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode;
+                    public mode: (google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode|keyof typeof google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode);
 
                     /** EmployerFilter negated. */
                     public negated: boolean;
@@ -7628,7 +7643,7 @@ export namespace google {
                     fieldOfStudy?: (string|null);
 
                     /** EducationFilter degreeType */
-                    degreeType?: (google.cloud.talent.v4beta1.DegreeType|null);
+                    degreeType?: (google.cloud.talent.v4beta1.DegreeType|keyof typeof google.cloud.talent.v4beta1.DegreeType|null);
 
                     /** EducationFilter negated */
                     negated?: (boolean|null);
@@ -7650,7 +7665,7 @@ export namespace google {
                     public fieldOfStudy: string;
 
                     /** EducationFilter degreeType. */
-                    public degreeType: google.cloud.talent.v4beta1.DegreeType;
+                    public degreeType: (google.cloud.talent.v4beta1.DegreeType|keyof typeof google.cloud.talent.v4beta1.DegreeType);
 
                     /** EducationFilter negated. */
                     public negated: boolean;
@@ -8126,7 +8141,7 @@ export namespace google {
                     endTime?: (google.protobuf.ITimestamp|null);
 
                     /** TimeFilter timeField */
-                    timeField?: (google.cloud.talent.v4beta1.TimeFilter.TimeField|null);
+                    timeField?: (google.cloud.talent.v4beta1.TimeFilter.TimeField|keyof typeof google.cloud.talent.v4beta1.TimeFilter.TimeField|null);
                 }
 
                 /** Represents a TimeFilter. */
@@ -8145,7 +8160,7 @@ export namespace google {
                     public endTime?: (google.protobuf.ITimestamp|null);
 
                     /** TimeFilter timeField. */
-                    public timeField: google.cloud.talent.v4beta1.TimeFilter.TimeField;
+                    public timeField: (google.cloud.talent.v4beta1.TimeFilter.TimeField|keyof typeof google.cloud.talent.v4beta1.TimeFilter.TimeField);
 
                     /**
                      * Creates a new TimeFilter instance using the specified properties.
@@ -8322,7 +8337,7 @@ export namespace google {
                 interface IAvailabilityFilter {
 
                     /** AvailabilityFilter signalType */
-                    signalType?: (google.cloud.talent.v4beta1.AvailabilitySignalType|null);
+                    signalType?: (google.cloud.talent.v4beta1.AvailabilitySignalType|keyof typeof google.cloud.talent.v4beta1.AvailabilitySignalType|null);
 
                     /** AvailabilityFilter range */
                     range?: (google.cloud.talent.v4beta1.ITimestampRange|null);
@@ -8341,7 +8356,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IAvailabilityFilter);
 
                     /** AvailabilityFilter signalType. */
-                    public signalType: google.cloud.talent.v4beta1.AvailabilitySignalType;
+                    public signalType: (google.cloud.talent.v4beta1.AvailabilitySignalType|keyof typeof google.cloud.talent.v4beta1.AvailabilitySignalType);
 
                     /** AvailabilityFilter range. */
                     public range?: (google.cloud.talent.v4beta1.ITimestampRange|null);
@@ -8607,7 +8622,7 @@ export namespace google {
                     histogramQuery?: (string|null);
 
                     /** HistogramQueryResult histogram */
-                    histogram?: ({ [k: string]: (number|Long) }|null);
+                    histogram?: ({ [k: string]: (number|Long|string) }|null);
                 }
 
                 /** Represents a HistogramQueryResult. */
@@ -8623,7 +8638,7 @@ export namespace google {
                     public histogramQuery: string;
 
                     /** HistogramQueryResult histogram. */
-                    public histogram: { [k: string]: (number|Long) };
+                    public histogram: { [k: string]: (number|Long|string) };
 
                     /**
                      * Creates a new HistogramQueryResult instance using the specified properties.
@@ -8745,7 +8760,7 @@ export namespace google {
                     languageCode?: (string|null);
 
                     /** Job jobLevel */
-                    jobLevel?: (google.cloud.talent.v4beta1.JobLevel|null);
+                    jobLevel?: (google.cloud.talent.v4beta1.JobLevel|keyof typeof google.cloud.talent.v4beta1.JobLevel|null);
 
                     /** Job promotionValue */
                     promotionValue?: (number|null);
@@ -8757,10 +8772,10 @@ export namespace google {
                     responsibilities?: (string|null);
 
                     /** Job postingRegion */
-                    postingRegion?: (google.cloud.talent.v4beta1.PostingRegion|null);
+                    postingRegion?: (google.cloud.talent.v4beta1.PostingRegion|keyof typeof google.cloud.talent.v4beta1.PostingRegion|null);
 
                     /** Job visibility */
-                    visibility?: (google.cloud.talent.v4beta1.Visibility|null);
+                    visibility?: (google.cloud.talent.v4beta1.Visibility|keyof typeof google.cloud.talent.v4beta1.Visibility|null);
 
                     /** Job jobStartTime */
                     jobStartTime?: (google.protobuf.ITimestamp|null);
@@ -8845,7 +8860,7 @@ export namespace google {
                     public languageCode: string;
 
                     /** Job jobLevel. */
-                    public jobLevel: google.cloud.talent.v4beta1.JobLevel;
+                    public jobLevel: (google.cloud.talent.v4beta1.JobLevel|keyof typeof google.cloud.talent.v4beta1.JobLevel);
 
                     /** Job promotionValue. */
                     public promotionValue: number;
@@ -8857,10 +8872,10 @@ export namespace google {
                     public responsibilities: string;
 
                     /** Job postingRegion. */
-                    public postingRegion: google.cloud.talent.v4beta1.PostingRegion;
+                    public postingRegion: (google.cloud.talent.v4beta1.PostingRegion|keyof typeof google.cloud.talent.v4beta1.PostingRegion);
 
                     /** Job visibility. */
-                    public visibility: google.cloud.talent.v4beta1.Visibility;
+                    public visibility: (google.cloud.talent.v4beta1.Visibility|keyof typeof google.cloud.talent.v4beta1.Visibility);
 
                     /** Job jobStartTime. */
                     public jobStartTime?: (google.protobuf.ITimestamp|null);
@@ -9167,7 +9182,7 @@ export namespace google {
                         disableStreetAddressResolution?: (boolean|null);
 
                         /** ProcessingOptions htmlSanitization */
-                        htmlSanitization?: (google.cloud.talent.v4beta1.HtmlSanitization|null);
+                        htmlSanitization?: (google.cloud.talent.v4beta1.HtmlSanitization|keyof typeof google.cloud.talent.v4beta1.HtmlSanitization|null);
                     }
 
                     /** Represents a ProcessingOptions. */
@@ -9183,7 +9198,7 @@ export namespace google {
                         public disableStreetAddressResolution: boolean;
 
                         /** ProcessingOptions htmlSanitization. */
-                        public htmlSanitization: google.cloud.talent.v4beta1.HtmlSanitization;
+                        public htmlSanitization: (google.cloud.talent.v4beta1.HtmlSanitization|keyof typeof google.cloud.talent.v4beta1.HtmlSanitization);
 
                         /**
                          * Creates a new ProcessingOptions instance using the specified properties.
@@ -10149,7 +10164,7 @@ export namespace google {
                 interface ISearchProfilesResponse {
 
                     /** SearchProfilesResponse estimatedTotalSize */
-                    estimatedTotalSize?: (number|Long|null);
+                    estimatedTotalSize?: (number|Long|string|null);
 
                     /** SearchProfilesResponse spellCorrection */
                     spellCorrection?: (google.cloud.talent.v4beta1.ISpellingCorrection|null);
@@ -10180,7 +10195,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.ISearchProfilesResponse);
 
                     /** SearchProfilesResponse estimatedTotalSize. */
-                    public estimatedTotalSize: (number|Long);
+                    public estimatedTotalSize: (number|Long|string);
 
                     /** SearchProfilesResponse spellCorrection. */
                     public spellCorrection?: (google.cloud.talent.v4beta1.ISpellingCorrection|null);
@@ -10641,7 +10656,7 @@ export namespace google {
                 interface IAvailabilitySignal {
 
                     /** AvailabilitySignal type */
-                    type?: (google.cloud.talent.v4beta1.AvailabilitySignalType|null);
+                    type?: (google.cloud.talent.v4beta1.AvailabilitySignalType|keyof typeof google.cloud.talent.v4beta1.AvailabilitySignalType|null);
 
                     /** AvailabilitySignal lastUpdateTime */
                     lastUpdateTime?: (google.protobuf.ITimestamp|null);
@@ -10660,7 +10675,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IAvailabilitySignal);
 
                     /** AvailabilitySignal type. */
-                    public type: google.cloud.talent.v4beta1.AvailabilitySignalType;
+                    public type: (google.cloud.talent.v4beta1.AvailabilitySignalType|keyof typeof google.cloud.talent.v4beta1.AvailabilitySignalType);
 
                     /** AvailabilitySignal lastUpdateTime. */
                     public lastUpdateTime?: (google.protobuf.ITimestamp|null);
@@ -10746,7 +10761,7 @@ export namespace google {
                     structuredResume?: (string|null);
 
                     /** Resume resumeType */
-                    resumeType?: (google.cloud.talent.v4beta1.Resume.ResumeType|null);
+                    resumeType?: (google.cloud.talent.v4beta1.Resume.ResumeType|keyof typeof google.cloud.talent.v4beta1.Resume.ResumeType|null);
                 }
 
                 /** Represents a Resume. */
@@ -10762,7 +10777,7 @@ export namespace google {
                     public structuredResume: string;
 
                     /** Resume resumeType. */
-                    public resumeType: google.cloud.talent.v4beta1.Resume.ResumeType;
+                    public resumeType: (google.cloud.talent.v4beta1.Resume.ResumeType|keyof typeof google.cloud.talent.v4beta1.Resume.ResumeType);
 
                     /**
                      * Creates a new Resume instance using the specified properties.
@@ -11077,7 +11092,7 @@ export namespace google {
                 interface IAddress {
 
                     /** Address usage */
-                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|null);
+                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage|null);
 
                     /** Address unstructuredAddress */
                     unstructuredAddress?: (string|null);
@@ -11099,7 +11114,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IAddress);
 
                     /** Address usage. */
-                    public usage: google.cloud.talent.v4beta1.ContactInfoUsage;
+                    public usage: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage);
 
                     /** Address unstructuredAddress. */
                     public unstructuredAddress: string;
@@ -11188,7 +11203,7 @@ export namespace google {
                 interface IEmail {
 
                     /** Email usage */
-                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|null);
+                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage|null);
 
                     /** Email emailAddress */
                     emailAddress?: (string|null);
@@ -11204,7 +11219,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IEmail);
 
                     /** Email usage. */
-                    public usage: google.cloud.talent.v4beta1.ContactInfoUsage;
+                    public usage: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage);
 
                     /** Email emailAddress. */
                     public emailAddress: string;
@@ -11284,10 +11299,10 @@ export namespace google {
                 interface IPhone {
 
                     /** Phone usage */
-                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|null);
+                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage|null);
 
                     /** Phone type */
-                    type?: (google.cloud.talent.v4beta1.Phone.PhoneType|null);
+                    type?: (google.cloud.talent.v4beta1.Phone.PhoneType|keyof typeof google.cloud.talent.v4beta1.Phone.PhoneType|null);
 
                     /** Phone number */
                     number?: (string|null);
@@ -11306,10 +11321,10 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IPhone);
 
                     /** Phone usage. */
-                    public usage: google.cloud.talent.v4beta1.ContactInfoUsage;
+                    public usage: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage);
 
                     /** Phone type. */
-                    public type: google.cloud.talent.v4beta1.Phone.PhoneType;
+                    public type: (google.cloud.talent.v4beta1.Phone.PhoneType|keyof typeof google.cloud.talent.v4beta1.Phone.PhoneType);
 
                     /** Phone number. */
                     public number: string;
@@ -11499,7 +11514,7 @@ export namespace google {
                 interface IAdditionalContactInfo {
 
                     /** AdditionalContactInfo usage */
-                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|null);
+                    usage?: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage|null);
 
                     /** AdditionalContactInfo name */
                     name?: (string|null);
@@ -11518,7 +11533,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IAdditionalContactInfo);
 
                     /** AdditionalContactInfo usage. */
-                    public usage: google.cloud.talent.v4beta1.ContactInfoUsage;
+                    public usage: (google.cloud.talent.v4beta1.ContactInfoUsage|keyof typeof google.cloud.talent.v4beta1.ContactInfoUsage);
 
                     /** AdditionalContactInfo name. */
                     public name: string;
@@ -11916,7 +11931,7 @@ export namespace google {
                 interface IDegree {
 
                     /** Degree degreeType */
-                    degreeType?: (google.cloud.talent.v4beta1.DegreeType|null);
+                    degreeType?: (google.cloud.talent.v4beta1.DegreeType|keyof typeof google.cloud.talent.v4beta1.DegreeType|null);
 
                     /** Degree degreeName */
                     degreeName?: (string|null);
@@ -11935,7 +11950,7 @@ export namespace google {
                     constructor(properties?: google.cloud.talent.v4beta1.IDegree);
 
                     /** Degree degreeType. */
-                    public degreeType: google.cloud.talent.v4beta1.DegreeType;
+                    public degreeType: (google.cloud.talent.v4beta1.DegreeType|keyof typeof google.cloud.talent.v4beta1.DegreeType);
 
                     /** Degree degreeName. */
                     public degreeName: string;
@@ -13149,7 +13164,7 @@ export namespace google {
                     externalId?: (string|null);
 
                     /** Tenant usageType */
-                    usageType?: (google.cloud.talent.v4beta1.Tenant.DataUsageType|null);
+                    usageType?: (google.cloud.talent.v4beta1.Tenant.DataUsageType|keyof typeof google.cloud.talent.v4beta1.Tenant.DataUsageType|null);
 
                     /** Tenant keywordSearchableProfileCustomAttributes */
                     keywordSearchableProfileCustomAttributes?: (string[]|null);
@@ -13171,7 +13186,7 @@ export namespace google {
                     public externalId: string;
 
                     /** Tenant usageType. */
-                    public usageType: google.cloud.talent.v4beta1.Tenant.DataUsageType;
+                    public usageType: (google.cloud.talent.v4beta1.Tenant.DataUsageType|keyof typeof google.cloud.talent.v4beta1.Tenant.DataUsageType);
 
                     /** Tenant keywordSearchableProfileCustomAttributes. */
                     public keywordSearchableProfileCustomAttributes: string[];
@@ -13610,6 +13625,232 @@ export namespace google {
             OUTPUT_ONLY = 3,
             INPUT_ONLY = 4,
             IMMUTABLE = 5
+        }
+
+        /** Properties of a ResourceDescriptor. */
+        interface IResourceDescriptor {
+
+            /** ResourceDescriptor type */
+            type?: (string|null);
+
+            /** ResourceDescriptor pattern */
+            pattern?: (string[]|null);
+
+            /** ResourceDescriptor nameField */
+            nameField?: (string|null);
+
+            /** ResourceDescriptor history */
+            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
+
+            /** ResourceDescriptor plural */
+            plural?: (string|null);
+
+            /** ResourceDescriptor singular */
+            singular?: (string|null);
+        }
+
+        /** Represents a ResourceDescriptor. */
+        class ResourceDescriptor implements IResourceDescriptor {
+
+            /**
+             * Constructs a new ResourceDescriptor.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.api.IResourceDescriptor);
+
+            /** ResourceDescriptor type. */
+            public type: string;
+
+            /** ResourceDescriptor pattern. */
+            public pattern: string[];
+
+            /** ResourceDescriptor nameField. */
+            public nameField: string;
+
+            /** ResourceDescriptor history. */
+            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
+
+            /** ResourceDescriptor plural. */
+            public plural: string;
+
+            /** ResourceDescriptor singular. */
+            public singular: string;
+
+            /**
+             * Creates a new ResourceDescriptor instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceDescriptor instance
+             */
+            public static create(properties?: google.api.IResourceDescriptor): google.api.ResourceDescriptor;
+
+            /**
+             * Encodes the specified ResourceDescriptor message. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
+             * @param message ResourceDescriptor message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ResourceDescriptor message, length delimited. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
+             * @param message ResourceDescriptor message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceDescriptor message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceDescriptor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceDescriptor;
+
+            /**
+             * Decodes a ResourceDescriptor message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ResourceDescriptor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceDescriptor;
+
+            /**
+             * Verifies a ResourceDescriptor message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ResourceDescriptor message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ResourceDescriptor
+             */
+            public static fromObject(object: { [k: string]: any }): google.api.ResourceDescriptor;
+
+            /**
+             * Creates a plain object from a ResourceDescriptor message. Also converts values to other types if specified.
+             * @param message ResourceDescriptor
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.api.ResourceDescriptor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ResourceDescriptor to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace ResourceDescriptor {
+
+            /** History enum. */
+            enum History {
+                HISTORY_UNSPECIFIED = 0,
+                ORIGINALLY_SINGLE_PATTERN = 1,
+                FUTURE_MULTI_PATTERN = 2
+            }
+        }
+
+        /** Properties of a ResourceReference. */
+        interface IResourceReference {
+
+            /** ResourceReference type */
+            type?: (string|null);
+
+            /** ResourceReference childType */
+            childType?: (string|null);
+        }
+
+        /** Represents a ResourceReference. */
+        class ResourceReference implements IResourceReference {
+
+            /**
+             * Constructs a new ResourceReference.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.api.IResourceReference);
+
+            /** ResourceReference type. */
+            public type: string;
+
+            /** ResourceReference childType. */
+            public childType: string;
+
+            /**
+             * Creates a new ResourceReference instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceReference instance
+             */
+            public static create(properties?: google.api.IResourceReference): google.api.ResourceReference;
+
+            /**
+             * Encodes the specified ResourceReference message. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
+             * @param message ResourceReference message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ResourceReference message, length delimited. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
+             * @param message ResourceReference message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceReference message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceReference
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceReference;
+
+            /**
+             * Decodes a ResourceReference message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ResourceReference
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceReference;
+
+            /**
+             * Verifies a ResourceReference message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ResourceReference message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ResourceReference
+             */
+            public static fromObject(object: { [k: string]: any }): google.api.ResourceReference;
+
+            /**
+             * Creates a plain object from a ResourceReference message. Also converts values to other types if specified.
+             * @param message ResourceReference
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.api.ResourceReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ResourceReference to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
         }
     }
 
@@ -14307,10 +14548,10 @@ export namespace google {
             number?: (number|null);
 
             /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|null);
+            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
 
             /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|null);
+            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
 
             /** FieldDescriptorProto typeName */
             typeName?: (string|null);
@@ -14347,10 +14588,10 @@ export namespace google {
             public number: number;
 
             /** FieldDescriptorProto label. */
-            public label: google.protobuf.FieldDescriptorProto.Label;
+            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
 
             /** FieldDescriptorProto type. */
-            public type: google.protobuf.FieldDescriptorProto.Type;
+            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
 
             /** FieldDescriptorProto typeName. */
             public typeName: string;
@@ -15125,7 +15366,7 @@ export namespace google {
             javaStringCheckUtf8?: (boolean|null);
 
             /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|null);
+            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
 
             /** FileOptions goPackage */
             goPackage?: (string|null);
@@ -15171,6 +15412,9 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FileOptions .google.api.resourceDefinition */
+            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -15198,7 +15442,7 @@ export namespace google {
             public javaStringCheckUtf8: boolean;
 
             /** FileOptions optimizeFor. */
-            public optimizeFor: google.protobuf.FileOptions.OptimizeMode;
+            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
 
             /** FileOptions goPackage. */
             public goPackage: string;
@@ -15343,6 +15587,9 @@ export namespace google {
 
             /** MessageOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** MessageOptions .google.api.resource */
+            ".google.api.resource"?: (google.api.IResourceDescriptor|null);
         }
 
         /** Represents a MessageOptions. */
@@ -15444,13 +15691,13 @@ export namespace google {
         interface IFieldOptions {
 
             /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|null);
+            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
 
             /** FieldOptions packed */
             packed?: (boolean|null);
 
             /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|null);
+            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
 
             /** FieldOptions lazy */
             lazy?: (boolean|null);
@@ -15466,6 +15713,9 @@ export namespace google {
 
             /** FieldOptions .google.api.fieldBehavior */
             ".google.api.fieldBehavior"?: (google.api.FieldBehavior[]|null);
+
+            /** FieldOptions .google.api.resourceReference */
+            ".google.api.resourceReference"?: (google.api.IResourceReference|null);
         }
 
         /** Represents a FieldOptions. */
@@ -15478,13 +15728,13 @@ export namespace google {
             constructor(properties?: google.protobuf.IFieldOptions);
 
             /** FieldOptions ctype. */
-            public ctype: google.protobuf.FieldOptions.CType;
+            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
 
             /** FieldOptions packed. */
             public packed: boolean;
 
             /** FieldOptions jstype. */
-            public jstype: google.protobuf.FieldOptions.JSType;
+            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
 
             /** FieldOptions lazy. */
             public lazy: boolean;
@@ -15983,7 +16233,7 @@ export namespace google {
             deprecated?: (boolean|null);
 
             /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|null);
+            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
 
             /** MethodOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
@@ -16011,7 +16261,7 @@ export namespace google {
             public deprecated: boolean;
 
             /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: google.protobuf.MethodOptions.IdempotencyLevel;
+            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
 
             /** MethodOptions uninterpretedOption. */
             public uninterpretedOption: google.protobuf.IUninterpretedOption[];
@@ -16107,16 +16357,16 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|null);
+            stringValue?: (Uint8Array|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -16138,16 +16388,16 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: (number|Long|string);
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: (number|Long|string);
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: Uint8Array;
+            public stringValue: (Uint8Array|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -16734,7 +16984,7 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Timestamp nanos */
             nanos?: (number|null);
@@ -16750,7 +17000,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Timestamp nanos. */
             public nanos: number;
@@ -17010,7 +17260,7 @@ export namespace google {
         interface IInt64Value {
 
             /** Int64Value value */
-            value?: (number|Long|null);
+            value?: (number|Long|string|null);
         }
 
         /** Represents an Int64Value. */
@@ -17023,7 +17273,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IInt64Value);
 
             /** Int64Value value. */
-            public value: (number|Long);
+            public value: (number|Long|string);
 
             /**
              * Creates a new Int64Value instance using the specified properties.
@@ -17100,7 +17350,7 @@ export namespace google {
         interface IUInt64Value {
 
             /** UInt64Value value */
-            value?: (number|Long|null);
+            value?: (number|Long|string|null);
         }
 
         /** Represents a UInt64Value. */
@@ -17113,7 +17363,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IUInt64Value);
 
             /** UInt64Value value. */
-            public value: (number|Long);
+            public value: (number|Long|string);
 
             /**
              * Creates a new UInt64Value instance using the specified properties.
@@ -17550,7 +17800,7 @@ export namespace google {
         interface IBytesValue {
 
             /** BytesValue value */
-            value?: (Uint8Array|null);
+            value?: (Uint8Array|string|null);
         }
 
         /** Represents a BytesValue. */
@@ -17563,7 +17813,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IBytesValue);
 
             /** BytesValue value. */
-            public value: Uint8Array;
+            public value: (Uint8Array|string);
 
             /**
              * Creates a new BytesValue instance using the specified properties.
@@ -17814,7 +18064,7 @@ export namespace google {
         interface IDuration {
 
             /** Duration seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Duration nanos */
             nanos?: (number|null);
@@ -17830,7 +18080,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IDuration);
 
             /** Duration seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Duration nanos. */
             public nanos: number;
@@ -17913,7 +18163,7 @@ export namespace google {
             type_url?: (string|null);
 
             /** Any value */
-            value?: (Uint8Array|null);
+            value?: (Uint8Array|string|null);
         }
 
         /** Represents an Any. */
@@ -17929,7 +18179,7 @@ export namespace google {
             public type_url: string;
 
             /** Any value. */
-            public value: Uint8Array;
+            public value: (Uint8Array|string);
 
             /**
              * Creates a new Any instance using the specified properties.
@@ -18211,7 +18461,7 @@ export namespace google {
             currencyCode?: (string|null);
 
             /** Money units */
-            units?: (number|Long|null);
+            units?: (number|Long|string|null);
 
             /** Money nanos */
             nanos?: (number|null);
@@ -18230,7 +18480,7 @@ export namespace google {
             public currencyCode: string;
 
             /** Money units. */
-            public units: (number|Long);
+            public units: (number|Long|string);
 
             /** Money nanos. */
             public nanos: number;

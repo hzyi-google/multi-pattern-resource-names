@@ -9,24 +9,24 @@ public interface DateShiftConfigOrBuilder extends
 
   /**
    * <pre>
-   * Range of shift in days. Actual shift will be selected at random within this
+   * Required. Range of shift in days. Actual shift will be selected at random within this
    * range (inclusive ends). Negative means shift to earlier in time. Must not
    * be more than 365250 days (1000 years) each direction.
    * For example, 3 means shift date to at most 3 days into the future.
-   * [Required]
    * </pre>
    *
-   * <code>int32 upper_bound_days = 1;</code>
+   * <code>int32 upper_bound_days = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The upperBoundDays.
    */
   int getUpperBoundDays();
 
   /**
    * <pre>
-   * For example, -5 means shift date to at most 5 days back in the past.
-   * [Required]
+   * Required. For example, -5 means shift date to at most 5 days back in the past.
    * </pre>
    *
-   * <code>int32 lower_bound_days = 2;</code>
+   * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The lowerBoundDays.
    */
   int getLowerBoundDays();
 
@@ -38,6 +38,7 @@ public interface DateShiftConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
@@ -48,6 +49,7 @@ public interface DateShiftConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
+   * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
@@ -69,6 +71,7 @@ public interface DateShiftConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
   /**
@@ -79,6 +82,7 @@ public interface DateShiftConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
+   * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**

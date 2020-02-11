@@ -16,6 +16,7 @@ public interface ClusterSelectorOrBuilder extends
    * </pre>
    *
    * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The zone.
    */
   java.lang.String getZone();
   /**
@@ -27,6 +28,7 @@ public interface ClusterSelectorOrBuilder extends
    * </pre>
    *
    * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for zone.
    */
   com.google.protobuf.ByteString
       getZoneBytes();

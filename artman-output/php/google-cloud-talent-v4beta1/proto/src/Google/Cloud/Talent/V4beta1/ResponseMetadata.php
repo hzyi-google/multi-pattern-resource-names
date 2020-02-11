@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.ResponseMetadata</code>
  */
-final class ResponseMetadata extends \Google\Protobuf\Internal\Message
+class ResponseMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * A unique id associated with this call.
@@ -21,7 +21,7 @@ final class ResponseMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string request_id = 1;</code>
      */
-    private $request_id = '';
+    protected $request_id = '';
 
     /**
      * Constructor.

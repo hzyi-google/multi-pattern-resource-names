@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.UpdateExclusionRequest</code>
  */
-final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
+class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the exclusion to update:
@@ -23,16 +23,16 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Required. New values for the existing exclusion. Only the fields specified
      * in `update_mask` are relevant.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $exclusion = null;
+    protected $exclusion = null;
     /**
      * Required. A non-empty list of fields to change in the existing exclusion.
      * New values for the fields are taken from the corresponding fields in the
@@ -41,9 +41,9 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.
@@ -83,7 +83,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -99,7 +99,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -115,7 +115,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * Required. New values for the existing exclusion. Only the fields specified
      * in `update_mask` are relevant.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Logging\V2\LogExclusion
      */
     public function getExclusion()
@@ -127,7 +127,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * Required. New values for the existing exclusion. Only the fields specified
      * in `update_mask` are relevant.
      *
-     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Logging\V2\LogExclusion $var
      * @return $this
      */
@@ -147,7 +147,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask
      */
     public function getUpdateMask()
@@ -163,7 +163,7 @@ final class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * For example, to change the filter and description of an exclusion,
      * specify an `update_mask` of `"filter,description"`.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

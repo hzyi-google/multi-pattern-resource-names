@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ReceivedMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string ack_id = 1;</code>
+   * @return The ackId.
    */
   public java.lang.String getAckId() {
     java.lang.Object ref = ackId_;
@@ -130,6 +137,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string ack_id = 1;</code>
+   * @return The bytes for ackId.
    */
   public com.google.protobuf.ByteString
       getAckIdBytes() {
@@ -153,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * @return Whether the message field is set.
    */
   public boolean hasMessage() {
     return message_ != null;
@@ -163,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+   * @return The message.
    */
   public com.google.pubsub.v1.PubsubMessage getMessage() {
     return message_ == null ? com.google.pubsub.v1.PubsubMessage.getDefaultInstance() : message_;
@@ -198,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 delivery_attempt = 3;</code>
+   * @return The deliveryAttempt.
    */
   public int getDeliveryAttempt() {
     return deliveryAttempt_;
@@ -563,6 +574,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string ack_id = 1;</code>
+     * @return The ackId.
      */
     public java.lang.String getAckId() {
       java.lang.Object ref = ackId_;
@@ -582,6 +594,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string ack_id = 1;</code>
+     * @return The bytes for ackId.
      */
     public com.google.protobuf.ByteString
         getAckIdBytes() {
@@ -602,6 +615,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string ack_id = 1;</code>
+     * @param value The ackId to set.
+     * @return This builder for chaining.
      */
     public Builder setAckId(
         java.lang.String value) {
@@ -619,6 +634,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string ack_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAckId() {
       
@@ -632,6 +648,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string ack_id = 1;</code>
+     * @param value The bytes for ackId to set.
+     * @return This builder for chaining.
      */
     public Builder setAckIdBytes(
         com.google.protobuf.ByteString value) {
@@ -654,6 +672,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * @return Whether the message field is set.
      */
     public boolean hasMessage() {
       return messageBuilder_ != null || message_ != null;
@@ -664,6 +683,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
+     * @return The message.
      */
     public com.google.pubsub.v1.PubsubMessage getMessage() {
       if (messageBuilder_ == null) {
@@ -817,6 +837,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 delivery_attempt = 3;</code>
+     * @return The deliveryAttempt.
      */
     public int getDeliveryAttempt() {
       return deliveryAttempt_;
@@ -839,6 +860,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 delivery_attempt = 3;</code>
+     * @param value The deliveryAttempt to set.
+     * @return This builder for chaining.
      */
     public Builder setDeliveryAttempt(int value) {
       
@@ -864,6 +887,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 delivery_attempt = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeliveryAttempt() {
       

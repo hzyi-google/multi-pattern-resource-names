@@ -13,7 +13,8 @@ public interface DecryptRequestOrBuilder extends
    * The server will choose the appropriate version.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -22,7 +23,8 @@ public interface DecryptRequestOrBuilder extends
    * The server will choose the appropriate version.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -33,17 +35,19 @@ public interface DecryptRequestOrBuilder extends
    * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
    * </pre>
    *
-   * <code>bytes ciphertext = 2;</code>
+   * <code>bytes ciphertext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The ciphertext.
    */
   com.google.protobuf.ByteString getCiphertext();
 
   /**
    * <pre>
-   * Optional data that must match the data originally supplied in
+   * Optional. Optional data that must match the data originally supplied in
    * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
    * </pre>
    *
-   * <code>bytes additional_authenticated_data = 3;</code>
+   * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The additionalAuthenticatedData.
    */
   com.google.protobuf.ByteString getAdditionalAuthenticatedData();
 }

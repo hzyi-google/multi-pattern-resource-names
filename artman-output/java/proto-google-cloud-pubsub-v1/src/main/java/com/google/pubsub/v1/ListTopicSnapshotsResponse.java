@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListTopicSnapshotsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -98,7 +105,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.ListTopicSnapshotsResponse.class, com.google.pubsub.v1.ListTopicSnapshotsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SNAPSHOTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList snapshots_;
   /**
@@ -107,6 +113,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   * @return A list containing the snapshots.
    */
   public com.google.protobuf.ProtocolStringList
       getSnapshotsList() {
@@ -118,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   * @return The count of snapshots.
    */
   public int getSnapshotsCount() {
     return snapshots_.size();
@@ -128,6 +136,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   * @param index The index of the element to return.
+   * @return The snapshots at the given index.
    */
   public java.lang.String getSnapshots(int index) {
     return snapshots_.get(index);
@@ -138,6 +148,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the snapshots at the given index.
    */
   public com.google.protobuf.ByteString
       getSnapshotsBytes(int index) {
@@ -154,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -175,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -434,14 +448,12 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.ListTopicSnapshotsResponse buildPartial() {
       com.google.pubsub.v1.ListTopicSnapshotsResponse result = new com.google.pubsub.v1.ListTopicSnapshotsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         snapshots_ = snapshots_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.snapshots_ = snapshots_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -547,6 +559,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @return A list containing the snapshots.
      */
     public com.google.protobuf.ProtocolStringList
         getSnapshotsList() {
@@ -558,6 +571,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @return The count of snapshots.
      */
     public int getSnapshotsCount() {
       return snapshots_.size();
@@ -568,6 +582,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param index The index of the element to return.
+     * @return The snapshots at the given index.
      */
     public java.lang.String getSnapshots(int index) {
       return snapshots_.get(index);
@@ -578,6 +594,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the snapshots at the given index.
      */
     public com.google.protobuf.ByteString
         getSnapshotsBytes(int index) {
@@ -589,6 +607,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The snapshots to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshots(
         int index, java.lang.String value) {
@@ -606,6 +627,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param value The snapshots to add.
+     * @return This builder for chaining.
      */
     public Builder addSnapshots(
         java.lang.String value) {
@@ -623,6 +646,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param values The snapshots to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSnapshots(
         java.lang.Iterable<java.lang.String> values) {
@@ -638,6 +663,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSnapshots() {
       snapshots_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -651,6 +677,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string snapshots = 1;</code>
+     * @param value The bytes of the snapshots to add.
+     * @return This builder for chaining.
      */
     public Builder addSnapshotsBytes(
         com.google.protobuf.ByteString value) {
@@ -673,6 +701,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -694,6 +723,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -716,6 +746,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -735,6 +767,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -750,6 +783,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {

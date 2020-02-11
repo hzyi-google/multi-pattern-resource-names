@@ -7,10 +7,7 @@ package com.google.cloud.talent.v4beta1;
  * <pre>
  * Work experience filter.
  * This filter is used to search for profiles with working experience length
- * between
- * [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience]
- * and
- * [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
+ * between [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience] and [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.WorkExperienceFilter}
@@ -28,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new WorkExperienceFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
+   * @return Whether the minExperience field is set.
    */
   public boolean hasMinExperience() {
     return minExperience_ != null;
@@ -127,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
+   * @return The minExperience.
    */
   public com.google.protobuf.Duration getMinExperience() {
     return minExperience_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minExperience_;
@@ -150,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
+   * @return Whether the maxExperience field is set.
    */
   public boolean hasMaxExperience() {
     return maxExperience_ != null;
@@ -160,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
+   * @return The maxExperience.
    */
   public com.google.protobuf.Duration getMaxExperience() {
     return maxExperience_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxExperience_;
@@ -355,10 +362,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Work experience filter.
    * This filter is used to search for profiles with working experience length
-   * between
-   * [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience]
-   * and
-   * [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
+   * between [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience] and [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.WorkExperienceFilter}
@@ -538,6 +542,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
+     * @return Whether the minExperience field is set.
      */
     public boolean hasMinExperience() {
       return minExperienceBuilder_ != null || minExperience_ != null;
@@ -548,6 +553,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
+     * @return The minExperience.
      */
     public com.google.protobuf.Duration getMinExperience() {
       if (minExperienceBuilder_ == null) {
@@ -691,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
+     * @return Whether the maxExperience field is set.
      */
     public boolean hasMaxExperience() {
       return maxExperienceBuilder_ != null || maxExperience_ != null;
@@ -701,6 +708,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
+     * @return The maxExperience.
      */
     public com.google.protobuf.Duration getMaxExperience() {
       if (maxExperienceBuilder_ == null) {

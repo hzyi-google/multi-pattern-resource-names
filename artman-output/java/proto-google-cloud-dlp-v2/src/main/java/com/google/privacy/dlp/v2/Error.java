@@ -7,7 +7,6 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Details information about an error encountered during job execution or
  * the results of an unsuccessful activation of the JobTrigger.
- * Output only field.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Error}
@@ -23,6 +22,13 @@ private static final long serialVersionUID = 0L;
   }
   private Error() {
     timestamps_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Error();
   }
 
   @java.lang.Override
@@ -63,9 +69,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               timestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             timestamps_.add(
                 input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry));
@@ -86,7 +92,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         timestamps_ = java.util.Collections.unmodifiableList(timestamps_);
       }
       this.unknownFields = unknownFields.build();
@@ -106,22 +112,35 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.Error.class, com.google.privacy.dlp.v2.Error.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DETAILS_FIELD_NUMBER = 1;
   private com.google.rpc.Status details_;
   /**
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
+   * @return Whether the details field is set.
    */
   public boolean hasDetails() {
     return details_ != null;
   }
   /**
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
+   * @return The details.
    */
   public com.google.rpc.Status getDetails() {
     return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
   /**
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
    */
   public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
@@ -360,7 +379,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Details information about an error encountered during job execution or
    * the results of an unsuccessful activation of the JobTrigger.
-   * Output only field.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Error}
@@ -409,7 +427,7 @@ private static final long serialVersionUID = 0L;
       }
       if (timestampsBuilder_ == null) {
         timestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         timestampsBuilder_.clear();
       }
@@ -440,22 +458,20 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.Error buildPartial() {
       com.google.privacy.dlp.v2.Error result = new com.google.privacy.dlp.v2.Error(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (detailsBuilder_ == null) {
         result.details_ = details_;
       } else {
         result.details_ = detailsBuilder_.build();
       }
       if (timestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           timestamps_ = java.util.Collections.unmodifiableList(timestamps_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.timestamps_ = timestamps_;
       } else {
         result.timestamps_ = timestampsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,7 +527,7 @@ private static final long serialVersionUID = 0L;
         if (!other.timestamps_.isEmpty()) {
           if (timestamps_.isEmpty()) {
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTimestampsIsMutable();
             timestamps_.addAll(other.timestamps_);
@@ -524,7 +540,7 @@ private static final long serialVersionUID = 0L;
             timestampsBuilder_.dispose();
             timestampsBuilder_ = null;
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             timestampsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTimestampsFieldBuilder() : null;
@@ -567,13 +583,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> detailsBuilder_;
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
+     * @return Whether the details field is set.
      */
     public boolean hasDetails() {
       return detailsBuilder_ != null || details_ != null;
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
+     * @return The details.
      */
     public com.google.rpc.Status getDetails() {
       if (detailsBuilder_ == null) {
@@ -583,6 +609,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public Builder setDetails(com.google.rpc.Status value) {
@@ -599,6 +629,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public Builder setDetails(
@@ -613,6 +647,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public Builder mergeDetails(com.google.rpc.Status value) {
@@ -631,6 +669,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public Builder clearDetails() {
@@ -645,6 +687,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public com.google.rpc.Status.Builder getDetailsBuilder() {
@@ -653,6 +699,10 @@ private static final long serialVersionUID = 0L;
       return getDetailsFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
@@ -664,6 +714,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -683,9 +737,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Timestamp> timestamps_ =
       java.util.Collections.emptyList();
     private void ensureTimestampsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         timestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>(timestamps_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -879,7 +933,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTimestamps() {
       if (timestampsBuilder_ == null) {
         timestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         timestampsBuilder_.clear();
@@ -984,7 +1038,7 @@ private static final long serialVersionUID = 0L;
         timestampsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
                 timestamps_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         timestamps_ = null;

@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListLogMetricsRequest</code>
  */
-final class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
+class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The name of the project containing the metrics:
      *     "projects/[PROJECT_ID]"
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Optional. If present, then retrieve the next batch of results from the
      * preceding call to this method. `pageToken` must be the value of
@@ -30,7 +30,7 @@ final class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * Optional. The maximum number of results to return from this request.
      * Non-positive values are ignored. The presence of `nextPageToken` in the
@@ -38,7 +38,7 @@ final class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.
@@ -69,7 +69,7 @@ final class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
      * Required. The name of the project containing the metrics:
      *     "projects/[PROJECT_ID]"
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -81,7 +81,7 @@ final class ListLogMetricsRequest extends \Google\Protobuf\Internal\Message
      * Required. The name of the project containing the metrics:
      *     "projects/[PROJECT_ID]"
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

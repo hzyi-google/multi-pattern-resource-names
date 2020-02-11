@@ -13,17 +13,17 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.GroupFindingsRequest</code>
  */
-final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
+class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the source to groupBy. Its format is
+     * Required. Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
      * all sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -46,9 +46,9 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
-     * Expression that defines what assets fields to use for grouping (including
+     * Required. Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
      * of fields. For example:
      * "parent,resource_name".
@@ -58,9 +58,9 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      * * state
      * * parent
      *
-     * Generated from protobuf field <code>string group_by = 3;</code>
+     * Generated from protobuf field <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $group_by = '';
+    protected $group_by = '';
     /**
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -69,7 +69,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
-    private $read_time = null;
+    protected $read_time = null;
     /**
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -77,14 +77,14 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 5;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
      *
      * Generated from protobuf field <code>int32 page_size = 6;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.
@@ -93,10 +93,10 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Name of the source to groupBy. Its format is
+     *           Required. Name of the source to groupBy. Its format is
      *           "organizations/[organization_id]/sources/[source_id]". To groupBy across
      *           all sources provide a source_id of `-`. For example:
-     *           organizations/123/sources/-
+     *           organizations/{organization_id}/sources/-
      *     @type string $filter
      *           Expression that defines the filter to apply across findings.
      *           The expression is a list of one or more restrictions combined via logical
@@ -117,7 +117,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      *           * boolean literals `true` and `false` without quotes.
      *           For example, `source_properties.size = 100` is a valid filter string.
      *     @type string $group_by
-     *           Expression that defines what assets fields to use for grouping (including
+     *           Required. Expression that defines what assets fields to use for grouping (including
      *           `state`). The string value should follow SQL syntax: comma separated list
      *           of fields. For example:
      *           "parent,resource_name".
@@ -146,12 +146,12 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the source to groupBy. Its format is
+     * Required. Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
      * all sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -160,12 +160,12 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the source to groupBy. Its format is
+     * Required. Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
      * all sources provide a source_id of `-`. For example:
-     * organizations/123/sources/-
+     * organizations/{organization_id}/sources/-
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -238,7 +238,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expression that defines what assets fields to use for grouping (including
+     * Required. Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
      * of fields. For example:
      * "parent,resource_name".
@@ -248,7 +248,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      * * state
      * * parent
      *
-     * Generated from protobuf field <code>string group_by = 3;</code>
+     * Generated from protobuf field <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getGroupBy()
@@ -257,7 +257,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expression that defines what assets fields to use for grouping (including
+     * Required. Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
      * of fields. For example:
      * "parent,resource_name".
@@ -267,7 +267,7 @@ final class GroupFindingsRequest extends \Google\Protobuf\Internal\Message
      * * state
      * * parent
      *
-     * Generated from protobuf field <code>string group_by = 3;</code>
+     * Generated from protobuf field <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

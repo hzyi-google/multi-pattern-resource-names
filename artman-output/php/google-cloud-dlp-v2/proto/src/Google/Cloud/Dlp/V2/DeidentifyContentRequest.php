@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.DeidentifyContentRequest</code>
  */
-final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
+class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The parent resource name, for example projects/my-project-id.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -28,7 +28,7 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
      */
-    private $deidentify_config = null;
+    protected $deidentify_config = null;
     /**
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -36,15 +36,15 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
      */
-    private $inspect_config = null;
+    protected $inspect_config = null;
     /**
      * The item to de-identify. Will be treated as text.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
      */
-    private $item = null;
+    protected $item = null;
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -52,9 +52,9 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string inspect_template_name = 5;</code>
      */
-    private $inspect_template_name = '';
+    protected $inspect_template_name = '';
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -62,14 +62,14 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string deidentify_template_name = 6;</code>
      */
-    private $deidentify_template_name = '';
+    protected $deidentify_template_name = '';
     /**
      * The geographic location to process de-identification. Reserved for future
      * extensions.
      *
      * Generated from protobuf field <code>string location_id = 7;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -90,13 +90,13 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dlp\V2\ContentItem $item
      *           The item to de-identify. Will be treated as text.
      *     @type string $inspect_template_name
-     *           Optional template to use. Any configuration directly specified in
+     *           Template to use. Any configuration directly specified in
      *           inspect_config will override those set in the template. Singular fields
      *           that are set in this request will replace their corresponding fields in the
      *           template. Repeated fields are appended. Singular sub-messages and groups
      *           are recursively merged.
      *     @type string $deidentify_template_name
-     *           Optional template to use. Any configuration directly specified in
+     *           Template to use. Any configuration directly specified in
      *           deidentify_config will override those set in the template. Singular fields
      *           that are set in this request will replace their corresponding fields in the
      *           template. Repeated fields are appended. Singular sub-messages and groups
@@ -224,7 +224,7 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -239,7 +239,7 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -258,7 +258,7 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -273,7 +273,7 @@ final class DeidentifyContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups

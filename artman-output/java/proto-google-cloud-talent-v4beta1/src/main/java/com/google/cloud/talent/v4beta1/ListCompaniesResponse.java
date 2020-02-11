@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListCompaniesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -111,7 +118,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.ListCompaniesResponse.class, com.google.cloud.talent.v4beta1.ListCompaniesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int COMPANIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Company> companies_;
   /**
@@ -175,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -194,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -218,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -229,6 +238,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance() : metadata_;
@@ -512,7 +522,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse buildPartial() {
       com.google.cloud.talent.v4beta1.ListCompaniesResponse result = new com.google.cloud.talent.v4beta1.ListCompaniesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (companiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           companies_ = java.util.Collections.unmodifiableList(companies_);
@@ -528,7 +537,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -959,6 +967,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -978,6 +987,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -998,6 +1008,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -1015,6 +1027,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -1028,6 +1041,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -1051,6 +1066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1062,6 +1078,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {

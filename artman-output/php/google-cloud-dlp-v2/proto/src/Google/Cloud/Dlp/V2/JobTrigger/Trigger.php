@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.JobTrigger.Trigger</code>
  */
-final class Trigger extends \Google\Protobuf\Internal\Message
+class Trigger extends \Google\Protobuf\Internal\Message
 {
     protected $trigger;
 

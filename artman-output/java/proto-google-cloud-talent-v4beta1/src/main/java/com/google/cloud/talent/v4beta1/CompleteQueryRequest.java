@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CompleteQueryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -66,9 +73,9 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               languageCodes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             languageCodes_.add(s);
             break;
@@ -111,7 +118,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -204,6 +211,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -211,6 +220,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompletionScope forNumber(int value) {
       switch (value) {
         case 0: return COMPLETION_SCOPE_UNSPECIFIED;
@@ -287,7 +300,12 @@ private static final long serialVersionUID = 0L;
     COMPLETION_TYPE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Only suggest job titles.
+     * Suggest job titles for jobs autocomplete.
+     * For
+     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -295,7 +313,12 @@ private static final long serialVersionUID = 0L;
     JOB_TITLE(1),
     /**
      * <pre>
-     * Only suggest company names.
+     * Suggest company names for jobs autocomplete.
+     * For
+     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
+     * type, only companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -303,7 +326,14 @@ private static final long serialVersionUID = 0L;
     COMPANY_NAME(2),
     /**
      * <pre>
-     * Suggest both job titles and company names.
+     * Suggest both job titles and company names for jobs autocomplete.
+     * For
+     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>
@@ -322,7 +352,12 @@ private static final long serialVersionUID = 0L;
     public static final int COMPLETION_TYPE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Only suggest job titles.
+     * Suggest job titles for jobs autocomplete.
+     * For
+     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -330,7 +365,12 @@ private static final long serialVersionUID = 0L;
     public static final int JOB_TITLE_VALUE = 1;
     /**
      * <pre>
-     * Only suggest company names.
+     * Suggest company names for jobs autocomplete.
+     * For
+     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
+     * type, only companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -338,7 +378,14 @@ private static final long serialVersionUID = 0L;
     public static final int COMPANY_NAME_VALUE = 2;
     /**
      * <pre>
-     * Suggest both job titles and company names.
+     * Suggest both job titles and company names for jobs autocomplete.
+     * For
+     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>
@@ -355,6 +402,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -362,6 +411,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompletionType forNumber(int value) {
       switch (value) {
         case 0: return COMPLETION_TYPE_UNSPECIFIED;
@@ -420,7 +473,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -432,7 +484,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -455,7 +508,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -480,6 +534,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The query.
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -500,6 +555,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for query.
    */
   public com.google.protobuf.ByteString
       getQueryBytes() {
@@ -523,27 +579,11 @@ private static final long serialVersionUID = 0L;
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @return A list containing the languageCodes.
    */
   public com.google.protobuf.ProtocolStringList
       getLanguageCodesList() {
@@ -555,27 +595,11 @@ private static final long serialVersionUID = 0L;
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @return The count of languageCodes.
    */
   public int getLanguageCodesCount() {
     return languageCodes_.size();
@@ -586,27 +610,12 @@ private static final long serialVersionUID = 0L;
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
@@ -617,27 +626,12 @@ private static final long serialVersionUID = 0L;
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   public com.google.protobuf.ByteString
       getLanguageCodesBytes(int index) {
@@ -653,6 +647,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -670,7 +665,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The company.
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -694,7 +690,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for company.
    */
   public com.google.protobuf.ByteString
       getCompanyBytes() {
@@ -714,22 +711,22 @@ private static final long serialVersionUID = 0L;
   private int scope_;
   /**
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   * @return The enum numeric value on the wire for scope.
    */
   public int getScopeValue() {
     return scope_;
   }
   /**
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   * @return The scope.
    */
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
     @SuppressWarnings("deprecation")
@@ -741,22 +738,22 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
   }
   /**
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
     @SuppressWarnings("deprecation")
@@ -1033,7 +1030,7 @@ private static final long serialVersionUID = 0L;
       query_ = "";
 
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
 
       company_ = "";
@@ -1069,19 +1066,17 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest buildPartial() {
       com.google.cloud.talent.v4beta1.CompleteQueryRequest result = new com.google.cloud.talent.v4beta1.CompleteQueryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.query_ = query_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageCodes_ = languageCodes_;
       result.pageSize_ = pageSize_;
       result.company_ = company_;
       result.scope_ = scope_;
       result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1141,7 +1136,7 @@ private static final long serialVersionUID = 0L;
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1201,7 +1196,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1224,7 +1220,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -1248,7 +1245,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -1269,7 +1268,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -1286,7 +1286,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -1308,6 +1310,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The query.
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -1328,6 +1331,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for query.
      */
     public com.google.protobuf.ByteString
         getQueryBytes() {
@@ -1349,6 +1353,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The query to set.
+     * @return This builder for chaining.
      */
     public Builder setQuery(
         java.lang.String value) {
@@ -1367,6 +1373,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearQuery() {
       
@@ -1381,6 +1388,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryBytes(
         com.google.protobuf.ByteString value) {
@@ -1396,9 +1405,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1407,27 +1416,11 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList
         getLanguageCodesList() {
@@ -1439,27 +1432,11 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @return The count of languageCodes.
      */
     public int getLanguageCodesCount() {
       return languageCodes_.size();
@@ -1470,27 +1447,12 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
      */
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
@@ -1501,27 +1463,12 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
      */
     public com.google.protobuf.ByteString
         getLanguageCodesBytes(int index) {
@@ -1533,27 +1480,13 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodes(
         int index, java.lang.String value) {
@@ -1571,27 +1504,12 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodes(
         java.lang.String value) {
@@ -1609,27 +1527,12 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLanguageCodes(
         java.lang.Iterable<java.lang.String> values) {
@@ -1645,31 +1548,15 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1679,27 +1566,12 @@ private static final long serialVersionUID = 0L;
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-     * For
-     * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-     * type, only companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
-     * For
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-     * type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-     * are returned.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>repeated string language_codes = 3;</code>
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
      */
     public Builder addLanguageCodesBytes(
         com.google.protobuf.ByteString value) {
@@ -1721,6 +1593,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1732,6 +1605,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -1746,6 +1621,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       
@@ -1765,7 +1641,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The company.
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -1789,7 +1666,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for company.
      */
     public com.google.protobuf.ByteString
         getCompanyBytes() {
@@ -1814,7 +1692,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompany(
         java.lang.String value) {
@@ -1836,7 +1716,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearCompany() {
       
@@ -1854,7 +1735,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyBytes(
         com.google.protobuf.ByteString value) {
@@ -1871,22 +1754,23 @@ private static final long serialVersionUID = 0L;
     private int scope_ = 0;
     /**
      * <pre>
-     * The scope of the completion. The defaults is
-     * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     * @return The enum numeric value on the wire for scope.
      */
     public int getScopeValue() {
       return scope_;
     }
     /**
      * <pre>
-     * The scope of the completion. The defaults is
-     * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     * @param value The enum numeric value on the wire for scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
       scope_ = value;
@@ -1895,11 +1779,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The scope of the completion. The defaults is
-     * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     * @return The scope.
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
       @SuppressWarnings("deprecation")
@@ -1908,11 +1792,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The scope of the completion. The defaults is
-     * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     * @param value The scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScope(com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope value) {
       if (value == null) {
@@ -1925,11 +1810,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The scope of the completion. The defaults is
-     * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScope() {
       
@@ -1941,22 +1826,23 @@ private static final long serialVersionUID = 0L;
     private int type_ = 0;
     /**
      * <pre>
-     * The completion topic. The default is
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <pre>
-     * The completion topic. The default is
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1965,11 +1851,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The completion topic. The default is
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
       @SuppressWarnings("deprecation")
@@ -1978,11 +1864,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The completion topic. The default is
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType value) {
       if (value == null) {
@@ -1995,11 +1882,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The completion topic. The default is
-     * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       

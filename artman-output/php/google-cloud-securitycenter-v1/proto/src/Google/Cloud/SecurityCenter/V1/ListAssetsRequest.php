@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.ListAssetsRequest</code>
  */
-final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
+class ListAssetsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Name of the organization assets should belong to. Its format is
@@ -21,7 +21,7 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Expression that defines the filter to apply across assets.
      * The expression is a list of zero or more restrictions combined via logical
@@ -58,15 +58,18 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * Expression that defines what fields and order to use for sorting. The
      * string value should follow SQL syntax: comma separated list of fields. For
@@ -82,13 +85,16 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      *
      * Generated from protobuf field <code>string order_by = 3;</code>
      */
-    private $order_by = '';
+    protected $order_by = '';
     /**
      * Time used as a reference point when filtering assets. The filter is limited
      * to assets existing at the supplied time and their values are those at that
@@ -97,7 +103,7 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
-    private $read_time = null;
+    protected $read_time = null;
     /**
      * When compare_duration is set, the ListAssetsResult's "state_change"
      * attribute is updated to indicate whether the asset was added, removed, or
@@ -122,7 +128,7 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Duration compare_duration = 5;</code>
      */
-    private $compare_duration = null;
+    protected $compare_duration = null;
     /**
      * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
      * response.
@@ -130,7 +136,7 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $field_mask = null;
+    protected $field_mask = null;
     /**
      * The value returned by the last `ListAssetsResponse`; indicates
      * that this is a continuation of a prior `ListAssets` call, and
@@ -138,14 +144,14 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 8;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
      *
      * Generated from protobuf field <code>int32 page_size = 9;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.
@@ -192,9 +198,12 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *           * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
      *           * security_marks.marks: `=`, `:`
      *           * security_center_properties.resource_name: `=`, `:`
+     *           * security_center_properties.resource_display_name: `=`, `:`
      *           * security_center_properties.resource_type: `=`, `:`
      *           * security_center_properties.resource_parent: `=`, `:`
+     *           * security_center_properties.resource_parent_display_name: `=`, `:`
      *           * security_center_properties.resource_project: `=`, `:`
+     *           * security_center_properties.resource_project_display_name: `=`, `:`
      *           * security_center_properties.resource_owners: `=`, `:`
      *           For example, `resource_properties.size = 100` is a valid filter string.
      *     @type string $order_by
@@ -212,8 +221,11 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      *           resource_properties
      *           security_marks.marks
      *           security_center_properties.resource_name
+     *           security_center_properties.resource_display_name
      *           security_center_properties.resource_parent
+     *           security_center_properties.resource_parent_display_name
      *           security_center_properties.resource_project
+     *           security_center_properties.resource_project_display_name
      *           security_center_properties.resource_type
      *     @type \Google\Protobuf\Timestamp $read_time
      *           Time used as a reference point when filtering assets. The filter is limited
@@ -323,9 +335,12 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      *
@@ -373,9 +388,12 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      *
@@ -406,8 +424,11 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      *
      * Generated from protobuf field <code>string order_by = 3;</code>
@@ -433,8 +454,11 @@ final class ListAssetsRequest extends \Google\Protobuf\Internal\Message
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      *
      * Generated from protobuf field <code>string order_by = 3;</code>

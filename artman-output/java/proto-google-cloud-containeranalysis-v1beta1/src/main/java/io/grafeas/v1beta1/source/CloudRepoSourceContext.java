@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CloudRepoSourceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +121,8 @@ private static final long serialVersionUID = 0L;
   private int revisionCase_ = 0;
   private java.lang.Object revision_;
   public enum RevisionCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REVISION_ID(2),
     ALIAS_CONTEXT(3),
     REVISION_NOT_SET(0);
@@ -124,6 +131,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -158,6 +167,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+   * @return Whether the repoId field is set.
    */
   public boolean hasRepoId() {
     return repoId_ != null;
@@ -168,6 +178,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+   * @return The repoId.
    */
   public io.grafeas.v1beta1.source.RepoId getRepoId() {
     return repoId_ == null ? io.grafeas.v1beta1.source.RepoId.getDefaultInstance() : repoId_;
@@ -190,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   * @return The revisionId.
    */
   public java.lang.String getRevisionId() {
     java.lang.Object ref = "";
@@ -214,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   * @return The bytes for revisionId.
    */
   public com.google.protobuf.ByteString
       getRevisionIdBytes() {
@@ -241,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+   * @return Whether the aliasContext field is set.
    */
   public boolean hasAliasContext() {
     return revisionCase_ == 3;
@@ -251,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+   * @return The aliasContext.
    */
   public io.grafeas.v1beta1.source.AliasContext getAliasContext() {
     if (revisionCase_ == 3) {
@@ -682,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+     * @return Whether the repoId field is set.
      */
     public boolean hasRepoId() {
       return repoIdBuilder_ != null || repoId_ != null;
@@ -692,6 +708,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
+     * @return The repoId.
      */
     public io.grafeas.v1beta1.source.RepoId getRepoId() {
       if (repoIdBuilder_ == null) {
@@ -832,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     * @return The revisionId.
      */
     public java.lang.String getRevisionId() {
       java.lang.Object ref = "";
@@ -856,6 +874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     * @return The bytes for revisionId.
      */
     public com.google.protobuf.ByteString
         getRevisionIdBytes() {
@@ -881,6 +900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     * @param value The revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionId(
         java.lang.String value) {
@@ -898,6 +919,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
       if (revisionCase_ == 2) {
@@ -913,6 +935,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -934,6 +958,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+     * @return Whether the aliasContext field is set.
      */
     public boolean hasAliasContext() {
       return revisionCase_ == 3;
@@ -944,6 +969,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 3;</code>
+     * @return The aliasContext.
      */
     public io.grafeas.v1beta1.source.AliasContext getAliasContext() {
       if (aliasContextBuilder_ == null) {

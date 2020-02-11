@@ -9,9 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Time zone of the date time object.
+ *
  * Generated from protobuf message <code>google.privacy.dlp.v2.DateTime.TimeZone</code>
  */
-final class TimeZone extends \Google\Protobuf\Internal\Message
+class TimeZone extends \Google\Protobuf\Internal\Message
 {
     /**
      * Set only if the offset can be determined. Positive for time ahead of UTC.
@@ -19,7 +21,7 @@ final class TimeZone extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 offset_minutes = 1;</code>
      */
-    private $offset_minutes = 0;
+    protected $offset_minutes = 0;
 
     /**
      * Constructor.

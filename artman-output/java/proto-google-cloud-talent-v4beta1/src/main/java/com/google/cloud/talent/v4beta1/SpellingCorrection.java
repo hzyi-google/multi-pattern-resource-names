@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SpellingCorrection();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool corrected = 1;</code>
+   * @return The corrected.
    */
   public boolean getCorrected() {
     return corrected_;
@@ -118,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   * @return The correctedText.
    */
   public java.lang.String getCorrectedText() {
     java.lang.Object ref = correctedText_;
@@ -137,6 +145,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string corrected_text = 2;</code>
+   * @return The bytes for correctedText.
    */
   public com.google.protobuf.ByteString
       getCorrectedTextBytes() {
@@ -165,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   * @return The correctedHtml.
    */
   public java.lang.String getCorrectedHtml() {
     java.lang.Object ref = correctedHtml_;
@@ -189,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string corrected_html = 3;</code>
+   * @return The bytes for correctedHtml.
    */
   public com.google.protobuf.ByteString
       getCorrectedHtmlBytes() {
@@ -552,6 +563,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     * @return The corrected.
      */
     public boolean getCorrected() {
       return corrected_;
@@ -562,6 +574,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     * @param value The corrected to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrected(boolean value) {
       
@@ -575,6 +589,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool corrected = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCorrected() {
       
@@ -590,6 +605,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     * @return The correctedText.
      */
     public java.lang.String getCorrectedText() {
       java.lang.Object ref = correctedText_;
@@ -609,6 +625,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     * @return The bytes for correctedText.
      */
     public com.google.protobuf.ByteString
         getCorrectedTextBytes() {
@@ -629,6 +646,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     * @param value The correctedText to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedText(
         java.lang.String value) {
@@ -646,6 +665,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCorrectedText() {
       
@@ -659,6 +679,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_text = 2;</code>
+     * @param value The bytes for correctedText to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedTextBytes(
         com.google.protobuf.ByteString value) {
@@ -684,6 +706,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     * @return The correctedHtml.
      */
     public java.lang.String getCorrectedHtml() {
       java.lang.Object ref = correctedHtml_;
@@ -708,6 +731,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     * @return The bytes for correctedHtml.
      */
     public com.google.protobuf.ByteString
         getCorrectedHtmlBytes() {
@@ -733,6 +757,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     * @param value The correctedHtml to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedHtml(
         java.lang.String value) {
@@ -755,6 +781,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCorrectedHtml() {
       
@@ -773,6 +800,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string corrected_html = 3;</code>
+     * @param value The bytes for correctedHtml to set.
+     * @return This builder for chaining.
      */
     public Builder setCorrectedHtmlBytes(
         com.google.protobuf.ByteString value) {

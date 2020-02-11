@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.TransformationOverview</code>
  */
-final class TransformationOverview extends \Google\Protobuf\Internal\Message
+class TransformationOverview extends \Google\Protobuf\Internal\Message
 {
     /**
      * Total size in bytes that were transformed in some way.
      *
      * Generated from protobuf field <code>int64 transformed_bytes = 2;</code>
      */
-    private $transformed_bytes = 0;
+    protected $transformed_bytes = 0;
     /**
      * Transformations applied to the dataset.
      *

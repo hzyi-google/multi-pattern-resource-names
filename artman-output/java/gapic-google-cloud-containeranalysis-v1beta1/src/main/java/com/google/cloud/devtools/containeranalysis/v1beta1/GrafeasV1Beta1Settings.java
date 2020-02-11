@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,12 @@ import javax.annotation.Generated;
  * <code>
  * GrafeasV1Beta1Settings.Builder grafeasV1Beta1SettingsBuilder =
  *     GrafeasV1Beta1Settings.newBuilder();
- * grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * grafeasV1Beta1SettingsBuilder
+ *     .getOccurrenceSettings()
+ *     .setRetrySettings(
+ *         grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GrafeasV1Beta1Settings grafeasV1Beta1Settings = grafeasV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

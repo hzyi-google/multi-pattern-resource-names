@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PrivacyMetric();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -173,6 +179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return Whether the field field is set.
      */
     boolean hasField();
     /**
@@ -182,6 +189,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return The field.
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
@@ -215,6 +223,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NumericalStatsConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -227,7 +242,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -292,6 +306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return field_ != null;
@@ -303,6 +318,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
@@ -649,6 +665,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * @return Whether the field field is set.
        */
       public boolean hasField() {
         return fieldBuilder_ != null || field_ != null;
@@ -660,6 +677,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * @return The field.
        */
       public com.google.privacy.dlp.v2.FieldId getField() {
         if (fieldBuilder_ == null) {
@@ -866,6 +884,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return Whether the field field is set.
      */
     boolean hasField();
     /**
@@ -877,6 +896,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return The field.
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
@@ -912,6 +932,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CategoricalStatsConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -924,7 +951,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -991,6 +1017,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return field_ != null;
@@ -1004,6 +1031,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
@@ -1354,6 +1382,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * @return Whether the field field is set.
        */
       public boolean hasField() {
         return fieldBuilder_ != null || field_ != null;
@@ -1367,6 +1396,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * @return The field.
        */
       public com.google.privacy.dlp.v2.FieldId getField() {
         if (fieldBuilder_ == null) {
@@ -1644,7 +1674,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1656,11 +1686,12 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+     * @return Whether the entityId field is set.
      */
     boolean hasEntityId();
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1672,11 +1703,12 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+     * @return The entityId.
      */
     com.google.privacy.dlp.v2.EntityId getEntityId();
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1709,6 +1741,13 @@ private static final long serialVersionUID = 0L;
     }
     private KAnonymityConfig() {
       quasiIds_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KAnonymityConfig();
     }
 
     @java.lang.Override
@@ -1792,7 +1831,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder.class);
     }
 
-    private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_;
     /**
@@ -1872,7 +1910,7 @@ private static final long serialVersionUID = 0L;
     private com.google.privacy.dlp.v2.EntityId entityId_;
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1884,13 +1922,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+     * @return Whether the entityId field is set.
      */
     public boolean hasEntityId() {
       return entityId_ != null;
     }
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1902,13 +1941,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+     * @return The entityId.
      */
     public com.google.privacy.dlp.v2.EntityId getEntityId() {
       return entityId_ == null ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance() : entityId_;
     }
     /**
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -2180,7 +2220,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig buildPartial() {
         com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -2195,7 +2234,6 @@ private static final long serialVersionUID = 0L;
         } else {
           result.entityId_ = entityIdBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2692,7 +2730,7 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.EntityId, com.google.privacy.dlp.v2.EntityId.Builder, com.google.privacy.dlp.v2.EntityIdOrBuilder> entityIdBuilder_;
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2704,13 +2742,14 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+       * @return Whether the entityId field is set.
        */
       public boolean hasEntityId() {
         return entityIdBuilder_ != null || entityId_ != null;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2722,6 +2761,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
+       * @return The entityId.
        */
       public com.google.privacy.dlp.v2.EntityId getEntityId() {
         if (entityIdBuilder_ == null) {
@@ -2732,7 +2772,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2760,7 +2800,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2786,7 +2826,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2816,7 +2856,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2842,7 +2882,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2862,7 +2902,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -2885,7 +2925,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3028,6 +3068,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+     * @return Whether the sensitiveAttribute field is set.
      */
     boolean hasSensitiveAttribute();
     /**
@@ -3036,6 +3077,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+     * @return The sensitiveAttribute.
      */
     com.google.privacy.dlp.v2.FieldId getSensitiveAttribute();
     /**
@@ -3065,6 +3107,13 @@ private static final long serialVersionUID = 0L;
     }
     private LDiversityConfig() {
       quasiIds_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LDiversityConfig();
     }
 
     @java.lang.Override
@@ -3148,7 +3197,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder.class);
     }
 
-    private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_;
     /**
@@ -3222,6 +3270,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+     * @return Whether the sensitiveAttribute field is set.
      */
     public boolean hasSensitiveAttribute() {
       return sensitiveAttribute_ != null;
@@ -3232,6 +3281,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+     * @return The sensitiveAttribute.
      */
     public com.google.privacy.dlp.v2.FieldId getSensitiveAttribute() {
       return sensitiveAttribute_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : sensitiveAttribute_;
@@ -3502,7 +3552,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig buildPartial() {
         com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -3517,7 +3566,6 @@ private static final long serialVersionUID = 0L;
         } else {
           result.sensitiveAttribute_ = sensitiveAttributeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3982,6 +4030,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+       * @return Whether the sensitiveAttribute field is set.
        */
       public boolean hasSensitiveAttribute() {
         return sensitiveAttributeBuilder_ != null || sensitiveAttribute_ != null;
@@ -3992,6 +4041,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
+       * @return The sensitiveAttribute.
        */
       public com.google.privacy.dlp.v2.FieldId getSensitiveAttribute() {
         if (sensitiveAttributeBuilder_ == null) {
@@ -4184,49 +4234,49 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> 
         getQuasiIdsList();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index);
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     int getQuasiIdsCount();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
         getQuasiIdsOrBuilderList();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
         int index);
@@ -4234,21 +4284,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The regionCode.
      */
     java.lang.String getRegionCode();
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The bytes for regionCode.
      */
     com.google.protobuf.ByteString
         getRegionCodeBytes();
@@ -4315,7 +4367,6 @@ private static final long serialVersionUID = 0L;
    * using publicly available data (like the US Census), or using a custom
    * statistical model (indicated as one or several BigQuery tables), or by
    * extrapolating from the distribution of values in the input dataset.
-   * A column with a semantic tag attached.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -4333,6 +4384,13 @@ private static final long serialVersionUID = 0L;
       quasiIds_ = java.util.Collections.emptyList();
       regionCode_ = "";
       auxiliaryTables_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KMapEstimationConfig();
     }
 
     @java.lang.Override
@@ -4375,9 +4433,9 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               auxiliaryTables_.add(
                   input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.parser(), extensionRegistry));
@@ -4401,7 +4459,7 @@ private static final long serialVersionUID = 0L;
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
         }
         this.unknownFields = unknownFields.build();
@@ -4427,26 +4485,28 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the field field is set.
        */
       boolean hasField();
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The field.
        */
       com.google.privacy.dlp.v2.FieldId getField();
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
@@ -4460,6 +4520,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+       * @return Whether the infoType field is set.
        */
       boolean hasInfoType();
       /**
@@ -4472,6 +4533,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+       * @return The infoType.
        */
       com.google.privacy.dlp.v2.InfoType getInfoType();
       /**
@@ -4495,6 +4557,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
+       * @return The customTag.
        */
       java.lang.String getCustomTag();
       /**
@@ -4505,6 +4568,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
+       * @return The bytes for customTag.
        */
       com.google.protobuf.ByteString
           getCustomTagBytes();
@@ -4516,6 +4580,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Empty inferred = 4;</code>
+       * @return Whether the inferred field is set.
        */
       boolean hasInferred();
       /**
@@ -4525,6 +4590,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Empty inferred = 4;</code>
+       * @return The inferred.
        */
       com.google.protobuf.Empty getInferred();
       /**
@@ -4540,6 +4606,10 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase getTagCase();
     }
     /**
+     * <pre>
+     * A column with a semantic tag attached.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
      */
     public  static final class TaggedField extends
@@ -4555,6 +4625,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new TaggedField();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -4567,7 +4644,6 @@ private static final long serialVersionUID = 0L;
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4660,7 +4736,8 @@ private static final long serialVersionUID = 0L;
       private int tagCase_ = 0;
       private java.lang.Object tag_;
       public enum TagCase
-          implements com.google.protobuf.Internal.EnumLite {
+          implements com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         INFO_TYPE(2),
         CUSTOM_TAG(3),
         INFERRED(4),
@@ -4670,6 +4747,8 @@ private static final long serialVersionUID = 0L;
           this.value = value;
         }
         /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
          * @deprecated Use {@link #forNumber(int)} instead.
          */
         @java.lang.Deprecated
@@ -4701,30 +4780,32 @@ private static final long serialVersionUID = 0L;
       private com.google.privacy.dlp.v2.FieldId field_;
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the field field is set.
        */
       public boolean hasField() {
         return field_ != null;
       }
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The field.
        */
       public com.google.privacy.dlp.v2.FieldId getField() {
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
       /**
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         return getField();
@@ -4741,6 +4822,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+       * @return Whether the infoType field is set.
        */
       public boolean hasInfoType() {
         return tagCase_ == 2;
@@ -4755,6 +4837,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+       * @return The infoType.
        */
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (tagCase_ == 2) {
@@ -4789,6 +4872,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
+       * @return The customTag.
        */
       public java.lang.String getCustomTag() {
         java.lang.Object ref = "";
@@ -4815,6 +4899,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
+       * @return The bytes for customTag.
        */
       public com.google.protobuf.ByteString
           getCustomTagBytes() {
@@ -4843,6 +4928,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Empty inferred = 4;</code>
+       * @return Whether the inferred field is set.
        */
       public boolean hasInferred() {
         return tagCase_ == 4;
@@ -4854,6 +4940,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Empty inferred = 4;</code>
+       * @return The inferred.
        */
       public com.google.protobuf.Empty getInferred() {
         if (tagCase_ == 4) {
@@ -5090,6 +5177,10 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       * <pre>
+       * A column with a semantic tag attached.
+       * </pre>
+       *
        * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
        */
       public static final class Builder extends
@@ -5303,20 +5394,22 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return Whether the field field is set.
          */
         public boolean hasField() {
           return fieldBuilder_ != null || field_ != null;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return The field.
          */
         public com.google.privacy.dlp.v2.FieldId getField() {
           if (fieldBuilder_ == null) {
@@ -5327,10 +5420,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
           if (fieldBuilder_ == null) {
@@ -5347,10 +5440,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setField(
             com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -5365,10 +5458,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
           if (fieldBuilder_ == null) {
@@ -5387,10 +5480,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearField() {
           if (fieldBuilder_ == null) {
@@ -5405,10 +5498,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
           
@@ -5417,10 +5510,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
           if (fieldBuilder_ != null) {
@@ -5432,10 +5525,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -5463,6 +5556,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+         * @return Whether the infoType field is set.
          */
         public boolean hasInfoType() {
           return tagCase_ == 2;
@@ -5477,6 +5571,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+         * @return The infoType.
          */
         public com.google.privacy.dlp.v2.InfoType getInfoType() {
           if (infoTypeBuilder_ == null) {
@@ -5667,6 +5762,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
+         * @return The customTag.
          */
         public java.lang.String getCustomTag() {
           java.lang.Object ref = "";
@@ -5693,6 +5789,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
+         * @return The bytes for customTag.
          */
         public com.google.protobuf.ByteString
             getCustomTagBytes() {
@@ -5720,6 +5817,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
+         * @param value The customTag to set.
+         * @return This builder for chaining.
          */
         public Builder setCustomTag(
             java.lang.String value) {
@@ -5739,6 +5838,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
+         * @return This builder for chaining.
          */
         public Builder clearCustomTag() {
           if (tagCase_ == 3) {
@@ -5756,6 +5856,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
+         * @param value The bytes for customTag to set.
+         * @return This builder for chaining.
          */
         public Builder setCustomTagBytes(
             com.google.protobuf.ByteString value) {
@@ -5778,6 +5880,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.protobuf.Empty inferred = 4;</code>
+         * @return Whether the inferred field is set.
          */
         public boolean hasInferred() {
           return tagCase_ == 4;
@@ -5789,6 +5892,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.protobuf.Empty inferred = 4;</code>
+         * @return The inferred.
          */
         public com.google.protobuf.Empty getInferred() {
           if (inferredBuilder_ == null) {
@@ -6008,101 +6112,102 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the table field is set.
        */
       boolean hasTable();
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The table.
        */
       com.google.privacy.dlp.v2.BigQueryTable getTable();
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> 
           getQuasiIdsList();
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index);
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       int getQuasiIdsCount();
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
           getQuasiIdsOrBuilderList();
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
           int index);
 
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the relativeFrequency field is set.
        */
       boolean hasRelativeFrequency();
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The relativeFrequency.
        */
       com.google.privacy.dlp.v2.FieldId getRelativeFrequency();
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder();
     }
@@ -6133,6 +6238,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new AuxiliaryTable();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -6157,9 +6269,9 @@ private static final long serialVersionUID = 0L;
                 done = true;
                 break;
               case 10: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 quasiIds_.add(
                     input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.parser(), extensionRegistry));
@@ -6206,7 +6318,7 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
           }
           this.unknownFields = unknownFields.build();
@@ -6231,24 +6343,48 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.MessageOrBuilder {
 
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * @return Whether the field field is set.
          */
         boolean hasField();
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * @return The field.
          */
         com.google.privacy.dlp.v2.FieldId getField();
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
         com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
         /**
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
+         * @return The customTag.
          */
         java.lang.String getCustomTag();
         /**
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
+         * @return The bytes for customTag.
          */
         com.google.protobuf.ByteString
             getCustomTagBytes();
@@ -6275,6 +6411,13 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+          return new QuasiIdField();
+        }
+
+        @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet
         getUnknownFields() {
           return this.unknownFields;
@@ -6287,7 +6430,6 @@ private static final long serialVersionUID = 0L;
           if (extensionRegistry == null) {
             throw new java.lang.NullPointerException();
           }
-          int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
           try {
@@ -6352,18 +6494,32 @@ private static final long serialVersionUID = 0L;
         public static final int FIELD_FIELD_NUMBER = 1;
         private com.google.privacy.dlp.v2.FieldId field_;
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * @return Whether the field field is set.
          */
         public boolean hasField() {
           return field_ != null;
         }
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * @return The field.
          */
         public com.google.privacy.dlp.v2.FieldId getField() {
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
         /**
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
@@ -6373,7 +6529,12 @@ private static final long serialVersionUID = 0L;
         public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
         private volatile java.lang.Object customTag_;
         /**
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
+         * @return The customTag.
          */
         public java.lang.String getCustomTag() {
           java.lang.Object ref = customTag_;
@@ -6388,7 +6549,12 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
+         * @return The bytes for customTag.
          */
         public com.google.protobuf.ByteString
             getCustomTagBytes() {
@@ -6745,13 +6911,23 @@ private static final long serialVersionUID = 0L;
           private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           * @return Whether the field field is set.
            */
           public boolean hasField() {
             return fieldBuilder_ != null || field_ != null;
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           * @return The field.
            */
           public com.google.privacy.dlp.v2.FieldId getField() {
             if (fieldBuilder_ == null) {
@@ -6761,6 +6937,10 @@ private static final long serialVersionUID = 0L;
             }
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
@@ -6777,6 +6957,10 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public Builder setField(
@@ -6791,6 +6975,10 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
@@ -6809,6 +6997,10 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public Builder clearField() {
@@ -6823,6 +7015,10 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
@@ -6831,6 +7027,10 @@ private static final long serialVersionUID = 0L;
             return getFieldFieldBuilder().getBuilder();
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
@@ -6842,6 +7042,10 @@ private static final long serialVersionUID = 0L;
             }
           }
           /**
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
@@ -6860,7 +7064,12 @@ private static final long serialVersionUID = 0L;
 
           private java.lang.Object customTag_ = "";
           /**
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
+           * @return The customTag.
            */
           public java.lang.String getCustomTag() {
             java.lang.Object ref = customTag_;
@@ -6875,7 +7084,12 @@ private static final long serialVersionUID = 0L;
             }
           }
           /**
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
+           * @return The bytes for customTag.
            */
           public com.google.protobuf.ByteString
               getCustomTagBytes() {
@@ -6891,7 +7105,13 @@ private static final long serialVersionUID = 0L;
             }
           }
           /**
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
+           * @param value The customTag to set.
+           * @return This builder for chaining.
            */
           public Builder setCustomTag(
               java.lang.String value) {
@@ -6904,7 +7124,12 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
+           * @return This builder for chaining.
            */
           public Builder clearCustomTag() {
             
@@ -6913,7 +7138,13 @@ private static final long serialVersionUID = 0L;
             return this;
           }
           /**
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
+           * @param value The bytes for customTag to set.
+           * @return This builder for chaining.
            */
           public Builder setCustomTagBytes(
               com.google.protobuf.ByteString value) {
@@ -6979,35 +7210,36 @@ private static final long serialVersionUID = 0L;
 
       }
 
-      private int bitField0_;
       public static final int TABLE_FIELD_NUMBER = 3;
       private com.google.privacy.dlp.v2.BigQueryTable table_;
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the table field is set.
        */
       public boolean hasTable() {
         return table_ != null;
       }
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The table.
        */
       public com.google.privacy.dlp.v2.BigQueryTable getTable() {
         return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
       }
       /**
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
         return getTable();
@@ -7017,20 +7249,20 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> quasiIds_;
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> getQuasiIdsList() {
         return quasiIds_;
       }
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
           getQuasiIdsOrBuilderList() {
@@ -7038,30 +7270,30 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getQuasiIdsCount() {
         return quasiIds_.size();
       }
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index) {
         return quasiIds_.get(index);
       }
       /**
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
           int index) {
@@ -7072,36 +7304,35 @@ private static final long serialVersionUID = 0L;
       private com.google.privacy.dlp.v2.FieldId relativeFrequency_;
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the relativeFrequency field is set.
        */
       public boolean hasRelativeFrequency() {
         return relativeFrequency_ != null;
       }
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The relativeFrequency.
        */
       public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
         return relativeFrequency_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : relativeFrequency_;
       }
       /**
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
         return getRelativeFrequency();
@@ -7353,7 +7584,7 @@ private static final long serialVersionUID = 0L;
           }
           if (quasiIdsBuilder_ == null) {
             quasiIds_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             quasiIdsBuilder_.clear();
           }
@@ -7390,16 +7621,15 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable buildPartial() {
           com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (tableBuilder_ == null) {
             result.table_ = table_;
           } else {
             result.table_ = tableBuilder_.build();
           }
           if (quasiIdsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.quasiIds_ = quasiIds_;
           } else {
@@ -7410,7 +7640,6 @@ private static final long serialVersionUID = 0L;
           } else {
             result.relativeFrequency_ = relativeFrequencyBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -7466,7 +7695,7 @@ private static final long serialVersionUID = 0L;
             if (!other.quasiIds_.isEmpty()) {
               if (quasiIds_.isEmpty()) {
                 quasiIds_ = other.quasiIds_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureQuasiIdsIsMutable();
                 quasiIds_.addAll(other.quasiIds_);
@@ -7479,7 +7708,7 @@ private static final long serialVersionUID = 0L;
                 quasiIdsBuilder_.dispose();
                 quasiIdsBuilder_ = null;
                 quasiIds_ = other.quasiIds_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 quasiIdsBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getQuasiIdsFieldBuilder() : null;
@@ -7526,20 +7755,22 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.BigQueryTable, com.google.privacy.dlp.v2.BigQueryTable.Builder, com.google.privacy.dlp.v2.BigQueryTableOrBuilder> tableBuilder_;
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return Whether the table field is set.
          */
         public boolean hasTable() {
           return tableBuilder_ != null || table_ != null;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return The table.
          */
         public com.google.privacy.dlp.v2.BigQueryTable getTable() {
           if (tableBuilder_ == null) {
@@ -7550,10 +7781,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable value) {
           if (tableBuilder_ == null) {
@@ -7570,10 +7801,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setTable(
             com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
@@ -7588,10 +7819,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder mergeTable(com.google.privacy.dlp.v2.BigQueryTable value) {
           if (tableBuilder_ == null) {
@@ -7610,10 +7841,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearTable() {
           if (tableBuilder_ == null) {
@@ -7628,10 +7859,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
           
@@ -7640,10 +7871,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
           if (tableBuilder_ != null) {
@@ -7655,10 +7886,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable, com.google.privacy.dlp.v2.BigQueryTable.Builder, com.google.privacy.dlp.v2.BigQueryTableOrBuilder> 
@@ -7677,9 +7908,9 @@ private static final long serialVersionUID = 0L;
         private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> quasiIds_ =
           java.util.Collections.emptyList();
         private void ensureQuasiIdsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField>(quasiIds_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -7688,10 +7919,10 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> getQuasiIdsList() {
           if (quasiIdsBuilder_ == null) {
@@ -7702,10 +7933,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public int getQuasiIdsCount() {
           if (quasiIdsBuilder_ == null) {
@@ -7716,10 +7947,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index) {
           if (quasiIdsBuilder_ == null) {
@@ -7730,10 +7961,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setQuasiIds(
             int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
@@ -7751,10 +7982,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setQuasiIds(
             int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
@@ -7769,10 +8000,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder addQuasiIds(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
           if (quasiIdsBuilder_ == null) {
@@ -7789,10 +8020,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder addQuasiIds(
             int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
@@ -7810,10 +8041,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder addQuasiIds(
             com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
@@ -7828,10 +8059,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder addQuasiIds(
             int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
@@ -7846,10 +8077,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder addAllQuasiIds(
             java.lang.Iterable<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> values) {
@@ -7865,15 +8096,15 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearQuasiIds() {
           if (quasiIdsBuilder_ == null) {
             quasiIds_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             quasiIdsBuilder_.clear();
@@ -7882,10 +8113,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder removeQuasiIds(int index) {
           if (quasiIdsBuilder_ == null) {
@@ -7899,10 +8130,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder getQuasiIdsBuilder(
             int index) {
@@ -7910,10 +8141,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
             int index) {
@@ -7924,10 +8155,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
              getQuasiIdsOrBuilderList() {
@@ -7939,10 +8170,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder addQuasiIdsBuilder() {
           return getQuasiIdsFieldBuilder().addBuilder(
@@ -7950,10 +8181,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder addQuasiIdsBuilder(
             int index) {
@@ -7962,10 +8193,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder> 
              getQuasiIdsBuilderList() {
@@ -7978,7 +8209,7 @@ private static final long serialVersionUID = 0L;
             quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder>(
                     quasiIds_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             quasiIds_ = null;
@@ -7991,24 +8222,24 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> relativeFrequencyBuilder_;
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return Whether the relativeFrequency field is set.
          */
         public boolean hasRelativeFrequency() {
           return relativeFrequencyBuilder_ != null || relativeFrequency_ != null;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * @return The relativeFrequency.
          */
         public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
           if (relativeFrequencyBuilder_ == null) {
@@ -8019,12 +8250,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
           if (relativeFrequencyBuilder_ == null) {
@@ -8041,12 +8271,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setRelativeFrequency(
             com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -8061,12 +8290,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder mergeRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
           if (relativeFrequencyBuilder_ == null) {
@@ -8085,12 +8313,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearRelativeFrequency() {
           if (relativeFrequencyBuilder_ == null) {
@@ -8105,12 +8332,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getRelativeFrequencyBuilder() {
           
@@ -8119,12 +8345,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
           if (relativeFrequencyBuilder_ != null) {
@@ -8136,12 +8361,11 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -8209,27 +8433,26 @@ private static final long serialVersionUID = 0L;
 
     }
 
-    private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> quasiIds_;
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> getQuasiIdsList() {
       return quasiIds_;
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
         getQuasiIdsOrBuilderList() {
@@ -8237,33 +8460,33 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index) {
       return quasiIds_.get(index);
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
         int index) {
@@ -8275,11 +8498,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The regionCode.
      */
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
@@ -8296,11 +8520,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The bytes for regionCode.
      */
     public com.google.protobuf.ByteString
         getRegionCodeBytes() {
@@ -8569,7 +8794,6 @@ private static final long serialVersionUID = 0L;
      * using publicly available data (like the US Census), or using a custom
      * statistical model (indicated as one or several BigQuery tables), or by
      * extrapolating from the distribution of values in the input dataset.
-     * A column with a semantic tag attached.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -8621,7 +8845,7 @@ private static final long serialVersionUID = 0L;
 
         if (auxiliaryTablesBuilder_ == null) {
           auxiliaryTables_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           auxiliaryTablesBuilder_.clear();
         }
@@ -8652,7 +8876,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig buildPartial() {
         com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -8664,15 +8887,14 @@ private static final long serialVersionUID = 0L;
         }
         result.regionCode_ = regionCode_;
         if (auxiliaryTablesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.auxiliaryTables_ = auxiliaryTables_;
         } else {
           result.auxiliaryTables_ = auxiliaryTablesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -8755,7 +8977,7 @@ private static final long serialVersionUID = 0L;
           if (!other.auxiliaryTables_.isEmpty()) {
             if (auxiliaryTables_.isEmpty()) {
               auxiliaryTables_ = other.auxiliaryTables_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAuxiliaryTablesIsMutable();
               auxiliaryTables_.addAll(other.auxiliaryTables_);
@@ -8768,7 +8990,7 @@ private static final long serialVersionUID = 0L;
               auxiliaryTablesBuilder_.dispose();
               auxiliaryTablesBuilder_ = null;
               auxiliaryTables_ = other.auxiliaryTables_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               auxiliaryTablesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAuxiliaryTablesFieldBuilder() : null;
@@ -8821,11 +9043,11 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> getQuasiIdsList() {
         if (quasiIdsBuilder_ == null) {
@@ -8836,11 +9058,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getQuasiIdsCount() {
         if (quasiIdsBuilder_ == null) {
@@ -8851,11 +9073,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -8866,11 +9088,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setQuasiIds(
           int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
@@ -8888,11 +9110,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setQuasiIds(
           int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
@@ -8907,11 +9129,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
         if (quasiIdsBuilder_ == null) {
@@ -8928,11 +9150,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
@@ -8950,11 +9172,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
@@ -8969,11 +9191,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
@@ -8988,11 +9210,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addAllQuasiIds(
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> values) {
@@ -9008,11 +9230,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearQuasiIds() {
         if (quasiIdsBuilder_ == null) {
@@ -9026,11 +9248,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder removeQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -9044,11 +9266,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder getQuasiIdsBuilder(
           int index) {
@@ -9056,11 +9278,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
           int index) {
@@ -9071,11 +9293,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
            getQuasiIdsOrBuilderList() {
@@ -9087,11 +9309,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder addQuasiIdsBuilder() {
         return getQuasiIdsFieldBuilder().addBuilder(
@@ -9099,11 +9321,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder addQuasiIdsBuilder(
           int index) {
@@ -9112,11 +9334,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder> 
            getQuasiIdsBuilderList() {
@@ -9141,11 +9363,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return The regionCode.
        */
       public java.lang.String getRegionCode() {
         java.lang.Object ref = regionCode_;
@@ -9162,11 +9385,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return The bytes for regionCode.
        */
       public com.google.protobuf.ByteString
           getRegionCodeBytes() {
@@ -9184,11 +9408,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @param value The regionCode to set.
+       * @return This builder for chaining.
        */
       public Builder setRegionCode(
           java.lang.String value) {
@@ -9203,11 +9429,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRegionCode() {
         
@@ -9218,11 +9445,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @param value The bytes for regionCode to set.
+       * @return This builder for chaining.
        */
       public Builder setRegionCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -9239,9 +9468,9 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> auxiliaryTables_ =
         java.util.Collections.emptyList();
       private void ensureAuxiliaryTablesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>(auxiliaryTables_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -9457,7 +9686,7 @@ private static final long serialVersionUID = 0L;
       public Builder clearAuxiliaryTables() {
         if (auxiliaryTablesBuilder_ == null) {
           auxiliaryTables_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           auxiliaryTablesBuilder_.clear();
@@ -9576,7 +9805,7 @@ private static final long serialVersionUID = 0L;
           auxiliaryTablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder>(
                   auxiliaryTables_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           auxiliaryTables_ = null;
@@ -9642,49 +9871,49 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<com.google.privacy.dlp.v2.QuasiId> 
         getQuasiIdsList();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index);
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     int getQuasiIdsCount();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
         getQuasiIdsOrBuilderList();
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
         int index);
@@ -9692,21 +9921,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The regionCode.
      */
     java.lang.String getRegionCode();
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The bytes for regionCode.
      */
     com.google.protobuf.ByteString
         getRegionCodeBytes();
@@ -9791,6 +10022,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeltaPresenceEstimationConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -9830,9 +10068,9 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               auxiliaryTables_.add(
                   input.readMessage(com.google.privacy.dlp.v2.StatisticalTable.parser(), extensionRegistry));
@@ -9856,7 +10094,7 @@ private static final long serialVersionUID = 0L;
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
         }
         this.unknownFields = unknownFields.build();
@@ -9876,27 +10114,26 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
     }
 
-    private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.QuasiId> quasiIds_;
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
       return quasiIds_;
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
         getQuasiIdsOrBuilderList() {
@@ -9904,33 +10141,33 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
       return quasiIds_.get(index);
     }
     /**
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
         int index) {
@@ -9942,11 +10179,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The regionCode.
      */
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
@@ -9963,11 +10201,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The bytes for regionCode.
      */
     public com.google.protobuf.ByteString
         getRegionCodeBytes() {
@@ -10285,7 +10524,7 @@ private static final long serialVersionUID = 0L;
 
         if (auxiliaryTablesBuilder_ == null) {
           auxiliaryTables_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           auxiliaryTablesBuilder_.clear();
         }
@@ -10316,7 +10555,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig buildPartial() {
         com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -10328,15 +10566,14 @@ private static final long serialVersionUID = 0L;
         }
         result.regionCode_ = regionCode_;
         if (auxiliaryTablesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.auxiliaryTables_ = auxiliaryTables_;
         } else {
           result.auxiliaryTables_ = auxiliaryTablesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -10419,7 +10656,7 @@ private static final long serialVersionUID = 0L;
           if (!other.auxiliaryTables_.isEmpty()) {
             if (auxiliaryTables_.isEmpty()) {
               auxiliaryTables_ = other.auxiliaryTables_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAuxiliaryTablesIsMutable();
               auxiliaryTables_.addAll(other.auxiliaryTables_);
@@ -10432,7 +10669,7 @@ private static final long serialVersionUID = 0L;
               auxiliaryTablesBuilder_.dispose();
               auxiliaryTablesBuilder_ = null;
               auxiliaryTables_ = other.auxiliaryTables_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               auxiliaryTablesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAuxiliaryTablesFieldBuilder() : null;
@@ -10485,11 +10722,11 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
         if (quasiIdsBuilder_ == null) {
@@ -10500,11 +10737,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getQuasiIdsCount() {
         if (quasiIdsBuilder_ == null) {
@@ -10515,11 +10752,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -10530,11 +10767,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId value) {
@@ -10552,11 +10789,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
@@ -10571,11 +10808,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
@@ -10592,11 +10829,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId value) {
@@ -10614,11 +10851,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
@@ -10633,11 +10870,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
@@ -10652,11 +10889,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addAllQuasiIds(
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.QuasiId> values) {
@@ -10672,11 +10909,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearQuasiIds() {
         if (quasiIdsBuilder_ == null) {
@@ -10690,11 +10927,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder removeQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -10708,11 +10945,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder getQuasiIdsBuilder(
           int index) {
@@ -10720,11 +10957,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
           int index) {
@@ -10735,11 +10972,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
            getQuasiIdsOrBuilderList() {
@@ -10751,11 +10988,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder() {
         return getQuasiIdsFieldBuilder().addBuilder(
@@ -10763,11 +11000,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder(
           int index) {
@@ -10776,11 +11013,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.privacy.dlp.v2.QuasiId.Builder> 
            getQuasiIdsBuilderList() {
@@ -10805,11 +11042,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return The regionCode.
        */
       public java.lang.String getRegionCode() {
         java.lang.Object ref = regionCode_;
@@ -10826,11 +11064,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return The bytes for regionCode.
        */
       public com.google.protobuf.ByteString
           getRegionCodeBytes() {
@@ -10848,11 +11087,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @param value The regionCode to set.
+       * @return This builder for chaining.
        */
       public Builder setRegionCode(
           java.lang.String value) {
@@ -10867,11 +11108,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRegionCode() {
         
@@ -10882,11 +11124,13 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
        * <code>string region_code = 2;</code>
+       * @param value The bytes for regionCode to set.
+       * @return This builder for chaining.
        */
       public Builder setRegionCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -10903,9 +11147,9 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.privacy.dlp.v2.StatisticalTable> auxiliaryTables_ =
         java.util.Collections.emptyList();
       private void ensureAuxiliaryTablesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>(auxiliaryTables_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -11121,7 +11365,7 @@ private static final long serialVersionUID = 0L;
       public Builder clearAuxiliaryTables() {
         if (auxiliaryTablesBuilder_ == null) {
           auxiliaryTables_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           auxiliaryTablesBuilder_.clear();
@@ -11240,7 +11484,7 @@ private static final long serialVersionUID = 0L;
           auxiliaryTablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder>(
                   auxiliaryTables_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           auxiliaryTables_ = null;
@@ -11303,7 +11547,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     NUMERICAL_STATS_CONFIG(1),
     CATEGORICAL_STATS_CONFIG(2),
     K_ANONYMITY_CONFIG(3),
@@ -11316,6 +11561,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -11348,13 +11595,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int NUMERICAL_STATS_CONFIG_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+   * @return Whether the numericalStatsConfig field is set.
    */
   public boolean hasNumericalStatsConfig() {
     return typeCase_ == 1;
   }
   /**
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+   * @return The numericalStatsConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
     if (typeCase_ == 1) {
@@ -11363,6 +11620,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder getNumericalStatsConfigOrBuilder() {
@@ -11374,13 +11635,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int CATEGORICAL_STATS_CONFIG_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+   * @return Whether the categoricalStatsConfig field is set.
    */
   public boolean hasCategoricalStatsConfig() {
     return typeCase_ == 2;
   }
   /**
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+   * @return The categoricalStatsConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig() {
     if (typeCase_ == 2) {
@@ -11389,6 +11660,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder getCategoricalStatsConfigOrBuilder() {
@@ -11400,13 +11675,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int K_ANONYMITY_CONFIG_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   * @return Whether the kAnonymityConfig field is set.
    */
   public boolean hasKAnonymityConfig() {
     return typeCase_ == 3;
   }
   /**
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   * @return The kAnonymityConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig() {
     if (typeCase_ == 3) {
@@ -11415,6 +11700,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder() {
@@ -11426,13 +11715,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int L_DIVERSITY_CONFIG_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   * @return Whether the lDiversityConfig field is set.
    */
   public boolean hasLDiversityConfig() {
     return typeCase_ == 4;
   }
   /**
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   * @return The lDiversityConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig() {
     if (typeCase_ == 4) {
@@ -11441,6 +11740,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder() {
@@ -11452,13 +11755,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int K_MAP_ESTIMATION_CONFIG_FIELD_NUMBER = 5;
   /**
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+   * @return Whether the kMapEstimationConfig field is set.
    */
   public boolean hasKMapEstimationConfig() {
     return typeCase_ == 5;
   }
   /**
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+   * @return The kMapEstimationConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
     if (typeCase_ == 5) {
@@ -11467,6 +11780,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder getKMapEstimationConfigOrBuilder() {
@@ -11478,13 +11795,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int DELTA_PRESENCE_ESTIMATION_CONFIG_FIELD_NUMBER = 6;
   /**
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   * @return Whether the deltaPresenceEstimationConfig field is set.
    */
   public boolean hasDeltaPresenceEstimationConfig() {
     return typeCase_ == 6;
   }
   /**
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   * @return The deltaPresenceEstimationConfig.
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
     if (typeCase_ == 6) {
@@ -11493,6 +11820,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
@@ -11982,13 +12313,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder> numericalStatsConfigBuilder_;
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * @return Whether the numericalStatsConfig field is set.
      */
     public boolean hasNumericalStatsConfig() {
       return typeCase_ == 1;
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * @return The numericalStatsConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
       if (numericalStatsConfigBuilder_ == null) {
@@ -12004,6 +12345,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public Builder setNumericalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
@@ -12020,6 +12365,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public Builder setNumericalStatsConfig(
@@ -12034,6 +12383,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public Builder mergeNumericalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
@@ -12056,6 +12409,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public Builder clearNumericalStatsConfig() {
@@ -12075,12 +12432,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder getNumericalStatsConfigBuilder() {
       return getNumericalStatsConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder getNumericalStatsConfigOrBuilder() {
@@ -12094,6 +12459,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12118,13 +12487,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder> categoricalStatsConfigBuilder_;
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * @return Whether the categoricalStatsConfig field is set.
      */
     public boolean hasCategoricalStatsConfig() {
       return typeCase_ == 2;
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * @return The categoricalStatsConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig() {
       if (categoricalStatsConfigBuilder_ == null) {
@@ -12140,6 +12519,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public Builder setCategoricalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
@@ -12156,6 +12539,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public Builder setCategoricalStatsConfig(
@@ -12170,6 +12557,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public Builder mergeCategoricalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
@@ -12192,6 +12583,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public Builder clearCategoricalStatsConfig() {
@@ -12211,12 +12606,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder getCategoricalStatsConfigBuilder() {
       return getCategoricalStatsConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder getCategoricalStatsConfigOrBuilder() {
@@ -12230,6 +12633,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12254,13 +12661,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder> kAnonymityConfigBuilder_;
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+     * @return Whether the kAnonymityConfig field is set.
      */
     public boolean hasKAnonymityConfig() {
       return typeCase_ == 3;
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+     * @return The kAnonymityConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig() {
       if (kAnonymityConfigBuilder_ == null) {
@@ -12276,6 +12693,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder setKAnonymityConfig(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
@@ -12292,6 +12713,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder setKAnonymityConfig(
@@ -12306,6 +12731,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder mergeKAnonymityConfig(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
@@ -12328,6 +12757,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder clearKAnonymityConfig() {
@@ -12347,12 +12780,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder getKAnonymityConfigBuilder() {
       return getKAnonymityConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder() {
@@ -12366,6 +12807,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12390,13 +12835,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder> lDiversityConfigBuilder_;
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+     * @return Whether the lDiversityConfig field is set.
      */
     public boolean hasLDiversityConfig() {
       return typeCase_ == 4;
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+     * @return The lDiversityConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig() {
       if (lDiversityConfigBuilder_ == null) {
@@ -12412,6 +12867,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder setLDiversityConfig(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
@@ -12428,6 +12887,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder setLDiversityConfig(
@@ -12442,6 +12905,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder mergeLDiversityConfig(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
@@ -12464,6 +12931,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder clearLDiversityConfig() {
@@ -12483,12 +12954,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder getLDiversityConfigBuilder() {
       return getLDiversityConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder() {
@@ -12502,6 +12981,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12526,13 +13009,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder> kMapEstimationConfigBuilder_;
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * @return Whether the kMapEstimationConfig field is set.
      */
     public boolean hasKMapEstimationConfig() {
       return typeCase_ == 5;
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * @return The kMapEstimationConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
       if (kMapEstimationConfigBuilder_ == null) {
@@ -12548,6 +13041,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public Builder setKMapEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
@@ -12564,6 +13061,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public Builder setKMapEstimationConfig(
@@ -12578,6 +13079,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public Builder mergeKMapEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
@@ -12600,6 +13105,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public Builder clearKMapEstimationConfig() {
@@ -12619,12 +13128,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder getKMapEstimationConfigBuilder() {
       return getKMapEstimationConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder getKMapEstimationConfigOrBuilder() {
@@ -12638,6 +13155,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12662,13 +13183,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder> deltaPresenceEstimationConfigBuilder_;
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * @return Whether the deltaPresenceEstimationConfig field is set.
      */
     public boolean hasDeltaPresenceEstimationConfig() {
       return typeCase_ == 6;
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * @return The deltaPresenceEstimationConfig.
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
@@ -12684,6 +13215,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public Builder setDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
@@ -12700,6 +13235,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public Builder setDeltaPresenceEstimationConfig(
@@ -12714,6 +13253,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public Builder mergeDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
@@ -12736,6 +13279,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public Builder clearDeltaPresenceEstimationConfig() {
@@ -12755,12 +13302,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder getDeltaPresenceEstimationConfigBuilder() {
       return getDeltaPresenceEstimationConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
@@ -12774,6 +13329,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

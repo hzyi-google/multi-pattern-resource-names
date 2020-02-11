@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Key();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -64,9 +71,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               path_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Key.PathElement>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             path_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Key.PathElement.parser(), extensionRegistry));
@@ -87,7 +94,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         path_ = java.util.Collections.unmodifiableList(path_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,6 +127,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kind = 1;</code>
+     * @return The kind.
      */
     java.lang.String getKind();
     /**
@@ -131,6 +139,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kind = 1;</code>
+     * @return The bytes for kind.
      */
     com.google.protobuf.ByteString
         getKindBytes();
@@ -143,6 +152,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 id = 2;</code>
+     * @return The id.
      */
     long getId();
 
@@ -155,6 +165,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 3;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -166,6 +177,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 3;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -195,6 +207,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PathElement();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -207,7 +226,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -270,7 +288,8 @@ private static final long serialVersionUID = 0L;
     private int idTypeCase_ = 0;
     private java.lang.Object idType_;
     public enum IdTypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ID(2),
       NAME(3),
       IDTYPE_NOT_SET(0);
@@ -279,6 +298,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -316,6 +337,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kind = 1;</code>
+     * @return The kind.
      */
     public java.lang.String getKind() {
       java.lang.Object ref = kind_;
@@ -338,6 +360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string kind = 1;</code>
+     * @return The bytes for kind.
      */
     public com.google.protobuf.ByteString
         getKindBytes() {
@@ -362,6 +385,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 id = 2;</code>
+     * @return The id.
      */
     public long getId() {
       if (idTypeCase_ == 2) {
@@ -380,6 +404,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 3;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = "";
@@ -407,6 +432,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 3;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -825,6 +851,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string kind = 1;</code>
+       * @return The kind.
        */
       public java.lang.String getKind() {
         java.lang.Object ref = kind_;
@@ -847,6 +874,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string kind = 1;</code>
+       * @return The bytes for kind.
        */
       public com.google.protobuf.ByteString
           getKindBytes() {
@@ -870,6 +898,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string kind = 1;</code>
+       * @param value The kind to set.
+       * @return This builder for chaining.
        */
       public Builder setKind(
           java.lang.String value) {
@@ -890,6 +920,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string kind = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKind() {
         
@@ -906,6 +937,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string kind = 1;</code>
+       * @param value The bytes for kind to set.
+       * @return This builder for chaining.
        */
       public Builder setKindBytes(
           com.google.protobuf.ByteString value) {
@@ -927,6 +960,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 id = 2;</code>
+       * @return The id.
        */
       public long getId() {
         if (idTypeCase_ == 2) {
@@ -942,6 +976,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 id = 2;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         idTypeCase_ = 2;
@@ -957,6 +993,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         if (idTypeCase_ == 2) {
@@ -976,6 +1013,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string name = 3;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = "";
@@ -1003,6 +1041,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string name = 3;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1031,6 +1070,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string name = 3;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1051,6 +1092,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string name = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         if (idTypeCase_ == 3) {
@@ -1069,6 +1111,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1134,7 +1178,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int PARTITION_ID_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.PartitionId partitionId_;
   /**
@@ -1145,6 +1188,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   * @return Whether the partitionId field is set.
    */
   public boolean hasPartitionId() {
     return partitionId_ != null;
@@ -1157,6 +1201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+   * @return The partitionId.
    */
   public com.google.privacy.dlp.v2.PartitionId getPartitionId() {
     return partitionId_ == null ? com.google.privacy.dlp.v2.PartitionId.getDefaultInstance() : partitionId_;
@@ -1491,7 +1536,7 @@ private static final long serialVersionUID = 0L;
       }
       if (pathBuilder_ == null) {
         path_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         pathBuilder_.clear();
       }
@@ -1522,22 +1567,20 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.Key buildPartial() {
       com.google.privacy.dlp.v2.Key result = new com.google.privacy.dlp.v2.Key(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (partitionIdBuilder_ == null) {
         result.partitionId_ = partitionId_;
       } else {
         result.partitionId_ = partitionIdBuilder_.build();
       }
       if (pathBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           path_ = java.util.Collections.unmodifiableList(path_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.path_ = path_;
       } else {
         result.path_ = pathBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1593,7 +1636,7 @@ private static final long serialVersionUID = 0L;
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePathIsMutable();
             path_.addAll(other.path_);
@@ -1606,7 +1649,7 @@ private static final long serialVersionUID = 0L;
             pathBuilder_.dispose();
             pathBuilder_ = null;
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             pathBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPathFieldBuilder() : null;
@@ -1656,6 +1699,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+     * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
       return partitionIdBuilder_ != null || partitionId_ != null;
@@ -1668,6 +1712,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
+     * @return The partitionId.
      */
     public com.google.privacy.dlp.v2.PartitionId getPartitionId() {
       if (partitionIdBuilder_ == null) {
@@ -1819,9 +1864,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Key.PathElement> path_ =
       java.util.Collections.emptyList();
     private void ensurePathIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         path_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Key.PathElement>(path_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2092,7 +2137,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPath() {
       if (pathBuilder_ == null) {
         path_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         pathBuilder_.clear();
@@ -2246,7 +2291,7 @@ private static final long serialVersionUID = 0L;
         pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Key.PathElement, com.google.privacy.dlp.v2.Key.PathElement.Builder, com.google.privacy.dlp.v2.Key.PathElementOrBuilder>(
                 path_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         path_ = null;

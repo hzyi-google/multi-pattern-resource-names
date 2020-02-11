@@ -14,6 +14,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -23,6 +24,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -35,6 +37,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>string producer = 2;</code>
+   * @return The producer.
    */
   java.lang.String getProducer();
   /**
@@ -45,6 +48,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>string producer = 2;</code>
+   * @return The bytes for producer.
    */
   com.google.protobuf.ByteString
       getProducerBytes();
@@ -55,6 +59,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>bool first = 3;</code>
+   * @return The first.
    */
   boolean getFirst();
 
@@ -64,6 +69,7 @@ public interface LogEntryOperationOrBuilder extends
    * </pre>
    *
    * <code>bool last = 4;</code>
+   * @return The last.
    */
   boolean getLast();
 }

@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
+   * @return The provenance.
    */
   io.grafeas.v1beta1.provenance.BuildProvenance getProvenance();
   /**
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -35,7 +37,7 @@ public interface DetailsOrBuilder extends
   /**
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order
@@ -47,12 +49,13 @@ public interface DetailsOrBuilder extends
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   * @return The provenanceBytes.
    */
   java.lang.String getProvenanceBytes();
   /**
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order
@@ -64,6 +67,7 @@ public interface DetailsOrBuilder extends
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   * @return The bytes for provenanceBytes.
    */
   com.google.protobuf.ByteString
       getProvenanceBytesBytes();

@@ -24,6 +24,7 @@ public interface OutputStorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   * @return Whether the table field is set.
    */
   boolean hasTable();
   /**
@@ -43,6 +44,7 @@ public interface OutputStorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
   /**
@@ -78,6 +80,7 @@ public interface OutputStorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   * @return The enum numeric value on the wire for outputSchema.
    */
   int getOutputSchemaValue();
   /**
@@ -93,6 +96,7 @@ public interface OutputStorageConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   * @return The outputSchema.
    */
   com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema();
 

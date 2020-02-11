@@ -16,6 +16,7 @@ public interface CharacterMaskConfigOrBuilder extends
    * </pre>
    *
    * <code>string masking_character = 1;</code>
+   * @return The maskingCharacter.
    */
   java.lang.String getMaskingCharacter();
   /**
@@ -27,6 +28,7 @@ public interface CharacterMaskConfigOrBuilder extends
    * </pre>
    *
    * <code>string masking_character = 1;</code>
+   * @return The bytes for maskingCharacter.
    */
   com.google.protobuf.ByteString
       getMaskingCharacterBytes();
@@ -38,6 +40,7 @@ public interface CharacterMaskConfigOrBuilder extends
    * </pre>
    *
    * <code>int32 number_to_mask = 2;</code>
+   * @return The numberToMask.
    */
   int getNumberToMask();
 
@@ -51,6 +54,7 @@ public interface CharacterMaskConfigOrBuilder extends
    * </pre>
    *
    * <code>bool reverse_order = 3;</code>
+   * @return The reverseOrder.
    */
   boolean getReverseOrder();
 

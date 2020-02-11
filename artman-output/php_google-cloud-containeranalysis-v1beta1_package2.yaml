@@ -1,0 +1,9 @@
+api_name: containeranalysis
+api_version: v1beta1
+artifact_type: GAPIC
+organization_name: google-cloud
+proto_deps:
+- name: google-common-protos
+- name: google-iam-v1
+proto_path: google/devtools/containeranalysis/v1beta1
+release_level: null

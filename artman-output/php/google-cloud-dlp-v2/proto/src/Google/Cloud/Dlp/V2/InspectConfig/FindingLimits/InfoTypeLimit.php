@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit</code>
  */
-final class InfoTypeLimit extends \Google\Protobuf\Internal\Message
+class InfoTypeLimit extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of information the findings limit applies to. Only one limit per
@@ -24,13 +24,13 @@ final class InfoTypeLimit extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
-    private $info_type = null;
+    protected $info_type = null;
     /**
      * Max findings limit for the given infoType.
      *
      * Generated from protobuf field <code>int32 max_findings = 2;</code>
      */
-    private $max_findings = 0;
+    protected $max_findings = 0;
 
     /**
      * Constructor.

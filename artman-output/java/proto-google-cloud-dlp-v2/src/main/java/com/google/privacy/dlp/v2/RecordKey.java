@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RecordKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -77,9 +84,9 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               idValues_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             idValues_.add(s);
             break;
@@ -99,7 +106,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         idValues_ = idValues_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -119,11 +126,11 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.RecordKey.class, com.google.privacy.dlp.v2.RecordKey.Builder.class);
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATASTORE_KEY(2),
     BIG_QUERY_KEY(3),
     TYPE_NOT_SET(0);
@@ -132,6 +139,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -161,12 +170,14 @@ private static final long serialVersionUID = 0L;
   public static final int DATASTORE_KEY_FIELD_NUMBER = 2;
   /**
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   * @return Whether the datastoreKey field is set.
    */
   public boolean hasDatastoreKey() {
     return typeCase_ == 2;
   }
   /**
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   * @return The datastoreKey.
    */
   public com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey() {
     if (typeCase_ == 2) {
@@ -187,12 +198,14 @@ private static final long serialVersionUID = 0L;
   public static final int BIG_QUERY_KEY_FIELD_NUMBER = 3;
   /**
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   * @return Whether the bigQueryKey field is set.
    */
   public boolean hasBigQueryKey() {
     return typeCase_ == 3;
   }
   /**
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   * @return The bigQueryKey.
    */
   public com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey() {
     if (typeCase_ == 3) {
@@ -219,6 +232,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @return A list containing the idValues.
    */
   public com.google.protobuf.ProtocolStringList
       getIdValuesList() {
@@ -231,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @return The count of idValues.
    */
   public int getIdValuesCount() {
     return idValues_.size();
@@ -242,6 +257,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @param index The index of the element to return.
+   * @return The idValues at the given index.
    */
   public java.lang.String getIdValues(int index) {
     return idValues_.get(index);
@@ -253,6 +270,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string id_values = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the idValues at the given index.
    */
   public com.google.protobuf.ByteString
       getIdValuesBytes(int index) {
@@ -502,7 +521,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -532,7 +551,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.RecordKey buildPartial() {
       com.google.privacy.dlp.v2.RecordKey result = new com.google.privacy.dlp.v2.RecordKey(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (typeCase_ == 2) {
         if (datastoreKeyBuilder_ == null) {
           result.type_ = type_;
@@ -547,12 +565,11 @@ private static final long serialVersionUID = 0L;
           result.type_ = bigQueryKeyBuilder_.build();
         }
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         idValues_ = idValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.idValues_ = idValues_;
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -605,7 +622,7 @@ private static final long serialVersionUID = 0L;
       if (!other.idValues_.isEmpty()) {
         if (idValues_.isEmpty()) {
           idValues_ = other.idValues_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureIdValuesIsMutable();
           idValues_.addAll(other.idValues_);
@@ -674,12 +691,14 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.DatastoreKey, com.google.privacy.dlp.v2.DatastoreKey.Builder, com.google.privacy.dlp.v2.DatastoreKeyOrBuilder> datastoreKeyBuilder_;
     /**
      * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     * @return Whether the datastoreKey field is set.
      */
     public boolean hasDatastoreKey() {
       return typeCase_ == 2;
     }
     /**
      * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     * @return The datastoreKey.
      */
     public com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey() {
       if (datastoreKeyBuilder_ == null) {
@@ -810,12 +829,14 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.BigQueryKey, com.google.privacy.dlp.v2.BigQueryKey.Builder, com.google.privacy.dlp.v2.BigQueryKeyOrBuilder> bigQueryKeyBuilder_;
     /**
      * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     * @return Whether the bigQueryKey field is set.
      */
     public boolean hasBigQueryKey() {
       return typeCase_ == 3;
     }
     /**
      * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     * @return The bigQueryKey.
      */
     public com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey() {
       if (bigQueryKeyBuilder_ == null) {
@@ -944,9 +965,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureIdValuesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         idValues_ = new com.google.protobuf.LazyStringArrayList(idValues_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -956,6 +977,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @return A list containing the idValues.
      */
     public com.google.protobuf.ProtocolStringList
         getIdValuesList() {
@@ -968,6 +990,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @return The count of idValues.
      */
     public int getIdValuesCount() {
       return idValues_.size();
@@ -979,6 +1002,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param index The index of the element to return.
+     * @return The idValues at the given index.
      */
     public java.lang.String getIdValues(int index) {
       return idValues_.get(index);
@@ -990,6 +1015,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the idValues at the given index.
      */
     public com.google.protobuf.ByteString
         getIdValuesBytes(int index) {
@@ -1002,6 +1029,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The idValues to set.
+     * @return This builder for chaining.
      */
     public Builder setIdValues(
         int index, java.lang.String value) {
@@ -1020,6 +1050,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param value The idValues to add.
+     * @return This builder for chaining.
      */
     public Builder addIdValues(
         java.lang.String value) {
@@ -1038,6 +1070,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param values The idValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIdValues(
         java.lang.Iterable<java.lang.String> values) {
@@ -1054,10 +1088,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIdValues() {
       idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1068,6 +1103,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string id_values = 5;</code>
+     * @param value The bytes of the idValues to add.
+     * @return This builder for chaining.
      */
     public Builder addIdValuesBytes(
         com.google.protobuf.ByteString value) {

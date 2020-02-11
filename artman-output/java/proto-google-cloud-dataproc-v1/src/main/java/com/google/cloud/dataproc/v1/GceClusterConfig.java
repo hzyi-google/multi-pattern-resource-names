@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GceClusterConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -67,27 +74,27 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             serviceAccountScopes_.add(s);
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               tags_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000002;
             }
             tags_.add(s);
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               metadata_ = com.google.protobuf.MapField.newMapField(
                   MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000004;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             metadata__ = input.readMessage(
@@ -128,10 +135,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -163,14 +170,13 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.GceClusterConfig.class, com.google.cloud.dataproc.v1.GceClusterConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ZONE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object zoneUri_;
   /**
    * <pre>
    * Optional. The zone where the Compute Engine cluster will be located.
    * On a create request, it is required in the "global" region. If omitted
-   * in a non-global Cloud Dataproc region, the service will pick a zone in the
+   * in a non-global Dataproc region, the service will pick a zone in the
    * corresponding Compute Engine region. On a get request, zone will
    * always be present.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -180,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The zoneUri.
    */
   public java.lang.String getZoneUri() {
     java.lang.Object ref = zoneUri_;
@@ -197,7 +204,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The zone where the Compute Engine cluster will be located.
    * On a create request, it is required in the "global" region. If omitted
-   * in a non-global Cloud Dataproc region, the service will pick a zone in the
+   * in a non-global Dataproc region, the service will pick a zone in the
    * corresponding Compute Engine region. On a get request, zone will
    * always be present.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -207,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for zoneUri.
    */
   public com.google.protobuf.ByteString
       getZoneUriBytes() {
@@ -238,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The networkUri.
    */
   public java.lang.String getNetworkUri() {
     java.lang.Object ref = networkUri_;
@@ -265,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for networkUri.
    */
   public com.google.protobuf.ByteString
       getNetworkUriBytes() {
@@ -293,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The subnetworkUri.
    */
   public java.lang.String getSubnetworkUri() {
     java.lang.Object ref = subnetworkUri_;
@@ -317,6 +328,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for subnetworkUri.
    */
   public com.google.protobuf.ByteString
       getSubnetworkUriBytes() {
@@ -345,6 +357,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The internalIpOnly.
    */
   public boolean getInternalIpOnly() {
     return internalIpOnly_;
@@ -354,18 +367,20 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object serviceAccount_;
   /**
    * <pre>
-   * Optional. The service account of the instances. Defaults to the default
-   * Compute Engine service account. Custom service accounts need
-   * permissions equivalent to the following IAM roles:
-   * * roles/logging.logWriter
-   * * roles/storage.objectAdmin
-   * (see
-   * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-   * for more information).
-   * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+   * Optional. The [Dataproc service
+   * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * (also see [VM Data Plane
+   * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+   * used by Dataproc cluster VM instances to access Google Cloud Platform
+   * services.
+   * If not specified, the
+   * [Compute Engine default service
+   * account](/compute/docs/access/service-accounts#default_service_account)
+   * is used.
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The serviceAccount.
    */
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
@@ -381,18 +396,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The service account of the instances. Defaults to the default
-   * Compute Engine service account. Custom service accounts need
-   * permissions equivalent to the following IAM roles:
-   * * roles/logging.logWriter
-   * * roles/storage.objectAdmin
-   * (see
-   * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-   * for more information).
-   * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+   * Optional. The [Dataproc service
+   * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * (also see [VM Data Plane
+   * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+   * used by Dataproc cluster VM instances to access Google Cloud Platform
+   * services.
+   * If not specified, the
+   * [Compute Engine default service
+   * account](/compute/docs/access/service-accounts#default_service_account)
+   * is used.
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for serviceAccount.
    */
   public com.google.protobuf.ByteString
       getServiceAccountBytes() {
@@ -426,6 +443,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the serviceAccountScopes.
    */
   public com.google.protobuf.ProtocolStringList
       getServiceAccountScopesList() {
@@ -447,6 +465,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of serviceAccountScopes.
    */
   public int getServiceAccountScopesCount() {
     return serviceAccountScopes_.size();
@@ -467,6 +486,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The serviceAccountScopes at the given index.
    */
   public java.lang.String getServiceAccountScopes(int index) {
     return serviceAccountScopes_.get(index);
@@ -487,6 +508,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the serviceAccountScopes at the given index.
    */
   public com.google.protobuf.ByteString
       getServiceAccountScopesBytes(int index) {
@@ -502,6 +525,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @return A list containing the tags.
    */
   public com.google.protobuf.ProtocolStringList
       getTagsList() {
@@ -514,6 +538,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @return The count of tags.
    */
   public int getTagsCount() {
     return tags_.size();
@@ -525,6 +550,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   public java.lang.String getTags(int index) {
     return tags_.get(index);
@@ -536,6 +563,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   public com.google.protobuf.ByteString
       getTagsBytes(int index) {
@@ -970,9 +999,9 @@ private static final long serialVersionUID = 0L;
       serviceAccount_ = "";
 
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableMetadata().clear();
       return this;
     }
@@ -1001,25 +1030,23 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.GceClusterConfig buildPartial() {
       com.google.cloud.dataproc.v1.GceClusterConfig result = new com.google.cloud.dataproc.v1.GceClusterConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.zoneUri_ = zoneUri_;
       result.networkUri_ = networkUri_;
       result.subnetworkUri_ = subnetworkUri_;
       result.internalIpOnly_ = internalIpOnly_;
       result.serviceAccount_ = serviceAccount_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.serviceAccountScopes_ = serviceAccountScopes_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.tags_ = tags_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1090,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       if (!other.serviceAccountScopes_.isEmpty()) {
         if (serviceAccountScopes_.isEmpty()) {
           serviceAccountScopes_ = other.serviceAccountScopes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureServiceAccountScopesIsMutable();
           serviceAccountScopes_.addAll(other.serviceAccountScopes_);
@@ -1100,7 +1127,7 @@ private static final long serialVersionUID = 0L;
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1144,7 +1171,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
-     * in a non-global Cloud Dataproc region, the service will pick a zone in the
+     * in a non-global Dataproc region, the service will pick a zone in the
      * corresponding Compute Engine region. On a get request, zone will
      * always be present.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1154,6 +1181,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The zoneUri.
      */
     public java.lang.String getZoneUri() {
       java.lang.Object ref = zoneUri_;
@@ -1171,7 +1199,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
-     * in a non-global Cloud Dataproc region, the service will pick a zone in the
+     * in a non-global Dataproc region, the service will pick a zone in the
      * corresponding Compute Engine region. On a get request, zone will
      * always be present.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1181,6 +1209,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for zoneUri.
      */
     public com.google.protobuf.ByteString
         getZoneUriBytes() {
@@ -1199,7 +1228,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
-     * in a non-global Cloud Dataproc region, the service will pick a zone in the
+     * in a non-global Dataproc region, the service will pick a zone in the
      * corresponding Compute Engine region. On a get request, zone will
      * always be present.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1209,6 +1238,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The zoneUri to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneUri(
         java.lang.String value) {
@@ -1224,7 +1255,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
-     * in a non-global Cloud Dataproc region, the service will pick a zone in the
+     * in a non-global Dataproc region, the service will pick a zone in the
      * corresponding Compute Engine region. On a get request, zone will
      * always be present.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1234,6 +1265,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearZoneUri() {
       
@@ -1245,7 +1277,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
-     * in a non-global Cloud Dataproc region, the service will pick a zone in the
+     * in a non-global Dataproc region, the service will pick a zone in the
      * corresponding Compute Engine region. On a get request, zone will
      * always be present.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1255,6 +1287,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for zoneUri to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1283,6 +1317,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The networkUri.
      */
     public java.lang.String getNetworkUri() {
       java.lang.Object ref = networkUri_;
@@ -1310,6 +1345,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for networkUri.
      */
     public com.google.protobuf.ByteString
         getNetworkUriBytes() {
@@ -1338,6 +1374,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The networkUri to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkUri(
         java.lang.String value) {
@@ -1363,6 +1401,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNetworkUri() {
       
@@ -1384,6 +1423,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for networkUri to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1409,6 +1450,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The subnetworkUri.
      */
     public java.lang.String getSubnetworkUri() {
       java.lang.Object ref = subnetworkUri_;
@@ -1433,6 +1475,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for subnetworkUri.
      */
     public com.google.protobuf.ByteString
         getSubnetworkUriBytes() {
@@ -1458,6 +1501,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The subnetworkUri to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetworkUri(
         java.lang.String value) {
@@ -1480,6 +1525,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSubnetworkUri() {
       
@@ -1498,6 +1544,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for subnetworkUri to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetworkUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1523,6 +1571,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The internalIpOnly.
      */
     public boolean getInternalIpOnly() {
       return internalIpOnly_;
@@ -1538,6 +1587,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The internalIpOnly to set.
+     * @return This builder for chaining.
      */
     public Builder setInternalIpOnly(boolean value) {
       
@@ -1556,6 +1607,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearInternalIpOnly() {
       
@@ -1567,18 +1619,20 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object serviceAccount_ = "";
     /**
      * <pre>
-     * Optional. The service account of the instances. Defaults to the default
-     * Compute Engine service account. Custom service accounts need
-     * permissions equivalent to the following IAM roles:
-     * * roles/logging.logWriter
-     * * roles/storage.objectAdmin
-     * (see
-     * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-     * for more information).
-     * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+     * Optional. The [Dataproc service
+     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * (also see [VM Data Plane
+     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * used by Dataproc cluster VM instances to access Google Cloud Platform
+     * services.
+     * If not specified, the
+     * [Compute Engine default service
+     * account](/compute/docs/access/service-accounts#default_service_account)
+     * is used.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The serviceAccount.
      */
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
@@ -1594,18 +1648,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The service account of the instances. Defaults to the default
-     * Compute Engine service account. Custom service accounts need
-     * permissions equivalent to the following IAM roles:
-     * * roles/logging.logWriter
-     * * roles/storage.objectAdmin
-     * (see
-     * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-     * for more information).
-     * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+     * Optional. The [Dataproc service
+     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * (also see [VM Data Plane
+     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * used by Dataproc cluster VM instances to access Google Cloud Platform
+     * services.
+     * If not specified, the
+     * [Compute Engine default service
+     * account](/compute/docs/access/service-accounts#default_service_account)
+     * is used.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for serviceAccount.
      */
     public com.google.protobuf.ByteString
         getServiceAccountBytes() {
@@ -1622,18 +1678,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The service account of the instances. Defaults to the default
-     * Compute Engine service account. Custom service accounts need
-     * permissions equivalent to the following IAM roles:
-     * * roles/logging.logWriter
-     * * roles/storage.objectAdmin
-     * (see
-     * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-     * for more information).
-     * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+     * Optional. The [Dataproc service
+     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * (also see [VM Data Plane
+     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * used by Dataproc cluster VM instances to access Google Cloud Platform
+     * services.
+     * If not specified, the
+     * [Compute Engine default service
+     * account](/compute/docs/access/service-accounts#default_service_account)
+     * is used.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccount(
         java.lang.String value) {
@@ -1647,18 +1706,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The service account of the instances. Defaults to the default
-     * Compute Engine service account. Custom service accounts need
-     * permissions equivalent to the following IAM roles:
-     * * roles/logging.logWriter
-     * * roles/storage.objectAdmin
-     * (see
-     * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-     * for more information).
-     * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+     * Optional. The [Dataproc service
+     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * (also see [VM Data Plane
+     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * used by Dataproc cluster VM instances to access Google Cloud Platform
+     * services.
+     * If not specified, the
+     * [Compute Engine default service
+     * account](/compute/docs/access/service-accounts#default_service_account)
+     * is used.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
       
@@ -1668,18 +1729,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The service account of the instances. Defaults to the default
-     * Compute Engine service account. Custom service accounts need
-     * permissions equivalent to the following IAM roles:
-     * * roles/logging.logWriter
-     * * roles/storage.objectAdmin
-     * (see
-     * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
-     * for more information).
-     * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
+     * Optional. The [Dataproc service
+     * account](/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+     * (also see [VM Data Plane
+     * identity](/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
+     * used by Dataproc cluster VM instances to access Google Cloud Platform
+     * services.
+     * If not specified, the
+     * [Compute Engine default service
+     * account](/compute/docs/access/service-accounts#default_service_account)
+     * is used.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountBytes(
         com.google.protobuf.ByteString value) {
@@ -1695,9 +1759,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureServiceAccountScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1716,6 +1780,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the serviceAccountScopes.
      */
     public com.google.protobuf.ProtocolStringList
         getServiceAccountScopesList() {
@@ -1737,6 +1802,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of serviceAccountScopes.
      */
     public int getServiceAccountScopesCount() {
       return serviceAccountScopes_.size();
@@ -1757,6 +1823,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The serviceAccountScopes at the given index.
      */
     public java.lang.String getServiceAccountScopes(int index) {
       return serviceAccountScopes_.get(index);
@@ -1777,6 +1845,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the serviceAccountScopes at the given index.
      */
     public com.google.protobuf.ByteString
         getServiceAccountScopesBytes(int index) {
@@ -1798,6 +1868,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The serviceAccountScopes to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountScopes(
         int index, java.lang.String value) {
@@ -1825,6 +1898,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The serviceAccountScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addServiceAccountScopes(
         java.lang.String value) {
@@ -1852,6 +1927,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The serviceAccountScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllServiceAccountScopes(
         java.lang.Iterable<java.lang.String> values) {
@@ -1877,10 +1954,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountScopes() {
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1900,6 +1978,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the serviceAccountScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addServiceAccountScopesBytes(
         com.google.protobuf.ByteString value) {
@@ -1915,9 +1995,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1927,6 +2007,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -1939,6 +2020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
@@ -1950,6 +2032,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -1961,6 +2045,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -1973,6 +2059,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
      */
     public Builder setTags(
         int index, java.lang.String value) {
@@ -1991,6 +2080,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param value The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTags(
         java.lang.String value) {
@@ -2009,6 +2100,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param values The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTags(
         java.lang.Iterable<java.lang.String> values) {
@@ -2025,10 +2118,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2039,6 +2133,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string tags = 4;</code>
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTagsBytes(
         com.google.protobuf.ByteString value) {

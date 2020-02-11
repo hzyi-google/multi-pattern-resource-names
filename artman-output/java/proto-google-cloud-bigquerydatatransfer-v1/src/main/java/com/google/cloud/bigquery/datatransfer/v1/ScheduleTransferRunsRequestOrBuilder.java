@@ -15,6 +15,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -25,6 +26,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -36,6 +38,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -45,6 +48,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -64,6 +68,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -73,6 +78,7 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**

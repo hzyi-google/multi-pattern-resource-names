@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.deployment.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
      */
-    private $deployment = null;
+    protected $deployment = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Deployment\Deployment $deployment
-     *           Deployment history for the resource.
+     *           Required. Deployment history for the resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
      * @return \Grafeas\V1beta1\Deployment\Deployment
@@ -49,7 +49,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
      * @param \Grafeas\V1beta1\Deployment\Deployment $var

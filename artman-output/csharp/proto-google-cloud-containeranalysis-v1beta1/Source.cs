@@ -54,14 +54,14 @@ namespace Grafeas.V1Beta1.Source {
             "L3YxYmV0YTEvc291cmNlO3NvdXJjZaICA0dSQWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.SourceContext), global::Grafeas.V1Beta1.Source.SourceContext.Parser, new[]{ "CloudRepo", "Gerrit", "Git", "Labels" }, new[]{ "Context" }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.AliasContext), global::Grafeas.V1Beta1.Source.AliasContext.Parser, new[]{ "Kind", "Name" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.CloudRepoSourceContext), global::Grafeas.V1Beta1.Source.CloudRepoSourceContext.Parser, new[]{ "RepoId", "RevisionId", "AliasContext" }, new[]{ "Revision" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.GerritSourceContext), global::Grafeas.V1Beta1.Source.GerritSourceContext.Parser, new[]{ "HostUri", "GerritProject", "RevisionId", "AliasContext" }, new[]{ "Revision" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.GitSourceContext), global::Grafeas.V1Beta1.Source.GitSourceContext.Parser, new[]{ "Url", "RevisionId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.RepoId), global::Grafeas.V1Beta1.Source.RepoId.Parser, new[]{ "ProjectRepoId", "Uid" }, new[]{ "Id" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.ProjectRepoId), global::Grafeas.V1Beta1.Source.ProjectRepoId.Parser, new[]{ "ProjectId", "RepoName" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.SourceContext), global::Grafeas.V1Beta1.Source.SourceContext.Parser, new[]{ "CloudRepo", "Gerrit", "Git", "Labels" }, new[]{ "Context" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.AliasContext), global::Grafeas.V1Beta1.Source.AliasContext.Parser, new[]{ "Kind", "Name" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.CloudRepoSourceContext), global::Grafeas.V1Beta1.Source.CloudRepoSourceContext.Parser, new[]{ "RepoId", "RevisionId", "AliasContext" }, new[]{ "Revision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.GerritSourceContext), global::Grafeas.V1Beta1.Source.GerritSourceContext.Parser, new[]{ "HostUri", "GerritProject", "RevisionId", "AliasContext" }, new[]{ "Revision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.GitSourceContext), global::Grafeas.V1Beta1.Source.GitSourceContext.Parser, new[]{ "Url", "RevisionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.RepoId), global::Grafeas.V1Beta1.Source.RepoId.Parser, new[]{ "ProjectRepoId", "Uid" }, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Source.ProjectRepoId), global::Grafeas.V1Beta1.Source.ProjectRepoId.Parser, new[]{ "ProjectId", "RepoName" }, null, null, null, null)
           }));
     }
     #endregion
@@ -163,7 +163,7 @@ namespace Grafeas.V1Beta1.Source {
     /// <summary>Field number for the "labels" field.</summary>
     public const int LabelsFieldNumber = 4;
     private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Labels with user defined metadata.
@@ -387,7 +387,7 @@ namespace Grafeas.V1Beta1.Source {
 
     /// <summary>Field number for the "kind" field.</summary>
     public const int KindFieldNumber = 1;
-    private global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind kind_ = 0;
+    private global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind kind_ = global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind.Unspecified;
     /// <summary>
     /// The alias kind.
     /// </summary>
@@ -434,7 +434,7 @@ namespace Grafeas.V1Beta1.Source {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Kind != 0) hash ^= Kind.GetHashCode();
+      if (Kind != global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind.Unspecified) hash ^= Kind.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -449,7 +449,7 @@ namespace Grafeas.V1Beta1.Source {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Kind);
       }
@@ -465,7 +465,7 @@ namespace Grafeas.V1Beta1.Source {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Kind != 0) {
+      if (Kind != global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
       }
       if (Name.Length != 0) {
@@ -482,7 +482,7 @@ namespace Grafeas.V1Beta1.Source {
       if (other == null) {
         return;
       }
-      if (other.Kind != 0) {
+      if (other.Kind != global::Grafeas.V1Beta1.Source.AliasContext.Types.Kind.Unspecified) {
         Kind = other.Kind;
       }
       if (other.Name.Length != 0) {

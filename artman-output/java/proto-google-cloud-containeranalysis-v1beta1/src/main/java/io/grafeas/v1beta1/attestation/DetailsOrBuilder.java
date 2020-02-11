@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   * @return The attestation.
    */
   io.grafeas.v1beta1.attestation.Attestation getAttestation();
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>

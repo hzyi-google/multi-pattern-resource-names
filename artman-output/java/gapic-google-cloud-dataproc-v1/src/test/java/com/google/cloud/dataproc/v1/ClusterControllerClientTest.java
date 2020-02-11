@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,6 +50,7 @@ public class ClusterControllerClientTest {
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper serviceHelper;
   private ClusterControllerClient client;
   private LocalChannelProvider channelProvider;
@@ -58,11 +60,15 @@ public class ClusterControllerClientTest {
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService,
+                mockAutoscalingPolicyService));
     serviceHelper.start();
   }
 
@@ -385,9 +391,8 @@ public class ClusterControllerClientTest {
 
     String projectId = "projectId-1969970175";
     String region = "region-934795532";
-    String filter = "filter-1274492040";
 
-    ListClustersPagedResponse pagedListResponse = client.listClusters(projectId, region, filter);
+    ListClustersPagedResponse pagedListResponse = client.listClusters(projectId, region);
 
     List<Cluster> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -399,7 +404,6 @@ public class ClusterControllerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(region, actualRequest.getRegion());
-    Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -415,9 +419,8 @@ public class ClusterControllerClientTest {
     try {
       String projectId = "projectId-1969970175";
       String region = "region-934795532";
-      String filter = "filter-1274492040";
 
-      client.listClusters(projectId, region, filter);
+      client.listClusters(projectId, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

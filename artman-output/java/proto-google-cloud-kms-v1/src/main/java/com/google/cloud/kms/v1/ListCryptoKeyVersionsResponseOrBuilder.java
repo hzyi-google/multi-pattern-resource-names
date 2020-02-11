@@ -59,6 +59,7 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -69,6 +70,7 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
@@ -80,6 +82,7 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
+   * @return The totalSize.
    */
   int getTotalSize();
 }

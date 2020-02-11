@@ -13,6 +13,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -21,6 +22,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -31,6 +33,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -39,6 +42,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -49,6 +53,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   * @return Whether the largeCustomDictionary field is set.
    */
   boolean hasLargeCustomDictionary();
   /**
@@ -57,6 +62,7 @@ public interface StoredInfoTypeConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
+   * @return The largeCustomDictionary.
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary();
   /**

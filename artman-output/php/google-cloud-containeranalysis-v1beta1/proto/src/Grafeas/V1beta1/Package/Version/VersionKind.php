@@ -20,21 +20,19 @@ class VersionKind
      */
     const VERSION_KIND_UNSPECIFIED = 0;
     /**
-     * A standard package version, defined by the other fields.
+     * A standard package version.
      *
      * Generated from protobuf enum <code>NORMAL = 1;</code>
      */
     const NORMAL = 1;
     /**
-     * A special version representing negative infinity, other fields are
-     * ignored.
+     * A special version representing negative infinity.
      *
      * Generated from protobuf enum <code>MINIMUM = 2;</code>
      */
     const MINIMUM = 2;
     /**
-     * A special version representing positive infinity, other fields are
-     * ignored.
+     * A special version representing positive infinity.
      *
      * Generated from protobuf enum <code>MAXIMUM = 3;</code>
      */

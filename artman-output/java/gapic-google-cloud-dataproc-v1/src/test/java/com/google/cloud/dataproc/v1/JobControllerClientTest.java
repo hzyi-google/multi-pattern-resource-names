@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,13 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,6 +46,7 @@ public class JobControllerClientTest {
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper serviceHelper;
   private JobControllerClient client;
   private LocalChannelProvider channelProvider;
@@ -53,11 +56,15 @@ public class JobControllerClientTest {
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService,
+                mockAutoscalingPolicyService));
     serviceHelper.start();
   }
 
@@ -247,9 +254,8 @@ public class JobControllerClientTest {
 
     String projectId = "projectId-1969970175";
     String region = "region-934795532";
-    String filter = "filter-1274492040";
 
-    ListJobsPagedResponse pagedListResponse = client.listJobs(projectId, region, filter);
+    ListJobsPagedResponse pagedListResponse = client.listJobs(projectId, region);
 
     List<Job> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -261,7 +267,6 @@ public class JobControllerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(region, actualRequest.getRegion());
-    Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -277,9 +282,82 @@ public class JobControllerClientTest {
     try {
       String projectId = "projectId-1969970175";
       String region = "region-934795532";
-      String filter = "filter-1274492040";
 
-      client.listJobs(projectId, region, filter);
+      client.listJobs(projectId, region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateJobTest() {
+    String driverOutputResourceUri = "driverOutputResourceUri-542229086";
+    String driverControlFilesUri = "driverControlFilesUri207057643";
+    String jobUuid = "jobUuid-1615012099";
+    Job expectedResponse =
+        Job.newBuilder()
+            .setDriverOutputResourceUri(driverOutputResourceUri)
+            .setDriverControlFilesUri(driverControlFilesUri)
+            .setJobUuid(jobUuid)
+            .build();
+    mockJobController.addResponse(expectedResponse);
+
+    String projectId = "projectId-1969970175";
+    String region = "region-934795532";
+    String jobId = "jobId-1154752291";
+    Job job = Job.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+    UpdateJobRequest request =
+        UpdateJobRequest.newBuilder()
+            .setProjectId(projectId)
+            .setRegion(region)
+            .setJobId(jobId)
+            .setJob(job)
+            .setUpdateMask(updateMask)
+            .build();
+
+    Job actualResponse = client.updateJob(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateJobRequest actualRequest = (UpdateJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(region, actualRequest.getRegion());
+    Assert.assertEquals(jobId, actualRequest.getJobId());
+    Assert.assertEquals(job, actualRequest.getJob());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobController.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String region = "region-934795532";
+      String jobId = "jobId-1154752291";
+      Job job = Job.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      UpdateJobRequest request =
+          UpdateJobRequest.newBuilder()
+              .setProjectId(projectId)
+              .setRegion(region)
+              .setJobId(jobId)
+              .setJob(job)
+              .setUpdateMask(updateMask)
+              .build();
+
+      client.updateJob(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

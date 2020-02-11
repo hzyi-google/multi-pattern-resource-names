@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StorageConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -143,6 +149,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
@@ -151,6 +158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
@@ -169,6 +177,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
     /**
@@ -178,6 +187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
@@ -207,6 +217,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     * @return Whether the timestampField field is set.
      */
     boolean hasTimestampField();
     /**
@@ -226,6 +237,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     * @return The timestampField.
      */
     com.google.privacy.dlp.v2.FieldId getTimestampField();
     /**
@@ -257,6 +269,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+     * @return The enableAutoPopulationOfTimespanConfig.
      */
     boolean getEnableAutoPopulationOfTimespanConfig();
   }
@@ -281,6 +294,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TimespanConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -293,7 +313,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -388,6 +407,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTime_ != null;
@@ -398,6 +418,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -422,6 +443,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTime_ != null;
@@ -433,6 +455,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -468,6 +491,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     * @return Whether the timestampField field is set.
      */
     public boolean hasTimestampField() {
       return timestampField_ != null;
@@ -489,6 +513,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+     * @return The timestampField.
      */
     public com.google.privacy.dlp.v2.FieldId getTimestampField() {
       return timestampField_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : timestampField_;
@@ -526,6 +551,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+     * @return The enableAutoPopulationOfTimespanConfig.
      */
     public boolean getEnableAutoPopulationOfTimespanConfig() {
       return enableAutoPopulationOfTimespanConfig_;
@@ -938,6 +964,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
         return startTimeBuilder_ != null || startTime_ != null;
@@ -948,6 +975,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       * @return The startTime.
        */
       public com.google.protobuf.Timestamp getStartTime() {
         if (startTimeBuilder_ == null) {
@@ -1092,6 +1120,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
         return endTimeBuilder_ != null || endTime_ != null;
@@ -1103,6 +1132,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       * @return The endTime.
        */
       public com.google.protobuf.Timestamp getEndTime() {
         if (endTimeBuilder_ == null) {
@@ -1264,6 +1294,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+       * @return Whether the timestampField field is set.
        */
       public boolean hasTimestampField() {
         return timestampFieldBuilder_ != null || timestampField_ != null;
@@ -1285,6 +1316,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
+       * @return The timestampField.
        */
       public com.google.privacy.dlp.v2.FieldId getTimestampField() {
         if (timestampFieldBuilder_ == null) {
@@ -1506,6 +1538,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       * @return The enableAutoPopulationOfTimespanConfig.
        */
       public boolean getEnableAutoPopulationOfTimespanConfig() {
         return enableAutoPopulationOfTimespanConfig_;
@@ -1519,6 +1552,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       * @param value The enableAutoPopulationOfTimespanConfig to set.
+       * @return This builder for chaining.
        */
       public Builder setEnableAutoPopulationOfTimespanConfig(boolean value) {
         
@@ -1535,6 +1570,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEnableAutoPopulationOfTimespanConfig() {
         
@@ -1598,7 +1634,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATASTORE_OPTIONS(2),
     CLOUD_STORAGE_OPTIONS(3),
     BIG_QUERY_OPTIONS(4),
@@ -1608,6 +1645,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -1642,6 +1681,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   * @return Whether the datastoreOptions field is set.
    */
   public boolean hasDatastoreOptions() {
     return typeCase_ == 2;
@@ -1652,6 +1692,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+   * @return The datastoreOptions.
    */
   public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
     if (typeCase_ == 2) {
@@ -1680,6 +1721,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   * @return Whether the cloudStorageOptions field is set.
    */
   public boolean hasCloudStorageOptions() {
     return typeCase_ == 3;
@@ -1690,6 +1732,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+   * @return The cloudStorageOptions.
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
     if (typeCase_ == 3) {
@@ -1718,6 +1761,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   * @return Whether the bigQueryOptions field is set.
    */
   public boolean hasBigQueryOptions() {
     return typeCase_ == 4;
@@ -1728,6 +1772,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+   * @return The bigQueryOptions.
    */
   public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
     if (typeCase_ == 4) {
@@ -1753,12 +1798,14 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
   /**
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   * @return Whether the timespanConfig field is set.
    */
   public boolean hasTimespanConfig() {
     return timespanConfig_ != null;
   }
   /**
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   * @return The timespanConfig.
    */
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
     return timespanConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance() : timespanConfig_;
@@ -2207,6 +2254,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+     * @return Whether the datastoreOptions field is set.
      */
     public boolean hasDatastoreOptions() {
       return typeCase_ == 2;
@@ -2217,6 +2265,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
+     * @return The datastoreOptions.
      */
     public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
       if (datastoreOptionsBuilder_ == null) {
@@ -2379,6 +2428,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+     * @return Whether the cloudStorageOptions field is set.
      */
     public boolean hasCloudStorageOptions() {
       return typeCase_ == 3;
@@ -2389,6 +2439,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
+     * @return The cloudStorageOptions.
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
       if (cloudStorageOptionsBuilder_ == null) {
@@ -2551,6 +2602,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+     * @return Whether the bigQueryOptions field is set.
      */
     public boolean hasBigQueryOptions() {
       return typeCase_ == 4;
@@ -2561,6 +2613,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
+     * @return The bigQueryOptions.
      */
     public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
       if (bigQueryOptionsBuilder_ == null) {
@@ -2720,12 +2773,14 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder, com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder> timespanConfigBuilder_;
     /**
      * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     * @return Whether the timespanConfig field is set.
      */
     public boolean hasTimespanConfig() {
       return timespanConfigBuilder_ != null || timespanConfig_ != null;
     }
     /**
      * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     * @return The timespanConfig.
      */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
       if (timespanConfigBuilder_ == null) {

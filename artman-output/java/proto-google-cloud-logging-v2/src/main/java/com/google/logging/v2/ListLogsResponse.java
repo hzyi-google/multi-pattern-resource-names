@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListLogsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -98,7 +105,6 @@ private static final long serialVersionUID = 0L;
             com.google.logging.v2.ListLogsResponse.class, com.google.logging.v2.ListLogsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LOG_NAMES_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList logNames_;
   /**
@@ -109,6 +115,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @return A list containing the logNames.
    */
   public com.google.protobuf.ProtocolStringList
       getLogNamesList() {
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @return The count of logNames.
    */
   public int getLogNamesCount() {
     return logNames_.size();
@@ -134,6 +142,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @param index The index of the element to return.
+   * @return The logNames at the given index.
    */
   public java.lang.String getLogNames(int index) {
     return logNames_.get(index);
@@ -146,6 +156,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the logNames at the given index.
    */
   public com.google.protobuf.ByteString
       getLogNamesBytes(int index) {
@@ -162,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -183,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -442,14 +456,12 @@ private static final long serialVersionUID = 0L;
     public com.google.logging.v2.ListLogsResponse buildPartial() {
       com.google.logging.v2.ListLogsResponse result = new com.google.logging.v2.ListLogsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         logNames_ = logNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.logNames_ = logNames_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -557,6 +569,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @return A list containing the logNames.
      */
     public com.google.protobuf.ProtocolStringList
         getLogNamesList() {
@@ -570,6 +583,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @return The count of logNames.
      */
     public int getLogNamesCount() {
       return logNames_.size();
@@ -582,6 +596,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param index The index of the element to return.
+     * @return The logNames at the given index.
      */
     public java.lang.String getLogNames(int index) {
       return logNames_.get(index);
@@ -594,6 +610,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the logNames at the given index.
      */
     public com.google.protobuf.ByteString
         getLogNamesBytes(int index) {
@@ -607,6 +625,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The logNames to set.
+     * @return This builder for chaining.
      */
     public Builder setLogNames(
         int index, java.lang.String value) {
@@ -626,6 +647,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param value The logNames to add.
+     * @return This builder for chaining.
      */
     public Builder addLogNames(
         java.lang.String value) {
@@ -645,6 +668,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param values The logNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLogNames(
         java.lang.Iterable<java.lang.String> values) {
@@ -662,6 +687,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLogNames() {
       logNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -677,6 +703,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string log_names = 3;</code>
+     * @param value The bytes of the logNames to add.
+     * @return This builder for chaining.
      */
     public Builder addLogNamesBytes(
         com.google.protobuf.ByteString value) {
@@ -699,6 +727,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -720,6 +749,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -742,6 +772,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -761,6 +793,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -776,6 +809,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {

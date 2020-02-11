@@ -17,6 +17,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the finding field is set.
    */
   boolean hasFinding();
   /**
@@ -29,6 +30,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The finding.
    */
   com.google.cloud.securitycenter.v1.Finding getFinding();
   /**
@@ -55,6 +57,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -68,6 +71,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

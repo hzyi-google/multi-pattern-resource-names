@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ module Google
         #     The relative resource name of the settings. See:
         #     https://cloud.google.com/apis/design/resource_names#relative_resource_name
         #     Example:
-        #     "organizations/123/organizationSettings".
+        #     "organizations/{organization_id}/organizationSettings".
         # @!attribute [rw] enable_asset_discovery
         #   @return [true, false]
         #     A flag that indicates if Asset Discovery should be enabled. If the flag is

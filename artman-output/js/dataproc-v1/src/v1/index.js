@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,9 @@
 const ClusterControllerClient = require('./cluster_controller_client');
 const JobControllerClient = require('./job_controller_client');
 const WorkflowTemplateServiceClient = require('./workflow_template_service_client');
+const AutoscalingPolicyServiceClient = require('./autoscaling_policy_service_client');
 
 module.exports.ClusterControllerClient = ClusterControllerClient;
 module.exports.JobControllerClient = JobControllerClient;
 module.exports.WorkflowTemplateServiceClient = WorkflowTemplateServiceClient;
+module.exports.AutoscalingPolicyServiceClient = AutoscalingPolicyServiceClient;

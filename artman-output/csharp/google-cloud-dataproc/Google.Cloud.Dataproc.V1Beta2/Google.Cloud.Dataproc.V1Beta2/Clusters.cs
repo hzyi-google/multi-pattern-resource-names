@@ -169,79 +169,79 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
             "b2MudjFiZXRhMi5SZXNlcnZhdGlvbkFmZmluaXR5LlR5cGVCA+BBARIQCgNr",
             "ZXkYAiABKAlCA+BBARITCgZ2YWx1ZXMYAyADKAlCA+BBASJfCgRUeXBlEhQK",
             "EFRZUEVfVU5TUEVDSUZJRUQQABISCg5OT19SRVNFUlZBVElPThABEhMKD0FO",
-            "WV9SRVNFUlZBVElPThACEhgKFFNQRUNJRklDX1JFU0VSVkFUSU9OEAMyhw4K",
-            "EUNsdXN0ZXJDb250cm9sbGVyEpUCCg1DcmVhdGVDbHVzdGVyEjMuZ29vZ2xl",
+            "WV9SRVNFUlZBVElPThACEhgKFFNQRUNJRklDX1JFU0VSVkFUSU9OEAMy5w0K",
+            "EUNsdXN0ZXJDb250cm9sbGVyEpECCg1DcmVhdGVDbHVzdGVyEjMuZ29vZ2xl",
             "LmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuQ3JlYXRlQ2x1c3RlclJlcXVlc3Qa",
-            "HS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIq8BgtPkkwJHIjwvdjFi",
-            "ZXRhMi9wcm9qZWN0cy97cHJvamVjdF9pZD0qfS9yZWdpb25zL3tyZWdpb249",
-            "Kn0vY2x1c3RlcnM6B2NsdXN0ZXLaQRtwcm9qZWN0X2lkLCByZWdpb24sIGNs",
-            "dXN0ZXLKQUEKB0NsdXN0ZXISNmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJl",
-            "dGEyLkNsdXN0ZXJPcGVyYXRpb25NZXRhZGF0YRLBAgoNVXBkYXRlQ2x1c3Rl",
-            "chIzLmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLlVwZGF0ZUNsdXN0",
-            "ZXJSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiLbAYLT",
-            "5JMCWDJNL3YxYmV0YTIvcHJvamVjdHMve3Byb2plY3RfaWQ9Kn0vcmVnaW9u",
-            "cy97cmVnaW9uPSp9L2NsdXN0ZXJzL3tjbHVzdGVyX25hbWU9Kn06B2NsdXN0",
-            "ZXLaQTZwcm9qZWN0X2lkLCByZWdpb24sIGNsdXN0ZXJfbmFtZSwgY2x1c3Rl",
-            "ciwgdXBkYXRlX21hc2vKQUEKB0NsdXN0ZXISNmdvb2dsZS5jbG91ZC5kYXRh",
-            "cHJvYy52MWJldGEyLkNsdXN0ZXJPcGVyYXRpb25NZXRhZGF0YRKwAgoNRGVs",
-            "ZXRlQ2x1c3RlchIzLmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkRl",
-            "bGV0ZUNsdXN0ZXJSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJh",
-            "dGlvbiLKAYLT5JMCTypNL3YxYmV0YTIvcHJvamVjdHMve3Byb2plY3RfaWQ9",
-            "Kn0vcmVnaW9ucy97cmVnaW9uPSp9L2NsdXN0ZXJzL3tjbHVzdGVyX25hbWU9",
-            "Kn3aQSBwcm9qZWN0X2lkLCByZWdpb24sIGNsdXN0ZXJfbmFtZcpBTwoVZ29v",
-            "Z2xlLnByb3RvYnVmLkVtcHR5EjZnb29nbGUuY2xvdWQuZGF0YXByb2MudjFi",
-            "ZXRhMi5DbHVzdGVyT3BlcmF0aW9uTWV0YWRhdGES4AEKCkdldENsdXN0ZXIS",
-            "MC5nb29nbGUuY2xvdWQuZGF0YXByb2MudjFiZXRhMi5HZXRDbHVzdGVyUmVx",
-            "dWVzdBomLmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkNsdXN0ZXIi",
-            "eILT5JMCTxJNL3YxYmV0YTIvcHJvamVjdHMve3Byb2plY3RfaWQ9Kn0vcmVn",
-            "aW9ucy97cmVnaW9uPSp9L2NsdXN0ZXJzL3tjbHVzdGVyX25hbWU9Kn3aQSBw",
-            "cm9qZWN0X2lkLCByZWdpb24sIGNsdXN0ZXJfbmFtZRLvAQoMTGlzdENsdXN0",
-            "ZXJzEjIuZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuTGlzdENsdXN0",
-            "ZXJzUmVxdWVzdBozLmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkxp",
-            "c3RDbHVzdGVyc1Jlc3BvbnNlInaC0+STAj4SPC92MWJldGEyL3Byb2plY3Rz",
-            "L3twcm9qZWN0X2lkPSp9L3JlZ2lvbnMve3JlZ2lvbj0qfS9jbHVzdGVyc9pB",
-            "EnByb2plY3RfaWQsIHJlZ2lvbtpBGnByb2plY3RfaWQsIHJlZ2lvbiwgZmls",
-            "dGVyEsACCg9EaWFnbm9zZUNsdXN0ZXISNS5nb29nbGUuY2xvdWQuZGF0YXBy",
-            "b2MudjFiZXRhMi5EaWFnbm9zZUNsdXN0ZXJSZXF1ZXN0Gh0uZ29vZ2xlLmxv",
-            "bmdydW5uaW5nLk9wZXJhdGlvbiLWAYLT5JMCWyJWL3YxYmV0YTIvcHJvamVj",
-            "dHMve3Byb2plY3RfaWQ9Kn0vcmVnaW9ucy97cmVnaW9uPSp9L2NsdXN0ZXJz",
-            "L3tjbHVzdGVyX25hbWU9Kn06ZGlhZ25vc2U6ASraQSBwcm9qZWN0X2lkLCBy",
-            "ZWdpb24sIGNsdXN0ZXJfbmFtZcpBTwoVZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
-            "EjZnb29nbGUuY2xvdWQuZGF0YXByb2MudjFiZXRhMi5DbHVzdGVyT3BlcmF0",
-            "aW9uTWV0YWRhdGEaS8pBF2RhdGFwcm9jLmdvb2dsZWFwaXMuY29t0kEuaHR0",
-            "cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybUJ7",
-            "CiFjb20uZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTJCDUNsdXN0ZXJz",
-            "UHJvdG9QAVpFZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
-            "cy9jbG91ZC9kYXRhcHJvYy92MWJldGEyO2RhdGFwcm9jYgZwcm90bzM="));
+            "HS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIqsBgtPkkwJDIjgvdjFi",
+            "ZXRhMi9wcm9qZWN0cy97cHJvamVjdF9pZH0vcmVnaW9ucy97cmVnaW9ufS9j",
+            "bHVzdGVyczoHY2x1c3RlctpBG3Byb2plY3RfaWQsIHJlZ2lvbiwgY2x1c3Rl",
+            "cspBQQoHQ2x1c3RlchI2Z29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIu",
+            "Q2x1c3Rlck9wZXJhdGlvbk1ldGFkYXRhErsCCg1VcGRhdGVDbHVzdGVyEjMu",
+            "Z29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuVXBkYXRlQ2x1c3RlclJl",
+            "cXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uItUBgtPkkwJS",
+            "MkcvdjFiZXRhMi9wcm9qZWN0cy97cHJvamVjdF9pZH0vcmVnaW9ucy97cmVn",
+            "aW9ufS9jbHVzdGVycy97Y2x1c3Rlcl9uYW1lfToHY2x1c3RlctpBNnByb2pl",
+            "Y3RfaWQsIHJlZ2lvbiwgY2x1c3Rlcl9uYW1lLCBjbHVzdGVyLCB1cGRhdGVf",
+            "bWFza8pBQQoHQ2x1c3RlchI2Z29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0",
+            "YTIuQ2x1c3Rlck9wZXJhdGlvbk1ldGFkYXRhEqoCCg1EZWxldGVDbHVzdGVy",
+            "EjMuZ29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuRGVsZXRlQ2x1c3Rl",
+            "clJlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIsQBgtPk",
+            "kwJJKkcvdjFiZXRhMi9wcm9qZWN0cy97cHJvamVjdF9pZH0vcmVnaW9ucy97",
+            "cmVnaW9ufS9jbHVzdGVycy97Y2x1c3Rlcl9uYW1lfdpBIHByb2plY3RfaWQs",
+            "IHJlZ2lvbiwgY2x1c3Rlcl9uYW1lykFPChVnb29nbGUucHJvdG9idWYuRW1w",
+            "dHkSNmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJldGEyLkNsdXN0ZXJPcGVy",
+            "YXRpb25NZXRhZGF0YRLaAQoKR2V0Q2x1c3RlchIwLmdvb2dsZS5jbG91ZC5k",
+            "YXRhcHJvYy52MWJldGEyLkdldENsdXN0ZXJSZXF1ZXN0GiYuZ29vZ2xlLmNs",
+            "b3VkLmRhdGFwcm9jLnYxYmV0YTIuQ2x1c3RlciJygtPkkwJJEkcvdjFiZXRh",
+            "Mi9wcm9qZWN0cy97cHJvamVjdF9pZH0vcmVnaW9ucy97cmVnaW9ufS9jbHVz",
+            "dGVycy97Y2x1c3Rlcl9uYW1lfdpBIHByb2plY3RfaWQsIHJlZ2lvbiwgY2x1",
+            "c3Rlcl9uYW1lEusBCgxMaXN0Q2x1c3RlcnMSMi5nb29nbGUuY2xvdWQuZGF0",
+            "YXByb2MudjFiZXRhMi5MaXN0Q2x1c3RlcnNSZXF1ZXN0GjMuZ29vZ2xlLmNs",
+            "b3VkLmRhdGFwcm9jLnYxYmV0YTIuTGlzdENsdXN0ZXJzUmVzcG9uc2UicoLT",
+            "5JMCOhI4L3YxYmV0YTIvcHJvamVjdHMve3Byb2plY3RfaWR9L3JlZ2lvbnMv",
+            "e3JlZ2lvbn0vY2x1c3RlcnPaQRJwcm9qZWN0X2lkLCByZWdpb27aQRpwcm9q",
+            "ZWN0X2lkLCByZWdpb24sIGZpbHRlchK6AgoPRGlhZ25vc2VDbHVzdGVyEjUu",
+            "Z29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIuRGlhZ25vc2VDbHVzdGVy",
+            "UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24i0AGC0+ST",
+            "AlUiUC92MWJldGEyL3Byb2plY3RzL3twcm9qZWN0X2lkfS9yZWdpb25zL3ty",
+            "ZWdpb259L2NsdXN0ZXJzL3tjbHVzdGVyX25hbWV9OmRpYWdub3NlOgEq2kEg",
+            "cHJvamVjdF9pZCwgcmVnaW9uLCBjbHVzdGVyX25hbWXKQU8KFWdvb2dsZS5w",
+            "cm90b2J1Zi5FbXB0eRI2Z29vZ2xlLmNsb3VkLmRhdGFwcm9jLnYxYmV0YTIu",
+            "Q2x1c3Rlck9wZXJhdGlvbk1ldGFkYXRhGkvKQRdkYXRhcHJvYy5nb29nbGVh",
+            "cGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xv",
+            "dWQtcGxhdGZvcm1CewohY29tLmdvb2dsZS5jbG91ZC5kYXRhcHJvYy52MWJl",
+            "dGEyQg1DbHVzdGVyc1Byb3RvUAFaRWdvb2dsZS5nb2xhbmcub3JnL2dlbnBy",
+            "b3RvL2dvb2dsZWFwaXMvY2xvdWQvZGF0YXByb2MvdjFiZXRhMjtkYXRhcHJv",
+            "Y2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Cloud.Dataproc.V1Beta2.OperationsReflection.Descriptor, global::Google.Cloud.Dataproc.V1Beta2.SharedReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.Cluster), global::Google.Cloud.Dataproc.V1Beta2.Cluster.Parser, new[]{ "ProjectId", "ClusterName", "Config", "Labels", "Status", "StatusHistory", "ClusterUuid", "Metrics" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterConfig), global::Google.Cloud.Dataproc.V1Beta2.ClusterConfig.Parser, new[]{ "ConfigBucket", "GceClusterConfig", "MasterConfig", "WorkerConfig", "SecondaryWorkerConfig", "SoftwareConfig", "LifecycleConfig", "InitializationActions", "EncryptionConfig", "AutoscalingConfig", "EndpointConfig", "SecurityConfig" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.EndpointConfig), global::Google.Cloud.Dataproc.V1Beta2.EndpointConfig.Parser, new[]{ "HttpPorts", "EnableHttpPortAccess" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.AutoscalingConfig), global::Google.Cloud.Dataproc.V1Beta2.AutoscalingConfig.Parser, new[]{ "PolicyUri" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.EncryptionConfig), global::Google.Cloud.Dataproc.V1Beta2.EncryptionConfig.Parser, new[]{ "GcePdKmsKeyName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GceClusterConfig), global::Google.Cloud.Dataproc.V1Beta2.GceClusterConfig.Parser, new[]{ "ZoneUri", "NetworkUri", "SubnetworkUri", "InternalIpOnly", "ServiceAccount", "ServiceAccountScopes", "Tags", "Metadata", "ReservationAffinity" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstanceGroupConfig), global::Google.Cloud.Dataproc.V1Beta2.InstanceGroupConfig.Parser, new[]{ "NumInstances", "InstanceNames", "ImageUri", "MachineTypeUri", "DiskConfig", "IsPreemptible", "ManagedGroupConfig", "Accelerators", "MinCpuPlatform" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ManagedGroupConfig), global::Google.Cloud.Dataproc.V1Beta2.ManagedGroupConfig.Parser, new[]{ "InstanceTemplateName", "InstanceGroupManagerName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.AcceleratorConfig), global::Google.Cloud.Dataproc.V1Beta2.AcceleratorConfig.Parser, new[]{ "AcceleratorTypeUri", "AcceleratorCount" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiskConfig), global::Google.Cloud.Dataproc.V1Beta2.DiskConfig.Parser, new[]{ "BootDiskType", "BootDiskSizeGb", "NumLocalSsds" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.LifecycleConfig), global::Google.Cloud.Dataproc.V1Beta2.LifecycleConfig.Parser, new[]{ "IdleDeleteTtl", "AutoDeleteTime", "AutoDeleteTtl", "IdleStartTime" }, new[]{ "Ttl" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.SecurityConfig), global::Google.Cloud.Dataproc.V1Beta2.SecurityConfig.Parser, new[]{ "KerberosConfig" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.KerberosConfig), global::Google.Cloud.Dataproc.V1Beta2.KerberosConfig.Parser, new[]{ "EnableKerberos", "RootPrincipalPasswordUri", "KmsKeyUri", "KeystoreUri", "TruststoreUri", "KeystorePasswordUri", "KeyPasswordUri", "TruststorePasswordUri", "CrossRealmTrustRealm", "CrossRealmTrustKdc", "CrossRealmTrustAdminServer", "CrossRealmTrustSharedPasswordUri", "KdcDbKeyUri", "TgtLifetimeHours", "Realm" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.NodeInitializationAction), global::Google.Cloud.Dataproc.V1Beta2.NodeInitializationAction.Parser, new[]{ "ExecutableFile", "ExecutionTimeout" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus), global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Parser, new[]{ "State", "Detail", "StateStartTime", "Substate" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State), typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.SoftwareConfig), global::Google.Cloud.Dataproc.V1Beta2.SoftwareConfig.Parser, new[]{ "ImageVersion", "Properties", "OptionalComponents" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterMetrics), global::Google.Cloud.Dataproc.V1Beta2.ClusterMetrics.Parser, new[]{ "HdfsMetrics", "YarnMetrics" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.CreateClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.CreateClusterRequest.Parser, new[]{ "ProjectId", "Region", "Cluster", "RequestId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.UpdateClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.UpdateClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName", "Cluster", "GracefulDecommissionTimeout", "UpdateMask", "RequestId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DeleteClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.DeleteClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName", "ClusterUuid", "RequestId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GetClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.GetClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListClustersRequest), global::Google.Cloud.Dataproc.V1Beta2.ListClustersRequest.Parser, new[]{ "ProjectId", "Region", "Filter", "PageSize", "PageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListClustersResponse), global::Google.Cloud.Dataproc.V1Beta2.ListClustersResponse.Parser, new[]{ "Clusters", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterResults), global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterResults.Parser, new[]{ "OutputUri" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity), global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Parser, new[]{ "ConsumeReservationType", "Key", "Values" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type) }, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.Cluster), global::Google.Cloud.Dataproc.V1Beta2.Cluster.Parser, new[]{ "ProjectId", "ClusterName", "Config", "Labels", "Status", "StatusHistory", "ClusterUuid", "Metrics" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterConfig), global::Google.Cloud.Dataproc.V1Beta2.ClusterConfig.Parser, new[]{ "ConfigBucket", "GceClusterConfig", "MasterConfig", "WorkerConfig", "SecondaryWorkerConfig", "SoftwareConfig", "LifecycleConfig", "InitializationActions", "EncryptionConfig", "AutoscalingConfig", "EndpointConfig", "SecurityConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.EndpointConfig), global::Google.Cloud.Dataproc.V1Beta2.EndpointConfig.Parser, new[]{ "HttpPorts", "EnableHttpPortAccess" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.AutoscalingConfig), global::Google.Cloud.Dataproc.V1Beta2.AutoscalingConfig.Parser, new[]{ "PolicyUri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.EncryptionConfig), global::Google.Cloud.Dataproc.V1Beta2.EncryptionConfig.Parser, new[]{ "GcePdKmsKeyName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GceClusterConfig), global::Google.Cloud.Dataproc.V1Beta2.GceClusterConfig.Parser, new[]{ "ZoneUri", "NetworkUri", "SubnetworkUri", "InternalIpOnly", "ServiceAccount", "ServiceAccountScopes", "Tags", "Metadata", "ReservationAffinity" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.InstanceGroupConfig), global::Google.Cloud.Dataproc.V1Beta2.InstanceGroupConfig.Parser, new[]{ "NumInstances", "InstanceNames", "ImageUri", "MachineTypeUri", "DiskConfig", "IsPreemptible", "ManagedGroupConfig", "Accelerators", "MinCpuPlatform" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ManagedGroupConfig), global::Google.Cloud.Dataproc.V1Beta2.ManagedGroupConfig.Parser, new[]{ "InstanceTemplateName", "InstanceGroupManagerName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.AcceleratorConfig), global::Google.Cloud.Dataproc.V1Beta2.AcceleratorConfig.Parser, new[]{ "AcceleratorTypeUri", "AcceleratorCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiskConfig), global::Google.Cloud.Dataproc.V1Beta2.DiskConfig.Parser, new[]{ "BootDiskType", "BootDiskSizeGb", "NumLocalSsds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.LifecycleConfig), global::Google.Cloud.Dataproc.V1Beta2.LifecycleConfig.Parser, new[]{ "IdleDeleteTtl", "AutoDeleteTime", "AutoDeleteTtl", "IdleStartTime" }, new[]{ "Ttl" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.SecurityConfig), global::Google.Cloud.Dataproc.V1Beta2.SecurityConfig.Parser, new[]{ "KerberosConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.KerberosConfig), global::Google.Cloud.Dataproc.V1Beta2.KerberosConfig.Parser, new[]{ "EnableKerberos", "RootPrincipalPasswordUri", "KmsKeyUri", "KeystoreUri", "TruststoreUri", "KeystorePasswordUri", "KeyPasswordUri", "TruststorePasswordUri", "CrossRealmTrustRealm", "CrossRealmTrustKdc", "CrossRealmTrustAdminServer", "CrossRealmTrustSharedPasswordUri", "KdcDbKeyUri", "TgtLifetimeHours", "Realm" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.NodeInitializationAction), global::Google.Cloud.Dataproc.V1Beta2.NodeInitializationAction.Parser, new[]{ "ExecutableFile", "ExecutionTimeout" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus), global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Parser, new[]{ "State", "Detail", "StateStartTime", "Substate" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State), typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.SoftwareConfig), global::Google.Cloud.Dataproc.V1Beta2.SoftwareConfig.Parser, new[]{ "ImageVersion", "Properties", "OptionalComponents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ClusterMetrics), global::Google.Cloud.Dataproc.V1Beta2.ClusterMetrics.Parser, new[]{ "HdfsMetrics", "YarnMetrics" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.CreateClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.CreateClusterRequest.Parser, new[]{ "ProjectId", "Region", "Cluster", "RequestId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.UpdateClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.UpdateClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName", "Cluster", "GracefulDecommissionTimeout", "UpdateMask", "RequestId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DeleteClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.DeleteClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName", "ClusterUuid", "RequestId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.GetClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.GetClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListClustersRequest), global::Google.Cloud.Dataproc.V1Beta2.ListClustersRequest.Parser, new[]{ "ProjectId", "Region", "Filter", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ListClustersResponse), global::Google.Cloud.Dataproc.V1Beta2.ListClustersResponse.Parser, new[]{ "Clusters", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterRequest), global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterRequest.Parser, new[]{ "ProjectId", "Region", "ClusterName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterResults), global::Google.Cloud.Dataproc.V1Beta2.DiagnoseClusterResults.Parser, new[]{ "OutputUri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity), global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Parser, new[]{ "ConsumeReservationType", "Key", "Values" }, null, new[]{ typeof(global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type) }, null, null)
           }));
     }
     #endregion
@@ -340,7 +340,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "labels" field.</summary>
     public const int LabelsFieldNumber = 8;
     private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 66);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. The labels to associate with this cluster.
@@ -1209,7 +1209,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "http_ports" field.</summary>
     public const int HttpPortsFieldNumber = 1;
     private static readonly pbc::MapField<string, string>.Codec _map_httpPorts_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 10);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 10);
     private readonly pbc::MapField<string, string> httpPorts_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Output only. The map of port descriptions to URLs. Will only be populated
@@ -1808,7 +1808,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "metadata" field.</summary>
     public const int MetadataFieldNumber = 5;
     private static readonly pbc::MapField<string, string>.Codec _map_metadata_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 42);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 42);
     private readonly pbc::MapField<string, string> metadata_ = new pbc::MapField<string, string>();
     /// <summary>
     /// The Compute Engine metadata entries to add to all instances (see
@@ -4230,7 +4230,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 1;
-    private global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State state_ = 0;
+    private global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State state_ = global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State.Unknown;
     /// <summary>
     /// Output only. The cluster's state.
     /// </summary>
@@ -4272,7 +4272,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "substate" field.</summary>
     public const int SubstateFieldNumber = 4;
-    private global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate substate_ = 0;
+    private global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate substate_ = global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate.Unspecified;
     /// <summary>
     /// Output only. Additional state information that includes
     /// status reported by the agent.
@@ -4308,10 +4308,10 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State.Unknown) hash ^= State.GetHashCode();
       if (Detail.Length != 0) hash ^= Detail.GetHashCode();
       if (stateStartTime_ != null) hash ^= StateStartTime.GetHashCode();
-      if (Substate != 0) hash ^= Substate.GetHashCode();
+      if (Substate != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate.Unspecified) hash ^= Substate.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4325,7 +4325,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State.Unknown) {
         output.WriteRawTag(8);
         output.WriteEnum((int) State);
       }
@@ -4337,7 +4337,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
         output.WriteRawTag(26);
         output.WriteMessage(StateStartTime);
       }
-      if (Substate != 0) {
+      if (Substate != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Substate);
       }
@@ -4349,7 +4349,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (State != 0) {
+      if (State != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State.Unknown) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (Detail.Length != 0) {
@@ -4358,7 +4358,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (stateStartTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StateStartTime);
       }
-      if (Substate != 0) {
+      if (Substate != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Substate);
       }
       if (_unknownFields != null) {
@@ -4372,7 +4372,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (other == null) {
         return;
       }
-      if (other.State != 0) {
+      if (other.State != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.State.Unknown) {
         State = other.State;
       }
       if (other.Detail.Length != 0) {
@@ -4384,7 +4384,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
         }
         StateStartTime.MergeFrom(other.StateStartTime);
       }
-      if (other.Substate != 0) {
+      if (other.Substate != global::Google.Cloud.Dataproc.V1Beta2.ClusterStatus.Types.Substate.Unspecified) {
         Substate = other.Substate;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4547,7 +4547,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 2;
     private static readonly pbc::MapField<string, string>.Codec _map_properties_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 18);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
     private readonly pbc::MapField<string, string> properties_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Optional. The properties to set on daemon config files.
@@ -4734,7 +4734,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "hdfs_metrics" field.</summary>
     public const int HdfsMetricsFieldNumber = 1;
     private static readonly pbc::MapField<string, long>.Codec _map_hdfsMetrics_codec
-        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForInt64(16), 10);
+        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt64(16, 0L), 10);
     private readonly pbc::MapField<string, long> hdfsMetrics_ = new pbc::MapField<string, long>();
     /// <summary>
     /// The HDFS metrics.
@@ -4747,7 +4747,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     /// <summary>Field number for the "yarn_metrics" field.</summary>
     public const int YarnMetricsFieldNumber = 2;
     private static readonly pbc::MapField<string, long>.Codec _map_yarnMetrics_codec
-        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForInt64(16), 18);
+        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt64(16, 0L), 18);
     private readonly pbc::MapField<string, long> yarnMetrics_ = new pbc::MapField<string, long>();
     /// <summary>
     /// The YARN metrics.
@@ -6787,7 +6787,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "consume_reservation_type" field.</summary>
     public const int ConsumeReservationTypeFieldNumber = 1;
-    private global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type consumeReservationType_ = 0;
+    private global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type consumeReservationType_ = global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type.Unspecified;
     /// <summary>
     /// Optional. Type of reservation to consume
     /// </summary>
@@ -6848,7 +6848,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ConsumeReservationType != 0) hash ^= ConsumeReservationType.GetHashCode();
+      if (ConsumeReservationType != global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type.Unspecified) hash ^= ConsumeReservationType.GetHashCode();
       if (Key.Length != 0) hash ^= Key.GetHashCode();
       hash ^= values_.GetHashCode();
       if (_unknownFields != null) {
@@ -6864,7 +6864,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ConsumeReservationType != 0) {
+      if (ConsumeReservationType != global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ConsumeReservationType);
       }
@@ -6881,7 +6881,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ConsumeReservationType != 0) {
+      if (ConsumeReservationType != global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ConsumeReservationType);
       }
       if (Key.Length != 0) {
@@ -6899,7 +6899,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
       if (other == null) {
         return;
       }
-      if (other.ConsumeReservationType != 0) {
+      if (other.ConsumeReservationType != global::Google.Cloud.Dataproc.V1Beta2.ReservationAffinity.Types.Type.Unspecified) {
         ConsumeReservationType = other.ConsumeReservationType;
       }
       if (other.Key.Length != 0) {

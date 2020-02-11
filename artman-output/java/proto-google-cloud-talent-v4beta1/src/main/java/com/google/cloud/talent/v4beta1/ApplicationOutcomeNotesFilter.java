@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ApplicationOutcomeNotesFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -94,13 +100,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object outcomeNotes_;
   /**
    * <pre>
-   * Required. User entered or selected outcome reason. The API does an exact
-   * match on the
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * in profiles.
+   * Required. User entered or selected outcome reason. The API does an exact match on the
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The outcomeNotes.
    */
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
@@ -116,13 +121,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. User entered or selected outcome reason. The API does an exact
-   * match on the
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * in profiles.
+   * Required. User entered or selected outcome reason. The API does an exact match on the
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for outcomeNotes.
    */
   public com.google.protobuf.ByteString
       getOutcomeNotesBytes() {
@@ -143,11 +147,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If true, The API excludes all candidates with any
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * matching the outcome reason specified in the filter.
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] matching the outcome reason specified in
+   * the filter.
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -480,13 +485,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object outcomeNotes_ = "";
     /**
      * <pre>
-     * Required. User entered or selected outcome reason. The API does an exact
-     * match on the
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * in profiles.
+     * Required. User entered or selected outcome reason. The API does an exact match on the
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The outcomeNotes.
      */
     public java.lang.String getOutcomeNotes() {
       java.lang.Object ref = outcomeNotes_;
@@ -502,13 +506,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User entered or selected outcome reason. The API does an exact
-     * match on the
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * in profiles.
+     * Required. User entered or selected outcome reason. The API does an exact match on the
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for outcomeNotes.
      */
     public com.google.protobuf.ByteString
         getOutcomeNotesBytes() {
@@ -525,13 +528,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User entered or selected outcome reason. The API does an exact
-     * match on the
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * in profiles.
+     * Required. User entered or selected outcome reason. The API does an exact match on the
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotes(
         java.lang.String value) {
@@ -545,13 +548,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User entered or selected outcome reason. The API does an exact
-     * match on the
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * in profiles.
+     * Required. User entered or selected outcome reason. The API does an exact match on the
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearOutcomeNotes() {
       
@@ -561,13 +563,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User entered or selected outcome reason. The API does an exact
-     * match on the
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * in profiles.
+     * Required. User entered or selected outcome reason. The API does an exact match on the
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
      * </pre>
      *
      * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotesBytes(
         com.google.protobuf.ByteString value) {
@@ -585,11 +587,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If true, The API excludes all candidates with any
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * matching the outcome reason specified in the filter.
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] matching the outcome reason specified in
+     * the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -597,11 +600,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If true, The API excludes all candidates with any
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * matching the outcome reason specified in the filter.
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] matching the outcome reason specified in
+     * the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -612,11 +617,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If true, The API excludes all candidates with any
-     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-     * matching the outcome reason specified in the filter.
+     * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] matching the outcome reason specified in
+     * the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

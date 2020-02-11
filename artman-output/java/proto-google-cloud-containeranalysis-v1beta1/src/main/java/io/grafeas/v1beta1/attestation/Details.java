@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,27 +101,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.attestation.Attestation attestation_;
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   * @return Whether the attestation field is set.
    */
   public boolean hasAttestation() {
     return attestation_ != null;
   }
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+   * @return The attestation.
    */
   public io.grafeas.v1beta1.attestation.Attestation getAttestation() {
     return attestation_ == null ? io.grafeas.v1beta1.attestation.Attestation.getDefaultInstance() : attestation_;
   }
   /**
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -448,20 +456,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.attestation.Attestation, io.grafeas.v1beta1.attestation.Attestation.Builder, io.grafeas.v1beta1.attestation.AttestationOrBuilder> attestationBuilder_;
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+     * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
       return attestationBuilder_ != null || attestation_ != null;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
+     * @return The attestation.
      */
     public io.grafeas.v1beta1.attestation.Attestation getAttestation() {
       if (attestationBuilder_ == null) {
@@ -472,7 +482,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -492,7 +502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -510,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -532,7 +542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -550,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -562,7 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -577,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>

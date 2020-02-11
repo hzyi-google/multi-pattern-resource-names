@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.PushConfig.OidcToken</code>
  */
-final class OidcToken extends \Google\Protobuf\Internal\Message
+class OidcToken extends \Google\Protobuf\Internal\Message
 {
     /**
      * [Service account
@@ -26,7 +26,7 @@ final class OidcToken extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string service_account_email = 1;</code>
      */
-    private $service_account_email = '';
+    protected $service_account_email = '';
     /**
      * Audience to be used when generating OIDC token. The audience claim
      * identifies the recipients that the JWT is intended for. The audience
@@ -37,7 +37,7 @@ final class OidcToken extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string audience = 2;</code>
      */
-    private $audience = '';
+    protected $audience = '';
 
     /**
      * Constructor.

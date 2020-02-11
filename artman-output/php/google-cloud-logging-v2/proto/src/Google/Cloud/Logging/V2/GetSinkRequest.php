@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.GetSinkRequest</code>
  */
-final class GetSinkRequest extends \Google\Protobuf\Internal\Message
+class GetSinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the sink:
@@ -23,9 +23,9 @@ final class GetSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $sink_name = '';
+    protected $sink_name = '';
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ final class GetSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getSinkName()
@@ -71,7 +71,7 @@ final class GetSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

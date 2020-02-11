@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateSinkRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +121,8 @@ private static final long serialVersionUID = 0L;
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -139,7 +146,8 @@ private static final long serialVersionUID = 0L;
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -163,7 +171,8 @@ private static final long serialVersionUID = 0L;
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the sink field is set.
    */
   public boolean hasSink() {
     return sink_ != null;
@@ -174,7 +183,8 @@ private static final long serialVersionUID = 0L;
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The sink.
    */
   public com.google.logging.v2.LogSink getSink() {
     return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
@@ -185,7 +195,7 @@ private static final long serialVersionUID = 0L;
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
     return getSink();
@@ -208,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   * @return The uniqueWriterIdentity.
    */
   public boolean getUniqueWriterIdentity() {
     return uniqueWriterIdentity_;
@@ -578,7 +589,8 @@ private static final long serialVersionUID = 0L;
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -602,7 +614,8 @@ private static final long serialVersionUID = 0L;
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -627,7 +640,9 @@ private static final long serialVersionUID = 0L;
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -649,7 +664,8 @@ private static final long serialVersionUID = 0L;
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -667,7 +683,9 @@ private static final long serialVersionUID = 0L;
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -690,7 +708,8 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the sink field is set.
      */
     public boolean hasSink() {
       return sinkBuilder_ != null || sink_ != null;
@@ -701,7 +720,8 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The sink.
      */
     public com.google.logging.v2.LogSink getSink() {
       if (sinkBuilder_ == null) {
@@ -716,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
@@ -737,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSink(
         com.google.logging.v2.LogSink.Builder builderForValue) {
@@ -756,7 +776,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
@@ -779,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSink() {
       if (sinkBuilder_ == null) {
@@ -798,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSink.Builder getSinkBuilder() {
       
@@ -811,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
       if (sinkBuilder_ != null) {
@@ -827,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * is not already in use.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.LogSink, com.google.logging.v2.LogSink.Builder, com.google.logging.v2.LogSinkOrBuilder> 
@@ -859,6 +879,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @return The uniqueWriterIdentity.
      */
     public boolean getUniqueWriterIdentity() {
       return uniqueWriterIdentity_;
@@ -878,6 +899,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @param value The uniqueWriterIdentity to set.
+     * @return This builder for chaining.
      */
     public Builder setUniqueWriterIdentity(boolean value) {
       
@@ -900,6 +923,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
       

@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.devtools.containeranalysis.v1beta1.UpdateScanConfigRequest</code>
  */
-final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
+class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      *
-     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $scan_config = null;
+    protected $scan_config = null;
 
     /**
      * Constructor.
@@ -36,10 +36,10 @@ final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The name of the scan configuration in the form of
+     *           Required. The name of the scan configuration in the form of
      *           `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *     @type \Google\Devtools\Containeranalysis\V1beta1\ScanConfig $scan_config
-     *           The updated scan configuration.
+     *           Required. The updated scan configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -48,10 +48,10 @@ final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -60,10 +60,10 @@ final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -76,9 +76,9 @@ final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      *
-     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Devtools\Containeranalysis\V1beta1\ScanConfig
      */
     public function getScanConfig()
@@ -87,9 +87,9 @@ final class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      *
-     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * Generated from protobuf field <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Devtools\Containeranalysis\V1beta1\ScanConfig $var
      * @return $this
      */

@@ -17,7 +17,7 @@ public interface AcceleratorConfigOrBuilder extends
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
@@ -25,6 +25,7 @@ public interface AcceleratorConfigOrBuilder extends
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   * @return The acceleratorTypeUri.
    */
   java.lang.String getAcceleratorTypeUri();
   /**
@@ -37,7 +38,7 @@ public interface AcceleratorConfigOrBuilder extends
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
@@ -45,6 +46,7 @@ public interface AcceleratorConfigOrBuilder extends
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   * @return The bytes for acceleratorTypeUri.
    */
   com.google.protobuf.ByteString
       getAcceleratorTypeUriBytes();
@@ -55,6 +57,7 @@ public interface AcceleratorConfigOrBuilder extends
    * </pre>
    *
    * <code>int32 accelerator_count = 2;</code>
+   * @return The acceleratorCount.
    */
   int getAcceleratorCount();
 }

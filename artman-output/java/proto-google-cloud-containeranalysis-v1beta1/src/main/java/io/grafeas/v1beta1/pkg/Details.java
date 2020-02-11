@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Details();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,27 +101,29 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1beta1.pkg.Installation installation_;
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   * @return Whether the installation field is set.
    */
   public boolean hasInstallation() {
     return installation_ != null;
   }
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+   * @return The installation.
    */
   public io.grafeas.v1beta1.pkg.Installation getInstallation() {
     return installation_ == null ? io.grafeas.v1beta1.pkg.Installation.getDefaultInstance() : installation_;
   }
   /**
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -448,20 +456,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.pkg.Installation, io.grafeas.v1beta1.pkg.Installation.Builder, io.grafeas.v1beta1.pkg.InstallationOrBuilder> installationBuilder_;
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+     * @return Whether the installation field is set.
      */
     public boolean hasInstallation() {
       return installationBuilder_ != null || installation_ != null;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
+     * @return The installation.
      */
     public io.grafeas.v1beta1.pkg.Installation getInstallation() {
       if (installationBuilder_ == null) {
@@ -472,7 +482,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -492,7 +502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -510,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -532,7 +542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -550,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -562,7 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -577,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>

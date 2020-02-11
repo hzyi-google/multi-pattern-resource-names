@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobTrigger();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -86,18 +93,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             triggers_.add(
                 input.readMessage(com.google.privacy.dlp.v2.JobTrigger.Trigger.parser(), extensionRegistry));
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000002;
             }
             errors_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -163,10 +170,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         triggers_ = java.util.Collections.unmodifiableList(triggers_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -199,6 +206,10 @@ private static final long serialVersionUID = 0L;
   public enum Status
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     STATUS_UNSPECIFIED(0),
@@ -230,6 +241,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
@@ -268,6 +283,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -275,6 +292,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Status forNumber(int value) {
       switch (value) {
         case 0: return STATUS_UNSPECIFIED;
@@ -343,6 +364,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+     * @return Whether the schedule field is set.
      */
     boolean hasSchedule();
     /**
@@ -351,6 +373,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+     * @return The schedule.
      */
     com.google.privacy.dlp.v2.Schedule getSchedule();
     /**
@@ -384,6 +407,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Trigger();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -396,7 +426,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -456,7 +485,8 @@ private static final long serialVersionUID = 0L;
     private int triggerCase_ = 0;
     private java.lang.Object trigger_;
     public enum TriggerCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SCHEDULE(1),
       TRIGGER_NOT_SET(0);
       private final int value;
@@ -464,6 +494,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -496,6 +528,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+     * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
       return triggerCase_ == 1;
@@ -506,6 +539,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+     * @return The schedule.
      */
     public com.google.privacy.dlp.v2.Schedule getSchedule() {
       if (triggerCase_ == 1) {
@@ -882,6 +916,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+       * @return Whether the schedule field is set.
        */
       public boolean hasSchedule() {
         return triggerCase_ == 1;
@@ -892,6 +927,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
+       * @return The schedule.
        */
       public com.google.privacy.dlp.v2.Schedule getSchedule() {
         if (scheduleBuilder_ == null) {
@@ -1098,11 +1134,11 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   private int jobCase_ = 0;
   private java.lang.Object job_;
   public enum JobCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INSPECT_JOB(4),
     JOB_NOT_SET(0);
     private final int value;
@@ -1110,6 +1146,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -1145,6 +1183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1166,6 +1205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -1189,6 +1229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1208,6 +1249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -1231,6 +1273,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -1250,6 +1293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -1267,13 +1311,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+   * @return Whether the inspectJob field is set.
    */
   public boolean hasInspectJob() {
     return jobCase_ == 4;
   }
   /**
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+   * @return The inspectJob.
    */
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 4) {
@@ -1282,6 +1336,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
    */
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
@@ -1360,26 +1418,26 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
   /**
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
   /**
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
       getErrorsOrBuilderList() {
@@ -1387,39 +1445,39 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getErrorsCount() {
     return errors_.size();
   }
   /**
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
   /**
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
       int index) {
@@ -1430,30 +1488,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
   /**
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -1463,30 +1523,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
   /**
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -1496,30 +1558,32 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp lastRunTime_;
   /**
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the lastRunTime field is set.
    */
   public boolean hasLastRunTime() {
     return lastRunTime_ != null;
   }
   /**
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The lastRunTime.
    */
   public com.google.protobuf.Timestamp getLastRunTime() {
     return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
   /**
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
     return getLastRunTime();
@@ -1529,20 +1593,22 @@ private static final long serialVersionUID = 0L;
   private int status_;
   /**
    * <pre>
-   * A status for this trigger. [required]
+   * Required. A status for this trigger.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
   }
   /**
    * <pre>
-   * A status for this trigger. [required]
+   * Required. A status for this trigger.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The status.
    */
   public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -1885,13 +1951,13 @@ private static final long serialVersionUID = 0L;
 
       if (triggersBuilder_ == null) {
         triggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         triggersBuilder_.clear();
       }
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         errorsBuilder_.clear();
       }
@@ -1944,7 +2010,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.JobTrigger buildPartial() {
       com.google.privacy.dlp.v2.JobTrigger result = new com.google.privacy.dlp.v2.JobTrigger(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -1956,18 +2021,18 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (triggersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           triggers_ = java.util.Collections.unmodifiableList(triggers_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.triggers_ = triggers_;
       } else {
         result.triggers_ = triggersBuilder_.build();
       }
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.errors_ = errors_;
       } else {
@@ -1989,7 +2054,6 @@ private static final long serialVersionUID = 0L;
         result.lastRunTime_ = lastRunTimeBuilder_.build();
       }
       result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
       result.jobCase_ = jobCase_;
       onBuilt();
       return result;
@@ -2055,7 +2119,7 @@ private static final long serialVersionUID = 0L;
         if (!other.triggers_.isEmpty()) {
           if (triggers_.isEmpty()) {
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTriggersIsMutable();
             triggers_.addAll(other.triggers_);
@@ -2068,7 +2132,7 @@ private static final long serialVersionUID = 0L;
             triggersBuilder_.dispose();
             triggersBuilder_ = null;
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             triggersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTriggersFieldBuilder() : null;
@@ -2081,7 +2145,7 @@ private static final long serialVersionUID = 0L;
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -2094,7 +2158,7 @@ private static final long serialVersionUID = 0L;
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             errorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getErrorsFieldBuilder() : null;
@@ -2178,6 +2242,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2199,6 +2264,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2221,6 +2287,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -2240,6 +2308,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -2255,6 +2324,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2275,6 +2346,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2294,6 +2366,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -2314,6 +2387,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -2331,6 +2406,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -2344,6 +2420,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2364,6 +2442,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2383,6 +2462,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -2403,6 +2483,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -2420,6 +2502,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -2433,6 +2516,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2449,13 +2534,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> inspectJobBuilder_;
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     * @return Whether the inspectJob field is set.
      */
     public boolean hasInspectJob() {
       return jobCase_ == 4;
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     * @return The inspectJob.
      */
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
@@ -2471,6 +2566,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public Builder setInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -2487,6 +2586,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public Builder setInspectJob(
@@ -2501,6 +2604,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public Builder mergeInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -2523,6 +2630,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public Builder clearInspectJob() {
@@ -2542,12 +2653,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
@@ -2561,6 +2680,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2585,9 +2708,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> triggers_ =
       java.util.Collections.emptyList();
     private void ensureTriggersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>(triggers_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2803,7 +2926,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTriggers() {
       if (triggersBuilder_ == null) {
         triggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         triggersBuilder_.clear();
@@ -2922,7 +3045,7 @@ private static final long serialVersionUID = 0L;
         triggersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.JobTrigger.Trigger, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder, com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>(
                 triggers_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         triggers_ = null;
@@ -2933,9 +3056,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Error> errors_ =
       java.util.Collections.emptyList();
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2944,13 +3067,13 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
       if (errorsBuilder_ == null) {
@@ -2961,13 +3084,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getErrorsCount() {
       if (errorsBuilder_ == null) {
@@ -2978,13 +3101,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.privacy.dlp.v2.Error getErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -2995,13 +3118,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setErrors(
         int index, com.google.privacy.dlp.v2.Error value) {
@@ -3019,13 +3142,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setErrors(
         int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
@@ -3040,13 +3163,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addErrors(com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -3063,13 +3186,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addErrors(
         int index, com.google.privacy.dlp.v2.Error value) {
@@ -3087,13 +3210,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addErrors(
         com.google.privacy.dlp.v2.Error.Builder builderForValue) {
@@ -3108,13 +3231,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addErrors(
         int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
@@ -3129,13 +3252,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllErrors(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Error> values) {
@@ -3151,18 +3274,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -3171,13 +3294,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder removeErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -3191,13 +3314,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(
         int index) {
@@ -3205,13 +3328,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
         int index) {
@@ -3222,13 +3345,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
          getErrorsOrBuilderList() {
@@ -3240,13 +3363,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder() {
       return getErrorsFieldBuilder().addBuilder(
@@ -3254,13 +3377,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(
         int index) {
@@ -3269,13 +3392,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error.Builder> 
          getErrorsBuilderList() {
@@ -3288,7 +3411,7 @@ private static final long serialVersionUID = 0L;
         errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder>(
                 errors_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         errors_ = null;
@@ -3301,20 +3424,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3325,10 +3450,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3345,10 +3470,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3363,10 +3488,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3385,10 +3510,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3403,10 +3528,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -3415,10 +3540,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3430,10 +3555,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3454,20 +3579,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3478,10 +3605,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3498,10 +3625,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3516,10 +3643,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3538,10 +3665,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3556,10 +3683,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       
@@ -3568,10 +3695,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -3583,10 +3710,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3607,20 +3734,22 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastRunTimeBuilder_;
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the lastRunTime field is set.
      */
     public boolean hasLastRunTime() {
       return lastRunTimeBuilder_ != null || lastRunTime_ != null;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The lastRunTime.
      */
     public com.google.protobuf.Timestamp getLastRunTime() {
       if (lastRunTimeBuilder_ == null) {
@@ -3631,10 +3760,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLastRunTime(com.google.protobuf.Timestamp value) {
       if (lastRunTimeBuilder_ == null) {
@@ -3651,10 +3780,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLastRunTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3669,10 +3798,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeLastRunTime(com.google.protobuf.Timestamp value) {
       if (lastRunTimeBuilder_ == null) {
@@ -3691,10 +3820,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearLastRunTime() {
       if (lastRunTimeBuilder_ == null) {
@@ -3709,10 +3838,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRunTimeBuilder() {
       
@@ -3721,10 +3850,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
       if (lastRunTimeBuilder_ != null) {
@@ -3736,10 +3865,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>.google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3758,20 +3887,23 @@ private static final long serialVersionUID = 0L;
     private int status_ = 0;
     /**
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
     }
     /**
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -3780,10 +3912,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The status.
      */
     public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -3792,10 +3925,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.privacy.dlp.v2.JobTrigger.Status value) {
       if (value == null) {
@@ -3808,10 +3943,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
       

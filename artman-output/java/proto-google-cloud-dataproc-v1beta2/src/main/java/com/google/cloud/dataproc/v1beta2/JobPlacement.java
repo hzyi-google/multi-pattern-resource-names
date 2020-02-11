@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobPlacement();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -100,6 +106,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -119,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
       getClusterNameBytes() {
@@ -143,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_uuid = 2;</code>
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -163,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_uuid = 2;</code>
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString
       getClusterUuidBytes() {
@@ -508,6 +518,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -527,6 +538,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
         getClusterNameBytes() {
@@ -547,6 +559,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(
         java.lang.String value) {
@@ -564,6 +578,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
       
@@ -577,6 +592,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(
         com.google.protobuf.ByteString value) {
@@ -598,6 +615,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -618,6 +636,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString
         getClusterUuidBytes() {
@@ -639,6 +658,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(
         java.lang.String value) {
@@ -657,6 +678,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
       
@@ -671,6 +693,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 2;</code>
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(
         com.google.protobuf.ByteString value) {

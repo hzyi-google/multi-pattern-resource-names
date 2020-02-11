@@ -9,7 +9,7 @@ public interface TransientCryptoKeyOrBuilder extends
 
   /**
    * <pre>
-   * Name of the key. [required]
+   * Required. Name of the key.
    * This is an arbitrary string used to differentiate different keys.
    * A unique key is generated per name: two separate `TransientCryptoKey`
    * protos share the same generated key if their names are the same.
@@ -17,12 +17,13 @@ public interface TransientCryptoKeyOrBuilder extends
    * (repeating the api call will result in a different key being generated).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Name of the key. [required]
+   * Required. Name of the key.
    * This is an arbitrary string used to differentiate different keys.
    * A unique key is generated per name: two separate `TransientCryptoKey`
    * protos share the same generated key if their names are the same.
@@ -30,7 +31,8 @@ public interface TransientCryptoKeyOrBuilder extends
    * (repeating the api call will result in a different key being generated).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();

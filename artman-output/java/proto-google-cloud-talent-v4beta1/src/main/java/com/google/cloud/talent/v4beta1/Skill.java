@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Skill();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -150,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -173,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   * @return Whether the lastUsedDate field is set.
    */
   public boolean hasLastUsedDate() {
     return lastUsedDate_ != null;
@@ -183,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date last_used_date = 2;</code>
+   * @return The lastUsedDate.
    */
   public com.google.type.Date getLastUsedDate() {
     return lastUsedDate_ == null ? com.google.type.Date.getDefaultInstance() : lastUsedDate_;
@@ -207,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   * @return The enum numeric value on the wire for level.
    */
   public int getLevelValue() {
     return level_;
@@ -218,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+   * @return The level.
    */
   public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
     @SuppressWarnings("deprecation")
@@ -234,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string context = 4;</code>
+   * @return The context.
    */
   public java.lang.String getContext() {
     java.lang.Object ref = context_;
@@ -254,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string context = 4;</code>
+   * @return The bytes for context.
    */
   public com.google.protobuf.ByteString
       getContextBytes() {
@@ -273,14 +287,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object skillNameSnippet_;
   /**
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The skillNameSnippet.
    */
   public java.lang.String getSkillNameSnippet() {
     java.lang.Object ref = skillNameSnippet_;
@@ -296,14 +309,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for skillNameSnippet.
    */
   public com.google.protobuf.ByteString
       getSkillNameSnippetBytes() {
@@ -714,6 +726,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -735,6 +748,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -757,6 +771,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -776,6 +792,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -791,6 +808,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -813,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
+     * @return Whether the lastUsedDate field is set.
      */
     public boolean hasLastUsedDate() {
       return lastUsedDateBuilder_ != null || lastUsedDate_ != null;
@@ -823,6 +843,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date last_used_date = 2;</code>
+     * @return The lastUsedDate.
      */
     public com.google.type.Date getLastUsedDate() {
       if (lastUsedDateBuilder_ == null) {
@@ -965,6 +986,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     * @return The enum numeric value on the wire for level.
      */
     public int getLevelValue() {
       return level_;
@@ -976,6 +998,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     * @param value The enum numeric value on the wire for level to set.
+     * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
       level_ = value;
@@ -989,6 +1013,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     * @return The level.
      */
     public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
       @SuppressWarnings("deprecation")
@@ -1002,6 +1027,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     * @param value The level to set.
+     * @return This builder for chaining.
      */
     public Builder setLevel(com.google.cloud.talent.v4beta1.SkillProficiencyLevel value) {
       if (value == null) {
@@ -1019,6 +1046,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SkillProficiencyLevel level = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLevel() {
       
@@ -1035,6 +1063,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string context = 4;</code>
+     * @return The context.
      */
     public java.lang.String getContext() {
       java.lang.Object ref = context_;
@@ -1055,6 +1084,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string context = 4;</code>
+     * @return The bytes for context.
      */
     public com.google.protobuf.ByteString
         getContextBytes() {
@@ -1076,6 +1106,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string context = 4;</code>
+     * @param value The context to set.
+     * @return This builder for chaining.
      */
     public Builder setContext(
         java.lang.String value) {
@@ -1094,6 +1126,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string context = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContext() {
       
@@ -1108,6 +1141,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string context = 4;</code>
+     * @param value The bytes for context to set.
+     * @return This builder for chaining.
      */
     public Builder setContextBytes(
         com.google.protobuf.ByteString value) {
@@ -1124,14 +1159,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object skillNameSnippet_ = "";
     /**
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The skillNameSnippet.
      */
     public java.lang.String getSkillNameSnippet() {
       java.lang.Object ref = skillNameSnippet_;
@@ -1147,14 +1181,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for skillNameSnippet.
      */
     public com.google.protobuf.ByteString
         getSkillNameSnippetBytes() {
@@ -1171,14 +1204,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The skillNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillNameSnippet(
         java.lang.String value) {
@@ -1192,14 +1225,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSkillNameSnippet() {
       
@@ -1209,14 +1241,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for skillNameSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setSkillNameSnippetBytes(
         com.google.protobuf.ByteString value) {

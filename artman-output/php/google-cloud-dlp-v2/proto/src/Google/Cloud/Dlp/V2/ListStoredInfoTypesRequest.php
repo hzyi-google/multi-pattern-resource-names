@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListStoredInfoTypesRequest</code>
  */
-final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
+class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example projects/my-project-id or
@@ -21,23 +21,23 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -51,14 +51,14 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string order_by = 4;</code>
      */
-    private $order_by = '';
+    protected $order_by = '';
     /**
      * The geographic location where stored infoTypes will be retrieved from.
      * Use `-` for all locations. Reserved for future extensions.
      *
      * Generated from protobuf field <code>string location_id = 5;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -70,13 +70,13 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
      *           Required. The parent resource name, for example projects/my-project-id or
      *           organizations/my-org-id.
      *     @type string $page_token
-     *           Optional page token to continue retrieval. Comes from previous call
+     *           Page token to continue retrieval. Comes from previous call
      *           to `ListStoredInfoTypes`.
      *     @type int $page_size
-     *           Optional size of the page, can be limited by server. If zero server returns
+     *           Size of the page, can be limited by server. If zero server returns
      *           a page of max size 100.
      *     @type string $order_by
-     *           Optional comma separated list of fields to order by,
+     *           Comma separated list of fields to order by,
      *           followed by `asc` or `desc` postfix. This list is case-insensitive,
      *           default sorting order is ascending, redundant space characters are
      *           insignificant.
@@ -126,7 +126,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
@@ -138,7 +138,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
@@ -154,7 +154,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
@@ -166,7 +166,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
@@ -182,7 +182,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -203,7 +203,7 @@ final class ListStoredInfoTypesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.

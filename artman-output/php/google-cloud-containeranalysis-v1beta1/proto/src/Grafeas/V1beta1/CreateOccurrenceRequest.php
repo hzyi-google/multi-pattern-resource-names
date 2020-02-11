@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.CreateOccurrenceRequest</code>
  */
-final class CreateOccurrenceRequest extends \Google\Protobuf\Internal\Message
+class CreateOccurrenceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
@@ -21,13 +21,13 @@ final class CreateOccurrenceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1;</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * The occurrence to create.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
      */
-    private $occurrence = null;
+    protected $occurrence = null;
 
     /**
      * Constructor.

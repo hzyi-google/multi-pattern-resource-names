@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest</code>
  */
-final class UpdateOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
+class UpdateOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The organization settings resource to update.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $organization_settings = null;
+    protected $organization_settings = null;
     /**
      * The FieldMask to use when updating the settings resource.
      *  If empty all mutable fields will be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

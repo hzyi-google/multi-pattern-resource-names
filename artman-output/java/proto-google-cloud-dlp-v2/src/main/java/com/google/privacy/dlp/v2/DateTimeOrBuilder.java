@@ -9,26 +9,28 @@ public interface DateTimeOrBuilder extends
 
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   * @return Whether the date field is set.
    */
   boolean hasDate();
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   * @return The date.
    */
   com.google.type.Date getDate();
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
@@ -36,36 +38,74 @@ public interface DateTimeOrBuilder extends
   com.google.type.DateOrBuilder getDateOrBuilder();
 
   /**
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   * @return The enum numeric value on the wire for dayOfWeek.
    */
   int getDayOfWeekValue();
   /**
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   * @return The dayOfWeek.
    */
   com.google.type.DayOfWeek getDayOfWeek();
 
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
+   * @return Whether the time field is set.
    */
   boolean hasTime();
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
+   * @return The time.
    */
   com.google.type.TimeOfDay getTime();
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
    */
   com.google.type.TimeOfDayOrBuilder getTimeOrBuilder();
 
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   * @return The timeZone.
    */
   com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone();
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
    */
   com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder();

@@ -9,24 +9,24 @@ public interface ListProfilesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the tenant under which the profile is
-   * created.
+   * Required. The resource name of the tenant under which the profile is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The resource name of the tenant under which the profile is
-   * created.
+   * Required. The resource name of the tenant under which the profile is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -47,6 +47,7 @@ public interface ListProfilesRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 5;</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -65,6 +66,7 @@ public interface ListProfilesRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 5;</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -72,23 +74,23 @@ public interface ListProfilesRequestOrBuilder extends
   /**
    * <pre>
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
    * <pre>
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -100,6 +102,7 @@ public interface ListProfilesRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -112,6 +115,7 @@ public interface ListProfilesRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
   /**
@@ -123,6 +127,7 @@ public interface ListProfilesRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
   /**

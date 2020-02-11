@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.CreateWorkflowTemplateRequest</code>
  */
-final class CreateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
+class CreateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the region or location, as described
@@ -27,13 +27,13 @@ final class CreateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. The Dataproc workflow template to create.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $template = null;
+    protected $template = null;
 
     /**
      * Constructor.

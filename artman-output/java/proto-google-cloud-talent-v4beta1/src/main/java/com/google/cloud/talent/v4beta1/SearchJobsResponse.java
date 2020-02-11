@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SearchJobsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -75,9 +82,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               locationFilters_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             locationFilters_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Location.parser(), extensionRegistry));
@@ -145,7 +152,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
       this.unknownFields = unknownFields.build();
@@ -171,26 +178,25 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return Whether the job field is set.
      */
     boolean hasJob();
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return The job.
      */
     com.google.cloud.talent.v4beta1.Job getJob();
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -204,6 +210,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     * @return The jobSummary.
      */
     java.lang.String getJobSummary();
     /**
@@ -213,58 +220,57 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     * @return The bytes for jobSummary.
      */
     com.google.protobuf.ByteString
         getJobSummaryBytes();
 
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-     * matching a search query's keywords, if available. The matching query
-     * keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+     * closely matching a search query's keywords, if available. The matching
+     * query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     * @return The jobTitleSnippet.
      */
     java.lang.String getJobTitleSnippet();
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-     * matching a search query's keywords, if available. The matching query
-     * keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+     * closely matching a search query's keywords, if available. The matching
+     * query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     * @return The bytes for jobTitleSnippet.
      */
     com.google.protobuf.ByteString
         getJobTitleSnippetBytes();
 
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     * @return The searchTextSnippet.
      */
     java.lang.String getSearchTextSnippet();
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     * @return The bytes for searchTextSnippet.
      */
     com.google.protobuf.ByteString
         getSearchTextSnippetBytes();
@@ -276,6 +282,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     * @return Whether the commuteInfo field is set.
      */
     boolean hasCommuteInfo();
     /**
@@ -285,6 +292,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     * @return The commuteInfo.
      */
     com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo();
     /**
@@ -299,8 +307,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Job entry with metadata inside
-   * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+   * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -321,6 +328,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MatchingJob();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -333,7 +347,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -424,30 +437,29 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.talent.v4beta1.Job job_;
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return job_ != null;
     }
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return The job.
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
     /**
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -465,6 +477,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     * @return The jobSummary.
      */
     public java.lang.String getJobSummary() {
       java.lang.Object ref = jobSummary_;
@@ -485,6 +498,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_summary = 2;</code>
+     * @return The bytes for jobSummary.
      */
     public com.google.protobuf.ByteString
         getJobSummaryBytes() {
@@ -504,13 +518,13 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object jobTitleSnippet_;
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-     * matching a search query's keywords, if available. The matching query
-     * keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+     * closely matching a search query's keywords, if available. The matching
+     * query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     * @return The jobTitleSnippet.
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -526,13 +540,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-     * matching a search query's keywords, if available. The matching query
-     * keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+     * closely matching a search query's keywords, if available. The matching
+     * query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
+     * @return The bytes for jobTitleSnippet.
      */
     public com.google.protobuf.ByteString
         getJobTitleSnippetBytes() {
@@ -552,15 +566,14 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object searchTextSnippet_;
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     * @return The searchTextSnippet.
      */
     public java.lang.String getSearchTextSnippet() {
       java.lang.Object ref = searchTextSnippet_;
@@ -576,15 +589,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
+     * @return The bytes for searchTextSnippet.
      */
     public com.google.protobuf.ByteString
         getSearchTextSnippetBytes() {
@@ -609,6 +621,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     * @return Whether the commuteInfo field is set.
      */
     public boolean hasCommuteInfo() {
       return commuteInfo_ != null;
@@ -620,6 +633,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+     * @return The commuteInfo.
      */
     public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo() {
       return commuteInfo_ == null ? com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.getDefaultInstance() : commuteInfo_;
@@ -844,8 +858,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Job entry with metadata inside
-     * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+     * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
      * </pre>
      *
      * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -1042,22 +1055,22 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.talent.v4beta1.Job, com.google.cloud.talent.v4beta1.Job.Builder, com.google.cloud.talent.v4beta1.JobOrBuilder> jobBuilder_;
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       * @return Whether the job field is set.
        */
       public boolean hasJob() {
         return jobBuilder_ != null || job_ != null;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       * @return The job.
        */
       public com.google.cloud.talent.v4beta1.Job getJob() {
         if (jobBuilder_ == null) {
@@ -1068,8 +1081,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1089,8 +1101,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1108,8 +1119,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1131,8 +1141,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1150,8 +1159,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1163,8 +1171,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1179,8 +1186,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1207,6 +1213,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       * @return The jobSummary.
        */
       public java.lang.String getJobSummary() {
         java.lang.Object ref = jobSummary_;
@@ -1227,6 +1234,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       * @return The bytes for jobSummary.
        */
       public com.google.protobuf.ByteString
           getJobSummaryBytes() {
@@ -1248,6 +1256,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       * @param value The jobSummary to set.
+       * @return This builder for chaining.
        */
       public Builder setJobSummary(
           java.lang.String value) {
@@ -1266,6 +1276,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJobSummary() {
         
@@ -1280,6 +1291,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string job_summary = 2;</code>
+       * @param value The bytes for jobSummary to set.
+       * @return This builder for chaining.
        */
       public Builder setJobSummaryBytes(
           com.google.protobuf.ByteString value) {
@@ -1296,13 +1309,13 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object jobTitleSnippet_ = "";
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-       * matching a search query's keywords, if available. The matching query
-       * keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+       * closely matching a search query's keywords, if available. The matching
+       * query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       * @return The jobTitleSnippet.
        */
       public java.lang.String getJobTitleSnippet() {
         java.lang.Object ref = jobTitleSnippet_;
@@ -1318,13 +1331,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-       * matching a search query's keywords, if available. The matching query
-       * keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+       * closely matching a search query's keywords, if available. The matching
+       * query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       * @return The bytes for jobTitleSnippet.
        */
       public com.google.protobuf.ByteString
           getJobTitleSnippetBytes() {
@@ -1341,13 +1354,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-       * matching a search query's keywords, if available. The matching query
-       * keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+       * closely matching a search query's keywords, if available. The matching
+       * query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       * @param value The jobTitleSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setJobTitleSnippet(
           java.lang.String value) {
@@ -1361,13 +1375,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-       * matching a search query's keywords, if available. The matching query
-       * keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+       * closely matching a search query's keywords, if available. The matching
+       * query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJobTitleSnippet() {
         
@@ -1377,13 +1391,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
-       * matching a search query's keywords, if available. The matching query
-       * keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
+       * closely matching a search query's keywords, if available. The matching
+       * query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
+       * @param value The bytes for jobTitleSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setJobTitleSnippetBytes(
           com.google.protobuf.ByteString value) {
@@ -1400,15 +1415,14 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object searchTextSnippet_ = "";
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       * @return The searchTextSnippet.
        */
       public java.lang.String getSearchTextSnippet() {
         java.lang.Object ref = searchTextSnippet_;
@@ -1424,15 +1438,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       * @return The bytes for searchTextSnippet.
        */
       public com.google.protobuf.ByteString
           getSearchTextSnippetBytes() {
@@ -1449,15 +1462,15 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       * @param value The searchTextSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setSearchTextSnippet(
           java.lang.String value) {
@@ -1471,15 +1484,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSearchTextSnippet() {
         
@@ -1489,15 +1501,15 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
+       * @param value The bytes for searchTextSnippet to set.
+       * @return This builder for chaining.
        */
       public Builder setSearchTextSnippetBytes(
           com.google.protobuf.ByteString value) {
@@ -1521,6 +1533,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+       * @return Whether the commuteInfo field is set.
        */
       public boolean hasCommuteInfo() {
         return commuteInfoBuilder_ != null || commuteInfo_ != null;
@@ -1532,6 +1545,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
+       * @return The commuteInfo.
        */
       public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo() {
         if (commuteInfoBuilder_ == null) {
@@ -1735,6 +1749,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     * @return Whether the jobLocation field is set.
      */
     boolean hasJobLocation();
     /**
@@ -1743,6 +1758,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     * @return The jobLocation.
      */
     com.google.cloud.talent.v4beta1.Location getJobLocation();
     /**
@@ -1763,6 +1779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     * @return Whether the travelDuration field is set.
      */
     boolean hasTravelDuration();
     /**
@@ -1774,6 +1791,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     * @return The travelDuration.
      */
     com.google.protobuf.Duration getTravelDuration();
     /**
@@ -1808,6 +1826,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CommuteInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1820,7 +1845,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1897,6 +1921,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     * @return Whether the jobLocation field is set.
      */
     public boolean hasJobLocation() {
       return jobLocation_ != null;
@@ -1907,6 +1932,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+     * @return The jobLocation.
      */
     public com.google.cloud.talent.v4beta1.Location getJobLocation() {
       return jobLocation_ == null ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance() : jobLocation_;
@@ -1933,6 +1959,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     * @return Whether the travelDuration field is set.
      */
     public boolean hasTravelDuration() {
       return travelDuration_ != null;
@@ -1946,6 +1973,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
+     * @return The travelDuration.
      */
     public com.google.protobuf.Duration getTravelDuration() {
       return travelDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : travelDuration_;
@@ -2322,6 +2350,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+       * @return Whether the jobLocation field is set.
        */
       public boolean hasJobLocation() {
         return jobLocationBuilder_ != null || jobLocation_ != null;
@@ -2332,6 +2361,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
+       * @return The jobLocation.
        */
       public com.google.cloud.talent.v4beta1.Location getJobLocation() {
         if (jobLocationBuilder_ == null) {
@@ -2478,6 +2508,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
+       * @return Whether the travelDuration field is set.
        */
       public boolean hasTravelDuration() {
         return travelDurationBuilder_ != null || travelDuration_ != null;
@@ -2491,6 +2522,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
+       * @return The travelDuration.
        */
       public com.google.protobuf.Duration getTravelDuration() {
         if (travelDurationBuilder_ == null) {
@@ -2698,13 +2730,11 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int MATCHING_JOBS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob> matchingJobs_;
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -2714,8 +2744,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -2726,8 +2755,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -2737,8 +2765,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -2748,8 +2775,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -2828,6 +2854,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -2848,6 +2875,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -2868,9 +2896,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -2882,9 +2908,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -2897,9 +2921,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -2911,9 +2933,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -2925,9 +2945,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -2944,11 +2962,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * An estimation of the number of jobs that match the specified query.
    * This number isn't guaranteed to be accurate. For accurate results,
-   * see
-   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+   * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
+   * @return The estimatedTotalSize.
    */
   public int getEstimatedTotalSize() {
     return estimatedTotalSize_;
@@ -2959,12 +2977,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The precise result count, which is available only if the client set
-   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size]
-   * to `true`, or if the response is the last page of results. Otherwise, the
-   * value is `-1`.
+   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
+   * response is the last page of results. Otherwise, the value is `-1`.
    * </pre>
    *
    * <code>int32 total_size = 6;</code>
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -2979,6 +2997,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -2990,6 +3009,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance() : metadata_;
@@ -3020,6 +3040,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 broadened_query_jobs_count = 8;</code>
+   * @return The broadenedQueryJobsCount.
    */
   public int getBroadenedQueryJobsCount() {
     return broadenedQueryJobsCount_;
@@ -3033,6 +3054,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   * @return Whether the spellCorrection field is set.
    */
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
@@ -3043,6 +3065,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   * @return The spellCorrection.
    */
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null ? com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance() : spellCorrection_;
@@ -3377,7 +3400,7 @@ private static final long serialVersionUID = 0L;
 
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         locationFiltersBuilder_.clear();
       }
@@ -3426,7 +3449,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.SearchJobsResponse buildPartial() {
       com.google.cloud.talent.v4beta1.SearchJobsResponse result = new com.google.cloud.talent.v4beta1.SearchJobsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (matchingJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           matchingJobs_ = java.util.Collections.unmodifiableList(matchingJobs_);
@@ -3447,9 +3469,9 @@ private static final long serialVersionUID = 0L;
       }
       result.nextPageToken_ = nextPageToken_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.locationFilters_ = locationFilters_;
       } else {
@@ -3468,7 +3490,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.spellCorrection_ = spellCorrectionBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3577,7 +3598,7 @@ private static final long serialVersionUID = 0L;
         if (!other.locationFilters_.isEmpty()) {
           if (locationFilters_.isEmpty()) {
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLocationFiltersIsMutable();
             locationFilters_.addAll(other.locationFilters_);
@@ -3590,7 +3611,7 @@ private static final long serialVersionUID = 0L;
             locationFiltersBuilder_.dispose();
             locationFiltersBuilder_ = null;
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
             locationFiltersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLocationFiltersFieldBuilder() : null;
@@ -3658,8 +3679,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3673,8 +3693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3688,8 +3707,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3703,8 +3721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3725,8 +3742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3744,8 +3760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3765,8 +3780,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3787,8 +3801,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3806,8 +3819,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3825,8 +3837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3845,8 +3856,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3863,8 +3873,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3881,8 +3890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3893,8 +3901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3908,8 +3915,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3924,8 +3930,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3936,8 +3941,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -3949,8 +3953,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -4312,6 +4315,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -4332,6 +4336,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -4353,6 +4358,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -4371,6 +4378,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -4385,6 +4393,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -4401,9 +4411,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Location> locationFilters_ =
       java.util.Collections.emptyList();
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         locationFilters_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(locationFilters_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -4413,9 +4423,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4431,9 +4439,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4449,9 +4455,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4467,9 +4471,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4492,9 +4494,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4514,9 +4514,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4538,9 +4536,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4563,9 +4559,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4585,9 +4579,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4607,9 +4599,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4630,9 +4620,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4641,7 +4629,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLocationFilters() {
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         locationFiltersBuilder_.clear();
@@ -4651,9 +4639,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4672,9 +4658,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4687,9 +4671,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4705,9 +4687,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4724,9 +4704,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4739,9 +4717,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4755,9 +4731,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the
-     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-     * is
+     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4774,7 +4748,7 @@ private static final long serialVersionUID = 0L;
         locationFiltersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Location, com.google.cloud.talent.v4beta1.Location.Builder, com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -4787,11 +4761,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+     * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     * @return The estimatedTotalSize.
      */
     public int getEstimatedTotalSize() {
       return estimatedTotalSize_;
@@ -4800,11 +4774,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+     * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     * @param value The estimatedTotalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setEstimatedTotalSize(int value) {
       
@@ -4816,11 +4791,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+     * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEstimatedTotalSize() {
       
@@ -4833,12 +4808,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The precise result count, which is available only if the client set
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size]
-     * to `true`, or if the response is the last page of results. Otherwise, the
-     * value is `-1`.
+     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
+     * response is the last page of results. Otherwise, the value is `-1`.
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -4846,12 +4821,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The precise result count, which is available only if the client set
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size]
-     * to `true`, or if the response is the last page of results. Otherwise, the
-     * value is `-1`.
+     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
+     * response is the last page of results. Otherwise, the value is `-1`.
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
       
@@ -4862,12 +4838,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The precise result count, which is available only if the client set
-     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size]
-     * to `true`, or if the response is the last page of results. Otherwise, the
-     * value is `-1`.
+     * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
+     * response is the last page of results. Otherwise, the value is `-1`.
      * </pre>
      *
      * <code>int32 total_size = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
       
@@ -4886,6 +4862,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -4897,6 +4874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -5051,6 +5029,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     * @return The broadenedQueryJobsCount.
      */
     public int getBroadenedQueryJobsCount() {
       return broadenedQueryJobsCount_;
@@ -5067,6 +5046,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     * @param value The broadenedQueryJobsCount to set.
+     * @return This builder for chaining.
      */
     public Builder setBroadenedQueryJobsCount(int value) {
       
@@ -5086,6 +5067,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 broadened_query_jobs_count = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBroadenedQueryJobsCount() {
       
@@ -5103,6 +5085,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+     * @return Whether the spellCorrection field is set.
      */
     public boolean hasSpellCorrection() {
       return spellCorrectionBuilder_ != null || spellCorrection_ != null;
@@ -5113,6 +5096,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+     * @return The spellCorrection.
      */
     public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
       if (spellCorrectionBuilder_ == null) {

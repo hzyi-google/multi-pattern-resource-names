@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.devtools.containeranalysis.v1beta1.ListScanConfigsResponse</code>
  */
-final class ListScanConfigsResponse extends \Google\Protobuf\Internal\Message
+class ListScanConfigsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The scan configurations requested.
@@ -28,7 +28,7 @@ final class ListScanConfigsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

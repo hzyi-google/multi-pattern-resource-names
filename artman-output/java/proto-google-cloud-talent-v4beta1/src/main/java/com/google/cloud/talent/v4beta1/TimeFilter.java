@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TimeFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -182,6 +188,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -189,6 +197,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimeField forNumber(int value) {
       switch (value) {
         case 0: return TIME_FIELD_UNSPECIFIED;
@@ -256,6 +268,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -268,6 +281,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -295,6 +309,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -307,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -329,11 +345,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   * @return The enum numeric value on the wire for timeField.
    */
   public int getTimeFieldValue() {
     return timeField_;
@@ -341,11 +357,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+   * @return The timeField.
    */
   public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
     @SuppressWarnings("deprecation")
@@ -729,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -741,6 +758,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -900,6 +918,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -912,6 +931,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1064,11 +1084,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which time field to filter profiles.
-     * Defaults to
-     * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+     * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     * @return The enum numeric value on the wire for timeField.
      */
     public int getTimeFieldValue() {
       return timeField_;
@@ -1076,11 +1096,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which time field to filter profiles.
-     * Defaults to
-     * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+     * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     * @param value The enum numeric value on the wire for timeField to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeFieldValue(int value) {
       timeField_ = value;
@@ -1090,11 +1111,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which time field to filter profiles.
-     * Defaults to
-     * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+     * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     * @return The timeField.
      */
     public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
       @SuppressWarnings("deprecation")
@@ -1104,11 +1125,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which time field to filter profiles.
-     * Defaults to
-     * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+     * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     * @param value The timeField to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeField(com.google.cloud.talent.v4beta1.TimeFilter.TimeField value) {
       if (value == null) {
@@ -1122,11 +1144,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which time field to filter profiles.
-     * Defaults to
-     * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+     * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimeField() {
       

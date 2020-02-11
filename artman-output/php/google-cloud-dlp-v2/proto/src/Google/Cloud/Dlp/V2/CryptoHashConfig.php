@@ -19,14 +19,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CryptoHashConfig</code>
  */
-final class CryptoHashConfig extends \Google\Protobuf\Internal\Message
+class CryptoHashConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * The key used by the hash function.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
-    private $crypto_key = null;
+    protected $crypto_key = null;
 
     /**
      * Constructor.

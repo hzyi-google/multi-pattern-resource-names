@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BigQueryTable();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +49,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -132,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -155,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   * @return The datasetId.
    */
   public java.lang.String getDatasetId() {
     java.lang.Object ref = datasetId_;
@@ -174,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
+   * @return The bytes for datasetId.
    */
   public com.google.protobuf.ByteString
       getDatasetIdBytes() {
@@ -197,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   * @return The tableId.
    */
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
@@ -216,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string table_id = 3;</code>
+   * @return The bytes for tableId.
    */
   public com.google.protobuf.ByteString
       getTableIdBytes() {
@@ -583,6 +595,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -603,6 +616,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -624,6 +638,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -642,6 +658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -656,6 +673,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -676,6 +695,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     * @return The datasetId.
      */
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
@@ -695,6 +715,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     * @return The bytes for datasetId.
      */
     public com.google.protobuf.ByteString
         getDatasetIdBytes() {
@@ -715,6 +736,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     * @param value The datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetId(
         java.lang.String value) {
@@ -732,6 +755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDatasetId() {
       
@@ -745,6 +769,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     * @param value The bytes for datasetId to set.
+     * @return This builder for chaining.
      */
     public Builder setDatasetIdBytes(
         com.google.protobuf.ByteString value) {
@@ -765,6 +791,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     * @return The tableId.
      */
     public java.lang.String getTableId() {
       java.lang.Object ref = tableId_;
@@ -784,6 +811,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     * @return The bytes for tableId.
      */
     public com.google.protobuf.ByteString
         getTableIdBytes() {
@@ -804,6 +832,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     * @param value The tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableId(
         java.lang.String value) {
@@ -821,6 +851,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTableId() {
       
@@ -834,6 +865,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     * @param value The bytes for tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableIdBytes(
         com.google.protobuf.ByteString value) {

@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Cloud Dataproc job for running
+ * A Dataproc job for running
  * [Apache
  * PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
  * applications on YARN.
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.PySparkJob</code>
  */
-final class PySparkJob extends \Google\Protobuf\Internal\Message
+class PySparkJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The HCFS URI of the main Python file to use as the driver. Must
@@ -24,7 +24,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $main_python_file_uri = '';
+    protected $main_python_file_uri = '';
     /**
      * Optional. The arguments to pass to the driver.  Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -63,7 +63,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
     private $archive_uris;
     /**
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *
@@ -75,7 +75,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
 
     /**
      * Constructor.
@@ -104,7 +104,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
      *           .jar, .tar, .tar.gz, .tgz, and .zip.
      *     @type array|\Google\Protobuf\Internal\MapField $properties
      *           Optional. A mapping of property names to values, used to configure PySpark.
-     *           Properties that conflict with values set by the Cloud Dataproc API may be
+     *           Properties that conflict with values set by the Dataproc API may be
      *           overwritten. Can include properties set in
      *           /etc/spark/conf/spark-defaults.conf and classes in user code.
      *     @type \Google\Cloud\Dataproc\V1\LoggingConfig $logging_config
@@ -288,7 +288,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *
@@ -302,7 +302,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *

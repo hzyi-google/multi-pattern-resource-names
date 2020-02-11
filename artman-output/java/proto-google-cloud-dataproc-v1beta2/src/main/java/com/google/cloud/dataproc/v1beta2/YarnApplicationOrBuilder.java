@@ -13,6 +13,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -21,6 +22,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -31,6 +33,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -39,6 +42,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
   com.google.cloud.dataproc.v1beta2.YarnApplication.State getState();
 
@@ -48,6 +52,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The progress.
    */
   float getProgress();
 
@@ -60,6 +65,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The trackingUrl.
    */
   java.lang.String getTrackingUrl();
   /**
@@ -71,6 +77,7 @@ public interface YarnApplicationOrBuilder extends
    * </pre>
    *
    * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for trackingUrl.
    */
   com.google.protobuf.ByteString
       getTrackingUrlBytes();

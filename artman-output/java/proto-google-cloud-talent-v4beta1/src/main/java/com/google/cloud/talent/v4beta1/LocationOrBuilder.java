@@ -10,27 +10,25 @@ public interface LocationOrBuilder extends
   /**
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-   * "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-   * and "Kansas City, KS, USA" has a type of
-   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   * @return The enum numeric value on the wire for locationType.
    */
   int getLocationTypeValue();
   /**
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-   * "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-   * and "Kansas City, KS, USA" has a type of
-   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   * @return The locationType.
    */
   com.google.cloud.talent.v4beta1.Location.LocationType getLocationType();
 
@@ -43,6 +41,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   * @return Whether the postalAddress field is set.
    */
   boolean hasPostalAddress();
   /**
@@ -54,6 +53,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   * @return The postalAddress.
    */
   com.google.type.PostalAddress getPostalAddress();
   /**
@@ -74,6 +74,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
   /**
@@ -82,6 +83,7 @@ public interface LocationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
   /**
@@ -97,12 +99,14 @@ public interface LocationOrBuilder extends
    * <pre>
    * Radius in miles of the job location. This value is derived from the
    * location bounding box in which a circle with the specified radius
-   * centered from [google.type.LatLng][google.type.LatLng] covers the area
-   * associated with the job location. For example, currently, "Mountain View,
-   * CA, USA" has a radius of 6.17 miles.
+   * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
+   * job location.
+   * For example, currently, "Mountain View, CA, USA" has a radius of
+   * 6.17 miles.
    * </pre>
    *
    * <code>double radius_miles = 4;</code>
+   * @return The radiusMiles.
    */
   double getRadiusMiles();
 }

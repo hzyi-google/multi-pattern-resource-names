@@ -5,8 +5,7 @@ package com.google.cloud.talent.v4beta1;
 
 /**
  * <pre>
- * Profile entry with metadata inside
- * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+ * Profile entry with metadata inside [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.SummarizedProfile}
@@ -22,6 +21,13 @@ private static final long serialVersionUID = 0L;
   }
   private SummarizedProfile() {
     profiles_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SummarizedProfile();
   }
 
   @java.lang.Override
@@ -105,13 +111,11 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.SummarizedProfile.class, com.google.cloud.talent.v4beta1.SummarizedProfile.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROFILES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Profile> profiles_;
   /**
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -121,8 +125,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -133,8 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -144,8 +146,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -155,8 +156,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -172,10 +172,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API
@@ -185,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+   * @return Whether the summary field is set.
    */
   public boolean hasSummary() {
     return summary_ != null;
@@ -193,10 +193,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API
@@ -206,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+   * @return The summary.
    */
   public com.google.cloud.talent.v4beta1.Profile getSummary() {
     return summary_ == null ? com.google.cloud.talent.v4beta1.Profile.getDefaultInstance() : summary_;
@@ -214,10 +214,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API
@@ -407,8 +406,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Profile entry with metadata inside
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * Profile entry with metadata inside [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SummarizedProfile}
@@ -488,7 +486,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.SummarizedProfile buildPartial() {
       com.google.cloud.talent.v4beta1.SummarizedProfile result = new com.google.cloud.talent.v4beta1.SummarizedProfile(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (profilesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           profiles_ = java.util.Collections.unmodifiableList(profiles_);
@@ -503,7 +500,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.summary_ = summaryBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -625,8 +621,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -640,8 +635,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -655,8 +649,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -670,8 +663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -692,8 +684,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -711,8 +702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -732,8 +722,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -754,8 +743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -773,8 +761,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -792,8 +779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -812,8 +798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -830,8 +815,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -848,8 +832,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -860,8 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -875,8 +857,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -891,8 +872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -903,8 +883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -916,8 +895,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of profiles that are linked by
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+     * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -948,10 +926,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -961,6 +938,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+     * @return Whether the summary field is set.
      */
     public boolean hasSummary() {
       return summaryBuilder_ != null || summary_ != null;
@@ -969,10 +947,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -982,6 +959,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
+     * @return The summary.
      */
     public com.google.cloud.talent.v4beta1.Profile getSummary() {
       if (summaryBuilder_ == null) {
@@ -994,10 +972,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1025,10 +1002,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1054,10 +1030,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1087,10 +1062,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1116,10 +1090,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1139,10 +1112,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API
@@ -1165,10 +1137,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A profile summary shows the profile summary and how the profile matches the
      * search query.
-     * In profile summary, the profiles with the same
-     * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-     * together. Among profiles, same education/employment records may be slightly
-     * different but they are merged into one with best efforts.
+     * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+     * merged together. Among profiles, same education/employment records may be
+     * slightly different but they are merged into one with best efforts.
      * For example, in one profile the school name is "UC Berkeley" and the field
      * study is "Computer Science" and in another one the school name is
      * "University of California at Berkeley" and the field study is "CS". The API

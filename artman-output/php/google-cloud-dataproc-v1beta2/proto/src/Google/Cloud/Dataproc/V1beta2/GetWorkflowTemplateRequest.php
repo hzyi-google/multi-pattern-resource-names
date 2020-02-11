@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.GetWorkflowTemplateRequest</code>
  */
-final class GetWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
+class GetWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the workflow template, as described
@@ -27,7 +27,7 @@ final class GetWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Optional. The version of workflow template to retrieve. Only previously
      * instantiated versions can be retrieved.
@@ -35,7 +35,7 @@ final class GetWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 version = 2;</code>
      */
-    private $version = 0;
+    protected $version = 0;
 
     /**
      * Constructor.

@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -624,7 +624,7 @@ module Google
           #   A hash of the same form as `Google::Privacy::Dlp::V2::ContentItem`
           #   can also be provided.
           # @param inspect_template_name [String]
-          #   Optional template to use. Any configuration directly specified in
+          #   Template to use. Any configuration directly specified in
           #   inspect_config will override those set in the template. Singular fields
           #   that are set in this request will replace their corresponding fields in the
           #   template. Repeated fields are appended. Singular sub-messages and groups
@@ -759,13 +759,13 @@ module Google
           #   A hash of the same form as `Google::Privacy::Dlp::V2::ContentItem`
           #   can also be provided.
           # @param inspect_template_name [String]
-          #   Optional template to use. Any configuration directly specified in
+          #   Template to use. Any configuration directly specified in
           #   inspect_config will override those set in the template. Singular fields
           #   that are set in this request will replace their corresponding fields in the
           #   template. Repeated fields are appended. Singular sub-messages and groups
           #   are recursively merged.
           # @param deidentify_template_name [String]
-          #   Optional template to use. Any configuration directly specified in
+          #   Template to use. Any configuration directly specified in
           #   deidentify_config will override those set in the template. Singular fields
           #   that are set in this request will replace their corresponding fields in the
           #   template. Repeated fields are appended. Singular sub-messages and groups
@@ -840,13 +840,13 @@ module Google
           #   A hash of the same form as `Google::Privacy::Dlp::V2::ContentItem`
           #   can also be provided.
           # @param inspect_template_name [String]
-          #   Optional template to use. Any configuration directly specified in
+          #   Template to use. Any configuration directly specified in
           #   `inspect_config` will override those set in the template. Singular fields
           #   that are set in this request will replace their corresponding fields in the
           #   template. Repeated fields are appended. Singular sub-messages and groups
           #   are recursively merged.
           # @param reidentify_template_name [String]
-          #   Optional template to use. References an instance of `DeidentifyTemplate`.
+          #   Template to use. References an instance of `DeidentifyTemplate`.
           #   Any configuration directly specified in `reidentify_config` or
           #   `inspect_config` will override those set in the template. Singular fields
           #   that are set in this request will replace their corresponding fields in the
@@ -898,11 +898,11 @@ module Google
           # learn more.
           #
           # @param language_code [String]
-          #   Optional BCP-47 language code for localized infoType friendly
+          #   BCP-47 language code for localized infoType friendly
           #   names. If omitted, or if localized strings are not available,
           #   en-US strings will be returned.
           # @param filter [String]
-          #   Optional filter to only return infoTypes supported by certain parts of the
+          #   filter to only return infoTypes supported by certain parts of the
           #   API. Defaults to supported_by=INSPECT.
           # @param location_id [String]
           #   The geographic location to list info types. Reserved for future
@@ -944,7 +944,7 @@ module Google
           #   Required. The parent resource name, for example projects/my-project-id or
           #   organizations/my-org-id.
           # @param inspect_template [Google::Privacy::Dlp::V2::InspectTemplate | Hash]
-          #   The InspectTemplate to create.
+          #   Required. The InspectTemplate to create.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::InspectTemplate`
           #   can also be provided.
           # @param template_id [String]
@@ -1077,7 +1077,7 @@ module Google
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
           # @param order_by [String]
-          #   Optional comma separated list of fields to order by,
+          #   Comma separated list of fields to order by,
           #   followed by `asc` or `desc` postfix. This list is case-insensitive,
           #   default sorting order is ascending, redundant space characters are
           #   insignificant.
@@ -1183,7 +1183,7 @@ module Google
           #   Required. The parent resource name, for example projects/my-project-id or
           #   organizations/my-org-id.
           # @param deidentify_template [Google::Privacy::Dlp::V2::DeidentifyTemplate | Hash]
-          #   The DeidentifyTemplate to create.
+          #   Required. The DeidentifyTemplate to create.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::DeidentifyTemplate`
           #   can also be provided.
           # @param template_id [String]
@@ -1320,7 +1320,7 @@ module Google
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
           # @param order_by [String]
-          #   Optional comma separated list of fields to order by,
+          #   Comma separated list of fields to order by,
           #   followed by `asc` or `desc` postfix. This list is case-insensitive,
           #   default sorting order is ascending, redundant space characters are
           #   insignificant.
@@ -1429,9 +1429,11 @@ module Google
           # @param parent [String]
           #   Required. The parent resource name, for example projects/my-project-id.
           # @param inspect_job [Google::Privacy::Dlp::V2::InspectJobConfig | Hash]
+          #   Set to control what and how to inspect.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::InspectJobConfig`
           #   can also be provided.
           # @param risk_job [Google::Privacy::Dlp::V2::RiskAnalysisJobConfig | Hash]
+          #   Set to choose what metric to calculate.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::RiskAnalysisJobConfig`
           #   can also be provided.
           # @param job_id [String]
@@ -1483,14 +1485,14 @@ module Google
           # @param parent [String]
           #   Required. The parent resource name, for example projects/my-project-id.
           # @param filter [String]
-          #   Optional. Allows filtering.
+          #   Allows filtering.
           #
           #   Supported syntax:
           #
           #   * Filter expressions are made up of one or more restrictions.
           #   * Restrictions can be combined by `AND` or `OR` logical operators. A
           #     sequence of restrictions implicitly uses `AND`.
-          #   * A restriction has the form of `<field> <operator> <value>`.
+          #   * A restriction has the form of `{field} {operator} {value}`.
           #   * Supported fields/values for inspect jobs:
           #     * `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
           #       * `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1520,7 +1522,7 @@ module Google
           # @param type [Google::Privacy::Dlp::V2::DlpJobType]
           #   The type of job. Defaults to `DlpJobType.INSPECT`
           # @param order_by [String]
-          #   Optional comma separated list of fields to order by,
+          #   Comma separated list of fields to order by,
           #   followed by `asc` or `desc` postfix. This list is case-insensitive,
           #   default sorting order is ascending, redundant space characters are
           #   insignificant.
@@ -1700,7 +1702,7 @@ module Google
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
           # @param order_by [String]
-          #   Optional comma separated list of triggeredJob fields to order by,
+          #   Comma separated list of triggeredJob fields to order by,
           #   followed by `asc` or `desc` postfix. This list is case-insensitive,
           #   default sorting order is ascending, redundant space characters are
           #   insignificant.
@@ -1716,14 +1718,14 @@ module Google
           #   * `display_name`: corresponds to JobTrigger's display name.
           #   * `status`: corresponds to JobTrigger's status.
           # @param filter [String]
-          #   Optional. Allows filtering.
+          #   Allows filtering.
           #
           #   Supported syntax:
           #
           #   * Filter expressions are made up of one or more restrictions.
           #   * Restrictions can be combined by `AND` or `OR` logical operators. A
           #     sequence of restrictions implicitly uses `AND`.
-          #   * A restriction has the form of `<field> <operator> <value>`.
+          #   * A restriction has the form of `{field} {operator} {value}`.
           #   * Supported fields/values for inspect jobs:
           #     * `status` - HEALTHY|PAUSED|CANCELLED
           #       * `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -1910,7 +1912,7 @@ module Google
           # @param parent [String]
           #   Required. The parent resource name, for example projects/my-project-id.
           # @param job_trigger [Google::Privacy::Dlp::V2::JobTrigger | Hash]
-          #   The JobTrigger to create.
+          #   Required. The JobTrigger to create.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::JobTrigger`
           #   can also be provided.
           # @param trigger_id [String]
@@ -1961,7 +1963,7 @@ module Google
           #   Required. The parent resource name, for example projects/my-project-id or
           #   organizations/my-org-id.
           # @param config [Google::Privacy::Dlp::V2::StoredInfoTypeConfig | Hash]
-          #   Configuration of the storedInfoType to create.
+          #   Required. Configuration of the storedInfoType to create.
           #   A hash of the same form as `Google::Privacy::Dlp::V2::StoredInfoTypeConfig`
           #   can also be provided.
           # @param stored_info_type_id [String]
@@ -2101,7 +2103,7 @@ module Google
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
           # @param order_by [String]
-          #   Optional comma separated list of fields to order by,
+          #   Comma separated list of fields to order by,
           #   followed by `asc` or `desc` postfix. This list is case-insensitive,
           #   default sorting order is ascending, redundant space characters are
           #   insignificant.

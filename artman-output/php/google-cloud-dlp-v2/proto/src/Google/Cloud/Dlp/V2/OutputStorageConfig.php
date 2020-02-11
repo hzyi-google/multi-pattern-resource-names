@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.OutputStorageConfig</code>
  */
-final class OutputStorageConfig extends \Google\Protobuf\Internal\Message
+class OutputStorageConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Schema used for writing the findings for Inspect jobs. This field is only
@@ -27,7 +27,7 @@ final class OutputStorageConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
      */
-    private $output_schema = 0;
+    protected $output_schema = 0;
     protected $type;
 
     /**

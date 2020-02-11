@@ -9,38 +9,42 @@ public interface ListScanConfigsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the project to list scan configurations for in the form of
+   * Required. The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * The name of the project to list scan configurations for in the form of
+   * Required. The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * The filter expression.
+   * Required. The filter expression.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
    * <pre>
-   * The filter expression.
+   * Required. The filter expression.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -51,6 +55,7 @@ public interface ListScanConfigsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -60,6 +65,7 @@ public interface ListScanConfigsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -68,6 +74,7 @@ public interface ListScanConfigsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();

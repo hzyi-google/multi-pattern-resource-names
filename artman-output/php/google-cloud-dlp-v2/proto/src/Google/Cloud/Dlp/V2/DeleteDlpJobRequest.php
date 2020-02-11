@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.DeleteDlpJobRequest</code>
  */
-final class DeleteDlpJobRequest extends \Google\Protobuf\Internal\Message
+class DeleteDlpJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The name of the DlpJob resource to be deleted.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

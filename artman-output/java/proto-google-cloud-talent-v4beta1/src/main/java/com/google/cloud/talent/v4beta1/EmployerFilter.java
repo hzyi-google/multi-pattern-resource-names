@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new EmployerFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -99,9 +105,8 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Enum indicating which set of
-   * [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records]
-   * to search against.
+   * Enum indicating which set of [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records] to search
+   * against.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode}
@@ -118,8 +123,7 @@ private static final long serialVersionUID = 0L;
     EMPLOYER_FILTER_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Apply to all employers in
-     * [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * Apply to all employers in [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>ALL_EMPLOYMENT_RECORDS = 1;</code>
@@ -127,8 +131,7 @@ private static final long serialVersionUID = 0L;
     ALL_EMPLOYMENT_RECORDS(1),
     /**
      * <pre>
-     * Apply only to current employer in
-     * [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * Apply only to current employer in [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>CURRENT_EMPLOYMENT_RECORDS_ONLY = 2;</code>
@@ -156,8 +159,7 @@ private static final long serialVersionUID = 0L;
     public static final int EMPLOYER_FILTER_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Apply to all employers in
-     * [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * Apply to all employers in [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>ALL_EMPLOYMENT_RECORDS = 1;</code>
@@ -165,8 +167,7 @@ private static final long serialVersionUID = 0L;
     public static final int ALL_EMPLOYMENT_RECORDS_VALUE = 1;
     /**
      * <pre>
-     * Apply only to current employer in
-     * [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * Apply only to current employer in [Profile.employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>CURRENT_EMPLOYMENT_RECORDS_ONLY = 2;</code>
@@ -192,6 +193,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -199,6 +202,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static EmployerFilterMode forNumber(int value) {
       switch (value) {
         case 0: return EMPLOYER_FILTER_MODE_UNSPECIFIED;
@@ -265,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The employer.
    */
   public java.lang.String getEmployer() {
     java.lang.Object ref = employer_;
@@ -284,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for employer.
    */
   public com.google.protobuf.ByteString
       getEmployerBytes() {
@@ -303,28 +312,24 @@ private static final long serialVersionUID = 0L;
   private int mode_;
   /**
    * <pre>
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   * @return The enum numeric value on the wire for mode.
    */
   public int getModeValue() {
     return mode_;
   }
   /**
    * <pre>
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+   * @return The mode.
    */
   public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
     @SuppressWarnings("deprecation")
@@ -341,6 +346,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negated = 3;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -693,6 +699,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The employer.
      */
     public java.lang.String getEmployer() {
       java.lang.Object ref = employer_;
@@ -712,6 +719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for employer.
      */
     public com.google.protobuf.ByteString
         getEmployerBytes() {
@@ -732,6 +740,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The employer to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployer(
         java.lang.String value) {
@@ -749,6 +759,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearEmployer() {
       
@@ -762,6 +773,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for employer to set.
+     * @return This builder for chaining.
      */
     public Builder setEmployerBytes(
         com.google.protobuf.ByteString value) {
@@ -778,28 +791,25 @@ private static final long serialVersionUID = 0L;
     private int mode_ = 0;
     /**
      * <pre>
-     * Define set of
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-     * against.
-     * Defaults to
-     * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+     * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+     * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     * @return The enum numeric value on the wire for mode.
      */
     public int getModeValue() {
       return mode_;
     }
     /**
      * <pre>
-     * Define set of
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-     * against.
-     * Defaults to
-     * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+     * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+     * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
       mode_ = value;
@@ -808,14 +818,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Define set of
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-     * against.
-     * Defaults to
-     * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+     * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+     * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     * @return The mode.
      */
     public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
       @SuppressWarnings("deprecation")
@@ -824,14 +832,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Define set of
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-     * against.
-     * Defaults to
-     * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+     * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+     * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     * @param value The mode to set.
+     * @return This builder for chaining.
      */
     public Builder setMode(com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode value) {
       if (value == null) {
@@ -844,14 +851,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Define set of
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-     * against.
-     * Defaults to
-     * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+     * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+     * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMode() {
       
@@ -868,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -879,6 +885,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -893,6 +901,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

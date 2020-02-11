@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.KindExpression</code>
  */
-final class KindExpression extends \Google\Protobuf\Internal\Message
+class KindExpression extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the kind.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

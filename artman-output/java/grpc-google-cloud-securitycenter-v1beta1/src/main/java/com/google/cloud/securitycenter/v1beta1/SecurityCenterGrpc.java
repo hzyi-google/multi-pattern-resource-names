@@ -794,7 +794,7 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public void groupFindings(com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest request,
@@ -816,7 +816,7 @@ public final class SecurityCenterGrpc {
      * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public void listFindings(com.google.cloud.securitycenter.v1beta1.ListFindingsRequest request,
@@ -1145,7 +1145,7 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public void groupFindings(com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest request,
@@ -1169,7 +1169,7 @@ public final class SecurityCenterGrpc {
      * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public void listFindings(com.google.cloud.securitycenter.v1beta1.ListFindingsRequest request,
@@ -1371,7 +1371,7 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse groupFindings(com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest request) {
@@ -1393,7 +1393,7 @@ public final class SecurityCenterGrpc {
      * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public com.google.cloud.securitycenter.v1beta1.ListFindingsResponse listFindings(com.google.cloud.securitycenter.v1beta1.ListFindingsRequest request) {
@@ -1591,7 +1591,7 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse> groupFindings(
@@ -1615,7 +1615,7 @@ public final class SecurityCenterGrpc {
      * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
-     * Example: /v1beta1/organizations/123/sources/-/findings
+     * Example: /v1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.securitycenter.v1beta1.ListFindingsResponse> listFindings(

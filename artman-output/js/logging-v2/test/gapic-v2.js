@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 'use strict';
 
 const assert = require('assert');
+const {describe, it} = require('mocha');
 
 const loggingModule = require('../src');
 
@@ -129,12 +130,16 @@ describe('ConfigServiceV2Client', () => {
       const name = 'name3373707';
       const destination = 'destination-1429847026';
       const filter = 'filter-1274492040';
+      const description = 'description-1724546052';
+      const disabled = true;
       const writerIdentity = 'writerIdentity775638794';
       const includeChildren = true;
       const expectedResponse = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writerIdentity: writerIdentity,
         includeChildren: includeChildren,
       };
@@ -199,12 +204,16 @@ describe('ConfigServiceV2Client', () => {
       const name = 'name3373707';
       const destination = 'destination-1429847026';
       const filter = 'filter-1274492040';
+      const description = 'description-1724546052';
+      const disabled = true;
       const writerIdentity = 'writerIdentity775638794';
       const includeChildren = true;
       const expectedResponse = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writerIdentity: writerIdentity,
         includeChildren: includeChildren,
       };
@@ -271,12 +280,16 @@ describe('ConfigServiceV2Client', () => {
       const name = 'name3373707';
       const destination = 'destination-1429847026';
       const filter = 'filter-1274492040';
+      const description = 'description-1724546052';
+      const disabled = true;
       const writerIdentity = 'writerIdentity775638794';
       const includeChildren = true;
       const expectedResponse = {
         name: name,
         destination: destination,
         filter: filter,
+        description: description,
+        disabled: disabled,
         writerIdentity: writerIdentity,
         includeChildren: includeChildren,
       };
@@ -690,6 +703,122 @@ describe('ConfigServiceV2Client', () => {
       client.deleteExclusion(request, err => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+  describe('getCmekSettings', () => {
+    it('invokes getCmekSettings without error', done => {
+      const client = new loggingModule.v2.ConfigServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock response
+      const name = 'name3373707';
+      const kmsKeyName = 'kmsKeyName2094986649';
+      const serviceAccountId = 'serviceAccountId-111486921';
+      const expectedResponse = {
+        name: name,
+        kmsKeyName: kmsKeyName,
+        serviceAccountId: serviceAccountId,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getCmekSettings = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getCmekSettings(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getCmekSettings with error', done => {
+      const client = new loggingModule.v2.ConfigServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.getCmekSettings = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getCmekSettings(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('updateCmekSettings', () => {
+    it('invokes updateCmekSettings without error', done => {
+      const client = new loggingModule.v2.ConfigServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock response
+      const name = 'name3373707';
+      const kmsKeyName = 'kmsKeyName2094986649';
+      const serviceAccountId = 'serviceAccountId-111486921';
+      const expectedResponse = {
+        name: name,
+        kmsKeyName: kmsKeyName,
+        serviceAccountId: serviceAccountId,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateCmekSettings = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.updateCmekSettings(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes updateCmekSettings with error', done => {
+      const client = new loggingModule.v2.ConfigServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateCmekSettings = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.updateCmekSettings(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
         done();
       });
     });

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.JobReference</code>
  */
-final class JobReference extends \Google\Protobuf\Internal\Message
+class JobReference extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The ID of the Google Cloud Platform project that the job
@@ -21,7 +21,7 @@ final class JobReference extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $project_id = '';
+    protected $project_id = '';
     /**
      * Optional. The job ID, which must be unique within the project.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
@@ -30,7 +30,7 @@ final class JobReference extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $job_id = '';
+    protected $job_id = '';
 
     /**
      * Constructor.

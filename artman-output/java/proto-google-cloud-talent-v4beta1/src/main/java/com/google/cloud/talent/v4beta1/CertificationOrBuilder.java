@@ -14,6 +14,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -23,6 +24,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -33,6 +35,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
+   * @return Whether the acquireDate field is set.
    */
   boolean hasAcquireDate();
   /**
@@ -41,6 +44,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
+   * @return The acquireDate.
    */
   com.google.type.Date getAcquireDate();
   /**
@@ -58,6 +62,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
+   * @return Whether the expireDate field is set.
    */
   boolean hasExpireDate();
   /**
@@ -66,6 +71,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
+   * @return The expireDate.
    */
   com.google.type.Date getExpireDate();
   /**
@@ -84,6 +90,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string authority = 4;</code>
+   * @return The authority.
    */
   java.lang.String getAuthority();
   /**
@@ -93,6 +100,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string authority = 4;</code>
+   * @return The bytes for authority.
    */
   com.google.protobuf.ByteString
       getAuthorityBytes();
@@ -104,6 +112,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string description = 5;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -113,6 +122,7 @@ public interface CertificationOrBuilder extends
    * </pre>
    *
    * <code>string description = 5;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();

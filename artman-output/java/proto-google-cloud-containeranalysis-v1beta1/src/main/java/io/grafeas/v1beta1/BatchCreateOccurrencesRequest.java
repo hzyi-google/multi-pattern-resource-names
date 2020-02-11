@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BatchCreateOccurrencesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -55,9 +62,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               occurrences_ = new java.util.ArrayList<io.grafeas.v1beta1.Occurrence>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             occurrences_.add(
                 input.readMessage(io.grafeas.v1beta1.Occurrence.parser(), extensionRegistry));
@@ -78,7 +85,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
       }
       this.unknownFields = unknownFields.build();
@@ -98,7 +105,6 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.BatchCreateOccurrencesRequest.class, io.grafeas.v1beta1.BatchCreateOccurrencesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -108,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -128,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1;</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -412,7 +420,7 @@ private static final long serialVersionUID = 0L;
 
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         occurrencesBuilder_.clear();
       }
@@ -443,18 +451,16 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.BatchCreateOccurrencesRequest buildPartial() {
       io.grafeas.v1beta1.BatchCreateOccurrencesRequest result = new io.grafeas.v1beta1.BatchCreateOccurrencesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (occurrencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.occurrences_ = occurrences_;
       } else {
         result.occurrences_ = occurrencesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,7 +517,7 @@ private static final long serialVersionUID = 0L;
         if (!other.occurrences_.isEmpty()) {
           if (occurrences_.isEmpty()) {
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOccurrencesIsMutable();
             occurrences_.addAll(other.occurrences_);
@@ -524,7 +530,7 @@ private static final long serialVersionUID = 0L;
             occurrencesBuilder_.dispose();
             occurrencesBuilder_ = null;
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             occurrencesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getOccurrencesFieldBuilder() : null;
@@ -571,6 +577,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -591,6 +598,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -612,6 +620,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -630,6 +640,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -644,6 +655,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1;</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -660,9 +673,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grafeas.v1beta1.Occurrence> occurrences_ =
       java.util.Collections.emptyList();
     private void ensureOccurrencesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1beta1.Occurrence>(occurrences_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -856,7 +869,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearOccurrences() {
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         occurrencesBuilder_.clear();
@@ -961,7 +974,7 @@ private static final long serialVersionUID = 0L;
         occurrencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grafeas.v1beta1.Occurrence, io.grafeas.v1beta1.Occurrence.Builder, io.grafeas.v1beta1.OccurrenceOrBuilder>(
                 occurrences_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         occurrences_ = null;

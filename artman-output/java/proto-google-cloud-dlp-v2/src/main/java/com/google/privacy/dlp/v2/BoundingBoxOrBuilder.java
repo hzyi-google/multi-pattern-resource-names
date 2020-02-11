@@ -13,6 +13,7 @@ public interface BoundingBoxOrBuilder extends
    * </pre>
    *
    * <code>int32 top = 1;</code>
+   * @return The top.
    */
   int getTop();
 
@@ -22,6 +23,7 @@ public interface BoundingBoxOrBuilder extends
    * </pre>
    *
    * <code>int32 left = 2;</code>
+   * @return The left.
    */
   int getLeft();
 
@@ -31,6 +33,7 @@ public interface BoundingBoxOrBuilder extends
    * </pre>
    *
    * <code>int32 width = 3;</code>
+   * @return The width.
    */
   int getWidth();
 
@@ -40,6 +43,7 @@ public interface BoundingBoxOrBuilder extends
    * </pre>
    *
    * <code>int32 height = 4;</code>
+   * @return The height.
    */
   int getHeight();
 }

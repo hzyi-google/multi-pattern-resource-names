@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1;
 
 /**
  * <pre>
- * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+ * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
  * applications on YARN.
  * </pre>
  *
@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SparkJob();
   }
 
   @java.lang.Override
@@ -65,45 +72,45 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               args_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             args_.add(s);
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000002;
             }
             jarFileUris_.add(s);
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               fileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000004;
             }
             fileUris_.add(s);
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000008;
             }
             archiveUris_.add(s);
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               properties_ = com.google.protobuf.MapField.newMapField(
                   PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000010;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             properties__ = input.readMessage(
@@ -140,16 +147,16 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -181,11 +188,11 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.SparkJob.class, com.google.cloud.dataproc.v1.SparkJob.Builder.class);
   }
 
-  private int bitField0_;
   private int driverCase_ = 0;
   private java.lang.Object driver_;
   public enum DriverCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MAIN_JAR_FILE_URI(1),
     MAIN_CLASS(2),
     DRIVER_NOT_SET(0);
@@ -194,6 +201,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -227,6 +236,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string main_jar_file_uri = 1;</code>
+   * @return The mainJarFileUri.
    */
   public java.lang.String getMainJarFileUri() {
     java.lang.Object ref = "";
@@ -251,6 +261,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string main_jar_file_uri = 1;</code>
+   * @return The bytes for mainJarFileUri.
    */
   public com.google.protobuf.ByteString
       getMainJarFileUriBytes() {
@@ -279,6 +290,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string main_class = 2;</code>
+   * @return The mainClass.
    */
   public java.lang.String getMainClass() {
     java.lang.Object ref = "";
@@ -304,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string main_class = 2;</code>
+   * @return The bytes for mainClass.
    */
   public com.google.protobuf.ByteString
       getMainClassBytes() {
@@ -334,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the args.
    */
   public com.google.protobuf.ProtocolStringList
       getArgsList() {
@@ -347,6 +361,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of args.
    */
   public int getArgsCount() {
     return args_.size();
@@ -359,6 +374,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   public java.lang.String getArgs(int index) {
     return args_.get(index);
@@ -371,6 +388,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   public com.google.protobuf.ByteString
       getArgsBytes(int index) {
@@ -386,6 +405,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList
       getJarFileUrisList() {
@@ -398,6 +418,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -409,6 +430,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -420,6 +443,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   public com.google.protobuf.ByteString
       getJarFileUrisBytes(int index) {
@@ -435,6 +460,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the fileUris.
    */
   public com.google.protobuf.ProtocolStringList
       getFileUrisList() {
@@ -447,6 +473,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of fileUris.
    */
   public int getFileUrisCount() {
     return fileUris_.size();
@@ -458,6 +485,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The fileUris at the given index.
    */
   public java.lang.String getFileUris(int index) {
     return fileUris_.get(index);
@@ -469,6 +498,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the fileUris at the given index.
    */
   public com.google.protobuf.ByteString
       getFileUrisBytes(int index) {
@@ -485,6 +516,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the archiveUris.
    */
   public com.google.protobuf.ProtocolStringList
       getArchiveUrisList() {
@@ -498,6 +530,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of archiveUris.
    */
   public int getArchiveUrisCount() {
     return archiveUris_.size();
@@ -510,6 +543,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The archiveUris at the given index.
    */
   public java.lang.String getArchiveUris(int index) {
     return archiveUris_.get(index);
@@ -522,6 +557,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the archiveUris at the given index.
    */
   public com.google.protobuf.ByteString
       getArchiveUrisBytes(int index) {
@@ -557,7 +594,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -580,7 +617,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -594,7 +631,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -613,7 +650,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -640,6 +677,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the loggingConfig field is set.
    */
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
@@ -650,6 +688,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The loggingConfig.
    */
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
@@ -954,7 +993,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+   * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
    * applications on YARN.
    * </pre>
    *
@@ -1018,13 +1057,13 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableProperties().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
@@ -1061,31 +1100,30 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.SparkJob buildPartial() {
       com.google.cloud.dataproc.v1.SparkJob result = new com.google.cloud.dataproc.v1.SparkJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (driverCase_ == 1) {
         result.driver_ = driver_;
       }
       if (driverCase_ == 2) {
         result.driver_ = driver_;
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.args_ = args_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.jarFileUris_ = jarFileUris_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.fileUris_ = fileUris_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.archiveUris_ = archiveUris_;
       result.properties_ = internalGetProperties();
@@ -1095,7 +1133,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.driverCase_ = driverCase_;
       onBuilt();
       return result;
@@ -1148,7 +1185,7 @@ private static final long serialVersionUID = 0L;
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1158,7 +1195,7 @@ private static final long serialVersionUID = 0L;
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1168,7 +1205,7 @@ private static final long serialVersionUID = 0L;
       if (!other.fileUris_.isEmpty()) {
         if (fileUris_.isEmpty()) {
           fileUris_ = other.fileUris_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureFileUrisIsMutable();
           fileUris_.addAll(other.fileUris_);
@@ -1178,7 +1215,7 @@ private static final long serialVersionUID = 0L;
       if (!other.archiveUris_.isEmpty()) {
         if (archiveUris_.isEmpty()) {
           archiveUris_ = other.archiveUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureArchiveUrisIsMutable();
           archiveUris_.addAll(other.archiveUris_);
@@ -1258,6 +1295,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
+     * @return The mainJarFileUri.
      */
     public java.lang.String getMainJarFileUri() {
       java.lang.Object ref = "";
@@ -1282,6 +1320,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
+     * @return The bytes for mainJarFileUri.
      */
     public com.google.protobuf.ByteString
         getMainJarFileUriBytes() {
@@ -1307,6 +1346,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
+     * @param value The mainJarFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainJarFileUri(
         java.lang.String value) {
@@ -1324,6 +1365,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMainJarFileUri() {
       if (driverCase_ == 1) {
@@ -1339,6 +1381,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
+     * @param value The bytes for mainJarFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setMainJarFileUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1359,6 +1403,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_class = 2;</code>
+     * @return The mainClass.
      */
     public java.lang.String getMainClass() {
       java.lang.Object ref = "";
@@ -1384,6 +1429,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_class = 2;</code>
+     * @return The bytes for mainClass.
      */
     public com.google.protobuf.ByteString
         getMainClassBytes() {
@@ -1410,6 +1456,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_class = 2;</code>
+     * @param value The mainClass to set.
+     * @return This builder for chaining.
      */
     public Builder setMainClass(
         java.lang.String value) {
@@ -1428,6 +1476,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_class = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMainClass() {
       if (driverCase_ == 2) {
@@ -1444,6 +1493,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string main_class = 2;</code>
+     * @param value The bytes for mainClass to set.
+     * @return This builder for chaining.
      */
     public Builder setMainClassBytes(
         com.google.protobuf.ByteString value) {
@@ -1459,9 +1510,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1472,6 +1523,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList
         getArgsList() {
@@ -1485,6 +1537,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of args.
      */
     public int getArgsCount() {
       return args_.size();
@@ -1497,6 +1550,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The args at the given index.
      */
     public java.lang.String getArgs(int index) {
       return args_.get(index);
@@ -1509,6 +1564,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the args at the given index.
      */
     public com.google.protobuf.ByteString
         getArgsBytes(int index) {
@@ -1522,6 +1579,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The args to set.
+     * @return This builder for chaining.
      */
     public Builder setArgs(
         int index, java.lang.String value) {
@@ -1541,6 +1601,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgs(
         java.lang.String value) {
@@ -1560,6 +1622,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The args to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArgs(
         java.lang.Iterable<java.lang.String> values) {
@@ -1577,10 +1641,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1592,6 +1657,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the args to add.
+     * @return This builder for chaining.
      */
     public Builder addArgsBytes(
         com.google.protobuf.ByteString value) {
@@ -1607,9 +1674,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1619,6 +1686,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList
         getJarFileUrisList() {
@@ -1631,6 +1699,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1642,6 +1711,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The jarFileUris at the given index.
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1653,6 +1724,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jarFileUris at the given index.
      */
     public com.google.protobuf.ByteString
         getJarFileUrisBytes(int index) {
@@ -1665,6 +1738,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The jarFileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setJarFileUris(
         int index, java.lang.String value) {
@@ -1683,6 +1759,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUris(
         java.lang.String value) {
@@ -1701,6 +1779,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJarFileUris(
         java.lang.Iterable<java.lang.String> values) {
@@ -1717,10 +1797,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1731,6 +1812,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUrisBytes(
         com.google.protobuf.ByteString value) {
@@ -1746,9 +1829,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1758,6 +1841,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the fileUris.
      */
     public com.google.protobuf.ProtocolStringList
         getFileUrisList() {
@@ -1770,6 +1854,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of fileUris.
      */
     public int getFileUrisCount() {
       return fileUris_.size();
@@ -1781,6 +1866,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The fileUris at the given index.
      */
     public java.lang.String getFileUris(int index) {
       return fileUris_.get(index);
@@ -1792,6 +1879,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fileUris at the given index.
      */
     public com.google.protobuf.ByteString
         getFileUrisBytes(int index) {
@@ -1804,6 +1893,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The fileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setFileUris(
         int index, java.lang.String value) {
@@ -1822,6 +1914,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUris(
         java.lang.String value) {
@@ -1840,6 +1934,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFileUris(
         java.lang.Iterable<java.lang.String> values) {
@@ -1856,10 +1952,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1870,6 +1967,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the fileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addFileUrisBytes(
         com.google.protobuf.ByteString value) {
@@ -1885,9 +1984,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureArchiveUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
@@ -1898,6 +1997,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the archiveUris.
      */
     public com.google.protobuf.ProtocolStringList
         getArchiveUrisList() {
@@ -1911,6 +2011,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of archiveUris.
      */
     public int getArchiveUrisCount() {
       return archiveUris_.size();
@@ -1923,6 +2024,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The archiveUris at the given index.
      */
     public java.lang.String getArchiveUris(int index) {
       return archiveUris_.get(index);
@@ -1935,6 +2038,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the archiveUris at the given index.
      */
     public com.google.protobuf.ByteString
         getArchiveUrisBytes(int index) {
@@ -1948,6 +2053,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The archiveUris to set.
+     * @return This builder for chaining.
      */
     public Builder setArchiveUris(
         int index, java.lang.String value) {
@@ -1967,6 +2075,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUris(
         java.lang.String value) {
@@ -1986,6 +2096,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllArchiveUris(
         java.lang.Iterable<java.lang.String> values) {
@@ -2003,10 +2115,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2018,6 +2131,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the archiveUris to add.
+     * @return This builder for chaining.
      */
     public Builder addArchiveUrisBytes(
         com.google.protobuf.ByteString value) {
@@ -2060,7 +2175,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2083,7 +2198,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2097,7 +2212,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2116,7 +2231,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2143,7 +2258,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2169,7 +2284,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2188,7 +2303,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
@@ -2212,6 +2327,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
@@ -2222,6 +2338,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The loggingConfig.
      */
     public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.ListNoteOccurrencesRequest</code>
  */
-final class ListNoteOccurrencesRequest extends \Google\Protobuf\Internal\Message
+class ListNoteOccurrencesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the note to list occurrences for in the form of
@@ -21,25 +21,25 @@ final class ListNoteOccurrencesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The filter expression.
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * Number of occurrences to return in the list.
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * Token to provide to skip to a particular spot in the list.
      *
      * Generated from protobuf field <code>string page_token = 4;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
 
     /**
      * Constructor.

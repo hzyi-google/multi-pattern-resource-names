@@ -14,6 +14,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -23,6 +24,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -33,6 +35,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 2;</code>
+   * @return Whether the note field is set.
    */
   boolean hasNote();
   /**
@@ -41,6 +44,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.Note note = 2;</code>
+   * @return The note.
    */
   io.grafeas.v1beta1.Note getNote();
   /**
@@ -58,6 +62,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -66,6 +71,7 @@ public interface UpdateNoteRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

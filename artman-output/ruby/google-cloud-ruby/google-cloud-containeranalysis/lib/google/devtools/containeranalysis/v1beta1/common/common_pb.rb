@@ -8,6 +8,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :url, :string, 1
     optional :label, :string, 2
   end
+  add_message "grafeas.v1beta1.Signature" do
+    optional :signature, :bytes, 1
+    optional :public_key_id, :string, 2
+  end
   add_enum "grafeas.v1beta1.NoteKind" do
     value :NOTE_KIND_UNSPECIFIED, 0
     value :VULNERABILITY, 1
@@ -23,6 +27,7 @@ end
 module Grafeas
   module V1beta1
     RelatedUrl = Google::Protobuf::DescriptorPool.generated_pool.lookup("grafeas.v1beta1.RelatedUrl").msgclass
+    Signature = Google::Protobuf::DescriptorPool.generated_pool.lookup("grafeas.v1beta1.Signature").msgclass
     NoteKind = Google::Protobuf::DescriptorPool.generated_pool.lookup("grafeas.v1beta1.NoteKind").enummodule
   end
 end

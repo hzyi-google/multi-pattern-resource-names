@@ -17,6 +17,7 @@ public interface TenantOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -29,28 +30,29 @@ public interface TenantOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
@@ -59,82 +61,82 @@ public interface TenantOrBuilder extends
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   * @return The enum numeric value on the wire for usageType.
    */
   int getUsageTypeValue();
   /**
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   * @return The usageType.
    */
   com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType();
 
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @return A list containing the keywordSearchableProfileCustomAttributes.
    */
   java.util.List<java.lang.String>
       getKeywordSearchableProfileCustomAttributesList();
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @return The count of keywordSearchableProfileCustomAttributes.
    */
   int getKeywordSearchableProfileCustomAttributesCount();
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @param index The index of the element to return.
+   * @return The keywordSearchableProfileCustomAttributes at the given index.
    */
   java.lang.String getKeywordSearchableProfileCustomAttributes(int index);
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the keywordSearchableProfileCustomAttributes at the given index.
    */
   com.google.protobuf.ByteString
       getKeywordSearchableProfileCustomAttributesBytes(int index);

@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'google/cloud/securitycenter/v1/run_asset_discovery_response_pb'
 require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
@@ -10,7 +11,6 @@ require 'google/api/resource_pb'
 require 'google/cloud/securitycenter/v1/asset_pb'
 require 'google/cloud/securitycenter/v1/finding_pb'
 require 'google/cloud/securitycenter/v1/organization_settings_pb'
-require 'google/cloud/securitycenter/v1/run_asset_discovery_response_pb'
 require 'google/cloud/securitycenter/v1/security_marks_pb'
 require 'google/cloud/securitycenter/v1/source_pb'
 require 'google/iam/v1/iam_policy_pb'
@@ -125,6 +125,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult" do
     optional :finding, :message, 1, "google.cloud.securitycenter.v1.Finding"
     optional :state_change, :enum, 2, "google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange"
+    optional :resource, :message, 3, "google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource"
+  end
+  add_message "google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource" do
+    optional :name, :string, 1
+    optional :project_name, :string, 2
+    optional :project_display_name, :string, 3
+    optional :parent_name, :string, 4
+    optional :parent_display_name, :string, 5
   end
   add_enum "google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange" do
     value :UNUSED, 0
@@ -179,6 +187,7 @@ module Google::Cloud::SecurityCenter::V1
   ListFindingsRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.ListFindingsRequest").msgclass
   ListFindingsResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.ListFindingsResponse").msgclass
   ListFindingsResponse::ListFindingsResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult").msgclass
+  ListFindingsResponse::ListFindingsResult::Resource = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource").msgclass
   ListFindingsResponse::ListFindingsResult::StateChange = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange").enummodule
   SetFindingStateRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.SetFindingStateRequest").msgclass
   RunAssetDiscoveryRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.securitycenter.v1.RunAssetDiscoveryRequest").msgclass

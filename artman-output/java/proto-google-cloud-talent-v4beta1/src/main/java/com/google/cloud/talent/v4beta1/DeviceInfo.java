@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DeviceInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -235,6 +241,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -242,6 +250,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DeviceType forNumber(int value) {
       switch (value) {
         case 0: return DEVICE_TYPE_UNSPECIFIED;
@@ -311,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+   * @return The enum numeric value on the wire for deviceType.
    */
   public int getDeviceTypeValue() {
     return deviceType_;
@@ -321,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+   * @return The deviceType.
    */
   public com.google.cloud.talent.v4beta1.DeviceInfo.DeviceType getDeviceType() {
     @SuppressWarnings("deprecation")
@@ -337,6 +351,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -357,6 +372,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -703,6 +719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+     * @return The enum numeric value on the wire for deviceType.
      */
     public int getDeviceTypeValue() {
       return deviceType_;
@@ -713,6 +730,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+     * @param value The enum numeric value on the wire for deviceType to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceTypeValue(int value) {
       deviceType_ = value;
@@ -725,6 +744,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+     * @return The deviceType.
      */
     public com.google.cloud.talent.v4beta1.DeviceInfo.DeviceType getDeviceType() {
       @SuppressWarnings("deprecation")
@@ -737,6 +757,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+     * @param value The deviceType to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceType(com.google.cloud.talent.v4beta1.DeviceInfo.DeviceType value) {
       if (value == null) {
@@ -753,6 +775,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeviceType() {
       
@@ -769,6 +792,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -789,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -810,6 +835,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -828,6 +855,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -842,6 +870,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {

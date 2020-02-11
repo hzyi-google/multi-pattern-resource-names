@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.BigQueryKey</code>
  */
-final class BigQueryKey extends \Google\Protobuf\Internal\Message
+class BigQueryKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * Complete BigQuery table reference.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
      */
-    private $table_reference = null;
+    protected $table_reference = null;
     /**
      * Absolute number of the row from the beginning of the table at the time
      * of scanning.
      *
      * Generated from protobuf field <code>int64 row_number = 2;</code>
      */
-    private $row_number = 0;
+    protected $row_number = 0;
 
     /**
      * Constructor.

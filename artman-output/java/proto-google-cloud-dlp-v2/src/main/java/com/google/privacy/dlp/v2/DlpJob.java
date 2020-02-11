@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DlpJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -143,9 +150,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000001;
             }
             errors_.add(
                 input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -166,7 +173,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -187,11 +194,19 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * <pre>
+   * Possible states of a job.
+   * </pre>
+   *
    * Protobuf enum {@code google.privacy.dlp.v2.DlpJob.JobState}
    */
   public enum JobState
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>JOB_STATE_UNSPECIFIED = 0;</code>
      */
     JOB_STATE_UNSPECIFIED(0),
@@ -239,6 +254,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>JOB_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int JOB_STATE_UNSPECIFIED_VALUE = 0;
@@ -293,6 +312,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -300,6 +321,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static JobState forNumber(int value) {
       switch (value) {
         case 0: return JOB_STATE_UNSPECIFIED;
@@ -360,11 +385,11 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.DlpJob.JobState)
   }
 
-  private int bitField0_;
   private int detailsCase_ = 0;
   private java.lang.Object details_;
   public enum DetailsCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RISK_DETAILS(4),
     INSPECT_DETAILS(5),
     DETAILS_NOT_SET(0);
@@ -373,6 +398,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -407,6 +434,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -426,6 +454,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -449,6 +478,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -459,6 +489,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+   * @return The type.
    */
   public com.google.privacy.dlp.v2.DlpJobType getType() {
     @SuppressWarnings("deprecation")
@@ -474,6 +505,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -484,6 +516,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   * @return The state.
    */
   public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
     @SuppressWarnings("deprecation")
@@ -498,6 +531,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+   * @return Whether the riskDetails field is set.
    */
   public boolean hasRiskDetails() {
     return detailsCase_ == 4;
@@ -508,6 +542,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+   * @return The riskDetails.
    */
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails() {
     if (detailsCase_ == 4) {
@@ -536,6 +571,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+   * @return Whether the inspectDetails field is set.
    */
   public boolean hasInspectDetails() {
     return detailsCase_ == 5;
@@ -546,6 +582,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+   * @return The inspectDetails.
    */
   public com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails() {
     if (detailsCase_ == 5) {
@@ -575,6 +612,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -585,6 +623,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -608,6 +647,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -618,6 +658,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -641,6 +682,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -651,6 +693,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -675,6 +718,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_trigger_name = 10;</code>
+   * @return The jobTriggerName.
    */
   public java.lang.String getJobTriggerName() {
     java.lang.Object ref = jobTriggerName_;
@@ -695,6 +739,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_trigger_name = 10;</code>
+   * @return The bytes for jobTriggerName.
    */
   public com.google.protobuf.ByteString
       getJobTriggerNameBytes() {
@@ -1120,7 +1165,7 @@ private static final long serialVersionUID = 0L;
 
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         errorsBuilder_.clear();
       }
@@ -1153,7 +1198,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.DlpJob buildPartial() {
       com.google.privacy.dlp.v2.DlpJob result = new com.google.privacy.dlp.v2.DlpJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.type_ = type_;
       result.state_ = state_;
@@ -1188,15 +1232,14 @@ private static final long serialVersionUID = 0L;
       }
       result.jobTriggerName_ = jobTriggerName_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1273,7 +1316,7 @@ private static final long serialVersionUID = 0L;
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1286,7 +1329,7 @@ private static final long serialVersionUID = 0L;
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             errorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getErrorsFieldBuilder() : null;
@@ -1360,6 +1403,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1379,6 +1423,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1399,6 +1444,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1416,6 +1463,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1429,6 +1477,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1449,6 +1499,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1459,6 +1510,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1471,6 +1524,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+     * @return The type.
      */
     public com.google.privacy.dlp.v2.DlpJobType getType() {
       @SuppressWarnings("deprecation")
@@ -1483,6 +1537,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.privacy.dlp.v2.DlpJobType value) {
       if (value == null) {
@@ -1499,6 +1555,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJobType type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1514,6 +1571,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1524,6 +1582,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1536,6 +1596,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+     * @return The state.
      */
     public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
       @SuppressWarnings("deprecation")
@@ -1548,6 +1609,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.privacy.dlp.v2.DlpJob.JobState value) {
       if (value == null) {
@@ -1564,6 +1627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -1580,6 +1644,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+     * @return Whether the riskDetails field is set.
      */
     public boolean hasRiskDetails() {
       return detailsCase_ == 4;
@@ -1590,6 +1655,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
+     * @return The riskDetails.
      */
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails() {
       if (riskDetailsBuilder_ == null) {
@@ -1752,6 +1818,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+     * @return Whether the inspectDetails field is set.
      */
     public boolean hasInspectDetails() {
       return detailsCase_ == 5;
@@ -1762,6 +1829,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
+     * @return The inspectDetails.
      */
     public com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails() {
       if (inspectDetailsBuilder_ == null) {
@@ -1925,6 +1993,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1935,6 +2004,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2078,6 +2148,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -2088,6 +2159,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -2231,6 +2303,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -2241,6 +2314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -2383,6 +2457,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_trigger_name = 10;</code>
+     * @return The jobTriggerName.
      */
     public java.lang.String getJobTriggerName() {
       java.lang.Object ref = jobTriggerName_;
@@ -2403,6 +2478,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_trigger_name = 10;</code>
+     * @return The bytes for jobTriggerName.
      */
     public com.google.protobuf.ByteString
         getJobTriggerNameBytes() {
@@ -2424,6 +2500,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_trigger_name = 10;</code>
+     * @param value The jobTriggerName to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTriggerName(
         java.lang.String value) {
@@ -2442,6 +2520,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_trigger_name = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobTriggerName() {
       
@@ -2456,6 +2535,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_trigger_name = 10;</code>
+     * @param value The bytes for jobTriggerName to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTriggerNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2472,9 +2553,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.Error> errors_ =
       java.util.Collections.emptyList();
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2668,7 +2749,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -2773,7 +2854,7 @@ private static final long serialVersionUID = 0L;
         errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder>(
                 errors_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         errors_ = null;

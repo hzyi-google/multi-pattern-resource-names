@@ -13,6 +13,10 @@ package com.google.privacy.dlp.v2;
 public enum StoredInfoTypeState
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Unused
+   * </pre>
+   *
    * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
    */
   STORED_INFO_TYPE_STATE_UNSPECIFIED(0),
@@ -55,6 +59,10 @@ public enum StoredInfoTypeState
   ;
 
   /**
+   * <pre>
+   * Unused
+   * </pre>
+   *
    * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STORED_INFO_TYPE_STATE_UNSPECIFIED_VALUE = 0;
@@ -104,6 +112,8 @@ public enum StoredInfoTypeState
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -111,6 +121,10 @@ public enum StoredInfoTypeState
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static StoredInfoTypeState forNumber(int value) {
     switch (value) {
       case 0: return STORED_INFO_TYPE_STATE_UNSPECIFIED;

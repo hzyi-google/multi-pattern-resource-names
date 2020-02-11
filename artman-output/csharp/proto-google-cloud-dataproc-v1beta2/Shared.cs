@@ -35,7 +35,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
             "cm9jL3YxYmV0YTI7ZGF0YXByb2NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.Dataproc.V1Beta2.Component), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.Dataproc.V1Beta2.Component), }, null, null));
     }
     #endregion
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues</code>
  */
-final class KMapEstimationQuasiIdValues extends \Google\Protobuf\Internal\Message
+class KMapEstimationQuasiIdValues extends \Google\Protobuf\Internal\Message
 {
     /**
      * The quasi-identifier values.
@@ -26,7 +26,7 @@ final class KMapEstimationQuasiIdValues extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>int64 estimated_anonymity = 2;</code>
      */
-    private $estimated_anonymity = 0;
+    protected $estimated_anonymity = 0;
 
     /**
      * Constructor.

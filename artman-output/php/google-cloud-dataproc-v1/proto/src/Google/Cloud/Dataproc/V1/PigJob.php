@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+ * A Dataproc job for running [Apache Pig](https://pig.apache.org/)
  * queries on YARN.
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.PigJob</code>
  */
-final class PigJob extends \Google\Protobuf\Internal\Message
+class PigJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Whether to continue executing queries if a query fails.
@@ -23,7 +23,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $continue_on_failure = false;
+    protected $continue_on_failure = false;
     /**
      * Optional. Mapping of query variable names to values (equivalent to the Pig
      * command: `name=[value]`).
@@ -33,7 +33,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
     private $script_variables;
     /**
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      *
@@ -52,7 +52,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
     protected $queries;
 
     /**
@@ -74,7 +74,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
      *           command: `name=[value]`).
      *     @type array|\Google\Protobuf\Internal\MapField $properties
      *           Optional. A mapping of property names to values, used to configure Pig.
-     *           Properties that conflict with values set by the Cloud Dataproc API may be
+     *           Properties that conflict with values set by the Dataproc API may be
      *           overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      *           /etc/pig/conf/pig.properties, and classes in user code.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $jar_file_uris
@@ -201,7 +201,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      *
@@ -215,7 +215,7 @@ final class PigJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      *

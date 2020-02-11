@@ -13,7 +13,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -22,7 +23,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -33,6 +35,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -41,6 +44,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
+   * @return The state.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState();
 
@@ -50,7 +54,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
   /**
@@ -59,7 +64,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
@@ -69,7 +75,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -78,7 +85,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 
@@ -90,7 +98,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -101,7 +110,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
   /**
@@ -112,7 +122,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder();
 
@@ -121,7 +131,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -129,7 +140,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -137,7 +149,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -147,7 +159,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
   /**
@@ -156,7 +169,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
   /**
@@ -165,7 +179,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * generated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   * <code>.google.protobuf.Timestamp generate_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder();
 
@@ -176,7 +190,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_time = 5;</code>
+   * <code>.google.protobuf.Timestamp destroy_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the destroyTime field is set.
    */
   boolean hasDestroyTime();
   /**
@@ -186,7 +201,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_time = 5;</code>
+   * <code>.google.protobuf.Timestamp destroy_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The destroyTime.
    */
   com.google.protobuf.Timestamp getDestroyTime();
   /**
@@ -196,7 +212,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_time = 5;</code>
+   * <code>.google.protobuf.Timestamp destroy_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getDestroyTimeOrBuilder();
 
@@ -207,7 +223,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_event_time = 6;</code>
+   * <code>.google.protobuf.Timestamp destroy_event_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the destroyEventTime field is set.
    */
   boolean hasDestroyEventTime();
   /**
@@ -217,7 +234,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_event_time = 6;</code>
+   * <code>.google.protobuf.Timestamp destroy_event_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The destroyEventTime.
    */
   com.google.protobuf.Timestamp getDestroyEventTime();
   /**
@@ -227,7 +245,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp destroy_event_time = 6;</code>
+   * <code>.google.protobuf.Timestamp destroy_event_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getDestroyEventTimeOrBuilder();
 
@@ -238,7 +256,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * imported.
    * </pre>
    *
-   * <code>string import_job = 14;</code>
+   * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The importJob.
    */
   java.lang.String getImportJob();
   /**
@@ -248,7 +267,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * imported.
    * </pre>
    *
-   * <code>string import_job = 14;</code>
+   * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for importJob.
    */
   com.google.protobuf.ByteString
       getImportJobBytes();
@@ -259,7 +279,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * was imported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp import_time = 15;</code>
+   * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the importTime field is set.
    */
   boolean hasImportTime();
   /**
@@ -268,7 +289,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * was imported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp import_time = 15;</code>
+   * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The importTime.
    */
   com.google.protobuf.Timestamp getImportTime();
   /**
@@ -277,7 +299,7 @@ public interface CryptoKeyVersionOrBuilder extends
    * was imported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp import_time = 15;</code>
+   * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getImportTimeOrBuilder();
 
@@ -288,7 +310,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
-   * <code>string import_failure_reason = 16;</code>
+   * <code>string import_failure_reason = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The importFailureReason.
    */
   java.lang.String getImportFailureReason();
   /**
@@ -298,7 +321,8 @@ public interface CryptoKeyVersionOrBuilder extends
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
-   * <code>string import_failure_reason = 16;</code>
+   * <code>string import_failure_reason = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for importFailureReason.
    */
   com.google.protobuf.ByteString
       getImportFailureReasonBytes();

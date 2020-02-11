@@ -36,6 +36,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DataSource();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -91,9 +98,9 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               scopes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             scopes_.add(s);
             break;
@@ -126,9 +133,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               parameters_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00000002;
             }
             parameters_.add(
                 input.readMessage(com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.parser(), extensionRegistry));
@@ -190,10 +197,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
@@ -288,6 +295,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -295,6 +304,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AuthorizationType forNumber(int value) {
       switch (value) {
         case 0: return AUTHORIZATION_TYPE_UNSPECIFIED;
@@ -431,6 +444,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -438,6 +453,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DataRefreshType forNumber(int value) {
       switch (value) {
         case 0: return DATA_REFRESH_TYPE_UNSPECIFIED;
@@ -495,7 +514,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -504,6 +522,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -523,6 +542,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -546,6 +566,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   * @return The dataSourceId.
    */
   public java.lang.String getDataSourceId() {
     java.lang.Object ref = dataSourceId_;
@@ -565,6 +586,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
+   * @return The bytes for dataSourceId.
    */
   public com.google.protobuf.ByteString
       getDataSourceIdBytes() {
@@ -588,6 +610,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -607,6 +630,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -630,6 +654,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -649,6 +674,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -672,6 +698,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   * @return The clientId.
    */
   public java.lang.String getClientId() {
     java.lang.Object ref = clientId_;
@@ -691,6 +718,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string client_id = 5;</code>
+   * @return The bytes for clientId.
    */
   public com.google.protobuf.ByteString
       getClientIdBytes() {
@@ -716,6 +744,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   * @return A list containing the scopes.
    */
   public com.google.protobuf.ProtocolStringList
       getScopesList() {
@@ -729,6 +758,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   * @return The count of scopes.
    */
   public int getScopesCount() {
     return scopes_.size();
@@ -741,6 +771,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
@@ -753,6 +785,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
    */
   public com.google.protobuf.ByteString
       getScopesBytes(int index) {
@@ -767,6 +801,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+   * @return The enum numeric value on the wire for transferType.
    */
   @java.lang.Deprecated public int getTransferTypeValue() {
     return transferType_;
@@ -777,6 +812,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+   * @return The transferType.
    */
   @java.lang.Deprecated public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
     @SuppressWarnings("deprecation")
@@ -792,6 +828,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+   * @return The supportsMultipleTransfers.
    */
   @java.lang.Deprecated public boolean getSupportsMultipleTransfers() {
     return supportsMultipleTransfers_;
@@ -806,6 +843,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 update_deadline_seconds = 9;</code>
+   * @return The updateDeadlineSeconds.
    */
   public int getUpdateDeadlineSeconds() {
     return updateDeadlineSeconds_;
@@ -823,6 +861,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   * @return The defaultSchedule.
    */
   public java.lang.String getDefaultSchedule() {
     java.lang.Object ref = defaultSchedule_;
@@ -846,6 +885,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string default_schedule = 10;</code>
+   * @return The bytes for defaultSchedule.
    */
   public com.google.protobuf.ByteString
       getDefaultScheduleBytes() {
@@ -871,6 +911,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool supports_custom_schedule = 11;</code>
+   * @return The supportsCustomSchedule.
    */
   public boolean getSupportsCustomSchedule() {
     return supportsCustomSchedule_;
@@ -939,6 +980,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   * @return The helpUrl.
    */
   public java.lang.String getHelpUrl() {
     java.lang.Object ref = helpUrl_;
@@ -958,6 +1000,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string help_url = 13;</code>
+   * @return The bytes for helpUrl.
    */
   public com.google.protobuf.ByteString
       getHelpUrlBytes() {
@@ -981,6 +1024,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * @return The enum numeric value on the wire for authorizationType.
    */
   public int getAuthorizationTypeValue() {
     return authorizationType_;
@@ -991,6 +1035,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * @return The authorizationType.
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType() {
     @SuppressWarnings("deprecation")
@@ -1009,6 +1054,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * @return The enum numeric value on the wire for dataRefreshType.
    */
   public int getDataRefreshTypeValue() {
     return dataRefreshType_;
@@ -1022,6 +1068,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * @return The dataRefreshType.
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
     @SuppressWarnings("deprecation")
@@ -1038,6 +1085,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 default_data_refresh_window_days = 16;</code>
+   * @return The defaultDataRefreshWindowDays.
    */
   public int getDefaultDataRefreshWindowDays() {
     return defaultDataRefreshWindowDays_;
@@ -1052,6 +1100,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool manual_runs_disabled = 17;</code>
+   * @return The manualRunsDisabled.
    */
   public boolean getManualRunsDisabled() {
     return manualRunsDisabled_;
@@ -1065,6 +1114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   * @return Whether the minimumScheduleInterval field is set.
    */
   public boolean hasMinimumScheduleInterval() {
     return minimumScheduleInterval_ != null;
@@ -1075,6 +1125,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+   * @return The minimumScheduleInterval.
    */
   public com.google.protobuf.Duration getMinimumScheduleInterval() {
     return minimumScheduleInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minimumScheduleInterval_;
@@ -1493,7 +1544,7 @@ private static final long serialVersionUID = 0L;
       clientId_ = "";
 
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       transferType_ = 0;
 
       supportsMultipleTransfers_ = false;
@@ -1506,7 +1557,7 @@ private static final long serialVersionUID = 0L;
 
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         parametersBuilder_.clear();
       }
@@ -1553,15 +1604,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.datatransfer.v1.DataSource buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.DataSource result = new com.google.cloud.bigquery.datatransfer.v1.DataSource(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.dataSourceId_ = dataSourceId_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.clientId_ = clientId_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.scopes_ = scopes_;
       result.transferType_ = transferType_;
@@ -1570,9 +1620,9 @@ private static final long serialVersionUID = 0L;
       result.defaultSchedule_ = defaultSchedule_;
       result.supportsCustomSchedule_ = supportsCustomSchedule_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parameters_ = parameters_;
       } else {
@@ -1588,7 +1638,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.minimumScheduleInterval_ = minimumScheduleIntervalBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1660,7 +1709,7 @@ private static final long serialVersionUID = 0L;
       if (!other.scopes_.isEmpty()) {
         if (scopes_.isEmpty()) {
           scopes_ = other.scopes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureScopesIsMutable();
           scopes_.addAll(other.scopes_);
@@ -1687,7 +1736,7 @@ private static final long serialVersionUID = 0L;
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -1700,7 +1749,7 @@ private static final long serialVersionUID = 0L;
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parametersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParametersFieldBuilder() : null;
@@ -1765,6 +1814,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1784,6 +1834,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1804,6 +1855,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1821,6 +1874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1834,6 +1888,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1854,6 +1910,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     * @return The dataSourceId.
      */
     public java.lang.String getDataSourceId() {
       java.lang.Object ref = dataSourceId_;
@@ -1873,6 +1930,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     * @return The bytes for dataSourceId.
      */
     public com.google.protobuf.ByteString
         getDataSourceIdBytes() {
@@ -1893,6 +1951,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     * @param value The dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceId(
         java.lang.String value) {
@@ -1910,6 +1970,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDataSourceId() {
       
@@ -1923,6 +1984,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
+     * @param value The bytes for dataSourceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSourceIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1943,6 +2006,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1962,6 +2026,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -1982,6 +2047,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -1999,6 +2066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -2012,6 +2080,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 3;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2032,6 +2102,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2051,6 +2122,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -2071,6 +2143,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -2088,6 +2162,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -2101,6 +2176,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 4;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2121,6 +2198,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     * @return The clientId.
      */
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
@@ -2140,6 +2218,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     * @return The bytes for clientId.
      */
     public com.google.protobuf.ByteString
         getClientIdBytes() {
@@ -2160,6 +2239,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     * @param value The clientId to set.
+     * @return This builder for chaining.
      */
     public Builder setClientId(
         java.lang.String value) {
@@ -2177,6 +2258,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearClientId() {
       
@@ -2190,6 +2272,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string client_id = 5;</code>
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
      */
     public Builder setClientIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2205,9 +2289,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -2218,6 +2302,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @return A list containing the scopes.
      */
     public com.google.protobuf.ProtocolStringList
         getScopesList() {
@@ -2231,6 +2316,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @return The count of scopes.
      */
     public int getScopesCount() {
       return scopes_.size();
@@ -2243,6 +2329,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
      */
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
@@ -2255,6 +2343,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
      */
     public com.google.protobuf.ByteString
         getScopesBytes(int index) {
@@ -2268,6 +2358,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
      */
     public Builder setScopes(
         int index, java.lang.String value) {
@@ -2287,6 +2380,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param value The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopes(
         java.lang.String value) {
@@ -2306,6 +2401,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param values The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScopes(
         java.lang.Iterable<java.lang.String> values) {
@@ -2323,10 +2420,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScopes() {
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2338,6 +2436,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 6;</code>
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopesBytes(
         com.google.protobuf.ByteString value) {
@@ -2358,6 +2458,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+     * @return The enum numeric value on the wire for transferType.
      */
     @java.lang.Deprecated public int getTransferTypeValue() {
       return transferType_;
@@ -2368,6 +2469,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+     * @param value The enum numeric value on the wire for transferType to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setTransferTypeValue(int value) {
       transferType_ = value;
@@ -2380,6 +2483,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+     * @return The transferType.
      */
     @java.lang.Deprecated public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
       @SuppressWarnings("deprecation")
@@ -2392,6 +2496,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+     * @param value The transferType to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setTransferType(com.google.cloud.bigquery.datatransfer.v1.TransferType value) {
       if (value == null) {
@@ -2408,6 +2514,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTransferType() {
       
@@ -2423,6 +2530,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     * @return The supportsMultipleTransfers.
      */
     @java.lang.Deprecated public boolean getSupportsMultipleTransfers() {
       return supportsMultipleTransfers_;
@@ -2433,6 +2541,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     * @param value The supportsMultipleTransfers to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setSupportsMultipleTransfers(boolean value) {
       
@@ -2446,6 +2556,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearSupportsMultipleTransfers() {
       
@@ -2462,6 +2573,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     * @return The updateDeadlineSeconds.
      */
     public int getUpdateDeadlineSeconds() {
       return updateDeadlineSeconds_;
@@ -2473,6 +2585,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     * @param value The updateDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setUpdateDeadlineSeconds(int value) {
       
@@ -2487,6 +2601,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 update_deadline_seconds = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUpdateDeadlineSeconds() {
       
@@ -2506,6 +2621,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     * @return The defaultSchedule.
      */
     public java.lang.String getDefaultSchedule() {
       java.lang.Object ref = defaultSchedule_;
@@ -2529,6 +2645,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     * @return The bytes for defaultSchedule.
      */
     public com.google.protobuf.ByteString
         getDefaultScheduleBytes() {
@@ -2553,6 +2670,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     * @param value The defaultSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultSchedule(
         java.lang.String value) {
@@ -2574,6 +2693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefaultSchedule() {
       
@@ -2591,6 +2711,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string default_schedule = 10;</code>
+     * @param value The bytes for defaultSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultScheduleBytes(
         com.google.protobuf.ByteString value) {
@@ -2613,6 +2735,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     * @return The supportsCustomSchedule.
      */
     public boolean getSupportsCustomSchedule() {
       return supportsCustomSchedule_;
@@ -2625,6 +2748,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     * @param value The supportsCustomSchedule to set.
+     * @return This builder for chaining.
      */
     public Builder setSupportsCustomSchedule(boolean value) {
       
@@ -2640,6 +2765,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool supports_custom_schedule = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSupportsCustomSchedule() {
       
@@ -2651,9 +2777,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> parameters_ =
       java.util.Collections.emptyList();
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(parameters_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2847,7 +2973,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -2952,7 +3078,7 @@ private static final long serialVersionUID = 0L;
         parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
                 parameters_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         parameters_ = null;
@@ -2967,6 +3093,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     * @return The helpUrl.
      */
     public java.lang.String getHelpUrl() {
       java.lang.Object ref = helpUrl_;
@@ -2986,6 +3113,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     * @return The bytes for helpUrl.
      */
     public com.google.protobuf.ByteString
         getHelpUrlBytes() {
@@ -3006,6 +3134,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     * @param value The helpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setHelpUrl(
         java.lang.String value) {
@@ -3023,6 +3153,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHelpUrl() {
       
@@ -3036,6 +3167,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string help_url = 13;</code>
+     * @param value The bytes for helpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setHelpUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -3056,6 +3189,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * @return The enum numeric value on the wire for authorizationType.
      */
     public int getAuthorizationTypeValue() {
       return authorizationType_;
@@ -3066,6 +3200,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * @param value The enum numeric value on the wire for authorizationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationTypeValue(int value) {
       authorizationType_ = value;
@@ -3078,6 +3214,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * @return The authorizationType.
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType() {
       @SuppressWarnings("deprecation")
@@ -3090,6 +3227,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * @param value The authorizationType to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorizationType(com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType value) {
       if (value == null) {
@@ -3106,6 +3245,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAuthorizationType() {
       
@@ -3124,6 +3264,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * @return The enum numeric value on the wire for dataRefreshType.
      */
     public int getDataRefreshTypeValue() {
       return dataRefreshType_;
@@ -3137,6 +3278,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * @param value The enum numeric value on the wire for dataRefreshType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRefreshTypeValue(int value) {
       dataRefreshType_ = value;
@@ -3152,6 +3295,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * @return The dataRefreshType.
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
       @SuppressWarnings("deprecation")
@@ -3167,6 +3311,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * @param value The dataRefreshType to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRefreshType(com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType value) {
       if (value == null) {
@@ -3186,6 +3332,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDataRefreshType() {
       
@@ -3202,6 +3349,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     * @return The defaultDataRefreshWindowDays.
      */
     public int getDefaultDataRefreshWindowDays() {
       return defaultDataRefreshWindowDays_;
@@ -3213,6 +3361,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     * @param value The defaultDataRefreshWindowDays to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultDataRefreshWindowDays(int value) {
       
@@ -3227,6 +3377,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 default_data_refresh_window_days = 16;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefaultDataRefreshWindowDays() {
       
@@ -3243,6 +3394,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     * @return The manualRunsDisabled.
      */
     public boolean getManualRunsDisabled() {
       return manualRunsDisabled_;
@@ -3254,6 +3406,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     * @param value The manualRunsDisabled to set.
+     * @return This builder for chaining.
      */
     public Builder setManualRunsDisabled(boolean value) {
       
@@ -3268,6 +3422,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool manual_runs_disabled = 17;</code>
+     * @return This builder for chaining.
      */
     public Builder clearManualRunsDisabled() {
       
@@ -3285,6 +3440,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+     * @return Whether the minimumScheduleInterval field is set.
      */
     public boolean hasMinimumScheduleInterval() {
       return minimumScheduleIntervalBuilder_ != null || minimumScheduleInterval_ != null;
@@ -3295,6 +3451,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
+     * @return The minimumScheduleInterval.
      */
     public com.google.protobuf.Duration getMinimumScheduleInterval() {
       if (minimumScheduleIntervalBuilder_ == null) {

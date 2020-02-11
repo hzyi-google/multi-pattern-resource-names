@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig</code>
  */
-final class CategoricalStatsConfig extends \Google\Protobuf\Internal\Message
+class CategoricalStatsConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Field to compute categorical stats on. All column types are
@@ -24,7 +24,7 @@ final class CategoricalStatsConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
-    private $field = null;
+    protected $field = null;
 
     /**
      * Constructor.

@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobReference();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -101,6 +107,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -121,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -147,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 2;</code>
+   * @return The jobId.
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -169,6 +178,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 2;</code>
+   * @return The bytes for jobId.
    */
   public com.google.protobuf.ByteString
       getJobIdBytes() {
@@ -515,6 +525,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -535,6 +546,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -556,6 +568,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -574,6 +588,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -588,6 +603,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -611,6 +628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 2;</code>
+     * @return The jobId.
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -633,6 +651,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 2;</code>
+     * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
@@ -656,6 +675,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 2;</code>
+     * @param value The jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobId(
         java.lang.String value) {
@@ -676,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobId() {
       
@@ -692,6 +714,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 2;</code>
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobIdBytes(
         com.google.protobuf.ByteString value) {

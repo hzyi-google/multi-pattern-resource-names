@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.GetAutoscalingPolicyRequest</code>
  */
-final class GetAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Message
+class GetAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The "resource name" of the autoscaling policy, as described
@@ -27,7 +27,7 @@ final class GetAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

@@ -14,6 +14,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -23,6 +24,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -33,6 +35,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -41,6 +44,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
@@ -51,6 +55,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -59,6 +64,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
@@ -69,6 +75,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cluster field is set.
    */
   boolean hasCluster();
   /**
@@ -77,6 +84,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cluster.
    */
   com.google.cloud.dataproc.v1beta2.Cluster getCluster();
   /**
@@ -100,6 +108,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the gracefulDecommissionTimeout field is set.
    */
   boolean hasGracefulDecommissionTimeout();
   /**
@@ -114,6 +123,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The gracefulDecommissionTimeout.
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
   /**
@@ -192,6 +202,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -255,6 +266,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -335,6 +347,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -351,6 +364,7 @@ public interface UpdateClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString
       getRequestIdBytes();

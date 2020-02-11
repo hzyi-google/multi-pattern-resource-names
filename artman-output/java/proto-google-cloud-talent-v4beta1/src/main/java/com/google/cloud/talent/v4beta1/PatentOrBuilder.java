@@ -14,6 +14,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -23,6 +24,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -34,6 +36,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @return A list containing the inventors.
    */
   java.util.List<java.lang.String>
       getInventorsList();
@@ -44,6 +47,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @return The count of inventors.
    */
   int getInventorsCount();
   /**
@@ -53,6 +57,8 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @param index The index of the element to return.
+   * @return The inventors at the given index.
    */
   java.lang.String getInventors(int index);
   /**
@@ -62,6 +68,8 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inventors at the given index.
    */
   com.google.protobuf.ByteString
       getInventorsBytes(int index);
@@ -73,6 +81,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_status = 3;</code>
+   * @return The patentStatus.
    */
   java.lang.String getPatentStatus();
   /**
@@ -82,6 +91,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_status = 3;</code>
+   * @return The bytes for patentStatus.
    */
   com.google.protobuf.ByteString
       getPatentStatusBytes();
@@ -92,6 +102,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
+   * @return Whether the patentStatusDate field is set.
    */
   boolean hasPatentStatusDate();
   /**
@@ -100,6 +111,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
+   * @return The patentStatusDate.
    */
   com.google.type.Date getPatentStatusDate();
   /**
@@ -117,6 +129,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
+   * @return Whether the patentFilingDate field is set.
    */
   boolean hasPatentFilingDate();
   /**
@@ -125,6 +138,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
+   * @return The patentFilingDate.
    */
   com.google.type.Date getPatentFilingDate();
   /**
@@ -143,6 +157,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_office = 6;</code>
+   * @return The patentOffice.
    */
   java.lang.String getPatentOffice();
   /**
@@ -152,6 +167,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_office = 6;</code>
+   * @return The bytes for patentOffice.
    */
   com.google.protobuf.ByteString
       getPatentOfficeBytes();
@@ -163,6 +179,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_number = 7;</code>
+   * @return The patentNumber.
    */
   java.lang.String getPatentNumber();
   /**
@@ -172,6 +189,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_number = 7;</code>
+   * @return The bytes for patentNumber.
    */
   com.google.protobuf.ByteString
       getPatentNumberBytes();
@@ -183,6 +201,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_description = 8;</code>
+   * @return The patentDescription.
    */
   java.lang.String getPatentDescription();
   /**
@@ -192,6 +211,7 @@ public interface PatentOrBuilder extends
    * </pre>
    *
    * <code>string patent_description = 8;</code>
+   * @return The bytes for patentDescription.
    */
   com.google.protobuf.ByteString
       getPatentDescriptionBytes();

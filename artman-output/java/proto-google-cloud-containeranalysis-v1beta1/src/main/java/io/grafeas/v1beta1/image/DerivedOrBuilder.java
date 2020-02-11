@@ -9,23 +9,25 @@ public interface DerivedOrBuilder extends
 
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   * @return The fingerprint.
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -39,6 +41,7 @@ public interface DerivedOrBuilder extends
    * </pre>
    *
    * <code>int32 distance = 2;</code>
+   * @return The distance.
    */
   int getDistance();
 
@@ -103,6 +106,7 @@ public interface DerivedOrBuilder extends
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   * @return The baseResourceUrl.
    */
   java.lang.String getBaseResourceUrl();
   /**
@@ -112,6 +116,7 @@ public interface DerivedOrBuilder extends
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   * @return The bytes for baseResourceUrl.
    */
   com.google.protobuf.ByteString
       getBaseResourceUrlBytes();

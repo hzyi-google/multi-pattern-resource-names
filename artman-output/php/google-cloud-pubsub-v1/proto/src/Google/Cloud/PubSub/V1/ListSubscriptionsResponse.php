@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.ListSubscriptionsResponse</code>
  */
-final class ListSubscriptionsResponse extends \Google\Protobuf\Internal\Message
+class ListSubscriptionsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The subscriptions that match the request.
@@ -28,7 +28,7 @@ final class ListSubscriptionsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

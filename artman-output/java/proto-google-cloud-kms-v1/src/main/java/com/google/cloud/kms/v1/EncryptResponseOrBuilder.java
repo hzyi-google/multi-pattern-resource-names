@@ -9,18 +9,22 @@ public interface EncryptResponseOrBuilder extends
 
   /**
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+   * this field to verify that the intended resource was used for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+   * this field to verify that the intended resource was used for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -31,6 +35,7 @@ public interface EncryptResponseOrBuilder extends
    * </pre>
    *
    * <code>bytes ciphertext = 2;</code>
+   * @return The ciphertext.
    */
   com.google.protobuf.ByteString getCiphertext();
 }

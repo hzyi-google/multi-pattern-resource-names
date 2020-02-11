@@ -13,6 +13,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The enum numeric value on the wire for usage.
    */
   int getUsageValue();
   /**
@@ -21,6 +22,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The usage.
    */
   com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage();
 
@@ -33,6 +35,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return The unstructuredAddress.
    */
   java.lang.String getUnstructuredAddress();
   /**
@@ -44,6 +47,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return The bytes for unstructuredAddress.
    */
   com.google.protobuf.ByteString
       getUnstructuredAddressBytes();
@@ -55,6 +59,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
+   * @return Whether the structuredAddress field is set.
    */
   boolean hasStructuredAddress();
   /**
@@ -64,6 +69,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
+   * @return The structuredAddress.
    */
   com.google.type.PostalAddress getStructuredAddress();
   /**
@@ -82,6 +88,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
+   * @return Whether the current field is set.
    */
   boolean hasCurrent();
   /**
@@ -90,6 +97,7 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
+   * @return The current.
    */
   com.google.protobuf.BoolValue getCurrent();
   /**

@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CustomInfoType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -126,9 +133,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000001;
             }
             detectionRules_.add(
                 input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.parser(), extensionRegistry));
@@ -155,7 +162,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -228,6 +235,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -235,6 +244,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ExclusionType forNumber(int value) {
       switch (value) {
         case 0: return EXCLUSION_TYPE_UNSPECIFIED;
@@ -301,6 +314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     * @return Whether the wordList field is set.
      */
     boolean hasWordList();
     /**
@@ -309,6 +323,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     * @return The wordList.
      */
     com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList();
     /**
@@ -327,6 +342,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     * @return Whether the cloudStoragePath field is set.
      */
     boolean hasCloudStoragePath();
     /**
@@ -336,6 +352,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     * @return The cloudStoragePath.
      */
     com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath();
     /**
@@ -390,6 +407,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Dictionary();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -402,7 +426,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -485,6 +508,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @return A list containing the words.
        */
       java.util.List<java.lang.String>
           getWordsList();
@@ -496,6 +520,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @return The count of words.
        */
       int getWordsCount();
       /**
@@ -506,6 +531,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @param index The index of the element to return.
+       * @return The words at the given index.
        */
       java.lang.String getWords(int index);
       /**
@@ -516,6 +543,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the words at the given index.
        */
       com.google.protobuf.ByteString
           getWordsBytes(int index);
@@ -538,6 +567,13 @@ private static final long serialVersionUID = 0L;
       }
       private WordList() {
         words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new WordList();
       }
 
       @java.lang.Override
@@ -618,6 +654,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @return A list containing the words.
        */
       public com.google.protobuf.ProtocolStringList
           getWordsList() {
@@ -631,6 +668,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @return The count of words.
        */
       public int getWordsCount() {
         return words_.size();
@@ -643,6 +681,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @param index The index of the element to return.
+       * @return The words at the given index.
        */
       public java.lang.String getWords(int index) {
         return words_.get(index);
@@ -655,6 +695,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string words = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the words at the given index.
        */
       public com.google.protobuf.ByteString
           getWordsBytes(int index) {
@@ -1001,6 +1043,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @return A list containing the words.
          */
         public com.google.protobuf.ProtocolStringList
             getWordsList() {
@@ -1014,6 +1057,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @return The count of words.
          */
         public int getWordsCount() {
           return words_.size();
@@ -1026,6 +1070,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param index The index of the element to return.
+         * @return The words at the given index.
          */
         public java.lang.String getWords(int index) {
           return words_.get(index);
@@ -1038,6 +1084,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the words at the given index.
          */
         public com.google.protobuf.ByteString
             getWordsBytes(int index) {
@@ -1051,6 +1099,9 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param index The index to set the value at.
+         * @param value The words to set.
+         * @return This builder for chaining.
          */
         public Builder setWords(
             int index, java.lang.String value) {
@@ -1070,6 +1121,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param value The words to add.
+         * @return This builder for chaining.
          */
         public Builder addWords(
             java.lang.String value) {
@@ -1089,6 +1142,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param values The words to add.
+         * @return This builder for chaining.
          */
         public Builder addAllWords(
             java.lang.Iterable<java.lang.String> values) {
@@ -1106,6 +1161,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearWords() {
           words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1121,6 +1177,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>repeated string words = 1;</code>
+         * @param value The bytes of the words to add.
+         * @return This builder for chaining.
          */
         public Builder addWordsBytes(
             com.google.protobuf.ByteString value) {
@@ -1189,7 +1247,8 @@ private static final long serialVersionUID = 0L;
     private int sourceCase_ = 0;
     private java.lang.Object source_;
     public enum SourceCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       WORD_LIST(1),
       CLOUD_STORAGE_PATH(3),
       SOURCE_NOT_SET(0);
@@ -1198,6 +1257,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1231,6 +1292,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     * @return Whether the wordList field is set.
      */
     public boolean hasWordList() {
       return sourceCase_ == 1;
@@ -1241,6 +1303,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+     * @return The wordList.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList() {
       if (sourceCase_ == 1) {
@@ -1270,6 +1333,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     * @return Whether the cloudStoragePath field is set.
      */
     public boolean hasCloudStoragePath() {
       return sourceCase_ == 3;
@@ -1281,6 +1345,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+     * @return The cloudStoragePath.
      */
     public com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath() {
       if (sourceCase_ == 3) {
@@ -1704,6 +1769,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+       * @return Whether the wordList field is set.
        */
       public boolean hasWordList() {
         return sourceCase_ == 1;
@@ -1714,6 +1780,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
+       * @return The wordList.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList() {
         if (wordListBuilder_ == null) {
@@ -1877,6 +1944,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+       * @return Whether the cloudStoragePath field is set.
        */
       public boolean hasCloudStoragePath() {
         return sourceCase_ == 3;
@@ -1888,6 +1956,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
+       * @return The cloudStoragePath.
        */
       public com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath() {
         if (cloudStoragePathBuilder_ == null) {
@@ -2113,6 +2182,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     * @return The pattern.
      */
     java.lang.String getPattern();
     /**
@@ -2123,6 +2193,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     * @return The bytes for pattern.
      */
     com.google.protobuf.ByteString
         getPatternBytes();
@@ -2134,6 +2205,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @return A list containing the groupIndexes.
      */
     java.util.List<java.lang.Integer> getGroupIndexesList();
     /**
@@ -2143,6 +2215,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @return The count of groupIndexes.
      */
     int getGroupIndexesCount();
     /**
@@ -2152,6 +2225,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @param index The index of the element to return.
+     * @return The groupIndexes at the given index.
      */
     int getGroupIndexes(int index);
   }
@@ -2174,6 +2249,13 @@ private static final long serialVersionUID = 0L;
     private Regex() {
       pattern_ = "";
       groupIndexes_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Regex();
     }
 
     @java.lang.Override
@@ -2207,9 +2289,9 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupIndexes_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               groupIndexes_.addInt(input.readInt32());
               break;
@@ -2217,9 +2299,9 @@ private static final long serialVersionUID = 0L;
             case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 groupIndexes_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 groupIndexes_.addInt(input.readInt32());
@@ -2242,7 +2324,7 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -2262,7 +2344,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.CustomInfoType.Regex.class, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PATTERN_FIELD_NUMBER = 1;
     private volatile java.lang.Object pattern_;
     /**
@@ -2273,6 +2354,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     * @return The pattern.
      */
     public java.lang.String getPattern() {
       java.lang.Object ref = pattern_;
@@ -2294,6 +2376,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pattern = 1;</code>
+     * @return The bytes for pattern.
      */
     public com.google.protobuf.ByteString
         getPatternBytes() {
@@ -2318,6 +2401,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @return A list containing the groupIndexes.
      */
     public java.util.List<java.lang.Integer>
         getGroupIndexesList() {
@@ -2330,6 +2414,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @return The count of groupIndexes.
      */
     public int getGroupIndexesCount() {
       return groupIndexes_.size();
@@ -2341,6 +2426,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated int32 group_indexes = 2;</code>
+     * @param index The index of the element to return.
+     * @return The groupIndexes at the given index.
      */
     public int getGroupIndexes(int index) {
       return groupIndexes_.getInt(index);
@@ -2574,7 +2661,7 @@ private static final long serialVersionUID = 0L;
         pattern_ = "";
 
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2602,14 +2689,12 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.CustomInfoType.Regex buildPartial() {
         com.google.privacy.dlp.v2.CustomInfoType.Regex result = new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.pattern_ = pattern_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.groupIndexes_ = groupIndexes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2665,7 +2750,7 @@ private static final long serialVersionUID = 0L;
         if (!other.groupIndexes_.isEmpty()) {
           if (groupIndexes_.isEmpty()) {
             groupIndexes_ = other.groupIndexes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureGroupIndexesIsMutable();
             groupIndexes_.addAll(other.groupIndexes_);
@@ -2711,6 +2796,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       * @return The pattern.
        */
       public java.lang.String getPattern() {
         java.lang.Object ref = pattern_;
@@ -2732,6 +2818,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       * @return The bytes for pattern.
        */
       public com.google.protobuf.ByteString
           getPatternBytes() {
@@ -2754,6 +2841,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       * @param value The pattern to set.
+       * @return This builder for chaining.
        */
       public Builder setPattern(
           java.lang.String value) {
@@ -2773,6 +2862,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPattern() {
         
@@ -2788,6 +2878,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string pattern = 1;</code>
+       * @param value The bytes for pattern to set.
+       * @return This builder for chaining.
        */
       public Builder setPatternBytes(
           com.google.protobuf.ByteString value) {
@@ -2803,9 +2895,9 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Internal.IntList groupIndexes_ = emptyIntList();
       private void ensureGroupIndexesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_ = mutableCopy(groupIndexes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -2815,10 +2907,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @return A list containing the groupIndexes.
        */
       public java.util.List<java.lang.Integer>
           getGroupIndexesList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(groupIndexes_) : groupIndexes_;
       }
       /**
@@ -2828,6 +2921,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @return The count of groupIndexes.
        */
       public int getGroupIndexesCount() {
         return groupIndexes_.size();
@@ -2839,6 +2933,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @param index The index of the element to return.
+       * @return The groupIndexes at the given index.
        */
       public int getGroupIndexes(int index) {
         return groupIndexes_.getInt(index);
@@ -2850,6 +2946,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The groupIndexes to set.
+       * @return This builder for chaining.
        */
       public Builder setGroupIndexes(
           int index, int value) {
@@ -2865,6 +2964,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @param value The groupIndexes to add.
+       * @return This builder for chaining.
        */
       public Builder addGroupIndexes(int value) {
         ensureGroupIndexesIsMutable();
@@ -2879,6 +2980,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @param values The groupIndexes to add.
+       * @return This builder for chaining.
        */
       public Builder addAllGroupIndexes(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2895,10 +2998,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated int32 group_indexes = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGroupIndexes() {
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2983,6 +3087,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private SurrogateType() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SurrogateType();
     }
 
     @java.lang.Override
@@ -3398,6 +3509,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * @return Whether the hotwordRule field is set.
      */
     boolean hasHotwordRule();
     /**
@@ -3406,6 +3518,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * @return The hotwordRule.
      */
     com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule();
     /**
@@ -3442,6 +3555,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DetectionRule();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3454,7 +3574,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3521,6 +3640,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
+       * @return The windowBefore.
        */
       int getWindowBefore();
 
@@ -3530,6 +3650,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 window_after = 2;</code>
+       * @return The windowAfter.
        */
       int getWindowAfter();
     }
@@ -3554,6 +3675,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Proximity();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -3566,7 +3694,6 @@ private static final long serialVersionUID = 0L;
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -3627,6 +3754,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
+       * @return The windowBefore.
        */
       public int getWindowBefore() {
         return windowBefore_;
@@ -3640,6 +3768,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 window_after = 2;</code>
+       * @return The windowAfter.
        */
       public int getWindowAfter() {
         return windowAfter_;
@@ -3976,6 +4105,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         * @return The windowBefore.
          */
         public int getWindowBefore() {
           return windowBefore_;
@@ -3986,6 +4116,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         * @param value The windowBefore to set.
+         * @return This builder for chaining.
          */
         public Builder setWindowBefore(int value) {
           
@@ -3999,6 +4131,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearWindowBefore() {
           
@@ -4014,6 +4147,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         * @return The windowAfter.
          */
         public int getWindowAfter() {
           return windowAfter_;
@@ -4024,6 +4158,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         * @param value The windowAfter to set.
+         * @return This builder for chaining.
          */
         public Builder setWindowAfter(int value) {
           
@@ -4037,6 +4173,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 window_after = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearWindowAfter() {
           
@@ -4107,6 +4244,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return The enum numeric value on the wire for fixedLikelihood.
        */
       int getFixedLikelihoodValue();
       /**
@@ -4115,6 +4253,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return The fixedLikelihood.
        */
       com.google.privacy.dlp.v2.Likelihood getFixedLikelihood();
 
@@ -4131,6 +4270,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 relative_likelihood = 2;</code>
+       * @return The relativeLikelihood.
        */
       int getRelativeLikelihood();
 
@@ -4157,6 +4297,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new LikelihoodAdjustment();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -4169,7 +4316,6 @@ private static final long serialVersionUID = 0L;
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4226,7 +4372,8 @@ private static final long serialVersionUID = 0L;
       private int adjustmentCase_ = 0;
       private java.lang.Object adjustment_;
       public enum AdjustmentCase
-          implements com.google.protobuf.Internal.EnumLite {
+          implements com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         FIXED_LIKELIHOOD(1),
         RELATIVE_LIKELIHOOD(2),
         ADJUSTMENT_NOT_SET(0);
@@ -4235,6 +4382,8 @@ private static final long serialVersionUID = 0L;
           this.value = value;
         }
         /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
          * @deprecated Use {@link #forNumber(int)} instead.
          */
         @java.lang.Deprecated
@@ -4268,6 +4417,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return The enum numeric value on the wire for fixedLikelihood.
        */
       public int getFixedLikelihoodValue() {
         if (adjustmentCase_ == 1) {
@@ -4281,6 +4431,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return The fixedLikelihood.
        */
       public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
         if (adjustmentCase_ == 1) {
@@ -4306,6 +4457,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 relative_likelihood = 2;</code>
+       * @return The relativeLikelihood.
        */
       public int getRelativeLikelihood() {
         if (adjustmentCase_ == 2) {
@@ -4688,6 +4840,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @return The enum numeric value on the wire for fixedLikelihood.
          */
         public int getFixedLikelihoodValue() {
           if (adjustmentCase_ == 1) {
@@ -4701,6 +4854,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @param value The enum numeric value on the wire for fixedLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setFixedLikelihoodValue(int value) {
           adjustmentCase_ = 1;
@@ -4714,6 +4869,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @return The fixedLikelihood.
          */
         public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
           if (adjustmentCase_ == 1) {
@@ -4730,6 +4886,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @param value The fixedLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setFixedLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
           if (value == null) {
@@ -4746,6 +4904,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearFixedLikelihood() {
           if (adjustmentCase_ == 1) {
@@ -4769,6 +4928,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         * @return The relativeLikelihood.
          */
         public int getRelativeLikelihood() {
           if (adjustmentCase_ == 2) {
@@ -4789,6 +4949,8 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         * @param value The relativeLikelihood to set.
+         * @return This builder for chaining.
          */
         public Builder setRelativeLikelihood(int value) {
           adjustmentCase_ = 2;
@@ -4809,6 +4971,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 relative_likelihood = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearRelativeLikelihood() {
           if (adjustmentCase_ == 2) {
@@ -4881,6 +5044,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       * @return Whether the hotwordRegex field is set.
        */
       boolean hasHotwordRegex();
       /**
@@ -4889,6 +5053,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       * @return The hotwordRegex.
        */
       com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex();
       /**
@@ -4913,6 +5078,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       * @return Whether the proximity field is set.
        */
       boolean hasProximity();
       /**
@@ -4928,6 +5094,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       * @return The proximity.
        */
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity();
       /**
@@ -4952,6 +5119,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * @return Whether the likelihoodAdjustment field is set.
        */
       boolean hasLikelihoodAdjustment();
       /**
@@ -4960,6 +5128,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * @return The likelihoodAdjustment.
        */
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment();
       /**
@@ -4992,6 +5161,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new HotwordRule();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
@@ -5004,7 +5180,6 @@ private static final long serialVersionUID = 0L;
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -5094,6 +5269,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       * @return Whether the hotwordRegex field is set.
        */
       public boolean hasHotwordRegex() {
         return hotwordRegex_ != null;
@@ -5104,6 +5280,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+       * @return The hotwordRegex.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
         return hotwordRegex_ == null ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance() : hotwordRegex_;
@@ -5134,6 +5311,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       * @return Whether the proximity field is set.
        */
       public boolean hasProximity() {
         return proximity_ != null;
@@ -5151,6 +5329,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+       * @return The proximity.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
         return proximity_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance() : proximity_;
@@ -5181,6 +5360,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * @return Whether the likelihoodAdjustment field is set.
        */
       public boolean hasLikelihoodAdjustment() {
         return likelihoodAdjustment_ != null;
@@ -5191,6 +5371,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * @return The likelihoodAdjustment.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment() {
         return likelihoodAdjustment_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance() : likelihoodAdjustment_;
@@ -5595,6 +5776,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+         * @return Whether the hotwordRegex field is set.
          */
         public boolean hasHotwordRegex() {
           return hotwordRegexBuilder_ != null || hotwordRegex_ != null;
@@ -5605,6 +5787,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
+         * @return The hotwordRegex.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
           if (hotwordRegexBuilder_ == null) {
@@ -5755,6 +5938,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+         * @return Whether the proximity field is set.
          */
         public boolean hasProximity() {
           return proximityBuilder_ != null || proximity_ != null;
@@ -5772,6 +5956,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+         * @return The proximity.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
           if (proximityBuilder_ == null) {
@@ -5964,6 +6149,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * @return Whether the likelihoodAdjustment field is set.
          */
         public boolean hasLikelihoodAdjustment() {
           return likelihoodAdjustmentBuilder_ != null || likelihoodAdjustment_ != null;
@@ -5974,6 +6160,7 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * @return The likelihoodAdjustment.
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment() {
           if (likelihoodAdjustmentBuilder_ == null) {
@@ -6163,7 +6350,8 @@ private static final long serialVersionUID = 0L;
     private int typeCase_ = 0;
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       HOTWORD_RULE(1),
       TYPE_NOT_SET(0);
       private final int value;
@@ -6171,6 +6359,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -6203,6 +6393,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * @return Whether the hotwordRule field is set.
      */
     public boolean hasHotwordRule() {
       return typeCase_ == 1;
@@ -6213,6 +6404,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * @return The hotwordRule.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
       if (typeCase_ == 1) {
@@ -6592,6 +6784,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * @return Whether the hotwordRule field is set.
        */
       public boolean hasHotwordRule() {
         return typeCase_ == 1;
@@ -6602,6 +6795,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * @return The hotwordRule.
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
         if (hotwordRuleBuilder_ == null) {
@@ -6808,11 +7002,11 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DICTIONARY(2),
     REGEX(3),
     SURROGATE_TYPE(4),
@@ -6823,6 +7017,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -6864,6 +7060,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return infoType_ != null;
@@ -6879,6 +7076,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
@@ -6909,6 +7107,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   * @return The enum numeric value on the wire for likelihood.
    */
   public int getLikelihoodValue() {
     return likelihood_;
@@ -6921,6 +7120,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   * @return The likelihood.
    */
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
     @SuppressWarnings("deprecation")
@@ -6935,6 +7135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   * @return Whether the dictionary field is set.
    */
   public boolean hasDictionary() {
     return typeCase_ == 2;
@@ -6945,6 +7146,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   * @return The dictionary.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 2) {
@@ -6973,6 +7175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   * @return Whether the regex field is set.
    */
   public boolean hasRegex() {
     return typeCase_ == 3;
@@ -6983,6 +7186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   * @return The regex.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 3) {
@@ -7012,6 +7216,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   * @return Whether the surrogateType field is set.
    */
   public boolean hasSurrogateType() {
     return typeCase_ == 4;
@@ -7023,6 +7228,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   * @return The surrogateType.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType() {
     if (typeCase_ == 4) {
@@ -7053,6 +7259,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   * @return Whether the storedType field is set.
    */
   public boolean hasStoredType() {
     return typeCase_ == 5;
@@ -7064,6 +7271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   * @return The storedType.
    */
   public com.google.privacy.dlp.v2.StoredType getStoredType() {
     if (typeCase_ == 5) {
@@ -7160,6 +7368,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   * @return The enum numeric value on the wire for exclusionType.
    */
   public int getExclusionTypeValue() {
     return exclusionType_;
@@ -7171,6 +7380,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   * @return The exclusionType.
    */
   public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
     @SuppressWarnings("deprecation")
@@ -7494,7 +7704,7 @@ private static final long serialVersionUID = 0L;
 
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         detectionRulesBuilder_.clear();
       }
@@ -7529,7 +7739,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType buildPartial() {
       com.google.privacy.dlp.v2.CustomInfoType result = new com.google.privacy.dlp.v2.CustomInfoType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (infoTypeBuilder_ == null) {
         result.infoType_ = infoType_;
       } else {
@@ -7565,16 +7774,15 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.detectionRules_ = detectionRules_;
       } else {
         result.detectionRules_ = detectionRulesBuilder_.build();
       }
       result.exclusionType_ = exclusionType_;
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -7634,7 +7842,7 @@ private static final long serialVersionUID = 0L;
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -7647,7 +7855,7 @@ private static final long serialVersionUID = 0L;
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             detectionRulesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDetectionRulesFieldBuilder() : null;
@@ -7739,6 +7947,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return infoTypeBuilder_ != null || infoType_ != null;
@@ -7754,6 +7963,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -7932,6 +8142,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     * @return The enum numeric value on the wire for likelihood.
      */
     public int getLikelihoodValue() {
       return likelihood_;
@@ -7944,6 +8155,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     * @param value The enum numeric value on the wire for likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihoodValue(int value) {
       likelihood_ = value;
@@ -7958,6 +8171,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     * @return The likelihood.
      */
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
       @SuppressWarnings("deprecation")
@@ -7972,6 +8186,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     * @param value The likelihood to set.
+     * @return This builder for chaining.
      */
     public Builder setLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
       if (value == null) {
@@ -7990,6 +8206,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLikelihood() {
       
@@ -8006,6 +8223,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+     * @return Whether the dictionary field is set.
      */
     public boolean hasDictionary() {
       return typeCase_ == 2;
@@ -8016,6 +8234,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+     * @return The dictionary.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
       if (dictionaryBuilder_ == null) {
@@ -8178,6 +8397,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+     * @return Whether the regex field is set.
      */
     public boolean hasRegex() {
       return typeCase_ == 3;
@@ -8188,6 +8408,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+     * @return The regex.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
       if (regexBuilder_ == null) {
@@ -8351,6 +8572,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+     * @return Whether the surrogateType field is set.
      */
     public boolean hasSurrogateType() {
       return typeCase_ == 4;
@@ -8362,6 +8584,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+     * @return The surrogateType.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType() {
       if (surrogateTypeBuilder_ == null) {
@@ -8532,6 +8755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     * @return Whether the storedType field is set.
      */
     public boolean hasStoredType() {
       return typeCase_ == 5;
@@ -8543,6 +8767,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     * @return The storedType.
      */
     public com.google.privacy.dlp.v2.StoredType getStoredType() {
       if (storedTypeBuilder_ == null) {
@@ -8707,9 +8932,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_ =
       java.util.Collections.emptyList();
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(detectionRules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -8925,7 +9150,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -9044,7 +9269,7 @@ private static final long serialVersionUID = 0L;
         detectionRulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -9060,6 +9285,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     * @return The enum numeric value on the wire for exclusionType.
      */
     public int getExclusionTypeValue() {
       return exclusionType_;
@@ -9071,6 +9297,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     * @param value The enum numeric value on the wire for exclusionType to set.
+     * @return This builder for chaining.
      */
     public Builder setExclusionTypeValue(int value) {
       exclusionType_ = value;
@@ -9084,6 +9312,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     * @return The exclusionType.
      */
     public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
       @SuppressWarnings("deprecation")
@@ -9097,6 +9326,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     * @param value The exclusionType to set.
+     * @return This builder for chaining.
      */
     public Builder setExclusionType(com.google.privacy.dlp.v2.CustomInfoType.ExclusionType value) {
       if (value == null) {
@@ -9114,6 +9345,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearExclusionType() {
       

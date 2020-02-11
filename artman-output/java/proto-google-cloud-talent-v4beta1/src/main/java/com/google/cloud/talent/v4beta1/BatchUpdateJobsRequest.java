@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BatchUpdateJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -55,9 +62,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               jobs_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Job>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             jobs_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Job.parser(), extensionRegistry));
@@ -91,7 +98,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
       }
       this.unknownFields = unknownFields.build();
@@ -111,7 +118,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest.class, com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -122,7 +128,8 @@ private static final long serialVersionUID = 0L;
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -144,7 +151,8 @@ private static final long serialVersionUID = 0L;
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -221,23 +229,19 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, only the specified fields in
-   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-   * fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
    * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
-   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-   * which can yield a very large response.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+   * large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -246,23 +250,19 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, only the specified fields in
-   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-   * fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
    * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
-   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-   * which can yield a very large response.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+   * large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -271,20 +271,15 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, only the specified fields in
-   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-   * fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+   * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-   * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+   * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
    * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
-   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-   * which can yield a very large response.
+   * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+   * large response.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -523,7 +518,7 @@ private static final long serialVersionUID = 0L;
 
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         jobsBuilder_.clear();
       }
@@ -560,12 +555,11 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest buildPartial() {
       com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest result = new com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.jobs_ = jobs_;
       } else {
@@ -576,7 +570,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -633,7 +626,7 @@ private static final long serialVersionUID = 0L;
         if (!other.jobs_.isEmpty()) {
           if (jobs_.isEmpty()) {
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureJobsIsMutable();
             jobs_.addAll(other.jobs_);
@@ -646,7 +639,7 @@ private static final long serialVersionUID = 0L;
             jobsBuilder_.dispose();
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             jobsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getJobsFieldBuilder() : null;
@@ -697,7 +690,8 @@ private static final long serialVersionUID = 0L;
      * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -719,7 +713,8 @@ private static final long serialVersionUID = 0L;
      * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -742,7 +737,9 @@ private static final long serialVersionUID = 0L;
      * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -762,7 +759,8 @@ private static final long serialVersionUID = 0L;
      * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -778,7 +776,9 @@ private static final long serialVersionUID = 0L;
      * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -795,9 +795,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Job> jobs_ =
       java.util.Collections.emptyList();
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Job>(jobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         jobsBuilder_.clear();
@@ -1096,7 +1096,7 @@ private static final long serialVersionUID = 0L;
         jobsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Job, com.google.cloud.talent.v4beta1.Job.Builder, com.google.cloud.talent.v4beta1.JobOrBuilder>(
                 jobs_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         jobs_ = null;
@@ -1111,23 +1111,19 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1136,23 +1132,19 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1165,20 +1157,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1200,20 +1187,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1233,20 +1215,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1270,20 +1247,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1303,20 +1275,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1330,20 +1297,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1360,20 +1322,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, only the specified fields in
-     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
-     * fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, only the specified fields in
+     * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
-     * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
+     * If [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask] is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
      * [JobResult][google.cloud.talent.v4beta1.JobOperationResult.JobResult]
      * will only contains fields that is updated, plus the Id of the Job.
-     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields,
-     * which can yield a very large response.
+     * Otherwise,  [Job][google.cloud.talent.v4beta1.Job] will include all fields, which can yield a very
+     * large response.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>

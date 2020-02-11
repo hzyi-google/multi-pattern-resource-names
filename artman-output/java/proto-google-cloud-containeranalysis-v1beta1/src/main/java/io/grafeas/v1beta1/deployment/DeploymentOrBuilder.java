@@ -13,6 +13,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string user_email = 1;</code>
+   * @return The userEmail.
    */
   java.lang.String getUserEmail();
   /**
@@ -21,29 +22,32 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string user_email = 1;</code>
+   * @return The bytes for userEmail.
    */
   com.google.protobuf.ByteString
       getUserEmailBytes();
 
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+   * @return Whether the deployTime field is set.
    */
   boolean hasDeployTime();
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
+   * @return The deployTime.
    */
   com.google.protobuf.Timestamp getDeployTime();
   /**
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -56,6 +60,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+   * @return Whether the undeployTime field is set.
    */
   boolean hasUndeployTime();
   /**
@@ -64,6 +69,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
+   * @return The undeployTime.
    */
   com.google.protobuf.Timestamp getUndeployTime();
   /**
@@ -81,6 +87,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string config = 4;</code>
+   * @return The config.
    */
   java.lang.String getConfig();
   /**
@@ -89,6 +96,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string config = 4;</code>
+   * @return The bytes for config.
    */
   com.google.protobuf.ByteString
       getConfigBytes();
@@ -99,6 +107,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string address = 5;</code>
+   * @return The address.
    */
   java.lang.String getAddress();
   /**
@@ -107,6 +116,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>string address = 5;</code>
+   * @return The bytes for address.
    */
   com.google.protobuf.ByteString
       getAddressBytes();
@@ -118,6 +128,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @return A list containing the resourceUri.
    */
   java.util.List<java.lang.String>
       getResourceUriList();
@@ -128,6 +139,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @return The count of resourceUri.
    */
   int getResourceUriCount();
   /**
@@ -137,6 +149,8 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @param index The index of the element to return.
+   * @return The resourceUri at the given index.
    */
   java.lang.String getResourceUri(int index);
   /**
@@ -146,6 +160,8 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceUri at the given index.
    */
   com.google.protobuf.ByteString
       getResourceUriBytes(int index);
@@ -156,6 +172,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+   * @return The enum numeric value on the wire for platform.
    */
   int getPlatformValue();
   /**
@@ -164,6 +181,7 @@ public interface DeploymentOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment.Platform platform = 7;</code>
+   * @return The platform.
    */
   io.grafeas.v1beta1.deployment.Deployment.Platform getPlatform();
 }

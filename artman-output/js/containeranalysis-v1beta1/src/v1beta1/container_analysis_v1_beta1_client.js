@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -469,7 +469,7 @@ class ContainerAnalysisV1Beta1Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   The name of the scan configuration in the form of
+   *   Required. The name of the scan configuration in the form of
    *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
@@ -523,10 +523,10 @@ class ContainerAnalysisV1Beta1Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   The name of the project to list scan configurations for in the form of
+   *   Required. The name of the project to list scan configurations for in the form of
    *   `projects/[PROJECT_ID]`.
    * @param {string} [request.filter]
-   *   The filter expression.
+   *   Required. The filter expression.
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -637,10 +637,10 @@ class ContainerAnalysisV1Beta1Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   The name of the project to list scan configurations for in the form of
+   *   Required. The name of the project to list scan configurations for in the form of
    *   `projects/[PROJECT_ID]`.
    * @param {string} [request.filter]
-   *   The filter expression.
+   *   Required. The filter expression.
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -685,10 +685,10 @@ class ContainerAnalysisV1Beta1Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   The name of the scan configuration in the form of
+   *   Required. The name of the scan configuration in the form of
    *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * @param {Object} request.scanConfig
-   *   The updated scan configuration.
+   *   Required. The updated scan configuration.
    *
    *   This object should have the same structure as [ScanConfig]{@link google.devtools.containeranalysis.v1beta1.ScanConfig}
    * @param {Object} [options]

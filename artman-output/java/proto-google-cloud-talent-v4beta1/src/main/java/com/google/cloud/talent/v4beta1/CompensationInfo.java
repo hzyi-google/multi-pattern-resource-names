@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CompensationInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -121,28 +128,17 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The type of compensation.
    * For compensation amounts specified in non-monetary amounts,
-   * describe the compensation scheme in the
-   * [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description].
+   * describe the compensation scheme in the [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description].
    * For example, tipping format is described in
-   * [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description]
-   * (for example, "expect 15-20% tips based on customer bill.") and an estimate
-   * of the tips provided in
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * or
-   * [CompensationEntry.range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range]
-   * ($10 per hour).
-   * For example, equity is described in
-   * [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description]
+   * [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description] (for example, "expect 15-20% tips based
+   * on customer bill.") and an estimate of the tips provided in
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or [CompensationEntry.range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range] ($10 per hour).
+   * For example, equity is described in [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description]
    * (for example, "1% - 2% equity vesting over 4 years, 1 year cliff") and
-   * value estimated in
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * or
-   * [CompensationEntry.range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range].
-   * If no value estimate is possible, units are
-   * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED]
-   * and then further clarified in
-   * [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description]
-   * field.
+   * value estimated in [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or
+   * [CompensationEntry.range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range]. If no value estimate is possible, units are
+   * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED] and then further
+   * clarified in [CompensationEntry.description][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.description] field.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.talent.v4beta1.CompensationInfo.CompensationType}
@@ -313,6 +309,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -320,6 +318,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompensationType forNumber(int value) {
       switch (value) {
         case 0: return COMPENSATION_TYPE_UNSPECIFIED;
@@ -534,6 +536,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -541,6 +545,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CompensationUnit forNumber(int value) {
       switch (value) {
         case 0: return COMPENSATION_UNIT_UNSPECIFIED;
@@ -610,42 +618,42 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Compensation type.
-     * Default is
-     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
      * <pre>
      * Compensation type.
-     * Default is
-     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     * @return The type.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType();
 
     /**
      * <pre>
      * Frequency of the specified amount.
-     * Default is
-     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     * @return The enum numeric value on the wire for unit.
      */
     int getUnitValue();
     /**
      * <pre>
      * Frequency of the specified amount.
-     * Default is
-     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     * @return The unit.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit();
 
@@ -655,6 +663,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
@@ -663,6 +672,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     * @return The amount.
      */
     com.google.type.Money getAmount();
     /**
@@ -680,6 +690,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     * @return Whether the range field is set.
      */
     boolean hasRange();
     /**
@@ -688,6 +699,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     * @return The range.
      */
     com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange();
     /**
@@ -707,6 +719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
@@ -717,6 +730,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -724,10 +738,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -736,15 +748,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     * @return Whether the expectedUnitsPerYear field is set.
      */
     boolean hasExpectedUnitsPerYear();
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -753,15 +764,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     * @return The expectedUnitsPerYear.
      */
     com.google.protobuf.DoubleValue getExpectedUnitsPerYear();
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -780,17 +790,9 @@ private static final long serialVersionUID = 0L;
    * A compensation entry that represents one component of compensation, such
    * as base pay, bonus, or other compensation type.
    * Annualization: One compensation entry can be annualized if
-   * - it contains valid
-   * [amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * or
-   * [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range].
-   * - and its
-   * [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year]
-   * is set or can be derived. Its annualized range is determined as
-   * ([amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * or
-   * [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range])
-   * times
+   * - it contains valid [amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range].
+   * - and its [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year] is set or can be derived.
+   * Its annualized range is determined as ([amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range]) times
    * [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
    * </pre>
    *
@@ -812,6 +814,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompensationEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -824,7 +833,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -929,7 +937,8 @@ private static final long serialVersionUID = 0L;
     private int compensationAmountCase_ = 0;
     private java.lang.Object compensationAmount_;
     public enum CompensationAmountCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       AMOUNT(3),
       RANGE(4),
       COMPENSATIONAMOUNT_NOT_SET(0);
@@ -938,6 +947,8 @@ private static final long serialVersionUID = 0L;
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -969,11 +980,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Compensation type.
-     * Default is
-     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -981,11 +992,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Compensation type.
-     * Default is
-     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType() {
       @SuppressWarnings("deprecation")
@@ -998,11 +1009,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Frequency of the specified amount.
-     * Default is
-     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     * @return The enum numeric value on the wire for unit.
      */
     public int getUnitValue() {
       return unit_;
@@ -1010,11 +1021,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Frequency of the specified amount.
-     * Default is
-     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+     * @return The unit.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit() {
       @SuppressWarnings("deprecation")
@@ -1029,6 +1040,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
       return compensationAmountCase_ == 3;
@@ -1039,6 +1051,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money amount = 3;</code>
+     * @return The amount.
      */
     public com.google.type.Money getAmount() {
       if (compensationAmountCase_ == 3) {
@@ -1067,6 +1080,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return compensationAmountCase_ == 4;
@@ -1077,6 +1091,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
       if (compensationAmountCase_ == 4) {
@@ -1108,6 +1123,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1129,6 +1145,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1149,10 +1166,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1161,6 +1176,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     * @return Whether the expectedUnitsPerYear field is set.
      */
     public boolean hasExpectedUnitsPerYear() {
       return expectedUnitsPerYear_ != null;
@@ -1168,10 +1184,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1180,6 +1194,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+     * @return The expectedUnitsPerYear.
      */
     public com.google.protobuf.DoubleValue getExpectedUnitsPerYear() {
       return expectedUnitsPerYear_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : expectedUnitsPerYear_;
@@ -1187,10 +1202,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-     * is FULLTIME, a default value is inferred based on
-     * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-     * Default values:
+     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+     * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1438,17 +1451,9 @@ private static final long serialVersionUID = 0L;
      * A compensation entry that represents one component of compensation, such
      * as base pay, bonus, or other compensation type.
      * Annualization: One compensation entry can be annualized if
-     * - it contains valid
-     * [amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * or
-     * [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range].
-     * - and its
-     * [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year]
-     * is set or can be derived. Its annualized range is determined as
-     * ([amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * or
-     * [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range])
-     * times
+     * - it contains valid [amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range].
+     * - and its [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year] is set or can be derived.
+     * Its annualized range is determined as ([amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.range]) times
      * [expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
      * </pre>
      *
@@ -1674,11 +1679,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Compensation type.
-       * Default is
-       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
@@ -1686,11 +1691,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Compensation type.
-       * Default is
-       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -1700,11 +1706,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Compensation type.
-       * Default is
-       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       * @return The type.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType getType() {
         @SuppressWarnings("deprecation")
@@ -1714,11 +1720,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Compensation type.
-       * Default is
-       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType value) {
         if (value == null) {
@@ -1732,11 +1739,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Compensation type.
-       * Default is
-       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationType type = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -1749,11 +1756,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Frequency of the specified amount.
-       * Default is
-       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       * @return The enum numeric value on the wire for unit.
        */
       public int getUnitValue() {
         return unit_;
@@ -1761,11 +1768,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Frequency of the specified amount.
-       * Default is
-       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
        */
       public Builder setUnitValue(int value) {
         unit_ = value;
@@ -1775,11 +1783,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Frequency of the specified amount.
-       * Default is
-       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       * @return The unit.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnit() {
         @SuppressWarnings("deprecation")
@@ -1789,11 +1797,12 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Frequency of the specified amount.
-       * Default is
-       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       * @param value The unit to set.
+       * @return This builder for chaining.
        */
       public Builder setUnit(com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
         if (value == null) {
@@ -1807,11 +1816,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Frequency of the specified amount.
-       * Default is
-       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit unit = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUnit() {
         
@@ -1828,6 +1837,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
+       * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return compensationAmountCase_ == 3;
@@ -1838,6 +1848,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money amount = 3;</code>
+       * @return The amount.
        */
       public com.google.type.Money getAmount() {
         if (amountBuilder_ == null) {
@@ -2000,6 +2011,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+       * @return Whether the range field is set.
        */
       public boolean hasRange() {
         return compensationAmountCase_ == 4;
@@ -2010,6 +2022,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 4;</code>
+       * @return The range.
        */
       public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
         if (rangeBuilder_ == null) {
@@ -2173,6 +2186,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string description = 5;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -2194,6 +2208,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string description = 5;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -2216,6 +2231,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string description = 5;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -2235,6 +2252,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string description = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -2250,6 +2268,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string description = 5;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -2269,10 +2289,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2281,6 +2299,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+       * @return Whether the expectedUnitsPerYear field is set.
        */
       public boolean hasExpectedUnitsPerYear() {
         return expectedUnitsPerYearBuilder_ != null || expectedUnitsPerYear_ != null;
@@ -2288,10 +2307,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2300,6 +2317,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
+       * @return The expectedUnitsPerYear.
        */
       public com.google.protobuf.DoubleValue getExpectedUnitsPerYear() {
         if (expectedUnitsPerYearBuilder_ == null) {
@@ -2311,10 +2329,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2340,10 +2356,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2367,10 +2381,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2398,10 +2410,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2425,10 +2435,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2446,10 +2454,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2470,10 +2476,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types]
-       * is FULLTIME, a default value is inferred based on
-       * [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit].
-       * Default values:
+       * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types] is FULLTIME, a default value is inferred
+       * based on [unit][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.unit]. Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2562,6 +2566,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     * @return Whether the maxCompensation field is set.
      */
     boolean hasMaxCompensation();
     /**
@@ -2573,6 +2578,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     * @return The maxCompensation.
      */
     com.google.type.Money getMaxCompensation();
     /**
@@ -2595,6 +2601,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     * @return Whether the minCompensation field is set.
      */
     boolean hasMinCompensation();
     /**
@@ -2605,6 +2612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     * @return The minCompensation.
      */
     com.google.type.Money getMinCompensation();
     /**
@@ -2638,6 +2646,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CompensationRange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2650,7 +2665,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2730,6 +2744,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     * @return Whether the maxCompensation field is set.
      */
     public boolean hasMaxCompensation() {
       return maxCompensation_ != null;
@@ -2743,6 +2758,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money max_compensation = 2;</code>
+     * @return The maxCompensation.
      */
     public com.google.type.Money getMaxCompensation() {
       return maxCompensation_ == null ? com.google.type.Money.getDefaultInstance() : maxCompensation_;
@@ -2771,6 +2787,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     * @return Whether the minCompensation field is set.
      */
     public boolean hasMinCompensation() {
       return minCompensation_ != null;
@@ -2783,6 +2800,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Money min_compensation = 1;</code>
+     * @return The minCompensation.
      */
     public com.google.type.Money getMinCompensation() {
       return minCompensation_ == null ? com.google.type.Money.getDefaultInstance() : minCompensation_;
@@ -3161,6 +3179,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
+       * @return Whether the maxCompensation field is set.
        */
       public boolean hasMaxCompensation() {
         return maxCompensationBuilder_ != null || maxCompensation_ != null;
@@ -3174,6 +3193,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money max_compensation = 2;</code>
+       * @return The maxCompensation.
        */
       public com.google.type.Money getMaxCompensation() {
         if (maxCompensationBuilder_ == null) {
@@ -3340,6 +3360,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
+       * @return Whether the minCompensation field is set.
        */
       public boolean hasMinCompensation() {
         return minCompensationBuilder_ != null || minCompensation_ != null;
@@ -3352,6 +3373,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.type.Money min_compensation = 1;</code>
+       * @return The minCompensation.
        */
       public com.google.type.Money getMinCompensation() {
         if (minCompensationBuilder_ == null) {
@@ -3552,15 +3574,14 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int ENTRIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry> entries_;
   /**
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-   * which is referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+   * referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3572,8 +3593,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-   * which is referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+   * referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3586,8 +3607,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-   * which is referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+   * referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3599,8 +3620,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-   * which is referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+   * referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3612,8 +3633,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-   * which is referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+   * referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3627,48 +3648,38 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualizedBaseCompensationRange_;
   /**
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base
-   * compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized base compensation range. Computed as base compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the annualizedBaseCompensationRange field is set.
    */
   public boolean hasAnnualizedBaseCompensationRange() {
     return annualizedBaseCompensationRange_ != null;
   }
   /**
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base
-   * compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized base compensation range. Computed as base compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The annualizedBaseCompensationRange.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getAnnualizedBaseCompensationRange() {
     return annualizedBaseCompensationRange_ == null ? com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.getDefaultInstance() : annualizedBaseCompensationRange_;
   }
   /**
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base
-   * compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized base compensation range. Computed as base compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3681,48 +3692,38 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualizedTotalCompensationRange_;
   /**
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all
-   * compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized total compensation range. Computed as all compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the annualizedTotalCompensationRange field is set.
    */
   public boolean hasAnnualizedTotalCompensationRange() {
     return annualizedTotalCompensationRange_ != null;
   }
   /**
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all
-   * compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized total compensation range. Computed as all compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The annualizedTotalCompensationRange.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getAnnualizedTotalCompensationRange() {
     return annualizedTotalCompensationRange_ == null ? com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.getDefaultInstance() : annualizedTotalCompensationRange_;
   }
   /**
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all
-   * compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-   * times
+   * Output only. Annualized total compensation range. Computed as all compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See
-   * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-   * for explanation on compensation annualization.
+   * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4008,7 +4009,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.CompensationInfo buildPartial() {
       com.google.cloud.talent.v4beta1.CompensationInfo result = new com.google.cloud.talent.v4beta1.CompensationInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -4028,7 +4028,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.annualizedTotalCompensationRange_ = annualizedTotalCompensationRangeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -4155,8 +4154,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4172,8 +4171,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4189,8 +4188,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4206,8 +4205,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4230,8 +4229,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4251,8 +4250,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4274,8 +4273,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4298,8 +4297,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4319,8 +4318,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4340,8 +4339,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4362,8 +4361,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4382,8 +4381,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4402,8 +4401,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4416,8 +4415,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4433,8 +4432,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4451,8 +4450,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4465,8 +4464,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4480,8 +4479,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
-     * which is referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE], which is
+     * referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4510,34 +4509,28 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRangeOrBuilder> annualizedBaseCompensationRangeBuilder_;
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the annualizedBaseCompensationRange field is set.
      */
     public boolean hasAnnualizedBaseCompensationRange() {
       return annualizedBaseCompensationRangeBuilder_ != null || annualizedBaseCompensationRange_ != null;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The annualizedBaseCompensationRange.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getAnnualizedBaseCompensationRange() {
       if (annualizedBaseCompensationRangeBuilder_ == null) {
@@ -4548,14 +4541,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4575,14 +4564,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4600,14 +4585,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4629,14 +4610,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4654,14 +4631,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4673,14 +4646,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4695,14 +4664,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base
-     * compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized base compensation range. Computed as base compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_base_compensation_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4726,34 +4691,28 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRangeOrBuilder> annualizedTotalCompensationRangeBuilder_;
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the annualizedTotalCompensationRange field is set.
      */
     public boolean hasAnnualizedTotalCompensationRange() {
       return annualizedTotalCompensationRangeBuilder_ != null || annualizedTotalCompensationRange_ != null;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The annualizedTotalCompensationRange.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getAnnualizedTotalCompensationRange() {
       if (annualizedTotalCompensationRangeBuilder_ == null) {
@@ -4764,14 +4723,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4791,14 +4746,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4816,14 +4767,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4845,14 +4792,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4870,14 +4813,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4889,14 +4828,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4911,14 +4846,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all
-     * compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
-     * times
+     * Output only. Annualized total compensation range. Computed as all compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount] times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See
-     * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for explanation on compensation annualization.
+     * See [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange annualized_total_compensation_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

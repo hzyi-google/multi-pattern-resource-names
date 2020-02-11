@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package com.google.cloud.talent.v4beta1;
 
 import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResponse;
+import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsForAlertPagedResponse;
+import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -25,6 +27,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
@@ -36,6 +39,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -68,7 +72,7 @@ public class JobServiceClientTest {
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockApplicationService,
                 mockCompanyService,
@@ -416,6 +420,144 @@ public class JobServiceClientTest {
       String filter = "filter-1274492040";
 
       client.batchDeleteJobs(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchJobsTest() {
+    String nextPageToken = "";
+    int estimatedTotalSize = 1882144769;
+    int totalSize = 705419236;
+    int broadenedQueryJobsCount = 1432104658;
+    SearchJobsResponse.MatchingJob matchingJobsElement =
+        SearchJobsResponse.MatchingJob.newBuilder().build();
+    List<SearchJobsResponse.MatchingJob> matchingJobs = Arrays.asList(matchingJobsElement);
+    SearchJobsResponse expectedResponse =
+        SearchJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setEstimatedTotalSize(estimatedTotalSize)
+            .setTotalSize(totalSize)
+            .setBroadenedQueryJobsCount(broadenedQueryJobsCount)
+            .addAllMatchingJobs(matchingJobs)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+    SearchJobsRequest request =
+        SearchJobsRequest.newBuilder()
+            .setParent(parent.toString())
+            .setRequestMetadata(requestMetadata)
+            .build();
+
+    SearchJobsPagedResponse pagedListResponse = client.searchJobs(request);
+
+    List<SearchJobsResponse.MatchingJob> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchJobsRequest actualRequest = (SearchJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(requestMetadata, actualRequest.getRequestMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+      SearchJobsRequest request =
+          SearchJobsRequest.newBuilder()
+              .setParent(parent.toString())
+              .setRequestMetadata(requestMetadata)
+              .build();
+
+      client.searchJobs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchJobsForAlertTest() {
+    String nextPageToken = "";
+    int estimatedTotalSize = 1882144769;
+    int totalSize = 705419236;
+    int broadenedQueryJobsCount = 1432104658;
+    SearchJobsResponse.MatchingJob matchingJobsElement =
+        SearchJobsResponse.MatchingJob.newBuilder().build();
+    List<SearchJobsResponse.MatchingJob> matchingJobs = Arrays.asList(matchingJobsElement);
+    SearchJobsResponse expectedResponse =
+        SearchJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setEstimatedTotalSize(estimatedTotalSize)
+            .setTotalSize(totalSize)
+            .setBroadenedQueryJobsCount(broadenedQueryJobsCount)
+            .addAllMatchingJobs(matchingJobs)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+    SearchJobsRequest request =
+        SearchJobsRequest.newBuilder()
+            .setParent(parent.toString())
+            .setRequestMetadata(requestMetadata)
+            .build();
+
+    SearchJobsForAlertPagedResponse pagedListResponse = client.searchJobsForAlert(request);
+
+    List<SearchJobsResponse.MatchingJob> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchJobsRequest actualRequest = (SearchJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(requestMetadata, actualRequest.getRequestMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void searchJobsForAlertExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
+      SearchJobsRequest request =
+          SearchJobsRequest.newBuilder()
+              .setParent(parent.toString())
+              .setRequestMetadata(requestMetadata)
+              .build();
+
+      client.searchJobsForAlert(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

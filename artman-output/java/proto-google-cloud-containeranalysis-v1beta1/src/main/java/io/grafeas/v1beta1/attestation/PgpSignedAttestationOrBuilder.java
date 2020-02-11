@@ -9,9 +9,9 @@ public interface PgpSignedAttestationOrBuilder extends
 
   /**
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -21,13 +21,14 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>string signature = 1;</code>
+   * @return The signature.
    */
   java.lang.String getSignature();
   /**
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -37,6 +38,7 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>string signature = 1;</code>
+   * @return The bytes for signature.
    */
   com.google.protobuf.ByteString
       getSignatureBytes();
@@ -50,6 +52,7 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
   /**
@@ -61,6 +64,7 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   * @return The contentType.
    */
   io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType();
 
@@ -85,6 +89,7 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   * @return The pgpKeyId.
    */
   java.lang.String getPgpKeyId();
   /**
@@ -108,6 +113,7 @@ public interface PgpSignedAttestationOrBuilder extends
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   * @return The bytes for pgpKeyId.
    */
   com.google.protobuf.ByteString
       getPgpKeyIdBytes();

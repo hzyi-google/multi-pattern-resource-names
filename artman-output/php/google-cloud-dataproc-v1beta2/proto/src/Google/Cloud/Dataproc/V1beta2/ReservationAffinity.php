@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.ReservationAffinity</code>
  */
-final class ReservationAffinity extends \Google\Protobuf\Internal\Message
+class ReservationAffinity extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Type of reservation to consume
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $consume_reservation_type = 0;
+    protected $consume_reservation_type = 0;
     /**
      * Optional. Corresponds to the label key of reservation resource.
      *
      * Generated from protobuf field <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $key = '';
+    protected $key = '';
     /**
      * Optional. Corresponds to the label values of reservation resource.
      *

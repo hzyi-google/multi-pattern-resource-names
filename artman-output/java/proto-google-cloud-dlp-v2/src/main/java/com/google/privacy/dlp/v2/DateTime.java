@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DateTime();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,10 +142,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 offset_minutes = 1;</code>
+     * @return The offsetMinutes.
      */
     int getOffsetMinutes();
   }
   /**
+   * <pre>
+   * Time zone of the date time object.
+   * </pre>
+   *
    * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
    */
   public  static final class TimeZone extends
@@ -155,6 +166,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TimeZone();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -167,7 +185,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -224,6 +241,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 offset_minutes = 1;</code>
+     * @return The offsetMinutes.
      */
     public int getOffsetMinutes() {
       return offsetMinutes_;
@@ -385,6 +403,10 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     * <pre>
+     * Time zone of the date time object.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
      */
     public static final class Builder extends
@@ -539,6 +561,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       * @return The offsetMinutes.
        */
       public int getOffsetMinutes() {
         return offsetMinutes_;
@@ -550,6 +573,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       * @param value The offsetMinutes to set.
+       * @return This builder for chaining.
        */
       public Builder setOffsetMinutes(int value) {
         
@@ -564,6 +589,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 offset_minutes = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOffsetMinutes() {
         
@@ -628,30 +654,32 @@ private static final long serialVersionUID = 0L;
   private com.google.type.Date date_;
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   * @return Whether the date field is set.
    */
   public boolean hasDate() {
     return date_ != null;
   }
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
+   * @return The date.
    */
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
   /**
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
@@ -663,13 +691,23 @@ private static final long serialVersionUID = 0L;
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_;
   /**
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   * @return The enum numeric value on the wire for dayOfWeek.
    */
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
   /**
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+   * @return The dayOfWeek.
    */
   public com.google.type.DayOfWeek getDayOfWeek() {
     @SuppressWarnings("deprecation")
@@ -680,18 +718,32 @@ private static final long serialVersionUID = 0L;
   public static final int TIME_FIELD_NUMBER = 3;
   private com.google.type.TimeOfDay time_;
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
+   * @return Whether the time field is set.
    */
   public boolean hasTime() {
     return time_ != null;
   }
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
+   * @return The time.
    */
   public com.google.type.TimeOfDay getTime() {
     return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
   /**
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
    */
   public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
@@ -701,18 +753,32 @@ private static final long serialVersionUID = 0L;
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_;
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   * @return Whether the timeZone field is set.
    */
   public boolean hasTimeZone() {
     return timeZone_ != null;
   }
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   * @return The timeZone.
    */
   public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
     return timeZone_ == null ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance() : timeZone_;
   }
   /**
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
    */
   public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
@@ -1120,22 +1186,24 @@ private static final long serialVersionUID = 0L;
         com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> dateBuilder_;
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
+     * @return Whether the date field is set.
      */
     public boolean hasDate() {
       return dateBuilder_ != null || date_ != null;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
+     * @return The date.
      */
     public com.google.type.Date getDate() {
       if (dateBuilder_ == null) {
@@ -1146,8 +1214,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1167,8 +1235,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1186,8 +1254,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1209,8 +1277,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1228,8 +1296,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1241,8 +1309,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1257,8 +1325,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1279,13 +1347,24 @@ private static final long serialVersionUID = 0L;
 
     private int dayOfWeek_ = 0;
     /**
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     * @return The enum numeric value on the wire for dayOfWeek.
      */
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
     /**
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     * @param value The enum numeric value on the wire for dayOfWeek to set.
+     * @return This builder for chaining.
      */
     public Builder setDayOfWeekValue(int value) {
       dayOfWeek_ = value;
@@ -1293,7 +1372,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     * @return The dayOfWeek.
      */
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
@@ -1301,7 +1385,13 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     * @param value The dayOfWeek to set.
+     * @return This builder for chaining.
      */
     public Builder setDayOfWeek(com.google.type.DayOfWeek value) {
       if (value == null) {
@@ -1313,7 +1403,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDayOfWeek() {
       
@@ -1326,13 +1421,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.type.TimeOfDay, com.google.type.TimeOfDay.Builder, com.google.type.TimeOfDayOrBuilder> timeBuilder_;
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
+     * @return Whether the time field is set.
      */
     public boolean hasTime() {
       return timeBuilder_ != null || time_ != null;
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
+     * @return The time.
      */
     public com.google.type.TimeOfDay getTime() {
       if (timeBuilder_ == null) {
@@ -1342,6 +1447,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public Builder setTime(com.google.type.TimeOfDay value) {
@@ -1358,6 +1467,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public Builder setTime(
@@ -1372,6 +1485,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public Builder mergeTime(com.google.type.TimeOfDay value) {
@@ -1390,6 +1507,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public Builder clearTime() {
@@ -1404,6 +1525,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public com.google.type.TimeOfDay.Builder getTimeBuilder() {
@@ -1412,6 +1537,10 @@ private static final long serialVersionUID = 0L;
       return getTimeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
@@ -1423,6 +1552,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1443,13 +1576,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.DateTime.TimeZone, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder, com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder> timeZoneBuilder_;
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     * @return Whether the timeZone field is set.
      */
     public boolean hasTimeZone() {
       return timeZoneBuilder_ != null || timeZone_ != null;
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     * @return The timeZone.
      */
     public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
       if (timeZoneBuilder_ == null) {
@@ -1459,6 +1602,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public Builder setTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
@@ -1475,6 +1622,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public Builder setTimeZone(
@@ -1489,6 +1640,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public Builder mergeTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
@@ -1507,6 +1662,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public Builder clearTimeZone() {
@@ -1521,6 +1680,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public com.google.privacy.dlp.v2.DateTime.TimeZone.Builder getTimeZoneBuilder() {
@@ -1529,6 +1692,10 @@ private static final long serialVersionUID = 0L;
       return getTimeZoneFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
@@ -1540,6 +1707,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

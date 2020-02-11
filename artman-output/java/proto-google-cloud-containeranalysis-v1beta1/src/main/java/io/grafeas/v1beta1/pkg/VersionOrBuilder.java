@@ -13,23 +13,28 @@ public interface VersionOrBuilder extends
    * </pre>
    *
    * <code>int32 epoch = 1;</code>
+   * @return The epoch.
    */
   int getEpoch();
 
   /**
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -40,6 +45,7 @@ public interface VersionOrBuilder extends
    * </pre>
    *
    * <code>string revision = 3;</code>
+   * @return The revision.
    */
   java.lang.String getRevision();
   /**
@@ -48,26 +54,29 @@ public interface VersionOrBuilder extends
    * </pre>
    *
    * <code>string revision = 3;</code>
+   * @return The bytes for revision.
    */
   com.google.protobuf.ByteString
       getRevisionBytes();
 
   /**
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
+   * @return The kind.
    */
   io.grafeas.v1beta1.pkg.Version.VersionKind getKind();
 }

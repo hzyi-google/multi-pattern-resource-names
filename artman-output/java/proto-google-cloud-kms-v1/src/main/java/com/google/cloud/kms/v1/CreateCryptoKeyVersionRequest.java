@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateCryptoKeyVersionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,7 +112,8 @@ private static final long serialVersionUID = 0L;
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -126,7 +133,8 @@ private static final long serialVersionUID = 0L;
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -146,30 +154,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.kms.v1.CryptoKeyVersion cryptoKeyVersion_;
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKeyVersion field is set.
    */
   public boolean hasCryptoKeyVersion() {
     return cryptoKeyVersion_ != null;
   }
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersion.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
     return cryptoKeyVersion_ == null ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance() : cryptoKeyVersion_;
   }
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
     return getCryptoKeyVersion();
@@ -518,7 +528,8 @@ private static final long serialVersionUID = 0L;
      * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -538,7 +549,8 @@ private static final long serialVersionUID = 0L;
      * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -559,7 +571,9 @@ private static final long serialVersionUID = 0L;
      * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -577,7 +591,8 @@ private static final long serialVersionUID = 0L;
      * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -591,7 +606,9 @@ private static final long serialVersionUID = 0L;
      * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -610,20 +627,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.kms.v1.CryptoKeyVersion, com.google.cloud.kms.v1.CryptoKeyVersion.Builder, com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder> cryptoKeyVersionBuilder_;
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the cryptoKeyVersion field is set.
      */
     public boolean hasCryptoKeyVersion() {
       return cryptoKeyVersionBuilder_ != null || cryptoKeyVersion_ != null;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKeyVersion.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -634,10 +653,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -654,10 +673,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCryptoKeyVersion(
         com.google.cloud.kms.v1.CryptoKeyVersion.Builder builderForValue) {
@@ -672,10 +691,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -694,10 +713,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCryptoKeyVersion() {
       if (cryptoKeyVersionBuilder_ == null) {
@@ -712,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.Builder getCryptoKeyVersionBuilder() {
       
@@ -724,10 +743,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
       if (cryptoKeyVersionBuilder_ != null) {
@@ -739,10 +758,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+     * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.CryptoKeyVersion, com.google.cloud.kms.v1.CryptoKeyVersion.Builder, com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder> 

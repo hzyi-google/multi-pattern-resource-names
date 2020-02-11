@@ -7,7 +7,7 @@ namespace Grafeas\V1beta1\Build\BuildSignature;
 use UnexpectedValueException;
 
 /**
- * Public key formats
+ * Public key formats.
  *
  * Protobuf type <code>grafeas.v1beta1.build.BuildSignature.KeyType</code>
  */

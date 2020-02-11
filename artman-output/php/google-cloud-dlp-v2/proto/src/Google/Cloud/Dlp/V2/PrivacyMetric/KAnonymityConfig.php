@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig</code>
  */
-final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
+class KAnonymityConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Set of fields to compute k-anonymity over. When multiple fields are
@@ -26,7 +26,7 @@ final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
      */
     private $quasi_ids;
     /**
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -38,7 +38,7 @@ final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
      */
-    private $entity_id = null;
+    protected $entity_id = null;
 
     /**
      * Constructor.
@@ -53,7 +53,7 @@ final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
      *           supported so long as they are not structs themselves or nested within
      *           a repeated field.
      *     @type \Google\Cloud\Dlp\V2\EntityId $entity_id
-     *           Optional message indicating that multiple rows might be associated to a
+     *           Message indicating that multiple rows might be associated to a
      *           single individual. If the same entity_id is associated to multiple
      *           quasi-identifier tuples over distinct rows, we consider the entire
      *           collection of tuples as the composite quasi-identifier. This collection
@@ -104,7 +104,7 @@ final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -123,7 +123,7 @@ final class KAnonymityConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection

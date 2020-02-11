@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest</code>
  */
-final class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
+class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $security_marks = null;
+    protected $security_marks = null;
     /**
      * The FieldMask to use when updating the security marks resource.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     /**
      * The time at which the updated SecurityMarks take effect.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
-    private $start_time = null;
+    protected $start_time = null;
 
     /**
      * Constructor.
@@ -41,7 +41,7 @@ final class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Securitycenter\V1beta1\SecurityMarks $security_marks
-     *           The security marks resource to update.
+     *           Required. The security marks resource to update.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           The FieldMask to use when updating the security marks resource.
      *     @type \Google\Protobuf\Timestamp $start_time
@@ -54,9 +54,9 @@ final class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks
      */
     public function getSecurityMarks()
@@ -65,9 +65,9 @@ final class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The security marks resource to update.
+     * Required. The security marks resource to update.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Securitycenter\V1beta1\SecurityMarks $var
      * @return $this
      */

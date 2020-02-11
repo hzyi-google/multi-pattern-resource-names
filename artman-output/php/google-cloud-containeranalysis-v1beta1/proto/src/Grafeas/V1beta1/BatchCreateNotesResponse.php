@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.BatchCreateNotesResponse</code>
  */
-final class BatchCreateNotesResponse extends \Google\Protobuf\Internal\Message
+class BatchCreateNotesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The notes that were created.

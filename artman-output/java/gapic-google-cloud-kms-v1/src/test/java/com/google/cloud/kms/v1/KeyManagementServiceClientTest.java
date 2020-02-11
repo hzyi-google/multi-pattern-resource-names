@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -66,7 +67,7 @@ public class KeyManagementServiceClientTest {
     mockIAMPolicy = new MockIAMPolicy();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockKeyManagementService, mockIAMPolicy));
     serviceHelper.start();
   }
@@ -682,6 +683,77 @@ public class KeyManagementServiceClientTest {
       CryptoKeyVersion cryptoKeyVersion = CryptoKeyVersion.newBuilder().build();
 
       client.createCryptoKeyVersion(parent, cryptoKeyVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importCryptoKeyVersionTest() {
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob2 = "importJob2-1714851050";
+    String importFailureReason = "importFailureReason-494073229";
+    CryptoKeyVersion expectedResponse =
+        CryptoKeyVersion.newBuilder()
+            .setName(name.toString())
+            .setImportJob(importJob2)
+            .setImportFailureReason(importFailureReason)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyName parent =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm =
+        CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+    String importJob = "importJob2125587491";
+    ImportCryptoKeyVersionRequest request =
+        ImportCryptoKeyVersionRequest.newBuilder()
+            .setParent(parent.toString())
+            .setAlgorithm(algorithm)
+            .setImportJob(importJob)
+            .build();
+
+    CryptoKeyVersion actualResponse = client.importCryptoKeyVersion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportCryptoKeyVersionRequest actualRequest =
+        (ImportCryptoKeyVersionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, CryptoKeyName.parse(actualRequest.getParent()));
+    Assert.assertEquals(algorithm, actualRequest.getAlgorithm());
+    Assert.assertEquals(importJob, actualRequest.getImportJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importCryptoKeyVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName parent =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm =
+          CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+      String importJob = "importJob2125587491";
+      ImportCryptoKeyVersionRequest request =
+          ImportCryptoKeyVersionRequest.newBuilder()
+              .setParent(parent.toString())
+              .setAlgorithm(algorithm)
+              .setImportJob(importJob)
+              .build();
+
+      client.importCryptoKeyVersion(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

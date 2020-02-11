@@ -17,14 +17,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.EntityId</code>
  */
-final class EntityId extends \Google\Protobuf\Internal\Message
+class EntityId extends \Google\Protobuf\Internal\Message
 {
     /**
      * Composite key indicating which field contains the entity identifier.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
-    private $field = null;
+    protected $field = null;
 
     /**
      * Constructor.

@@ -7,7 +7,7 @@ namespace Grafeas\V1beta1\Provenance\Hash;
 use UnexpectedValueException;
 
 /**
- * Specifies the hash algorithm, if any.
+ * Specifies the hash algorithm.
  *
  * Protobuf type <code>grafeas.v1beta1.provenance.Hash.HashType</code>
  */

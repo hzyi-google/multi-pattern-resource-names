@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -444,7 +444,7 @@ module Google
             # Gets the specified scan configuration.
             #
             # @param name [String]
-            #   The name of the scan configuration in the form of
+            #   Required. The name of the scan configuration in the form of
             #   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
@@ -475,10 +475,10 @@ module Google
             # Lists scan configurations for the specified project.
             #
             # @param parent [String]
-            #   The name of the project to list scan configurations for in the form of
+            #   Required. The name of the project to list scan configurations for in the form of
             #   `projects/[PROJECT_ID]`.
             # @param filter [String]
-            #   The filter expression.
+            #   Required. The filter expression.
             # @param page_size [Integer]
             #   The maximum number of resources contained in the underlying API
             #   response. If page streaming is performed per-resource, this
@@ -534,10 +534,10 @@ module Google
             # Updates the specified scan configuration.
             #
             # @param name [String]
-            #   The name of the scan configuration in the form of
+            #   Required. The name of the scan configuration in the form of
             #   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
             # @param scan_config [Google::Devtools::Containeranalysis::V1beta1::ScanConfig | Hash]
-            #   The updated scan configuration.
+            #   Required. The updated scan configuration.
             #   A hash of the same form as `Google::Devtools::Containeranalysis::V1beta1::ScanConfig`
             #   can also be provided.
             # @param options [Google::Gax::CallOptions]

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.SoftwareConfig</code>
  */
-final class SoftwareConfig extends \Google\Protobuf\Internal\Message
+class SoftwareConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The version of software inside the cluster. It must be one of the
@@ -26,7 +26,7 @@ final class SoftwareConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $image_version = '';
+    protected $image_version = '';
     /**
      * Optional. The properties to set on daemon config files.
      * Property keys are specified in `prefix:property` format, for example

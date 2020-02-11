@@ -9,8 +9,7 @@ public interface SearchJobsResponseOrBuilder extends
 
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -19,8 +18,7 @@ public interface SearchJobsResponseOrBuilder extends
       getMatchingJobsList();
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -28,8 +26,7 @@ public interface SearchJobsResponseOrBuilder extends
   com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob getMatchingJobs(int index);
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -37,8 +34,7 @@ public interface SearchJobsResponseOrBuilder extends
   int getMatchingJobsCount();
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -47,8 +43,7 @@ public interface SearchJobsResponseOrBuilder extends
       getMatchingJobsOrBuilderList();
   /**
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;</code>
@@ -112,6 +107,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -121,6 +117,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
@@ -128,9 +125,7 @@ public interface SearchJobsResponseOrBuilder extends
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -141,9 +136,7 @@ public interface SearchJobsResponseOrBuilder extends
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -153,9 +146,7 @@ public interface SearchJobsResponseOrBuilder extends
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -165,9 +156,7 @@ public interface SearchJobsResponseOrBuilder extends
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -178,9 +167,7 @@ public interface SearchJobsResponseOrBuilder extends
   /**
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the
-   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
-   * is
+   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -193,23 +180,23 @@ public interface SearchJobsResponseOrBuilder extends
    * <pre>
    * An estimation of the number of jobs that match the specified query.
    * This number isn't guaranteed to be accurate. For accurate results,
-   * see
-   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+   * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
+   * @return The estimatedTotalSize.
    */
   int getEstimatedTotalSize();
 
   /**
    * <pre>
    * The precise result count, which is available only if the client set
-   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size]
-   * to `true`, or if the response is the last page of results. Otherwise, the
-   * value is `-1`.
+   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
+   * response is the last page of results. Otherwise, the value is `-1`.
    * </pre>
    *
    * <code>int32 total_size = 6;</code>
+   * @return The totalSize.
    */
   int getTotalSize();
 
@@ -220,6 +207,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -229,6 +217,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
+   * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
   /**
@@ -253,6 +242,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>int32 broadened_query_jobs_count = 8;</code>
+   * @return The broadenedQueryJobsCount.
    */
   int getBroadenedQueryJobsCount();
 
@@ -262,6 +252,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   * @return Whether the spellCorrection field is set.
    */
   boolean hasSpellCorrection();
   /**
@@ -270,6 +261,7 @@ public interface SearchJobsResponseOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
+   * @return The spellCorrection.
    */
   com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection();
   /**

@@ -16,7 +16,8 @@ public interface CompleteQueryRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -28,7 +29,8 @@ public interface CompleteQueryRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -40,6 +42,7 @@ public interface CompleteQueryRequestOrBuilder extends
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The query.
    */
   java.lang.String getQuery();
   /**
@@ -49,6 +52,7 @@ public interface CompleteQueryRequestOrBuilder extends
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString
       getQueryBytes();
@@ -59,27 +63,11 @@ public interface CompleteQueryRequestOrBuilder extends
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String>
       getLanguageCodesList();
@@ -89,27 +77,11 @@ public interface CompleteQueryRequestOrBuilder extends
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
   /**
@@ -118,27 +90,12 @@ public interface CompleteQueryRequestOrBuilder extends
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
   /**
@@ -147,27 +104,12 @@ public interface CompleteQueryRequestOrBuilder extends
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
-   * For
-   * [CompletionType.JOB_TITLE][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.JOB_TITLE]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMPANY_NAME][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMPANY_NAME]
-   * type, only companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
-   * For
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED]
-   * type, only open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * or companies having open jobs with the same
-   * [language_codes][google.cloud.talent.v4beta1.CompleteQueryRequest.language_codes]
-   * are returned.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>repeated string language_codes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
    */
   com.google.protobuf.ByteString
       getLanguageCodesBytes(int index);
@@ -179,6 +121,7 @@ public interface CompleteQueryRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -192,7 +135,8 @@ public interface CompleteQueryRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The company.
    */
   java.lang.String getCompany();
   /**
@@ -205,46 +149,47 @@ public interface CompleteQueryRequestOrBuilder extends
    * example, "projects/foo".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for company.
    */
   com.google.protobuf.ByteString
       getCompanyBytes();
 
   /**
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
   /**
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope scope = 6;</code>
+   * @return The scope.
    */
   com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope();
 
   /**
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType type = 7;</code>
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType();
 }

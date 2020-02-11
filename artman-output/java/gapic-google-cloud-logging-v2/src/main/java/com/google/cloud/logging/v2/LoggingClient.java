@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,7 +170,8 @@ public class LoggingClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted.
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
    *
    * <p>Sample code:
    *
@@ -190,7 +191,6 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLog(LogName logName) {
-
     DeleteLogRequest request =
         DeleteLogRequest.newBuilder()
             .setLogName(logName == null ? null : logName.toString())
@@ -201,7 +201,8 @@ public class LoggingClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted.
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
    *
    * <p>Sample code:
    *
@@ -221,7 +222,6 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLog(String logName) {
-
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
     deleteLog(request);
   }
@@ -229,7 +229,8 @@ public class LoggingClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted.
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
    *
    * <p>Sample code:
    *
@@ -253,7 +254,8 @@ public class LoggingClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted.
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
    *
    * <p>Sample code:
    *
@@ -336,7 +338,6 @@ public class LoggingClient implements BackgroundResource {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName == null ? null : logName.toString())
@@ -410,7 +411,6 @@ public class LoggingClient implements BackgroundResource {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
@@ -498,7 +498,7 @@ public class LoggingClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    *     <p>Projects listed in the `project_ids` field are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
-   *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
+   *     Queries](/logging/docs/view/advanced-queries). Only log entries that match the filter are
    *     returned. An empty filter matches all log entries in the resources listed in
    *     `resource_names`. Referencing a parent resource that is not listed in `resource_names` will
    *     cause the filter to return no results. The maximum length of the filter is 20000

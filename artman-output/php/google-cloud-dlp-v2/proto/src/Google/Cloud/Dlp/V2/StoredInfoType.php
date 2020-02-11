@@ -14,20 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.StoredInfoType</code>
  */
-final class StoredInfoType extends \Google\Protobuf\Internal\Message
+class StoredInfoType extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Current version of the stored info type.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
      */
-    private $current_version = null;
+    protected $current_version = null;
     /**
      * Pending versions of the stored info type. Empty if no versions are
      * pending.

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RunAssetDiscoveryResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -187,6 +193,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -194,6 +202,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0: return STATE_UNSPECIFIED;
@@ -260,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -270,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+   * @return The state.
    */
   public com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State getState() {
     @SuppressWarnings("deprecation")
@@ -285,6 +299,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   * @return Whether the duration field is set.
    */
   public boolean hasDuration() {
     return duration_ != null;
@@ -295,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
+   * @return The duration.
    */
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
@@ -652,6 +668,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -662,6 +679,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -674,6 +693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+     * @return The state.
      */
     public com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State getState() {
       @SuppressWarnings("deprecation")
@@ -686,6 +706,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State value) {
       if (value == null) {
@@ -702,6 +724,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -719,6 +742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 2;</code>
+     * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
       return durationBuilder_ != null || duration_ != null;
@@ -729,6 +753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 2;</code>
+     * @return The duration.
      */
     public com.google.protobuf.Duration getDuration() {
       if (durationBuilder_ == null) {

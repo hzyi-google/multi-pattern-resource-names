@@ -15,21 +15,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.DeviceInfo</code>
  */
-final class DeviceInfo extends \Google\Protobuf\Internal\Message
+class DeviceInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the device.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
      */
-    private $device_type = 0;
+    protected $device_type = 0;
     /**
      * A device-specific ID. The ID must be a unique identifier that
      * distinguishes the device from other devices.
      *
      * Generated from protobuf field <code>string id = 2;</code>
      */
-    private $id = '';
+    protected $id = '';
 
     /**
      * Constructor.

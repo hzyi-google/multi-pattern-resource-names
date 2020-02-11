@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DeadLetterPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dead_letter_topic = 1;</code>
+   * @return The deadLetterTopic.
    */
   public java.lang.String getDeadLetterTopic() {
     java.lang.Object ref = deadLetterTopic_;
@@ -134,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dead_letter_topic = 1;</code>
+   * @return The bytes for deadLetterTopic.
    */
   public com.google.protobuf.ByteString
       getDeadLetterTopicBytes() {
@@ -165,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 max_delivery_attempts = 2;</code>
+   * @return The maxDeliveryAttempts.
    */
   public int getMaxDeliveryAttempts() {
     return maxDeliveryAttempts_;
@@ -510,6 +519,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dead_letter_topic = 1;</code>
+     * @return The deadLetterTopic.
      */
     public java.lang.String getDeadLetterTopic() {
       java.lang.Object ref = deadLetterTopic_;
@@ -536,6 +546,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dead_letter_topic = 1;</code>
+     * @return The bytes for deadLetterTopic.
      */
     public com.google.protobuf.ByteString
         getDeadLetterTopicBytes() {
@@ -563,6 +574,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dead_letter_topic = 1;</code>
+     * @param value The deadLetterTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setDeadLetterTopic(
         java.lang.String value) {
@@ -587,6 +600,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dead_letter_topic = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeadLetterTopic() {
       
@@ -607,6 +621,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dead_letter_topic = 1;</code>
+     * @param value The bytes for deadLetterTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setDeadLetterTopicBytes(
         com.google.protobuf.ByteString value) {
@@ -635,6 +651,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_delivery_attempts = 2;</code>
+     * @return The maxDeliveryAttempts.
      */
     public int getMaxDeliveryAttempts() {
       return maxDeliveryAttempts_;
@@ -653,6 +670,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_delivery_attempts = 2;</code>
+     * @param value The maxDeliveryAttempts to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxDeliveryAttempts(int value) {
       
@@ -674,6 +693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_delivery_attempts = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMaxDeliveryAttempts() {
       

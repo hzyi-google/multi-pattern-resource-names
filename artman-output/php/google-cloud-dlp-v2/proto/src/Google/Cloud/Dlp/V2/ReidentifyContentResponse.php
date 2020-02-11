@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ReidentifyContentResponse</code>
  */
-final class ReidentifyContentResponse extends \Google\Protobuf\Internal\Message
+class ReidentifyContentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The re-identified item.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
      */
-    private $item = null;
+    protected $item = null;
     /**
      * An overview of the changes that were made to the `item`.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
      */
-    private $overview = null;
+    protected $overview = null;
 
     /**
      * Constructor.

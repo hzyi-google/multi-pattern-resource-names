@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BoundingBox();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 top = 1;</code>
+   * @return The top.
    */
   public int getTop() {
     return top_;
@@ -119,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 left = 2;</code>
+   * @return The left.
    */
   public int getLeft() {
     return left_;
@@ -132,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 width = 3;</code>
+   * @return The width.
    */
   public int getWidth() {
     return width_;
@@ -145,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 height = 4;</code>
+   * @return The height.
    */
   public int getHeight() {
     return height_;
@@ -514,6 +524,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 top = 1;</code>
+     * @return The top.
      */
     public int getTop() {
       return top_;
@@ -524,6 +535,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 top = 1;</code>
+     * @param value The top to set.
+     * @return This builder for chaining.
      */
     public Builder setTop(int value) {
       
@@ -537,6 +550,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 top = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTop() {
       
@@ -552,6 +566,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 left = 2;</code>
+     * @return The left.
      */
     public int getLeft() {
       return left_;
@@ -562,6 +577,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 left = 2;</code>
+     * @param value The left to set.
+     * @return This builder for chaining.
      */
     public Builder setLeft(int value) {
       
@@ -575,6 +592,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 left = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLeft() {
       
@@ -590,6 +608,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 width = 3;</code>
+     * @return The width.
      */
     public int getWidth() {
       return width_;
@@ -600,6 +619,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 width = 3;</code>
+     * @param value The width to set.
+     * @return This builder for chaining.
      */
     public Builder setWidth(int value) {
       
@@ -613,6 +634,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 width = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWidth() {
       
@@ -628,6 +650,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 height = 4;</code>
+     * @return The height.
      */
     public int getHeight() {
       return height_;
@@ -638,6 +661,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 height = 4;</code>
+     * @param value The height to set.
+     * @return This builder for chaining.
      */
     public Builder setHeight(int value) {
       
@@ -651,6 +676,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 height = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHeight() {
       

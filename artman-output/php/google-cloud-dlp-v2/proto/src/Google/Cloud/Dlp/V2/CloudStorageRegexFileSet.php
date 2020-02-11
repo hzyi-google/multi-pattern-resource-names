@@ -38,14 +38,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CloudStorageRegexFileSet</code>
  */
-final class CloudStorageRegexFileSet extends \Google\Protobuf\Internal\Message
+class CloudStorageRegexFileSet extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of a Cloud Storage bucket. Required.
      *
      * Generated from protobuf field <code>string bucket_name = 1;</code>
      */
-    private $bucket_name = '';
+    protected $bucket_name = '';
     /**
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be

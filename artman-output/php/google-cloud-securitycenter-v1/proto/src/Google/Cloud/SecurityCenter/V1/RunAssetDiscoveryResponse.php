@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.RunAssetDiscoveryResponse</code>
  */
-final class RunAssetDiscoveryResponse extends \Google\Protobuf\Internal\Message
+class RunAssetDiscoveryResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The state of an asset discovery run.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse.State state = 1;</code>
      */
-    private $state = 0;
+    protected $state = 0;
     /**
      * The duration between asset discovery run start and end
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 2;</code>
      */
-    private $duration = null;
+    protected $duration = null;
 
     /**
      * Constructor.

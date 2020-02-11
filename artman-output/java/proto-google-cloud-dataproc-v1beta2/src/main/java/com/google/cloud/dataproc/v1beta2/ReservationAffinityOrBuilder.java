@@ -13,6 +13,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for consumeReservationType.
    */
   int getConsumeReservationTypeValue();
   /**
@@ -21,6 +22,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The consumeReservationType.
    */
   com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType();
 
@@ -30,6 +32,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The key.
    */
   java.lang.String getKey();
   /**
@@ -38,6 +41,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for key.
    */
   com.google.protobuf.ByteString
       getKeyBytes();
@@ -48,6 +52,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the values.
    */
   java.util.List<java.lang.String>
       getValuesList();
@@ -57,6 +62,7 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of values.
    */
   int getValuesCount();
   /**
@@ -65,6 +71,8 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The values at the given index.
    */
   java.lang.String getValues(int index);
   /**
@@ -73,6 +81,8 @@ public interface ReservationAffinityOrBuilder extends
    * </pre>
    *
    * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the values at the given index.
    */
   com.google.protobuf.ByteString
       getValuesBytes(int index);

@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ module Grafeas
       # alongside the signature itself in the same file.
       # @!attribute [rw] signature
       #   @return [String]
-      #     The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-      #     equivalent.  Since this message only supports attached signatures, the
-      #     payload that was signed must be attached. While the signature format
+      #     Required. The raw content of the signature, as output by GNU Privacy Guard
+      #     (GPG) or equivalent. Since this message only supports attached signatures,
+      #     the payload that was signed must be attached. While the signature format
       #     supported is dependent on the verification implementation, currently only
       #     ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
       #     `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -67,48 +67,86 @@ module Grafeas
         end
       end
 
+      # An attestation wrapper that uses the Grafeas `Signature` message.
+      # This attestation must define the `serialized_payload` that the `signatures`
+      # verify and any metadata necessary to interpret that plaintext.  The
+      # signatures should always be over the `serialized_payload` bytestring.
+      # @!attribute [rw] content_type
+      #   @return [Grafeas::V1beta1::Attestation::GenericSignedAttestation::ContentType]
+      #     Type (for example schema) of the attestation payload that was signed.
+      #     The verifier must ensure that the provided type is one that the verifier
+      #     supports, and that the attestation payload is a valid instantiation of that
+      #     type (for example by validating a JSON schema).
+      # @!attribute [rw] serialized_payload
+      #   @return [String]
+      #     The serialized payload that is verified by one or more `signatures`.
+      #     The encoding and semantic meaning of this payload must match what is set in
+      #     `content_type`.
+      # @!attribute [rw] signatures
+      #   @return [Array<Grafeas::V1beta1::Signature>]
+      #     One or more signatures over `serialized_payload`.  Verifier implementations
+      #     should consider this attestation message verified if at least one
+      #     `signature` verifies `serialized_payload`.  See `Signature` in common.proto
+      #     for more details on signature structure and verification.
+      class GenericSignedAttestation
+        # Type of the attestation plaintext that was signed.
+        module ContentType
+          # `ContentType` is not set.
+          CONTENT_TYPE_UNSPECIFIED = 0
+
+          # Atomic format attestation signature. See
+          # https://github.com/containers/image/blob/8a5d2f82a6e3263290c8e0276c3e0f64e77723e7/docs/atomic-signature.md
+          # The payload extracted in `plaintext` is a JSON blob conforming to the
+          # linked schema.
+          SIMPLE_SIGNING_JSON = 1
+        end
+      end
+
       # Note kind that represents a logical attestation "role" or "authority". For
       # example, an organization might have one `Authority` for "QA" and one for
-      # "build". This Note is intended to act strictly as a grouping mechanism for
-      # the attached Occurrences (Attestations). This grouping mechanism also
+      # "build". This note is intended to act strictly as a grouping mechanism for
+      # the attached occurrences (Attestations). This grouping mechanism also
       # provides a security boundary, since IAM ACLs gate the ability for a principle
-      # to attach an Occurrence to a given Note. It also provides a single point of
-      # lookup to find all attached Attestation Occurrences, even if they don't all
+      # to attach an occurrence to a given note. It also provides a single point of
+      # lookup to find all attached attestation occurrences, even if they don't all
       # live in the same project.
       # @!attribute [rw] hint
       #   @return [Grafeas::V1beta1::Attestation::Authority::Hint]
       #     Hint hints at the purpose of the attestation authority.
       class Authority
         # This submessage provides human-readable hints about the purpose of the
-        # Authority. Because the name of a Note acts as its resource reference, it is
+        # authority. Because the name of a note acts as its resource reference, it is
         # important to disambiguate the canonical name of the Note (which might be a
         # UUID for security purposes) from "readable" names more suitable for debug
-        # output. Note that these hints should NOT be used to look up authorities in
-        # security sensitive contexts, such as when looking up Attestations to
+        # output. Note that these hints should not be used to look up authorities in
+        # security sensitive contexts, such as when looking up attestations to
         # verify.
         # @!attribute [rw] human_readable_name
         #   @return [String]
-        #     The human readable name of this Attestation Authority, for example "qa".
+        #     Required. The human readable name of this attestation authority, for
+        #     example "qa".
         class Hint; end
       end
 
       # Details of an attestation occurrence.
       # @!attribute [rw] attestation
       #   @return [Grafeas::V1beta1::Attestation::Attestation]
-      #     Attestation for the resource.
+      #     Required. Attestation for the resource.
       class Details; end
 
       # Occurrence that represents a single "attestation". The authenticity of an
-      # Attestation can be verified using the attached signature. If the verifier
+      # attestation can be verified using the attached signature. If the verifier
       # trusts the public key of the signer, then verifying the signature is
-      # sufficient to establish trust. In this circumstance, the Authority to which
-      # this Attestation is attached is primarily useful for look-up (how to find
-      # this Attestation if you already know the Authority and artifact to be
+      # sufficient to establish trust. In this circumstance, the authority to which
+      # this attestation is attached is primarily useful for look-up (how to find
+      # this attestation if you already know the authority and artifact to be
       # verified) and intent (which authority was this attestation intended to sign
       # for).
       # @!attribute [rw] pgp_signed_attestation
       #   @return [Grafeas::V1beta1::Attestation::PgpSignedAttestation]
       #     A PGP signed attestation.
+      # @!attribute [rw] generic_signed_attestation
+      #   @return [Grafeas::V1beta1::Attestation::GenericSignedAttestation]
       class Attestation; end
     end
   end

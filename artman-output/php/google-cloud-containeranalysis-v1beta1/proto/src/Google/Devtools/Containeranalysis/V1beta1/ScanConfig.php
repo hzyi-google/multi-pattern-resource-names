@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.devtools.containeranalysis.v1beta1.ScanConfig</code>
  */
-final class ScanConfig extends \Google\Protobuf\Internal\Message
+class ScanConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The name of the scan configuration in the form of
@@ -23,32 +23,32 @@ final class ScanConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Output only. A human-readable description of what the scan configuration
      * does.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * Whether the scan is enabled.
      *
      * Generated from protobuf field <code>bool enabled = 3;</code>
      */
-    private $enabled = false;
+    protected $enabled = false;
     /**
      * Output only. The time this scan config was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
     /**
      * Output only. The time this scan config was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
-    private $update_time = null;
+    protected $update_time = null;
 
     /**
      * Constructor.

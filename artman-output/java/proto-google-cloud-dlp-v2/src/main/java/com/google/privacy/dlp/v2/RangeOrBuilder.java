@@ -13,6 +13,7 @@ public interface RangeOrBuilder extends
    * </pre>
    *
    * <code>int64 start = 1;</code>
+   * @return The start.
    */
   long getStart();
 
@@ -22,6 +23,7 @@ public interface RangeOrBuilder extends
    * </pre>
    *
    * <code>int64 end = 2;</code>
+   * @return The end.
    */
   long getEnd();
 }

@@ -9,18 +9,20 @@ public interface PackageOrBuilder extends
 
   /**
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();

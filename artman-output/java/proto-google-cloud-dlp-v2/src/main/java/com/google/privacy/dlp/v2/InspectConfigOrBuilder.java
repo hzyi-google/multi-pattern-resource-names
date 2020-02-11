@@ -99,6 +99,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+   * @return The enum numeric value on the wire for minLikelihood.
    */
   int getMinLikelihoodValue();
   /**
@@ -109,18 +110,33 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+   * @return The minLikelihood.
    */
   com.google.privacy.dlp.v2.Likelihood getMinLikelihood();
 
   /**
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   * @return Whether the limits field is set.
    */
   boolean hasLimits();
   /**
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   * @return The limits.
    */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits();
   /**
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder();
@@ -132,6 +148,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>bool include_quote = 4;</code>
+   * @return The includeQuote.
    */
   boolean getIncludeQuote();
 
@@ -141,6 +158,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>bool exclude_info_types = 5;</code>
+   * @return The excludeInfoTypes.
    */
   boolean getExcludeInfoTypes();
 
@@ -200,6 +218,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   * @return A list containing the contentOptions.
    */
   java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList();
   /**
@@ -209,6 +228,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   * @return The count of contentOptions.
    */
   int getContentOptionsCount();
   /**
@@ -218,6 +238,8 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   * @param index The index of the element to return.
+   * @return The contentOptions at the given index.
    */
   com.google.privacy.dlp.v2.ContentOption getContentOptions(int index);
   /**
@@ -227,6 +249,7 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   * @return A list containing the enum numeric values on the wire for contentOptions.
    */
   java.util.List<java.lang.Integer>
   getContentOptionsValueList();
@@ -237,6 +260,8 @@ public interface InspectConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of contentOptions at the given index.
    */
   int getContentOptionsValue(int index);
 

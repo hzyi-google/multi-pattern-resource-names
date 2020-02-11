@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Installation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -56,9 +63,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               location_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Location>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             location_.add(
                 input.readMessage(io.grafeas.v1beta1.pkg.Location.parser(), extensionRegistry));
@@ -79,7 +86,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         location_ = java.util.Collections.unmodifiableList(location_);
       }
       this.unknownFields = unknownFields.build();
@@ -99,7 +106,6 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.pkg.Installation.class, io.grafeas.v1beta1.pkg.Installation.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -108,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -127,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -146,7 +154,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<io.grafeas.v1beta1.pkg.Location> location_;
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -157,7 +165,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -169,7 +177,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -180,7 +188,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -191,7 +199,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -417,7 +425,7 @@ private static final long serialVersionUID = 0L;
 
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         locationBuilder_.clear();
       }
@@ -448,18 +456,16 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.pkg.Installation buildPartial() {
       io.grafeas.v1beta1.pkg.Installation result = new io.grafeas.v1beta1.pkg.Installation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (locationBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           location_ = java.util.Collections.unmodifiableList(location_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.location_ = location_;
       } else {
         result.location_ = locationBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -516,7 +522,7 @@ private static final long serialVersionUID = 0L;
         if (!other.location_.isEmpty()) {
           if (location_.isEmpty()) {
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLocationIsMutable();
             location_.addAll(other.location_);
@@ -529,7 +535,7 @@ private static final long serialVersionUID = 0L;
             locationBuilder_.dispose();
             locationBuilder_ = null;
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             locationBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLocationFieldBuilder() : null;
@@ -575,6 +581,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -594,6 +601,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -614,6 +622,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -631,6 +641,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -644,6 +655,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -660,9 +673,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grafeas.v1beta1.pkg.Location> location_ =
       java.util.Collections.emptyList();
     private void ensureLocationIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         location_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Location>(location_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -671,7 +684,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -686,7 +699,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -701,7 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -716,7 +729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -738,7 +751,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -757,7 +770,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -778,7 +791,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -800,7 +813,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -819,7 +832,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -838,7 +851,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -858,7 +871,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -867,7 +880,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLocation() {
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         locationBuilder_.clear();
@@ -876,7 +889,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -894,7 +907,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -906,7 +919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -921,7 +934,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -937,7 +950,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -949,7 +962,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -962,7 +975,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All of the places within the filesystem versions of this package
+     * Required. All of the places within the filesystem versions of this package
      * have been found.
      * </pre>
      *
@@ -979,7 +992,7 @@ private static final long serialVersionUID = 0L;
         locationBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grafeas.v1beta1.pkg.Location, io.grafeas.v1beta1.pkg.Location.Builder, io.grafeas.v1beta1.pkg.LocationOrBuilder>(
                 location_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         location_ = null;

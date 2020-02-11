@@ -14,6 +14,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -23,6 +24,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -33,6 +35,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -41,6 +44,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
@@ -51,6 +55,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -59,6 +64,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
@@ -70,6 +76,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
@@ -79,6 +86,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string cluster_uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString
       getClusterUuidBytes();
@@ -97,6 +105,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The requestId.
    */
   java.lang.String getRequestId();
   /**
@@ -113,6 +122,7 @@ public interface DeleteClusterRequestOrBuilder extends
    * </pre>
    *
    * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString
       getRequestIdBytes();

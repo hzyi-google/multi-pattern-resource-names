@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CreateInspectTemplateRequest</code>
  */
-final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Message
+class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example projects/my-project-id or
@@ -21,13 +21,13 @@ final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $inspect_template = null;
+    protected $inspect_template = null;
     /**
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -36,14 +36,14 @@ final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string template_id = 3;</code>
      */
-    private $template_id = '';
+    protected $template_id = '';
     /**
      * The geographic location to store the inspection template. Reserved for
      * future extensions.
      *
      * Generated from protobuf field <code>string location_id = 4;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
      *           Required. The parent resource name, for example projects/my-project-id or
      *           organizations/my-org-id.
      *     @type \Google\Cloud\Dlp\V2\InspectTemplate $inspect_template
-     *           The InspectTemplate to create.
+     *           Required. The InspectTemplate to create.
      *     @type string $template_id
      *           The template id can contain uppercase and lowercase letters,
      *           numbers, and hyphens; that is, it must match the regular
@@ -100,9 +100,9 @@ final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Dlp\V2\InspectTemplate
      */
     public function getInspectTemplate()
@@ -111,9 +111,9 @@ final class CreateInspectTemplateRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dlp\V2\InspectTemplate $var
      * @return $this
      */

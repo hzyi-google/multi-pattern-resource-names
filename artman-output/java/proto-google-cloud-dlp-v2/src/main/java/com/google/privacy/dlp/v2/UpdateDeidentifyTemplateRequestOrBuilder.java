@@ -15,6 +15,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -25,6 +26,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -35,6 +37,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * @return Whether the deidentifyTemplate field is set.
    */
   boolean hasDeidentifyTemplate();
   /**
@@ -43,6 +46,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * @return The deidentifyTemplate.
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate();
   /**
@@ -60,6 +64,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -68,6 +73,7 @@ public interface UpdateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

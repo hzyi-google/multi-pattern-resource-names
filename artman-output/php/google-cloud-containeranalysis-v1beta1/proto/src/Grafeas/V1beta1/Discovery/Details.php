@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.discovery.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
      */
-    private $discovered = null;
+    protected $discovered = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Discovery\Discovered $discovered
-     *           Analysis status for the discovered resource.
+     *           Required. Analysis status for the discovered resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
      * @return \Grafeas\V1beta1\Discovery\Discovered
@@ -49,7 +49,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
      * @param \Grafeas\V1beta1\Discovery\Discovered $var

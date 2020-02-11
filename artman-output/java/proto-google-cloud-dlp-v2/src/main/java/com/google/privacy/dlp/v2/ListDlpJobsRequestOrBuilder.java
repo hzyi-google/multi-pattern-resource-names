@@ -13,6 +13,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -21,18 +22,19 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -53,16 +55,17 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 1;</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -83,6 +86,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 1;</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -93,6 +97,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -102,6 +107,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -110,6 +116,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -120,6 +127,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -128,12 +136,13 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
+   * @return The type.
    */
   com.google.privacy.dlp.v2.DlpJobType getType();
 
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -146,11 +155,12 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -163,6 +173,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 6;</code>
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
@@ -174,6 +185,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -183,6 +195,7 @@ public interface ListDlpJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 7;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

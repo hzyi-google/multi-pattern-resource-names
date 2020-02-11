@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1;
 
 /**
  * <pre>
- * A Cloud Dataproc job resource.
+ * A Dataproc job resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Job}
@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
     driverOutputResourceUri_ = "";
     driverControlFilesUri_ = "";
     jobUuid_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Job();
   }
 
   @java.lang.Override
@@ -161,9 +168,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               yarnApplications_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000002;
             }
             yarnApplications_.add(
                 input.readMessage(com.google.cloud.dataproc.v1.YarnApplication.parser(), extensionRegistry));
@@ -184,9 +191,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000001;
             }
             statusHistory_.add(
                 input.readMessage(com.google.cloud.dataproc.v1.JobStatus.parser(), extensionRegistry));
@@ -205,10 +212,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00000004;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -251,10 +258,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -286,11 +293,11 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.Job.class, com.google.cloud.dataproc.v1.Job.Builder.class);
   }
 
-  private int bitField0_;
   private int typeJobCase_ = 0;
   private java.lang.Object typeJob_;
   public enum TypeJobCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HADOOP_JOB(3),
     SPARK_JOB(4),
     PYSPARK_JOB(5),
@@ -303,6 +310,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -344,6 +353,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the reference field is set.
    */
   public boolean hasReference() {
     return reference_ != null;
@@ -357,6 +367,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The reference.
    */
   public com.google.cloud.dataproc.v1.JobReference getReference() {
     return reference_ == null ? com.google.cloud.dataproc.v1.JobReference.getDefaultInstance() : reference_;
@@ -384,6 +395,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the placement field is set.
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -395,6 +407,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The placement.
    */
   public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
     return placement_ == null ? com.google.cloud.dataproc.v1.JobPlacement.getDefaultInstance() : placement_;
@@ -418,6 +431,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   * @return Whether the hadoopJob field is set.
    */
   public boolean hasHadoopJob() {
     return typeJobCase_ == 3;
@@ -428,6 +442,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+   * @return The hadoopJob.
    */
   public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
     if (typeJobCase_ == 3) {
@@ -456,6 +471,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   * @return Whether the sparkJob field is set.
    */
   public boolean hasSparkJob() {
     return typeJobCase_ == 4;
@@ -466,6 +482,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+   * @return The sparkJob.
    */
   public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
     if (typeJobCase_ == 4) {
@@ -494,6 +511,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   * @return Whether the pysparkJob field is set.
    */
   public boolean hasPysparkJob() {
     return typeJobCase_ == 5;
@@ -504,6 +522,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+   * @return The pysparkJob.
    */
   public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
     if (typeJobCase_ == 5) {
@@ -532,6 +551,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   * @return Whether the hiveJob field is set.
    */
   public boolean hasHiveJob() {
     return typeJobCase_ == 6;
@@ -542,6 +562,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+   * @return The hiveJob.
    */
   public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
     if (typeJobCase_ == 6) {
@@ -570,6 +591,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   * @return Whether the pigJob field is set.
    */
   public boolean hasPigJob() {
     return typeJobCase_ == 7;
@@ -580,6 +602,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+   * @return The pigJob.
    */
   public com.google.cloud.dataproc.v1.PigJob getPigJob() {
     if (typeJobCase_ == 7) {
@@ -608,6 +631,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   * @return Whether the sparkSqlJob field is set.
    */
   public boolean hasSparkSqlJob() {
     return typeJobCase_ == 12;
@@ -618,6 +642,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+   * @return The sparkSqlJob.
    */
   public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
     if (typeJobCase_ == 12) {
@@ -649,6 +674,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -661,6 +687,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1.JobStatus getStatus() {
     return status_ == null ? com.google.cloud.dataproc.v1.JobStatus.getDefaultInstance() : status_;
@@ -807,6 +834,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The driverOutputResourceUri.
    */
   public java.lang.String getDriverOutputResourceUri() {
     java.lang.Object ref = driverOutputResourceUri_;
@@ -827,6 +855,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for driverOutputResourceUri.
    */
   public com.google.protobuf.ByteString
       getDriverOutputResourceUriBytes() {
@@ -852,6 +881,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The driverControlFilesUri.
    */
   public java.lang.String getDriverControlFilesUri() {
     java.lang.Object ref = driverControlFilesUri_;
@@ -873,6 +903,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for driverControlFilesUri.
    */
   public com.google.protobuf.ByteString
       getDriverControlFilesUriBytes() {
@@ -1012,6 +1043,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the scheduling field is set.
    */
   public boolean hasScheduling() {
     return scheduling_ != null;
@@ -1022,6 +1054,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The scheduling.
    */
   public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
     return scheduling_ == null ? com.google.cloud.dataproc.v1.JobScheduling.getDefaultInstance() : scheduling_;
@@ -1047,6 +1080,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The jobUuid.
    */
   public java.lang.String getJobUuid() {
     java.lang.Object ref = jobUuid_;
@@ -1068,6 +1102,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for jobUuid.
    */
   public com.google.protobuf.ByteString
       getJobUuidBytes() {
@@ -1470,7 +1505,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Cloud Dataproc job resource.
+   * A Dataproc job resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Job}
@@ -1554,13 +1589,13 @@ private static final long serialVersionUID = 0L;
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statusHistoryBuilder_.clear();
       }
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         yarnApplicationsBuilder_.clear();
       }
@@ -1606,7 +1641,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.Job buildPartial() {
       com.google.cloud.dataproc.v1.Job result = new com.google.cloud.dataproc.v1.Job(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (referenceBuilder_ == null) {
         result.reference_ = reference_;
       } else {
@@ -1665,18 +1699,18 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.yarnApplications_ = yarnApplications_;
       } else {
@@ -1692,7 +1726,6 @@ private static final long serialVersionUID = 0L;
         result.scheduling_ = schedulingBuilder_.build();
       }
       result.jobUuid_ = jobUuid_;
-      result.bitField0_ = to_bitField0_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -1755,7 +1788,7 @@ private static final long serialVersionUID = 0L;
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1768,7 +1801,7 @@ private static final long serialVersionUID = 0L;
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statusHistoryBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getStatusHistoryFieldBuilder() : null;
@@ -1781,7 +1814,7 @@ private static final long serialVersionUID = 0L;
         if (!other.yarnApplications_.isEmpty()) {
           if (yarnApplications_.isEmpty()) {
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureYarnApplicationsIsMutable();
             yarnApplications_.addAll(other.yarnApplications_);
@@ -1794,7 +1827,7 @@ private static final long serialVersionUID = 0L;
             yarnApplicationsBuilder_.dispose();
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             yarnApplicationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getYarnApplicationsFieldBuilder() : null;
@@ -1906,6 +1939,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the reference field is set.
      */
     public boolean hasReference() {
       return referenceBuilder_ != null || reference_ != null;
@@ -1919,6 +1953,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The reference.
      */
     public com.google.cloud.dataproc.v1.JobReference getReference() {
       if (referenceBuilder_ == null) {
@@ -2084,6 +2119,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the placement field is set.
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2095,6 +2131,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The placement.
      */
     public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2244,6 +2281,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+     * @return Whether the hadoopJob field is set.
      */
     public boolean hasHadoopJob() {
       return typeJobCase_ == 3;
@@ -2254,6 +2292,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 3;</code>
+     * @return The hadoopJob.
      */
     public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
       if (hadoopJobBuilder_ == null) {
@@ -2416,6 +2455,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+     * @return Whether the sparkJob field is set.
      */
     public boolean hasSparkJob() {
       return typeJobCase_ == 4;
@@ -2426,6 +2466,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkJob spark_job = 4;</code>
+     * @return The sparkJob.
      */
     public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
       if (sparkJobBuilder_ == null) {
@@ -2588,6 +2629,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+     * @return Whether the pysparkJob field is set.
      */
     public boolean hasPysparkJob() {
       return typeJobCase_ == 5;
@@ -2598,6 +2640,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 5;</code>
+     * @return The pysparkJob.
      */
     public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
       if (pysparkJobBuilder_ == null) {
@@ -2760,6 +2803,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+     * @return Whether the hiveJob field is set.
      */
     public boolean hasHiveJob() {
       return typeJobCase_ == 6;
@@ -2770,6 +2814,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.HiveJob hive_job = 6;</code>
+     * @return The hiveJob.
      */
     public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
       if (hiveJobBuilder_ == null) {
@@ -2932,6 +2977,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+     * @return Whether the pigJob field is set.
      */
     public boolean hasPigJob() {
       return typeJobCase_ == 7;
@@ -2942,6 +2988,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.PigJob pig_job = 7;</code>
+     * @return The pigJob.
      */
     public com.google.cloud.dataproc.v1.PigJob getPigJob() {
       if (pigJobBuilder_ == null) {
@@ -3104,6 +3151,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+     * @return Whether the sparkSqlJob field is set.
      */
     public boolean hasSparkSqlJob() {
       return typeJobCase_ == 12;
@@ -3114,6 +3162,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 12;</code>
+     * @return The sparkSqlJob.
      */
     public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
       if (sparkSqlJobBuilder_ == null) {
@@ -3279,6 +3328,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -3291,6 +3341,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1.JobStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -3442,9 +3493,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1.JobStatus> statusHistory_ =
       java.util.Collections.emptyList();
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>(statusHistory_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -3638,7 +3689,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -3743,7 +3794,7 @@ private static final long serialVersionUID = 0L;
         statusHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobStatus, com.google.cloud.dataproc.v1.JobStatus.Builder, com.google.cloud.dataproc.v1.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -3754,9 +3805,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1.YarnApplication> yarnApplications_ =
       java.util.Collections.emptyList();
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>(yarnApplications_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -3972,7 +4023,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         yarnApplicationsBuilder_.clear();
@@ -4091,7 +4142,7 @@ private static final long serialVersionUID = 0L;
         yarnApplicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1.YarnApplication, com.google.cloud.dataproc.v1.YarnApplication.Builder, com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;
@@ -4107,6 +4158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The driverOutputResourceUri.
      */
     public java.lang.String getDriverOutputResourceUri() {
       java.lang.Object ref = driverOutputResourceUri_;
@@ -4127,6 +4179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for driverOutputResourceUri.
      */
     public com.google.protobuf.ByteString
         getDriverOutputResourceUriBytes() {
@@ -4148,6 +4201,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The driverOutputResourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverOutputResourceUri(
         java.lang.String value) {
@@ -4166,6 +4221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDriverOutputResourceUri() {
       
@@ -4180,6 +4236,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for driverOutputResourceUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverOutputResourceUriBytes(
         com.google.protobuf.ByteString value) {
@@ -4202,6 +4260,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The driverControlFilesUri.
      */
     public java.lang.String getDriverControlFilesUri() {
       java.lang.Object ref = driverControlFilesUri_;
@@ -4223,6 +4282,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for driverControlFilesUri.
      */
     public com.google.protobuf.ByteString
         getDriverControlFilesUriBytes() {
@@ -4245,6 +4305,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The driverControlFilesUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverControlFilesUri(
         java.lang.String value) {
@@ -4264,6 +4326,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDriverControlFilesUri() {
       
@@ -4279,6 +4342,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for driverControlFilesUri to set.
+     * @return This builder for chaining.
      */
     public Builder setDriverControlFilesUriBytes(
         com.google.protobuf.ByteString value) {
@@ -4494,6 +4559,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
       return schedulingBuilder_ != null || scheduling_ != null;
@@ -4504,6 +4570,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The scheduling.
      */
     public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
@@ -4647,6 +4714,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The jobUuid.
      */
     public java.lang.String getJobUuid() {
       java.lang.Object ref = jobUuid_;
@@ -4668,6 +4736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for jobUuid.
      */
     public com.google.protobuf.ByteString
         getJobUuidBytes() {
@@ -4690,6 +4759,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The jobUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setJobUuid(
         java.lang.String value) {
@@ -4709,6 +4780,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobUuid() {
       
@@ -4724,6 +4796,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for jobUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setJobUuidBytes(
         com.google.protobuf.ByteString value) {

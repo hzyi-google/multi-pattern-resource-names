@@ -14,6 +14,7 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -23,43 +24,47 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListInspectTemplates`.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListInspectTemplates`.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
 
   /**
    * <pre>
-   * Optional size of the page, can be limited by server. If zero server returns
+   * Size of the page, can be limited by server. If zero server returns
    * a page of max size 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -72,11 +77,12 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -89,6 +95,7 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString
       getOrderByBytes();
@@ -100,6 +107,7 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -109,6 +117,7 @@ public interface ListInspectTemplatesRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

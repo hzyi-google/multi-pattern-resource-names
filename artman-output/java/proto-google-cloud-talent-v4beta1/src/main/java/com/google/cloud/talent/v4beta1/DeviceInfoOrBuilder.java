@@ -13,6 +13,7 @@ public interface DeviceInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+   * @return The enum numeric value on the wire for deviceType.
    */
   int getDeviceTypeValue();
   /**
@@ -21,6 +22,7 @@ public interface DeviceInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo.DeviceType device_type = 1;</code>
+   * @return The deviceType.
    */
   com.google.cloud.talent.v4beta1.DeviceInfo.DeviceType getDeviceType();
 
@@ -31,6 +33,7 @@ public interface DeviceInfoOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -40,6 +43,7 @@ public interface DeviceInfoOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();

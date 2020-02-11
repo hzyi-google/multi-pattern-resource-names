@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListInspectTemplatesResponse</code>
  */
-final class ListInspectTemplatesResponse extends \Google\Protobuf\Internal\Message
+class ListInspectTemplatesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
@@ -27,7 +27,7 @@ final class ListInspectTemplatesResponse extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

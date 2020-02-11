@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetSnapshotRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -94,6 +100,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string snapshot = 1;</code>
+   * @return The snapshot.
    */
   public java.lang.String getSnapshot() {
     java.lang.Object ref = snapshot_;
@@ -114,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string snapshot = 1;</code>
+   * @return The bytes for snapshot.
    */
   public com.google.protobuf.ByteString
       getSnapshotBytes() {
@@ -443,6 +451,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 1;</code>
+     * @return The snapshot.
      */
     public java.lang.String getSnapshot() {
       java.lang.Object ref = snapshot_;
@@ -463,6 +472,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 1;</code>
+     * @return The bytes for snapshot.
      */
     public com.google.protobuf.ByteString
         getSnapshotBytes() {
@@ -484,6 +494,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 1;</code>
+     * @param value The snapshot to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshot(
         java.lang.String value) {
@@ -502,6 +514,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSnapshot() {
       
@@ -516,6 +529,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string snapshot = 1;</code>
+     * @param value The bytes for snapshot to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshotBytes(
         com.google.protobuf.ByteString value) {

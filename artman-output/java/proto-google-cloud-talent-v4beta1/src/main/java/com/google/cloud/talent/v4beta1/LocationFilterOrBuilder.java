@@ -13,6 +13,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>string address = 1;</code>
+   * @return The address.
    */
   java.lang.String getAddress();
   /**
@@ -21,6 +22,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>string address = 1;</code>
+   * @return The bytes for address.
    */
   com.google.protobuf.ByteString
       getAddressBytes();
@@ -40,6 +42,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   * @return The regionCode.
    */
   java.lang.String getRegionCode();
   /**
@@ -57,6 +60,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   * @return The bytes for regionCode.
    */
   com.google.protobuf.ByteString
       getRegionCodeBytes();
@@ -68,6 +72,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
   /**
@@ -77,6 +82,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
   /**
@@ -97,6 +103,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
+   * @return The distanceInMiles.
    */
   double getDistanceInMiles();
 
@@ -105,15 +112,12 @@ public interface LocationFilterOrBuilder extends
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
-   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-   * indicates if a job permits telecommuting. If this field is set to
-   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and
-   * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-   * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-   * If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-   * telecommute job are not searched.
+   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+   * ignored. If not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+   * searched.
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -124,6 +128,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+   * @return The enum numeric value on the wire for telecommutePreference.
    */
   int getTelecommutePreferenceValue();
   /**
@@ -131,15 +136,12 @@ public interface LocationFilterOrBuilder extends
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
-   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-   * indicates if a job permits telecommuting. If this field is set to
-   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and
-   * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-   * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-   * If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-   * telecommute job are not searched.
+   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+   * ignored. If not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+   * searched.
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -150,6 +152,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+   * @return The telecommutePreference.
    */
   com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference getTelecommutePreference();
 
@@ -161,6 +164,7 @@ public interface LocationFilterOrBuilder extends
    * </pre>
    *
    * <code>bool negated = 6;</code>
+   * @return The negated.
    */
   boolean getNegated();
 }

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateSourceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -102,11 +108,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Resource name of the new source's parent. Its format should be
+   * Required. Resource name of the new source's parent. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -122,11 +129,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Resource name of the new source's parent. Its format should be
+   * Required. Resource name of the new source's parent. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -146,33 +154,35 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1beta1.Source source_;
   /**
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the source field is set.
    */
   public boolean hasSource() {
     return source_ != null;
   }
   /**
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The source.
    */
   public com.google.cloud.securitycenter.v1beta1.Source getSource() {
     return source_ == null ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance() : source_;
   }
   /**
    * <pre>
-   * The Source being created, only the display_name and description will be
+   * Required. The Source being created, only the display_name and description will be
    * used. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.securitycenter.v1beta1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
@@ -517,11 +527,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -537,11 +548,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -558,11 +570,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -576,11 +590,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -590,11 +605,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Resource name of the new source's parent. Its format should be
+     * Required. Resource name of the new source's parent. Its format should be
      * "organizations/[organization_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -613,22 +630,24 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1beta1.Source, com.google.cloud.securitycenter.v1beta1.Source.Builder, com.google.cloud.securitycenter.v1beta1.SourceOrBuilder> sourceBuilder_;
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The source.
      */
     public com.google.cloud.securitycenter.v1beta1.Source getSource() {
       if (sourceBuilder_ == null) {
@@ -639,11 +658,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSource(com.google.cloud.securitycenter.v1beta1.Source value) {
       if (sourceBuilder_ == null) {
@@ -660,11 +679,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSource(
         com.google.cloud.securitycenter.v1beta1.Source.Builder builderForValue) {
@@ -679,11 +698,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSource(com.google.cloud.securitycenter.v1beta1.Source value) {
       if (sourceBuilder_ == null) {
@@ -702,11 +721,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSource() {
       if (sourceBuilder_ == null) {
@@ -721,11 +740,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.securitycenter.v1beta1.Source.Builder getSourceBuilder() {
       
@@ -734,11 +753,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.securitycenter.v1beta1.SourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -750,11 +769,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Source being created, only the display_name and description will be
+     * Required. The Source being created, only the display_name and description will be
      * used. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2;</code>
+     * <code>.google.cloud.securitycenter.v1beta1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.securitycenter.v1beta1.Source, com.google.cloud.securitycenter.v1beta1.Source.Builder, com.google.cloud.securitycenter.v1beta1.SourceOrBuilder> 

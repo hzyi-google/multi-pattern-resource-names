@@ -9,44 +9,44 @@ public interface FieldTransformationOrBuilder extends
 
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> 
       getFieldsList();
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.FieldId getFields(int index);
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getFieldsCount();
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
       getFieldsOrBuilderList();
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
       int index);
@@ -55,7 +55,7 @@ public interface FieldTransformationOrBuilder extends
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -63,13 +63,14 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   * @return Whether the condition field is set.
    */
   boolean hasCondition();
   /**
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -77,13 +78,14 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   * @return The condition.
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
   /**
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -100,6 +102,7 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   * @return Whether the primitiveTransformation field is set.
    */
   boolean hasPrimitiveTransformation();
   /**
@@ -108,6 +111,7 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   * @return The primitiveTransformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
   /**
@@ -126,6 +130,7 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   * @return Whether the infoTypeTransformations field is set.
    */
   boolean hasInfoTypeTransformations();
   /**
@@ -135,6 +140,7 @@ public interface FieldTransformationOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   * @return The infoTypeTransformations.
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
   /**

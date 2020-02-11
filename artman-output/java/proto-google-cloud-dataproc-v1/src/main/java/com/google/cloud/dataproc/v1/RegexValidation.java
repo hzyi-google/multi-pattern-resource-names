@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RegexValidation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -101,6 +108,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the regexes.
    */
   public com.google.protobuf.ProtocolStringList
       getRegexesList() {
@@ -114,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of regexes.
    */
   public int getRegexesCount() {
     return regexes_.size();
@@ -126,6 +135,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The regexes at the given index.
    */
   public java.lang.String getRegexes(int index) {
     return regexes_.get(index);
@@ -138,6 +149,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the regexes at the given index.
    */
   public com.google.protobuf.ByteString
       getRegexesBytes(int index) {
@@ -484,6 +497,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the regexes.
      */
     public com.google.protobuf.ProtocolStringList
         getRegexesList() {
@@ -497,6 +511,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The count of regexes.
      */
     public int getRegexesCount() {
       return regexes_.size();
@@ -509,6 +524,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the element to return.
+     * @return The regexes at the given index.
      */
     public java.lang.String getRegexes(int index) {
       return regexes_.get(index);
@@ -521,6 +538,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the regexes at the given index.
      */
     public com.google.protobuf.ByteString
         getRegexesBytes(int index) {
@@ -534,6 +553,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index to set the value at.
+     * @param value The regexes to set.
+     * @return This builder for chaining.
      */
     public Builder setRegexes(
         int index, java.lang.String value) {
@@ -553,6 +575,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addRegexes(
         java.lang.String value) {
@@ -572,6 +596,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRegexes(
         java.lang.Iterable<java.lang.String> values) {
@@ -589,6 +615,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegexes() {
       regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -604,6 +631,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes of the regexes to add.
+     * @return This builder for chaining.
      */
     public Builder addRegexesBytes(
         com.google.protobuf.ByteString value) {

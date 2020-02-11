@@ -13,6 +13,7 @@ public interface ValueFrequencyOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+   * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
@@ -21,6 +22,7 @@ public interface ValueFrequencyOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+   * @return The value.
    */
   com.google.privacy.dlp.v2.Value getValue();
   /**
@@ -38,6 +40,7 @@ public interface ValueFrequencyOrBuilder extends
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   long getCount();
 }

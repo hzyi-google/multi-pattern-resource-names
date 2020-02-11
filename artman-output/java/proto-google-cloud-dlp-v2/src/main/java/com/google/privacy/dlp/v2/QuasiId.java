@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new QuasiId();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,7 +134,8 @@ private static final long serialVersionUID = 0L;
   private int tagCase_ = 0;
   private java.lang.Object tag_;
   public enum TagCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INFO_TYPE(2),
     CUSTOM_TAG(3),
     INFERRED(4),
@@ -138,6 +145,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -169,30 +178,32 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.FieldId field_;
   /**
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the field field is set.
    */
   public boolean hasField() {
     return field_ != null;
   }
   /**
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The field.
    */
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
   /**
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
@@ -209,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   * @return Whether the infoType field is set.
    */
   public boolean hasInfoType() {
     return tagCase_ == 2;
@@ -223,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+   * @return The infoType.
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     if (tagCase_ == 2) {
@@ -257,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string custom_tag = 3;</code>
+   * @return The customTag.
    */
   public java.lang.String getCustomTag() {
     java.lang.Object ref = "";
@@ -283,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string custom_tag = 3;</code>
+   * @return The bytes for customTag.
    */
   public com.google.protobuf.ByteString
       getCustomTagBytes() {
@@ -311,6 +326,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Empty inferred = 4;</code>
+   * @return Whether the inferred field is set.
    */
   public boolean hasInferred() {
     return tagCase_ == 4;
@@ -322,6 +338,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Empty inferred = 4;</code>
+   * @return The inferred.
    */
   public com.google.protobuf.Empty getInferred() {
     if (tagCase_ == 4) {
@@ -775,20 +792,22 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the field field is set.
      */
     public boolean hasField() {
       return fieldBuilder_ != null || field_ != null;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The field.
      */
     public com.google.privacy.dlp.v2.FieldId getField() {
       if (fieldBuilder_ == null) {
@@ -799,10 +818,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldBuilder_ == null) {
@@ -819,10 +838,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setField(
         com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -837,10 +856,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldBuilder_ == null) {
@@ -859,10 +878,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearField() {
       if (fieldBuilder_ == null) {
@@ -877,10 +896,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
       
@@ -889,10 +908,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       if (fieldBuilder_ != null) {
@@ -904,10 +923,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
@@ -935,6 +954,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+     * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
       return tagCase_ == 2;
@@ -949,6 +969,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
+     * @return The infoType.
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
@@ -1139,6 +1160,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_tag = 3;</code>
+     * @return The customTag.
      */
     public java.lang.String getCustomTag() {
       java.lang.Object ref = "";
@@ -1165,6 +1187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_tag = 3;</code>
+     * @return The bytes for customTag.
      */
     public com.google.protobuf.ByteString
         getCustomTagBytes() {
@@ -1192,6 +1215,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_tag = 3;</code>
+     * @param value The customTag to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomTag(
         java.lang.String value) {
@@ -1211,6 +1236,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_tag = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCustomTag() {
       if (tagCase_ == 3) {
@@ -1228,6 +1254,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string custom_tag = 3;</code>
+     * @param value The bytes for customTag to set.
+     * @return This builder for chaining.
      */
     public Builder setCustomTagBytes(
         com.google.protobuf.ByteString value) {
@@ -1250,6 +1278,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Empty inferred = 4;</code>
+     * @return Whether the inferred field is set.
      */
     public boolean hasInferred() {
       return tagCase_ == 4;
@@ -1261,6 +1290,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Empty inferred = 4;</code>
+     * @return The inferred.
      */
     public com.google.protobuf.Empty getInferred() {
       if (inferredBuilder_ == null) {

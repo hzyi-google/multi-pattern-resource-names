@@ -29,6 +29,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -78,9 +85,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             statusHistory_.add(
                 input.readMessage(com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.parser(), extensionRegistry));
@@ -99,10 +106,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -113,9 +120,9 @@ private static final long serialVersionUID = 0L;
           }
           case 114: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               warnings_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000004;
             }
             warnings_.add(s);
             break;
@@ -135,10 +142,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -170,7 +177,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata.class, com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object clusterName_;
   /**
@@ -179,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -198,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
       getClusterNameBytes() {
@@ -221,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -240,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString
       getClusterUuidBytes() {
@@ -263,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus status = 9;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -273,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus status = 9;</code>
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1beta2.ClusterOperationStatus getStatus() {
     return status_ == null ? com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.getDefaultInstance() : status_;
@@ -351,6 +363,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string operation_type = 11;</code>
+   * @return The operationType.
    */
   public java.lang.String getOperationType() {
     java.lang.Object ref = operationType_;
@@ -370,6 +383,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string operation_type = 11;</code>
+   * @return The bytes for operationType.
    */
   public com.google.protobuf.ByteString
       getOperationTypeBytes() {
@@ -393,6 +407,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 12;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -412,6 +427,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 12;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -527,6 +543,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
+   * @return A list containing the warnings.
    */
   public com.google.protobuf.ProtocolStringList
       getWarningsList() {
@@ -538,6 +555,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
+   * @return The count of warnings.
    */
   public int getWarningsCount() {
     return warnings_.size();
@@ -548,6 +566,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
+   * @param index The index of the element to return.
+   * @return The warnings at the given index.
    */
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
@@ -558,6 +578,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the warnings at the given index.
    */
   public com.google.protobuf.ByteString
       getWarningsBytes(int index) {
@@ -893,7 +915,7 @@ private static final long serialVersionUID = 0L;
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statusHistoryBuilder_.clear();
       }
@@ -903,7 +925,7 @@ private static final long serialVersionUID = 0L;
 
       internalGetMutableLabels().clear();
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -931,7 +953,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata buildPartial() {
       com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata result = new com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.clusterName_ = clusterName_;
       result.clusterUuid_ = clusterUuid_;
       if (statusBuilder_ == null) {
@@ -940,9 +961,9 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statusHistory_ = statusHistory_;
       } else {
@@ -952,12 +973,11 @@ private static final long serialVersionUID = 0L;
       result.description_ = description_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.warnings_ = warnings_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1021,7 +1041,7 @@ private static final long serialVersionUID = 0L;
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1034,7 +1054,7 @@ private static final long serialVersionUID = 0L;
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statusHistoryBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getStatusHistoryFieldBuilder() : null;
@@ -1056,7 +1076,7 @@ private static final long serialVersionUID = 0L;
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1100,6 +1120,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1119,6 +1140,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
         getClusterNameBytes() {
@@ -1139,6 +1161,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(
         java.lang.String value) {
@@ -1156,6 +1180,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
       
@@ -1169,6 +1194,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1189,6 +1216,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -1208,6 +1236,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString
         getClusterUuidBytes() {
@@ -1228,6 +1257,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(
         java.lang.String value) {
@@ -1245,6 +1276,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
       
@@ -1258,6 +1290,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(
         com.google.protobuf.ByteString value) {
@@ -1280,6 +1314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus status = 9;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1290,6 +1325,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperationStatus status = 9;</code>
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1beta2.ClusterOperationStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -1427,9 +1463,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus> statusHistory_ =
       java.util.Collections.emptyList();
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus>(statusHistory_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1623,7 +1659,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -1728,7 +1764,7 @@ private static final long serialVersionUID = 0L;
         statusHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ClusterOperationStatus, com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -1743,6 +1779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_type = 11;</code>
+     * @return The operationType.
      */
     public java.lang.String getOperationType() {
       java.lang.Object ref = operationType_;
@@ -1762,6 +1799,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_type = 11;</code>
+     * @return The bytes for operationType.
      */
     public com.google.protobuf.ByteString
         getOperationTypeBytes() {
@@ -1782,6 +1820,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_type = 11;</code>
+     * @param value The operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationType(
         java.lang.String value) {
@@ -1799,6 +1839,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_type = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOperationType() {
       
@@ -1812,6 +1853,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation_type = 11;</code>
+     * @param value The bytes for operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -1832,6 +1875,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 12;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1851,6 +1895,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 12;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1871,6 +1916,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 12;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1888,6 +1935,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1901,6 +1949,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 12;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2067,9 +2117,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -2078,6 +2128,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @return A list containing the warnings.
      */
     public com.google.protobuf.ProtocolStringList
         getWarningsList() {
@@ -2089,6 +2140,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @return The count of warnings.
      */
     public int getWarningsCount() {
       return warnings_.size();
@@ -2099,6 +2151,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param index The index of the element to return.
+     * @return The warnings at the given index.
      */
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
@@ -2109,6 +2163,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the warnings at the given index.
      */
     public com.google.protobuf.ByteString
         getWarningsBytes(int index) {
@@ -2120,6 +2176,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param index The index to set the value at.
+     * @param value The warnings to set.
+     * @return This builder for chaining.
      */
     public Builder setWarnings(
         int index, java.lang.String value) {
@@ -2137,6 +2196,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param value The warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addWarnings(
         java.lang.String value) {
@@ -2154,6 +2215,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param values The warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addAllWarnings(
         java.lang.Iterable<java.lang.String> values) {
@@ -2169,10 +2232,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWarnings() {
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2182,6 +2246,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
+     * @param value The bytes of the warnings to add.
+     * @return This builder for chaining.
      */
     public Builder addWarningsBytes(
         com.google.protobuf.ByteString value) {

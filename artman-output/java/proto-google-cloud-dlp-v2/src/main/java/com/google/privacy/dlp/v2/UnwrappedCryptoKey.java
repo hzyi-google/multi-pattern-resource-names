@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UnwrappedCryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -89,10 +95,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString key_;
   /**
    * <pre>
-   * A 128/192/256 bit key. [required]
+   * Required. A 128/192/256 bit key.
    * </pre>
    *
-   * <code>bytes key = 1;</code>
+   * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The key.
    */
   public com.google.protobuf.ByteString getKey() {
     return key_;
@@ -408,20 +415,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The key.
      */
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
     /**
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The key to set.
+     * @return This builder for chaining.
      */
     public Builder setKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -434,10 +444,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKey() {
       

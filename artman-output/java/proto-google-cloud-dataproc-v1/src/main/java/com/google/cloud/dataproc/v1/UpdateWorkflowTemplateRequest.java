@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateWorkflowTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -99,7 +105,8 @@ private static final long serialVersionUID = 0L;
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the template field is set.
    */
   public boolean hasTemplate() {
     return template_ != null;
@@ -110,7 +117,8 @@ private static final long serialVersionUID = 0L;
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The template.
    */
   public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate() {
     return template_ == null ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance() : template_;
@@ -121,7 +129,7 @@ private static final long serialVersionUID = 0L;
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
     return getTemplate();
@@ -455,7 +463,8 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
       return templateBuilder_ != null || template_ != null;
@@ -466,7 +475,8 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The template.
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {
@@ -481,7 +491,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -502,7 +512,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTemplate(
         com.google.cloud.dataproc.v1.WorkflowTemplate.Builder builderForValue) {
@@ -521,7 +531,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -544,7 +554,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTemplate() {
       if (templateBuilder_ == null) {
@@ -563,7 +573,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate.Builder getTemplateBuilder() {
       
@@ -576,7 +586,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
       if (templateBuilder_ != null) {
@@ -592,7 +602,7 @@ private static final long serialVersionUID = 0L;
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1.WorkflowTemplate, com.google.cloud.dataproc.v1.WorkflowTemplate.Builder, com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder> 

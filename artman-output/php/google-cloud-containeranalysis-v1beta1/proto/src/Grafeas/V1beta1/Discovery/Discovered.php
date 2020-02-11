@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.discovery.Discovered</code>
  */
-final class Discovered extends \Google\Protobuf\Internal\Message
+class Discovered extends \Google\Protobuf\Internal\Message
 {
     /**
      * Whether the resource is continuously analyzed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
      */
-    private $continuous_analysis = 0;
+    protected $continuous_analysis = 0;
     /**
      * The last time continuous analysis was done for this resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
      */
-    private $last_analysis_time = null;
+    protected $last_analysis_time = null;
     /**
      * The status of discovery for the resource.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
      */
-    private $analysis_status = 0;
+    protected $analysis_status = 0;
     /**
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -40,7 +40,7 @@ final class Discovered extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.rpc.Status analysis_status_error = 4;</code>
      */
-    private $analysis_status_error = null;
+    protected $analysis_status_error = null;
 
     /**
      * Constructor.

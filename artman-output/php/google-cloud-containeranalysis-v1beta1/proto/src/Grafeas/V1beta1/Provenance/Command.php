@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.provenance.Command</code>
  */
-final class Command extends \Google\Protobuf\Internal\Message
+class Command extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Environment variables set before running this command.
      *
@@ -40,14 +40,14 @@ final class Command extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string dir = 4;</code>
      */
-    private $dir = '';
+    protected $dir = '';
     /**
      * Optional unique identifier for this command, used in wait_for to reference
      * this command as a dependency.
      *
      * Generated from protobuf field <code>string id = 5;</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * The ID(s) of the command(s) that this command depends on.
      *
@@ -62,8 +62,8 @@ final class Command extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Name of the command, as presented on the command line, or if the command is
-     *           packaged as a Docker container, as presented to `docker pull`.
+     *           Required. Name of the command, as presented on the command line, or if the
+     *           command is packaged as a Docker container, as presented to `docker pull`.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $env
      *           Environment variables set before running this command.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $args
@@ -84,8 +84,8 @@ final class Command extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -96,8 +96,8 @@ final class Command extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

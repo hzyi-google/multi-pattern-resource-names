@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -94,9 +101,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               initializationActions_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.NodeInitializationAction>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000001;
             }
             initializationActions_.add(
                 input.readMessage(com.google.cloud.dataproc.v1.NodeInitializationAction.parser(), extensionRegistry));
@@ -182,7 +189,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
       }
       this.unknownFields = unknownFields.build();
@@ -202,23 +209,23 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.ClusterConfig.class, com.google.cloud.dataproc.v1.ClusterConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONFIG_BUCKET_FIELD_NUMBER = 1;
   private volatile java.lang.Object configBucket_;
   /**
    * <pre>
-   * Optional. A Google Cloud Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's staging bucket according to the Google
+   * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Cloud Dataproc staging
+   * [Dataproc staging
    * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The configBucket.
    */
   public java.lang.String getConfigBucket() {
     java.lang.Object ref = configBucket_;
@@ -234,18 +241,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A Google Cloud Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's staging bucket according to the Google
+   * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Cloud Dataproc staging
+   * [Dataproc staging
    * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for configBucket.
    */
   public com.google.protobuf.ByteString
       getConfigBucketBytes() {
@@ -270,6 +278,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the gceClusterConfig field is set.
    */
   public boolean hasGceClusterConfig() {
     return gceClusterConfig_ != null;
@@ -281,6 +290,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The gceClusterConfig.
    */
   public com.google.cloud.dataproc.v1.GceClusterConfig getGceClusterConfig() {
     return gceClusterConfig_ == null ? com.google.cloud.dataproc.v1.GceClusterConfig.getDefaultInstance() : gceClusterConfig_;
@@ -306,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the masterConfig field is set.
    */
   public boolean hasMasterConfig() {
     return masterConfig_ != null;
@@ -317,6 +328,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The masterConfig.
    */
   public com.google.cloud.dataproc.v1.InstanceGroupConfig getMasterConfig() {
     return masterConfig_ == null ? com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance() : masterConfig_;
@@ -342,6 +354,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the workerConfig field is set.
    */
   public boolean hasWorkerConfig() {
     return workerConfig_ != null;
@@ -353,6 +366,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The workerConfig.
    */
   public com.google.cloud.dataproc.v1.InstanceGroupConfig getWorkerConfig() {
     return workerConfig_ == null ? com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance() : workerConfig_;
@@ -378,6 +392,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the secondaryWorkerConfig field is set.
    */
   public boolean hasSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ != null;
@@ -389,6 +404,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The secondaryWorkerConfig.
    */
   public com.google.cloud.dataproc.v1.InstanceGroupConfig getSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ == null ? com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance() : secondaryWorkerConfig_;
@@ -413,6 +429,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the softwareConfig field is set.
    */
   public boolean hasSoftwareConfig() {
     return softwareConfig_ != null;
@@ -423,6 +440,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The softwareConfig.
    */
   public com.google.cloud.dataproc.v1.SoftwareConfig getSoftwareConfig() {
     return softwareConfig_ == null ? com.google.cloud.dataproc.v1.SoftwareConfig.getDefaultInstance() : softwareConfig_;
@@ -556,6 +574,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the encryptionConfig field is set.
    */
   public boolean hasEncryptionConfig() {
     return encryptionConfig_ != null;
@@ -566,6 +585,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The encryptionConfig.
    */
   public com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig() {
     return encryptionConfig_ == null ? com.google.cloud.dataproc.v1.EncryptionConfig.getDefaultInstance() : encryptionConfig_;
@@ -590,6 +610,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the autoscalingConfig field is set.
    */
   public boolean hasAutoscalingConfig() {
     return autoscalingConfig_ != null;
@@ -601,6 +622,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The autoscalingConfig.
    */
   public com.google.cloud.dataproc.v1.AutoscalingConfig getAutoscalingConfig() {
     return autoscalingConfig_ == null ? com.google.cloud.dataproc.v1.AutoscalingConfig.getDefaultInstance() : autoscalingConfig_;
@@ -625,6 +647,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the securityConfig field is set.
    */
   public boolean hasSecurityConfig() {
     return securityConfig_ != null;
@@ -635,6 +658,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The securityConfig.
    */
   public com.google.cloud.dataproc.v1.SecurityConfig getSecurityConfig() {
     return securityConfig_ == null ? com.google.cloud.dataproc.v1.SecurityConfig.getDefaultInstance() : securityConfig_;
@@ -1022,7 +1046,7 @@ private static final long serialVersionUID = 0L;
       }
       if (initializationActionsBuilder_ == null) {
         initializationActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         initializationActionsBuilder_.clear();
       }
@@ -1071,7 +1095,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.ClusterConfig buildPartial() {
       com.google.cloud.dataproc.v1.ClusterConfig result = new com.google.cloud.dataproc.v1.ClusterConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.configBucket_ = configBucket_;
       if (gceClusterConfigBuilder_ == null) {
         result.gceClusterConfig_ = gceClusterConfig_;
@@ -1099,9 +1122,9 @@ private static final long serialVersionUID = 0L;
         result.softwareConfig_ = softwareConfigBuilder_.build();
       }
       if (initializationActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.initializationActions_ = initializationActions_;
       } else {
@@ -1122,7 +1145,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.securityConfig_ = securityConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1194,7 +1216,7 @@ private static final long serialVersionUID = 0L;
         if (!other.initializationActions_.isEmpty()) {
           if (initializationActions_.isEmpty()) {
             initializationActions_ = other.initializationActions_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInitializationActionsIsMutable();
             initializationActions_.addAll(other.initializationActions_);
@@ -1207,7 +1229,7 @@ private static final long serialVersionUID = 0L;
             initializationActionsBuilder_.dispose();
             initializationActionsBuilder_ = null;
             initializationActions_ = other.initializationActions_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             initializationActionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getInitializationActionsFieldBuilder() : null;
@@ -1258,18 +1280,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object configBucket_ = "";
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The configBucket.
      */
     public java.lang.String getConfigBucket() {
       java.lang.Object ref = configBucket_;
@@ -1285,18 +1308,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for configBucket.
      */
     public com.google.protobuf.ByteString
         getConfigBucketBytes() {
@@ -1313,18 +1337,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The configBucket to set.
+     * @return This builder for chaining.
      */
     public Builder setConfigBucket(
         java.lang.String value) {
@@ -1338,18 +1364,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearConfigBucket() {
       
@@ -1359,18 +1386,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for configBucket to set.
+     * @return This builder for chaining.
      */
     public Builder setConfigBucketBytes(
         com.google.protobuf.ByteString value) {
@@ -1394,6 +1423,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the gceClusterConfig field is set.
      */
     public boolean hasGceClusterConfig() {
       return gceClusterConfigBuilder_ != null || gceClusterConfig_ != null;
@@ -1405,6 +1435,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The gceClusterConfig.
      */
     public com.google.cloud.dataproc.v1.GceClusterConfig getGceClusterConfig() {
       if (gceClusterConfigBuilder_ == null) {
@@ -1556,6 +1587,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the masterConfig field is set.
      */
     public boolean hasMasterConfig() {
       return masterConfigBuilder_ != null || masterConfig_ != null;
@@ -1567,6 +1599,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The masterConfig.
      */
     public com.google.cloud.dataproc.v1.InstanceGroupConfig getMasterConfig() {
       if (masterConfigBuilder_ == null) {
@@ -1718,6 +1751,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the workerConfig field is set.
      */
     public boolean hasWorkerConfig() {
       return workerConfigBuilder_ != null || workerConfig_ != null;
@@ -1729,6 +1763,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The workerConfig.
      */
     public com.google.cloud.dataproc.v1.InstanceGroupConfig getWorkerConfig() {
       if (workerConfigBuilder_ == null) {
@@ -1880,6 +1915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the secondaryWorkerConfig field is set.
      */
     public boolean hasSecondaryWorkerConfig() {
       return secondaryWorkerConfigBuilder_ != null || secondaryWorkerConfig_ != null;
@@ -1891,6 +1927,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The secondaryWorkerConfig.
      */
     public com.google.cloud.dataproc.v1.InstanceGroupConfig getSecondaryWorkerConfig() {
       if (secondaryWorkerConfigBuilder_ == null) {
@@ -2041,6 +2078,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the softwareConfig field is set.
      */
     public boolean hasSoftwareConfig() {
       return softwareConfigBuilder_ != null || softwareConfig_ != null;
@@ -2051,6 +2089,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The softwareConfig.
      */
     public com.google.cloud.dataproc.v1.SoftwareConfig getSoftwareConfig() {
       if (softwareConfigBuilder_ == null) {
@@ -2188,9 +2227,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1.NodeInitializationAction> initializationActions_ =
       java.util.Collections.emptyList();
     private void ensureInitializationActionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         initializationActions_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.NodeInitializationAction>(initializationActions_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2505,7 +2544,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearInitializationActions() {
       if (initializationActionsBuilder_ == null) {
         initializationActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         initializationActionsBuilder_.clear();
@@ -2687,7 +2726,7 @@ private static final long serialVersionUID = 0L;
         initializationActionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1.NodeInitializationAction, com.google.cloud.dataproc.v1.NodeInitializationAction.Builder, com.google.cloud.dataproc.v1.NodeInitializationActionOrBuilder>(
                 initializationActions_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         initializationActions_ = null;
@@ -2704,6 +2743,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
       return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
@@ -2714,6 +2754,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The encryptionConfig.
      */
     public com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig() {
       if (encryptionConfigBuilder_ == null) {
@@ -2858,6 +2899,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the autoscalingConfig field is set.
      */
     public boolean hasAutoscalingConfig() {
       return autoscalingConfigBuilder_ != null || autoscalingConfig_ != null;
@@ -2869,6 +2911,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.AutoscalingConfig autoscaling_config = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The autoscalingConfig.
      */
     public com.google.cloud.dataproc.v1.AutoscalingConfig getAutoscalingConfig() {
       if (autoscalingConfigBuilder_ == null) {
@@ -3019,6 +3062,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the securityConfig field is set.
      */
     public boolean hasSecurityConfig() {
       return securityConfigBuilder_ != null || securityConfig_ != null;
@@ -3029,6 +3073,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.SecurityConfig security_config = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The securityConfig.
      */
     public com.google.cloud.dataproc.v1.SecurityConfig getSecurityConfig() {
       if (securityConfigBuilder_ == null) {

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.RecordSuppression</code>
  */
-final class RecordSuppression extends \Google\Protobuf\Internal\Message
+class RecordSuppression extends \Google\Protobuf\Internal\Message
 {
     /**
      * A condition that when it evaluates to true will result in the record being
@@ -22,7 +22,7 @@ final class RecordSuppression extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
      */
-    private $condition = null;
+    protected $condition = null;
 
     /**
      * Constructor.

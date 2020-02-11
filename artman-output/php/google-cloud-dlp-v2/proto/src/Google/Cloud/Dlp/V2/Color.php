@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Color</code>
  */
-final class Color extends \Google\Protobuf\Internal\Message
+class Color extends \Google\Protobuf\Internal\Message
 {
     /**
      * The amount of red in the color as a value in the interval [0, 1].
      *
      * Generated from protobuf field <code>float red = 1;</code>
      */
-    private $red = 0.0;
+    protected $red = 0.0;
     /**
      * The amount of green in the color as a value in the interval [0, 1].
      *
      * Generated from protobuf field <code>float green = 2;</code>
      */
-    private $green = 0.0;
+    protected $green = 0.0;
     /**
      * The amount of blue in the color as a value in the interval [0, 1].
      *
      * Generated from protobuf field <code>float blue = 3;</code>
      */
-    private $blue = 0.0;
+    protected $blue = 0.0;
 
     /**
      * Constructor.

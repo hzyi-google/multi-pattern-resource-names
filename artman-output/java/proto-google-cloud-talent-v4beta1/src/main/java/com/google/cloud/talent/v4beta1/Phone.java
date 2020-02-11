@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Phone();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -176,10 +182,9 @@ private static final long serialVersionUID = 0L;
      * A virtual telephone number is a number that can be routed to another
      * number and managed by the user via Web, SMS, IVR, and so on.  It is
      * associated with a particular person, and may be routed to either a MOBILE
-     * or LANDLINE number. The [phone
-     * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
-     * PERSONAL for these phone types. Some more information can be found here:
-     * https://en.wikipedia.org/wiki/Personal_Numbers
+     * or LANDLINE number. The [phone usage][google.cloud.talent.v4beta1.ContactInfoUsage] should
+     * be set to PERSONAL for these phone types. Some more information can be
+     * found here: https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>
@@ -266,10 +271,9 @@ private static final long serialVersionUID = 0L;
      * A virtual telephone number is a number that can be routed to another
      * number and managed by the user via Web, SMS, IVR, and so on.  It is
      * associated with a particular person, and may be routed to either a MOBILE
-     * or LANDLINE number. The [phone
-     * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
-     * PERSONAL for these phone types. Some more information can be found here:
-     * https://en.wikipedia.org/wiki/Personal_Numbers
+     * or LANDLINE number. The [phone usage][google.cloud.talent.v4beta1.ContactInfoUsage] should
+     * be set to PERSONAL for these phone types. Some more information can be
+     * found here: https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>
@@ -303,6 +307,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -310,6 +316,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PhoneType forNumber(int value) {
       switch (value) {
         case 0: return PHONE_TYPE_UNSPECIFIED;
@@ -382,6 +392,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The enum numeric value on the wire for usage.
    */
   public int getUsageValue() {
     return usage_;
@@ -392,6 +403,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The usage.
    */
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
@@ -407,6 +419,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -417,6 +430,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
     @SuppressWarnings("deprecation")
@@ -437,6 +451,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string number = 3;</code>
+   * @return The number.
    */
   public java.lang.String getNumber() {
     java.lang.Object ref = number_;
@@ -461,6 +476,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string number = 3;</code>
+   * @return The bytes for number.
    */
   public com.google.protobuf.ByteString
       getNumberBytes() {
@@ -485,6 +501,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   * @return The whenAvailable.
    */
   public java.lang.String getWhenAvailable() {
     java.lang.Object ref = whenAvailable_;
@@ -505,6 +522,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string when_available = 4;</code>
+   * @return The bytes for whenAvailable.
    */
   public com.google.protobuf.ByteString
       getWhenAvailableBytes() {
@@ -882,6 +900,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The enum numeric value on the wire for usage.
      */
     public int getUsageValue() {
       return usage_;
@@ -892,6 +911,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The enum numeric value on the wire for usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
       usage_ = value;
@@ -904,6 +925,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The usage.
      */
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
@@ -916,6 +938,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(com.google.cloud.talent.v4beta1.ContactInfoUsage value) {
       if (value == null) {
@@ -932,6 +956,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
       
@@ -947,6 +972,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -957,6 +983,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -969,6 +997,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
       @SuppressWarnings("deprecation")
@@ -981,6 +1010,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.Phone.PhoneType value) {
       if (value == null) {
@@ -997,6 +1028,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1017,6 +1049,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string number = 3;</code>
+     * @return The number.
      */
     public java.lang.String getNumber() {
       java.lang.Object ref = number_;
@@ -1041,6 +1074,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string number = 3;</code>
+     * @return The bytes for number.
      */
     public com.google.protobuf.ByteString
         getNumberBytes() {
@@ -1066,6 +1100,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string number = 3;</code>
+     * @param value The number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumber(
         java.lang.String value) {
@@ -1088,6 +1124,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string number = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumber() {
       
@@ -1106,6 +1143,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string number = 3;</code>
+     * @param value The bytes for number to set.
+     * @return This builder for chaining.
      */
     public Builder setNumberBytes(
         com.google.protobuf.ByteString value) {
@@ -1127,6 +1166,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     * @return The whenAvailable.
      */
     public java.lang.String getWhenAvailable() {
       java.lang.Object ref = whenAvailable_;
@@ -1147,6 +1187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     * @return The bytes for whenAvailable.
      */
     public com.google.protobuf.ByteString
         getWhenAvailableBytes() {
@@ -1168,6 +1209,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     * @param value The whenAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setWhenAvailable(
         java.lang.String value) {
@@ -1186,6 +1229,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWhenAvailable() {
       
@@ -1200,6 +1244,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string when_available = 4;</code>
+     * @param value The bytes for whenAvailable to set.
+     * @return This builder for chaining.
      */
     public Builder setWhenAvailableBytes(
         com.google.protobuf.ByteString value) {

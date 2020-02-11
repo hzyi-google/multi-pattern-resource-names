@@ -14,6 +14,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>string checksum = 1;</code>
+   * @return The checksum.
    */
   java.lang.String getChecksum();
   /**
@@ -23,6 +24,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>string checksum = 1;</code>
+   * @return The bytes for checksum.
    */
   com.google.protobuf.ByteString
       getChecksumBytes();
@@ -34,6 +36,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -43,6 +46,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -57,6 +61,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   * @return A list containing the names.
    */
   java.util.List<java.lang.String>
       getNamesList();
@@ -70,6 +75,7 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   * @return The count of names.
    */
   int getNamesCount();
   /**
@@ -82,6 +88,8 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   * @param index The index of the element to return.
+   * @return The names at the given index.
    */
   java.lang.String getNames(int index);
   /**
@@ -94,6 +102,8 @@ public interface ArtifactOrBuilder extends
    * </pre>
    *
    * <code>repeated string names = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the names at the given index.
    */
   com.google.protobuf.ByteString
       getNamesBytes(int index);

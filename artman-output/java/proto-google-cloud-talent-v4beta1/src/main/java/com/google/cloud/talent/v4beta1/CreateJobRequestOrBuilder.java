@@ -15,7 +15,8 @@ public interface CreateJobRequestOrBuilder extends
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -26,7 +27,8 @@ public interface CreateJobRequestOrBuilder extends
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -37,6 +39,7 @@ public interface CreateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the job field is set.
    */
   boolean hasJob();
   /**
@@ -45,6 +48,7 @@ public interface CreateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The job.
    */
   com.google.cloud.talent.v4beta1.Job getJob();
   /**

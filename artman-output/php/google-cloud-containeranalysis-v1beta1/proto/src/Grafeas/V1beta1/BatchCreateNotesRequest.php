@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.BatchCreateNotesRequest</code>
  */
-final class BatchCreateNotesRequest extends \Google\Protobuf\Internal\Message
+class BatchCreateNotesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
@@ -21,7 +21,7 @@ final class BatchCreateNotesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1;</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * The notes to create.
      *

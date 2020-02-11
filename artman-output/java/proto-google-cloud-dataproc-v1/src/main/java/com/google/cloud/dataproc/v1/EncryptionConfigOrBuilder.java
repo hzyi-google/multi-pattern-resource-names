@@ -14,6 +14,7 @@ public interface EncryptionConfigOrBuilder extends
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The gcePdKmsKeyName.
    */
   java.lang.String getGcePdKmsKeyName();
   /**
@@ -23,6 +24,7 @@ public interface EncryptionConfigOrBuilder extends
    * </pre>
    *
    * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for gcePdKmsKeyName.
    */
   com.google.protobuf.ByteString
       getGcePdKmsKeyNameBytes();

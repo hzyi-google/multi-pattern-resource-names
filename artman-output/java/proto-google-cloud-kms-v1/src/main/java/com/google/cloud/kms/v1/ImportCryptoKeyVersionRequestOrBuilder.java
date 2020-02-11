@@ -13,7 +13,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * be imported into.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -22,7 +23,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * be imported into.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -35,7 +37,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * version imports into.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
   /**
@@ -46,7 +49,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * version imports into.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The algorithm.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm();
 
@@ -56,7 +60,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * wrap this key material.
    * </pre>
    *
-   * <code>string import_job = 4;</code>
+   * <code>string import_job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The importJob.
    */
   java.lang.String getImportJob();
   /**
@@ -65,7 +70,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    * wrap this key material.
    * </pre>
    *
-   * <code>string import_job = 4;</code>
+   * <code>string import_job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for importJob.
    */
   com.google.protobuf.ByteString
       getImportJobBytes();
@@ -86,11 +92,16 @@ public interface ImportCryptoKeyVersionRequestOrBuilder extends
    *       using AES-KWP (RFC 5649).
    *   &lt;/li&gt;
    * &lt;/ol&gt;
+   * If importing symmetric key material, it is expected that the unwrapped
+   * key contains plain bytes. If importing asymmetric key material, it is
+   * expected that the unwrapped key is in PKCS#8-encoded DER format (the
+   * PrivateKeyInfo structure from RFC 5208).
    * This format is the same as the format produced by PKCS#11 mechanism
    * CKM_RSA_AES_KEY_WRAP.
    * </pre>
    *
    * <code>bytes rsa_aes_wrapped_key = 5;</code>
+   * @return The rsaAesWrappedKey.
    */
   com.google.protobuf.ByteString getRsaAesWrappedKey();
 

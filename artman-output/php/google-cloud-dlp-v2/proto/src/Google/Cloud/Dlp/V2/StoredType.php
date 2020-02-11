@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.StoredType</code>
  */
-final class StoredType extends \Google\Protobuf\Internal\Message
+class StoredType extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the requested `StoredInfoType`, for example
@@ -22,14 +22,14 @@ final class StoredType extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Timestamp indicating when the version of the `StoredInfoType` used for
      * inspection was created. Output-only field, populated by the system.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.DeleteNoteRequest</code>
  */
-final class DeleteNoteRequest extends \Google\Protobuf\Internal\Message
+class DeleteNoteRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the note in the form of
@@ -21,7 +21,7 @@ final class DeleteNoteRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

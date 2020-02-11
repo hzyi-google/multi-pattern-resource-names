@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectResult</code>
  */
-final class InspectResult extends \Google\Protobuf\Internal\Message
+class InspectResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of findings for an item.
@@ -31,7 +31,7 @@ final class InspectResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool findings_truncated = 2;</code>
      */
-    private $findings_truncated = false;
+    protected $findings_truncated = false;
 
     /**
      * Constructor.

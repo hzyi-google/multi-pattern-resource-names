@@ -37,9 +37,9 @@ namespace Google.Cloud.Talent.V4Beta1 {
             "bnSiAgNDVFNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Talent.V4Beta1.HistogramQuery), global::Google.Cloud.Talent.V4Beta1.HistogramQuery.Parser, new[]{ "HistogramQuery_" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Talent.V4Beta1.HistogramQueryResult), global::Google.Cloud.Talent.V4Beta1.HistogramQueryResult.Parser, new[]{ "HistogramQuery", "Histogram" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Talent.V4Beta1.HistogramQuery), global::Google.Cloud.Talent.V4Beta1.HistogramQuery.Parser, new[]{ "HistogramQuery_" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Talent.V4Beta1.HistogramQueryResult), global::Google.Cloud.Talent.V4Beta1.HistogramQueryResult.Parser, new[]{ "HistogramQuery", "Histogram" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -90,11 +90,8 @@ namespace Google.Cloud.Talent.V4Beta1 {
     /// An expression specifies a histogram request against matching resources
     /// (for example, jobs, profiles) for searches.
     ///
-    /// See
-    /// [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries]
-    /// and
-    /// [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries]
-    /// for details about syntax.
+    /// See [SearchJobsRequest.histogram_queries][google.cloud.talent.v4beta1.SearchJobsRequest.histogram_queries] and
+    /// [SearchProfilesRequest.histogram_queries][google.cloud.talent.v4beta1.SearchProfilesRequest.histogram_queries] for details about syntax.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string HistogramQuery_ {
@@ -189,9 +186,7 @@ namespace Google.Cloud.Talent.V4Beta1 {
   }
 
   /// <summary>
-  /// Histogram result that matches
-  /// [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
-  /// searches.
+  /// Histogram result that matches [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in searches.
   /// </summary>
   public sealed partial class HistogramQueryResult : pb::IMessage<HistogramQueryResult> {
     private static readonly pb::MessageParser<HistogramQueryResult> _parser = new pb::MessageParser<HistogramQueryResult>(() => new HistogramQueryResult());
@@ -245,7 +240,7 @@ namespace Google.Cloud.Talent.V4Beta1 {
     /// <summary>Field number for the "histogram" field.</summary>
     public const int HistogramFieldNumber = 2;
     private static readonly pbc::MapField<string, long>.Codec _map_histogram_codec
-        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForInt64(16), 18);
+        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt64(16, 0L), 18);
     private readonly pbc::MapField<string, long> histogram_ = new pbc::MapField<string, long>();
     /// <summary>
     /// A map from the values of the facet associated with distinct values to the

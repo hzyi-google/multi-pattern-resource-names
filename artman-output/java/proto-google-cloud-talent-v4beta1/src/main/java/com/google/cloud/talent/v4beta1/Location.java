@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -323,6 +329,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -330,6 +338,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LocationType forNumber(int value) {
       switch (value) {
         case 0: return LOCATION_TYPE_UNSPECIFIED;
@@ -400,14 +412,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-   * "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-   * and "Kansas City, KS, USA" has a type of
-   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   * @return The enum numeric value on the wire for locationType.
    */
   public int getLocationTypeValue() {
     return locationType_;
@@ -415,14 +426,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of a location, which corresponds to the address lines field of
-   * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-   * "Downtown, Atlanta, GA, USA" has a type of
-   * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-   * and "Kansas City, KS, USA" has a type of
-   * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+   * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+   * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+   * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+   * @return The locationType.
    */
   public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
     @SuppressWarnings("deprecation")
@@ -441,6 +451,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   * @return Whether the postalAddress field is set.
    */
   public boolean hasPostalAddress() {
     return postalAddress_ != null;
@@ -454,6 +465,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
+   * @return The postalAddress.
    */
   public com.google.type.PostalAddress getPostalAddress() {
     return postalAddress_ == null ? com.google.type.PostalAddress.getDefaultInstance() : postalAddress_;
@@ -480,6 +492,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return Whether the latLng field is set.
    */
   public boolean hasLatLng() {
     return latLng_ != null;
@@ -490,6 +503,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return The latLng.
    */
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
@@ -511,12 +525,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Radius in miles of the job location. This value is derived from the
    * location bounding box in which a circle with the specified radius
-   * centered from [google.type.LatLng][google.type.LatLng] covers the area
-   * associated with the job location. For example, currently, "Mountain View,
-   * CA, USA" has a radius of 6.17 miles.
+   * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
+   * job location.
+   * For example, currently, "Mountain View, CA, USA" has a radius of
+   * 6.17 miles.
    * </pre>
    *
    * <code>double radius_miles = 4;</code>
+   * @return The radiusMiles.
    */
   public double getRadiusMiles() {
     return radiusMiles_;
@@ -910,14 +926,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-     * "Downtown, Atlanta, GA, USA" has a type of
-     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-     * and "Kansas City, KS, USA" has a type of
-     * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     * @return The enum numeric value on the wire for locationType.
      */
     public int getLocationTypeValue() {
       return locationType_;
@@ -925,14 +940,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-     * "Downtown, Atlanta, GA, USA" has a type of
-     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-     * and "Kansas City, KS, USA" has a type of
-     * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     * @param value The enum numeric value on the wire for locationType to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationTypeValue(int value) {
       locationType_ = value;
@@ -942,14 +957,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-     * "Downtown, Atlanta, GA, USA" has a type of
-     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-     * and "Kansas City, KS, USA" has a type of
-     * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     * @return The locationType.
      */
     public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
       @SuppressWarnings("deprecation")
@@ -959,14 +973,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-     * "Downtown, Atlanta, GA, USA" has a type of
-     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-     * and "Kansas City, KS, USA" has a type of
-     * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     * @param value The locationType to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationType(com.google.cloud.talent.v4beta1.Location.LocationType value) {
       if (value == null) {
@@ -980,14 +994,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of a location, which corresponds to the address lines field of
-     * [google.type.PostalAddress][google.type.PostalAddress]. For example,
-     * "Downtown, Atlanta, GA, USA" has a type of
-     * [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD],
-     * and "Kansas City, KS, USA" has a type of
-     * [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
+     * [google.type.PostalAddress][google.type.PostalAddress]. For example, "Downtown, Atlanta, GA, USA"
+     * has a type of [LocationType.NEIGHBORHOOD][google.cloud.talent.v4beta1.Location.LocationType.NEIGHBORHOOD], and "Kansas City, KS, USA"
+     * has a type of [LocationType.LOCALITY][google.cloud.talent.v4beta1.Location.LocationType.LOCALITY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Location.LocationType location_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationType() {
       
@@ -1008,6 +1021,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.PostalAddress postal_address = 2;</code>
+     * @return Whether the postalAddress field is set.
      */
     public boolean hasPostalAddress() {
       return postalAddressBuilder_ != null || postalAddress_ != null;
@@ -1021,6 +1035,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.PostalAddress postal_address = 2;</code>
+     * @return The postalAddress.
      */
     public com.google.type.PostalAddress getPostalAddress() {
       if (postalAddressBuilder_ == null) {
@@ -1185,6 +1200,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
       return latLngBuilder_ != null || latLng_ != null;
@@ -1195,6 +1211,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     * @return The latLng.
      */
     public com.google.type.LatLng getLatLng() {
       if (latLngBuilder_ == null) {
@@ -1334,12 +1351,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area
-     * associated with the job location. For example, currently, "Mountain View,
-     * CA, USA" has a radius of 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
+     * job location.
+     * For example, currently, "Mountain View, CA, USA" has a radius of
+     * 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     * @return The radiusMiles.
      */
     public double getRadiusMiles() {
       return radiusMiles_;
@@ -1348,12 +1367,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area
-     * associated with the job location. For example, currently, "Mountain View,
-     * CA, USA" has a radius of 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
+     * job location.
+     * For example, currently, "Mountain View, CA, USA" has a radius of
+     * 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     * @param value The radiusMiles to set.
+     * @return This builder for chaining.
      */
     public Builder setRadiusMiles(double value) {
       
@@ -1365,12 +1387,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Radius in miles of the job location. This value is derived from the
      * location bounding box in which a circle with the specified radius
-     * centered from [google.type.LatLng][google.type.LatLng] covers the area
-     * associated with the job location. For example, currently, "Mountain View,
-     * CA, USA" has a radius of 6.17 miles.
+     * centered from [google.type.LatLng][google.type.LatLng] covers the area associated with the
+     * job location.
+     * For example, currently, "Mountain View, CA, USA" has a radius of
+     * 6.17 miles.
      * </pre>
      *
      * <code>double radius_miles = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRadiusMiles() {
       

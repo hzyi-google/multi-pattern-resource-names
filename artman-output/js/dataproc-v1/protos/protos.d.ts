@@ -1,3 +1,18 @@
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import * as Long from "long";
 import * as $protobuf from "protobufjs";
 /** Namespace google. */
 export namespace google {
@@ -10,6 +25,1128 @@ export namespace google {
 
             /** Namespace v1. */
             namespace v1 {
+
+                /** Represents an AutoscalingPolicyService */
+                class AutoscalingPolicyService extends $protobuf.rpc.Service {
+
+                    /**
+                     * Constructs a new AutoscalingPolicyService service.
+                     * @param rpcImpl RPC implementation
+                     * @param [requestDelimited=false] Whether requests are length-delimited
+                     * @param [responseDelimited=false] Whether responses are length-delimited
+                     */
+                    constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                    /**
+                     * Creates new AutoscalingPolicyService service using the specified rpc implementation.
+                     * @param rpcImpl RPC implementation
+                     * @param [requestDelimited=false] Whether requests are length-delimited
+                     * @param [responseDelimited=false] Whether responses are length-delimited
+                     * @returns RPC service. Useful where requests and/or responses are streamed.
+                     */
+                    public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AutoscalingPolicyService;
+
+                    /**
+                     * Calls CreateAutoscalingPolicy.
+                     * @param request CreateAutoscalingPolicyRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and AutoscalingPolicy
+                     */
+                    public createAutoscalingPolicy(request: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest, callback: google.cloud.dataproc.v1.AutoscalingPolicyService.CreateAutoscalingPolicyCallback): void;
+
+                    /**
+                     * Calls CreateAutoscalingPolicy.
+                     * @param request CreateAutoscalingPolicyRequest message or plain object
+                     * @returns Promise
+                     */
+                    public createAutoscalingPolicy(request: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest): Promise<google.cloud.dataproc.v1.AutoscalingPolicy>;
+
+                    /**
+                     * Calls UpdateAutoscalingPolicy.
+                     * @param request UpdateAutoscalingPolicyRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and AutoscalingPolicy
+                     */
+                    public updateAutoscalingPolicy(request: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest, callback: google.cloud.dataproc.v1.AutoscalingPolicyService.UpdateAutoscalingPolicyCallback): void;
+
+                    /**
+                     * Calls UpdateAutoscalingPolicy.
+                     * @param request UpdateAutoscalingPolicyRequest message or plain object
+                     * @returns Promise
+                     */
+                    public updateAutoscalingPolicy(request: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest): Promise<google.cloud.dataproc.v1.AutoscalingPolicy>;
+
+                    /**
+                     * Calls GetAutoscalingPolicy.
+                     * @param request GetAutoscalingPolicyRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and AutoscalingPolicy
+                     */
+                    public getAutoscalingPolicy(request: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest, callback: google.cloud.dataproc.v1.AutoscalingPolicyService.GetAutoscalingPolicyCallback): void;
+
+                    /**
+                     * Calls GetAutoscalingPolicy.
+                     * @param request GetAutoscalingPolicyRequest message or plain object
+                     * @returns Promise
+                     */
+                    public getAutoscalingPolicy(request: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest): Promise<google.cloud.dataproc.v1.AutoscalingPolicy>;
+
+                    /**
+                     * Calls ListAutoscalingPolicies.
+                     * @param request ListAutoscalingPoliciesRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and ListAutoscalingPoliciesResponse
+                     */
+                    public listAutoscalingPolicies(request: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest, callback: google.cloud.dataproc.v1.AutoscalingPolicyService.ListAutoscalingPoliciesCallback): void;
+
+                    /**
+                     * Calls ListAutoscalingPolicies.
+                     * @param request ListAutoscalingPoliciesRequest message or plain object
+                     * @returns Promise
+                     */
+                    public listAutoscalingPolicies(request: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest): Promise<google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse>;
+
+                    /**
+                     * Calls DeleteAutoscalingPolicy.
+                     * @param request DeleteAutoscalingPolicyRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and Empty
+                     */
+                    public deleteAutoscalingPolicy(request: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest, callback: google.cloud.dataproc.v1.AutoscalingPolicyService.DeleteAutoscalingPolicyCallback): void;
+
+                    /**
+                     * Calls DeleteAutoscalingPolicy.
+                     * @param request DeleteAutoscalingPolicyRequest message or plain object
+                     * @returns Promise
+                     */
+                    public deleteAutoscalingPolicy(request: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest): Promise<google.protobuf.Empty>;
+                }
+
+                namespace AutoscalingPolicyService {
+
+                    /**
+                     * Callback as used by {@link google.cloud.dataproc.v1.AutoscalingPolicyService#createAutoscalingPolicy}.
+                     * @param error Error, if any
+                     * @param [response] AutoscalingPolicy
+                     */
+                    type CreateAutoscalingPolicyCallback = (error: (Error|null), response?: google.cloud.dataproc.v1.AutoscalingPolicy) => void;
+
+                    /**
+                     * Callback as used by {@link google.cloud.dataproc.v1.AutoscalingPolicyService#updateAutoscalingPolicy}.
+                     * @param error Error, if any
+                     * @param [response] AutoscalingPolicy
+                     */
+                    type UpdateAutoscalingPolicyCallback = (error: (Error|null), response?: google.cloud.dataproc.v1.AutoscalingPolicy) => void;
+
+                    /**
+                     * Callback as used by {@link google.cloud.dataproc.v1.AutoscalingPolicyService#getAutoscalingPolicy}.
+                     * @param error Error, if any
+                     * @param [response] AutoscalingPolicy
+                     */
+                    type GetAutoscalingPolicyCallback = (error: (Error|null), response?: google.cloud.dataproc.v1.AutoscalingPolicy) => void;
+
+                    /**
+                     * Callback as used by {@link google.cloud.dataproc.v1.AutoscalingPolicyService#listAutoscalingPolicies}.
+                     * @param error Error, if any
+                     * @param [response] ListAutoscalingPoliciesResponse
+                     */
+                    type ListAutoscalingPoliciesCallback = (error: (Error|null), response?: google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse) => void;
+
+                    /**
+                     * Callback as used by {@link google.cloud.dataproc.v1.AutoscalingPolicyService#deleteAutoscalingPolicy}.
+                     * @param error Error, if any
+                     * @param [response] Empty
+                     */
+                    type DeleteAutoscalingPolicyCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
+                }
+
+                /** Properties of an AutoscalingPolicy. */
+                interface IAutoscalingPolicy {
+
+                    /** AutoscalingPolicy id */
+                    id?: (string|null);
+
+                    /** AutoscalingPolicy name */
+                    name?: (string|null);
+
+                    /** AutoscalingPolicy basicAlgorithm */
+                    basicAlgorithm?: (google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm|null);
+
+                    /** AutoscalingPolicy workerConfig */
+                    workerConfig?: (google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig|null);
+
+                    /** AutoscalingPolicy secondaryWorkerConfig */
+                    secondaryWorkerConfig?: (google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig|null);
+                }
+
+                /** Represents an AutoscalingPolicy. */
+                class AutoscalingPolicy implements IAutoscalingPolicy {
+
+                    /**
+                     * Constructs a new AutoscalingPolicy.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IAutoscalingPolicy);
+
+                    /** AutoscalingPolicy id. */
+                    public id: string;
+
+                    /** AutoscalingPolicy name. */
+                    public name: string;
+
+                    /** AutoscalingPolicy basicAlgorithm. */
+                    public basicAlgorithm?: (google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm|null);
+
+                    /** AutoscalingPolicy workerConfig. */
+                    public workerConfig?: (google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig|null);
+
+                    /** AutoscalingPolicy secondaryWorkerConfig. */
+                    public secondaryWorkerConfig?: (google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig|null);
+
+                    /** AutoscalingPolicy algorithm. */
+                    public algorithm?: "basicAlgorithm";
+
+                    /**
+                     * Creates a new AutoscalingPolicy instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns AutoscalingPolicy instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IAutoscalingPolicy): google.cloud.dataproc.v1.AutoscalingPolicy;
+
+                    /**
+                     * Encodes the specified AutoscalingPolicy message. Does not implicitly {@link google.cloud.dataproc.v1.AutoscalingPolicy.verify|verify} messages.
+                     * @param message AutoscalingPolicy message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IAutoscalingPolicy, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified AutoscalingPolicy message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.AutoscalingPolicy.verify|verify} messages.
+                     * @param message AutoscalingPolicy message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IAutoscalingPolicy, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an AutoscalingPolicy message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns AutoscalingPolicy
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.AutoscalingPolicy;
+
+                    /**
+                     * Decodes an AutoscalingPolicy message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns AutoscalingPolicy
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.AutoscalingPolicy;
+
+                    /**
+                     * Verifies an AutoscalingPolicy message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an AutoscalingPolicy message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns AutoscalingPolicy
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.AutoscalingPolicy;
+
+                    /**
+                     * Creates a plain object from an AutoscalingPolicy message. Also converts values to other types if specified.
+                     * @param message AutoscalingPolicy
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.AutoscalingPolicy, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this AutoscalingPolicy to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a BasicAutoscalingAlgorithm. */
+                interface IBasicAutoscalingAlgorithm {
+
+                    /** BasicAutoscalingAlgorithm yarnConfig */
+                    yarnConfig?: (google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig|null);
+
+                    /** BasicAutoscalingAlgorithm cooldownPeriod */
+                    cooldownPeriod?: (google.protobuf.IDuration|null);
+                }
+
+                /** Represents a BasicAutoscalingAlgorithm. */
+                class BasicAutoscalingAlgorithm implements IBasicAutoscalingAlgorithm {
+
+                    /**
+                     * Constructs a new BasicAutoscalingAlgorithm.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm);
+
+                    /** BasicAutoscalingAlgorithm yarnConfig. */
+                    public yarnConfig?: (google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig|null);
+
+                    /** BasicAutoscalingAlgorithm cooldownPeriod. */
+                    public cooldownPeriod?: (google.protobuf.IDuration|null);
+
+                    /**
+                     * Creates a new BasicAutoscalingAlgorithm instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns BasicAutoscalingAlgorithm instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm): google.cloud.dataproc.v1.BasicAutoscalingAlgorithm;
+
+                    /**
+                     * Encodes the specified BasicAutoscalingAlgorithm message. Does not implicitly {@link google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.verify|verify} messages.
+                     * @param message BasicAutoscalingAlgorithm message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified BasicAutoscalingAlgorithm message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.verify|verify} messages.
+                     * @param message BasicAutoscalingAlgorithm message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IBasicAutoscalingAlgorithm, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a BasicAutoscalingAlgorithm message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns BasicAutoscalingAlgorithm
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.BasicAutoscalingAlgorithm;
+
+                    /**
+                     * Decodes a BasicAutoscalingAlgorithm message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns BasicAutoscalingAlgorithm
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.BasicAutoscalingAlgorithm;
+
+                    /**
+                     * Verifies a BasicAutoscalingAlgorithm message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a BasicAutoscalingAlgorithm message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns BasicAutoscalingAlgorithm
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.BasicAutoscalingAlgorithm;
+
+                    /**
+                     * Creates a plain object from a BasicAutoscalingAlgorithm message. Also converts values to other types if specified.
+                     * @param message BasicAutoscalingAlgorithm
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.BasicAutoscalingAlgorithm, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this BasicAutoscalingAlgorithm to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a BasicYarnAutoscalingConfig. */
+                interface IBasicYarnAutoscalingConfig {
+
+                    /** BasicYarnAutoscalingConfig gracefulDecommissionTimeout */
+                    gracefulDecommissionTimeout?: (google.protobuf.IDuration|null);
+
+                    /** BasicYarnAutoscalingConfig scaleUpFactor */
+                    scaleUpFactor?: (number|null);
+
+                    /** BasicYarnAutoscalingConfig scaleDownFactor */
+                    scaleDownFactor?: (number|null);
+
+                    /** BasicYarnAutoscalingConfig scaleUpMinWorkerFraction */
+                    scaleUpMinWorkerFraction?: (number|null);
+
+                    /** BasicYarnAutoscalingConfig scaleDownMinWorkerFraction */
+                    scaleDownMinWorkerFraction?: (number|null);
+                }
+
+                /** Represents a BasicYarnAutoscalingConfig. */
+                class BasicYarnAutoscalingConfig implements IBasicYarnAutoscalingConfig {
+
+                    /**
+                     * Constructs a new BasicYarnAutoscalingConfig.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig);
+
+                    /** BasicYarnAutoscalingConfig gracefulDecommissionTimeout. */
+                    public gracefulDecommissionTimeout?: (google.protobuf.IDuration|null);
+
+                    /** BasicYarnAutoscalingConfig scaleUpFactor. */
+                    public scaleUpFactor: number;
+
+                    /** BasicYarnAutoscalingConfig scaleDownFactor. */
+                    public scaleDownFactor: number;
+
+                    /** BasicYarnAutoscalingConfig scaleUpMinWorkerFraction. */
+                    public scaleUpMinWorkerFraction: number;
+
+                    /** BasicYarnAutoscalingConfig scaleDownMinWorkerFraction. */
+                    public scaleDownMinWorkerFraction: number;
+
+                    /**
+                     * Creates a new BasicYarnAutoscalingConfig instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns BasicYarnAutoscalingConfig instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig): google.cloud.dataproc.v1.BasicYarnAutoscalingConfig;
+
+                    /**
+                     * Encodes the specified BasicYarnAutoscalingConfig message. Does not implicitly {@link google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.verify|verify} messages.
+                     * @param message BasicYarnAutoscalingConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified BasicYarnAutoscalingConfig message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.verify|verify} messages.
+                     * @param message BasicYarnAutoscalingConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IBasicYarnAutoscalingConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a BasicYarnAutoscalingConfig message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns BasicYarnAutoscalingConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.BasicYarnAutoscalingConfig;
+
+                    /**
+                     * Decodes a BasicYarnAutoscalingConfig message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns BasicYarnAutoscalingConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.BasicYarnAutoscalingConfig;
+
+                    /**
+                     * Verifies a BasicYarnAutoscalingConfig message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a BasicYarnAutoscalingConfig message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns BasicYarnAutoscalingConfig
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.BasicYarnAutoscalingConfig;
+
+                    /**
+                     * Creates a plain object from a BasicYarnAutoscalingConfig message. Also converts values to other types if specified.
+                     * @param message BasicYarnAutoscalingConfig
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.BasicYarnAutoscalingConfig, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this BasicYarnAutoscalingConfig to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an InstanceGroupAutoscalingPolicyConfig. */
+                interface IInstanceGroupAutoscalingPolicyConfig {
+
+                    /** InstanceGroupAutoscalingPolicyConfig minInstances */
+                    minInstances?: (number|null);
+
+                    /** InstanceGroupAutoscalingPolicyConfig maxInstances */
+                    maxInstances?: (number|null);
+
+                    /** InstanceGroupAutoscalingPolicyConfig weight */
+                    weight?: (number|null);
+                }
+
+                /** Represents an InstanceGroupAutoscalingPolicyConfig. */
+                class InstanceGroupAutoscalingPolicyConfig implements IInstanceGroupAutoscalingPolicyConfig {
+
+                    /**
+                     * Constructs a new InstanceGroupAutoscalingPolicyConfig.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig);
+
+                    /** InstanceGroupAutoscalingPolicyConfig minInstances. */
+                    public minInstances: number;
+
+                    /** InstanceGroupAutoscalingPolicyConfig maxInstances. */
+                    public maxInstances: number;
+
+                    /** InstanceGroupAutoscalingPolicyConfig weight. */
+                    public weight: number;
+
+                    /**
+                     * Creates a new InstanceGroupAutoscalingPolicyConfig instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns InstanceGroupAutoscalingPolicyConfig instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig): google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig;
+
+                    /**
+                     * Encodes the specified InstanceGroupAutoscalingPolicyConfig message. Does not implicitly {@link google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.verify|verify} messages.
+                     * @param message InstanceGroupAutoscalingPolicyConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified InstanceGroupAutoscalingPolicyConfig message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.verify|verify} messages.
+                     * @param message InstanceGroupAutoscalingPolicyConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IInstanceGroupAutoscalingPolicyConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an InstanceGroupAutoscalingPolicyConfig message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns InstanceGroupAutoscalingPolicyConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig;
+
+                    /**
+                     * Decodes an InstanceGroupAutoscalingPolicyConfig message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns InstanceGroupAutoscalingPolicyConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig;
+
+                    /**
+                     * Verifies an InstanceGroupAutoscalingPolicyConfig message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an InstanceGroupAutoscalingPolicyConfig message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns InstanceGroupAutoscalingPolicyConfig
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig;
+
+                    /**
+                     * Creates a plain object from an InstanceGroupAutoscalingPolicyConfig message. Also converts values to other types if specified.
+                     * @param message InstanceGroupAutoscalingPolicyConfig
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this InstanceGroupAutoscalingPolicyConfig to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a CreateAutoscalingPolicyRequest. */
+                interface ICreateAutoscalingPolicyRequest {
+
+                    /** CreateAutoscalingPolicyRequest parent */
+                    parent?: (string|null);
+
+                    /** CreateAutoscalingPolicyRequest policy */
+                    policy?: (google.cloud.dataproc.v1.IAutoscalingPolicy|null);
+                }
+
+                /** Represents a CreateAutoscalingPolicyRequest. */
+                class CreateAutoscalingPolicyRequest implements ICreateAutoscalingPolicyRequest {
+
+                    /**
+                     * Constructs a new CreateAutoscalingPolicyRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest);
+
+                    /** CreateAutoscalingPolicyRequest parent. */
+                    public parent: string;
+
+                    /** CreateAutoscalingPolicyRequest policy. */
+                    public policy?: (google.cloud.dataproc.v1.IAutoscalingPolicy|null);
+
+                    /**
+                     * Creates a new CreateAutoscalingPolicyRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns CreateAutoscalingPolicyRequest instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest): google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest;
+
+                    /**
+                     * Encodes the specified CreateAutoscalingPolicyRequest message. Does not implicitly {@link google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message CreateAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified CreateAutoscalingPolicyRequest message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message CreateAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a CreateAutoscalingPolicyRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns CreateAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest;
+
+                    /**
+                     * Decodes a CreateAutoscalingPolicyRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns CreateAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest;
+
+                    /**
+                     * Verifies a CreateAutoscalingPolicyRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a CreateAutoscalingPolicyRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns CreateAutoscalingPolicyRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest;
+
+                    /**
+                     * Creates a plain object from a CreateAutoscalingPolicyRequest message. Also converts values to other types if specified.
+                     * @param message CreateAutoscalingPolicyRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this CreateAutoscalingPolicyRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a GetAutoscalingPolicyRequest. */
+                interface IGetAutoscalingPolicyRequest {
+
+                    /** GetAutoscalingPolicyRequest name */
+                    name?: (string|null);
+                }
+
+                /** Represents a GetAutoscalingPolicyRequest. */
+                class GetAutoscalingPolicyRequest implements IGetAutoscalingPolicyRequest {
+
+                    /**
+                     * Constructs a new GetAutoscalingPolicyRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest);
+
+                    /** GetAutoscalingPolicyRequest name. */
+                    public name: string;
+
+                    /**
+                     * Creates a new GetAutoscalingPolicyRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GetAutoscalingPolicyRequest instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest): google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
+
+                    /**
+                     * Encodes the specified GetAutoscalingPolicyRequest message. Does not implicitly {@link google.cloud.dataproc.v1.GetAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message GetAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GetAutoscalingPolicyRequest message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.GetAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message GetAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GetAutoscalingPolicyRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GetAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
+
+                    /**
+                     * Decodes a GetAutoscalingPolicyRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GetAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
+
+                    /**
+                     * Verifies a GetAutoscalingPolicyRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GetAutoscalingPolicyRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GetAutoscalingPolicyRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
+
+                    /**
+                     * Creates a plain object from a GetAutoscalingPolicyRequest message. Also converts values to other types if specified.
+                     * @param message GetAutoscalingPolicyRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.GetAutoscalingPolicyRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GetAutoscalingPolicyRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an UpdateAutoscalingPolicyRequest. */
+                interface IUpdateAutoscalingPolicyRequest {
+
+                    /** UpdateAutoscalingPolicyRequest policy */
+                    policy?: (google.cloud.dataproc.v1.IAutoscalingPolicy|null);
+                }
+
+                /** Represents an UpdateAutoscalingPolicyRequest. */
+                class UpdateAutoscalingPolicyRequest implements IUpdateAutoscalingPolicyRequest {
+
+                    /**
+                     * Constructs a new UpdateAutoscalingPolicyRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest);
+
+                    /** UpdateAutoscalingPolicyRequest policy. */
+                    public policy?: (google.cloud.dataproc.v1.IAutoscalingPolicy|null);
+
+                    /**
+                     * Creates a new UpdateAutoscalingPolicyRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns UpdateAutoscalingPolicyRequest instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest): google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
+
+                    /**
+                     * Encodes the specified UpdateAutoscalingPolicyRequest message. Does not implicitly {@link google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message UpdateAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified UpdateAutoscalingPolicyRequest message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message UpdateAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an UpdateAutoscalingPolicyRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns UpdateAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
+
+                    /**
+                     * Decodes an UpdateAutoscalingPolicyRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns UpdateAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
+
+                    /**
+                     * Verifies an UpdateAutoscalingPolicyRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an UpdateAutoscalingPolicyRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns UpdateAutoscalingPolicyRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
+
+                    /**
+                     * Creates a plain object from an UpdateAutoscalingPolicyRequest message. Also converts values to other types if specified.
+                     * @param message UpdateAutoscalingPolicyRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this UpdateAutoscalingPolicyRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a DeleteAutoscalingPolicyRequest. */
+                interface IDeleteAutoscalingPolicyRequest {
+
+                    /** DeleteAutoscalingPolicyRequest name */
+                    name?: (string|null);
+                }
+
+                /** Represents a DeleteAutoscalingPolicyRequest. */
+                class DeleteAutoscalingPolicyRequest implements IDeleteAutoscalingPolicyRequest {
+
+                    /**
+                     * Constructs a new DeleteAutoscalingPolicyRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest);
+
+                    /** DeleteAutoscalingPolicyRequest name. */
+                    public name: string;
+
+                    /**
+                     * Creates a new DeleteAutoscalingPolicyRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns DeleteAutoscalingPolicyRequest instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest): google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest;
+
+                    /**
+                     * Encodes the specified DeleteAutoscalingPolicyRequest message. Does not implicitly {@link google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message DeleteAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified DeleteAutoscalingPolicyRequest message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest.verify|verify} messages.
+                     * @param message DeleteAutoscalingPolicyRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a DeleteAutoscalingPolicyRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns DeleteAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest;
+
+                    /**
+                     * Decodes a DeleteAutoscalingPolicyRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns DeleteAutoscalingPolicyRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest;
+
+                    /**
+                     * Verifies a DeleteAutoscalingPolicyRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a DeleteAutoscalingPolicyRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns DeleteAutoscalingPolicyRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest;
+
+                    /**
+                     * Creates a plain object from a DeleteAutoscalingPolicyRequest message. Also converts values to other types if specified.
+                     * @param message DeleteAutoscalingPolicyRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this DeleteAutoscalingPolicyRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a ListAutoscalingPoliciesRequest. */
+                interface IListAutoscalingPoliciesRequest {
+
+                    /** ListAutoscalingPoliciesRequest parent */
+                    parent?: (string|null);
+
+                    /** ListAutoscalingPoliciesRequest pageSize */
+                    pageSize?: (number|null);
+
+                    /** ListAutoscalingPoliciesRequest pageToken */
+                    pageToken?: (string|null);
+                }
+
+                /** Represents a ListAutoscalingPoliciesRequest. */
+                class ListAutoscalingPoliciesRequest implements IListAutoscalingPoliciesRequest {
+
+                    /**
+                     * Constructs a new ListAutoscalingPoliciesRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest);
+
+                    /** ListAutoscalingPoliciesRequest parent. */
+                    public parent: string;
+
+                    /** ListAutoscalingPoliciesRequest pageSize. */
+                    public pageSize: number;
+
+                    /** ListAutoscalingPoliciesRequest pageToken. */
+                    public pageToken: string;
+
+                    /**
+                     * Creates a new ListAutoscalingPoliciesRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ListAutoscalingPoliciesRequest instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest): google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
+
+                    /**
+                     * Encodes the specified ListAutoscalingPoliciesRequest message. Does not implicitly {@link google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest.verify|verify} messages.
+                     * @param message ListAutoscalingPoliciesRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ListAutoscalingPoliciesRequest message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest.verify|verify} messages.
+                     * @param message ListAutoscalingPoliciesRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ListAutoscalingPoliciesRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ListAutoscalingPoliciesRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
+
+                    /**
+                     * Decodes a ListAutoscalingPoliciesRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ListAutoscalingPoliciesRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
+
+                    /**
+                     * Verifies a ListAutoscalingPoliciesRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ListAutoscalingPoliciesRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ListAutoscalingPoliciesRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
+
+                    /**
+                     * Creates a plain object from a ListAutoscalingPoliciesRequest message. Also converts values to other types if specified.
+                     * @param message ListAutoscalingPoliciesRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ListAutoscalingPoliciesRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a ListAutoscalingPoliciesResponse. */
+                interface IListAutoscalingPoliciesResponse {
+
+                    /** ListAutoscalingPoliciesResponse policies */
+                    policies?: (google.cloud.dataproc.v1.IAutoscalingPolicy[]|null);
+
+                    /** ListAutoscalingPoliciesResponse nextPageToken */
+                    nextPageToken?: (string|null);
+                }
+
+                /** Represents a ListAutoscalingPoliciesResponse. */
+                class ListAutoscalingPoliciesResponse implements IListAutoscalingPoliciesResponse {
+
+                    /**
+                     * Constructs a new ListAutoscalingPoliciesResponse.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.cloud.dataproc.v1.IListAutoscalingPoliciesResponse);
+
+                    /** ListAutoscalingPoliciesResponse policies. */
+                    public policies: google.cloud.dataproc.v1.IAutoscalingPolicy[];
+
+                    /** ListAutoscalingPoliciesResponse nextPageToken. */
+                    public nextPageToken: string;
+
+                    /**
+                     * Creates a new ListAutoscalingPoliciesResponse instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ListAutoscalingPoliciesResponse instance
+                     */
+                    public static create(properties?: google.cloud.dataproc.v1.IListAutoscalingPoliciesResponse): google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
+
+                    /**
+                     * Encodes the specified ListAutoscalingPoliciesResponse message. Does not implicitly {@link google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse.verify|verify} messages.
+                     * @param message ListAutoscalingPoliciesResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.cloud.dataproc.v1.IListAutoscalingPoliciesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ListAutoscalingPoliciesResponse message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse.verify|verify} messages.
+                     * @param message ListAutoscalingPoliciesResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.cloud.dataproc.v1.IListAutoscalingPoliciesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ListAutoscalingPoliciesResponse message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ListAutoscalingPoliciesResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
+
+                    /**
+                     * Decodes a ListAutoscalingPoliciesResponse message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ListAutoscalingPoliciesResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
+
+                    /**
+                     * Verifies a ListAutoscalingPoliciesResponse message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ListAutoscalingPoliciesResponse message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ListAutoscalingPoliciesResponse
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
+
+                    /**
+                     * Creates a plain object from a ListAutoscalingPoliciesResponse message. Also converts values to other types if specified.
+                     * @param message ListAutoscalingPoliciesResponse
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ListAutoscalingPoliciesResponse to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
 
                 /** Represents a ClusterController */
                 class ClusterController extends $protobuf.rpc.Service {
@@ -1281,7 +2418,7 @@ export namespace google {
                 interface IClusterStatus {
 
                     /** ClusterStatus state */
-                    state?: (google.cloud.dataproc.v1.ClusterStatus.State|null);
+                    state?: (google.cloud.dataproc.v1.ClusterStatus.State|keyof typeof google.cloud.dataproc.v1.ClusterStatus.State|null);
 
                     /** ClusterStatus detail */
                     detail?: (string|null);
@@ -1290,7 +2427,7 @@ export namespace google {
                     stateStartTime?: (google.protobuf.ITimestamp|null);
 
                     /** ClusterStatus substate */
-                    substate?: (google.cloud.dataproc.v1.ClusterStatus.Substate|null);
+                    substate?: (google.cloud.dataproc.v1.ClusterStatus.Substate|keyof typeof google.cloud.dataproc.v1.ClusterStatus.Substate|null);
                 }
 
                 /** Represents a ClusterStatus. */
@@ -1303,7 +2440,7 @@ export namespace google {
                     constructor(properties?: google.cloud.dataproc.v1.IClusterStatus);
 
                     /** ClusterStatus state. */
-                    public state: google.cloud.dataproc.v1.ClusterStatus.State;
+                    public state: (google.cloud.dataproc.v1.ClusterStatus.State|keyof typeof google.cloud.dataproc.v1.ClusterStatus.State);
 
                     /** ClusterStatus detail. */
                     public detail: string;
@@ -1312,7 +2449,7 @@ export namespace google {
                     public stateStartTime?: (google.protobuf.ITimestamp|null);
 
                     /** ClusterStatus substate. */
-                    public substate: google.cloud.dataproc.v1.ClusterStatus.Substate;
+                    public substate: (google.cloud.dataproc.v1.ClusterStatus.Substate|keyof typeof google.cloud.dataproc.v1.ClusterStatus.Substate);
 
                     /**
                      * Creates a new ClusterStatus instance using the specified properties.
@@ -1775,10 +2912,10 @@ export namespace google {
                 interface IClusterMetrics {
 
                     /** ClusterMetrics hdfsMetrics */
-                    hdfsMetrics?: ({ [k: string]: (number|Long) }|null);
+                    hdfsMetrics?: ({ [k: string]: (number|Long|string) }|null);
 
                     /** ClusterMetrics yarnMetrics */
-                    yarnMetrics?: ({ [k: string]: (number|Long) }|null);
+                    yarnMetrics?: ({ [k: string]: (number|Long|string) }|null);
                 }
 
                 /** Represents a ClusterMetrics. */
@@ -1791,10 +2928,10 @@ export namespace google {
                     constructor(properties?: google.cloud.dataproc.v1.IClusterMetrics);
 
                     /** ClusterMetrics hdfsMetrics. */
-                    public hdfsMetrics: { [k: string]: (number|Long) };
+                    public hdfsMetrics: { [k: string]: (number|Long|string) };
 
                     /** ClusterMetrics yarnMetrics. */
-                    public yarnMetrics: { [k: string]: (number|Long) };
+                    public yarnMetrics: { [k: string]: (number|Long|string) };
 
                     /**
                      * Creates a new ClusterMetrics instance using the specified properties.
@@ -2723,7 +3860,7 @@ export namespace google {
                 interface IClusterOperationStatus {
 
                     /** ClusterOperationStatus state */
-                    state?: (google.cloud.dataproc.v1.ClusterOperationStatus.State|null);
+                    state?: (google.cloud.dataproc.v1.ClusterOperationStatus.State|keyof typeof google.cloud.dataproc.v1.ClusterOperationStatus.State|null);
 
                     /** ClusterOperationStatus innerState */
                     innerState?: (string|null);
@@ -2745,7 +3882,7 @@ export namespace google {
                     constructor(properties?: google.cloud.dataproc.v1.IClusterOperationStatus);
 
                     /** ClusterOperationStatus state. */
-                    public state: google.cloud.dataproc.v1.ClusterOperationStatus.State;
+                    public state: (google.cloud.dataproc.v1.ClusterOperationStatus.State|keyof typeof google.cloud.dataproc.v1.ClusterOperationStatus.State);
 
                     /** ClusterOperationStatus innerState. */
                     public innerState: string;
@@ -4202,7 +5339,7 @@ export namespace google {
                 interface IJobStatus {
 
                     /** JobStatus state */
-                    state?: (google.cloud.dataproc.v1.JobStatus.State|null);
+                    state?: (google.cloud.dataproc.v1.JobStatus.State|keyof typeof google.cloud.dataproc.v1.JobStatus.State|null);
 
                     /** JobStatus details */
                     details?: (string|null);
@@ -4211,7 +5348,7 @@ export namespace google {
                     stateStartTime?: (google.protobuf.ITimestamp|null);
 
                     /** JobStatus substate */
-                    substate?: (google.cloud.dataproc.v1.JobStatus.Substate|null);
+                    substate?: (google.cloud.dataproc.v1.JobStatus.Substate|keyof typeof google.cloud.dataproc.v1.JobStatus.Substate|null);
                 }
 
                 /** Represents a JobStatus. */
@@ -4224,7 +5361,7 @@ export namespace google {
                     constructor(properties?: google.cloud.dataproc.v1.IJobStatus);
 
                     /** JobStatus state. */
-                    public state: google.cloud.dataproc.v1.JobStatus.State;
+                    public state: (google.cloud.dataproc.v1.JobStatus.State|keyof typeof google.cloud.dataproc.v1.JobStatus.State);
 
                     /** JobStatus details. */
                     public details: string;
@@ -4233,7 +5370,7 @@ export namespace google {
                     public stateStartTime?: (google.protobuf.ITimestamp|null);
 
                     /** JobStatus substate. */
-                    public substate: google.cloud.dataproc.v1.JobStatus.Substate;
+                    public substate: (google.cloud.dataproc.v1.JobStatus.Substate|keyof typeof google.cloud.dataproc.v1.JobStatus.Substate);
 
                     /**
                      * Creates a new JobStatus instance using the specified properties.
@@ -4434,7 +5571,7 @@ export namespace google {
                     name?: (string|null);
 
                     /** YarnApplication state */
-                    state?: (google.cloud.dataproc.v1.YarnApplication.State|null);
+                    state?: (google.cloud.dataproc.v1.YarnApplication.State|keyof typeof google.cloud.dataproc.v1.YarnApplication.State|null);
 
                     /** YarnApplication progress */
                     progress?: (number|null);
@@ -4456,7 +5593,7 @@ export namespace google {
                     public name: string;
 
                     /** YarnApplication state. */
-                    public state: google.cloud.dataproc.v1.YarnApplication.State;
+                    public state: (google.cloud.dataproc.v1.YarnApplication.State|keyof typeof google.cloud.dataproc.v1.YarnApplication.State);
 
                     /** YarnApplication progress. */
                     public progress: number;
@@ -5053,7 +6190,7 @@ export namespace google {
                     clusterName?: (string|null);
 
                     /** ListJobsRequest jobStateMatcher */
-                    jobStateMatcher?: (google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher|null);
+                    jobStateMatcher?: (google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher|keyof typeof google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher|null);
 
                     /** ListJobsRequest filter */
                     filter?: (string|null);
@@ -5084,7 +6221,7 @@ export namespace google {
                     public clusterName: string;
 
                     /** ListJobsRequest jobStateMatcher. */
-                    public jobStateMatcher: google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher;
+                    public jobStateMatcher: (google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher|keyof typeof google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher);
 
                     /** ListJobsRequest filter. */
                     public filter: string;
@@ -6743,7 +7880,7 @@ export namespace google {
                     deleteCluster?: (google.cloud.dataproc.v1.IClusterOperation|null);
 
                     /** WorkflowMetadata state */
-                    state?: (google.cloud.dataproc.v1.WorkflowMetadata.State|null);
+                    state?: (google.cloud.dataproc.v1.WorkflowMetadata.State|keyof typeof google.cloud.dataproc.v1.WorkflowMetadata.State|null);
 
                     /** WorkflowMetadata clusterName */
                     clusterName?: (string|null);
@@ -6786,7 +7923,7 @@ export namespace google {
                     public deleteCluster?: (google.cloud.dataproc.v1.IClusterOperation|null);
 
                     /** WorkflowMetadata state. */
-                    public state: google.cloud.dataproc.v1.WorkflowMetadata.State;
+                    public state: (google.cloud.dataproc.v1.WorkflowMetadata.State|keyof typeof google.cloud.dataproc.v1.WorkflowMetadata.State);
 
                     /** WorkflowMetadata clusterName. */
                     public clusterName: string;
@@ -7090,7 +8227,7 @@ export namespace google {
                     jobId?: (string|null);
 
                     /** WorkflowNode state */
-                    state?: (google.cloud.dataproc.v1.WorkflowNode.NodeState|null);
+                    state?: (google.cloud.dataproc.v1.WorkflowNode.NodeState|keyof typeof google.cloud.dataproc.v1.WorkflowNode.NodeState|null);
 
                     /** WorkflowNode error */
                     error?: (string|null);
@@ -7115,7 +8252,7 @@ export namespace google {
                     public jobId: string;
 
                     /** WorkflowNode state. */
-                    public state: google.cloud.dataproc.v1.WorkflowNode.NodeState;
+                    public state: (google.cloud.dataproc.v1.WorkflowNode.NodeState|keyof typeof google.cloud.dataproc.v1.WorkflowNode.NodeState);
 
                     /** WorkflowNode error. */
                     public error: string;
@@ -8358,7 +9495,13 @@ export namespace google {
             nameField?: (string|null);
 
             /** ResourceDescriptor history */
-            history?: (google.api.ResourceDescriptor.History|null);
+            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
+
+            /** ResourceDescriptor plural */
+            plural?: (string|null);
+
+            /** ResourceDescriptor singular */
+            singular?: (string|null);
         }
 
         /** Represents a ResourceDescriptor. */
@@ -8380,7 +9523,13 @@ export namespace google {
             public nameField: string;
 
             /** ResourceDescriptor history. */
-            public history: google.api.ResourceDescriptor.History;
+            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
+
+            /** ResourceDescriptor plural. */
+            public plural: string;
+
+            /** ResourceDescriptor singular. */
+            public singular: string;
 
             /**
              * Creates a new ResourceDescriptor instance using the specified properties.
@@ -9254,10 +10403,10 @@ export namespace google {
             number?: (number|null);
 
             /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|null);
+            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
 
             /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|null);
+            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
 
             /** FieldDescriptorProto typeName */
             typeName?: (string|null);
@@ -9294,10 +10443,10 @@ export namespace google {
             public number: number;
 
             /** FieldDescriptorProto label. */
-            public label: google.protobuf.FieldDescriptorProto.Label;
+            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
 
             /** FieldDescriptorProto type. */
-            public type: google.protobuf.FieldDescriptorProto.Type;
+            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
 
             /** FieldDescriptorProto typeName. */
             public typeName: string;
@@ -10072,7 +11221,7 @@ export namespace google {
             javaStringCheckUtf8?: (boolean|null);
 
             /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|null);
+            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
 
             /** FileOptions goPackage */
             goPackage?: (string|null);
@@ -10118,6 +11267,9 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FileOptions .google.api.resourceDefinition */
+            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -10145,7 +11297,7 @@ export namespace google {
             public javaStringCheckUtf8: boolean;
 
             /** FileOptions optimizeFor. */
-            public optimizeFor: google.protobuf.FileOptions.OptimizeMode;
+            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
 
             /** FileOptions goPackage. */
             public goPackage: string;
@@ -10394,13 +11546,13 @@ export namespace google {
         interface IFieldOptions {
 
             /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|null);
+            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
 
             /** FieldOptions packed */
             packed?: (boolean|null);
 
             /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|null);
+            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
 
             /** FieldOptions lazy */
             lazy?: (boolean|null);
@@ -10431,13 +11583,13 @@ export namespace google {
             constructor(properties?: google.protobuf.IFieldOptions);
 
             /** FieldOptions ctype. */
-            public ctype: google.protobuf.FieldOptions.CType;
+            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
 
             /** FieldOptions packed. */
             public packed: boolean;
 
             /** FieldOptions jstype. */
-            public jstype: google.protobuf.FieldOptions.JSType;
+            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
 
             /** FieldOptions lazy. */
             public lazy: boolean;
@@ -10936,7 +12088,7 @@ export namespace google {
             deprecated?: (boolean|null);
 
             /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|null);
+            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
 
             /** MethodOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
@@ -10964,7 +12116,7 @@ export namespace google {
             public deprecated: boolean;
 
             /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: google.protobuf.MethodOptions.IdempotencyLevel;
+            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
 
             /** MethodOptions uninterpretedOption. */
             public uninterpretedOption: google.protobuf.IUninterpretedOption[];
@@ -11060,16 +12212,16 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|null);
+            stringValue?: (Uint8Array|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -11091,16 +12243,16 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: (number|Long|string);
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: (number|Long|string);
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: Uint8Array;
+            public stringValue: (Uint8Array|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -11683,203 +12835,11 @@ export namespace google {
             }
         }
 
-        /** Properties of a Timestamp. */
-        interface ITimestamp {
-
-            /** Timestamp seconds */
-            seconds?: (number|Long|null);
-
-            /** Timestamp nanos */
-            nanos?: (number|null);
-        }
-
-        /** Represents a Timestamp. */
-        class Timestamp implements ITimestamp {
-
-            /**
-             * Constructs a new Timestamp.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.protobuf.ITimestamp);
-
-            /** Timestamp seconds. */
-            public seconds: (number|Long);
-
-            /** Timestamp nanos. */
-            public nanos: number;
-
-            /**
-             * Creates a new Timestamp instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Timestamp instance
-             */
-            public static create(properties?: google.protobuf.ITimestamp): google.protobuf.Timestamp;
-
-            /**
-             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-             * @param message Timestamp message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-             * @param message Timestamp message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Timestamp message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Timestamp
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Timestamp;
-
-            /**
-             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns Timestamp
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Timestamp;
-
-            /**
-             * Verifies a Timestamp message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns Timestamp
-             */
-            public static fromObject(object: { [k: string]: any }): google.protobuf.Timestamp;
-
-            /**
-             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
-             * @param message Timestamp
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.protobuf.Timestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this Timestamp to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of an Any. */
-        interface IAny {
-
-            /** Any type_url */
-            type_url?: (string|null);
-
-            /** Any value */
-            value?: (Uint8Array|null);
-        }
-
-        /** Represents an Any. */
-        class Any implements IAny {
-
-            /**
-             * Constructs a new Any.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.protobuf.IAny);
-
-            /** Any type_url. */
-            public type_url: string;
-
-            /** Any value. */
-            public value: Uint8Array;
-
-            /**
-             * Creates a new Any instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Any instance
-             */
-            public static create(properties?: google.protobuf.IAny): google.protobuf.Any;
-
-            /**
-             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
-             * @param message Any message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified Any message, length delimited. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
-             * @param message Any message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an Any message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Any
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Any;
-
-            /**
-             * Decodes an Any message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns Any
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Any;
-
-            /**
-             * Verifies an Any message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates an Any message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns Any
-             */
-            public static fromObject(object: { [k: string]: any }): google.protobuf.Any;
-
-            /**
-             * Creates a plain object from an Any message. Also converts values to other types if specified.
-             * @param message Any
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.protobuf.Any, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this Any to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
         /** Properties of a Duration. */
         interface IDuration {
 
             /** Duration seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Duration nanos */
             nanos?: (number|null);
@@ -11895,7 +12855,7 @@ export namespace google {
             constructor(properties?: google.protobuf.IDuration);
 
             /** Duration seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Duration nanos. */
             public nanos: number;
@@ -12050,6 +13010,198 @@ export namespace google {
 
             /**
              * Converts this Empty to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a Timestamp. */
+        interface ITimestamp {
+
+            /** Timestamp seconds */
+            seconds?: (number|Long|string|null);
+
+            /** Timestamp nanos */
+            nanos?: (number|null);
+        }
+
+        /** Represents a Timestamp. */
+        class Timestamp implements ITimestamp {
+
+            /**
+             * Constructs a new Timestamp.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.ITimestamp);
+
+            /** Timestamp seconds. */
+            public seconds: (number|Long|string);
+
+            /** Timestamp nanos. */
+            public nanos: number;
+
+            /**
+             * Creates a new Timestamp instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Timestamp instance
+             */
+            public static create(properties?: google.protobuf.ITimestamp): google.protobuf.Timestamp;
+
+            /**
+             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Timestamp;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Timestamp;
+
+            /**
+             * Verifies a Timestamp message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Timestamp
+             */
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Timestamp;
+
+            /**
+             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+             * @param message Timestamp
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.protobuf.Timestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Timestamp to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an Any. */
+        interface IAny {
+
+            /** Any type_url */
+            type_url?: (string|null);
+
+            /** Any value */
+            value?: (Uint8Array|string|null);
+        }
+
+        /** Represents an Any. */
+        class Any implements IAny {
+
+            /**
+             * Constructs a new Any.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IAny);
+
+            /** Any type_url. */
+            public type_url: string;
+
+            /** Any value. */
+            public value: (Uint8Array|string);
+
+            /**
+             * Creates a new Any instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Any instance
+             */
+            public static create(properties?: google.protobuf.IAny): google.protobuf.Any;
+
+            /**
+             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @param message Any message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Any message, length delimited. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @param message Any message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Any message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Any;
+
+            /**
+             * Decodes an Any message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Any;
+
+            /**
+             * Verifies an Any message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an Any message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Any
+             */
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Any;
+
+            /**
+             * Creates a plain object from an Any message. Also converts values to other types if specified.
+             * @param message Any
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.protobuf.Any, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Any to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };

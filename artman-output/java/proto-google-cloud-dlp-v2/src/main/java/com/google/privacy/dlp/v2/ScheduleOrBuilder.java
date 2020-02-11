@@ -18,6 +18,7 @@ public interface ScheduleOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   * @return Whether the recurrencePeriodDuration field is set.
    */
   boolean hasRecurrencePeriodDuration();
   /**
@@ -31,6 +32,7 @@ public interface ScheduleOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   * @return The recurrencePeriodDuration.
    */
   com.google.protobuf.Duration getRecurrencePeriodDuration();
   /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.CreateFindingRequest</code>
  */
-final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
+class CreateFindingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Resource name of the new finding's parent. Its format should be
@@ -21,7 +21,7 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
@@ -29,14 +29,14 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $finding_id = '';
+    protected $finding_id = '';
     /**
      * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $finding = null;
+    protected $finding = null;
 
     /**
      * Constructor.

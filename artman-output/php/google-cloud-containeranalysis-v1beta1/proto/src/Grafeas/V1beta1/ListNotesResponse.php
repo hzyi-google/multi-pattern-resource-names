@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.ListNotesResponse</code>
  */
-final class ListNotesResponse extends \Google\Protobuf\Internal\Message
+class ListNotesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The notes requested.
@@ -28,7 +28,7 @@ final class ListNotesResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

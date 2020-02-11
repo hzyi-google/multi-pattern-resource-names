@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BuildSignature();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,7 +113,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Public key formats
+   * Public key formats.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.build.BuildSignature.KeyType}
@@ -176,6 +182,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -183,6 +191,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static KeyType forNumber(int value) {
       switch (value) {
         case 0: return KEY_TYPE_UNSPECIFIED;
@@ -248,8 +260,8 @@ private static final long serialVersionUID = 0L;
    * findings are valid and unchanged. If `key_type` is empty, this defaults
    * to PEM encoded public keys.
    * This field may be empty if `key_id` references an external key.
-   * For Cloud Container Builder based signatures, this is a PEM encoded public
-   * key. To verify the Cloud Container Builder signature, place the contents of
+   * For Cloud Build based signatures, this is a PEM encoded public
+   * key. To verify the Cloud Build signature, place the contents of
    * this field into a file (public.pem). The signature field is base64-decoded
    * into its binary representation in signature.bin, and the provenance bytes
    * from `BuildDetails` are base64-decoded into a binary representation in
@@ -258,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   * @return The publicKey.
    */
   public java.lang.String getPublicKey() {
     java.lang.Object ref = publicKey_;
@@ -277,8 +290,8 @@ private static final long serialVersionUID = 0L;
    * findings are valid and unchanged. If `key_type` is empty, this defaults
    * to PEM encoded public keys.
    * This field may be empty if `key_id` references an external key.
-   * For Cloud Container Builder based signatures, this is a PEM encoded public
-   * key. To verify the Cloud Container Builder signature, place the contents of
+   * For Cloud Build based signatures, this is a PEM encoded public
+   * key. To verify the Cloud Build signature, place the contents of
    * this field into a file (public.pem). The signature field is base64-decoded
    * into its binary representation in signature.bin, and the provenance bytes
    * from `BuildDetails` are base64-decoded into a binary representation in
@@ -287,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string public_key = 1;</code>
+   * @return The bytes for publicKey.
    */
   public com.google.protobuf.ByteString
       getPublicKeyBytes() {
@@ -306,11 +320,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString signature_;
   /**
    * <pre>
-   * Signature of the related `BuildProvenance`. In JSON, this is base-64
-   * encoded.
+   * Required. Signature of the related `BuildProvenance`. In JSON, this is
+   * base-64 encoded.
    * </pre>
    *
    * <code>bytes signature = 2;</code>
+   * @return The signature.
    */
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
@@ -320,13 +335,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object keyId_;
   /**
    * <pre>
-   * An ID for the key used to sign. This could be either an Id for the key
-   * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+   * An ID for the key used to sign. This could be either an ID for the key
+   * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
    * CN for a cert), or a reference to an external key (such as a reference to a
    * key in Cloud Key Management Service).
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   * @return The keyId.
    */
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
@@ -342,13 +358,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An ID for the key used to sign. This could be either an Id for the key
-   * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+   * An ID for the key used to sign. This could be either an ID for the key
+   * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
    * CN for a cert), or a reference to an external key (such as a reference to a
    * key in Cloud Key Management Service).
    * </pre>
    *
    * <code>string key_id = 3;</code>
+   * @return The bytes for keyId.
    */
   public com.google.protobuf.ByteString
       getKeyIdBytes() {
@@ -369,10 +386,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
-   * `key_id`
+   * `key_id`.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   * @return The enum numeric value on the wire for keyType.
    */
   public int getKeyTypeValue() {
     return keyType_;
@@ -380,10 +398,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
-   * `key_id`
+   * `key_id`.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+   * @return The keyType.
    */
   public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
     @SuppressWarnings("deprecation")
@@ -754,8 +773,8 @@ private static final long serialVersionUID = 0L;
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -764,6 +783,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     * @return The publicKey.
      */
     public java.lang.String getPublicKey() {
       java.lang.Object ref = publicKey_;
@@ -783,8 +803,8 @@ private static final long serialVersionUID = 0L;
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -793,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     * @return The bytes for publicKey.
      */
     public com.google.protobuf.ByteString
         getPublicKeyBytes() {
@@ -813,8 +834,8 @@ private static final long serialVersionUID = 0L;
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -823,6 +844,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     * @param value The publicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKey(
         java.lang.String value) {
@@ -840,8 +863,8 @@ private static final long serialVersionUID = 0L;
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -850,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPublicKey() {
       
@@ -863,8 +887,8 @@ private static final long serialVersionUID = 0L;
      * findings are valid and unchanged. If `key_type` is empty, this defaults
      * to PEM encoded public keys.
      * This field may be empty if `key_id` references an external key.
-     * For Cloud Container Builder based signatures, this is a PEM encoded public
-     * key. To verify the Cloud Container Builder signature, place the contents of
+     * For Cloud Build based signatures, this is a PEM encoded public
+     * key. To verify the Cloud Build signature, place the contents of
      * this field into a file (public.pem). The signature field is base64-decoded
      * into its binary representation in signature.bin, and the provenance bytes
      * from `BuildDetails` are base64-decoded into a binary representation in
@@ -873,6 +897,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string public_key = 1;</code>
+     * @param value The bytes for publicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyBytes(
         com.google.protobuf.ByteString value) {
@@ -889,22 +915,25 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
     /**
      * <pre>
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -917,11 +946,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Signature of the related `BuildProvenance`. In JSON, this is base-64
-     * encoded.
+     * Required. Signature of the related `BuildProvenance`. In JSON, this is
+     * base-64 encoded.
      * </pre>
      *
      * <code>bytes signature = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
       
@@ -933,13 +963,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object keyId_ = "";
     /**
      * <pre>
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     * @return The keyId.
      */
     public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
@@ -955,13 +986,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString
         getKeyIdBytes() {
@@ -978,13 +1010,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     * @param value The keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyId(
         java.lang.String value) {
@@ -998,13 +1032,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeyId() {
       
@@ -1014,13 +1049,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An ID for the key used to sign. This could be either an Id for the key
-     * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
+     * An ID for the key used to sign. This could be either an ID for the key
+     * stored in `public_key` (such as the ID or fingerprint for a PGP key, or the
      * CN for a cert), or a reference to an external key (such as a reference to a
      * key in Cloud Key Management Service).
      * </pre>
      *
      * <code>string key_id = 3;</code>
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1038,10 +1075,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     * @return The enum numeric value on the wire for keyType.
      */
     public int getKeyTypeValue() {
       return keyType_;
@@ -1049,10 +1087,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     * @param value The enum numeric value on the wire for keyType to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyTypeValue(int value) {
       keyType_ = value;
@@ -1062,10 +1102,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     * @return The keyType.
      */
     public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
       @SuppressWarnings("deprecation")
@@ -1075,10 +1116,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     * @param value The keyType to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyType(io.grafeas.v1beta1.build.BuildSignature.KeyType value) {
       if (value == null) {
@@ -1092,10 +1135,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
-     * `key_id`
+     * `key_id`.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeyType() {
       

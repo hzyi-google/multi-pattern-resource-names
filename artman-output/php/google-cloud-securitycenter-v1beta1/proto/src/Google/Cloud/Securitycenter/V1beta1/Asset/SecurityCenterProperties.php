@@ -14,16 +14,16 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties</code>
  */
-final class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
+class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The type of the GCP resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -32,21 +32,21 @@ final class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_type = 2;</code>
      */
-    private $resource_type = '';
+    protected $resource_type = '';
     /**
      * The full resource name of the immediate parent of the resource. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      *
      * Generated from protobuf field <code>string resource_parent = 3;</code>
      */
-    private $resource_parent = '';
+    protected $resource_parent = '';
     /**
      * The full resource name of the project the resource belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      *
      * Generated from protobuf field <code>string resource_project = 4;</code>
      */
-    private $resource_project = '';
+    protected $resource_project = '';
     /**
      * Owners of the Google Cloud resource.
      *
@@ -61,7 +61,7 @@ final class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The full resource name of the GCP resource this asset
+     *           Immutable. The full resource name of the GCP resource this asset
      *           represents. This field is immutable after create time. See:
      *           https://cloud.google.com/apis/design/resource_names#full_resource_name
      *     @type string $resource_type
@@ -85,11 +85,11 @@ final class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getResourceName()
@@ -98,11 +98,11 @@ final class SecurityCenterProperties extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

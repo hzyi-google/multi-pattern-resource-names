@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Action();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -168,14 +174,28 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     * @return Whether the outputConfig field is set.
      */
     boolean hasOutputConfig();
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     * @return The outputConfig.
      */
     com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig();
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      */
     com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder();
@@ -203,6 +223,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SaveFindings();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -215,7 +242,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -274,18 +300,32 @@ private static final long serialVersionUID = 0L;
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfig_ != null;
     }
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     * @return The outputConfig.
      */
     public com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig() {
       return outputConfig_ == null ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance() : outputConfig_;
     }
     /**
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
@@ -618,13 +658,23 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.privacy.dlp.v2.OutputStorageConfig, com.google.privacy.dlp.v2.OutputStorageConfig.Builder, com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder> outputConfigBuilder_;
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       * @return Whether the outputConfig field is set.
        */
       public boolean hasOutputConfig() {
         return outputConfigBuilder_ != null || outputConfig_ != null;
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       * @return The outputConfig.
        */
       public com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig() {
         if (outputConfigBuilder_ == null) {
@@ -634,6 +684,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public Builder setOutputConfig(com.google.privacy.dlp.v2.OutputStorageConfig value) {
@@ -650,6 +704,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public Builder setOutputConfig(
@@ -664,6 +722,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public Builder mergeOutputConfig(com.google.privacy.dlp.v2.OutputStorageConfig value) {
@@ -682,6 +744,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public Builder clearOutputConfig() {
@@ -696,6 +762,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public com.google.privacy.dlp.v2.OutputStorageConfig.Builder getOutputConfigBuilder() {
@@ -704,6 +774,10 @@ private static final long serialVersionUID = 0L;
         return getOutputConfigFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
@@ -715,6 +789,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -796,6 +874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
@@ -807,6 +886,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
@@ -836,6 +916,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PublishToPubSub();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -848,7 +935,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -908,6 +994,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -930,6 +1017,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -1265,6 +1353,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string topic = 1;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1287,6 +1376,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string topic = 1;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1310,6 +1400,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string topic = 1;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -1330,6 +1422,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string topic = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         
@@ -1346,6 +1439,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string topic = 1;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -1441,6 +1536,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private PublishSummaryToCscc() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PublishSummaryToCscc();
     }
 
     @java.lang.Override
@@ -1881,6 +1983,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PublishFindingsToCloudDataCatalog();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2310,6 +2419,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new JobNotificationEmails();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2733,6 +2849,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PublishToStackdriver();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3134,7 +3257,8 @@ private static final long serialVersionUID = 0L;
   private int actionCase_ = 0;
   private java.lang.Object action_;
   public enum ActionCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SAVE_FINDINGS(1),
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
@@ -3147,6 +3271,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -3184,6 +3310,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   * @return Whether the saveFindings field is set.
    */
   public boolean hasSaveFindings() {
     return actionCase_ == 1;
@@ -3194,6 +3321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   * @return The saveFindings.
    */
   public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
     if (actionCase_ == 1) {
@@ -3222,6 +3350,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   * @return Whether the pubSub field is set.
    */
   public boolean hasPubSub() {
     return actionCase_ == 2;
@@ -3232,6 +3361,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   * @return The pubSub.
    */
   public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
     if (actionCase_ == 2) {
@@ -3260,6 +3390,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   * @return Whether the publishSummaryToCscc field is set.
    */
   public boolean hasPublishSummaryToCscc() {
     return actionCase_ == 3;
@@ -3270,6 +3401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   * @return The publishSummaryToCscc.
    */
   public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
     if (actionCase_ == 3) {
@@ -3298,6 +3430,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+   * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   public boolean hasPublishFindingsToCloudDataCatalog() {
     return actionCase_ == 5;
@@ -3308,6 +3441,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+   * @return The publishFindingsToCloudDataCatalog.
    */
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog getPublishFindingsToCloudDataCatalog() {
     if (actionCase_ == 5) {
@@ -3332,22 +3466,24 @@ private static final long serialVersionUID = 0L;
   public static final int JOB_NOTIFICATION_EMAILS_FIELD_NUMBER = 8;
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   * @return Whether the jobNotificationEmails field is set.
    */
   public boolean hasJobNotificationEmails() {
     return actionCase_ == 8;
   }
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   * @return The jobNotificationEmails.
    */
   public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
     if (actionCase_ == 8) {
@@ -3357,7 +3493,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -3377,6 +3513,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   * @return Whether the publishToStackdriver field is set.
    */
   public boolean hasPublishToStackdriver() {
     return actionCase_ == 9;
@@ -3387,6 +3524,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   * @return The publishToStackdriver.
    */
   public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
     if (actionCase_ == 9) {
@@ -3894,6 +4032,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+     * @return Whether the saveFindings field is set.
      */
     public boolean hasSaveFindings() {
       return actionCase_ == 1;
@@ -3904,6 +4043,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+     * @return The saveFindings.
      */
     public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
       if (saveFindingsBuilder_ == null) {
@@ -4066,6 +4206,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+     * @return Whether the pubSub field is set.
      */
     public boolean hasPubSub() {
       return actionCase_ == 2;
@@ -4076,6 +4217,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+     * @return The pubSub.
      */
     public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
       if (pubSubBuilder_ == null) {
@@ -4238,6 +4380,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+     * @return Whether the publishSummaryToCscc field is set.
      */
     public boolean hasPublishSummaryToCscc() {
       return actionCase_ == 3;
@@ -4248,6 +4391,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+     * @return The publishSummaryToCscc.
      */
     public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
       if (publishSummaryToCsccBuilder_ == null) {
@@ -4410,6 +4554,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+     * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
     public boolean hasPublishFindingsToCloudDataCatalog() {
       return actionCase_ == 5;
@@ -4420,6 +4565,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+     * @return The publishFindingsToCloudDataCatalog.
      */
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog getPublishFindingsToCloudDataCatalog() {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
@@ -4578,22 +4724,24 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.Action.JobNotificationEmails, com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder, com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder> jobNotificationEmailsBuilder_;
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     * @return Whether the jobNotificationEmails field is set.
      */
     public boolean hasJobNotificationEmails() {
       return actionCase_ == 8;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     * @return The jobNotificationEmails.
      */
     public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
       if (jobNotificationEmailsBuilder_ == null) {
@@ -4610,7 +4758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4631,7 +4779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4650,7 +4798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4677,7 +4825,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4701,7 +4849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4712,7 +4860,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4730,7 +4878,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -4763,6 +4911,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     * @return Whether the publishToStackdriver field is set.
      */
     public boolean hasPublishToStackdriver() {
       return actionCase_ == 9;
@@ -4773,6 +4922,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     * @return The publishToStackdriver.
      */
     public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
       if (publishToStackdriverBuilder_ == null) {

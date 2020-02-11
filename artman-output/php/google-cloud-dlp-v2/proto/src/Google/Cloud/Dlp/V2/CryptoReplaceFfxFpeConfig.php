@@ -24,14 +24,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig</code>
  */
-final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
+class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $crypto_key = null;
+    protected $crypto_key = null;
     /**
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -50,7 +50,7 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
-    private $context = null;
+    protected $context = null;
     /**
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -77,7 +77,7 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
      */
-    private $surrogate_info_type = null;
+    protected $surrogate_info_type = null;
     protected $alphabet;
 
     /**
@@ -87,7 +87,7 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dlp\V2\CryptoKey $crypto_key
-     *           The key used by the encryption algorithm. [required]
+     *           Required. The key used by the encryption algorithm.
      *     @type \Google\Cloud\Dlp\V2\FieldId $context
      *           The 'tweak', a context may be used for higher security since the same
      *           identifier in two different contexts won't be given the same surrogate. If
@@ -104,6 +104,7 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
      *           - a 64 bit integer is encoded followed by a single byte of value 1
      *           - a string is encoded in UTF-8 format followed by a single byte of value 2
      *     @type int $common_alphabet
+     *           Common alphabets.
      *     @type string $custom_alphabet
      *           This is supported by mapping these to the alphanumeric characters
      *           that the FFX mode natively supports. This happens before/after
@@ -145,9 +146,9 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Dlp\V2\CryptoKey
      */
     public function getCryptoKey()
@@ -156,9 +157,9 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dlp\V2\CryptoKey $var
      * @return $this
      */
@@ -223,6 +224,8 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Common alphabets.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
      * @return int
      */
@@ -232,6 +235,8 @@ final class CryptoReplaceFfxFpeConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Common alphabets.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
      * @param int $var
      * @return $this

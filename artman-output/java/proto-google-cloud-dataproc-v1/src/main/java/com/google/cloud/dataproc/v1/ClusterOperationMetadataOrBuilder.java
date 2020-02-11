@@ -13,6 +13,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterName.
    */
   java.lang.String getClusterName();
   /**
@@ -21,6 +22,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
@@ -31,6 +33,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
   /**
@@ -39,6 +42,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString
       getClusterUuidBytes();
@@ -49,6 +53,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -57,6 +62,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus();
   /**
@@ -118,6 +124,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The operationType.
    */
   java.lang.String getOperationType();
   /**
@@ -126,6 +133,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for operationType.
    */
   com.google.protobuf.ByteString
       getOperationTypeBytes();
@@ -136,6 +144,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -144,6 +153,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -208,6 +218,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the warnings.
    */
   java.util.List<java.lang.String>
       getWarningsList();
@@ -217,6 +228,7 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of warnings.
    */
   int getWarningsCount();
   /**
@@ -225,6 +237,8 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
   /**
@@ -233,6 +247,8 @@ public interface ClusterOperationMetadataOrBuilder extends
    * </pre>
    *
    * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the warnings at the given index.
    */
   com.google.protobuf.ByteString
       getWarningsBytes(int index);

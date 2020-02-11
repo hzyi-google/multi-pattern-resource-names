@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ProfileEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -58,18 +65,18 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               profiles_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             profiles_.add(s);
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               jobs_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000002;
             }
             jobs_.add(s);
             break;
@@ -89,10 +96,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         profiles_ = profiles_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -131,11 +138,9 @@ private static final long serialVersionUID = 0L;
     PROFILE_EVENT_TYPE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Send this event when a
-     * [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles]
-     * was sent as a part of a result set for a CTS API call and was rendered in
-     * the end user's UI (that is, the
-     * [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
+     * Send this event when a [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles] was sent as a part of
+     * a result set for a CTS API call and was rendered in the end user's UI
+     * (that is, the [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
      * </pre>
      *
      * <code>IMPRESSION = 1;</code>
@@ -151,9 +156,8 @@ private static final long serialVersionUID = 0L;
      * or not (a recruiter using the system to view profile details without
      * making a request).
      * For a VIEW events associated with API calls, the
-     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
-     * should be populated.  If the VIEW is not associated with an API call,
-     * [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should be populated.  If the VIEW is not
+     * associated with an API call, [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
      * not be populated.
      * This event requires a valid recruiter and one valid ID in profiles.
      * </pre>
@@ -182,11 +186,9 @@ private static final long serialVersionUID = 0L;
     public static final int PROFILE_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Send this event when a
-     * [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles]
-     * was sent as a part of a result set for a CTS API call and was rendered in
-     * the end user's UI (that is, the
-     * [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
+     * Send this event when a [ProfileEvent.profiles][google.cloud.talent.v4beta1.ProfileEvent.profiles] was sent as a part of
+     * a result set for a CTS API call and was rendered in the end user's UI
+     * (that is, the [ProfileEvent.recruiter][google.cloud.talent.v4beta1.ProfileEvent.recruiter]).
      * </pre>
      *
      * <code>IMPRESSION = 1;</code>
@@ -202,9 +204,8 @@ private static final long serialVersionUID = 0L;
      * or not (a recruiter using the system to view profile details without
      * making a request).
      * For a VIEW events associated with API calls, the
-     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id]
-     * should be populated.  If the VIEW is not associated with an API call,
-     * [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
+     * [ClientEvent.request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should be populated.  If the VIEW is not
+     * associated with an API call, [request_id][google.cloud.talent.v4beta1.ClientEvent.request_id] should
      * not be populated.
      * This event requires a valid recruiter and one valid ID in profiles.
      * </pre>
@@ -231,6 +232,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -238,6 +241,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ProfileEventType forNumber(int value) {
       switch (value) {
         case 0: return PROFILE_EVENT_TYPE_UNSPECIFIED;
@@ -296,7 +303,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -305,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -315,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType getType() {
     @SuppressWarnings("deprecation")
@@ -326,14 +334,14 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList profiles_;
   /**
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the profiles.
    */
   public com.google.protobuf.ProtocolStringList
       getProfilesList() {
@@ -341,42 +349,44 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of profiles.
    */
   public int getProfilesCount() {
     return profiles_.size();
   }
   /**
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The profiles at the given index.
    */
   public java.lang.String getProfiles(int index) {
     return profiles_.get(index);
   }
   /**
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the profiles at the given index.
    */
   public com.google.protobuf.ByteString
       getProfilesBytes(int index) {
@@ -387,14 +397,15 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList jobs_;
   /**
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   * @return A list containing the jobs.
    */
   public com.google.protobuf.ProtocolStringList
       getJobsList() {
@@ -402,42 +413,47 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   * @return The count of jobs.
    */
   public int getJobsCount() {
     return jobs_.size();
   }
   /**
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
    */
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
   }
   /**
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
    */
   public com.google.protobuf.ByteString
       getJobsBytes(int index) {
@@ -678,9 +694,9 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
 
       profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -708,19 +724,17 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.ProfileEvent buildPartial() {
       com.google.cloud.talent.v4beta1.ProfileEvent result = new com.google.cloud.talent.v4beta1.ProfileEvent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         profiles_ = profiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.profiles_ = profiles_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.jobs_ = jobs_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -775,7 +789,7 @@ private static final long serialVersionUID = 0L;
       if (!other.profiles_.isEmpty()) {
         if (profiles_.isEmpty()) {
           profiles_ = other.profiles_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureProfilesIsMutable();
           profiles_.addAll(other.profiles_);
@@ -785,7 +799,7 @@ private static final long serialVersionUID = 0L;
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -829,6 +843,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -839,6 +854,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -851,6 +868,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType getType() {
       @SuppressWarnings("deprecation")
@@ -863,6 +881,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType value) {
       if (value == null) {
@@ -879,6 +899,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -889,21 +910,21 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         profiles_ = new com.google.protobuf.LazyStringArrayList(profiles_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the profiles.
      */
     public com.google.protobuf.ProtocolStringList
         getProfilesList() {
@@ -911,42 +932,44 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The count of profiles.
      */
     public int getProfilesCount() {
       return profiles_.size();
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the element to return.
+     * @return The profiles at the given index.
      */
     public java.lang.String getProfiles(int index) {
       return profiles_.get(index);
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the profiles at the given index.
      */
     public com.google.protobuf.ByteString
         getProfilesBytes(int index) {
@@ -954,14 +977,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index to set the value at.
+     * @param value The profiles to set.
+     * @return This builder for chaining.
      */
     public Builder setProfiles(
         int index, java.lang.String value) {
@@ -975,14 +1000,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The profiles to add.
+     * @return This builder for chaining.
      */
     public Builder addProfiles(
         java.lang.String value) {
@@ -996,14 +1022,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The profiles to add.
+     * @return This builder for chaining.
      */
     public Builder addAllProfiles(
         java.lang.Iterable<java.lang.String> values) {
@@ -1015,31 +1042,32 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProfiles() {
       profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>repeated string profiles = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes of the profiles to add.
+     * @return This builder for chaining.
      */
     public Builder addProfilesBytes(
         com.google.protobuf.ByteString value) {
@@ -1055,21 +1083,22 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @return A list containing the jobs.
      */
     public com.google.protobuf.ProtocolStringList
         getJobsList() {
@@ -1077,42 +1106,47 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @return The count of jobs.
      */
     public int getJobsCount() {
       return jobs_.size();
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param index The index of the element to return.
+     * @return The jobs at the given index.
      */
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jobs at the given index.
      */
     public com.google.protobuf.ByteString
         getJobsBytes(int index) {
@@ -1120,14 +1154,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The jobs to set.
+     * @return This builder for chaining.
      */
     public Builder setJobs(
         int index, java.lang.String value) {
@@ -1141,14 +1178,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param value The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobs(
         java.lang.String value) {
@@ -1162,14 +1201,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param values The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobs(
         java.lang.Iterable<java.lang.String> values) {
@@ -1181,31 +1222,34 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-     * this client event. Leave it empty if the event isn't associated with a job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+     * empty if the event isn't associated with a job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 6;</code>
+     * @param value The bytes of the jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobsBytes(
         com.google.protobuf.ByteString value) {

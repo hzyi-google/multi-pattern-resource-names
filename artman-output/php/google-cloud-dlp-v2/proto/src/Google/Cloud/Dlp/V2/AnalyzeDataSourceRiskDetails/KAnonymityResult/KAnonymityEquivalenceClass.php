@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass</code>
  */
-final class KAnonymityEquivalenceClass extends \Google\Protobuf\Internal\Message
+class KAnonymityEquivalenceClass extends \Google\Protobuf\Internal\Message
 {
     /**
      * Set of values defining the equivalence class. One value per
@@ -29,7 +29,7 @@ final class KAnonymityEquivalenceClass extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 equivalence_class_size = 2;</code>
      */
-    private $equivalence_class_size = 0;
+    protected $equivalence_class_size = 0;
 
     /**
      * Constructor.

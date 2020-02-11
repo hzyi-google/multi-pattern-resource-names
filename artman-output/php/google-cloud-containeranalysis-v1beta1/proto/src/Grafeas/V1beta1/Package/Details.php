@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.package.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Where the package was installed.
+     * Required. Where the package was installed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
      */
-    private $installation = null;
+    protected $installation = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Package\Installation $installation
-     *           Where the package was installed.
+     *           Required. Where the package was installed.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Where the package was installed.
+     * Required. Where the package was installed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
      * @return \Grafeas\V1beta1\Package\Installation
@@ -49,7 +49,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Where the package was installed.
+     * Required. Where the package was installed.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
      * @param \Grafeas\V1beta1\Package\Installation $var

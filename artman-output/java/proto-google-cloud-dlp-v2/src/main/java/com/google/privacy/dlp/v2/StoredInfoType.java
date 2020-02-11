@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StoredInfoType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -69,9 +76,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               pendingVersions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             pendingVersions_.add(
                 input.readMessage(com.google.privacy.dlp.v2.StoredInfoTypeVersion.parser(), extensionRegistry));
@@ -92,7 +99,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
       }
       this.unknownFields = unknownFields.build();
@@ -112,7 +119,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.StoredInfoType.class, com.google.privacy.dlp.v2.StoredInfoType.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -121,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -140,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -163,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   * @return Whether the currentVersion field is set.
    */
   public boolean hasCurrentVersion() {
     return currentVersion_ != null;
@@ -173,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+   * @return The currentVersion.
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion() {
     return currentVersion_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance() : currentVersion_;
@@ -485,7 +495,7 @@ private static final long serialVersionUID = 0L;
       }
       if (pendingVersionsBuilder_ == null) {
         pendingVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         pendingVersionsBuilder_.clear();
       }
@@ -516,7 +526,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.StoredInfoType buildPartial() {
       com.google.privacy.dlp.v2.StoredInfoType result = new com.google.privacy.dlp.v2.StoredInfoType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (currentVersionBuilder_ == null) {
         result.currentVersion_ = currentVersion_;
@@ -524,15 +533,14 @@ private static final long serialVersionUID = 0L;
         result.currentVersion_ = currentVersionBuilder_.build();
       }
       if (pendingVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.pendingVersions_ = pendingVersions_;
       } else {
         result.pendingVersions_ = pendingVersionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -592,7 +600,7 @@ private static final long serialVersionUID = 0L;
         if (!other.pendingVersions_.isEmpty()) {
           if (pendingVersions_.isEmpty()) {
             pendingVersions_ = other.pendingVersions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePendingVersionsIsMutable();
             pendingVersions_.addAll(other.pendingVersions_);
@@ -605,7 +613,7 @@ private static final long serialVersionUID = 0L;
             pendingVersionsBuilder_.dispose();
             pendingVersionsBuilder_ = null;
             pendingVersions_ = other.pendingVersions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             pendingVersionsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPendingVersionsFieldBuilder() : null;
@@ -651,6 +659,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -670,6 +679,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -690,6 +700,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -707,6 +719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -720,6 +733,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -742,6 +757,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+     * @return Whether the currentVersion field is set.
      */
     public boolean hasCurrentVersion() {
       return currentVersionBuilder_ != null || currentVersion_ != null;
@@ -752,6 +768,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
+     * @return The currentVersion.
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion() {
       if (currentVersionBuilder_ == null) {
@@ -889,9 +906,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.StoredInfoTypeVersion> pendingVersions_ =
       java.util.Collections.emptyList();
     private void ensurePendingVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         pendingVersions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>(pendingVersions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1096,7 +1113,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPendingVersions() {
       if (pendingVersionsBuilder_ == null) {
         pendingVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         pendingVersionsBuilder_.clear();
@@ -1208,7 +1225,7 @@ private static final long serialVersionUID = 0L;
         pendingVersionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.StoredInfoTypeVersion, com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder, com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>(
                 pendingVersions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         pendingVersions_ = null;

@@ -14,6 +14,7 @@ public interface ResourceOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -23,26 +24,29 @@ public interface ResourceOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *
    * <code>string uri = 2;</code>
+   * @return The uri.
    */
   java.lang.String getUri();
   /**
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *
    * <code>string uri = 2;</code>
+   * @return The bytes for uri.
    */
   com.google.protobuf.ByteString
       getUriBytes();
@@ -53,6 +57,7 @@ public interface ResourceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
+   * @return Whether the contentHash field is set.
    */
   boolean hasContentHash();
   /**
@@ -61,6 +66,7 @@ public interface ResourceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
+   * @return The contentHash.
    */
   io.grafeas.v1beta1.provenance.Hash getContentHash();
   /**

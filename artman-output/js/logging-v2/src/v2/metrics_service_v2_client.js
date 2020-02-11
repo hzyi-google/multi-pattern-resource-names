@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -414,7 +414,7 @@ class MetricsServiceV2Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.metricName
-   *   The resource name of the desired metric:
+   *   Required. The resource name of the desired metric:
    *
    *       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param {Object} [options]
@@ -469,13 +469,13 @@ class MetricsServiceV2Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   The resource name of the project in which to create the metric:
+   *   Required. The resource name of the project in which to create the metric:
    *
    *       "projects/[PROJECT_ID]"
    *
    *   The new metric must be provided in the request.
    * @param {Object} request.metric
-   *   The new logs-based metric, which must not have an identifier that
+   *   Required. The new logs-based metric, which must not have an identifier that
    *   already exists.
    *
    *   This object should have the same structure as [LogMetric]{@link google.logging.v2.LogMetric}
@@ -536,7 +536,7 @@ class MetricsServiceV2Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.metricName
-   *   The resource name of the metric to update:
+   *   Required. The resource name of the metric to update:
    *
    *       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    *
@@ -544,7 +544,7 @@ class MetricsServiceV2Client {
    *   `name` field must be the same as `[METRIC_ID]` If the metric
    *   does not exist in `[PROJECT_ID]`, then a new metric is created.
    * @param {Object} request.metric
-   *   The updated metric.
+   *   Required. The updated metric.
    *
    *   This object should have the same structure as [LogMetric]{@link google.logging.v2.LogMetric}
    * @param {Object} [options]
@@ -604,7 +604,7 @@ class MetricsServiceV2Client {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.metricName
-   *   The resource name of the metric to delete:
+   *   Required. The resource name of the metric to delete:
    *
    *       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param {Object} [options]

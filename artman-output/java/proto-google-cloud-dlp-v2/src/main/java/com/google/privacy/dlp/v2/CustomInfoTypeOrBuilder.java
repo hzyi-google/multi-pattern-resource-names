@@ -18,6 +18,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
   /**
@@ -31,6 +32,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
@@ -55,6 +57,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   * @return The enum numeric value on the wire for likelihood.
    */
   int getLikelihoodValue();
   /**
@@ -65,6 +68,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
+   * @return The likelihood.
    */
   com.google.privacy.dlp.v2.Likelihood getLikelihood();
 
@@ -74,6 +78,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   * @return Whether the dictionary field is set.
    */
   boolean hasDictionary();
   /**
@@ -82,6 +87,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
+   * @return The dictionary.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
   /**
@@ -99,6 +105,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   * @return Whether the regex field is set.
    */
   boolean hasRegex();
   /**
@@ -107,6 +114,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
+   * @return The regex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
   /**
@@ -125,6 +133,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   * @return Whether the surrogateType field is set.
    */
   boolean hasSurrogateType();
   /**
@@ -134,6 +143,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
+   * @return The surrogateType.
    */
   com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType();
   /**
@@ -153,6 +163,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   * @return Whether the storedType field is set.
    */
   boolean hasStoredType();
   /**
@@ -162,6 +173,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   * @return The storedType.
    */
   com.google.privacy.dlp.v2.StoredType getStoredType();
   /**
@@ -235,6 +247,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   * @return The enum numeric value on the wire for exclusionType.
    */
   int getExclusionTypeValue();
   /**
@@ -244,6 +257,7 @@ public interface CustomInfoTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   * @return The exclusionType.
    */
   com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType();
 

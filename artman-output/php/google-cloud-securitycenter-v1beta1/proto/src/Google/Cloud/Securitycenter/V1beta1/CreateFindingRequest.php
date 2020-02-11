@@ -13,30 +13,30 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.CreateFindingRequest</code>
  */
-final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
+class CreateFindingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      *
-     * Generated from protobuf field <code>string finding_id = 2;</code>
+     * Generated from protobuf field <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $finding_id = '';
+    protected $finding_id = '';
     /**
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $finding = null;
+    protected $finding = null;
 
     /**
      * Constructor.
@@ -45,14 +45,14 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Resource name of the new finding's parent. Its format should be
+     *           Required. Resource name of the new finding's parent. Its format should be
      *           "organizations/[organization_id]/sources/[source_id]".
      *     @type string $finding_id
-     *           Unique identifier provided by the client within the parent scope.
+     *           Required. Unique identifier provided by the client within the parent scope.
      *           It must be alphanumeric and less than or equal to 32 characters and
      *           greater than 0 characters in length.
      *     @type \Google\Cloud\Securitycenter\V1beta1\Finding $finding
-     *           The Finding being created. The name and security_marks will be ignored as
+     *           Required. The Finding being created. The name and security_marks will be ignored as
      *           they are both output only fields on this resource.
      * }
      */
@@ -62,10 +62,10 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -74,10 +74,10 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -90,11 +90,11 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      *
-     * Generated from protobuf field <code>string finding_id = 2;</code>
+     * Generated from protobuf field <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getFindingId()
@@ -103,11 +103,11 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      *
-     * Generated from protobuf field <code>string finding_id = 2;</code>
+     * Generated from protobuf field <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -120,10 +120,10 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Securitycenter\V1beta1\Finding
      */
     public function getFinding()
@@ -132,10 +132,10 @@ final class CreateFindingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Securitycenter\V1beta1\Finding $var
      * @return $this
      */

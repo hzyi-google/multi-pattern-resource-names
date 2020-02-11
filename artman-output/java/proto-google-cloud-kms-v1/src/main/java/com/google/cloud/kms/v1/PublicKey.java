@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PublicKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string pem = 1;</code>
+   * @return The pem.
    */
   public java.lang.String getPem() {
     java.lang.Object ref = pem_;
@@ -128,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string pem = 1;</code>
+   * @return The bytes for pem.
    */
   public com.google.protobuf.ByteString
       getPemBytes() {
@@ -152,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * @return The enum numeric value on the wire for algorithm.
    */
   public int getAlgorithmValue() {
     return algorithm_;
@@ -163,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+   * @return The algorithm.
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
@@ -504,6 +514,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pem = 1;</code>
+     * @return The pem.
      */
     public java.lang.String getPem() {
       java.lang.Object ref = pem_;
@@ -527,6 +538,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pem = 1;</code>
+     * @return The bytes for pem.
      */
     public com.google.protobuf.ByteString
         getPemBytes() {
@@ -551,6 +563,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pem = 1;</code>
+     * @param value The pem to set.
+     * @return This builder for chaining.
      */
     public Builder setPem(
         java.lang.String value) {
@@ -572,6 +586,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pem = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPem() {
       
@@ -589,6 +604,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pem = 1;</code>
+     * @param value The bytes for pem to set.
+     * @return This builder for chaining.
      */
     public Builder setPemBytes(
         com.google.protobuf.ByteString value) {
@@ -610,6 +627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     * @return The enum numeric value on the wire for algorithm.
      */
     public int getAlgorithmValue() {
       return algorithm_;
@@ -621,6 +639,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     * @param value The enum numeric value on the wire for algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
       algorithm_ = value;
@@ -634,6 +654,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     * @return The algorithm.
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
@@ -647,6 +668,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     * @param value The algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithm(com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm value) {
       if (value == null) {
@@ -664,6 +687,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
       

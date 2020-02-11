@@ -13,15 +13,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.ListSourcesRequest</code>
  */
-final class ListSourcesRequest extends \Google\Protobuf\Internal\Message
+class ListSourcesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Resource name of the parent of sources to list. Its format should be
+     * Required. Resource name of the parent of sources to list. Its format should be
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * The value returned by the last `ListSourcesResponse`; indicates
      * that this is a continuation of a prior `ListSources` call, and
@@ -29,14 +29,14 @@ final class ListSourcesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
      *
      * Generated from protobuf field <code>int32 page_size = 7;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.
@@ -45,7 +45,7 @@ final class ListSourcesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Resource name of the parent of sources to list. Its format should be
+     *           Required. Resource name of the parent of sources to list. Its format should be
      *           "organizations/[organization_id]".
      *     @type string $page_token
      *           The value returned by the last `ListSourcesResponse`; indicates
@@ -62,10 +62,10 @@ final class ListSourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the parent of sources to list. Its format should be
+     * Required. Resource name of the parent of sources to list. Its format should be
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -74,10 +74,10 @@ final class ListSourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the parent of sources to list. Its format should be
+     * Required. Resource name of the parent of sources to list. Its format should be
      * "organizations/[organization_id]".
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

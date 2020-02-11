@@ -13,7 +13,8 @@ public interface AsymmetricDecryptRequestOrBuilder extends
    * decryption.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -22,7 +23,8 @@ public interface AsymmetricDecryptRequestOrBuilder extends
    * decryption.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -33,7 +35,8 @@ public interface AsymmetricDecryptRequestOrBuilder extends
    * key using OAEP.
    * </pre>
    *
-   * <code>bytes ciphertext = 3;</code>
+   * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The ciphertext.
    */
   com.google.protobuf.ByteString getCiphertext();
 }

@@ -33,7 +33,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CustomInfoType.Dictionary</code>
  */
-final class Dictionary extends \Google\Protobuf\Internal\Message
+class Dictionary extends \Google\Protobuf\Internal\Message
 {
     protected $source;
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse</code>
  */
-final class ListWorkflowTemplatesResponse extends \Google\Protobuf\Internal\Message
+class ListWorkflowTemplatesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. WorkflowTemplates list.
@@ -28,7 +28,7 @@ final class ListWorkflowTemplatesResponse extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

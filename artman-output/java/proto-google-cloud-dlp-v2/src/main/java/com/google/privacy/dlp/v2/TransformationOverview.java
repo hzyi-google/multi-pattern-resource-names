@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TransformationOverview();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -53,9 +60,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               transformationSummaries_ = new java.util.ArrayList<com.google.privacy.dlp.v2.TransformationSummary>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             transformationSummaries_.add(
                 input.readMessage(com.google.privacy.dlp.v2.TransformationSummary.parser(), extensionRegistry));
@@ -76,7 +83,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         transformationSummaries_ = java.util.Collections.unmodifiableList(transformationSummaries_);
       }
       this.unknownFields = unknownFields.build();
@@ -96,7 +103,6 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.TransformationOverview.class, com.google.privacy.dlp.v2.TransformationOverview.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 2;
   private long transformedBytes_;
   /**
@@ -105,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 transformed_bytes = 2;</code>
+   * @return The transformedBytes.
    */
   public long getTransformedBytes() {
     return transformedBytes_;
@@ -381,7 +388,7 @@ private static final long serialVersionUID = 0L;
 
       if (transformationSummariesBuilder_ == null) {
         transformationSummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         transformationSummariesBuilder_.clear();
       }
@@ -412,18 +419,16 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.TransformationOverview buildPartial() {
       com.google.privacy.dlp.v2.TransformationOverview result = new com.google.privacy.dlp.v2.TransformationOverview(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.transformedBytes_ = transformedBytes_;
       if (transformationSummariesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           transformationSummaries_ = java.util.Collections.unmodifiableList(transformationSummaries_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.transformationSummaries_ = transformationSummaries_;
       } else {
         result.transformationSummaries_ = transformationSummariesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -479,7 +484,7 @@ private static final long serialVersionUID = 0L;
         if (!other.transformationSummaries_.isEmpty()) {
           if (transformationSummaries_.isEmpty()) {
             transformationSummaries_ = other.transformationSummaries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTransformationSummariesIsMutable();
             transformationSummaries_.addAll(other.transformationSummaries_);
@@ -492,7 +497,7 @@ private static final long serialVersionUID = 0L;
             transformationSummariesBuilder_.dispose();
             transformationSummariesBuilder_ = null;
             transformationSummaries_ = other.transformationSummaries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             transformationSummariesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTransformationSummariesFieldBuilder() : null;
@@ -538,6 +543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 transformed_bytes = 2;</code>
+     * @return The transformedBytes.
      */
     public long getTransformedBytes() {
       return transformedBytes_;
@@ -548,6 +554,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 transformed_bytes = 2;</code>
+     * @param value The transformedBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setTransformedBytes(long value) {
       
@@ -561,6 +569,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 transformed_bytes = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTransformedBytes() {
       
@@ -572,9 +581,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.TransformationSummary> transformationSummaries_ =
       java.util.Collections.emptyList();
     private void ensureTransformationSummariesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         transformationSummaries_ = new java.util.ArrayList<com.google.privacy.dlp.v2.TransformationSummary>(transformationSummaries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -768,7 +777,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTransformationSummaries() {
       if (transformationSummariesBuilder_ == null) {
         transformationSummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         transformationSummariesBuilder_.clear();
@@ -873,7 +882,7 @@ private static final long serialVersionUID = 0L;
         transformationSummariesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.TransformationSummary, com.google.privacy.dlp.v2.TransformationSummary.Builder, com.google.privacy.dlp.v2.TransformationSummaryOrBuilder>(
                 transformationSummaries_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         transformationSummaries_ = null;

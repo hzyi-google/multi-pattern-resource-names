@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.Email</code>
  */
-final class Email extends \Google\Protobuf\Internal\Message
+class Email extends \Google\Protobuf\Internal\Message
 {
     /**
      * The usage of the email address. For example, SCHOOL, WORK, PERSONAL.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
      */
-    private $usage = 0;
+    protected $usage = 0;
     /**
      * Email address.
      * Number of characters allowed is 4,000.
      *
      * Generated from protobuf field <code>string email_address = 2;</code>
      */
-    private $email_address = '';
+    protected $email_address = '';
 
     /**
      * Constructor.

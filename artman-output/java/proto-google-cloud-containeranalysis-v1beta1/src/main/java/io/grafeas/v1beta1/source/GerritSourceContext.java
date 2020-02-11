@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GerritSourceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,7 +121,8 @@ private static final long serialVersionUID = 0L;
   private int revisionCase_ = 0;
   private java.lang.Object revision_;
   public enum RevisionCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REVISION_ID(3),
     ALIAS_CONTEXT(4),
     REVISION_NOT_SET(0);
@@ -124,6 +131,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -158,6 +167,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string host_uri = 1;</code>
+   * @return The hostUri.
    */
   public java.lang.String getHostUri() {
     java.lang.Object ref = hostUri_;
@@ -177,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string host_uri = 1;</code>
+   * @return The bytes for hostUri.
    */
   public com.google.protobuf.ByteString
       getHostUriBytes() {
@@ -202,6 +213,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gerrit_project = 2;</code>
+   * @return The gerritProject.
    */
   public java.lang.String getGerritProject() {
     java.lang.Object ref = gerritProject_;
@@ -223,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gerrit_project = 2;</code>
+   * @return The bytes for gerritProject.
    */
   public com.google.protobuf.ByteString
       getGerritProjectBytes() {
@@ -245,6 +258,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 3;</code>
+   * @return The revisionId.
    */
   public java.lang.String getRevisionId() {
     java.lang.Object ref = "";
@@ -269,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 3;</code>
+   * @return The bytes for revisionId.
    */
   public com.google.protobuf.ByteString
       getRevisionIdBytes() {
@@ -296,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
+   * @return Whether the aliasContext field is set.
    */
   public boolean hasAliasContext() {
     return revisionCase_ == 4;
@@ -306,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
+   * @return The aliasContext.
    */
   public io.grafeas.v1beta1.source.AliasContext getAliasContext() {
     if (revisionCase_ == 4) {
@@ -738,6 +755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string host_uri = 1;</code>
+     * @return The hostUri.
      */
     public java.lang.String getHostUri() {
       java.lang.Object ref = hostUri_;
@@ -757,6 +775,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string host_uri = 1;</code>
+     * @return The bytes for hostUri.
      */
     public com.google.protobuf.ByteString
         getHostUriBytes() {
@@ -777,6 +796,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string host_uri = 1;</code>
+     * @param value The hostUri to set.
+     * @return This builder for chaining.
      */
     public Builder setHostUri(
         java.lang.String value) {
@@ -794,6 +815,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string host_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHostUri() {
       
@@ -807,6 +829,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string host_uri = 1;</code>
+     * @param value The bytes for hostUri to set.
+     * @return This builder for chaining.
      */
     public Builder setHostUriBytes(
         com.google.protobuf.ByteString value) {
@@ -829,6 +853,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gerrit_project = 2;</code>
+     * @return The gerritProject.
      */
     public java.lang.String getGerritProject() {
       java.lang.Object ref = gerritProject_;
@@ -850,6 +875,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gerrit_project = 2;</code>
+     * @return The bytes for gerritProject.
      */
     public com.google.protobuf.ByteString
         getGerritProjectBytes() {
@@ -872,6 +898,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gerrit_project = 2;</code>
+     * @param value The gerritProject to set.
+     * @return This builder for chaining.
      */
     public Builder setGerritProject(
         java.lang.String value) {
@@ -891,6 +919,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gerrit_project = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGerritProject() {
       
@@ -906,6 +935,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gerrit_project = 2;</code>
+     * @param value The bytes for gerritProject to set.
+     * @return This builder for chaining.
      */
     public Builder setGerritProjectBytes(
         com.google.protobuf.ByteString value) {
@@ -925,6 +956,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 3;</code>
+     * @return The revisionId.
      */
     public java.lang.String getRevisionId() {
       java.lang.Object ref = "";
@@ -949,6 +981,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 3;</code>
+     * @return The bytes for revisionId.
      */
     public com.google.protobuf.ByteString
         getRevisionIdBytes() {
@@ -974,6 +1007,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 3;</code>
+     * @param value The revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionId(
         java.lang.String value) {
@@ -991,6 +1026,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
       if (revisionCase_ == 3) {
@@ -1006,6 +1042,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string revision_id = 3;</code>
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1027,6 +1065,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
+     * @return Whether the aliasContext field is set.
      */
     public boolean hasAliasContext() {
       return revisionCase_ == 4;
@@ -1037,6 +1076,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
+     * @return The aliasContext.
      */
     public io.grafeas.v1beta1.source.AliasContext getAliasContext() {
       if (aliasContextBuilder_ == null) {

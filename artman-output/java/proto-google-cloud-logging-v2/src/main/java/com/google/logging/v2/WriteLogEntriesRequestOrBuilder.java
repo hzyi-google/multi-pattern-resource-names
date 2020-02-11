@@ -24,7 +24,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The logName.
    */
   java.lang.String getLogName();
   /**
@@ -44,7 +45,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for logName.
    */
   com.google.protobuf.ByteString
       getLogNameBytes();
@@ -60,6 +62,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   * @return Whether the resource field is set.
    */
   boolean hasResource();
   /**
@@ -73,6 +76,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
+   * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
   /**
@@ -182,7 +186,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<com.google.logging.v2.LogEntry> 
       getEntriesList();
@@ -210,7 +214,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogEntry getEntries(int index);
   /**
@@ -237,7 +241,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getEntriesCount();
   /**
@@ -264,7 +268,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> 
       getEntriesOrBuilderList();
@@ -292,7 +296,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(
       int index);
@@ -307,6 +311,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>bool partial_success = 5;</code>
+   * @return The partialSuccess.
    */
   boolean getPartialSuccess();
 
@@ -318,6 +323,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * </pre>
    *
    * <code>bool dry_run = 6;</code>
+   * @return The dryRun.
    */
   boolean getDryRun();
 }

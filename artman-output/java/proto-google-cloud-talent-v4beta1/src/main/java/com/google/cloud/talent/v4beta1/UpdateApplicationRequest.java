@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateApplicationRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,30 +114,29 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.talent.v4beta1.Application application_;
   /**
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the application field is set.
    */
   public boolean hasApplication() {
     return application_ != null;
   }
   /**
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The application.
    */
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null ? com.google.cloud.talent.v4beta1.Application.getDefaultInstance() : application_;
   }
   /**
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -145,17 +150,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -163,17 +165,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -181,14 +180,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -551,22 +546,22 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.talent.v4beta1.Application, com.google.cloud.talent.v4beta1.Application.Builder, com.google.cloud.talent.v4beta1.ApplicationOrBuilder> applicationBuilder_;
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the application field is set.
      */
     public boolean hasApplication() {
       return applicationBuilder_ != null || application_ != null;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The application.
      */
     public com.google.cloud.talent.v4beta1.Application getApplication() {
       if (applicationBuilder_ == null) {
@@ -577,8 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -598,8 +592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -617,8 +610,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -640,8 +632,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -659,8 +650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -672,8 +662,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -688,8 +677,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The application resource to replace the current resource in the
-     * system.
+     * Required. The application resource to replace the current resource in the system.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -714,17 +702,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -732,17 +717,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -754,14 +736,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -782,14 +760,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -808,14 +782,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -838,14 +808,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -864,14 +830,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -884,14 +846,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -907,14 +865,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Strongly recommended for the best service experience.
-     * If
-     * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-     * is provided, only the specified fields in
-     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-     * are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+     * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
      * A field mask to specify the application fields to be updated. Only
-     * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-     * are supported.
+     * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

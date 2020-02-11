@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.StoredInfoTypeStats</code>
  */
-final class StoredInfoTypeStats extends \Google\Protobuf\Internal\Message
+class StoredInfoTypeStats extends \Google\Protobuf\Internal\Message
 {
     protected $type;
 

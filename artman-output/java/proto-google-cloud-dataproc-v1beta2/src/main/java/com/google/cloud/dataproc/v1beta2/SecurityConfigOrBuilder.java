@@ -13,6 +13,7 @@ public interface SecurityConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.KerberosConfig kerberos_config = 1;</code>
+   * @return Whether the kerberosConfig field is set.
    */
   boolean hasKerberosConfig();
   /**
@@ -21,6 +22,7 @@ public interface SecurityConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.KerberosConfig kerberos_config = 1;</code>
+   * @return The kerberosConfig.
    */
   com.google.cloud.dataproc.v1beta2.KerberosConfig getKerberosConfig();
   /**

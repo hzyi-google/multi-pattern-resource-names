@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Value();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -155,7 +161,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INTEGER_VALUE(1),
     FLOAT_VALUE(2),
     STRING_VALUE(3),
@@ -170,6 +177,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -204,7 +213,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int INTEGER_VALUE_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * integer
+   * </pre>
+   *
    * <code>int64 integer_value = 1;</code>
+   * @return The integerValue.
    */
   public long getIntegerValue() {
     if (typeCase_ == 1) {
@@ -215,7 +229,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int FLOAT_VALUE_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * float
+   * </pre>
+   *
    * <code>double float_value = 2;</code>
+   * @return The floatValue.
    */
   public double getFloatValue() {
     if (typeCase_ == 2) {
@@ -226,7 +245,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * string
+   * </pre>
+   *
    * <code>string string_value = 3;</code>
+   * @return The stringValue.
    */
   public java.lang.String getStringValue() {
     java.lang.Object ref = "";
@@ -246,7 +270,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * string
+   * </pre>
+   *
    * <code>string string_value = 3;</code>
+   * @return The bytes for stringValue.
    */
   public com.google.protobuf.ByteString
       getStringValueBytes() {
@@ -269,7 +298,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 4;
   /**
+   * <pre>
+   * boolean
+   * </pre>
+   *
    * <code>bool boolean_value = 4;</code>
+   * @return The booleanValue.
    */
   public boolean getBooleanValue() {
     if (typeCase_ == 4) {
@@ -280,13 +314,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 5;
   /**
+   * <pre>
+   * timestamp
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   * @return Whether the timestampValue field is set.
    */
   public boolean hasTimestampValue() {
     return typeCase_ == 5;
   }
   /**
+   * <pre>
+   * timestamp
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   * @return The timestampValue.
    */
   public com.google.protobuf.Timestamp getTimestampValue() {
     if (typeCase_ == 5) {
@@ -295,6 +339,10 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
   /**
+   * <pre>
+   * timestamp
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
    */
   public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
@@ -306,13 +354,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int TIME_VALUE_FIELD_NUMBER = 6;
   /**
+   * <pre>
+   * time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
+   * @return Whether the timeValue field is set.
    */
   public boolean hasTimeValue() {
     return typeCase_ == 6;
   }
   /**
+   * <pre>
+   * time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
+   * @return The timeValue.
    */
   public com.google.type.TimeOfDay getTimeValue() {
     if (typeCase_ == 6) {
@@ -321,6 +379,10 @@ private static final long serialVersionUID = 0L;
     return com.google.type.TimeOfDay.getDefaultInstance();
   }
   /**
+   * <pre>
+   * time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
    */
   public com.google.type.TimeOfDayOrBuilder getTimeValueOrBuilder() {
@@ -332,13 +394,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int DATE_VALUE_FIELD_NUMBER = 7;
   /**
+   * <pre>
+   * date
+   * </pre>
+   *
    * <code>.google.type.Date date_value = 7;</code>
+   * @return Whether the dateValue field is set.
    */
   public boolean hasDateValue() {
     return typeCase_ == 7;
   }
   /**
+   * <pre>
+   * date
+   * </pre>
+   *
    * <code>.google.type.Date date_value = 7;</code>
+   * @return The dateValue.
    */
   public com.google.type.Date getDateValue() {
     if (typeCase_ == 7) {
@@ -347,6 +419,10 @@ private static final long serialVersionUID = 0L;
     return com.google.type.Date.getDefaultInstance();
   }
   /**
+   * <pre>
+   * date
+   * </pre>
+   *
    * <code>.google.type.Date date_value = 7;</code>
    */
   public com.google.type.DateOrBuilder getDateValueOrBuilder() {
@@ -358,7 +434,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int DAY_OF_WEEK_VALUE_FIELD_NUMBER = 8;
   /**
+   * <pre>
+   * day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   * @return The enum numeric value on the wire for dayOfWeekValue.
    */
   public int getDayOfWeekValueValue() {
     if (typeCase_ == 8) {
@@ -367,7 +448,12 @@ private static final long serialVersionUID = 0L;
     return 0;
   }
   /**
+   * <pre>
+   * day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   * @return The dayOfWeekValue.
    */
   public com.google.type.DayOfWeek getDayOfWeekValue() {
     if (typeCase_ == 8) {
@@ -905,7 +991,12 @@ private static final long serialVersionUID = 0L;
 
 
     /**
+     * <pre>
+     * integer
+     * </pre>
+     *
      * <code>int64 integer_value = 1;</code>
+     * @return The integerValue.
      */
     public long getIntegerValue() {
       if (typeCase_ == 1) {
@@ -914,7 +1005,13 @@ private static final long serialVersionUID = 0L;
       return 0L;
     }
     /**
+     * <pre>
+     * integer
+     * </pre>
+     *
      * <code>int64 integer_value = 1;</code>
+     * @param value The integerValue to set.
+     * @return This builder for chaining.
      */
     public Builder setIntegerValue(long value) {
       typeCase_ = 1;
@@ -923,7 +1020,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * integer
+     * </pre>
+     *
      * <code>int64 integer_value = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIntegerValue() {
       if (typeCase_ == 1) {
@@ -935,7 +1037,12 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * float
+     * </pre>
+     *
      * <code>double float_value = 2;</code>
+     * @return The floatValue.
      */
     public double getFloatValue() {
       if (typeCase_ == 2) {
@@ -944,7 +1051,13 @@ private static final long serialVersionUID = 0L;
       return 0D;
     }
     /**
+     * <pre>
+     * float
+     * </pre>
+     *
      * <code>double float_value = 2;</code>
+     * @param value The floatValue to set.
+     * @return This builder for chaining.
      */
     public Builder setFloatValue(double value) {
       typeCase_ = 2;
@@ -953,7 +1066,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * float
+     * </pre>
+     *
      * <code>double float_value = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFloatValue() {
       if (typeCase_ == 2) {
@@ -965,7 +1083,12 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * string
+     * </pre>
+     *
      * <code>string string_value = 3;</code>
+     * @return The stringValue.
      */
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
@@ -985,7 +1108,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * string
+     * </pre>
+     *
      * <code>string string_value = 3;</code>
+     * @return The bytes for stringValue.
      */
     public com.google.protobuf.ByteString
         getStringValueBytes() {
@@ -1006,7 +1134,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * string
+     * </pre>
+     *
      * <code>string string_value = 3;</code>
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValue(
         java.lang.String value) {
@@ -1019,7 +1153,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * string
+     * </pre>
+     *
      * <code>string string_value = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStringValue() {
       if (typeCase_ == 3) {
@@ -1030,7 +1169,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * string
+     * </pre>
+     *
      * <code>string string_value = 3;</code>
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValueBytes(
         com.google.protobuf.ByteString value) {
@@ -1045,7 +1190,12 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * boolean
+     * </pre>
+     *
      * <code>bool boolean_value = 4;</code>
+     * @return The booleanValue.
      */
     public boolean getBooleanValue() {
       if (typeCase_ == 4) {
@@ -1054,7 +1204,13 @@ private static final long serialVersionUID = 0L;
       return false;
     }
     /**
+     * <pre>
+     * boolean
+     * </pre>
+     *
      * <code>bool boolean_value = 4;</code>
+     * @param value The booleanValue to set.
+     * @return This builder for chaining.
      */
     public Builder setBooleanValue(boolean value) {
       typeCase_ = 4;
@@ -1063,7 +1219,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * boolean
+     * </pre>
+     *
      * <code>bool boolean_value = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBooleanValue() {
       if (typeCase_ == 4) {
@@ -1077,13 +1238,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampValueBuilder_;
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     * @return Whether the timestampValue field is set.
      */
     public boolean hasTimestampValue() {
       return typeCase_ == 5;
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+     * @return The timestampValue.
      */
     public com.google.protobuf.Timestamp getTimestampValue() {
       if (timestampValueBuilder_ == null) {
@@ -1099,6 +1270,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public Builder setTimestampValue(com.google.protobuf.Timestamp value) {
@@ -1115,6 +1290,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public Builder setTimestampValue(
@@ -1129,6 +1308,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public Builder mergeTimestampValue(com.google.protobuf.Timestamp value) {
@@ -1151,6 +1334,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public Builder clearTimestampValue() {
@@ -1170,12 +1357,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
       return getTimestampValueFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
@@ -1189,6 +1384,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * timestamp
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1213,13 +1412,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.type.TimeOfDay, com.google.type.TimeOfDay.Builder, com.google.type.TimeOfDayOrBuilder> timeValueBuilder_;
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
+     * @return Whether the timeValue field is set.
      */
     public boolean hasTimeValue() {
       return typeCase_ == 6;
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
+     * @return The timeValue.
      */
     public com.google.type.TimeOfDay getTimeValue() {
       if (timeValueBuilder_ == null) {
@@ -1235,6 +1444,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public Builder setTimeValue(com.google.type.TimeOfDay value) {
@@ -1251,6 +1464,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public Builder setTimeValue(
@@ -1265,6 +1482,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public Builder mergeTimeValue(com.google.type.TimeOfDay value) {
@@ -1287,6 +1508,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public Builder clearTimeValue() {
@@ -1306,12 +1531,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public com.google.type.TimeOfDay.Builder getTimeValueBuilder() {
       return getTimeValueFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     public com.google.type.TimeOfDayOrBuilder getTimeValueOrBuilder() {
@@ -1325,6 +1558,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1349,13 +1586,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> dateValueBuilder_;
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
+     * @return Whether the dateValue field is set.
      */
     public boolean hasDateValue() {
       return typeCase_ == 7;
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
+     * @return The dateValue.
      */
     public com.google.type.Date getDateValue() {
       if (dateValueBuilder_ == null) {
@@ -1371,6 +1618,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public Builder setDateValue(com.google.type.Date value) {
@@ -1387,6 +1638,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public Builder setDateValue(
@@ -1401,6 +1656,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public Builder mergeDateValue(com.google.type.Date value) {
@@ -1423,6 +1682,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public Builder clearDateValue() {
@@ -1442,12 +1705,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public com.google.type.Date.Builder getDateValueBuilder() {
       return getDateValueFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     public com.google.type.DateOrBuilder getDateValueOrBuilder() {
@@ -1461,6 +1732,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * date
+     * </pre>
+     *
      * <code>.google.type.Date date_value = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1483,7 +1758,12 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @return The enum numeric value on the wire for dayOfWeekValue.
      */
     public int getDayOfWeekValueValue() {
       if (typeCase_ == 8) {
@@ -1492,7 +1772,13 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @param value The enum numeric value on the wire for dayOfWeekValue to set.
+     * @return This builder for chaining.
      */
     public Builder setDayOfWeekValueValue(int value) {
       typeCase_ = 8;
@@ -1501,7 +1787,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @return The dayOfWeekValue.
      */
     public com.google.type.DayOfWeek getDayOfWeekValue() {
       if (typeCase_ == 8) {
@@ -1513,7 +1804,13 @@ private static final long serialVersionUID = 0L;
       return com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED;
     }
     /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @param value The dayOfWeekValue to set.
+     * @return This builder for chaining.
      */
     public Builder setDayOfWeekValue(com.google.type.DayOfWeek value) {
       if (value == null) {
@@ -1525,7 +1822,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDayOfWeekValue() {
       if (typeCase_ == 8) {

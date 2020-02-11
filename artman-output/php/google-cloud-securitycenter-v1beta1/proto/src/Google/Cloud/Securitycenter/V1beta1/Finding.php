@@ -17,42 +17,44 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.Finding</code>
  */
-final class Finding extends \Google\Protobuf\Internal\Message
+class Finding extends \Google\Protobuf\Internal\Message
 {
     /**
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
-     * The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
-     * Generated from protobuf field <code>string parent = 2;</code>
+     * Generated from protobuf field <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      *
      * Generated from protobuf field <code>string resource_name = 3;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The state of the finding.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 4;</code>
      */
-    private $state = 0;
+    protected $state = 0;
     /**
      * The additional taxonomy group within findings from a given source.
      * This field is immutable after creation time.
@@ -60,7 +62,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string category = 5;</code>
      */
-    private $category = '';
+    protected $category = '';
     /**
      * The URI that, if available, points to a web page outside of Cloud SCC
      * where additional information about the finding can be found. This field is
@@ -68,7 +70,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string external_uri = 6;</code>
      */
-    private $external_uri = '';
+    protected $external_uri = '';
     /**
      * Source specific properties. These properties are managed by the source
      * that writes the finding. The key names in the source_properties map must be
@@ -83,23 +85,23 @@ final class Finding extends \Google\Protobuf\Internal\Message
      * managed by the user and come from the SecurityMarks resource that belongs
      * to the finding.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $security_marks = null;
+    protected $security_marks = null;
     /**
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 9;</code>
      */
-    private $event_time = null;
+    protected $event_time = null;
     /**
      * The time at which the finding was created in Cloud SCC.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 10;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
 
     /**
      * Constructor.
@@ -111,17 +113,19 @@ final class Finding extends \Google\Protobuf\Internal\Message
      *           The relative resource name of this finding. See:
      *           https://cloud.google.com/apis/design/resource_names#relative_resource_name
      *           Example:
-     *           "organizations/123/sources/456/findings/789"
+     *           "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      *     @type string $parent
-     *           The relative resource name of the source the finding belongs to. See:
+     *           Immutable. The relative resource name of the source the finding belongs to. See:
      *           https://cloud.google.com/apis/design/resource_names#relative_resource_name
      *           This field is immutable after creation time.
      *           For example:
-     *           "organizations/123/sources/456"
+     *           "organizations/{organization_id}/sources/{source_id}"
      *     @type string $resource_name
-     *           The full resource name of the Google Cloud Platform (GCP) resource this
-     *           finding is for. See:
+     *           For findings on Google Cloud Platform (GCP) resources, the full resource
+     *           name of the GCP resource this finding is for. See:
      *           https://cloud.google.com/apis/design/resource_names#full_resource_name
+     *           When the finding is for a non-GCP resource, the resourceName can be a
+     *           customer or partner defined string.
      *           This field is immutable after creation time.
      *     @type int $state
      *           The state of the finding.
@@ -144,8 +148,8 @@ final class Finding extends \Google\Protobuf\Internal\Message
      *           to the finding.
      *     @type \Google\Protobuf\Timestamp $event_time
      *           The time at which the event took place. For example, if the finding
-     *           represents an open firewall it would capture the time the open firewall was
-     *           detected.
+     *           represents an open firewall it would capture the time the detector believes
+     *           the firewall became open. The accuracy is determined by the detector.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           The time at which the finding was created in Cloud SCC.
      * }
@@ -159,7 +163,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -173,7 +177,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      * The relative resource name of this finding. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456/findings/789"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -188,13 +192,13 @@ final class Finding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
-     * Generated from protobuf field <code>string parent = 2;</code>
+     * Generated from protobuf field <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getParent()
@@ -203,13 +207,13 @@ final class Finding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      *
-     * Generated from protobuf field <code>string parent = 2;</code>
+     * Generated from protobuf field <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -222,9 +226,11 @@ final class Finding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      *
      * Generated from protobuf field <code>string resource_name = 3;</code>
@@ -236,9 +242,11 @@ final class Finding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full resource name of the Google Cloud Platform (GCP) resource this
-     * finding is for. See:
+     * For findings on Google Cloud Platform (GCP) resources, the full resource
+     * name of the GCP resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
+     * When the finding is for a non-GCP resource, the resourceName can be a
+     * customer or partner defined string.
      * This field is immutable after creation time.
      *
      * Generated from protobuf field <code>string resource_name = 3;</code>
@@ -376,7 +384,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      * managed by the user and come from the SecurityMarks resource that belongs
      * to the finding.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks
      */
     public function getSecurityMarks()
@@ -389,7 +397,7 @@ final class Finding extends \Google\Protobuf\Internal\Message
      * managed by the user and come from the SecurityMarks resource that belongs
      * to the finding.
      *
-     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Cloud\Securitycenter\V1beta1\SecurityMarks $var
      * @return $this
      */
@@ -403,8 +411,8 @@ final class Finding extends \Google\Protobuf\Internal\Message
 
     /**
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 9;</code>
      * @return \Google\Protobuf\Timestamp
@@ -416,8 +424,8 @@ final class Finding extends \Google\Protobuf\Internal\Message
 
     /**
      * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the open firewall was
-     * detected.
+     * represents an open firewall it would capture the time the detector believes
+     * the firewall became open. The accuracy is determined by the detector.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 9;</code>
      * @param \Google\Protobuf\Timestamp $var

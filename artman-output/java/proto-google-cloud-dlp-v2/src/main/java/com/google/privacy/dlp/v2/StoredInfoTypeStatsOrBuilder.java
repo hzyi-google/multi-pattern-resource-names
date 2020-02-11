@@ -13,6 +13,7 @@ public interface StoredInfoTypeStatsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryStats large_custom_dictionary = 1;</code>
+   * @return Whether the largeCustomDictionary field is set.
    */
   boolean hasLargeCustomDictionary();
   /**
@@ -21,6 +22,7 @@ public interface StoredInfoTypeStatsOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryStats large_custom_dictionary = 1;</code>
+   * @return The largeCustomDictionary.
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryStats getLargeCustomDictionary();
   /**

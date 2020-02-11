@@ -9,28 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Histogram of k-anonymity equivalence classes.
+ *
  * Generated from protobuf message <code>google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket</code>
  */
-final class KAnonymityHistogramBucket extends \Google\Protobuf\Internal\Message
+class KAnonymityHistogramBucket extends \Google\Protobuf\Internal\Message
 {
     /**
      * Lower bound on the size of the equivalence classes in this bucket.
      *
      * Generated from protobuf field <code>int64 equivalence_class_size_lower_bound = 1;</code>
      */
-    private $equivalence_class_size_lower_bound = 0;
+    protected $equivalence_class_size_lower_bound = 0;
     /**
      * Upper bound on the size of the equivalence classes in this bucket.
      *
      * Generated from protobuf field <code>int64 equivalence_class_size_upper_bound = 2;</code>
      */
-    private $equivalence_class_size_upper_bound = 0;
+    protected $equivalence_class_size_upper_bound = 0;
     /**
      * Total number of equivalence classes in this bucket.
      *
      * Generated from protobuf field <code>int64 bucket_size = 3;</code>
      */
-    private $bucket_size = 0;
+    protected $bucket_size = 0;
     /**
      * Sample of equivalence classes in this bucket. The total number of
      * classes returned per bucket is capped at 20.
@@ -43,7 +45,7 @@ final class KAnonymityHistogramBucket extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 bucket_value_count = 5;</code>
      */
-    private $bucket_value_count = 0;
+    protected $bucket_value_count = 0;
 
     /**
      * Constructor.

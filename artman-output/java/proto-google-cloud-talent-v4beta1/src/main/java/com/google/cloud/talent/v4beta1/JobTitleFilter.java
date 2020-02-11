@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobTitleFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -94,11 +100,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object jobTitle_;
   /**
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobTitle.
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -114,11 +120,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for jobTitle.
    */
   public com.google.protobuf.ByteString
       getJobTitleBytes() {
@@ -143,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -475,11 +482,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object jobTitle_ = "";
     /**
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The jobTitle.
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -495,11 +502,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for jobTitle.
      */
     public com.google.protobuf.ByteString
         getJobTitleBytes() {
@@ -516,11 +523,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitle(
         java.lang.String value) {
@@ -534,11 +542,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobTitle() {
       
@@ -548,11 +556,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleBytes(
         com.google.protobuf.ByteString value) {
@@ -574,6 +583,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -585,6 +595,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -599,6 +611,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

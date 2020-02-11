@@ -30,32 +30,34 @@ public final class SourceOuterClass {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/securitycenter/v1beta1/so" +
       "urce.proto\022#google.cloud.securitycenter." +
-      "v1beta1\032\034google/api/annotations.proto\"A\n" +
-      "\006Source\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 " +
-      "\001(\t\022\023\n\013description\030\003 \001(\tB~\n\'com.google.c" +
-      "loud.securitycenter.v1beta1P\001ZQgoogle.go" +
-      "lang.org/genproto/googleapis/cloud/secur" +
-      "itycenter/v1beta1;securitycenterb\006proto3"
+      "v1beta1\032\031google/api/resource.proto\032\034goog" +
+      "le/api/annotations.proto\"\233\001\n\006Source\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descr" +
+      "iption\030\003 \001(\t:X\352AU\n$securitycenter.google" +
+      "apis.com/Source\022-organizations/{organiza" +
+      "tion}/sources/{source}B~\n\'com.google.clo" +
+      "ud.securitycenter.v1beta1P\001ZQgoogle.gola" +
+      "ng.org/genproto/googleapis/cloud/securit" +
+      "ycenter/v1beta1;securitycenterb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_google_cloud_securitycenter_v1beta1_Source_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1beta1_Source_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_securitycenter_v1beta1_Source_descriptor,
         new java.lang.String[] { "Name", "DisplayName", "Description", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

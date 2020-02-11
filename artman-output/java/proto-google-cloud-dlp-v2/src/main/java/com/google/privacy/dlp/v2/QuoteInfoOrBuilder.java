@@ -13,6 +13,7 @@ public interface QuoteInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+   * @return Whether the dateTime field is set.
    */
   boolean hasDateTime();
   /**
@@ -21,6 +22,7 @@ public interface QuoteInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
+   * @return The dateTime.
    */
   com.google.privacy.dlp.v2.DateTime getDateTime();
   /**

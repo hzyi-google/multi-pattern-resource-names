@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ListDlpJobsRequest</code>
  */
-final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
+class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example projects/my-project-id.
      *
      * Generated from protobuf field <code>string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -48,27 +48,27 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string filter = 1;</code>
      */
-    private $filter = '';
+    protected $filter = '';
     /**
      * The standard list page size.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * The standard list page token.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * The type of job. Defaults to `DlpJobType.INSPECT`
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -81,14 +81,14 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
      */
-    private $order_by = '';
+    protected $order_by = '';
     /**
      * The geographic location where jobs will be retrieved from.
      * Use `-` for all locations. Reserved for future extensions.
      *
      * Generated from protobuf field <code>string location_id = 7;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -99,12 +99,12 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The parent resource name, for example projects/my-project-id.
      *     @type string $filter
-     *           Optional. Allows filtering.
+     *           Allows filtering.
      *           Supported syntax:
      *           * Filter expressions are made up of one or more restrictions.
      *           * Restrictions can be combined by `AND` or `OR` logical operators. A
      *           sequence of restrictions implicitly uses `AND`.
-     *           * A restriction has the form of `<field> <operator> <value>`.
+     *           * A restriction has the form of `{field} {operator} {value}`.
      *           * Supported fields/values for inspect jobs:
      *               - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *               - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -129,7 +129,7 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           The type of job. Defaults to `DlpJobType.INSPECT`
      *     @type string $order_by
-     *           Optional comma separated list of fields to order by,
+     *           Comma separated list of fields to order by,
      *           followed by `asc` or `desc` postfix. This list is case-insensitive,
      *           default sorting order is ascending, redundant space characters are
      *           insignificant.
@@ -176,12 +176,12 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -209,12 +209,12 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Allows filtering.
+     * Allows filtering.
      * Supported syntax:
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
-     * * A restriction has the form of `<field> <operator> <value>`.
+     * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values for inspect jobs:
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -324,7 +324,7 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -344,7 +344,7 @@ final class ListDlpJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.

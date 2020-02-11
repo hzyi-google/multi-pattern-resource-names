@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CreateJobTriggerRequest</code>
  */
-final class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
+class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource name, for example projects/my-project-id.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $job_trigger = null;
+    protected $job_trigger = null;
     /**
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -35,14 +35,14 @@ final class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string trigger_id = 3;</code>
      */
-    private $trigger_id = '';
+    protected $trigger_id = '';
     /**
      * The geographic location to store the job trigger. Reserved for
      * future extensions.
      *
      * Generated from protobuf field <code>string location_id = 4;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -53,7 +53,7 @@ final class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The parent resource name, for example projects/my-project-id.
      *     @type \Google\Cloud\Dlp\V2\JobTrigger $job_trigger
-     *           The JobTrigger to create.
+     *           Required. The JobTrigger to create.
      *     @type string $trigger_id
      *           The trigger id can contain uppercase and lowercase letters,
      *           numbers, and hyphens; that is, it must match the regular
@@ -96,9 +96,9 @@ final class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Dlp\V2\JobTrigger
      */
     public function getJobTrigger()
@@ -107,9 +107,9 @@ final class CreateJobTriggerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      *
-     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * Generated from protobuf field <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dlp\V2\JobTrigger $var
      * @return $this
      */

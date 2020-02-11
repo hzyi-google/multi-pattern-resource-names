@@ -14,6 +14,7 @@ public interface DocumentLocationOrBuilder extends
    * </pre>
    *
    * <code>int64 file_offset = 1;</code>
+   * @return The fileOffset.
    */
   long getFileOffset();
 }

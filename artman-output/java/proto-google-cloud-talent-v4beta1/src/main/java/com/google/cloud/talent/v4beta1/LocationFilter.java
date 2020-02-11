@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LocationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -193,6 +199,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -200,6 +208,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TelecommutePreference forNumber(int value) {
       switch (value) {
         case 0: return TELECOMMUTE_PREFERENCE_UNSPECIFIED;
@@ -265,6 +277,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string address = 1;</code>
+   * @return The address.
    */
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
@@ -284,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string address = 1;</code>
+   * @return The bytes for address.
    */
   public com.google.protobuf.ByteString
       getAddressBytes() {
@@ -316,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   * @return The regionCode.
    */
   public java.lang.String getRegionCode() {
     java.lang.Object ref = regionCode_;
@@ -344,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string region_code = 2;</code>
+   * @return The bytes for regionCode.
    */
   public com.google.protobuf.ByteString
       getRegionCodeBytes() {
@@ -368,6 +384,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return Whether the latLng field is set.
    */
   public boolean hasLatLng() {
     return latLng_ != null;
@@ -379,6 +396,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
+   * @return The latLng.
    */
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
@@ -405,6 +423,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double distance_in_miles = 4;</code>
+   * @return The distanceInMiles.
    */
   public double getDistanceInMiles() {
     return distanceInMiles_;
@@ -417,15 +436,12 @@ private static final long serialVersionUID = 0L;
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
-   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-   * indicates if a job permits telecommuting. If this field is set to
-   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and
-   * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-   * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-   * If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-   * telecommute job are not searched.
+   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+   * ignored. If not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+   * searched.
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -436,6 +452,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+   * @return The enum numeric value on the wire for telecommutePreference.
    */
   public int getTelecommutePreferenceValue() {
     return telecommutePreference_;
@@ -445,15 +462,12 @@ private static final long serialVersionUID = 0L;
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
    * by the service as a special location.
-   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-   * indicates if a job permits telecommuting. If this field is set to
-   * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-   * telecommuting jobs are searched, and
-   * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-   * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-   * If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-   * telecommute job are not searched.
+   * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+   * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+   * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+   * ignored. If not set or set to
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+   * searched.
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -464,6 +478,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+   * @return The telecommutePreference.
    */
   public com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference getTelecommutePreference() {
     @SuppressWarnings("deprecation")
@@ -481,6 +496,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negated = 6;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -899,6 +915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 1;</code>
+     * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -918,6 +935,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 1;</code>
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -938,6 +956,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 1;</code>
+     * @param value The address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddress(
         java.lang.String value) {
@@ -955,6 +975,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAddress() {
       
@@ -968,6 +989,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string address = 1;</code>
+     * @param value The bytes for address to set.
+     * @return This builder for chaining.
      */
     public Builder setAddressBytes(
         com.google.protobuf.ByteString value) {
@@ -997,6 +1020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The regionCode.
      */
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
@@ -1025,6 +1049,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return The bytes for regionCode.
      */
     public com.google.protobuf.ByteString
         getRegionCodeBytes() {
@@ -1054,6 +1079,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @param value The regionCode to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionCode(
         java.lang.String value) {
@@ -1080,6 +1107,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegionCode() {
       
@@ -1102,6 +1130,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region_code = 2;</code>
+     * @param value The bytes for regionCode to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -1125,6 +1155,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
       return latLngBuilder_ != null || latLng_ != null;
@@ -1136,6 +1167,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng = 3;</code>
+     * @return The latLng.
      */
     public com.google.type.LatLng getLatLng() {
       if (latLngBuilder_ == null) {
@@ -1286,6 +1318,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     * @return The distanceInMiles.
      */
     public double getDistanceInMiles() {
       return distanceInMiles_;
@@ -1298,6 +1331,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     * @param value The distanceInMiles to set.
+     * @return This builder for chaining.
      */
     public Builder setDistanceInMiles(double value) {
       
@@ -1313,6 +1348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double distance_in_miles = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDistanceInMiles() {
       
@@ -1327,15 +1363,12 @@ private static final long serialVersionUID = 0L;
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location.
-     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-     * indicates if a job permits telecommuting. If this field is set to
-     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and
-     * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-     * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-     * If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-     * telecommute job are not searched.
+     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+     * ignored. If not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+     * searched.
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1346,6 +1379,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+     * @return The enum numeric value on the wire for telecommutePreference.
      */
     public int getTelecommutePreferenceValue() {
       return telecommutePreference_;
@@ -1355,15 +1389,12 @@ private static final long serialVersionUID = 0L;
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location.
-     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-     * indicates if a job permits telecommuting. If this field is set to
-     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and
-     * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-     * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-     * If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-     * telecommute job are not searched.
+     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+     * ignored. If not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+     * searched.
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1374,6 +1405,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+     * @param value The enum numeric value on the wire for telecommutePreference to set.
+     * @return This builder for chaining.
      */
     public Builder setTelecommutePreferenceValue(int value) {
       telecommutePreference_ = value;
@@ -1385,15 +1418,12 @@ private static final long serialVersionUID = 0L;
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location.
-     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-     * indicates if a job permits telecommuting. If this field is set to
-     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and
-     * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-     * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-     * If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-     * telecommute job are not searched.
+     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+     * ignored. If not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+     * searched.
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1404,6 +1434,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+     * @return The telecommutePreference.
      */
     public com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference getTelecommutePreference() {
       @SuppressWarnings("deprecation")
@@ -1415,15 +1446,12 @@ private static final long serialVersionUID = 0L;
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location.
-     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-     * indicates if a job permits telecommuting. If this field is set to
-     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and
-     * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-     * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-     * If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-     * telecommute job are not searched.
+     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+     * ignored. If not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+     * searched.
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1434,6 +1462,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+     * @param value The telecommutePreference to set.
+     * @return This builder for chaining.
      */
     public Builder setTelecommutePreference(com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference value) {
       if (value == null) {
@@ -1449,15 +1479,12 @@ private static final long serialVersionUID = 0L;
      * Allows the client to return jobs without a
      * set location, specifically, telecommuting jobs (telecommuting is considered
      * by the service as a special location.
-     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region]
-     * indicates if a job permits telecommuting. If this field is set to
-     * [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
-     * telecommuting jobs are searched, and
-     * [address][google.cloud.talent.v4beta1.LocationFilter.address] and
-     * [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are ignored.
-     * If not set or set to
-     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED],
-     * telecommute job are not searched.
+     * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
+     * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
+     * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
+     * ignored. If not set or set to
+     * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
+     * searched.
      * This filter can be used by itself to search exclusively for telecommuting
      * jobs, or it can be combined with another location
      * filter to search for a combination of job locations,
@@ -1468,6 +1495,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference telecommute_preference = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTelecommutePreference() {
       
@@ -1485,6 +1513,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
@@ -1497,6 +1526,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -1512,6 +1543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negated = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

@@ -13,33 +13,34 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.package.Version</code>
  */
-final class Version extends \Google\Protobuf\Internal\Message
+class Version extends \Google\Protobuf\Internal\Message
 {
     /**
      * Used to correct mistakes in the version numbering scheme.
      *
      * Generated from protobuf field <code>int32 epoch = 1;</code>
      */
-    private $epoch = 0;
+    protected $epoch = 0;
     /**
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      *
      * Generated from protobuf field <code>string name = 2;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The iteration of the package build from the above version.
      *
      * Generated from protobuf field <code>string revision = 3;</code>
      */
-    private $revision = '';
+    protected $revision = '';
     /**
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
      */
-    private $kind = 0;
+    protected $kind = 0;
 
     /**
      * Constructor.
@@ -50,12 +51,13 @@ final class Version extends \Google\Protobuf\Internal\Message
      *     @type int $epoch
      *           Used to correct mistakes in the version numbering scheme.
      *     @type string $name
-     *           The main part of the version name.
+     *           Required only when version kind is NORMAL. The main part of the version
+     *           name.
      *     @type string $revision
      *           The iteration of the package build from the above version.
      *     @type int $kind
-     *           Distinguish between sentinel MIN/MAX versions and normal versions. If
-     *           kind is not NORMAL, then the other fields are ignored.
+     *           Required. Distinguishes between sentinel MIN/MAX versions and normal
+     *           versions.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,7 +92,8 @@ final class Version extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      *
      * Generated from protobuf field <code>string name = 2;</code>
      * @return string
@@ -101,7 +104,8 @@ final class Version extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      *
      * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
@@ -142,8 +146,8 @@ final class Version extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
      * @return int
@@ -154,8 +158,8 @@ final class Version extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
      * @param int $var

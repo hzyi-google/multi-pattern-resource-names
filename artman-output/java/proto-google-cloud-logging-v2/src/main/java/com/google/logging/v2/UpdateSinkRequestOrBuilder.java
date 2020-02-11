@@ -18,7 +18,8 @@ public interface UpdateSinkRequestOrBuilder extends
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The sinkName.
    */
   java.lang.String getSinkName();
   /**
@@ -32,7 +33,8 @@ public interface UpdateSinkRequestOrBuilder extends
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for sinkName.
    */
   com.google.protobuf.ByteString
       getSinkNameBytes();
@@ -43,7 +45,8 @@ public interface UpdateSinkRequestOrBuilder extends
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the sink field is set.
    */
   boolean hasSink();
   /**
@@ -52,7 +55,8 @@ public interface UpdateSinkRequestOrBuilder extends
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The sink.
    */
   com.google.logging.v2.LogSink getSink();
   /**
@@ -61,7 +65,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder();
 
@@ -80,6 +84,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   * @return The uniqueWriterIdentity.
    */
   boolean getUniqueWriterIdentity();
 
@@ -99,6 +104,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -117,6 +123,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

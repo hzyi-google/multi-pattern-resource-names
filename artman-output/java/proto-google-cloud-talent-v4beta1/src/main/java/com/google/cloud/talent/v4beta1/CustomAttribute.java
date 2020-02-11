@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CustomAttribute();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -121,15 +128,11 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.CustomAttribute.class, com.google.cloud.talent.v4beta1.CustomAttribute.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STRING_VALUES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList stringValues_;
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -140,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @return A list containing the stringValues.
    */
   public com.google.protobuf.ProtocolStringList
       getStringValuesList() {
@@ -147,10 +151,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -161,16 +162,14 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @return The count of stringValues.
    */
   public int getStringValuesCount() {
     return stringValues_.size();
   }
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -181,16 +180,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @param index The index of the element to return.
+   * @return The stringValues at the given index.
    */
   public java.lang.String getStringValues(int index) {
     return stringValues_.get(index);
   }
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -201,6 +199,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the stringValues at the given index.
    */
   public com.google.protobuf.ByteString
       getStringValuesBytes(int index) {
@@ -211,18 +211,14 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.LongList longValues_;
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @return A list containing the longValues.
    */
   public java.util.List<java.lang.Long>
       getLongValuesList() {
@@ -230,36 +226,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @return The count of longValues.
    */
   public int getLongValuesCount() {
     return longValues_.size();
   }
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @param index The index of the element to return.
+   * @return The longValues at the given index.
    */
   public long getLongValues(int index) {
     return longValues_.getLong(index);
@@ -276,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool filterable = 3;</code>
+   * @return The filterable.
    */
   public boolean getFilterable() {
     return filterable_;
@@ -557,7 +547,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.CustomAttribute buildPartial() {
       com.google.cloud.talent.v4beta1.CustomAttribute result = new com.google.cloud.talent.v4beta1.CustomAttribute(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         stringValues_ = stringValues_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -569,7 +558,6 @@ private static final long serialVersionUID = 0L;
       }
       result.longValues_ = longValues_;
       result.filterable_ = filterable_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -680,10 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -694,6 +679,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @return A list containing the stringValues.
      */
     public com.google.protobuf.ProtocolStringList
         getStringValuesList() {
@@ -701,10 +687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -715,16 +698,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @return The count of stringValues.
      */
     public int getStringValuesCount() {
       return stringValues_.size();
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -735,16 +716,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The stringValues at the given index.
      */
     public java.lang.String getStringValues(int index) {
       return stringValues_.get(index);
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -755,6 +735,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stringValues at the given index.
      */
     public com.google.protobuf.ByteString
         getStringValuesBytes(int index) {
@@ -762,10 +744,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -776,6 +755,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The stringValues to set.
+     * @return This builder for chaining.
      */
     public Builder setStringValues(
         int index, java.lang.String value) {
@@ -789,10 +771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -803,6 +782,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param value The stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addStringValues(
         java.lang.String value) {
@@ -816,10 +797,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -830,6 +808,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param values The stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStringValues(
         java.lang.Iterable<java.lang.String> values) {
@@ -841,10 +821,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -855,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStringValues() {
       stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -864,10 +842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
@@ -878,6 +853,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string string_values = 1;</code>
+     * @param value The bytes of the stringValues to add.
+     * @return This builder for chaining.
      */
     public Builder addStringValuesBytes(
         com.google.protobuf.ByteString value) {
@@ -900,18 +877,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @return A list containing the longValues.
      */
     public java.util.List<java.lang.Long>
         getLongValuesList() {
@@ -920,54 +893,45 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @return The count of longValues.
      */
     public int getLongValuesCount() {
       return longValues_.size();
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @param index The index of the element to return.
+     * @return The longValues at the given index.
      */
     public long getLongValues(int index) {
       return longValues_.getLong(index);
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The longValues to set.
+     * @return This builder for chaining.
      */
     public Builder setLongValues(
         int index, long value) {
@@ -978,18 +942,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @param value The longValues to add.
+     * @return This builder for chaining.
      */
     public Builder addLongValues(long value) {
       ensureLongValuesIsMutable();
@@ -999,18 +960,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @param values The longValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLongValues(
         java.lang.Iterable<? extends java.lang.Long> values) {
@@ -1022,18 +980,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exactly one of
-     * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-     * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-     * must be specified.
+     * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-     * Currently at most 1
-     * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-     * supported.
+     * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
      * </pre>
      *
      * <code>repeated int64 long_values = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLongValues() {
       longValues_ = emptyLongList();
@@ -1051,6 +1005,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     * @return The filterable.
      */
     public boolean getFilterable() {
       return filterable_;
@@ -1063,6 +1018,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     * @param value The filterable to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterable(boolean value) {
       
@@ -1078,6 +1035,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool filterable = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilterable() {
       

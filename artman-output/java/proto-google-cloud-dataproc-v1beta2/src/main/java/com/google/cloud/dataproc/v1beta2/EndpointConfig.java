@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new EndpointConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -108,7 +115,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.EndpointConfig.class, com.google.cloud.dataproc.v1beta2.EndpointConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HTTP_PORTS_FIELD_NUMBER = 1;
   private static final class HttpPortsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -214,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enableHttpPortAccess.
    */
   public boolean getEnableHttpPortAccess() {
     return enableHttpPortAccess_;
@@ -491,11 +498,9 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.EndpointConfig buildPartial() {
       com.google.cloud.dataproc.v1beta2.EndpointConfig result = new com.google.cloud.dataproc.v1beta2.EndpointConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.httpPorts_ = internalGetHttpPorts();
       result.httpPorts_.makeImmutable();
       result.enableHttpPortAccess_ = enableHttpPortAccess_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -745,6 +750,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enableHttpPortAccess.
      */
     public boolean getEnableHttpPortAccess() {
       return enableHttpPortAccess_;
@@ -756,6 +762,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enableHttpPortAccess to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableHttpPortAccess(boolean value) {
       
@@ -770,6 +778,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearEnableHttpPortAccess() {
       

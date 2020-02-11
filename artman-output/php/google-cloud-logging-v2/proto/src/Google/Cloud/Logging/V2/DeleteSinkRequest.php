@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.DeleteSinkRequest</code>
  */
-final class DeleteSinkRequest extends \Google\Protobuf\Internal\Message
+class DeleteSinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The full resource name of the sink to delete, including the
@@ -24,9 +24,9 @@ final class DeleteSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $sink_name = '';
+    protected $sink_name = '';
 
     /**
      * Constructor.
@@ -58,7 +58,7 @@ final class DeleteSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getSinkName()
@@ -75,7 +75,7 @@ final class DeleteSinkRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      *
-     * Generated from protobuf field <code>string sink_name = 1;</code>
+     * Generated from protobuf field <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListLogMetricsResponse</code>
  */
-final class ListLogMetricsResponse extends \Google\Protobuf\Internal\Message
+class ListLogMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of logs-based metrics.
@@ -28,7 +28,7 @@ final class ListLogMetricsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

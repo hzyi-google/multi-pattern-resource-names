@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new KeyRing();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,7 +112,8 @@ private static final long serialVersionUID = 0L;
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -126,7 +133,8 @@ private static final long serialVersionUID = 0L;
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -149,7 +157,8 @@ private static final long serialVersionUID = 0L;
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -159,7 +168,8 @@ private static final long serialVersionUID = 0L;
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -169,7 +179,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -518,7 +528,8 @@ private static final long serialVersionUID = 0L;
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -538,7 +549,8 @@ private static final long serialVersionUID = 0L;
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -559,7 +571,9 @@ private static final long serialVersionUID = 0L;
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -577,7 +591,8 @@ private static final long serialVersionUID = 0L;
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -591,7 +606,9 @@ private static final long serialVersionUID = 0L;
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -613,7 +630,8 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -623,7 +641,8 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -637,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -657,7 +676,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -675,7 +694,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -697,7 +716,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -715,7 +734,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -727,7 +746,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -742,7 +761,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.SparkJob</code>
  */
-final class SparkJob extends \Google\Protobuf\Internal\Message
+class SparkJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The arguments to pass to the driver. Do not include arguments,
@@ -65,7 +65,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
     protected $driver;
 
     /**

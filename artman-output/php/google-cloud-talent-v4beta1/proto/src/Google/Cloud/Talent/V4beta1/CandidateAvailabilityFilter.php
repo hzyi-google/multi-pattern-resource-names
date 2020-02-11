@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.CandidateAvailabilityFilter</code>
  */
-final class CandidateAvailabilityFilter extends \Google\Protobuf\Internal\Message
+class CandidateAvailabilityFilter extends \Google\Protobuf\Internal\Message
 {
     /**
      * It is false by default. If true, API excludes all the potential available
@@ -22,7 +22,7 @@ final class CandidateAvailabilityFilter extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>bool negated = 1;</code>
      */
-    private $negated = false;
+    protected $negated = false;
 
     /**
      * Constructor.

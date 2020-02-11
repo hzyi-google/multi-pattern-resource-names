@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Hash();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -93,7 +99,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Specifies the hash algorithm, if any.
+   * Specifies the hash algorithm.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.provenance.Hash.HashType}
@@ -146,6 +152,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -153,6 +161,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static HashType forNumber(int value) {
       switch (value) {
         case 0: return HASH_TYPE_UNSPECIFIED;
@@ -213,20 +225,22 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
   }
   /**
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   * @return The type.
    */
   public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
     @SuppressWarnings("deprecation")
@@ -238,10 +252,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString value_;
   /**
    * <pre>
-   * The hash value.
+   * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   * @return The value.
    */
   public com.google.protobuf.ByteString getValue() {
     return value_;
@@ -572,20 +587,23 @@ private static final long serialVersionUID = 0L;
     private int type_ = 0;
     /**
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -594,10 +612,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     * @return The type.
      */
     public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
       @SuppressWarnings("deprecation")
@@ -606,10 +625,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(io.grafeas.v1beta1.provenance.Hash.HashType value) {
       if (value == null) {
@@ -622,10 +643,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -637,20 +659,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     * @return The value.
      */
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
     /**
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -663,10 +688,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       

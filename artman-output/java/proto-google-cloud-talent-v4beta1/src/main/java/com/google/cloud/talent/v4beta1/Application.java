@@ -34,6 +34,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Application();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -107,9 +114,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 130: {
-            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               interviews_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000001;
             }
             interviews_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Interview.parser(), extensionRegistry));
@@ -206,7 +213,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         interviews_ = java.util.Collections.unmodifiableList(interviews_);
       }
       this.unknownFields = unknownFields.build();
@@ -351,6 +358,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -358,6 +367,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApplicationState forNumber(int value) {
       switch (value) {
         case 0: return APPLICATION_STATE_UNSPECIFIED;
@@ -579,6 +592,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -586,6 +601,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ApplicationStage forNumber(int value) {
       switch (value) {
         case 0: return APPLICATION_STAGE_UNSPECIFIED;
@@ -648,7 +667,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.Application.ApplicationStage)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -661,6 +679,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -684,6 +703,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -709,6 +729,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The externalId.
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -730,6 +751,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
       getExternalIdBytes() {
@@ -756,6 +778,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The profile.
    */
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
@@ -778,6 +801,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for profile.
    */
   public com.google.protobuf.ByteString
       getProfileBytes() {
@@ -804,7 +828,8 @@ private static final long serialVersionUID = 0L;
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * @return The job.
    */
   public java.lang.String getJob() {
     java.lang.Object ref = job_;
@@ -827,7 +852,8 @@ private static final long serialVersionUID = 0L;
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for job.
    */
   public com.google.protobuf.ByteString
       getJobBytes() {
@@ -854,7 +880,8 @@ private static final long serialVersionUID = 0L;
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The company.
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -877,7 +904,8 @@ private static final long serialVersionUID = 0L;
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for company.
    */
   public com.google.protobuf.ByteString
       getCompanyBytes() {
@@ -901,6 +929,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   * @return Whether the applicationDate field is set.
    */
   public boolean hasApplicationDate() {
     return applicationDate_ != null;
@@ -911,6 +940,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
+   * @return The applicationDate.
    */
   public com.google.type.Date getApplicationDate() {
     return applicationDate_ == null ? com.google.type.Date.getDefaultInstance() : applicationDate_;
@@ -930,26 +960,28 @@ private static final long serialVersionUID = 0L;
   private int stage_;
   /**
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for stage.
    */
   public int getStageValue() {
     return stage_;
   }
   /**
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The stage.
    */
   public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
     @SuppressWarnings("deprecation")
@@ -965,6 +997,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -975,6 +1008,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+   * @return The state.
    */
   public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
     @SuppressWarnings("deprecation")
@@ -1055,6 +1089,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   * @return Whether the referral field is set.
    */
   public boolean hasReferral() {
     return referral_ != null;
@@ -1065,6 +1100,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
+   * @return The referral.
    */
   public com.google.protobuf.BoolValue getReferral() {
     return referral_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : referral_;
@@ -1088,6 +1124,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1098,6 +1135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1121,6 +1159,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -1131,6 +1170,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -1156,6 +1196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   * @return The outcomeNotes.
    */
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
@@ -1177,6 +1218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string outcome_notes = 21;</code>
+   * @return The bytes for outcomeNotes.
    */
   public com.google.protobuf.ByteString
       getOutcomeNotesBytes() {
@@ -1200,6 +1242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   * @return The enum numeric value on the wire for outcome.
    */
   public int getOutcomeValue() {
     return outcome_;
@@ -1210,6 +1253,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+   * @return The outcome.
    */
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
@@ -1227,6 +1271,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the isMatch field is set.
    */
   public boolean hasIsMatch() {
     return isMatch_ != null;
@@ -1239,6 +1284,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The isMatch.
    */
   public com.google.protobuf.BoolValue getIsMatch() {
     return isMatch_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isMatch_;
@@ -1266,6 +1312,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The jobTitleSnippet.
    */
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -1287,6 +1334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for jobTitleSnippet.
    */
   public com.google.protobuf.ByteString
       getJobTitleSnippetBytes() {
@@ -1704,7 +1752,7 @@ private static final long serialVersionUID = 0L;
 
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         interviewsBuilder_.clear();
       }
@@ -1765,7 +1813,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Application buildPartial() {
       com.google.cloud.talent.v4beta1.Application result = new com.google.cloud.talent.v4beta1.Application(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.profile_ = profile_;
@@ -1779,9 +1826,9 @@ private static final long serialVersionUID = 0L;
       result.stage_ = stage_;
       result.state_ = state_;
       if (interviewsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           interviews_ = java.util.Collections.unmodifiableList(interviews_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.interviews_ = interviews_;
       } else {
@@ -1810,7 +1857,6 @@ private static final long serialVersionUID = 0L;
         result.isMatch_ = isMatchBuilder_.build();
       }
       result.jobTitleSnippet_ = jobTitleSnippet_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1892,7 +1938,7 @@ private static final long serialVersionUID = 0L;
         if (!other.interviews_.isEmpty()) {
           if (interviews_.isEmpty()) {
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInterviewsIsMutable();
             interviews_.addAll(other.interviews_);
@@ -1905,7 +1951,7 @@ private static final long serialVersionUID = 0L;
             interviewsBuilder_.dispose();
             interviewsBuilder_ = null;
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
             interviewsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getInterviewsFieldBuilder() : null;
@@ -1978,6 +2024,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2001,6 +2048,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2025,6 +2073,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -2046,6 +2096,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -2063,6 +2114,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -2085,6 +2138,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The externalId.
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -2106,6 +2160,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
         getExternalIdBytes() {
@@ -2128,6 +2183,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalId(
         java.lang.String value) {
@@ -2147,6 +2204,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearExternalId() {
       
@@ -2162,6 +2220,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2185,6 +2245,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The profile.
      */
     public java.lang.String getProfile() {
       java.lang.Object ref = profile_;
@@ -2207,6 +2268,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for profile.
      */
     public com.google.protobuf.ByteString
         getProfileBytes() {
@@ -2230,6 +2292,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfile(
         java.lang.String value) {
@@ -2250,6 +2314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProfile() {
       
@@ -2266,6 +2331,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfileBytes(
         com.google.protobuf.ByteString value) {
@@ -2289,7 +2356,8 @@ private static final long serialVersionUID = 0L;
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return The job.
      */
     public java.lang.String getJob() {
       java.lang.Object ref = job_;
@@ -2312,7 +2380,8 @@ private static final long serialVersionUID = 0L;
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for job.
      */
     public com.google.protobuf.ByteString
         getJobBytes() {
@@ -2336,7 +2405,9 @@ private static final long serialVersionUID = 0L;
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The job to set.
+     * @return This builder for chaining.
      */
     public Builder setJob(
         java.lang.String value) {
@@ -2357,7 +2428,8 @@ private static final long serialVersionUID = 0L;
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearJob() {
       
@@ -2374,7 +2446,9 @@ private static final long serialVersionUID = 0L;
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for job to set.
+     * @return This builder for chaining.
      */
     public Builder setJobBytes(
         com.google.protobuf.ByteString value) {
@@ -2398,7 +2472,8 @@ private static final long serialVersionUID = 0L;
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The company.
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -2421,7 +2496,8 @@ private static final long serialVersionUID = 0L;
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for company.
      */
     public com.google.protobuf.ByteString
         getCompanyBytes() {
@@ -2445,7 +2521,9 @@ private static final long serialVersionUID = 0L;
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompany(
         java.lang.String value) {
@@ -2466,7 +2544,8 @@ private static final long serialVersionUID = 0L;
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearCompany() {
       
@@ -2483,7 +2562,9 @@ private static final long serialVersionUID = 0L;
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyBytes(
         com.google.protobuf.ByteString value) {
@@ -2506,6 +2587,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
+     * @return Whether the applicationDate field is set.
      */
     public boolean hasApplicationDate() {
       return applicationDateBuilder_ != null || applicationDate_ != null;
@@ -2516,6 +2598,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
+     * @return The applicationDate.
      */
     public com.google.type.Date getApplicationDate() {
       if (applicationDateBuilder_ == null) {
@@ -2653,26 +2736,29 @@ private static final long serialVersionUID = 0L;
     private int stage_ = 0;
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for stage.
      */
     public int getStageValue() {
       return stage_;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for stage to set.
+     * @return This builder for chaining.
      */
     public Builder setStageValue(int value) {
       stage_ = value;
@@ -2681,13 +2767,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The stage.
      */
     public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
       @SuppressWarnings("deprecation")
@@ -2696,13 +2783,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The stage to set.
+     * @return This builder for chaining.
      */
     public Builder setStage(com.google.cloud.talent.v4beta1.Application.ApplicationStage value) {
       if (value == null) {
@@ -2715,13 +2804,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearStage() {
       
@@ -2737,6 +2827,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -2747,6 +2838,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -2759,6 +2852,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     * @return The state.
      */
     public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
       @SuppressWarnings("deprecation")
@@ -2771,6 +2865,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.talent.v4beta1.Application.ApplicationState value) {
       if (value == null) {
@@ -2787,6 +2883,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -2798,9 +2895,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Interview> interviews_ =
       java.util.Collections.emptyList();
     private void ensureInterviewsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         interviews_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>(interviews_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -3016,7 +3113,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearInterviews() {
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         interviewsBuilder_.clear();
@@ -3135,7 +3232,7 @@ private static final long serialVersionUID = 0L;
         interviewsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Interview, com.google.cloud.talent.v4beta1.Interview.Builder, com.google.cloud.talent.v4beta1.InterviewOrBuilder>(
                 interviews_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         interviews_ = null;
@@ -3152,6 +3249,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
+     * @return Whether the referral field is set.
      */
     public boolean hasReferral() {
       return referralBuilder_ != null || referral_ != null;
@@ -3162,6 +3260,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
+     * @return The referral.
      */
     public com.google.protobuf.BoolValue getReferral() {
       if (referralBuilder_ == null) {
@@ -3305,6 +3404,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3315,6 +3415,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3458,6 +3559,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -3468,6 +3570,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3611,6 +3714,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     * @return The outcomeNotes.
      */
     public java.lang.String getOutcomeNotes() {
       java.lang.Object ref = outcomeNotes_;
@@ -3632,6 +3736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     * @return The bytes for outcomeNotes.
      */
     public com.google.protobuf.ByteString
         getOutcomeNotesBytes() {
@@ -3654,6 +3759,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     * @param value The outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotes(
         java.lang.String value) {
@@ -3673,6 +3780,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOutcomeNotes() {
       
@@ -3688,6 +3796,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string outcome_notes = 21;</code>
+     * @param value The bytes for outcomeNotes to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeNotesBytes(
         com.google.protobuf.ByteString value) {
@@ -3708,6 +3818,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     * @return The enum numeric value on the wire for outcome.
      */
     public int getOutcomeValue() {
       return outcome_;
@@ -3718,6 +3829,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     * @param value The enum numeric value on the wire for outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
       outcome_ = value;
@@ -3730,6 +3843,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     * @return The outcome.
      */
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
@@ -3742,6 +3856,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     * @param value The outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcome(com.google.cloud.talent.v4beta1.Outcome value) {
       if (value == null) {
@@ -3758,6 +3874,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOutcome() {
       
@@ -3777,6 +3894,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the isMatch field is set.
      */
     public boolean hasIsMatch() {
       return isMatchBuilder_ != null || isMatch_ != null;
@@ -3789,6 +3907,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The isMatch.
      */
     public com.google.protobuf.BoolValue getIsMatch() {
       if (isMatchBuilder_ == null) {
@@ -3946,6 +4065,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The jobTitleSnippet.
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -3967,6 +4087,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for jobTitleSnippet.
      */
     public com.google.protobuf.ByteString
         getJobTitleSnippetBytes() {
@@ -3989,6 +4110,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippet(
         java.lang.String value) {
@@ -4008,6 +4131,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobTitleSnippet() {
       
@@ -4023,6 +4147,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for jobTitleSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleSnippetBytes(
         com.google.protobuf.ByteString value) {

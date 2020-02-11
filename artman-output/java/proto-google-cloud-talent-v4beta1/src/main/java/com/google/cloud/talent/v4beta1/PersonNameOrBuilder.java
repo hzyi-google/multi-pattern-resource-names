@@ -14,6 +14,7 @@ public interface PersonNameOrBuilder extends
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   * @return The formattedName.
    */
   java.lang.String getFormattedName();
   /**
@@ -23,6 +24,7 @@ public interface PersonNameOrBuilder extends
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   * @return The bytes for formattedName.
    */
   com.google.protobuf.ByteString
       getFormattedNameBytes();
@@ -34,6 +36,7 @@ public interface PersonNameOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   * @return Whether the structuredName field is set.
    */
   boolean hasStructuredName();
   /**
@@ -43,6 +46,7 @@ public interface PersonNameOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
+   * @return The structuredName.
    */
   com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName();
   /**
@@ -57,24 +61,24 @@ public interface PersonNameOrBuilder extends
 
   /**
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   * @return The preferredName.
    */
   java.lang.String getPreferredName();
   /**
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
    *
    * <code>string preferred_name = 3;</code>
+   * @return The bytes for preferredName.
    */
   com.google.protobuf.ByteString
       getPreferredNameBytes();

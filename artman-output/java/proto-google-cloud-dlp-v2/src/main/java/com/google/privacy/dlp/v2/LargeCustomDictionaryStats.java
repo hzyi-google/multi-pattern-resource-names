@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LargeCustomDictionaryStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -91,6 +97,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 approx_num_phrases = 1;</code>
+   * @return The approxNumPhrases.
    */
   public long getApproxNumPhrases() {
     return approxNumPhrases_;
@@ -410,6 +417,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     * @return The approxNumPhrases.
      */
     public long getApproxNumPhrases() {
       return approxNumPhrases_;
@@ -420,6 +428,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     * @param value The approxNumPhrases to set.
+     * @return This builder for chaining.
      */
     public Builder setApproxNumPhrases(long value) {
       
@@ -433,6 +443,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 approx_num_phrases = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearApproxNumPhrases() {
       

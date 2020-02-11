@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateDlpJobRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,7 +138,8 @@ private static final long serialVersionUID = 0L;
   private int jobCase_ = 0;
   private java.lang.Object job_;
   public enum JobCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INSPECT_JOB(2),
     RISK_JOB(3),
     JOB_NOT_SET(0);
@@ -141,6 +148,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -175,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -194,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -211,13 +222,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   * @return Whether the inspectJob field is set.
    */
   public boolean hasInspectJob() {
     return jobCase_ == 2;
   }
   /**
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   * @return The inspectJob.
    */
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 2) {
@@ -226,6 +247,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    */
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
@@ -237,13 +262,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int RISK_JOB_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   * @return Whether the riskJob field is set.
    */
   public boolean hasRiskJob() {
     return jobCase_ == 3;
   }
   /**
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   * @return The riskJob.
    */
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
     if (jobCase_ == 3) {
@@ -252,6 +287,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    */
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
@@ -272,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   * @return The jobId.
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -294,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string job_id = 4;</code>
+   * @return The bytes for jobId.
    */
   public com.google.protobuf.ByteString
       getJobIdBytes() {
@@ -318,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -338,6 +380,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -786,6 +829,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -805,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -825,6 +870,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -842,6 +889,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -855,6 +903,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -871,13 +921,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> inspectJobBuilder_;
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     * @return Whether the inspectJob field is set.
      */
     public boolean hasInspectJob() {
       return jobCase_ == 2;
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     * @return The inspectJob.
      */
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
@@ -893,6 +953,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public Builder setInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -909,6 +973,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public Builder setInspectJob(
@@ -923,6 +991,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public Builder mergeInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -945,6 +1017,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public Builder clearInspectJob() {
@@ -964,12 +1040,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
@@ -983,6 +1067,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1007,13 +1095,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.RiskAnalysisJobConfig, com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder, com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder> riskJobBuilder_;
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     * @return Whether the riskJob field is set.
      */
     public boolean hasRiskJob() {
       return jobCase_ == 3;
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     * @return The riskJob.
      */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
       if (riskJobBuilder_ == null) {
@@ -1029,6 +1127,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public Builder setRiskJob(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
@@ -1045,6 +1147,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public Builder setRiskJob(
@@ -1059,6 +1165,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public Builder mergeRiskJob(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
@@ -1081,6 +1191,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public Builder clearRiskJob() {
@@ -1100,12 +1214,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder getRiskJobBuilder() {
       return getRiskJobFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
@@ -1119,6 +1241,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1150,6 +1276,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     * @return The jobId.
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -1172,6 +1299,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
@@ -1195,6 +1323,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     * @param value The jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobId(
         java.lang.String value) {
@@ -1215,6 +1345,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobId() {
       
@@ -1231,6 +1362,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string job_id = 4;</code>
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1252,6 +1385,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1272,6 +1406,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -1293,6 +1428,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -1311,6 +1448,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -1325,6 +1463,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

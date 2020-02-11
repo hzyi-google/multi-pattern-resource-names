@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CustomInfoType.Regex</code>
  */
-final class Regex extends \Google\Protobuf\Internal\Message
+class Regex extends \Google\Protobuf\Internal\Message
 {
     /**
      * Pattern defining the regular expression. Its syntax
@@ -22,7 +22,7 @@ final class Regex extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string pattern = 1;</code>
      */
-    private $pattern = '';
+    protected $pattern = '';
     /**
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.

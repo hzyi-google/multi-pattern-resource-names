@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Tenant();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -73,9 +80,9 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               keywordSearchableProfileCustomAttributes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             keywordSearchableProfileCustomAttributes_.add(s);
             break;
@@ -95,7 +102,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -190,6 +197,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -197,6 +206,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DataUsageType forNumber(int value) {
       switch (value) {
         case 0: return DATA_USAGE_TYPE_UNSPECIFIED;
@@ -254,7 +267,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.Tenant.DataUsageType)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -267,6 +279,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -290,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -309,12 +323,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object externalId_;
   /**
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The externalId.
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -330,12 +344,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
       getExternalIdBytes() {
@@ -357,12 +371,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   * @return The enum numeric value on the wire for usageType.
    */
   public int getUsageTypeValue() {
     return usageType_;
@@ -371,12 +384,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+   * @return The usageType.
    */
   public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
     @SuppressWarnings("deprecation")
@@ -388,16 +400,16 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList keywordSearchableProfileCustomAttributes_;
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @return A list containing the keywordSearchableProfileCustomAttributes.
    */
   public com.google.protobuf.ProtocolStringList
       getKeywordSearchableProfileCustomAttributesList() {
@@ -405,48 +417,50 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @return The count of keywordSearchableProfileCustomAttributes.
    */
   public int getKeywordSearchableProfileCustomAttributesCount() {
     return keywordSearchableProfileCustomAttributes_.size();
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @param index The index of the element to return.
+   * @return The keywordSearchableProfileCustomAttributes at the given index.
    */
   public java.lang.String getKeywordSearchableProfileCustomAttributes(int index) {
     return keywordSearchableProfileCustomAttributes_.get(index);
   }
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Profiles
-   * with `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
    * </pre>
    *
    * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the keywordSearchableProfileCustomAttributes at the given index.
    */
   public com.google.protobuf.ByteString
       getKeywordSearchableProfileCustomAttributesBytes(int index) {
@@ -696,7 +710,7 @@ private static final long serialVersionUID = 0L;
       usageType_ = 0;
 
       keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -724,16 +738,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Tenant buildPartial() {
       com.google.cloud.talent.v4beta1.Tenant result = new com.google.cloud.talent.v4beta1.Tenant(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.usageType_ = usageType_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -796,7 +808,7 @@ private static final long serialVersionUID = 0L;
       if (!other.keywordSearchableProfileCustomAttributes_.isEmpty()) {
         if (keywordSearchableProfileCustomAttributes_.isEmpty()) {
           keywordSearchableProfileCustomAttributes_ = other.keywordSearchableProfileCustomAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureKeywordSearchableProfileCustomAttributesIsMutable();
           keywordSearchableProfileCustomAttributes_.addAll(other.keywordSearchableProfileCustomAttributes_);
@@ -844,6 +856,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -867,6 +880,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -891,6 +905,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -912,6 +928,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -929,6 +946,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -945,12 +964,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object externalId_ = "";
     /**
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The externalId.
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -966,12 +985,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
         getExternalIdBytes() {
@@ -988,12 +1007,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalId(
         java.lang.String value) {
@@ -1007,12 +1027,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearExternalId() {
       
@@ -1022,12 +1042,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string external_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1046,12 +1067,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is
-     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-     * if it's unset.
+     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+     * @return The enum numeric value on the wire for usageType.
      */
     public int getUsageTypeValue() {
       return usageType_;
@@ -1060,12 +1080,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is
-     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-     * if it's unset.
+     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+     * @param value The enum numeric value on the wire for usageType to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageTypeValue(int value) {
       usageType_ = value;
@@ -1076,12 +1096,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is
-     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-     * if it's unset.
+     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+     * @return The usageType.
      */
     public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
       @SuppressWarnings("deprecation")
@@ -1092,12 +1111,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is
-     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-     * if it's unset.
+     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+     * @param value The usageType to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageType(com.google.cloud.talent.v4beta1.Tenant.DataUsageType value) {
       if (value == null) {
@@ -1112,12 +1131,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is
-     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-     * if it's unset.
+     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsageType() {
       
@@ -1128,23 +1146,23 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureKeywordSearchableProfileCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableProfileCustomAttributes_ = new com.google.protobuf.LazyStringArrayList(keywordSearchableProfileCustomAttributes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @return A list containing the keywordSearchableProfileCustomAttributes.
      */
     public com.google.protobuf.ProtocolStringList
         getKeywordSearchableProfileCustomAttributesList() {
@@ -1152,48 +1170,50 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @return The count of keywordSearchableProfileCustomAttributes.
      */
     public int getKeywordSearchableProfileCustomAttributesCount() {
       return keywordSearchableProfileCustomAttributes_.size();
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param index The index of the element to return.
+     * @return The keywordSearchableProfileCustomAttributes at the given index.
      */
     public java.lang.String getKeywordSearchableProfileCustomAttributes(int index) {
       return keywordSearchableProfileCustomAttributes_.get(index);
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywordSearchableProfileCustomAttributes at the given index.
      */
     public com.google.protobuf.ByteString
         getKeywordSearchableProfileCustomAttributesBytes(int index) {
@@ -1201,16 +1221,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The keywordSearchableProfileCustomAttributes to set.
+     * @return This builder for chaining.
      */
     public Builder setKeywordSearchableProfileCustomAttributes(
         int index, java.lang.String value) {
@@ -1224,16 +1246,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param value The keywordSearchableProfileCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addKeywordSearchableProfileCustomAttributes(
         java.lang.String value) {
@@ -1247,16 +1270,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param values The keywordSearchableProfileCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllKeywordSearchableProfileCustomAttributes(
         java.lang.Iterable<java.lang.String> values) {
@@ -1268,35 +1292,36 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeywordSearchableProfileCustomAttributes() {
       keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * A list of keys of filterable
-     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
-     * whose corresponding `string_values` are used in keyword searches. Profiles
-     * with `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
      * </pre>
      *
      * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     * @param value The bytes of the keywordSearchableProfileCustomAttributes to add.
+     * @return This builder for chaining.
      */
     public Builder addKeywordSearchableProfileCustomAttributesBytes(
         com.google.protobuf.ByteString value) {

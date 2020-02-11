@@ -15,7 +15,8 @@ public interface CreateClientEventRequestOrBuilder extends
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -26,33 +27,36 @@ public interface CreateClientEventRequestOrBuilder extends
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the clientEvent field is set.
    */
   boolean hasClientEvent();
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clientEvent.
    */
   com.google.cloud.talent.v4beta1.ClientEvent getClientEvent();
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Subscription();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -97,10 +104,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -184,7 +191,6 @@ private static final long serialVersionUID = 0L;
             com.google.pubsub.v1.Subscription.class, com.google.pubsub.v1.Subscription.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -198,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -222,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -248,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The topic.
    */
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
@@ -270,6 +279,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString
       getTopicBytes() {
@@ -295,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   * @return Whether the pushConfig field is set.
    */
   public boolean hasPushConfig() {
     return pushConfig_ != null;
@@ -307,6 +318,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+   * @return The pushConfig.
    */
   public com.google.pubsub.v1.PushConfig getPushConfig() {
     return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
@@ -348,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 ack_deadline_seconds = 5;</code>
+   * @return The ackDeadlineSeconds.
    */
   public int getAckDeadlineSeconds() {
     return ackDeadlineSeconds_;
@@ -367,6 +380,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
+   * @return The retainAckedMessages.
    */
   public boolean getRetainAckedMessages() {
     return retainAckedMessages_;
@@ -385,6 +399,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * @return Whether the messageRetentionDuration field is set.
    */
   public boolean hasMessageRetentionDuration() {
     return messageRetentionDuration_ != null;
@@ -400,6 +415,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * @return The messageRetentionDuration.
    */
   public com.google.protobuf.Duration getMessageRetentionDuration() {
     return messageRetentionDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
@@ -530,6 +546,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool enable_message_ordering = 10;</code>
+   * @return The enableMessageOrdering.
    */
   public boolean getEnableMessageOrdering() {
     return enableMessageOrdering_;
@@ -548,6 +565,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   * @return Whether the expirationPolicy field is set.
    */
   public boolean hasExpirationPolicy() {
     return expirationPolicy_ != null;
@@ -563,6 +581,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   * @return The expirationPolicy.
    */
   public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
     return expirationPolicy_ == null ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance() : expirationPolicy_;
@@ -600,6 +619,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   * @return Whether the deadLetterPolicy field is set.
    */
   public boolean hasDeadLetterPolicy() {
     return deadLetterPolicy_ != null;
@@ -619,6 +639,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   * @return The deadLetterPolicy.
    */
   public com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy() {
     return deadLetterPolicy_ == null ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance() : deadLetterPolicy_;
@@ -1054,7 +1075,6 @@ private static final long serialVersionUID = 0L;
     public com.google.pubsub.v1.Subscription buildPartial() {
       com.google.pubsub.v1.Subscription result = new com.google.pubsub.v1.Subscription(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.topic_ = topic_;
       if (pushConfigBuilder_ == null) {
@@ -1082,7 +1102,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.deadLetterPolicy_ = deadLetterPolicyBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1204,6 +1223,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1228,6 +1248,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1253,6 +1274,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1275,6 +1298,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1293,6 +1317,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1316,6 +1342,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -1338,6 +1365,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -1361,6 +1389,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @param value The topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopic(
         java.lang.String value) {
@@ -1381,6 +1411,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTopic() {
       
@@ -1397,6 +1428,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string topic = 2;</code>
+     * @param value The bytes for topic to set.
+     * @return This builder for chaining.
      */
     public Builder setTopicBytes(
         com.google.protobuf.ByteString value) {
@@ -1421,6 +1454,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+     * @return Whether the pushConfig field is set.
      */
     public boolean hasPushConfig() {
       return pushConfigBuilder_ != null || pushConfig_ != null;
@@ -1433,6 +1467,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
+     * @return The pushConfig.
      */
     public com.google.pubsub.v1.PushConfig getPushConfig() {
       if (pushConfigBuilder_ == null) {
@@ -1604,6 +1639,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 5;</code>
+     * @return The ackDeadlineSeconds.
      */
     public int getAckDeadlineSeconds() {
       return ackDeadlineSeconds_;
@@ -1630,6 +1666,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 5;</code>
+     * @param value The ackDeadlineSeconds to set.
+     * @return This builder for chaining.
      */
     public Builder setAckDeadlineSeconds(int value) {
       
@@ -1659,6 +1697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 ack_deadline_seconds = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAckDeadlineSeconds() {
       
@@ -1680,6 +1719,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
+     * @return The retainAckedMessages.
      */
     public boolean getRetainAckedMessages() {
       return retainAckedMessages_;
@@ -1696,6 +1736,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
+     * @param value The retainAckedMessages to set.
+     * @return This builder for chaining.
      */
     public Builder setRetainAckedMessages(boolean value) {
       
@@ -1715,6 +1757,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRetainAckedMessages() {
       
@@ -1737,6 +1780,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * @return Whether the messageRetentionDuration field is set.
      */
     public boolean hasMessageRetentionDuration() {
       return messageRetentionDurationBuilder_ != null || messageRetentionDuration_ != null;
@@ -1752,6 +1796,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * @return The messageRetentionDuration.
      */
     public com.google.protobuf.Duration getMessageRetentionDuration() {
       if (messageRetentionDurationBuilder_ == null) {
@@ -2092,6 +2137,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
+     * @return The enableMessageOrdering.
      */
     public boolean getEnableMessageOrdering() {
       return enableMessageOrdering_;
@@ -2108,6 +2154,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
+     * @param value The enableMessageOrdering to set.
+     * @return This builder for chaining.
      */
     public Builder setEnableMessageOrdering(boolean value) {
       
@@ -2127,6 +2175,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEnableMessageOrdering() {
       
@@ -2149,6 +2198,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     * @return Whether the expirationPolicy field is set.
      */
     public boolean hasExpirationPolicy() {
       return expirationPolicyBuilder_ != null || expirationPolicy_ != null;
@@ -2164,6 +2214,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     * @return The expirationPolicy.
      */
     public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
       if (expirationPolicyBuilder_ == null) {
@@ -2351,6 +2402,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     * @return Whether the deadLetterPolicy field is set.
      */
     public boolean hasDeadLetterPolicy() {
       return deadLetterPolicyBuilder_ != null || deadLetterPolicy_ != null;
@@ -2370,6 +2422,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     * @return The deadLetterPolicy.
      */
     public com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy() {
       if (deadLetterPolicyBuilder_ == null) {

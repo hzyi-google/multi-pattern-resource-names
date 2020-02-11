@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CloudStoragePath</code>
  */
-final class CloudStoragePath extends \Google\Protobuf\Internal\Message
+class CloudStoragePath extends \Google\Protobuf\Internal\Message
 {
     /**
      * A url representing a file or path (no wildcards) in Cloud Storage.
@@ -21,7 +21,7 @@ final class CloudStoragePath extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string path = 1;</code>
      */
-    private $path = '';
+    protected $path = '';
 
     /**
      * Constructor.

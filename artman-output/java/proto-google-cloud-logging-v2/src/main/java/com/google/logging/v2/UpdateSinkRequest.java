@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateSinkRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -129,7 +135,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The sinkName.
    */
   public java.lang.String getSinkName() {
     java.lang.Object ref = sinkName_;
@@ -154,7 +161,8 @@ private static final long serialVersionUID = 0L;
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for sinkName.
    */
   public com.google.protobuf.ByteString
       getSinkNameBytes() {
@@ -178,7 +186,8 @@ private static final long serialVersionUID = 0L;
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the sink field is set.
    */
   public boolean hasSink() {
     return sink_ != null;
@@ -189,7 +198,8 @@ private static final long serialVersionUID = 0L;
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The sink.
    */
   public com.google.logging.v2.LogSink getSink() {
     return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
@@ -200,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
     return getSink();
@@ -223,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
+   * @return The uniqueWriterIdentity.
    */
   public boolean getUniqueWriterIdentity() {
     return uniqueWriterIdentity_;
@@ -246,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -266,6 +278,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -687,7 +700,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The sinkName.
      */
     public java.lang.String getSinkName() {
       java.lang.Object ref = sinkName_;
@@ -712,7 +726,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for sinkName.
      */
     public com.google.protobuf.ByteString
         getSinkNameBytes() {
@@ -738,7 +753,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkName(
         java.lang.String value) {
@@ -761,7 +778,8 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearSinkName() {
       
@@ -780,7 +798,9 @@ private static final long serialVersionUID = 0L;
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for sinkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSinkNameBytes(
         com.google.protobuf.ByteString value) {
@@ -803,7 +823,8 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the sink field is set.
      */
     public boolean hasSink() {
       return sinkBuilder_ != null || sink_ != null;
@@ -814,7 +835,8 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The sink.
      */
     public com.google.logging.v2.LogSink getSink() {
       if (sinkBuilder_ == null) {
@@ -829,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
@@ -850,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSink(
         com.google.logging.v2.LogSink.Builder builderForValue) {
@@ -869,7 +891,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
@@ -892,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSink() {
       if (sinkBuilder_ == null) {
@@ -911,7 +933,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSink.Builder getSinkBuilder() {
       
@@ -924,7 +946,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
       if (sinkBuilder_ != null) {
@@ -940,7 +962,7 @@ private static final long serialVersionUID = 0L;
      * as part of `sink_name`.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink sink = 2;</code>
+     * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.LogSink, com.google.logging.v2.LogSink.Builder, com.google.logging.v2.LogSinkOrBuilder> 
@@ -972,6 +994,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @return The uniqueWriterIdentity.
      */
     public boolean getUniqueWriterIdentity() {
       return uniqueWriterIdentity_;
@@ -991,6 +1014,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @param value The uniqueWriterIdentity to set.
+     * @return This builder for chaining.
      */
     public Builder setUniqueWriterIdentity(boolean value) {
       
@@ -1013,6 +1038,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
       
@@ -1040,6 +1066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1060,6 +1087,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

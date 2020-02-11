@@ -13,6 +13,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
   /**
@@ -21,6 +22,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks();
   /**
@@ -41,6 +43,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -52,6 +55,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -74,6 +78,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -84,6 +89,7 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**

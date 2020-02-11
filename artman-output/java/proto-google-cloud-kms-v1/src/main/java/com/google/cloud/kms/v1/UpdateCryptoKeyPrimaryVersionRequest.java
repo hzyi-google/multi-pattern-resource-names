@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateCryptoKeyPrimaryVersionRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -96,10 +102,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -115,10 +122,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -138,10 +146,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cryptoKeyVersionId_;
   /**
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersionId.
    */
   public java.lang.String getCryptoKeyVersionId() {
     java.lang.Object ref = cryptoKeyVersionId_;
@@ -157,10 +166,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for cryptoKeyVersionId.
    */
   public com.google.protobuf.ByteString
       getCryptoKeyVersionIdBytes() {
@@ -502,10 +512,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -521,10 +532,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -541,10 +553,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -558,10 +572,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -571,10 +586,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -591,10 +608,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cryptoKeyVersionId_ = "";
     /**
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cryptoKeyVersionId.
      */
     public java.lang.String getCryptoKeyVersionId() {
       java.lang.Object ref = cryptoKeyVersionId_;
@@ -610,10 +628,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for cryptoKeyVersionId.
      */
     public com.google.protobuf.ByteString
         getCryptoKeyVersionIdBytes() {
@@ -630,10 +649,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The cryptoKeyVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyVersionId(
         java.lang.String value) {
@@ -647,10 +668,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCryptoKeyVersionId() {
       
@@ -660,10 +682,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for cryptoKeyVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setCryptoKeyVersionIdBytes(
         com.google.protobuf.ByteString value) {

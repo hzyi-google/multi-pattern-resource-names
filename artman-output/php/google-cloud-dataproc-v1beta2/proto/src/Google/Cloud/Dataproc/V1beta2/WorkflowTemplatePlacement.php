@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement</code>
  */
-final class WorkflowTemplatePlacement extends \Google\Protobuf\Internal\Message
+class WorkflowTemplatePlacement extends \Google\Protobuf\Internal\Message
 {
     protected $placement;
 

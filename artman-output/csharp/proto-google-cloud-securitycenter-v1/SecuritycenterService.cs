@@ -26,14 +26,14 @@ namespace Google.Cloud.SecurityCenter.V1 {
           string.Concat(
             "Cjtnb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjEvc2VjdXJpdHljZW50",
             "ZXJfc2VydmljZS5wcm90bxIeZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVy",
-            "LnYxGhxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvGhdnb29nbGUvYXBp",
-            "L2NsaWVudC5wcm90bxofZ29vZ2xlL2FwaS9maWVsZF9iZWhhdmlvci5wcm90",
-            "bxoZZ29vZ2xlL2FwaS9yZXNvdXJjZS5wcm90bxoqZ29vZ2xlL2Nsb3VkL3Nl",
-            "Y3VyaXR5Y2VudGVyL3YxL2Fzc2V0LnByb3RvGixnb29nbGUvY2xvdWQvc2Vj",
-            "dXJpdHljZW50ZXIvdjEvZmluZGluZy5wcm90bxo6Z29vZ2xlL2Nsb3VkL3Nl",
-            "Y3VyaXR5Y2VudGVyL3YxL29yZ2FuaXphdGlvbl9zZXR0aW5ncy5wcm90bxpB",
-            "Z29vZ2xlL2Nsb3VkL3NlY3VyaXR5Y2VudGVyL3YxL3J1bl9hc3NldF9kaXNj",
-            "b3ZlcnlfcmVzcG9uc2UucHJvdG8aM2dvb2dsZS9jbG91ZC9zZWN1cml0eWNl",
+            "LnYxGkFnb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjEvcnVuX2Fzc2V0",
+            "X2Rpc2NvdmVyeV9yZXNwb25zZS5wcm90bxocZ29vZ2xlL2FwaS9hbm5vdGF0",
+            "aW9ucy5wcm90bxoXZ29vZ2xlL2FwaS9jbGllbnQucHJvdG8aH2dvb2dsZS9h",
+            "cGkvZmllbGRfYmVoYXZpb3IucHJvdG8aGWdvb2dsZS9hcGkvcmVzb3VyY2Uu",
+            "cHJvdG8aKmdvb2dsZS9jbG91ZC9zZWN1cml0eWNlbnRlci92MS9hc3NldC5w",
+            "cm90bxosZ29vZ2xlL2Nsb3VkL3NlY3VyaXR5Y2VudGVyL3YxL2ZpbmRpbmcu",
+            "cHJvdG8aOmdvb2dsZS9jbG91ZC9zZWN1cml0eWNlbnRlci92MS9vcmdhbml6",
+            "YXRpb25fc2V0dGluZ3MucHJvdG8aM2dvb2dsZS9jbG91ZC9zZWN1cml0eWNl",
             "bnRlci92MS9zZWN1cml0eV9tYXJrcy5wcm90bxorZ29vZ2xlL2Nsb3VkL3Nl",
             "Y3VyaXR5Y2VudGVyL3YxL3NvdXJjZS5wcm90bxoeZ29vZ2xlL2lhbS92MS9p",
             "YW1fcG9saWN5LnByb3RvGhpnb29nbGUvaWFtL3YxL3BvbGljeS5wcm90bxoj",
@@ -106,152 +106,157 @@ namespace Google.Cloud.SecurityCenter.V1 {
             "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMwoQY29tcGFyZV9k",
             "dXJhdGlvbhgFIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhIzCgpm",
             "aWVsZF9tYXNrGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza0ID",
-            "4EEBEhIKCnBhZ2VfdG9rZW4YCCABKAkSEQoJcGFnZV9zaXplGAkgASgFIuUD",
+            "4EEBEhIKCnBhZ2VfdG9rZW4YCCABKAkSEQoJcGFnZV9zaXplGAkgASgFIskF",
             "ChRMaXN0RmluZGluZ3NSZXNwb25zZRJmChVsaXN0X2ZpbmRpbmdzX3Jlc3Vs",
             "dHMYASADKAsyRy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuTGlz",
             "dEZpbmRpbmdzUmVzcG9uc2UuTGlzdEZpbmRpbmdzUmVzdWx0Ei0KCXJlYWRf",
             "dGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASFwoPbmV4",
-            "dF9wYWdlX3Rva2VuGAMgASgJEhIKCnRvdGFsX3NpemUYBCABKAUaiAIKEkxp",
+            "dF9wYWdlX3Rva2VuGAMgASgJEhIKCnRvdGFsX3NpemUYBCABKAUa7AMKEkxp",
             "c3RGaW5kaW5nc1Jlc3VsdBI4CgdmaW5kaW5nGAEgASgLMicuZ29vZ2xlLmNs",
             "b3VkLnNlY3VyaXR5Y2VudGVyLnYxLkZpbmRpbmcSaQoMc3RhdGVfY2hhbmdl",
             "GAIgASgOMlMuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLkxpc3RG",
             "aW5kaW5nc1Jlc3BvbnNlLkxpc3RGaW5kaW5nc1Jlc3VsdC5TdGF0ZUNoYW5n",
-            "ZSJNCgtTdGF0ZUNoYW5nZRIKCgZVTlVTRUQQABILCgdDSEFOR0VEEAESDQoJ",
-            "VU5DSEFOR0VEEAISCQoFQURERUQQAxILCgdSRU1PVkVEEAQizQEKFlNldEZp",
-            "bmRpbmdTdGF0ZVJlcXVlc3QSOwoEbmFtZRgBIAEoCUIt4EEC+kEnCiVzZWN1",
-            "cml0eWNlbnRlci5nb29nbGVhcGlzLmNvbS9GaW5kaW5nEkEKBXN0YXRlGAIg",
-            "ASgOMi0uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLkZpbmRpbmcu",
-            "U3RhdGVCA+BBAhIzCgpzdGFydF90aW1lGAMgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcEID4EECImQKGFJ1bkFzc2V0RGlzY292ZXJ5UmVxdWVz",
-            "dBJICgZwYXJlbnQYASABKAlCOOBBAvpBMgowY2xvdWRyZXNvdXJjZW1hbmFn",
-            "ZXIuZ29vZ2xlYXBpcy5jb20vT3JnYW5pemF0aW9uIoYBChRVcGRhdGVGaW5k",
-            "aW5nUmVxdWVzdBI9CgdmaW5kaW5nGAEgASgLMicuZ29vZ2xlLmNsb3VkLnNl",
-            "Y3VyaXR5Y2VudGVyLnYxLkZpbmRpbmdCA+BBAhIvCgt1cGRhdGVfbWFzaxgC",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2sirgEKIVVwZGF0ZU9y",
-            "Z2FuaXphdGlvblNldHRpbmdzUmVxdWVzdBJYChVvcmdhbml6YXRpb25fc2V0",
-            "dGluZ3MYASABKAsyNC5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEu",
-            "T3JnYW5pemF0aW9uU2V0dGluZ3NCA+BBAhIvCgt1cGRhdGVfbWFzaxgCIAEo",
-            "CzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2sigwEKE1VwZGF0ZVNvdXJj",
-            "ZVJlcXVlc3QSOwoGc291cmNlGAEgASgLMiYuZ29vZ2xlLmNsb3VkLnNlY3Vy",
-            "aXR5Y2VudGVyLnYxLlNvdXJjZUID4EECEi8KC3VwZGF0ZV9tYXNrGAIgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFzayLJAQoaVXBkYXRlU2VjdXJp",
-            "dHlNYXJrc1JlcXVlc3QSSgoOc2VjdXJpdHlfbWFya3MYASABKAsyLS5nb29n",
-            "bGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuU2VjdXJpdHlNYXJrc0ID4EEC",
-            "Ei8KC3VwZGF0ZV9tYXNrGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
-            "TWFzaxIuCgpzdGFydF90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcDKeHQoOU2VjdXJpdHlDZW50ZXISsQEKDENyZWF0ZVNvdXJjZRIz",
-            "Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5DcmVhdGVTb3VyY2VS",
-            "ZXF1ZXN0GiYuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLlNvdXJj",
-            "ZSJEgtPkkwIuIiQvdjEve3BhcmVudD1vcmdhbml6YXRpb25zLyp9L3NvdXJj",
-            "ZXM6BnNvdXJjZdpBDXBhcmVudCxzb3VyY2USzAEKDUNyZWF0ZUZpbmRpbmcS",
-            "NC5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuQ3JlYXRlRmluZGlu",
+            "ZRJiCghyZXNvdXJjZRgDIAEoCzJQLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNl",
+            "bnRlci52MS5MaXN0RmluZGluZ3NSZXNwb25zZS5MaXN0RmluZGluZ3NSZXN1",
+            "bHQuUmVzb3VyY2UafgoIUmVzb3VyY2USDAoEbmFtZRgBIAEoCRIUCgxwcm9q",
+            "ZWN0X25hbWUYAiABKAkSHAoUcHJvamVjdF9kaXNwbGF5X25hbWUYAyABKAkS",
+            "EwoLcGFyZW50X25hbWUYBCABKAkSGwoTcGFyZW50X2Rpc3BsYXlfbmFtZRgF",
+            "IAEoCSJNCgtTdGF0ZUNoYW5nZRIKCgZVTlVTRUQQABILCgdDSEFOR0VEEAES",
+            "DQoJVU5DSEFOR0VEEAISCQoFQURERUQQAxILCgdSRU1PVkVEEAQizQEKFlNl",
+            "dEZpbmRpbmdTdGF0ZVJlcXVlc3QSOwoEbmFtZRgBIAEoCUIt4EEC+kEnCiVz",
+            "ZWN1cml0eWNlbnRlci5nb29nbGVhcGlzLmNvbS9GaW5kaW5nEkEKBXN0YXRl",
+            "GAIgASgOMi0uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLkZpbmRp",
+            "bmcuU3RhdGVCA+BBAhIzCgpzdGFydF90aW1lGAMgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcEID4EECImQKGFJ1bkFzc2V0RGlzY292ZXJ5UmVx",
+            "dWVzdBJICgZwYXJlbnQYASABKAlCOOBBAvpBMgowY2xvdWRyZXNvdXJjZW1h",
+            "bmFnZXIuZ29vZ2xlYXBpcy5jb20vT3JnYW5pemF0aW9uIoYBChRVcGRhdGVG",
+            "aW5kaW5nUmVxdWVzdBI9CgdmaW5kaW5nGAEgASgLMicuZ29vZ2xlLmNsb3Vk",
+            "LnNlY3VyaXR5Y2VudGVyLnYxLkZpbmRpbmdCA+BBAhIvCgt1cGRhdGVfbWFz",
+            "axgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2sirgEKIVVwZGF0",
+            "ZU9yZ2FuaXphdGlvblNldHRpbmdzUmVxdWVzdBJYChVvcmdhbml6YXRpb25f",
+            "c2V0dGluZ3MYASABKAsyNC5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIu",
+            "djEuT3JnYW5pemF0aW9uU2V0dGluZ3NCA+BBAhIvCgt1cGRhdGVfbWFzaxgC",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2sigwEKE1VwZGF0ZVNv",
+            "dXJjZVJlcXVlc3QSOwoGc291cmNlGAEgASgLMiYuZ29vZ2xlLmNsb3VkLnNl",
+            "Y3VyaXR5Y2VudGVyLnYxLlNvdXJjZUID4EECEi8KC3VwZGF0ZV9tYXNrGAIg",
+            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFzayLJAQoaVXBkYXRlU2Vj",
+            "dXJpdHlNYXJrc1JlcXVlc3QSSgoOc2VjdXJpdHlfbWFya3MYASABKAsyLS5n",
+            "b29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuU2VjdXJpdHlNYXJrc0ID",
+            "4EECEi8KC3VwZGF0ZV9tYXNrGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZp",
+            "ZWxkTWFzaxIuCgpzdGFydF90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcDKeHQoOU2VjdXJpdHlDZW50ZXISsQEKDENyZWF0ZVNvdXJj",
+            "ZRIzLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5DcmVhdGVTb3Vy",
+            "Y2VSZXF1ZXN0GiYuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLlNv",
+            "dXJjZSJEgtPkkwIuIiQvdjEve3BhcmVudD1vcmdhbml6YXRpb25zLyp9L3Nv",
+            "dXJjZXM6BnNvdXJjZdpBDXBhcmVudCxzb3VyY2USzAEKDUNyZWF0ZUZpbmRp",
+            "bmcSNC5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuQ3JlYXRlRmlu",
+            "ZGluZ1JlcXVlc3QaJy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEu",
+            "RmluZGluZyJcgtPkkwI6Ii8vdjEve3BhcmVudD1vcmdhbml6YXRpb25zLyov",
+            "c291cmNlcy8qfS9maW5kaW5nczoHZmluZGluZ9pBGXBhcmVudCxmaW5kaW5n",
+            "X2lkLGZpbmRpbmcSlgEKDEdldElhbVBvbGljeRIiLmdvb2dsZS5pYW0udjEu",
+            "R2V0SWFtUG9saWN5UmVxdWVzdBoVLmdvb2dsZS5pYW0udjEuUG9saWN5IkuC",
+            "0+STAjoiNS92MS97cmVzb3VyY2U9b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMv",
+            "Kn06Z2V0SWFtUG9saWN5OgEq2kEIcmVzb3VyY2USzwEKF0dldE9yZ2FuaXph",
+            "dGlvblNldHRpbmdzEj4uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYx",
+            "LkdldE9yZ2FuaXphdGlvblNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91",
+            "ZC5zZWN1cml0eWNlbnRlci52MS5Pcmdhbml6YXRpb25TZXR0aW5ncyI+gtPk",
+            "kwIxEi8vdjEve25hbWU9b3JnYW5pemF0aW9ucy8qL29yZ2FuaXphdGlvblNl",
+            "dHRpbmdzfdpBBG5hbWUSmgEKCUdldFNvdXJjZRIwLmdvb2dsZS5jbG91ZC5z",
+            "ZWN1cml0eWNlbnRlci52MS5HZXRTb3VyY2VSZXF1ZXN0GiYuZ29vZ2xlLmNs",
+            "b3VkLnNlY3VyaXR5Y2VudGVyLnYxLlNvdXJjZSIzgtPkkwImEiQvdjEve25h",
+            "bWU9b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMvKn3aQQRuYW1lEqwBCgtHcm91",
+            "cEFzc2V0cxIyLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5Hcm91",
+            "cEFzc2V0c1JlcXVlc3QaMy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIu",
+            "djEuR3JvdXBBc3NldHNSZXNwb25zZSI0gtPkkwIuIikvdjEve3BhcmVudD1v",
+            "cmdhbml6YXRpb25zLyp9L2Fzc2V0czpncm91cDoBKhLQAQoNR3JvdXBGaW5k",
+            "aW5ncxI0Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5Hcm91cEZp",
+            "bmRpbmdzUmVxdWVzdBo1Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52",
+            "MS5Hcm91cEZpbmRpbmdzUmVzcG9uc2UiUoLT5JMCOiI1L3YxL3twYXJlbnQ9",
+            "b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMvKn0vZmluZGluZ3M6Z3JvdXA6ASra",
+            "QQ9wYXJlbnQsZ3JvdXBfYnkSoAEKCkxpc3RBc3NldHMSMS5nb29nbGUuY2xv",
+            "dWQuc2VjdXJpdHljZW50ZXIudjEuTGlzdEFzc2V0c1JlcXVlc3QaMi5nb29n",
+            "bGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuTGlzdEFzc2V0c1Jlc3BvbnNl",
+            "IiuC0+STAiUSIy92MS97cGFyZW50PW9yZ2FuaXphdGlvbnMvKn0vYXNzZXRz",
+            "ErIBCgxMaXN0RmluZGluZ3MSMy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50",
+            "ZXIudjEuTGlzdEZpbmRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5zZWN1",
+            "cml0eWNlbnRlci52MS5MaXN0RmluZGluZ3NSZXNwb25zZSI3gtPkkwIxEi8v",
+            "djEve3BhcmVudD1vcmdhbml6YXRpb25zLyovc291cmNlcy8qfS9maW5kaW5n",
+            "cxKtAQoLTGlzdFNvdXJjZXMSMi5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50",
+            "ZXIudjEuTGlzdFNvdXJjZXNSZXF1ZXN0GjMuZ29vZ2xlLmNsb3VkLnNlY3Vy",
+            "aXR5Y2VudGVyLnYxLkxpc3RTb3VyY2VzUmVzcG9uc2UiNYLT5JMCJhIkL3Yx",
+            "L3twYXJlbnQ9b3JnYW5pemF0aW9ucy8qfS9zb3VyY2Vz2kEGcGFyZW50EocC",
+            "ChFSdW5Bc3NldERpc2NvdmVyeRI4Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNl",
+            "bnRlci52MS5SdW5Bc3NldERpc2NvdmVyeVJlcXVlc3QaHS5nb29nbGUubG9u",
+            "Z3J1bm5pbmcuT3BlcmF0aW9uIpgBgtPkkwI1IjAvdjEve3BhcmVudD1vcmdh",
+            "bml6YXRpb25zLyp9L2Fzc2V0czpydW5EaXNjb3Zlcnk6ASraQQZwYXJlbnTK",
+            "QVEKOGdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5SdW5Bc3NldERp",
+            "c2NvdmVyeVJlc3BvbnNlEhVnb29nbGUucHJvdG9idWYuRW1wdHkSzwEKD1Nl",
+            "dEZpbmRpbmdTdGF0ZRI2Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52",
+            "MS5TZXRGaW5kaW5nU3RhdGVSZXF1ZXN0GicuZ29vZ2xlLmNsb3VkLnNlY3Vy",
+            "aXR5Y2VudGVyLnYxLkZpbmRpbmciW4LT5JMCPSI4L3YxL3tuYW1lPW9yZ2Fu",
+            "aXphdGlvbnMvKi9zb3VyY2VzLyovZmluZGluZ3MvKn06c2V0U3RhdGU6ASra",
+            "QRVuYW1lLHN0YXRlLHN0YXJ0X3RpbWUSnQEKDFNldElhbVBvbGljeRIiLmdv",
+            "b2dsZS5pYW0udjEuU2V0SWFtUG9saWN5UmVxdWVzdBoVLmdvb2dsZS5pYW0u",
+            "djEuUG9saWN5IlKC0+STAjoiNS92MS97cmVzb3VyY2U9b3JnYW5pemF0aW9u",
+            "cy8qL3NvdXJjZXMvKn06c2V0SWFtUG9saWN5OgEq2kEPcmVzb3VyY2UscG9s",
+            "aWN5EsgBChJUZXN0SWFtUGVybWlzc2lvbnMSKC5nb29nbGUuaWFtLnYxLlRl",
+            "c3RJYW1QZXJtaXNzaW9uc1JlcXVlc3QaKS5nb29nbGUuaWFtLnYxLlRlc3RJ",
+            "YW1QZXJtaXNzaW9uc1Jlc3BvbnNlIl2C0+STAkAiOy92MS97cmVzb3VyY2U9",
+            "b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMvKn06dGVzdElhbVBlcm1pc3Npb25z",
+            "OgEq2kEUcmVzb3VyY2UscGVybWlzc2lvbnMSwgEKDVVwZGF0ZUZpbmRpbmcS",
+            "NC5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuVXBkYXRlRmluZGlu",
             "Z1JlcXVlc3QaJy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuRmlu",
-            "ZGluZyJcgtPkkwI6Ii8vdjEve3BhcmVudD1vcmdhbml6YXRpb25zLyovc291",
-            "cmNlcy8qfS9maW5kaW5nczoHZmluZGluZ9pBGXBhcmVudCxmaW5kaW5nX2lk",
-            "LGZpbmRpbmcSlgEKDEdldElhbVBvbGljeRIiLmdvb2dsZS5pYW0udjEuR2V0",
-            "SWFtUG9saWN5UmVxdWVzdBoVLmdvb2dsZS5pYW0udjEuUG9saWN5IkuC0+ST",
-            "AjoiNS92MS97cmVzb3VyY2U9b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMvKn06",
-            "Z2V0SWFtUG9saWN5OgEq2kEIcmVzb3VyY2USzwEKF0dldE9yZ2FuaXphdGlv",
-            "blNldHRpbmdzEj4uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLkdl",
-            "dE9yZ2FuaXphdGlvblNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5z",
-            "ZWN1cml0eWNlbnRlci52MS5Pcmdhbml6YXRpb25TZXR0aW5ncyI+gtPkkwIx",
-            "Ei8vdjEve25hbWU9b3JnYW5pemF0aW9ucy8qL29yZ2FuaXphdGlvblNldHRp",
-            "bmdzfdpBBG5hbWUSmgEKCUdldFNvdXJjZRIwLmdvb2dsZS5jbG91ZC5zZWN1",
-            "cml0eWNlbnRlci52MS5HZXRTb3VyY2VSZXF1ZXN0GiYuZ29vZ2xlLmNsb3Vk",
-            "LnNlY3VyaXR5Y2VudGVyLnYxLlNvdXJjZSIzgtPkkwImEiQvdjEve25hbWU9",
-            "b3JnYW5pemF0aW9ucy8qL3NvdXJjZXMvKn3aQQRuYW1lEqwBCgtHcm91cEFz",
-            "c2V0cxIyLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5Hcm91cEFz",
-            "c2V0c1JlcXVlc3QaMy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEu",
-            "R3JvdXBBc3NldHNSZXNwb25zZSI0gtPkkwIuIikvdjEve3BhcmVudD1vcmdh",
-            "bml6YXRpb25zLyp9L2Fzc2V0czpncm91cDoBKhLQAQoNR3JvdXBGaW5kaW5n",
-            "cxI0Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5Hcm91cEZpbmRp",
-            "bmdzUmVxdWVzdBo1Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5H",
-            "cm91cEZpbmRpbmdzUmVzcG9uc2UiUoLT5JMCOiI1L3YxL3twYXJlbnQ9b3Jn",
-            "YW5pemF0aW9ucy8qL3NvdXJjZXMvKn0vZmluZGluZ3M6Z3JvdXA6ASraQQ9w",
-            "YXJlbnQsZ3JvdXBfYnkSoAEKCkxpc3RBc3NldHMSMS5nb29nbGUuY2xvdWQu",
-            "c2VjdXJpdHljZW50ZXIudjEuTGlzdEFzc2V0c1JlcXVlc3QaMi5nb29nbGUu",
-            "Y2xvdWQuc2VjdXJpdHljZW50ZXIudjEuTGlzdEFzc2V0c1Jlc3BvbnNlIiuC",
-            "0+STAiUSIy92MS97cGFyZW50PW9yZ2FuaXphdGlvbnMvKn0vYXNzZXRzErIB",
-            "CgxMaXN0RmluZGluZ3MSMy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIu",
-            "djEuTGlzdEZpbmRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5zZWN1cml0",
-            "eWNlbnRlci52MS5MaXN0RmluZGluZ3NSZXNwb25zZSI3gtPkkwIxEi8vdjEv",
-            "e3BhcmVudD1vcmdhbml6YXRpb25zLyovc291cmNlcy8qfS9maW5kaW5ncxKt",
-            "AQoLTGlzdFNvdXJjZXMSMi5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIu",
-            "djEuTGlzdFNvdXJjZXNSZXF1ZXN0GjMuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5",
-            "Y2VudGVyLnYxLkxpc3RTb3VyY2VzUmVzcG9uc2UiNYLT5JMCJhIkL3YxL3tw",
-            "YXJlbnQ9b3JnYW5pemF0aW9ucy8qfS9zb3VyY2Vz2kEGcGFyZW50EocCChFS",
-            "dW5Bc3NldERpc2NvdmVyeRI4Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRl",
-            "ci52MS5SdW5Bc3NldERpc2NvdmVyeVJlcXVlc3QaHS5nb29nbGUubG9uZ3J1",
-            "bm5pbmcuT3BlcmF0aW9uIpgBgtPkkwI1IjAvdjEve3BhcmVudD1vcmdhbml6",
-            "YXRpb25zLyp9L2Fzc2V0czpydW5EaXNjb3Zlcnk6ASraQQZwYXJlbnTKQVEK",
-            "OGdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5SdW5Bc3NldERpc2Nv",
-            "dmVyeVJlc3BvbnNlEhVnb29nbGUucHJvdG9idWYuRW1wdHkSzwEKD1NldEZp",
-            "bmRpbmdTdGF0ZRI2Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MS5T",
-            "ZXRGaW5kaW5nU3RhdGVSZXF1ZXN0GicuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5",
-            "Y2VudGVyLnYxLkZpbmRpbmciW4LT5JMCPSI4L3YxL3tuYW1lPW9yZ2FuaXph",
-            "dGlvbnMvKi9zb3VyY2VzLyovZmluZGluZ3MvKn06c2V0U3RhdGU6ASraQRVu",
-            "YW1lLHN0YXRlLHN0YXJ0X3RpbWUSnQEKDFNldElhbVBvbGljeRIiLmdvb2ds",
-            "ZS5pYW0udjEuU2V0SWFtUG9saWN5UmVxdWVzdBoVLmdvb2dsZS5pYW0udjEu",
-            "UG9saWN5IlKC0+STAjoiNS92MS97cmVzb3VyY2U9b3JnYW5pemF0aW9ucy8q",
-            "L3NvdXJjZXMvKn06c2V0SWFtUG9saWN5OgEq2kEPcmVzb3VyY2UscG9saWN5",
-            "EsgBChJUZXN0SWFtUGVybWlzc2lvbnMSKC5nb29nbGUuaWFtLnYxLlRlc3RJ",
-            "YW1QZXJtaXNzaW9uc1JlcXVlc3QaKS5nb29nbGUuaWFtLnYxLlRlc3RJYW1Q",
-            "ZXJtaXNzaW9uc1Jlc3BvbnNlIl2C0+STAkAiOy92MS97cmVzb3VyY2U9b3Jn",
-            "YW5pemF0aW9ucy8qL3NvdXJjZXMvKn06dGVzdElhbVBlcm1pc3Npb25zOgEq",
-            "2kEUcmVzb3VyY2UscGVybWlzc2lvbnMSwgEKDVVwZGF0ZUZpbmRpbmcSNC5n",
-            "b29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuVXBkYXRlRmluZGluZ1Jl",
-            "cXVlc3QaJy5nb29nbGUuY2xvdWQuc2VjdXJpdHljZW50ZXIudjEuRmluZGlu",
-            "ZyJSgtPkkwJCMjcvdjEve2ZpbmRpbmcubmFtZT1vcmdhbml6YXRpb25zLyov",
-            "c291cmNlcy8qL2ZpbmRpbmdzLyp9OgdmaW5kaW5n2kEHZmluZGluZxKTAgoa",
-            "VXBkYXRlT3JnYW5pemF0aW9uU2V0dGluZ3MSQS5nb29nbGUuY2xvdWQuc2Vj",
-            "dXJpdHljZW50ZXIudjEuVXBkYXRlT3JnYW5pemF0aW9uU2V0dGluZ3NSZXF1",
-            "ZXN0GjQuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLk9yZ2FuaXph",
-            "dGlvblNldHRpbmdzInyC0+STAl4yRS92MS97b3JnYW5pemF0aW9uX3NldHRp",
-            "bmdzLm5hbWU9b3JnYW5pemF0aW9ucy8qL29yZ2FuaXphdGlvblNldHRpbmdz",
-            "fToVb3JnYW5pemF0aW9uX3NldHRpbmdz2kEVb3JnYW5pemF0aW9uX3NldHRp",
-            "bmdzErEBCgxVcGRhdGVTb3VyY2USMy5nb29nbGUuY2xvdWQuc2VjdXJpdHlj",
-            "ZW50ZXIudjEuVXBkYXRlU291cmNlUmVxdWVzdBomLmdvb2dsZS5jbG91ZC5z",
-            "ZWN1cml0eWNlbnRlci52MS5Tb3VyY2UiRILT5JMCNTIrL3YxL3tzb3VyY2Uu",
-            "bmFtZT1vcmdhbml6YXRpb25zLyovc291cmNlcy8qfToGc291cmNl2kEGc291",
-            "cmNlEs0CChNVcGRhdGVTZWN1cml0eU1hcmtzEjouZ29vZ2xlLmNsb3VkLnNl",
-            "Y3VyaXR5Y2VudGVyLnYxLlVwZGF0ZVNlY3VyaXR5TWFya3NSZXF1ZXN0Gi0u",
-            "Z29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLlNlY3VyaXR5TWFya3Mi",
-            "ygGC0+STArIBMkAvdjEve3NlY3VyaXR5X21hcmtzLm5hbWU9b3JnYW5pemF0",
-            "aW9ucy8qL2Fzc2V0cy8qL3NlY3VyaXR5TWFya3N9Og5zZWN1cml0eV9tYXJr",
-            "c1peMkwvdjEve3NlY3VyaXR5X21hcmtzLm5hbWU9b3JnYW5pemF0aW9ucy8q",
-            "L3NvdXJjZXMvKi9maW5kaW5ncy8qL3NlY3VyaXR5TWFya3N9Og5zZWN1cml0",
-            "eV9tYXJrc9pBDnNlY3VyaXR5X21hcmtzGlHKQR1zZWN1cml0eWNlbnRlci5n",
-            "b29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1",
-            "dGgvY2xvdWQtcGxhdGZvcm1C2gEKImNvbS5nb29nbGUuY2xvdWQuc2VjdXJp",
-            "dHljZW50ZXIudjFQAVpMZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29v",
-            "Z2xlYXBpcy9jbG91ZC9zZWN1cml0eWNlbnRlci92MTtzZWN1cml0eWNlbnRl",
-            "cqoCHkdvb2dsZS5DbG91ZC5TZWN1cml0eUNlbnRlci5WMcoCHkdvb2dsZVxD",
-            "bG91ZFxTZWN1cml0eUNlbnRlclxWMeoCIUdvb2dsZTo6Q2xvdWQ6OlNlY3Vy",
-            "aXR5Q2VudGVyOjpWMWIGcHJvdG8z"));
+            "ZGluZyJSgtPkkwJCMjcvdjEve2ZpbmRpbmcubmFtZT1vcmdhbml6YXRpb25z",
+            "Lyovc291cmNlcy8qL2ZpbmRpbmdzLyp9OgdmaW5kaW5n2kEHZmluZGluZxKT",
+            "AgoaVXBkYXRlT3JnYW5pemF0aW9uU2V0dGluZ3MSQS5nb29nbGUuY2xvdWQu",
+            "c2VjdXJpdHljZW50ZXIudjEuVXBkYXRlT3JnYW5pemF0aW9uU2V0dGluZ3NS",
+            "ZXF1ZXN0GjQuZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLk9yZ2Fu",
+            "aXphdGlvblNldHRpbmdzInyC0+STAl4yRS92MS97b3JnYW5pemF0aW9uX3Nl",
+            "dHRpbmdzLm5hbWU9b3JnYW5pemF0aW9ucy8qL29yZ2FuaXphdGlvblNldHRp",
+            "bmdzfToVb3JnYW5pemF0aW9uX3NldHRpbmdz2kEVb3JnYW5pemF0aW9uX3Nl",
+            "dHRpbmdzErEBCgxVcGRhdGVTb3VyY2USMy5nb29nbGUuY2xvdWQuc2VjdXJp",
+            "dHljZW50ZXIudjEuVXBkYXRlU291cmNlUmVxdWVzdBomLmdvb2dsZS5jbG91",
+            "ZC5zZWN1cml0eWNlbnRlci52MS5Tb3VyY2UiRILT5JMCNTIrL3YxL3tzb3Vy",
+            "Y2UubmFtZT1vcmdhbml6YXRpb25zLyovc291cmNlcy8qfToGc291cmNl2kEG",
+            "c291cmNlEs0CChNVcGRhdGVTZWN1cml0eU1hcmtzEjouZ29vZ2xlLmNsb3Vk",
+            "LnNlY3VyaXR5Y2VudGVyLnYxLlVwZGF0ZVNlY3VyaXR5TWFya3NSZXF1ZXN0",
+            "Gi0uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxLlNlY3VyaXR5TWFy",
+            "a3MiygGC0+STArIBMkAvdjEve3NlY3VyaXR5X21hcmtzLm5hbWU9b3JnYW5p",
+            "emF0aW9ucy8qL2Fzc2V0cy8qL3NlY3VyaXR5TWFya3N9Og5zZWN1cml0eV9t",
+            "YXJrc1peMkwvdjEve3NlY3VyaXR5X21hcmtzLm5hbWU9b3JnYW5pemF0aW9u",
+            "cy8qL3NvdXJjZXMvKi9maW5kaW5ncy8qL3NlY3VyaXR5TWFya3N9Og5zZWN1",
+            "cml0eV9tYXJrc9pBDnNlY3VyaXR5X21hcmtzGlHKQR1zZWN1cml0eWNlbnRl",
+            "ci5nb29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29t",
+            "L2F1dGgvY2xvdWQtcGxhdGZvcm1C2gEKImNvbS5nb29nbGUuY2xvdWQuc2Vj",
+            "dXJpdHljZW50ZXIudjFQAVpMZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
+            "Z29vZ2xlYXBpcy9jbG91ZC9zZWN1cml0eWNlbnRlci92MTtzZWN1cml0eWNl",
+            "bnRlcqoCHkdvb2dsZS5DbG91ZC5TZWN1cml0eUNlbnRlci5WMcoCHkdvb2ds",
+            "ZVxDbG91ZFxTZWN1cml0eUNlbnRlclxWMeoCIUdvb2dsZTo6Q2xvdWQ6OlNl",
+            "Y3VyaXR5Q2VudGVyOjpWMVAAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.AssetReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.FindingReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.OrganizationSettingsReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryResponseReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.SecurityMarksReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.SourceReflection.Descriptor, global::Google.Cloud.Iam.V1.IamPolicyReflection.Descriptor, global::Google.Cloud.Iam.V1.PolicyReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.CreateFindingRequest), global::Google.Cloud.SecurityCenter.V1.CreateFindingRequest.Parser, new[]{ "Parent", "FindingId", "Finding" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.CreateSourceRequest), global::Google.Cloud.SecurityCenter.V1.CreateSourceRequest.Parser, new[]{ "Parent", "Source" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GetOrganizationSettingsRequest), global::Google.Cloud.SecurityCenter.V1.GetOrganizationSettingsRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GetSourceRequest), global::Google.Cloud.SecurityCenter.V1.GetSourceRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupAssetsRequest), global::Google.Cloud.SecurityCenter.V1.GroupAssetsRequest.Parser, new[]{ "Parent", "Filter", "GroupBy", "CompareDuration", "ReadTime", "PageToken", "PageSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupAssetsResponse), global::Google.Cloud.SecurityCenter.V1.GroupAssetsResponse.Parser, new[]{ "GroupByResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupFindingsRequest), global::Google.Cloud.SecurityCenter.V1.GroupFindingsRequest.Parser, new[]{ "Parent", "Filter", "GroupBy", "ReadTime", "CompareDuration", "PageToken", "PageSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupFindingsResponse), global::Google.Cloud.SecurityCenter.V1.GroupFindingsResponse.Parser, new[]{ "GroupByResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupResult), global::Google.Cloud.SecurityCenter.V1.GroupResult.Parser, new[]{ "Properties", "Count" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListSourcesRequest), global::Google.Cloud.SecurityCenter.V1.ListSourcesRequest.Parser, new[]{ "Parent", "PageToken", "PageSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListSourcesResponse), global::Google.Cloud.SecurityCenter.V1.ListSourcesResponse.Parser, new[]{ "Sources", "NextPageToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsRequest), global::Google.Cloud.SecurityCenter.V1.ListAssetsRequest.Parser, new[]{ "Parent", "Filter", "OrderBy", "ReadTime", "CompareDuration", "FieldMask", "PageToken", "PageSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse), global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Parser, new[]{ "ListAssetsResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult), global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Parser, new[]{ "Asset", "StateChange" }, null, new[]{ typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange) }, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsRequest), global::Google.Cloud.SecurityCenter.V1.ListFindingsRequest.Parser, new[]{ "Parent", "Filter", "OrderBy", "ReadTime", "CompareDuration", "FieldMask", "PageToken", "PageSize" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse), global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Parser, new[]{ "ListFindingsResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult), global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Parser, new[]{ "Finding", "StateChange" }, null, new[]{ typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange) }, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.SetFindingStateRequest), global::Google.Cloud.SecurityCenter.V1.SetFindingStateRequest.Parser, new[]{ "Name", "State", "StartTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryRequest), global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryRequest.Parser, new[]{ "Parent" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateFindingRequest), global::Google.Cloud.SecurityCenter.V1.UpdateFindingRequest.Parser, new[]{ "Finding", "UpdateMask" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateOrganizationSettingsRequest), global::Google.Cloud.SecurityCenter.V1.UpdateOrganizationSettingsRequest.Parser, new[]{ "OrganizationSettings", "UpdateMask" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateSourceRequest), global::Google.Cloud.SecurityCenter.V1.UpdateSourceRequest.Parser, new[]{ "Source", "UpdateMask" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateSecurityMarksRequest), global::Google.Cloud.SecurityCenter.V1.UpdateSecurityMarksRequest.Parser, new[]{ "SecurityMarks", "UpdateMask", "StartTime" }, null, null, null)
+          new pbr::FileDescriptor[] { global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryResponseReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.AssetReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.FindingReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.OrganizationSettingsReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.SecurityMarksReflection.Descriptor, global::Google.Cloud.SecurityCenter.V1.SourceReflection.Descriptor, global::Google.Cloud.Iam.V1.IamPolicyReflection.Descriptor, global::Google.Cloud.Iam.V1.PolicyReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.CreateFindingRequest), global::Google.Cloud.SecurityCenter.V1.CreateFindingRequest.Parser, new[]{ "Parent", "FindingId", "Finding" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.CreateSourceRequest), global::Google.Cloud.SecurityCenter.V1.CreateSourceRequest.Parser, new[]{ "Parent", "Source" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GetOrganizationSettingsRequest), global::Google.Cloud.SecurityCenter.V1.GetOrganizationSettingsRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GetSourceRequest), global::Google.Cloud.SecurityCenter.V1.GetSourceRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupAssetsRequest), global::Google.Cloud.SecurityCenter.V1.GroupAssetsRequest.Parser, new[]{ "Parent", "Filter", "GroupBy", "CompareDuration", "ReadTime", "PageToken", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupAssetsResponse), global::Google.Cloud.SecurityCenter.V1.GroupAssetsResponse.Parser, new[]{ "GroupByResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupFindingsRequest), global::Google.Cloud.SecurityCenter.V1.GroupFindingsRequest.Parser, new[]{ "Parent", "Filter", "GroupBy", "ReadTime", "CompareDuration", "PageToken", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupFindingsResponse), global::Google.Cloud.SecurityCenter.V1.GroupFindingsResponse.Parser, new[]{ "GroupByResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.GroupResult), global::Google.Cloud.SecurityCenter.V1.GroupResult.Parser, new[]{ "Properties", "Count" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListSourcesRequest), global::Google.Cloud.SecurityCenter.V1.ListSourcesRequest.Parser, new[]{ "Parent", "PageToken", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListSourcesResponse), global::Google.Cloud.SecurityCenter.V1.ListSourcesResponse.Parser, new[]{ "Sources", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsRequest), global::Google.Cloud.SecurityCenter.V1.ListAssetsRequest.Parser, new[]{ "Parent", "Filter", "OrderBy", "ReadTime", "CompareDuration", "FieldMask", "PageToken", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse), global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Parser, new[]{ "ListAssetsResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult), global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Parser, new[]{ "Asset", "StateChange" }, null, new[]{ typeof(global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsRequest), global::Google.Cloud.SecurityCenter.V1.ListFindingsRequest.Parser, new[]{ "Parent", "Filter", "OrderBy", "ReadTime", "CompareDuration", "FieldMask", "PageToken", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse), global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Parser, new[]{ "ListFindingsResults", "ReadTime", "NextPageToken", "TotalSize" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult), global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Parser, new[]{ "Finding", "StateChange", "Resource" }, null, new[]{ typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource), global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource.Parser, new[]{ "Name", "ProjectName", "ProjectDisplayName", "ParentName", "ParentDisplayName" }, null, null, null, null)})}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.SetFindingStateRequest), global::Google.Cloud.SecurityCenter.V1.SetFindingStateRequest.Parser, new[]{ "Name", "State", "StartTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryRequest), global::Google.Cloud.SecurityCenter.V1.RunAssetDiscoveryRequest.Parser, new[]{ "Parent" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateFindingRequest), global::Google.Cloud.SecurityCenter.V1.UpdateFindingRequest.Parser, new[]{ "Finding", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateOrganizationSettingsRequest), global::Google.Cloud.SecurityCenter.V1.UpdateOrganizationSettingsRequest.Parser, new[]{ "OrganizationSettings", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateSourceRequest), global::Google.Cloud.SecurityCenter.V1.UpdateSourceRequest.Parser, new[]{ "Source", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.SecurityCenter.V1.UpdateSecurityMarksRequest), global::Google.Cloud.SecurityCenter.V1.UpdateSecurityMarksRequest.Parser, new[]{ "SecurityMarks", "UpdateMask", "StartTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1020,9 +1025,12 @@ namespace Google.Cloud.SecurityCenter.V1 {
     /// * resource_properties: `=`, `:`, `>`, `&lt;`, `>=`, `&lt;=`
     /// * security_marks.marks: `=`, `:`
     /// * security_center_properties.resource_name: `=`, `:`
+    /// * security_center_properties.resource_display_name: `=`, `:`
     /// * security_center_properties.resource_type: `=`, `:`
     /// * security_center_properties.resource_parent: `=`, `:`
+    /// * security_center_properties.resource_parent_display_name: `=`, `:`
     /// * security_center_properties.resource_project: `=`, `:`
+    /// * security_center_properties.resource_project_display_name: `=`, `:`
     /// * security_center_properties.resource_owners: `=`, `:`
     ///
     /// For example, `resource_properties.size = 100` is a valid filter string.
@@ -1047,12 +1055,16 @@ namespace Google.Cloud.SecurityCenter.V1 {
     /// The following fields are supported when compare_duration is not set:
     ///
     /// * security_center_properties.resource_project
+    /// * security_center_properties.resource_project_display_name
     /// * security_center_properties.resource_type
     /// * security_center_properties.resource_parent
+    /// * security_center_properties.resource_parent_display_name
     ///
     /// The following fields are supported when compare_duration is set:
     ///
     /// * security_center_properties.resource_type
+    /// * security_center_properties.resource_project_display_name
+    /// * security_center_properties.resource_parent_display_name
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GroupBy {
@@ -2263,7 +2275,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 1;
     private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec _map_properties_codec
-        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 10);
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Value.Parser), 10);
     private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> properties_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value>();
     /// <summary>
     /// Properties matching the groupBy fields in the request.
@@ -2850,9 +2862,12 @@ namespace Google.Cloud.SecurityCenter.V1 {
     /// * resource_properties: `=`, `:`, `>`, `&lt;`, `>=`, `&lt;=`
     /// * security_marks.marks: `=`, `:`
     /// * security_center_properties.resource_name: `=`, `:`
+    /// * security_center_properties.resource_display_name: `=`, `:`
     /// * security_center_properties.resource_type: `=`, `:`
     /// * security_center_properties.resource_parent: `=`, `:`
+    /// * security_center_properties.resource_parent_display_name: `=`, `:`
     /// * security_center_properties.resource_project: `=`, `:`
+    /// * security_center_properties.resource_project_display_name: `=`, `:`
     /// * security_center_properties.resource_owners: `=`, `:`
     ///
     /// For example, `resource_properties.size = 100` is a valid filter string.
@@ -2884,8 +2899,11 @@ namespace Google.Cloud.SecurityCenter.V1 {
     /// resource_properties
     /// security_marks.marks
     /// security_center_properties.resource_name
+    /// security_center_properties.resource_display_name
     /// security_center_properties.resource_parent
+    /// security_center_properties.resource_parent_display_name
     /// security_center_properties.resource_project
+    /// security_center_properties.resource_project_display_name
     /// security_center_properties.resource_type
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3494,7 +3512,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
 
         /// <summary>Field number for the "state_change" field.</summary>
         public const int StateChangeFieldNumber = 2;
-        private global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange stateChange_ = 0;
+        private global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange stateChange_ = global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange.Unused;
         /// <summary>
         /// State change of the asset between the points in time.
         /// </summary>
@@ -3528,7 +3546,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
         public override int GetHashCode() {
           int hash = 1;
           if (asset_ != null) hash ^= Asset.GetHashCode();
-          if (StateChange != 0) hash ^= StateChange.GetHashCode();
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange.Unused) hash ^= StateChange.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -3546,7 +3564,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
             output.WriteRawTag(10);
             output.WriteMessage(Asset);
           }
-          if (StateChange != 0) {
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange.Unused) {
             output.WriteRawTag(16);
             output.WriteEnum((int) StateChange);
           }
@@ -3561,7 +3579,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
           if (asset_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Asset);
           }
-          if (StateChange != 0) {
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange.Unused) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StateChange);
           }
           if (_unknownFields != null) {
@@ -3581,7 +3599,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
             }
             Asset.MergeFrom(other.Asset);
           }
-          if (other.StateChange != 0) {
+          if (other.StateChange != global::Google.Cloud.SecurityCenter.V1.ListAssetsResponse.Types.ListAssetsResult.Types.StateChange.Unused) {
             StateChange = other.StateChange;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4372,6 +4390,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
         public ListFindingsResult(ListFindingsResult other) : this() {
           finding_ = other.finding_ != null ? other.finding_.Clone() : null;
           stateChange_ = other.stateChange_;
+          resource_ = other.resource_ != null ? other.resource_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -4396,7 +4415,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
 
         /// <summary>Field number for the "state_change" field.</summary>
         public const int StateChangeFieldNumber = 2;
-        private global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange stateChange_ = 0;
+        private global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange stateChange_ = global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange.Unused;
         /// <summary>
         /// State change of the finding between the points in time.
         /// </summary>
@@ -4405,6 +4424,20 @@ namespace Google.Cloud.SecurityCenter.V1 {
           get { return stateChange_; }
           set {
             stateChange_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "resource" field.</summary>
+        public const int ResourceFieldNumber = 3;
+        private global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource resource_;
+        /// <summary>
+        /// Output only. Resource that is associated with this finding.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource Resource {
+          get { return resource_; }
+          set {
+            resource_ = value;
           }
         }
 
@@ -4423,6 +4456,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
           }
           if (!object.Equals(Finding, other.Finding)) return false;
           if (StateChange != other.StateChange) return false;
+          if (!object.Equals(Resource, other.Resource)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -4430,7 +4464,8 @@ namespace Google.Cloud.SecurityCenter.V1 {
         public override int GetHashCode() {
           int hash = 1;
           if (finding_ != null) hash ^= Finding.GetHashCode();
-          if (StateChange != 0) hash ^= StateChange.GetHashCode();
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange.Unused) hash ^= StateChange.GetHashCode();
+          if (resource_ != null) hash ^= Resource.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4448,9 +4483,13 @@ namespace Google.Cloud.SecurityCenter.V1 {
             output.WriteRawTag(10);
             output.WriteMessage(Finding);
           }
-          if (StateChange != 0) {
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange.Unused) {
             output.WriteRawTag(16);
             output.WriteEnum((int) StateChange);
+          }
+          if (resource_ != null) {
+            output.WriteRawTag(26);
+            output.WriteMessage(Resource);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -4463,8 +4502,11 @@ namespace Google.Cloud.SecurityCenter.V1 {
           if (finding_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Finding);
           }
-          if (StateChange != 0) {
+          if (StateChange != global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange.Unused) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StateChange);
+          }
+          if (resource_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Resource);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -4483,8 +4525,14 @@ namespace Google.Cloud.SecurityCenter.V1 {
             }
             Finding.MergeFrom(other.Finding);
           }
-          if (other.StateChange != 0) {
+          if (other.StateChange != global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange.Unused) {
             StateChange = other.StateChange;
+          }
+          if (other.resource_ != null) {
+            if (resource_ == null) {
+              Resource = new global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource();
+            }
+            Resource.MergeFrom(other.Resource);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -4506,6 +4554,13 @@ namespace Google.Cloud.SecurityCenter.V1 {
               }
               case 16: {
                 StateChange = (global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.StateChange) input.ReadEnum();
+                break;
+              }
+              case 26: {
+                if (resource_ == null) {
+                  Resource = new global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Types.Resource();
+                }
+                input.ReadMessage(Resource);
                 break;
               }
             }
@@ -4550,6 +4605,267 @@ namespace Google.Cloud.SecurityCenter.V1 {
             /// did at timestamp - compare_duration.
             /// </summary>
             [pbr::OriginalName("REMOVED")] Removed = 4,
+          }
+
+          /// <summary>
+          /// Information related to the Google Cloud Platform (GCP) resource that is
+          /// associated with this finding.
+          /// </summary>
+          public sealed partial class Resource : pb::IMessage<Resource> {
+            private static readonly pb::MessageParser<Resource> _parser = new pb::MessageParser<Resource>(() => new Resource());
+            private pb::UnknownFieldSet _unknownFields;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public static pb::MessageParser<Resource> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::Google.Cloud.SecurityCenter.V1.ListFindingsResponse.Types.ListFindingsResult.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Resource() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Resource(Resource other) : this() {
+              name_ = other.name_;
+              projectName_ = other.projectName_;
+              projectDisplayName_ = other.projectDisplayName_;
+              parentName_ = other.parentName_;
+              parentDisplayName_ = other.parentDisplayName_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Resource Clone() {
+              return new Resource(this);
+            }
+
+            /// <summary>Field number for the "name" field.</summary>
+            public const int NameFieldNumber = 1;
+            private string name_ = "";
+            /// <summary>
+            /// The full resource name of the resource. See:
+            /// https://cloud.google.com/apis/design/resource_names#full_resource_name
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public string Name {
+              get { return name_; }
+              set {
+                name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "project_name" field.</summary>
+            public const int ProjectNameFieldNumber = 2;
+            private string projectName_ = "";
+            /// <summary>
+            /// The full resource name of project that the resource belongs to.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public string ProjectName {
+              get { return projectName_; }
+              set {
+                projectName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "project_display_name" field.</summary>
+            public const int ProjectDisplayNameFieldNumber = 3;
+            private string projectDisplayName_ = "";
+            /// <summary>
+            /// The human readable name of project that the resource belongs to.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public string ProjectDisplayName {
+              get { return projectDisplayName_; }
+              set {
+                projectDisplayName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "parent_name" field.</summary>
+            public const int ParentNameFieldNumber = 4;
+            private string parentName_ = "";
+            /// <summary>
+            /// The full resource name of resource's parent.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public string ParentName {
+              get { return parentName_; }
+              set {
+                parentName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "parent_display_name" field.</summary>
+            public const int ParentDisplayNameFieldNumber = 5;
+            private string parentDisplayName_ = "";
+            /// <summary>
+            /// The human readable name of resource's parent.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public string ParentDisplayName {
+              get { return parentDisplayName_; }
+              set {
+                parentDisplayName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override bool Equals(object other) {
+              return Equals(other as Resource);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool Equals(Resource other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (Name != other.Name) return false;
+              if (ProjectName != other.ProjectName) return false;
+              if (ProjectDisplayName != other.ProjectDisplayName) return false;
+              if (ParentName != other.ParentName) return false;
+              if (ParentDisplayName != other.ParentDisplayName) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (Name.Length != 0) hash ^= Name.GetHashCode();
+              if (ProjectName.Length != 0) hash ^= ProjectName.GetHashCode();
+              if (ProjectDisplayName.Length != 0) hash ^= ProjectDisplayName.GetHashCode();
+              if (ParentName.Length != 0) hash ^= ParentName.GetHashCode();
+              if (ParentDisplayName.Length != 0) hash ^= ParentDisplayName.GetHashCode();
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void WriteTo(pb::CodedOutputStream output) {
+              if (Name.Length != 0) {
+                output.WriteRawTag(10);
+                output.WriteString(Name);
+              }
+              if (ProjectName.Length != 0) {
+                output.WriteRawTag(18);
+                output.WriteString(ProjectName);
+              }
+              if (ProjectDisplayName.Length != 0) {
+                output.WriteRawTag(26);
+                output.WriteString(ProjectDisplayName);
+              }
+              if (ParentName.Length != 0) {
+                output.WriteRawTag(34);
+                output.WriteString(ParentName);
+              }
+              if (ParentDisplayName.Length != 0) {
+                output.WriteRawTag(42);
+                output.WriteString(ParentDisplayName);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public int CalculateSize() {
+              int size = 0;
+              if (Name.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+              }
+              if (ProjectName.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectName);
+              }
+              if (ProjectDisplayName.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(ProjectDisplayName);
+              }
+              if (ParentName.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentName);
+              }
+              if (ParentDisplayName.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentDisplayName);
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void MergeFrom(Resource other) {
+              if (other == null) {
+                return;
+              }
+              if (other.Name.Length != 0) {
+                Name = other.Name;
+              }
+              if (other.ProjectName.Length != 0) {
+                ProjectName = other.ProjectName;
+              }
+              if (other.ProjectDisplayName.Length != 0) {
+                ProjectDisplayName = other.ProjectDisplayName;
+              }
+              if (other.ParentName.Length != 0) {
+                ParentName = other.ParentName;
+              }
+              if (other.ParentDisplayName.Length != 0) {
+                ParentDisplayName = other.ParentDisplayName;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void MergeFrom(pb::CodedInputStream input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 10: {
+                    Name = input.ReadString();
+                    break;
+                  }
+                  case 18: {
+                    ProjectName = input.ReadString();
+                    break;
+                  }
+                  case 26: {
+                    ProjectDisplayName = input.ReadString();
+                    break;
+                  }
+                  case 34: {
+                    ParentName = input.ReadString();
+                    break;
+                  }
+                  case 42: {
+                    ParentDisplayName = input.ReadString();
+                    break;
+                  }
+                }
+              }
+            }
+
           }
 
         }
@@ -4620,7 +4936,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 2;
-    private global::Google.Cloud.SecurityCenter.V1.Finding.Types.State state_ = 0;
+    private global::Google.Cloud.SecurityCenter.V1.Finding.Types.State state_ = global::Google.Cloud.SecurityCenter.V1.Finding.Types.State.Unspecified;
     /// <summary>
     /// Required. The desired State of the finding.
     /// </summary>
@@ -4669,7 +4985,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Google.Cloud.SecurityCenter.V1.Finding.Types.State.Unspecified) hash ^= State.GetHashCode();
       if (startTime_ != null) hash ^= StartTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4688,7 +5004,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.SecurityCenter.V1.Finding.Types.State.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
@@ -4707,7 +5023,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (State != 0) {
+      if (State != global::Google.Cloud.SecurityCenter.V1.Finding.Types.State.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (startTime_ != null) {
@@ -4727,7 +5043,7 @@ namespace Google.Cloud.SecurityCenter.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.State != 0) {
+      if (other.State != global::Google.Cloud.SecurityCenter.V1.Finding.Types.State.Unspecified) {
         State = other.State;
       }
       if (other.startTime_ != null) {

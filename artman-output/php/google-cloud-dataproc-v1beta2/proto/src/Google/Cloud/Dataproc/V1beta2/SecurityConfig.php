@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.SecurityConfig</code>
  */
-final class SecurityConfig extends \Google\Protobuf\Internal\Message
+class SecurityConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Kerberos related configuration.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.KerberosConfig kerberos_config = 1;</code>
      */
-    private $kerberos_config = null;
+    protected $kerberos_config = null;
 
     /**
      * Constructor.

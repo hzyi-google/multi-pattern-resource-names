@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.GroupResult</code>
  */
-final class GroupResult extends \Google\Protobuf\Internal\Message
+class GroupResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * Properties matching the groupBy fields in the request.
@@ -26,7 +26,7 @@ final class GroupResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 count = 2;</code>
      */
-    private $count = 0;
+    protected $count = 0;
 
     /**
      * Constructor.

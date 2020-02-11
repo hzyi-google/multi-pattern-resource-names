@@ -13,6 +13,7 @@ public interface BigQueryKeyOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return Whether the tableReference field is set.
    */
   boolean hasTableReference();
   /**
@@ -21,6 +22,7 @@ public interface BigQueryKeyOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return The tableReference.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
   /**
@@ -39,6 +41,7 @@ public interface BigQueryKeyOrBuilder extends
    * </pre>
    *
    * <code>int64 row_number = 2;</code>
+   * @return The rowNumber.
    */
   long getRowNumber();
 }

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.PublishRequest</code>
  */
-final class PublishRequest extends \Google\Protobuf\Internal\Message
+class PublishRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The messages in the request will be published on this topic.
@@ -21,7 +21,7 @@ final class PublishRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string topic = 1;</code>
      */
-    private $topic = '';
+    protected $topic = '';
     /**
      * The messages to publish.
      *

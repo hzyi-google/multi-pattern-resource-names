@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ValueFrequency();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,6 +110,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+   * @return Whether the value field is set.
    */
   public boolean hasValue() {
     return value_ != null;
@@ -114,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+   * @return The value.
    */
   public com.google.privacy.dlp.v2.Value getValue() {
     return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
@@ -137,6 +145,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   * @return The count.
    */
   public long getCount() {
     return count_;
@@ -488,6 +497,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+     * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return valueBuilder_ != null || value_ != null;
@@ -498,6 +508,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 1;</code>
+     * @return The value.
      */
     public com.google.privacy.dlp.v2.Value getValue() {
       if (valueBuilder_ == null) {
@@ -639,6 +650,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return The count.
      */
     public long getCount() {
       return count_;
@@ -649,6 +661,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(long value) {
       
@@ -662,6 +676,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       

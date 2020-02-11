@@ -13,6 +13,7 @@ public interface InstallationOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -21,13 +22,14 @@ public interface InstallationOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -37,7 +39,7 @@ public interface InstallationOrBuilder extends
       getLocationList();
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -46,7 +48,7 @@ public interface InstallationOrBuilder extends
   io.grafeas.v1beta1.pkg.Location getLocation(int index);
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -55,7 +57,7 @@ public interface InstallationOrBuilder extends
   int getLocationCount();
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *
@@ -65,7 +67,7 @@ public interface InstallationOrBuilder extends
       getLocationOrBuilderList();
   /**
    * <pre>
-   * All of the places within the filesystem versions of this package
+   * Required. All of the places within the filesystem versions of this package
    * have been found.
    * </pre>
    *

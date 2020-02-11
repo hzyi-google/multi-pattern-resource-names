@@ -9,27 +9,30 @@ public interface HashOrBuilder extends
 
   /**
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
+   * @return The type.
    */
   io.grafeas.v1beta1.provenance.Hash.HashType getType();
 
   /**
    * <pre>
-   * The hash value.
+   * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 }

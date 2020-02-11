@@ -15,7 +15,8 @@ public interface ListJobsRequestOrBuilder extends
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -26,7 +27,8 @@ public interface ListJobsRequestOrBuilder extends
    * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -49,6 +51,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -69,6 +72,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
       getFilterBytes();
@@ -79,6 +83,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -87,6 +92,7 @@ public interface ListJobsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -94,38 +100,36 @@ public interface ListJobsRequestOrBuilder extends
   /**
    * <pre>
    * The maximum number of jobs to be returned per page of results.
-   * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
-   * to
-   * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
-   * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
-   * size is 100.
+   * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set to [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY], the maximum allowed
+   * page size is 1000. Otherwise, the maximum allowed page size is 100.
    * Default is 100 if empty or a number &lt; 1 is specified.
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
   /**
    * <pre>
    * The desired job attributes returned for jobs in the
-   * search response. Defaults to
-   * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
-   * if no value is specified.
+   * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL] if no value is
+   * specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   * @return The enum numeric value on the wire for jobView.
    */
   int getJobViewValue();
   /**
    * <pre>
    * The desired job attributes returned for jobs in the
-   * search response. Defaults to
-   * [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL]
-   * if no value is specified.
+   * search response. Defaults to [JobView.JOB_VIEW_FULL][google.cloud.talent.v4beta1.JobView.JOB_VIEW_FULL] if no value is
+   * specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobView job_view = 5;</code>
+   * @return The jobView.
    */
   com.google.cloud.talent.v4beta1.JobView getJobView();
 }

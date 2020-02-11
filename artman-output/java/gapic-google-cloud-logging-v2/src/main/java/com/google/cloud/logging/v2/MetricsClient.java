@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,12 +307,11 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the desired metric:
+   * @param metricName Required. The resource name of the desired metric:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(MetricName metricName) {
-
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -333,12 +332,11 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the desired metric:
+   * @param metricName Required. The resource name of the desired metric:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(String metricName) {
-
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(metricName).build();
     return getLogMetric(request);
@@ -403,14 +401,14 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project in which to create the metric:
+   * @param parent Required. The resource name of the project in which to create the metric:
    *     <p>"projects/[PROJECT_ID]"
    *     <p>The new metric must be provided in the request.
-   * @param metric The new logs-based metric, which must not have an identifier that already exists.
+   * @param metric Required. The new logs-based metric, which must not have an identifier that
+   *     already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(ParentName parent, LogMetric metric) {
-
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -433,14 +431,14 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project in which to create the metric:
+   * @param parent Required. The resource name of the project in which to create the metric:
    *     <p>"projects/[PROJECT_ID]"
    *     <p>The new metric must be provided in the request.
-   * @param metric The new logs-based metric, which must not have an identifier that already exists.
+   * @param metric Required. The new logs-based metric, which must not have an identifier that
+   *     already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(String parent, LogMetric metric) {
-
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder().setParent(parent).setMetric(metric).build();
     return createLogMetric(request);
@@ -509,16 +507,15 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to update:
+   * @param metricName Required. The resource name of the metric to update:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    *     <p>The updated metric must be provided in the request and it's `name` field must be the
    *     same as `[METRIC_ID]` If the metric does not exist in `[PROJECT_ID]`, then a new metric is
    *     created.
-   * @param metric The updated metric.
+   * @param metric Required. The updated metric.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(MetricName metricName, LogMetric metric) {
-
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -541,16 +538,15 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to update:
+   * @param metricName Required. The resource name of the metric to update:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    *     <p>The updated metric must be provided in the request and it's `name` field must be the
    *     same as `[METRIC_ID]` If the metric does not exist in `[PROJECT_ID]`, then a new metric is
    *     created.
-   * @param metric The updated metric.
+   * @param metric Required. The updated metric.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
-
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder().setMetricName(metricName).setMetric(metric).build();
     return updateLogMetric(request);
@@ -618,12 +614,11 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to delete:
+   * @param metricName Required. The resource name of the metric to delete:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(MetricName metricName) {
-
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -644,12 +639,11 @@ public class MetricsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to delete:
+   * @param metricName Required. The resource name of the metric to delete:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(String metricName) {
-
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(metricName).build();
     deleteLogMetric(request);

@@ -168,7 +168,7 @@ const (
 	// Applies to RUNNING state.
 	JobStatus_QUEUED JobStatus_Substate = 2
 	// The agent-reported status is out of date, which may be caused by a
-	// loss of communication between the agent and Cloud Dataproc. If the
+	// loss of communication between the agent and Dataproc. If the
 	// agent does not send a timely update, the job will fail.
 	//
 	// Applies to RUNNING state.
@@ -331,7 +331,7 @@ func (m *LoggingConfig) GetDriverLogLevels() map[string]LoggingConfig_Level {
 	return nil
 }
 
-// A Cloud Dataproc job for running
+// A Dataproc job for running
 // [Apache Hadoop
 // MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
 // jobs on [Apache Hadoop
@@ -363,7 +363,7 @@ type HadoopJob struct {
 	// .jar, .tar, .tar.gz, .tgz, or .zip.
 	ArchiveUris []string `protobuf:"bytes,6,rep,name=archive_uris,json=archiveUris,proto3" json:"archive_uris,omitempty"`
 	// Optional. A mapping of property names to values, used to configure Hadoop.
-	// Properties that conflict with values set by the Cloud Dataproc API may be
+	// Properties that conflict with values set by the Dataproc API may be
 	// overwritten. Can include properties set in /etc/hadoop/conf/*-site and
 	// classes in user code.
 	Properties map[string]string `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -486,7 +486,7 @@ func (*HadoopJob) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+// A Dataproc job for running [Apache Spark](http://spark.apache.org/)
 // applications on YARN.
 type SparkJob struct {
 	// Required. The specification of the main method to call to drive the job.
@@ -514,7 +514,7 @@ type SparkJob struct {
 	// .jar, .tar, .tar.gz, .tgz, and .zip.
 	ArchiveUris []string `protobuf:"bytes,6,rep,name=archive_uris,json=archiveUris,proto3" json:"archive_uris,omitempty"`
 	// Optional. A mapping of property names to values, used to configure Spark.
-	// Properties that conflict with values set by the Cloud Dataproc API may be
+	// Properties that conflict with values set by the Dataproc API may be
 	// overwritten. Can include properties set in
 	// /etc/spark/conf/spark-defaults.conf and classes in user code.
 	Properties map[string]string `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -637,7 +637,7 @@ func (*SparkJob) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// A Cloud Dataproc job for running
+// A Dataproc job for running
 // [Apache
 // PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
 // applications on YARN.
@@ -662,7 +662,7 @@ type PySparkJob struct {
 	// .jar, .tar, .tar.gz, .tgz, and .zip.
 	ArchiveUris []string `protobuf:"bytes,6,rep,name=archive_uris,json=archiveUris,proto3" json:"archive_uris,omitempty"`
 	// Optional. A mapping of property names to values, used to configure PySpark.
-	// Properties that conflict with values set by the Cloud Dataproc API may be
+	// Properties that conflict with values set by the Dataproc API may be
 	// overwritten. Can include properties set in
 	// /etc/spark/conf/spark-defaults.conf and classes in user code.
 	Properties map[string]string `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -808,7 +808,7 @@ func (m *QueryList) GetQueries() []string {
 	return nil
 }
 
-// A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
+// A Dataproc job for running [Apache Hive](https://hive.apache.org/)
 // queries on YARN.
 type HiveJob struct {
 	// Required. The sequence of Hive queries to execute, specified as either
@@ -826,7 +826,7 @@ type HiveJob struct {
 	// Hive command: `SET name="value";`).
 	ScriptVariables map[string]string `protobuf:"bytes,4,rep,name=script_variables,json=scriptVariables,proto3" json:"script_variables,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Optional. A mapping of property names and values, used to configure Hive.
-	// Properties that conflict with values set by the Cloud Dataproc API may be
+	// Properties that conflict with values set by the Dataproc API may be
 	// overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml,
 	// /etc/hive/conf/hive-site.xml, and classes in user code.
 	Properties map[string]string `protobuf:"bytes,5,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -937,7 +937,7 @@ func (*HiveJob) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// A Cloud Dataproc job for running [Apache Spark
+// A Dataproc job for running [Apache Spark
 // SQL](http://spark.apache.org/sql/) queries.
 type SparkSqlJob struct {
 	// Required. The sequence of Spark SQL queries to execute, specified as
@@ -952,7 +952,7 @@ type SparkSqlJob struct {
 	ScriptVariables map[string]string `protobuf:"bytes,3,rep,name=script_variables,json=scriptVariables,proto3" json:"script_variables,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Optional. A mapping of property names to values, used to configure
 	// Spark SQL's SparkConf. Properties that conflict with values set by the
-	// Cloud Dataproc API may be overwritten.
+	// Dataproc API may be overwritten.
 	Properties map[string]string `protobuf:"bytes,4,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
 	JarFileUris []string `protobuf:"bytes,56,rep,name=jar_file_uris,json=jarFileUris,proto3" json:"jar_file_uris,omitempty"`
@@ -1061,7 +1061,7 @@ func (*SparkSqlJob) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+// A Dataproc job for running [Apache Pig](https://pig.apache.org/)
 // queries on YARN.
 type PigJob struct {
 	// Required. The sequence of Pig queries to execute, specified as an HCFS
@@ -1079,7 +1079,7 @@ type PigJob struct {
 	// command: `name=[value]`).
 	ScriptVariables map[string]string `protobuf:"bytes,4,rep,name=script_variables,json=scriptVariables,proto3" json:"script_variables,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Optional. A mapping of property names to values, used to configure Pig.
-	// Properties that conflict with values set by the Cloud Dataproc API may be
+	// Properties that conflict with values set by the Dataproc API may be
 	// overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml,
 	// /etc/pig/conf/pig.properties, and classes in user code.
 	Properties map[string]string `protobuf:"bytes,5,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -1198,11 +1198,11 @@ func (*PigJob) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// Cloud Dataproc job config.
+// Dataproc job config.
 type JobPlacement struct {
 	// Required. The name of the cluster where the job will be submitted.
 	ClusterName string `protobuf:"bytes,1,opt,name=cluster_name,json=clusterName,proto3" json:"cluster_name,omitempty"`
-	// Output only. A cluster UUID generated by the Cloud Dataproc service when
+	// Output only. A cluster UUID generated by the Dataproc service when
 	// the job is submitted.
 	ClusterUuid          string   `protobuf:"bytes,2,opt,name=cluster_uuid,json=clusterUuid,proto3" json:"cluster_uuid,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -1249,7 +1249,7 @@ func (m *JobPlacement) GetClusterUuid() string {
 	return ""
 }
 
-// Cloud Dataproc job status.
+// Dataproc job status.
 type JobStatus struct {
 	// Output only. A state message specifying the overall job state.
 	State JobStatus_State `protobuf:"varint,1,opt,name=state,proto3,enum=google.cloud.dataproc.v1.JobStatus_State" json:"state,omitempty"`
@@ -1450,7 +1450,7 @@ func (m *YarnApplication) GetTrackingUrl() string {
 	return ""
 }
 
-// A Cloud Dataproc job resource.
+// A Dataproc job resource.
 type Job struct {
 	// Optional. The fully qualified reference to the job, which can be used to
 	// obtain the equivalent REST path of the job resource. If this property
@@ -1756,7 +1756,7 @@ type SubmitJobRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`
 	// Required. The job resource.
 	Job *Job `protobuf:"bytes,2,opt,name=job,proto3" json:"job,omitempty"`
@@ -1835,7 +1835,7 @@ type GetJobRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`
 	// Required. The job ID.
 	JobId                string   `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
@@ -1895,7 +1895,7 @@ type ListJobsRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,6,opt,name=region,proto3" json:"region,omitempty"`
 	// Optional. The number of results to return in each response.
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
@@ -2009,7 +2009,7 @@ type UpdateJobRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,2,opt,name=region,proto3" json:"region,omitempty"`
 	// Required. The job ID.
 	JobId string `protobuf:"bytes,3,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
@@ -2144,7 +2144,7 @@ type CancelJobRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`
 	// Required. The job ID.
 	JobId                string   `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
@@ -2204,7 +2204,7 @@ type DeleteJobRequest struct {
 	// Required. The ID of the Google Cloud Platform project that the job
 	// belongs to.
 	ProjectId string `protobuf:"bytes,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
-	// Required. The Cloud Dataproc region in which to handle the request.
+	// Required. The Dataproc region in which to handle the request.
 	Region string `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`
 	// Required. The job ID.
 	JobId                string   `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
@@ -2465,11 +2465,11 @@ var fileDescriptor_37e0b42bcf4d103b = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // JobControllerClient is the client API for JobController service.
 //
@@ -2495,10 +2495,10 @@ type JobControllerClient interface {
 }
 
 type jobControllerClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewJobControllerClient(cc *grpc.ClientConn) JobControllerClient {
+func NewJobControllerClient(cc grpc.ClientConnInterface) JobControllerClient {
 	return &jobControllerClient{cc}
 }
 

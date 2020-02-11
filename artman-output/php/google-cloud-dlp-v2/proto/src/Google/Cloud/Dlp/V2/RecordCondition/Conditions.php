@@ -13,9 +13,11 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.RecordCondition.Conditions</code>
  */
-final class Conditions extends \Google\Protobuf\Internal\Message
+class Conditions extends \Google\Protobuf\Internal\Message
 {
     /**
+     * A collection of conditions.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      */
     private $conditions;
@@ -27,6 +29,7 @@ final class Conditions extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dlp\V2\RecordCondition\Condition[]|\Google\Protobuf\Internal\RepeatedField $conditions
+     *           A collection of conditions.
      * }
      */
     public function __construct($data = NULL) {
@@ -35,6 +38,8 @@ final class Conditions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A collection of conditions.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -44,6 +49,8 @@ final class Conditions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A collection of conditions.
+     *
      * Generated from protobuf field <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
      * @param \Google\Cloud\Dlp\V2\RecordCondition\Condition[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

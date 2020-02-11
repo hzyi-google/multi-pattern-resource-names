@@ -122,6 +122,8 @@ public enum FileType
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -129,6 +131,10 @@ public enum FileType
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static FileType forNumber(int value) {
     switch (value) {
       case 0: return FILE_TYPE_UNSPECIFIED;

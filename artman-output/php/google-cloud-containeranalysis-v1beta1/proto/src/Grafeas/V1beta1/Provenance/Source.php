@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.provenance.Source</code>
  */
-final class Source extends \Google\Protobuf\Internal\Message
+class Source extends \Google\Protobuf\Internal\Message
 {
     /**
      * If provided, the input binary artifacts for the build came from this
@@ -21,7 +21,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string artifact_storage_source_uri = 1;</code>
      */
-    private $artifact_storage_source_uri = '';
+    protected $artifact_storage_source_uri = '';
     /**
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -38,7 +38,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
      */
-    private $context = null;
+    protected $context = null;
     /**
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple

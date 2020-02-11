@@ -15,20 +15,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CryptoDeterministicConfig</code>
  */
-final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
+class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * The key used by the encryption function.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
-    private $crypto_key = null;
+    protected $crypto_key = null;
     /**
      * The custom info type to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: <info type name>(<surrogate character count>):<surrogate>
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -36,7 +36,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -53,9 +53,9 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
      */
-    private $surrogate_info_type = null;
+    protected $surrogate_info_type = null;
     /**
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -72,7 +72,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
      */
-    private $context = null;
+    protected $context = null;
 
     /**
      * Constructor.
@@ -87,7 +87,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      *           This annotation will be applied to the surrogate by prefixing it with
      *           the name of the custom info type followed by the number of
      *           characters comprising the surrogate. The following scheme defines the
-     *           format: <info type name>(<surrogate character count>):<surrogate>
+     *           format: {info type name}({surrogate character count}):{surrogate}
      *           For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      *           the surrogate is 'abc', the full replacement value
      *           will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -95,7 +95,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      *           custom info type 'Surrogate'. This facilitates reversal of the
      *           surrogate when it occurs in free text.
      *           Note: For record transformations where the entire cell in a table is being
-     *           transformed, surrogates are optional to use. Surrogates are used to denote
+     *           transformed, surrogates are not mandatory. Surrogates are used to denote
      *           the location of the token and are necessary for re-identification in free
      *           form text.
      *           In order for inspection to work properly, the name of this info type must
@@ -110,7 +110,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      *           the symbol with the hex code point 29DD might be used like so:
      *           ⧝MY_TOKEN_TYPE.
      *     @type \Google\Cloud\Dlp\V2\FieldId $context
-     *           Optional. A context may be used for higher security and maintaining
+     *           A context may be used for higher security and maintaining
      *           referential integrity such that the same identifier in two different
      *           contexts will be given a distinct surrogate. The context is appended to
      *           plaintext value being encrypted. On decryption the provided context is
@@ -162,7 +162,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: <info type name>(<surrogate character count>):<surrogate>
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -170,7 +170,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -198,7 +198,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: <info type name>(<surrogate character count>):<surrogate>
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -206,7 +206,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -234,7 +234,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -258,7 +258,7 @@ final class CryptoDeterministicConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is

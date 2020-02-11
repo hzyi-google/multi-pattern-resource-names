@@ -47,6 +47,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Profile();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -140,127 +147,127 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               personNames_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonName>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00000001;
             }
             personNames_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.PersonName.parser(), extensionRegistry));
             break;
           }
           case 98: {
-            if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               addresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Address>();
-              mutable_bitField0_ |= 0x00001000;
+              mutable_bitField0_ |= 0x00000002;
             }
             addresses_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Address.parser(), extensionRegistry));
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               emailAddresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Email>();
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00000004;
             }
             emailAddresses_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Email.parser(), extensionRegistry));
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               phoneNumbers_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Phone>();
-              mutable_bitField0_ |= 0x00004000;
+              mutable_bitField0_ |= 0x00000008;
             }
             phoneNumbers_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Phone.parser(), extensionRegistry));
             break;
           }
           case 122: {
-            if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               personalUris_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonalUri>();
-              mutable_bitField0_ |= 0x00008000;
+              mutable_bitField0_ |= 0x00000010;
             }
             personalUris_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.PersonalUri.parser(), extensionRegistry));
             break;
           }
           case 130: {
-            if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               additionalContactInfo_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.AdditionalContactInfo>();
-              mutable_bitField0_ |= 0x00010000;
+              mutable_bitField0_ |= 0x00000020;
             }
             additionalContactInfo_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.AdditionalContactInfo.parser(), extensionRegistry));
             break;
           }
           case 138: {
-            if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
               employmentRecords_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmploymentRecord>();
-              mutable_bitField0_ |= 0x00020000;
+              mutable_bitField0_ |= 0x00000040;
             }
             employmentRecords_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.EmploymentRecord.parser(), extensionRegistry));
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00040000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
               educationRecords_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationRecord>();
-              mutable_bitField0_ |= 0x00040000;
+              mutable_bitField0_ |= 0x00000080;
             }
             educationRecords_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.EducationRecord.parser(), extensionRegistry));
             break;
           }
           case 154: {
-            if (!((mutable_bitField0_ & 0x00080000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
               skills_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
-              mutable_bitField0_ |= 0x00080000;
+              mutable_bitField0_ |= 0x00000100;
             }
             skills_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Skill.parser(), extensionRegistry));
             break;
           }
           case 162: {
-            if (!((mutable_bitField0_ & 0x00100000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
               activities_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Activity>();
-              mutable_bitField0_ |= 0x00100000;
+              mutable_bitField0_ |= 0x00000200;
             }
             activities_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Activity.parser(), extensionRegistry));
             break;
           }
           case 170: {
-            if (!((mutable_bitField0_ & 0x00200000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
               publications_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Publication>();
-              mutable_bitField0_ |= 0x00200000;
+              mutable_bitField0_ |= 0x00000400;
             }
             publications_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Publication.parser(), extensionRegistry));
             break;
           }
           case 178: {
-            if (!((mutable_bitField0_ & 0x00400000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000800) != 0)) {
               patents_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Patent>();
-              mutable_bitField0_ |= 0x00400000;
+              mutable_bitField0_ |= 0x00000800;
             }
             patents_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Patent.parser(), extensionRegistry));
             break;
           }
           case 186: {
-            if (!((mutable_bitField0_ & 0x00800000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00001000) != 0)) {
               certifications_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Certification>();
-              mutable_bitField0_ |= 0x00800000;
+              mutable_bitField0_ |= 0x00001000;
             }
             certifications_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Certification.parser(), extensionRegistry));
             break;
           }
           case 210: {
-            if (!((mutable_bitField0_ & 0x04000000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00008000) != 0)) {
               customAttributes_ = com.google.protobuf.MapField.newMapField(
                   CustomAttributesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x04000000;
+              mutable_bitField0_ |= 0x00008000;
             }
             com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
             customAttributes__ = input.readMessage(
@@ -282,18 +289,18 @@ private static final long serialVersionUID = 0L;
           }
           case 378: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x01000000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00002000) != 0)) {
               applications_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x01000000;
+              mutable_bitField0_ |= 0x00002000;
             }
             applications_.add(s);
             break;
           }
           case 386: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x02000000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00004000) != 0)) {
               assignments_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x02000000;
+              mutable_bitField0_ |= 0x00004000;
             }
             assignments_.add(s);
             break;
@@ -312,9 +319,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 514: {
-            if (!((mutable_bitField0_ & 0x40000000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00020000) != 0)) {
               derivedAddresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>();
-              mutable_bitField0_ |= 0x40000000;
+              mutable_bitField0_ |= 0x00020000;
             }
             derivedAddresses_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Location.parser(), extensionRegistry));
@@ -347,9 +354,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 562: {
-            if (!((mutable_bitField0_ & 0x20000000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00010000) != 0)) {
               availabilitySignals_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.AvailabilitySignal>();
-              mutable_bitField0_ |= 0x20000000;
+              mutable_bitField0_ |= 0x00010000;
             }
             availabilitySignals_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.AvailabilitySignal.parser(), extensionRegistry));
@@ -370,55 +377,55 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         personNames_ = java.util.Collections.unmodifiableList(personNames_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         addresses_ = java.util.Collections.unmodifiableList(addresses_);
       }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         emailAddresses_ = java.util.Collections.unmodifiableList(emailAddresses_);
       }
-      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
       }
-      if (((mutable_bitField0_ & 0x00008000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         personalUris_ = java.util.Collections.unmodifiableList(personalUris_);
       }
-      if (((mutable_bitField0_ & 0x00010000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         additionalContactInfo_ = java.util.Collections.unmodifiableList(additionalContactInfo_);
       }
-      if (((mutable_bitField0_ & 0x00020000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         employmentRecords_ = java.util.Collections.unmodifiableList(employmentRecords_);
       }
-      if (((mutable_bitField0_ & 0x00040000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         educationRecords_ = java.util.Collections.unmodifiableList(educationRecords_);
       }
-      if (((mutable_bitField0_ & 0x00080000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         skills_ = java.util.Collections.unmodifiableList(skills_);
       }
-      if (((mutable_bitField0_ & 0x00100000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         activities_ = java.util.Collections.unmodifiableList(activities_);
       }
-      if (((mutable_bitField0_ & 0x00200000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         publications_ = java.util.Collections.unmodifiableList(publications_);
       }
-      if (((mutable_bitField0_ & 0x00400000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         patents_ = java.util.Collections.unmodifiableList(patents_);
       }
-      if (((mutable_bitField0_ & 0x00800000) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         certifications_ = java.util.Collections.unmodifiableList(certifications_);
       }
-      if (((mutable_bitField0_ & 0x01000000) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         applications_ = applications_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x02000000) != 0)) {
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
         assignments_ = assignments_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x40000000) != 0)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         derivedAddresses_ = java.util.Collections.unmodifiableList(derivedAddresses_);
       }
-      if (((mutable_bitField0_ & 0x20000000) != 0)) {
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         availabilitySignals_ = java.util.Collections.unmodifiableList(availabilitySignals_);
       }
       this.unknownFields = unknownFields.build();
@@ -450,7 +457,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.Profile.class, com.google.cloud.talent.v4beta1.Profile.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -463,6 +469,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -486,6 +493,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -512,6 +520,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   * @return The externalId.
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -534,6 +543,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string external_id = 2;</code>
+   * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
       getExternalIdBytes() {
@@ -560,6 +570,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string source = 3;</code>
+   * @return The source.
    */
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
@@ -582,6 +593,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string source = 3;</code>
+   * @return The bytes for source.
    */
   public com.google.protobuf.ByteString
       getSourceBytes() {
@@ -606,6 +618,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 4;</code>
+   * @return The uri.
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -626,6 +639,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 4;</code>
+   * @return The bytes for uri.
    */
   public com.google.protobuf.ByteString
       getUriBytes() {
@@ -653,12 +667,12 @@ private static final long serialVersionUID = 0L;
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   * @return The groupId.
    */
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
@@ -682,12 +696,12 @@ private static final long serialVersionUID = 0L;
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
+   * @return The bytes for groupId.
    */
   public com.google.protobuf.ByteString
       getGroupIdBytes() {
@@ -711,6 +725,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   * @return Whether the isHirable field is set.
    */
   public boolean hasIsHirable() {
     return isHirable_ != null;
@@ -721,6 +736,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+   * @return The isHirable.
    */
   public com.google.protobuf.BoolValue getIsHirable() {
     return isHirable_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isHirable_;
@@ -744,6 +760,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -754,6 +771,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -777,6 +795,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -787,6 +806,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -817,17 +837,14 @@ private static final long serialVersionUID = 0L;
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   * @return Whether the candidateUpdateTime field is set.
    */
   public boolean hasCandidateUpdateTime() {
     return candidateUpdateTime_ != null;
@@ -845,17 +862,14 @@ private static final long serialVersionUID = 0L;
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   * @return The candidateUpdateTime.
    */
   public com.google.protobuf.Timestamp getCandidateUpdateTime() {
     return candidateUpdateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : candidateUpdateTime_;
@@ -873,14 +887,10 @@ private static final long serialVersionUID = 0L;
    * a recruiter who then uploads it into the ATS, and so on.
    * * Updates made to the candidate's profile by the recruiter as a result of
    * interacting with the candidate (for example adding a skill or work
-   * preference, and so on). Changes to
-   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-   * are specifically excluded from this action type.
-   * Note:
-   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-   * must be greater than or equal to
-   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-   * or an error is thrown.
+   * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+   * excluded from this action type.
+   * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -897,12 +907,12 @@ private static final long serialVersionUID = 0L;
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   * @return Whether the resumeUpdateTime field is set.
    */
   public boolean hasResumeUpdateTime() {
     return resumeUpdateTime_ != null;
@@ -913,12 +923,12 @@ private static final long serialVersionUID = 0L;
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   * @return The resumeUpdateTime.
    */
   public com.google.protobuf.Timestamp getResumeUpdateTime() {
     return resumeUpdateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : resumeUpdateTime_;
@@ -929,9 +939,8 @@ private static final long serialVersionUID = 0L;
    * candidate's profile. Whether that resume was directly uploaded by a
    * candidate, pulled from a 3rd party job board feed, added by a recruiter,
    * and so on.
-   * If this field is updated, it's expected that
-   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-   * create or update calls.
+   * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+   * the create or update calls.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -948,6 +957,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   * @return Whether the resume field is set.
    */
   public boolean hasResume() {
     return resume_ != null;
@@ -958,6 +968,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+   * @return The resume.
    */
   public com.google.cloud.talent.v4beta1.Resume getResume() {
     return resume_ == null ? com.google.cloud.talent.v4beta1.Resume.getDefaultInstance() : resume_;
@@ -1040,29 +1051,23 @@ private static final long serialVersionUID = 0L;
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -1075,29 +1080,23 @@ private static final long serialVersionUID = 0L;
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -1111,29 +1110,23 @@ private static final long serialVersionUID = 0L;
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -1146,29 +1139,23 @@ private static final long serialVersionUID = 0L;
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -1181,29 +1168,23 @@ private static final long serialVersionUID = 0L;
    * The candidate's postal addresses. It's highly recommended to
    * input this information as accurately as possible to help improve search
    * quality. Here are some recommendations:
-   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-   * possible, especially if the address is PERSONAL. During a search only
-   * personal addresses are considered. If there is no such address, all
-   * addresses with unspecified usage are assumed to be personal.
-   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-   * for the current address if possible. During a search, only current
-   * addresses are considered. If there is no such address, all addresses are
-   * assumed to be current.
+   * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+   * PERSONAL. During a search only personal addresses are considered. If there
+   * is no such address, all addresses with unspecified usage are assumed to be
+   * personal.
+   * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+   * a search, only current addresses are considered. If there is no such
+   * address, all addresses are assumed to be current.
    * When displaying a candidate's addresses, it is sometimes desirable to limit
    * the number of addresses shown. In these cases we recommend that you display
    * the addresses in the following order of priority:
-   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-   * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-   * or not set.
-   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
+   * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+   * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+   * set.
+   * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
    * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-   * CONTACT_INFO_USAGE_UNSPECIFIED and
-   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-   * not set.
+   * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+   * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -1382,12 +1363,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.talent.v4beta1.AdditionalContactInfo> additionalContactInfo_;
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -1397,12 +1374,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -1413,12 +1386,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -1428,12 +1397,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -1443,12 +1408,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -1470,10 +1431,8 @@ private static final long serialVersionUID = 0L;
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -1492,10 +1451,8 @@ private static final long serialVersionUID = 0L;
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -1515,10 +1472,8 @@ private static final long serialVersionUID = 0L;
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -1537,10 +1492,8 @@ private static final long serialVersionUID = 0L;
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -1559,10 +1512,8 @@ private static final long serialVersionUID = 0L;
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of employment records is 100.
    * </pre>
    *
@@ -1584,10 +1535,8 @@ private static final long serialVersionUID = 0L;
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1605,10 +1554,8 @@ private static final long serialVersionUID = 0L;
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1627,10 +1574,8 @@ private static final long serialVersionUID = 0L;
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1648,10 +1593,8 @@ private static final long serialVersionUID = 0L;
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1669,10 +1612,8 @@ private static final long serialVersionUID = 0L;
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * The limitation for max number of education records is 100.
    * </pre>
    *
@@ -1754,8 +1695,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1768,8 +1708,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1783,8 +1722,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1797,8 +1735,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -1811,8 +1748,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * The limitation for max number of activities is 50.
    * </pre>
    *
@@ -2001,6 +1937,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the applications.
    */
   public com.google.protobuf.ProtocolStringList
       getApplicationsList() {
@@ -2012,6 +1949,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of applications.
    */
   public int getApplicationsCount() {
     return applications_.size();
@@ -2022,6 +1960,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The applications at the given index.
    */
   public java.lang.String getApplications(int index) {
     return applications_.get(index);
@@ -2032,6 +1972,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the applications at the given index.
    */
   public com.google.protobuf.ByteString
       getApplicationsBytes(int index) {
@@ -2046,6 +1988,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return A list containing the assignments.
    */
   public com.google.protobuf.ProtocolStringList
       getAssignmentsList() {
@@ -2057,6 +2000,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The count of assignments.
    */
   public int getAssignmentsCount() {
     return assignments_.size();
@@ -2067,6 +2011,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the element to return.
+   * @return The assignments at the given index.
    */
   public java.lang.String getAssignments(int index) {
     return assignments_.get(index);
@@ -2077,6 +2023,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the assignments at the given index.
    */
   public com.google.protobuf.ByteString
       getAssignmentsBytes(int index) {
@@ -2113,8 +2061,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2148,8 +2095,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2174,8 +2120,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2205,8 +2150,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2245,6 +2189,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The processed.
    */
   public boolean getProcessed() {
     return processed_;
@@ -2255,11 +2200,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Keyword snippet shows how the search result is related to a
-   * search query.  This is only returned in
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The keywordSnippet.
    */
   public java.lang.String getKeywordSnippet() {
     java.lang.Object ref = keywordSnippet_;
@@ -2276,11 +2221,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Keyword snippet shows how the search result is related to a
-   * search query.  This is only returned in
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for keywordSnippet.
    */
   public com.google.protobuf.ByteString
       getKeywordSnippetBytes() {
@@ -2355,11 +2300,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.talent.v4beta1.Location> derivedAddresses_;
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -2370,11 +2312,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -2386,11 +2325,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -2401,11 +2337,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -2416,11 +2349,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Derived locations of the profile, resolved from
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-   * are exactly matched to
-   * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+   * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+   * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
    * same order.
    * </pre>
    *
@@ -3122,86 +3052,86 @@ private static final long serialVersionUID = 0L;
       }
       if (personNamesBuilder_ == null) {
         personNames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         personNamesBuilder_.clear();
       }
       if (addressesBuilder_ == null) {
         addresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         addressesBuilder_.clear();
       }
       if (emailAddressesBuilder_ == null) {
         emailAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         emailAddressesBuilder_.clear();
       }
       if (phoneNumbersBuilder_ == null) {
         phoneNumbers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         phoneNumbersBuilder_.clear();
       }
       if (personalUrisBuilder_ == null) {
         personalUris_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         personalUrisBuilder_.clear();
       }
       if (additionalContactInfoBuilder_ == null) {
         additionalContactInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         additionalContactInfoBuilder_.clear();
       }
       if (employmentRecordsBuilder_ == null) {
         employmentRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         employmentRecordsBuilder_.clear();
       }
       if (educationRecordsBuilder_ == null) {
         educationRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         educationRecordsBuilder_.clear();
       }
       if (skillsBuilder_ == null) {
         skills_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         skillsBuilder_.clear();
       }
       if (activitiesBuilder_ == null) {
         activities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         activitiesBuilder_.clear();
       }
       if (publicationsBuilder_ == null) {
         publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         publicationsBuilder_.clear();
       }
       if (patentsBuilder_ == null) {
         patents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         patentsBuilder_.clear();
       }
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         certificationsBuilder_.clear();
       }
       applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableCustomAttributes().clear();
       processed_ = false;
 
@@ -3209,13 +3139,13 @@ private static final long serialVersionUID = 0L;
 
       if (availabilitySignalsBuilder_ == null) {
         availabilitySignals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       } else {
         availabilitySignalsBuilder_.clear();
       }
       if (derivedAddressesBuilder_ == null) {
         derivedAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x00020000);
       } else {
         derivedAddressesBuilder_.clear();
       }
@@ -3246,7 +3176,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Profile buildPartial() {
       com.google.cloud.talent.v4beta1.Profile result = new com.google.cloud.talent.v4beta1.Profile(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.source_ = source_;
@@ -3283,130 +3212,130 @@ private static final long serialVersionUID = 0L;
         result.resume_ = resumeBuilder_.build();
       }
       if (personNamesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           personNames_ = java.util.Collections.unmodifiableList(personNames_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.personNames_ = personNames_;
       } else {
         result.personNames_ = personNamesBuilder_.build();
       }
       if (addressesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           addresses_ = java.util.Collections.unmodifiableList(addresses_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.addresses_ = addresses_;
       } else {
         result.addresses_ = addressesBuilder_.build();
       }
       if (emailAddressesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           emailAddresses_ = java.util.Collections.unmodifiableList(emailAddresses_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.emailAddresses_ = emailAddresses_;
       } else {
         result.emailAddresses_ = emailAddressesBuilder_.build();
       }
       if (phoneNumbersBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.phoneNumbers_ = phoneNumbers_;
       } else {
         result.phoneNumbers_ = phoneNumbersBuilder_.build();
       }
       if (personalUrisBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           personalUris_ = java.util.Collections.unmodifiableList(personalUris_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.personalUris_ = personalUris_;
       } else {
         result.personalUris_ = personalUrisBuilder_.build();
       }
       if (additionalContactInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           additionalContactInfo_ = java.util.Collections.unmodifiableList(additionalContactInfo_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.additionalContactInfo_ = additionalContactInfo_;
       } else {
         result.additionalContactInfo_ = additionalContactInfoBuilder_.build();
       }
       if (employmentRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           employmentRecords_ = java.util.Collections.unmodifiableList(employmentRecords_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.employmentRecords_ = employmentRecords_;
       } else {
         result.employmentRecords_ = employmentRecordsBuilder_.build();
       }
       if (educationRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           educationRecords_ = java.util.Collections.unmodifiableList(educationRecords_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.educationRecords_ = educationRecords_;
       } else {
         result.educationRecords_ = educationRecordsBuilder_.build();
       }
       if (skillsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           skills_ = java.util.Collections.unmodifiableList(skills_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.skills_ = skills_;
       } else {
         result.skills_ = skillsBuilder_.build();
       }
       if (activitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           activities_ = java.util.Collections.unmodifiableList(activities_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.activities_ = activities_;
       } else {
         result.activities_ = activitiesBuilder_.build();
       }
       if (publicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           publications_ = java.util.Collections.unmodifiableList(publications_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.publications_ = publications_;
       } else {
         result.publications_ = publicationsBuilder_.build();
       }
       if (patentsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           patents_ = java.util.Collections.unmodifiableList(patents_);
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.patents_ = patents_;
       } else {
         result.patents_ = patentsBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField0_ = (bitField0_ & ~0x00800000);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
-      if (((bitField0_ & 0x01000000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         applications_ = applications_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       }
       result.applications_ = applications_;
-      if (((bitField0_ & 0x02000000) != 0)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         assignments_ = assignments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x00004000);
       }
       result.assignments_ = assignments_;
       result.customAttributes_ = internalGetCustomAttributes();
@@ -3414,24 +3343,23 @@ private static final long serialVersionUID = 0L;
       result.processed_ = processed_;
       result.keywordSnippet_ = keywordSnippet_;
       if (availabilitySignalsBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           availabilitySignals_ = java.util.Collections.unmodifiableList(availabilitySignals_);
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.availabilitySignals_ = availabilitySignals_;
       } else {
         result.availabilitySignals_ = availabilitySignalsBuilder_.build();
       }
       if (derivedAddressesBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           derivedAddresses_ = java.util.Collections.unmodifiableList(derivedAddresses_);
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.derivedAddresses_ = derivedAddresses_;
       } else {
         result.derivedAddresses_ = derivedAddressesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3522,7 +3450,7 @@ private static final long serialVersionUID = 0L;
         if (!other.personNames_.isEmpty()) {
           if (personNames_.isEmpty()) {
             personNames_ = other.personNames_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePersonNamesIsMutable();
             personNames_.addAll(other.personNames_);
@@ -3535,7 +3463,7 @@ private static final long serialVersionUID = 0L;
             personNamesBuilder_.dispose();
             personNamesBuilder_ = null;
             personNames_ = other.personNames_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000001);
             personNamesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPersonNamesFieldBuilder() : null;
@@ -3548,7 +3476,7 @@ private static final long serialVersionUID = 0L;
         if (!other.addresses_.isEmpty()) {
           if (addresses_.isEmpty()) {
             addresses_ = other.addresses_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAddressesIsMutable();
             addresses_.addAll(other.addresses_);
@@ -3561,7 +3489,7 @@ private static final long serialVersionUID = 0L;
             addressesBuilder_.dispose();
             addressesBuilder_ = null;
             addresses_ = other.addresses_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00000002);
             addressesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAddressesFieldBuilder() : null;
@@ -3574,7 +3502,7 @@ private static final long serialVersionUID = 0L;
         if (!other.emailAddresses_.isEmpty()) {
           if (emailAddresses_.isEmpty()) {
             emailAddresses_ = other.emailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEmailAddressesIsMutable();
             emailAddresses_.addAll(other.emailAddresses_);
@@ -3587,7 +3515,7 @@ private static final long serialVersionUID = 0L;
             emailAddressesBuilder_.dispose();
             emailAddressesBuilder_ = null;
             emailAddresses_ = other.emailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000004);
             emailAddressesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEmailAddressesFieldBuilder() : null;
@@ -3600,7 +3528,7 @@ private static final long serialVersionUID = 0L;
         if (!other.phoneNumbers_.isEmpty()) {
           if (phoneNumbers_.isEmpty()) {
             phoneNumbers_ = other.phoneNumbers_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePhoneNumbersIsMutable();
             phoneNumbers_.addAll(other.phoneNumbers_);
@@ -3613,7 +3541,7 @@ private static final long serialVersionUID = 0L;
             phoneNumbersBuilder_.dispose();
             phoneNumbersBuilder_ = null;
             phoneNumbers_ = other.phoneNumbers_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00000008);
             phoneNumbersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPhoneNumbersFieldBuilder() : null;
@@ -3626,7 +3554,7 @@ private static final long serialVersionUID = 0L;
         if (!other.personalUris_.isEmpty()) {
           if (personalUris_.isEmpty()) {
             personalUris_ = other.personalUris_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePersonalUrisIsMutable();
             personalUris_.addAll(other.personalUris_);
@@ -3639,7 +3567,7 @@ private static final long serialVersionUID = 0L;
             personalUrisBuilder_.dispose();
             personalUrisBuilder_ = null;
             personalUris_ = other.personalUris_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00000010);
             personalUrisBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPersonalUrisFieldBuilder() : null;
@@ -3652,7 +3580,7 @@ private static final long serialVersionUID = 0L;
         if (!other.additionalContactInfo_.isEmpty()) {
           if (additionalContactInfo_.isEmpty()) {
             additionalContactInfo_ = other.additionalContactInfo_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureAdditionalContactInfoIsMutable();
             additionalContactInfo_.addAll(other.additionalContactInfo_);
@@ -3665,7 +3593,7 @@ private static final long serialVersionUID = 0L;
             additionalContactInfoBuilder_.dispose();
             additionalContactInfoBuilder_ = null;
             additionalContactInfo_ = other.additionalContactInfo_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00000020);
             additionalContactInfoBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAdditionalContactInfoFieldBuilder() : null;
@@ -3678,7 +3606,7 @@ private static final long serialVersionUID = 0L;
         if (!other.employmentRecords_.isEmpty()) {
           if (employmentRecords_.isEmpty()) {
             employmentRecords_ = other.employmentRecords_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureEmploymentRecordsIsMutable();
             employmentRecords_.addAll(other.employmentRecords_);
@@ -3691,7 +3619,7 @@ private static final long serialVersionUID = 0L;
             employmentRecordsBuilder_.dispose();
             employmentRecordsBuilder_ = null;
             employmentRecords_ = other.employmentRecords_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00000040);
             employmentRecordsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEmploymentRecordsFieldBuilder() : null;
@@ -3704,7 +3632,7 @@ private static final long serialVersionUID = 0L;
         if (!other.educationRecords_.isEmpty()) {
           if (educationRecords_.isEmpty()) {
             educationRecords_ = other.educationRecords_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureEducationRecordsIsMutable();
             educationRecords_.addAll(other.educationRecords_);
@@ -3717,7 +3645,7 @@ private static final long serialVersionUID = 0L;
             educationRecordsBuilder_.dispose();
             educationRecordsBuilder_ = null;
             educationRecords_ = other.educationRecords_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00000080);
             educationRecordsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEducationRecordsFieldBuilder() : null;
@@ -3730,7 +3658,7 @@ private static final long serialVersionUID = 0L;
         if (!other.skills_.isEmpty()) {
           if (skills_.isEmpty()) {
             skills_ = other.skills_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureSkillsIsMutable();
             skills_.addAll(other.skills_);
@@ -3743,7 +3671,7 @@ private static final long serialVersionUID = 0L;
             skillsBuilder_.dispose();
             skillsBuilder_ = null;
             skills_ = other.skills_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00000100);
             skillsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSkillsFieldBuilder() : null;
@@ -3756,7 +3684,7 @@ private static final long serialVersionUID = 0L;
         if (!other.activities_.isEmpty()) {
           if (activities_.isEmpty()) {
             activities_ = other.activities_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureActivitiesIsMutable();
             activities_.addAll(other.activities_);
@@ -3769,7 +3697,7 @@ private static final long serialVersionUID = 0L;
             activitiesBuilder_.dispose();
             activitiesBuilder_ = null;
             activities_ = other.activities_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00000200);
             activitiesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getActivitiesFieldBuilder() : null;
@@ -3782,7 +3710,7 @@ private static final long serialVersionUID = 0L;
         if (!other.publications_.isEmpty()) {
           if (publications_.isEmpty()) {
             publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensurePublicationsIsMutable();
             publications_.addAll(other.publications_);
@@ -3795,7 +3723,7 @@ private static final long serialVersionUID = 0L;
             publicationsBuilder_.dispose();
             publicationsBuilder_ = null;
             publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00000400);
             publicationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPublicationsFieldBuilder() : null;
@@ -3808,7 +3736,7 @@ private static final long serialVersionUID = 0L;
         if (!other.patents_.isEmpty()) {
           if (patents_.isEmpty()) {
             patents_ = other.patents_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensurePatentsIsMutable();
             patents_.addAll(other.patents_);
@@ -3821,7 +3749,7 @@ private static final long serialVersionUID = 0L;
             patentsBuilder_.dispose();
             patentsBuilder_ = null;
             patents_ = other.patents_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x00000800);
             patentsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPatentsFieldBuilder() : null;
@@ -3834,7 +3762,7 @@ private static final long serialVersionUID = 0L;
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField0_ = (bitField0_ & ~0x00800000);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -3847,7 +3775,7 @@ private static final long serialVersionUID = 0L;
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField0_ = (bitField0_ & ~0x00800000);
+            bitField0_ = (bitField0_ & ~0x00001000);
             certificationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCertificationsFieldBuilder() : null;
@@ -3859,7 +3787,7 @@ private static final long serialVersionUID = 0L;
       if (!other.applications_.isEmpty()) {
         if (applications_.isEmpty()) {
           applications_ = other.applications_;
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureApplicationsIsMutable();
           applications_.addAll(other.applications_);
@@ -3869,7 +3797,7 @@ private static final long serialVersionUID = 0L;
       if (!other.assignments_.isEmpty()) {
         if (assignments_.isEmpty()) {
           assignments_ = other.assignments_;
-          bitField0_ = (bitField0_ & ~0x02000000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
           ensureAssignmentsIsMutable();
           assignments_.addAll(other.assignments_);
@@ -3889,7 +3817,7 @@ private static final long serialVersionUID = 0L;
         if (!other.availabilitySignals_.isEmpty()) {
           if (availabilitySignals_.isEmpty()) {
             availabilitySignals_ = other.availabilitySignals_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureAvailabilitySignalsIsMutable();
             availabilitySignals_.addAll(other.availabilitySignals_);
@@ -3902,7 +3830,7 @@ private static final long serialVersionUID = 0L;
             availabilitySignalsBuilder_.dispose();
             availabilitySignalsBuilder_ = null;
             availabilitySignals_ = other.availabilitySignals_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             availabilitySignalsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAvailabilitySignalsFieldBuilder() : null;
@@ -3915,7 +3843,7 @@ private static final long serialVersionUID = 0L;
         if (!other.derivedAddresses_.isEmpty()) {
           if (derivedAddresses_.isEmpty()) {
             derivedAddresses_ = other.derivedAddresses_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureDerivedAddressesIsMutable();
             derivedAddresses_.addAll(other.derivedAddresses_);
@@ -3928,7 +3856,7 @@ private static final long serialVersionUID = 0L;
             derivedAddressesBuilder_.dispose();
             derivedAddressesBuilder_ = null;
             derivedAddresses_ = other.derivedAddresses_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             derivedAddressesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDerivedAddressesFieldBuilder() : null;
@@ -3978,6 +3906,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -4001,6 +3930,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -4025,6 +3955,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -4046,6 +3978,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -4063,6 +3996,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -4086,6 +4021,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 2;</code>
+     * @return The externalId.
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -4108,6 +4044,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 2;</code>
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
         getExternalIdBytes() {
@@ -4131,6 +4068,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 2;</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalId(
         java.lang.String value) {
@@ -4151,6 +4090,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearExternalId() {
       
@@ -4167,6 +4107,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string external_id = 2;</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
      */
     public Builder setExternalIdBytes(
         com.google.protobuf.ByteString value) {
@@ -4190,6 +4132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string source = 3;</code>
+     * @return The source.
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -4212,6 +4155,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string source = 3;</code>
+     * @return The bytes for source.
      */
     public com.google.protobuf.ByteString
         getSourceBytes() {
@@ -4235,6 +4179,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string source = 3;</code>
+     * @param value The source to set.
+     * @return This builder for chaining.
      */
     public Builder setSource(
         java.lang.String value) {
@@ -4255,6 +4201,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string source = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSource() {
       
@@ -4271,6 +4218,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string source = 3;</code>
+     * @param value The bytes for source to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceBytes(
         com.google.protobuf.ByteString value) {
@@ -4292,6 +4241,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 4;</code>
+     * @return The uri.
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -4312,6 +4262,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 4;</code>
+     * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString
         getUriBytes() {
@@ -4333,6 +4284,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 4;</code>
+     * @param value The uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUri(
         java.lang.String value) {
@@ -4351,6 +4304,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUri() {
       
@@ -4365,6 +4319,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 4;</code>
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
      */
     public Builder setUriBytes(
         com.google.protobuf.ByteString value) {
@@ -4389,12 +4345,12 @@ private static final long serialVersionUID = 0L;
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
+     * @return The groupId.
      */
     public java.lang.String getGroupId() {
       java.lang.Object ref = groupId_;
@@ -4418,12 +4374,12 @@ private static final long serialVersionUID = 0L;
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
+     * @return The bytes for groupId.
      */
     public com.google.protobuf.ByteString
         getGroupIdBytes() {
@@ -4448,12 +4404,13 @@ private static final long serialVersionUID = 0L;
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
+     * @param value The groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupId(
         java.lang.String value) {
@@ -4475,12 +4432,12 @@ private static final long serialVersionUID = 0L;
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGroupId() {
       
@@ -4498,12 +4455,13 @@ private static final long serialVersionUID = 0L;
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
+     * @param value The bytes for groupId to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupIdBytes(
         com.google.protobuf.ByteString value) {
@@ -4526,6 +4484,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+     * @return Whether the isHirable field is set.
      */
     public boolean hasIsHirable() {
       return isHirableBuilder_ != null || isHirable_ != null;
@@ -4536,6 +4495,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
+     * @return The isHirable.
      */
     public com.google.protobuf.BoolValue getIsHirable() {
       if (isHirableBuilder_ == null) {
@@ -4679,6 +4639,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -4689,6 +4650,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -4832,6 +4794,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -4842,6 +4805,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -4992,17 +4956,14 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     * @return Whether the candidateUpdateTime field is set.
      */
     public boolean hasCandidateUpdateTime() {
       return candidateUpdateTimeBuilder_ != null || candidateUpdateTime_ != null;
@@ -5020,17 +4981,14 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+     * @return The candidateUpdateTime.
      */
     public com.google.protobuf.Timestamp getCandidateUpdateTime() {
       if (candidateUpdateTimeBuilder_ == null) {
@@ -5052,14 +5010,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5090,14 +5044,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5126,14 +5076,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5166,14 +5112,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5202,14 +5144,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5232,14 +5170,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5265,14 +5199,10 @@ private static final long serialVersionUID = 0L;
      * a recruiter who then uploads it into the ATS, and so on.
      * * Updates made to the candidate's profile by the recruiter as a result of
      * interacting with the candidate (for example adding a skill or work
-     * preference, and so on). Changes to
-     * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
-     * are specifically excluded from this action type.
-     * Note:
-     * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
-     * must be greater than or equal to
-     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
-     * or an error is thrown.
+     * preference, and so on). Changes to [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes] are specifically
+     * excluded from this action type.
+     * Note: [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time] must be greater than or equal to
+     * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time] or an error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
@@ -5300,12 +5230,12 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     * @return Whether the resumeUpdateTime field is set.
      */
     public boolean hasResumeUpdateTime() {
       return resumeUpdateTimeBuilder_ != null || resumeUpdateTime_ != null;
@@ -5316,12 +5246,12 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+     * @return The resumeUpdateTime.
      */
     public com.google.protobuf.Timestamp getResumeUpdateTime() {
       if (resumeUpdateTimeBuilder_ == null) {
@@ -5336,9 +5266,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5362,9 +5291,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5386,9 +5314,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5414,9 +5341,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5438,9 +5364,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5456,9 +5381,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5477,9 +5401,8 @@ private static final long serialVersionUID = 0L;
      * candidate's profile. Whether that resume was directly uploaded by a
      * candidate, pulled from a 3rd party job board feed, added by a recruiter,
      * and so on.
-     * If this field is updated, it's expected that
-     * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
-     * create or update calls.
+     * If this field is updated, it's expected that [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in
+     * the create or update calls.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
@@ -5507,6 +5430,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+     * @return Whether the resume field is set.
      */
     public boolean hasResume() {
       return resumeBuilder_ != null || resume_ != null;
@@ -5517,6 +5441,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
+     * @return The resume.
      */
     public com.google.cloud.talent.v4beta1.Resume getResume() {
       if (resumeBuilder_ == null) {
@@ -5654,9 +5579,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.PersonName> personNames_ =
       java.util.Collections.emptyList();
     private void ensurePersonNamesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         personNames_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonName>(personNames_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -5861,7 +5786,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPersonNames() {
       if (personNamesBuilder_ == null) {
         personNames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         personNamesBuilder_.clear();
@@ -5973,7 +5898,7 @@ private static final long serialVersionUID = 0L;
         personNamesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.PersonName, com.google.cloud.talent.v4beta1.PersonName.Builder, com.google.cloud.talent.v4beta1.PersonNameOrBuilder>(
                 personNames_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         personNames_ = null;
@@ -5984,9 +5909,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Address> addresses_ =
       java.util.Collections.emptyList();
     private void ensureAddressesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         addresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Address>(addresses_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -5998,29 +5923,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6037,29 +5956,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6076,29 +5989,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6115,29 +6022,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6161,29 +6062,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6204,29 +6099,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6249,29 +6138,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6295,29 +6178,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6338,29 +6215,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6381,29 +6252,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6425,29 +6290,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6455,7 +6314,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAddresses() {
       if (addressesBuilder_ == null) {
         addresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         addressesBuilder_.clear();
@@ -6467,29 +6326,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6509,29 +6362,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6545,29 +6392,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6584,29 +6425,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6624,29 +6459,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6660,29 +6489,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6697,29 +6520,23 @@ private static final long serialVersionUID = 0L;
      * The candidate's postal addresses. It's highly recommended to
      * input this information as accurately as possible to help improve search
      * quality. Here are some recommendations:
-     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if
-     * possible, especially if the address is PERSONAL. During a search only
-     * personal addresses are considered. If there is no such address, all
-     * addresses with unspecified usage are assumed to be personal.
-     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current]
-     * for the current address if possible. During a search, only current
-     * addresses are considered. If there is no such address, all addresses are
-     * assumed to be current.
+     * * Provide [Address.usage][google.cloud.talent.v4beta1.Address.usage] if possible, especially if the address is
+     * PERSONAL. During a search only personal addresses are considered. If there
+     * is no such address, all addresses with unspecified usage are assumed to be
+     * personal.
+     * * Provide [Address.current][google.cloud.talent.v4beta1.Address.current] for the current address if possible. During
+     * a search, only current addresses are considered. If there is no such
+     * address, all addresses are assumed to be current.
      * When displaying a candidate's addresses, it is sometimes desirable to limit
      * the number of addresses shown. In these cases we recommend that you display
      * the addresses in the following order of priority:
-     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL
-     * and [Address.current][google.cloud.talent.v4beta1.Address.current] is false
-     * or not set.
-     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
+     * 1. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
+     * 2. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is PERSONAL and [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not
+     * set.
+     * 3. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
      * [Address.current][google.cloud.talent.v4beta1.Address.current] is true.
-     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is
-     * CONTACT_INFO_USAGE_UNSPECIFIED and
-     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or
-     * not set.
+     * 4. [Address.usage][google.cloud.talent.v4beta1.Address.usage] is CONTACT_INFO_USAGE_UNSPECIFIED and
+     * [Address.current][google.cloud.talent.v4beta1.Address.current] is false or not set.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
@@ -6735,7 +6552,7 @@ private static final long serialVersionUID = 0L;
         addressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Address, com.google.cloud.talent.v4beta1.Address.Builder, com.google.cloud.talent.v4beta1.AddressOrBuilder>(
                 addresses_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         addresses_ = null;
@@ -6746,9 +6563,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Email> emailAddresses_ =
       java.util.Collections.emptyList();
     private void ensureEmailAddressesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         emailAddresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Email>(emailAddresses_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -6942,7 +6759,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearEmailAddresses() {
       if (emailAddressesBuilder_ == null) {
         emailAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         emailAddressesBuilder_.clear();
@@ -7047,7 +6864,7 @@ private static final long serialVersionUID = 0L;
         emailAddressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Email, com.google.cloud.talent.v4beta1.Email.Builder, com.google.cloud.talent.v4beta1.EmailOrBuilder>(
                 emailAddresses_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         emailAddresses_ = null;
@@ -7058,9 +6875,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Phone> phoneNumbers_ =
       java.util.Collections.emptyList();
     private void ensurePhoneNumbersIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         phoneNumbers_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Phone>(phoneNumbers_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -7254,7 +7071,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPhoneNumbers() {
       if (phoneNumbersBuilder_ == null) {
         phoneNumbers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         phoneNumbersBuilder_.clear();
@@ -7359,7 +7176,7 @@ private static final long serialVersionUID = 0L;
         phoneNumbersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Phone, com.google.cloud.talent.v4beta1.Phone.Builder, com.google.cloud.talent.v4beta1.PhoneOrBuilder>(
                 phoneNumbers_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         phoneNumbers_ = null;
@@ -7370,9 +7187,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.PersonalUri> personalUris_ =
       java.util.Collections.emptyList();
     private void ensurePersonalUrisIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         personalUris_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.PersonalUri>(personalUris_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -7566,7 +7383,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPersonalUris() {
       if (personalUrisBuilder_ == null) {
         personalUris_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         personalUrisBuilder_.clear();
@@ -7671,7 +7488,7 @@ private static final long serialVersionUID = 0L;
         personalUrisBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.PersonalUri, com.google.cloud.talent.v4beta1.PersonalUri.Builder, com.google.cloud.talent.v4beta1.PersonalUriOrBuilder>(
                 personalUris_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         personalUris_ = null;
@@ -7682,9 +7499,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.AdditionalContactInfo> additionalContactInfo_ =
       java.util.Collections.emptyList();
     private void ensureAdditionalContactInfoIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         additionalContactInfo_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.AdditionalContactInfo>(additionalContactInfo_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -7693,12 +7510,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7712,12 +7525,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7731,12 +7540,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7750,12 +7555,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7776,12 +7577,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7799,12 +7596,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7824,12 +7617,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7850,12 +7639,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7873,12 +7658,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7896,12 +7677,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7920,12 +7697,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7933,7 +7706,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAdditionalContactInfo() {
       if (additionalContactInfoBuilder_ == null) {
         additionalContactInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         additionalContactInfoBuilder_.clear();
@@ -7942,12 +7715,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7964,12 +7733,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7980,12 +7745,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -7999,12 +7760,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -8019,12 +7776,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -8035,12 +7788,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -8052,12 +7801,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;</code>
@@ -8073,7 +7818,7 @@ private static final long serialVersionUID = 0L;
         additionalContactInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.AdditionalContactInfo, com.google.cloud.talent.v4beta1.AdditionalContactInfo.Builder, com.google.cloud.talent.v4beta1.AdditionalContactInfoOrBuilder>(
                 additionalContactInfo_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         additionalContactInfo_ = null;
@@ -8084,9 +7829,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.EmploymentRecord> employmentRecords_ =
       java.util.Collections.emptyList();
     private void ensureEmploymentRecordsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         employmentRecords_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmploymentRecord>(employmentRecords_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -8103,10 +7848,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8129,10 +7872,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8155,10 +7896,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8181,10 +7920,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8214,10 +7951,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8244,10 +7979,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8276,10 +8009,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8309,10 +8040,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8339,10 +8068,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8369,10 +8096,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8400,10 +8125,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8412,7 +8135,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearEmploymentRecords() {
       if (employmentRecordsBuilder_ == null) {
         employmentRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         employmentRecordsBuilder_.clear();
@@ -8429,10 +8152,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8458,10 +8179,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8481,10 +8200,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8507,10 +8224,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8534,10 +8249,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8557,10 +8270,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8581,10 +8292,8 @@ private static final long serialVersionUID = 0L;
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of employment records is 100.
      * </pre>
      *
@@ -8601,7 +8310,7 @@ private static final long serialVersionUID = 0L;
         employmentRecordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.EmploymentRecord, com.google.cloud.talent.v4beta1.EmploymentRecord.Builder, com.google.cloud.talent.v4beta1.EmploymentRecordOrBuilder>(
                 employmentRecords_,
-                ((bitField0_ & 0x00020000) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         employmentRecords_ = null;
@@ -8612,9 +8321,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.EducationRecord> educationRecords_ =
       java.util.Collections.emptyList();
     private void ensureEducationRecordsIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         educationRecords_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationRecord>(educationRecords_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00000080;
        }
     }
 
@@ -8630,10 +8339,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8655,10 +8362,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8680,10 +8385,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8705,10 +8408,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8737,10 +8438,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8766,10 +8465,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8797,10 +8494,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8829,10 +8524,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8858,10 +8551,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8887,10 +8578,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8917,10 +8606,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8929,7 +8616,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearEducationRecords() {
       if (educationRecordsBuilder_ == null) {
         educationRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         educationRecordsBuilder_.clear();
@@ -8945,10 +8632,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8973,10 +8658,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -8995,10 +8678,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -9020,10 +8701,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -9046,10 +8725,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -9068,10 +8745,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -9091,10 +8766,8 @@ private static final long serialVersionUID = 0L;
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * The limitation for max number of education records is 100.
      * </pre>
      *
@@ -9111,7 +8784,7 @@ private static final long serialVersionUID = 0L;
         educationRecordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.EducationRecord, com.google.cloud.talent.v4beta1.EducationRecord.Builder, com.google.cloud.talent.v4beta1.EducationRecordOrBuilder>(
                 educationRecords_,
-                ((bitField0_ & 0x00040000) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         educationRecords_ = null;
@@ -9122,9 +8795,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Skill> skills_ =
       java.util.Collections.emptyList();
     private void ensureSkillsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         skills_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skills_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00000100;
        }
     }
 
@@ -9340,7 +9013,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSkills() {
       if (skillsBuilder_ == null) {
         skills_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         skillsBuilder_.clear();
@@ -9459,7 +9132,7 @@ private static final long serialVersionUID = 0L;
         skillsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Skill, com.google.cloud.talent.v4beta1.Skill.Builder, com.google.cloud.talent.v4beta1.SkillOrBuilder>(
                 skills_,
-                ((bitField0_ & 0x00080000) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         skills_ = null;
@@ -9470,9 +9143,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Activity> activities_ =
       java.util.Collections.emptyList();
     private void ensureActivitiesIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         activities_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Activity>(activities_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00000200;
        }
     }
 
@@ -9483,8 +9156,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9501,8 +9173,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9519,8 +9190,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9537,8 +9207,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9562,8 +9231,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9584,8 +9252,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9608,8 +9275,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9633,8 +9299,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9655,8 +9320,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9677,8 +9341,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9700,8 +9363,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9710,7 +9372,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearActivities() {
       if (activitiesBuilder_ == null) {
         activities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         activitiesBuilder_.clear();
@@ -9721,8 +9383,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9742,8 +9403,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9757,8 +9417,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9775,8 +9434,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9794,8 +9452,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9809,8 +9466,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9825,8 +9481,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * The limitation for max number of activities is 50.
      * </pre>
      *
@@ -9843,7 +9498,7 @@ private static final long serialVersionUID = 0L;
         activitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Activity, com.google.cloud.talent.v4beta1.Activity.Builder, com.google.cloud.talent.v4beta1.ActivityOrBuilder>(
                 activities_,
-                ((bitField0_ & 0x00100000) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         activities_ = null;
@@ -9854,9 +9509,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Publication> publications_ =
       java.util.Collections.emptyList();
     private void ensurePublicationsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         publications_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Publication>(publications_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00000400;
        }
     }
 
@@ -10061,7 +9716,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPublications() {
       if (publicationsBuilder_ == null) {
         publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         publicationsBuilder_.clear();
@@ -10173,7 +9828,7 @@ private static final long serialVersionUID = 0L;
         publicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Publication, com.google.cloud.talent.v4beta1.Publication.Builder, com.google.cloud.talent.v4beta1.PublicationOrBuilder>(
                 publications_,
-                ((bitField0_ & 0x00200000) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         publications_ = null;
@@ -10184,9 +9839,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Patent> patents_ =
       java.util.Collections.emptyList();
     private void ensurePatentsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         patents_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Patent>(patents_);
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00000800;
        }
     }
 
@@ -10380,7 +10035,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPatents() {
       if (patentsBuilder_ == null) {
         patents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         patentsBuilder_.clear();
@@ -10485,7 +10140,7 @@ private static final long serialVersionUID = 0L;
         patentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Patent, com.google.cloud.talent.v4beta1.Patent.Builder, com.google.cloud.talent.v4beta1.PatentOrBuilder>(
                 patents_,
-                ((bitField0_ & 0x00400000) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         patents_ = null;
@@ -10496,9 +10151,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Certification> certifications_ =
       java.util.Collections.emptyList();
     private void ensureCertificationsIsMutable() {
-      if (!((bitField0_ & 0x00800000) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         certifications_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Certification>(certifications_);
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00001000;
        }
     }
 
@@ -10692,7 +10347,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -10797,7 +10452,7 @@ private static final long serialVersionUID = 0L;
         certificationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Certification, com.google.cloud.talent.v4beta1.Certification.Builder, com.google.cloud.talent.v4beta1.CertificationOrBuilder>(
                 certifications_,
-                ((bitField0_ & 0x00800000) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -10807,9 +10462,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureApplicationsIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         applications_ = new com.google.protobuf.LazyStringArrayList(applications_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00002000;
        }
     }
     /**
@@ -10818,6 +10473,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return A list containing the applications.
      */
     public com.google.protobuf.ProtocolStringList
         getApplicationsList() {
@@ -10829,6 +10485,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The count of applications.
      */
     public int getApplicationsCount() {
       return applications_.size();
@@ -10839,6 +10496,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the element to return.
+     * @return The applications at the given index.
      */
     public java.lang.String getApplications(int index) {
       return applications_.get(index);
@@ -10849,6 +10508,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the applications at the given index.
      */
     public com.google.protobuf.ByteString
         getApplicationsBytes(int index) {
@@ -10860,6 +10521,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index to set the value at.
+     * @param value The applications to set.
+     * @return This builder for chaining.
      */
     public Builder setApplications(
         int index, java.lang.String value) {
@@ -10877,6 +10541,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The applications to add.
+     * @return This builder for chaining.
      */
     public Builder addApplications(
         java.lang.String value) {
@@ -10894,6 +10560,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param values The applications to add.
+     * @return This builder for chaining.
      */
     public Builder addAllApplications(
         java.lang.Iterable<java.lang.String> values) {
@@ -10909,10 +10577,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearApplications() {
       applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -10922,6 +10591,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes of the applications to add.
+     * @return This builder for chaining.
      */
     public Builder addApplicationsBytes(
         com.google.protobuf.ByteString value) {
@@ -10937,9 +10608,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAssignmentsIsMutable() {
-      if (!((bitField0_ & 0x02000000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         assignments_ = new com.google.protobuf.LazyStringArrayList(assignments_);
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x00004000;
        }
     }
     /**
@@ -10948,6 +10619,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return A list containing the assignments.
      */
     public com.google.protobuf.ProtocolStringList
         getAssignmentsList() {
@@ -10959,6 +10631,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The count of assignments.
      */
     public int getAssignmentsCount() {
       return assignments_.size();
@@ -10969,6 +10642,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the element to return.
+     * @return The assignments at the given index.
      */
     public java.lang.String getAssignments(int index) {
       return assignments_.get(index);
@@ -10979,6 +10654,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the assignments at the given index.
      */
     public com.google.protobuf.ByteString
         getAssignmentsBytes(int index) {
@@ -10990,6 +10667,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param index The index to set the value at.
+     * @param value The assignments to set.
+     * @return This builder for chaining.
      */
     public Builder setAssignments(
         int index, java.lang.String value) {
@@ -11007,6 +10687,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The assignments to add.
+     * @return This builder for chaining.
      */
     public Builder addAssignments(
         java.lang.String value) {
@@ -11024,6 +10706,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param values The assignments to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAssignments(
         java.lang.Iterable<java.lang.String> values) {
@@ -11039,10 +10723,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAssignments() {
       assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -11052,6 +10737,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes of the assignments to add.
+     * @return This builder for chaining.
      */
     public Builder addAssignmentsBytes(
         com.google.protobuf.ByteString value) {
@@ -11095,8 +10782,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11130,8 +10816,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11156,8 +10841,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11187,8 +10871,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11226,8 +10909,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11264,8 +10946,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11295,8 +10976,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -11330,6 +11010,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The processed.
      */
     public boolean getProcessed() {
       return processed_;
@@ -11342,6 +11023,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The processed to set.
+     * @return This builder for chaining.
      */
     public Builder setProcessed(boolean value) {
       
@@ -11357,6 +11040,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool processed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProcessed() {
       
@@ -11369,11 +11053,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Keyword snippet shows how the search result is related to a
-     * search query.  This is only returned in
-     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+     * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
      * </pre>
      *
      * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The keywordSnippet.
      */
     public java.lang.String getKeywordSnippet() {
       java.lang.Object ref = keywordSnippet_;
@@ -11390,11 +11074,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Keyword snippet shows how the search result is related to a
-     * search query.  This is only returned in
-     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+     * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
      * </pre>
      *
      * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for keywordSnippet.
      */
     public com.google.protobuf.ByteString
         getKeywordSnippetBytes() {
@@ -11412,11 +11096,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Keyword snippet shows how the search result is related to a
-     * search query.  This is only returned in
-     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+     * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
      * </pre>
      *
      * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The keywordSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setKeywordSnippet(
         java.lang.String value) {
@@ -11431,11 +11116,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Keyword snippet shows how the search result is related to a
-     * search query.  This is only returned in
-     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+     * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
      * </pre>
      *
      * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKeywordSnippet() {
       
@@ -11446,11 +11131,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Keyword snippet shows how the search result is related to a
-     * search query.  This is only returned in
-     * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+     * search query.  This is only returned in [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
      * </pre>
      *
      * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for keywordSnippet to set.
+     * @return This builder for chaining.
      */
     public Builder setKeywordSnippetBytes(
         com.google.protobuf.ByteString value) {
@@ -11467,9 +11153,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal> availabilitySignals_ =
       java.util.Collections.emptyList();
     private void ensureAvailabilitySignalsIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         availabilitySignals_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.AvailabilitySignal>(availabilitySignals_);
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x00010000;
        }
     }
 
@@ -11663,7 +11349,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAvailabilitySignals() {
       if (availabilitySignalsBuilder_ == null) {
         availabilitySignals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         availabilitySignalsBuilder_.clear();
@@ -11768,7 +11454,7 @@ private static final long serialVersionUID = 0L;
         availabilitySignalsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.AvailabilitySignal, com.google.cloud.talent.v4beta1.AvailabilitySignal.Builder, com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>(
                 availabilitySignals_,
-                ((bitField0_ & 0x20000000) != 0),
+                ((bitField0_ & 0x00010000) != 0),
                 getParentForChildren(),
                 isClean());
         availabilitySignals_ = null;
@@ -11779,9 +11465,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Location> derivedAddresses_ =
       java.util.Collections.emptyList();
     private void ensureDerivedAddressesIsMutable() {
-      if (!((bitField0_ & 0x40000000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         derivedAddresses_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(derivedAddresses_);
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x00020000;
        }
     }
 
@@ -11790,11 +11476,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11809,11 +11492,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11828,11 +11508,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11847,11 +11524,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11873,11 +11547,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11896,11 +11567,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11921,11 +11589,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11947,11 +11612,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11970,11 +11632,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -11993,11 +11652,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12017,11 +11673,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12030,7 +11683,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearDerivedAddresses() {
       if (derivedAddressesBuilder_ == null) {
         derivedAddresses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         derivedAddressesBuilder_.clear();
@@ -12039,11 +11692,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12061,11 +11711,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12077,11 +11724,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12096,11 +11740,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12116,11 +11757,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12132,11 +11770,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12149,11 +11784,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Derived locations of the profile, resolved from
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
-     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses]
-     * are exactly matched to
-     * [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
+     * Output only. Derived locations of the profile, resolved from [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses].
+     * [derived_addresses][google.cloud.talent.v4beta1.Profile.derived_addresses] are exactly matched to [Profile.addresses][google.cloud.talent.v4beta1.Profile.addresses] in the
      * same order.
      * </pre>
      *
@@ -12170,7 +11802,7 @@ private static final long serialVersionUID = 0L;
         derivedAddressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Location, com.google.cloud.talent.v4beta1.Location.Builder, com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 derivedAddresses_,
-                ((bitField0_ & 0x40000000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         derivedAddresses_ = null;

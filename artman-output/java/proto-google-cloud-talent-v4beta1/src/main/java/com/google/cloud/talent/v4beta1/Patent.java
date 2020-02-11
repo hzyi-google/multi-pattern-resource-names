@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Patent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -61,9 +68,9 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               inventors_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             inventors_.add(s);
             break;
@@ -119,9 +126,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000002;
             }
             skillsUsed_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.Skill.parser(), extensionRegistry));
@@ -142,10 +149,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inventors_ = inventors_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
       }
       this.unknownFields = unknownFields.build();
@@ -165,7 +172,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.Patent.class, com.google.cloud.talent.v4beta1.Patent.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object displayName_;
   /**
@@ -175,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -195,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -219,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @return A list containing the inventors.
    */
   public com.google.protobuf.ProtocolStringList
       getInventorsList() {
@@ -231,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @return The count of inventors.
    */
   public int getInventorsCount() {
     return inventors_.size();
@@ -242,6 +252,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @param index The index of the element to return.
+   * @return The inventors at the given index.
    */
   public java.lang.String getInventors(int index) {
     return inventors_.get(index);
@@ -253,6 +265,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string inventors = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inventors at the given index.
    */
   public com.google.protobuf.ByteString
       getInventorsBytes(int index) {
@@ -268,6 +282,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_status = 3;</code>
+   * @return The patentStatus.
    */
   public java.lang.String getPatentStatus() {
     java.lang.Object ref = patentStatus_;
@@ -288,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_status = 3;</code>
+   * @return The bytes for patentStatus.
    */
   public com.google.protobuf.ByteString
       getPatentStatusBytes() {
@@ -311,6 +327,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
+   * @return Whether the patentStatusDate field is set.
    */
   public boolean hasPatentStatusDate() {
     return patentStatusDate_ != null;
@@ -321,6 +338,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
+   * @return The patentStatusDate.
    */
   public com.google.type.Date getPatentStatusDate() {
     return patentStatusDate_ == null ? com.google.type.Date.getDefaultInstance() : patentStatusDate_;
@@ -344,6 +362,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
+   * @return Whether the patentFilingDate field is set.
    */
   public boolean hasPatentFilingDate() {
     return patentFilingDate_ != null;
@@ -354,6 +373,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
+   * @return The patentFilingDate.
    */
   public com.google.type.Date getPatentFilingDate() {
     return patentFilingDate_ == null ? com.google.type.Date.getDefaultInstance() : patentFilingDate_;
@@ -378,6 +398,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_office = 6;</code>
+   * @return The patentOffice.
    */
   public java.lang.String getPatentOffice() {
     java.lang.Object ref = patentOffice_;
@@ -398,6 +419,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_office = 6;</code>
+   * @return The bytes for patentOffice.
    */
   public com.google.protobuf.ByteString
       getPatentOfficeBytes() {
@@ -422,6 +444,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_number = 7;</code>
+   * @return The patentNumber.
    */
   public java.lang.String getPatentNumber() {
     java.lang.Object ref = patentNumber_;
@@ -442,6 +465,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_number = 7;</code>
+   * @return The bytes for patentNumber.
    */
   public com.google.protobuf.ByteString
       getPatentNumberBytes() {
@@ -466,6 +490,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_description = 8;</code>
+   * @return The patentDescription.
    */
   public java.lang.String getPatentDescription() {
     java.lang.Object ref = patentDescription_;
@@ -486,6 +511,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string patent_description = 8;</code>
+   * @return The bytes for patentDescription.
    */
   public com.google.protobuf.ByteString
       getPatentDescriptionBytes() {
@@ -858,7 +884,7 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
 
       inventors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       patentStatus_ = "";
 
       if (patentStatusDateBuilder_ == null) {
@@ -881,7 +907,7 @@ private static final long serialVersionUID = 0L;
 
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         skillsUsedBuilder_.clear();
       }
@@ -912,11 +938,10 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Patent buildPartial() {
       com.google.cloud.talent.v4beta1.Patent result = new com.google.cloud.talent.v4beta1.Patent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         inventors_ = inventors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inventors_ = inventors_;
       result.patentStatus_ = patentStatus_;
@@ -934,15 +959,14 @@ private static final long serialVersionUID = 0L;
       result.patentNumber_ = patentNumber_;
       result.patentDescription_ = patentDescription_;
       if (skillsUsedBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.skillsUsed_ = skillsUsed_;
       } else {
         result.skillsUsed_ = skillsUsedBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -998,7 +1022,7 @@ private static final long serialVersionUID = 0L;
       if (!other.inventors_.isEmpty()) {
         if (inventors_.isEmpty()) {
           inventors_ = other.inventors_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInventorsIsMutable();
           inventors_.addAll(other.inventors_);
@@ -1031,7 +1055,7 @@ private static final long serialVersionUID = 0L;
         if (!other.skillsUsed_.isEmpty()) {
           if (skillsUsed_.isEmpty()) {
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillsUsedIsMutable();
             skillsUsed_.addAll(other.skillsUsed_);
@@ -1044,7 +1068,7 @@ private static final long serialVersionUID = 0L;
             skillsUsedBuilder_.dispose();
             skillsUsedBuilder_ = null;
             skillsUsed_ = other.skillsUsed_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000002);
             skillsUsedBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSkillsUsedFieldBuilder() : null;
@@ -1091,6 +1115,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1111,6 +1136,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -1132,6 +1158,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -1150,6 +1178,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -1164,6 +1193,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1179,9 +1210,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList inventors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInventorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inventors_ = new com.google.protobuf.LazyStringArrayList(inventors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1191,6 +1222,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @return A list containing the inventors.
      */
     public com.google.protobuf.ProtocolStringList
         getInventorsList() {
@@ -1203,6 +1235,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @return The count of inventors.
      */
     public int getInventorsCount() {
       return inventors_.size();
@@ -1214,6 +1247,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param index The index of the element to return.
+     * @return The inventors at the given index.
      */
     public java.lang.String getInventors(int index) {
       return inventors_.get(index);
@@ -1225,6 +1260,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the inventors at the given index.
      */
     public com.google.protobuf.ByteString
         getInventorsBytes(int index) {
@@ -1237,6 +1274,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The inventors to set.
+     * @return This builder for chaining.
      */
     public Builder setInventors(
         int index, java.lang.String value) {
@@ -1255,6 +1295,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param value The inventors to add.
+     * @return This builder for chaining.
      */
     public Builder addInventors(
         java.lang.String value) {
@@ -1273,6 +1315,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param values The inventors to add.
+     * @return This builder for chaining.
      */
     public Builder addAllInventors(
         java.lang.Iterable<java.lang.String> values) {
@@ -1289,10 +1333,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInventors() {
       inventors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1303,6 +1348,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string inventors = 2;</code>
+     * @param value The bytes of the inventors to add.
+     * @return This builder for chaining.
      */
     public Builder addInventorsBytes(
         com.google.protobuf.ByteString value) {
@@ -1324,6 +1371,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_status = 3;</code>
+     * @return The patentStatus.
      */
     public java.lang.String getPatentStatus() {
       java.lang.Object ref = patentStatus_;
@@ -1344,6 +1392,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_status = 3;</code>
+     * @return The bytes for patentStatus.
      */
     public com.google.protobuf.ByteString
         getPatentStatusBytes() {
@@ -1365,6 +1414,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_status = 3;</code>
+     * @param value The patentStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentStatus(
         java.lang.String value) {
@@ -1383,6 +1434,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_status = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPatentStatus() {
       
@@ -1397,6 +1449,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_status = 3;</code>
+     * @param value The bytes for patentStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentStatusBytes(
         com.google.protobuf.ByteString value) {
@@ -1419,6 +1473,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
+     * @return Whether the patentStatusDate field is set.
      */
     public boolean hasPatentStatusDate() {
       return patentStatusDateBuilder_ != null || patentStatusDate_ != null;
@@ -1429,6 +1484,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date patent_status_date = 4;</code>
+     * @return The patentStatusDate.
      */
     public com.google.type.Date getPatentStatusDate() {
       if (patentStatusDateBuilder_ == null) {
@@ -1572,6 +1628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
+     * @return Whether the patentFilingDate field is set.
      */
     public boolean hasPatentFilingDate() {
       return patentFilingDateBuilder_ != null || patentFilingDate_ != null;
@@ -1582,6 +1639,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date patent_filing_date = 5;</code>
+     * @return The patentFilingDate.
      */
     public com.google.type.Date getPatentFilingDate() {
       if (patentFilingDateBuilder_ == null) {
@@ -1724,6 +1782,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_office = 6;</code>
+     * @return The patentOffice.
      */
     public java.lang.String getPatentOffice() {
       java.lang.Object ref = patentOffice_;
@@ -1744,6 +1803,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_office = 6;</code>
+     * @return The bytes for patentOffice.
      */
     public com.google.protobuf.ByteString
         getPatentOfficeBytes() {
@@ -1765,6 +1825,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_office = 6;</code>
+     * @param value The patentOffice to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentOffice(
         java.lang.String value) {
@@ -1783,6 +1845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_office = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPatentOffice() {
       
@@ -1797,6 +1860,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_office = 6;</code>
+     * @param value The bytes for patentOffice to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentOfficeBytes(
         com.google.protobuf.ByteString value) {
@@ -1818,6 +1883,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_number = 7;</code>
+     * @return The patentNumber.
      */
     public java.lang.String getPatentNumber() {
       java.lang.Object ref = patentNumber_;
@@ -1838,6 +1904,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_number = 7;</code>
+     * @return The bytes for patentNumber.
      */
     public com.google.protobuf.ByteString
         getPatentNumberBytes() {
@@ -1859,6 +1926,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_number = 7;</code>
+     * @param value The patentNumber to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentNumber(
         java.lang.String value) {
@@ -1877,6 +1946,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_number = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPatentNumber() {
       
@@ -1891,6 +1961,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_number = 7;</code>
+     * @param value The bytes for patentNumber to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentNumberBytes(
         com.google.protobuf.ByteString value) {
@@ -1912,6 +1984,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_description = 8;</code>
+     * @return The patentDescription.
      */
     public java.lang.String getPatentDescription() {
       java.lang.Object ref = patentDescription_;
@@ -1932,6 +2005,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_description = 8;</code>
+     * @return The bytes for patentDescription.
      */
     public com.google.protobuf.ByteString
         getPatentDescriptionBytes() {
@@ -1953,6 +2027,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_description = 8;</code>
+     * @param value The patentDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentDescription(
         java.lang.String value) {
@@ -1971,6 +2047,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_description = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPatentDescription() {
       
@@ -1985,6 +2062,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string patent_description = 8;</code>
+     * @param value The bytes for patentDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setPatentDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2001,9 +2080,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Skill> skillsUsed_ =
       java.util.Collections.emptyList();
     private void ensureSkillsUsedIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skillsUsed_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2197,7 +2276,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSkillsUsed() {
       if (skillsUsedBuilder_ == null) {
         skillsUsed_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         skillsUsedBuilder_.clear();
@@ -2302,7 +2381,7 @@ private static final long serialVersionUID = 0L;
         skillsUsedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Skill, com.google.cloud.talent.v4beta1.Skill.Builder, com.google.cloud.talent.v4beta1.SkillOrBuilder>(
                 skillsUsed_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         skillsUsed_ = null;

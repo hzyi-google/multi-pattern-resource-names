@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ExpirationPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   * @return Whether the ttl field is set.
    */
   public boolean hasTtl() {
     return ttl_ != null;
@@ -120,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
+   * @return The ttl.
    */
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
@@ -474,6 +482,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 1;</code>
+     * @return Whether the ttl field is set.
      */
     public boolean hasTtl() {
       return ttlBuilder_ != null || ttl_ != null;
@@ -489,6 +498,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 1;</code>
+     * @return The ttl.
      */
     public com.google.protobuf.Duration getTtl() {
       if (ttlBuilder_ == null) {

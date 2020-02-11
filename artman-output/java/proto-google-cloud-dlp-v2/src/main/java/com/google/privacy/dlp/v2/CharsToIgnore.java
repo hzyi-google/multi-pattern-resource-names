@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CharsToIgnore();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,11 +98,19 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * <pre>
+   * Convenience enum for indication common characters to not transform.
+   * </pre>
+   *
    * Protobuf enum {@code google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore}
    */
   public enum CommonCharsToIgnore
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code>
      */
     COMMON_CHARS_TO_IGNORE_UNSPECIFIED(0),
@@ -144,6 +158,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code>
      */
     public static final int COMMON_CHARS_TO_IGNORE_UNSPECIFIED_VALUE = 0;
@@ -198,6 +216,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -205,6 +225,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CommonCharsToIgnore forNumber(int value) {
       switch (value) {
         case 0: return COMMON_CHARS_TO_IGNORE_UNSPECIFIED;
@@ -268,7 +292,8 @@ private static final long serialVersionUID = 0L;
   private int charactersCase_ = 0;
   private java.lang.Object characters_;
   public enum CharactersCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CHARACTERS_TO_SKIP(1),
     COMMON_CHARACTERS_TO_IGNORE(2),
     CHARACTERS_NOT_SET(0);
@@ -277,6 +302,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -305,7 +332,12 @@ private static final long serialVersionUID = 0L;
 
   public static final int CHARACTERS_TO_SKIP_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
+   * @return The charactersToSkip.
    */
   public java.lang.String getCharactersToSkip() {
     java.lang.Object ref = "";
@@ -325,7 +357,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
+   * @return The bytes for charactersToSkip.
    */
   public com.google.protobuf.ByteString
       getCharactersToSkipBytes() {
@@ -348,7 +385,13 @@ private static final long serialVersionUID = 0L;
 
   public static final int COMMON_CHARACTERS_TO_IGNORE_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * @return The enum numeric value on the wire for commonCharactersToIgnore.
    */
   public int getCommonCharactersToIgnoreValue() {
     if (charactersCase_ == 2) {
@@ -357,7 +400,13 @@ private static final long serialVersionUID = 0L;
     return 0;
   }
   /**
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * @return The commonCharactersToIgnore.
    */
   public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore() {
     if (charactersCase_ == 2) {
@@ -737,7 +786,12 @@ private static final long serialVersionUID = 0L;
 
 
     /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
+     * @return The charactersToSkip.
      */
     public java.lang.String getCharactersToSkip() {
       java.lang.Object ref = "";
@@ -757,7 +811,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
+     * @return The bytes for charactersToSkip.
      */
     public com.google.protobuf.ByteString
         getCharactersToSkipBytes() {
@@ -778,7 +837,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
+     * @param value The charactersToSkip to set.
+     * @return This builder for chaining.
      */
     public Builder setCharactersToSkip(
         java.lang.String value) {
@@ -791,7 +856,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCharactersToSkip() {
       if (charactersCase_ == 1) {
@@ -802,7 +872,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
+     * @param value The bytes for charactersToSkip to set.
+     * @return This builder for chaining.
      */
     public Builder setCharactersToSkipBytes(
         com.google.protobuf.ByteString value) {
@@ -817,7 +893,13 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @return The enum numeric value on the wire for commonCharactersToIgnore.
      */
     public int getCommonCharactersToIgnoreValue() {
       if (charactersCase_ == 2) {
@@ -826,7 +908,14 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @param value The enum numeric value on the wire for commonCharactersToIgnore to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonCharactersToIgnoreValue(int value) {
       charactersCase_ = 2;
@@ -835,7 +924,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @return The commonCharactersToIgnore.
      */
     public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore() {
       if (charactersCase_ == 2) {
@@ -847,7 +942,14 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore.COMMON_CHARS_TO_IGNORE_UNSPECIFIED;
     }
     /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @param value The commonCharactersToIgnore to set.
+     * @return This builder for chaining.
      */
     public Builder setCommonCharactersToIgnore(com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore value) {
       if (value == null) {
@@ -859,7 +961,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCommonCharactersToIgnore() {
       if (charactersCase_ == 2) {

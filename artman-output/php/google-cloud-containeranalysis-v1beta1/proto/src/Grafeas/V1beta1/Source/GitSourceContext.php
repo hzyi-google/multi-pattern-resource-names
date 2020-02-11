@@ -14,20 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.source.GitSourceContext</code>
  */
-final class GitSourceContext extends \Google\Protobuf\Internal\Message
+class GitSourceContext extends \Google\Protobuf\Internal\Message
 {
     /**
      * Git repository URL.
      *
      * Generated from protobuf field <code>string url = 1;</code>
      */
-    private $url = '';
+    protected $url = '';
     /**
      * Git commit hash.
      *
      * Generated from protobuf field <code>string revision_id = 2;</code>
      */
-    private $revision_id = '';
+    protected $revision_id = '';
 
     /**
      * Constructor.

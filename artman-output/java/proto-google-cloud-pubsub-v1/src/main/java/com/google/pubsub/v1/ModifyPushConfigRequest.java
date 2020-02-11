@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ModifyPushConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +113,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The subscription.
    */
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
@@ -127,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string subscription = 1;</code>
+   * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
       getSubscriptionBytes() {
@@ -154,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   * @return Whether the pushConfig field is set.
    */
   public boolean hasPushConfig() {
     return pushConfig_ != null;
@@ -168,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+   * @return The pushConfig.
    */
   public com.google.pubsub.v1.PushConfig getPushConfig() {
     return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
@@ -531,6 +541,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The subscription.
      */
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
@@ -551,6 +562,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
         getSubscriptionBytes() {
@@ -572,6 +584,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscription(
         java.lang.String value) {
@@ -590,6 +604,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSubscription() {
       
@@ -604,6 +619,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string subscription = 1;</code>
+     * @param value The bytes for subscription to set.
+     * @return This builder for chaining.
      */
     public Builder setSubscriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -630,6 +647,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * @return Whether the pushConfig field is set.
      */
     public boolean hasPushConfig() {
       return pushConfigBuilder_ != null || pushConfig_ != null;
@@ -644,6 +662,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
+     * @return The pushConfig.
      */
     public com.google.pubsub.v1.PushConfig getPushConfig() {
       if (pushConfigBuilder_ == null) {

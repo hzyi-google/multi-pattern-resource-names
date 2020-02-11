@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,7 +133,8 @@ private static final long serialVersionUID = 0L;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
   public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSIENT(1),
     UNWRAPPED(2),
     KMS_WRAPPED(3),
@@ -137,6 +144,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -166,13 +175,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int TRANSIENT_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   * @return Whether the transient field is set.
    */
   public boolean hasTransient() {
     return sourceCase_ == 1;
   }
   /**
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   * @return The transient.
    */
   public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
     if (sourceCase_ == 1) {
@@ -181,6 +200,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
    */
   public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
@@ -192,13 +215,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int UNWRAPPED_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   * @return Whether the unwrapped field is set.
    */
   public boolean hasUnwrapped() {
     return sourceCase_ == 2;
   }
   /**
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   * @return The unwrapped.
    */
   public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
     if (sourceCase_ == 2) {
@@ -207,6 +240,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
    */
   public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
@@ -218,13 +255,23 @@ private static final long serialVersionUID = 0L;
 
   public static final int KMS_WRAPPED_FIELD_NUMBER = 3;
   /**
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   * @return Whether the kmsWrapped field is set.
    */
   public boolean hasKmsWrapped() {
     return sourceCase_ == 3;
   }
   /**
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   * @return The kmsWrapped.
    */
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
     if (sourceCase_ == 3) {
@@ -233,6 +280,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
    */
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
@@ -648,13 +699,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.TransientCryptoKey, com.google.privacy.dlp.v2.TransientCryptoKey.Builder, com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder> transientBuilder_;
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+     * @return Whether the transient field is set.
      */
     public boolean hasTransient() {
       return sourceCase_ == 1;
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+     * @return The transient.
      */
     public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
       if (transientBuilder_ == null) {
@@ -670,6 +731,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public Builder setTransient(com.google.privacy.dlp.v2.TransientCryptoKey value) {
@@ -686,6 +751,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public Builder setTransient(
@@ -700,6 +769,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public Builder mergeTransient(com.google.privacy.dlp.v2.TransientCryptoKey value) {
@@ -722,6 +795,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public Builder clearTransient() {
@@ -741,12 +818,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public com.google.privacy.dlp.v2.TransientCryptoKey.Builder getTransientBuilder() {
       return getTransientFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
@@ -760,6 +845,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Transient crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -784,13 +873,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.UnwrappedCryptoKey, com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder, com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder> unwrappedBuilder_;
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+     * @return Whether the unwrapped field is set.
      */
     public boolean hasUnwrapped() {
       return sourceCase_ == 2;
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+     * @return The unwrapped.
      */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
       if (unwrappedBuilder_ == null) {
@@ -806,6 +905,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public Builder setUnwrapped(com.google.privacy.dlp.v2.UnwrappedCryptoKey value) {
@@ -822,6 +925,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public Builder setUnwrapped(
@@ -836,6 +943,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public Builder mergeUnwrapped(com.google.privacy.dlp.v2.UnwrappedCryptoKey value) {
@@ -858,6 +969,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public Builder clearUnwrapped() {
@@ -877,12 +992,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder getUnwrappedBuilder() {
       return getUnwrappedFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
@@ -896,6 +1019,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Unwrapped crypto key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -920,13 +1047,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.KmsWrappedCryptoKey, com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder, com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder> kmsWrappedBuilder_;
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+     * @return Whether the kmsWrapped field is set.
      */
     public boolean hasKmsWrapped() {
       return sourceCase_ == 3;
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+     * @return The kmsWrapped.
      */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
       if (kmsWrappedBuilder_ == null) {
@@ -942,6 +1079,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public Builder setKmsWrapped(com.google.privacy.dlp.v2.KmsWrappedCryptoKey value) {
@@ -958,6 +1099,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public Builder setKmsWrapped(
@@ -972,6 +1117,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public Builder mergeKmsWrapped(com.google.privacy.dlp.v2.KmsWrappedCryptoKey value) {
@@ -994,6 +1143,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public Builder clearKmsWrapped() {
@@ -1013,12 +1166,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder getKmsWrappedBuilder() {
       return getKmsWrappedFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
@@ -1032,6 +1193,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Kms wrapped key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

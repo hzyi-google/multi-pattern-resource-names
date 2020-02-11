@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.source.AliasContext</code>
  */
-final class AliasContext extends \Google\Protobuf\Internal\Message
+class AliasContext extends \Google\Protobuf\Internal\Message
 {
     /**
      * The alias kind.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.source.AliasContext.Kind kind = 1;</code>
      */
-    private $kind = 0;
+    protected $kind = 0;
     /**
      * The alias name.
      *
      * Generated from protobuf field <code>string name = 2;</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

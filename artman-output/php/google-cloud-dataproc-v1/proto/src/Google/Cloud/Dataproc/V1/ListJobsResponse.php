@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.ListJobsResponse</code>
  */
-final class ListJobsResponse extends \Google\Protobuf\Internal\Message
+class ListJobsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. Jobs list.
@@ -28,7 +28,7 @@ final class ListJobsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

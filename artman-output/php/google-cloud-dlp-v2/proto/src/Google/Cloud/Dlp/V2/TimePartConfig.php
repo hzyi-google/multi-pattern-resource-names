@@ -14,12 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.TimePartConfig</code>
  */
-final class TimePartConfig extends \Google\Protobuf\Internal\Message
+class TimePartConfig extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The part of the time to keep.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      */
-    private $part_to_extract = 0;
+    protected $part_to_extract = 0;
 
     /**
      * Constructor.
@@ -28,6 +30,7 @@ final class TimePartConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $part_to_extract
+     *           The part of the time to keep.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,6 +39,8 @@ final class TimePartConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The part of the time to keep.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      * @return int
      */
@@ -45,6 +50,8 @@ final class TimePartConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The part of the time to keep.
+     *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      * @param int $var
      * @return $this

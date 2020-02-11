@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse</code>
  */
-final class ListTransferLogsResponse extends \Google\Protobuf\Internal\Message
+class ListTransferLogsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The stored pipeline transfer messages.
@@ -29,7 +29,7 @@ final class ListTransferLogsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

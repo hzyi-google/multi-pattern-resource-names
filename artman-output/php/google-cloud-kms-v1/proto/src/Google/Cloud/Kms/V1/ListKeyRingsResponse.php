@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.ListKeyRingsResponse</code>
  */
-final class ListKeyRingsResponse extends \Google\Protobuf\Internal\Message
+class ListKeyRingsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
@@ -27,13 +27,13 @@ final class ListKeyRingsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
     /**
      * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
      *
      * Generated from protobuf field <code>int32 total_size = 3;</code>
      */
-    private $total_size = 0;
+    protected $total_size = 0;
 
     /**
      * Constructor.

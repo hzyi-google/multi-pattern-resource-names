@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
+ * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
  * applications on YARN.
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.SparkJob</code>
  */
-final class SparkJob extends \Google\Protobuf\Internal\Message
+class SparkJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The arguments to pass to the driver. Do not include arguments,
@@ -48,7 +48,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
     private $archive_uris;
     /**
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *
@@ -60,7 +60,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
     protected $driver;
 
     /**
@@ -90,7 +90,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
      *           .jar, .tar, .tar.gz, .tgz, and .zip.
      *     @type array|\Google\Protobuf\Internal\MapField $properties
      *           Optional. A mapping of property names to values, used to configure Spark.
-     *           Properties that conflict with values set by the Cloud Dataproc API may be
+     *           Properties that conflict with values set by the Dataproc API may be
      *           overwritten. Can include properties set in
      *           /etc/spark/conf/spark-defaults.conf and classes in user code.
      *     @type \Google\Cloud\Dataproc\V1\LoggingConfig $logging_config
@@ -274,7 +274,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *
@@ -288,7 +288,7 @@ final class SparkJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. A mapping of property names to values, used to configure Spark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      *

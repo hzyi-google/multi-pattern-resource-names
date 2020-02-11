@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectContentResponse</code>
  */
-final class InspectContentResponse extends \Google\Protobuf\Internal\Message
+class InspectContentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The findings.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

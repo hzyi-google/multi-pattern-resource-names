@@ -18,7 +18,8 @@ public interface DeleteSinkRequestOrBuilder extends
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The sinkName.
    */
   java.lang.String getSinkName();
   /**
@@ -32,7 +33,8 @@ public interface DeleteSinkRequestOrBuilder extends
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for sinkName.
    */
   com.google.protobuf.ByteString
       getSinkNameBytes();

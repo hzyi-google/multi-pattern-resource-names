@@ -13,6 +13,7 @@ public interface AuthorityOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   * @return Whether the hint field is set.
    */
   boolean hasHint();
   /**
@@ -21,6 +22,7 @@ public interface AuthorityOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   * @return The hint.
    */
   io.grafeas.v1beta1.attestation.Authority.Hint getHint();
   /**

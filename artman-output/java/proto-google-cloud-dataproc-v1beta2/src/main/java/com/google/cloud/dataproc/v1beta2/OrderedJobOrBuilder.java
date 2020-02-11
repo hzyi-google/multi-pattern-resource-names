@@ -21,6 +21,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>string step_id = 1;</code>
+   * @return The stepId.
    */
   java.lang.String getStepId();
   /**
@@ -37,6 +38,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>string step_id = 1;</code>
+   * @return The bytes for stepId.
    */
   com.google.protobuf.ByteString
       getStepIdBytes();
@@ -47,6 +49,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
   /**
@@ -55,6 +58,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob();
   /**
@@ -72,6 +76,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
   /**
@@ -80,6 +85,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob();
   /**
@@ -97,6 +103,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
   /**
@@ -105,6 +112,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob();
   /**
@@ -122,6 +130,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
   /**
@@ -130,6 +139,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob();
   /**
@@ -147,6 +157,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
   /**
@@ -155,6 +166,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   * @return The pigJob.
    */
   com.google.cloud.dataproc.v1beta2.PigJob getPigJob();
   /**
@@ -172,6 +184,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
   /**
@@ -180,6 +193,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob();
   /**
@@ -281,6 +295,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
   /**
@@ -289,6 +304,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 9;</code>
+   * @return The scheduling.
    */
   com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling();
   /**
@@ -307,6 +323,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   * @return A list containing the prerequisiteStepIds.
    */
   java.util.List<java.lang.String>
       getPrerequisiteStepIdsList();
@@ -317,6 +334,7 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   * @return The count of prerequisiteStepIds.
    */
   int getPrerequisiteStepIdsCount();
   /**
@@ -326,6 +344,8 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   * @param index The index of the element to return.
+   * @return The prerequisiteStepIds at the given index.
    */
   java.lang.String getPrerequisiteStepIds(int index);
   /**
@@ -335,6 +355,8 @@ public interface OrderedJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the prerequisiteStepIds at the given index.
    */
   com.google.protobuf.ByteString
       getPrerequisiteStepIdsBytes(int index);

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.WriteLogEntriesResponse</code>
  */
-final class WriteLogEntriesResponse extends \Google\Protobuf\Internal\Message
+class WriteLogEntriesResponse extends \Google\Protobuf\Internal\Message
 {
 
     /**

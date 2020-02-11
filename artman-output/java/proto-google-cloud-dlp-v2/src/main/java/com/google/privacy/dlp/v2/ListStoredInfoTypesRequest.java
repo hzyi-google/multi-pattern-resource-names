@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListStoredInfoTypesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -140,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -159,11 +167,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -179,11 +188,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -203,11 +213,12 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Optional size of the page, can be limited by server. If zero server returns
+   * Size of the page, can be limited by server. If zero server returns
    * a page of max size 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -217,7 +228,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -231,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -246,7 +258,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -260,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string order_by = 4;</code>
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString
       getOrderByBytes() {
@@ -284,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -304,6 +318,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -701,6 +716,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -721,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -742,6 +759,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -760,6 +779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -774,6 +794,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -790,11 +812,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -810,11 +833,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -831,11 +855,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -849,11 +875,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -863,11 +890,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
      * <code>string page_token = 2;</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -884,22 +913,25 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
     }
     /**
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -909,11 +941,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       
@@ -925,7 +958,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -939,6 +972,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -954,7 +988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -968,6 +1002,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString
         getOrderByBytes() {
@@ -984,7 +1019,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -998,6 +1033,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(
         java.lang.String value) {
@@ -1011,7 +1048,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1025,6 +1062,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
       
@@ -1034,7 +1072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1048,6 +1086,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string order_by = 4;</code>
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(
         com.google.protobuf.ByteString value) {
@@ -1069,6 +1109,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1089,6 +1130,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -1110,6 +1152,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -1128,6 +1172,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -1142,6 +1187,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

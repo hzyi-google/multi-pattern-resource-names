@@ -21,6 +21,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The zoneUri.
    */
   java.lang.String getZoneUri();
   /**
@@ -37,6 +38,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for zoneUri.
    */
   com.google.protobuf.ByteString
       getZoneUriBytes();
@@ -55,6 +57,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The networkUri.
    */
   java.lang.String getNetworkUri();
   /**
@@ -71,6 +74,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for networkUri.
    */
   com.google.protobuf.ByteString
       getNetworkUriBytes();
@@ -86,6 +90,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The subnetworkUri.
    */
   java.lang.String getSubnetworkUri();
   /**
@@ -99,6 +104,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for subnetworkUri.
    */
   com.google.protobuf.ByteString
       getSubnetworkUriBytes();
@@ -114,6 +120,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The internalIpOnly.
    */
   boolean getInternalIpOnly();
 
@@ -131,6 +138,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
   /**
@@ -147,6 +155,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString
       getServiceAccountBytes();
@@ -167,6 +176,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the serviceAccountScopes.
    */
   java.util.List<java.lang.String>
       getServiceAccountScopesList();
@@ -186,6 +196,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of serviceAccountScopes.
    */
   int getServiceAccountScopesCount();
   /**
@@ -204,6 +215,8 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The serviceAccountScopes at the given index.
    */
   java.lang.String getServiceAccountScopes(int index);
   /**
@@ -222,6 +235,8 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the serviceAccountScopes at the given index.
    */
   com.google.protobuf.ByteString
       getServiceAccountScopesBytes(int index);
@@ -233,6 +248,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @return A list containing the tags.
    */
   java.util.List<java.lang.String>
       getTagsList();
@@ -243,6 +259,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @return The count of tags.
    */
   int getTagsCount();
   /**
@@ -252,6 +269,8 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
   /**
@@ -261,6 +280,8 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated string tags = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   com.google.protobuf.ByteString
       getTagsBytes(int index);
@@ -335,6 +356,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
   /**
@@ -343,6 +365,7 @@ public interface GceClusterConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The reservationAffinity.
    */
   com.google.cloud.dataproc.v1beta2.ReservationAffinity getReservationAffinity();
   /**

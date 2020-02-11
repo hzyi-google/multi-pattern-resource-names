@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.DeleteSubscriptionRequest</code>
  */
-final class DeleteSubscriptionRequest extends \Google\Protobuf\Internal\Message
+class DeleteSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The subscription to delete.
@@ -21,7 +21,7 @@ final class DeleteSubscriptionRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string subscription = 1;</code>
      */
-    private $subscription = '';
+    protected $subscription = '';
 
     /**
      * Constructor.

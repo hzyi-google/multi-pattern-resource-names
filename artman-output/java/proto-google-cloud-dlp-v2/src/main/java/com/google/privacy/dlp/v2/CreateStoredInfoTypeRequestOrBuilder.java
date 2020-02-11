@@ -14,6 +14,7 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -23,32 +24,35 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder();
 
@@ -61,6 +65,7 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   * @return The storedInfoTypeId.
    */
   java.lang.String getStoredInfoTypeId();
   /**
@@ -72,6 +77,7 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string stored_info_type_id = 3;</code>
+   * @return The bytes for storedInfoTypeId.
    */
   com.google.protobuf.ByteString
       getStoredInfoTypeIdBytes();
@@ -83,6 +89,7 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -92,6 +99,7 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

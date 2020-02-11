@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.ScheduleOptions</code>
  */
-final class ScheduleOptions extends \Google\Protobuf\Internal\Message
+class ScheduleOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * If true, automatic scheduling of data transfer runs for this configuration
@@ -23,7 +23,7 @@ final class ScheduleOptions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool disable_auto_scheduling = 3;</code>
      */
-    private $disable_auto_scheduling = false;
+    protected $disable_auto_scheduling = false;
     /**
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
@@ -33,7 +33,7 @@ final class ScheduleOptions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
-    private $start_time = null;
+    protected $start_time = null;
     /**
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
@@ -42,7 +42,7 @@ final class ScheduleOptions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
-    private $end_time = null;
+    protected $end_time = null;
 
     /**
      * Constructor.

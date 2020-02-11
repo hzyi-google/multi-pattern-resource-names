@@ -16,7 +16,8 @@ public interface ListLogsRequestOrBuilder extends
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -28,7 +29,8 @@ public interface ListLogsRequestOrBuilder extends
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -41,6 +43,7 @@ public interface ListLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -53,6 +56,7 @@ public interface ListLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -64,6 +68,7 @@ public interface ListLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();

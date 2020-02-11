@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.DeleteWorkflowTemplateRequest</code>
  */
-final class DeleteWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
+class DeleteWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the workflow template, as described
@@ -28,7 +28,7 @@ final class DeleteWorkflowTemplateRequest extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Optional. The version of workflow template to delete. If specified,
      * will only delete the template if the current server version matches
@@ -36,7 +36,7 @@ final class DeleteWorkflowTemplateRequest extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>int32 version = 2;</code>
      */
-    private $version = 0;
+    protected $version = 0;
 
     /**
      * Constructor.

@@ -7,11 +7,11 @@ package io.grafeas.v1beta1.attestation;
  * <pre>
  * Note kind that represents a logical attestation "role" or "authority". For
  * example, an organization might have one `Authority` for "QA" and one for
- * "build". This Note is intended to act strictly as a grouping mechanism for
- * the attached Occurrences (Attestations). This grouping mechanism also
+ * "build". This note is intended to act strictly as a grouping mechanism for
+ * the attached occurrences (Attestations). This grouping mechanism also
  * provides a security boundary, since IAM ACLs gate the ability for a principle
- * to attach an Occurrence to a given Note. It also provides a single point of
- * lookup to find all attached Attestation Occurrences, even if they don't all
+ * to attach an occurrence to a given note. It also provides a single point of
+ * lookup to find all attached attestation occurrences, even if they don't all
  * live in the same project.
  * </pre>
  *
@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Authority();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +49,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,18 +110,22 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     * @return The humanReadableName.
      */
     java.lang.String getHumanReadableName();
     /**
      * <pre>
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     * @return The bytes for humanReadableName.
      */
     com.google.protobuf.ByteString
         getHumanReadableNameBytes();
@@ -123,11 +133,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * This submessage provides human-readable hints about the purpose of the
-   * Authority. Because the name of a Note acts as its resource reference, it is
+   * authority. Because the name of a note acts as its resource reference, it is
    * important to disambiguate the canonical name of the Note (which might be a
    * UUID for security purposes) from "readable" names more suitable for debug
-   * output. Note that these hints should NOT be used to look up authorities in
-   * security sensitive contexts, such as when looking up Attestations to
+   * output. Note that these hints should not be used to look up authorities in
+   * security sensitive contexts, such as when looking up attestations to
    * verify.
    * </pre>
    *
@@ -147,6 +157,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Hint();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -159,7 +176,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -212,10 +228,12 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object humanReadableName_;
     /**
      * <pre>
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     * @return The humanReadableName.
      */
     public java.lang.String getHumanReadableName() {
       java.lang.Object ref = humanReadableName_;
@@ -231,10 +249,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
+     * @return The bytes for humanReadableName.
      */
     public com.google.protobuf.ByteString
         getHumanReadableNameBytes() {
@@ -407,11 +427,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This submessage provides human-readable hints about the purpose of the
-     * Authority. Because the name of a Note acts as its resource reference, it is
+     * authority. Because the name of a note acts as its resource reference, it is
      * important to disambiguate the canonical name of the Note (which might be a
      * UUID for security purposes) from "readable" names more suitable for debug
-     * output. Note that these hints should NOT be used to look up authorities in
-     * security sensitive contexts, such as when looking up Attestations to
+     * output. Note that these hints should not be used to look up authorities in
+     * security sensitive contexts, such as when looking up attestations to
      * verify.
      * </pre>
      *
@@ -565,10 +585,12 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object humanReadableName_ = "";
       /**
        * <pre>
-       * The human readable name of this Attestation Authority, for example "qa".
+       * Required. The human readable name of this attestation authority, for
+       * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       * @return The humanReadableName.
        */
       public java.lang.String getHumanReadableName() {
         java.lang.Object ref = humanReadableName_;
@@ -584,10 +606,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The human readable name of this Attestation Authority, for example "qa".
+       * Required. The human readable name of this attestation authority, for
+       * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       * @return The bytes for humanReadableName.
        */
       public com.google.protobuf.ByteString
           getHumanReadableNameBytes() {
@@ -604,10 +628,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The human readable name of this Attestation Authority, for example "qa".
+       * Required. The human readable name of this attestation authority, for
+       * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       * @param value The humanReadableName to set.
+       * @return This builder for chaining.
        */
       public Builder setHumanReadableName(
           java.lang.String value) {
@@ -621,10 +648,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The human readable name of this Attestation Authority, for example "qa".
+       * Required. The human readable name of this attestation authority, for
+       * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHumanReadableName() {
         
@@ -634,10 +663,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The human readable name of this Attestation Authority, for example "qa".
+       * Required. The human readable name of this attestation authority, for
+       * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
+       * @param value The bytes for humanReadableName to set.
+       * @return This builder for chaining.
        */
       public Builder setHumanReadableNameBytes(
           com.google.protobuf.ByteString value) {
@@ -711,6 +743,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   * @return Whether the hint field is set.
    */
   public boolean hasHint() {
     return hint_ != null;
@@ -721,6 +754,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+   * @return The hint.
    */
   public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
     return hint_ == null ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance() : hint_;
@@ -900,11 +934,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Note kind that represents a logical attestation "role" or "authority". For
    * example, an organization might have one `Authority` for "QA" and one for
-   * "build". This Note is intended to act strictly as a grouping mechanism for
-   * the attached Occurrences (Attestations). This grouping mechanism also
+   * "build". This note is intended to act strictly as a grouping mechanism for
+   * the attached occurrences (Attestations). This grouping mechanism also
    * provides a security boundary, since IAM ACLs gate the ability for a principle
-   * to attach an Occurrence to a given Note. It also provides a single point of
-   * lookup to find all attached Attestation Occurrences, even if they don't all
+   * to attach an occurrence to a given note. It also provides a single point of
+   * lookup to find all attached attestation occurrences, even if they don't all
    * live in the same project.
    * </pre>
    *
@@ -1071,6 +1105,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+     * @return Whether the hint field is set.
      */
     public boolean hasHint() {
       return hintBuilder_ != null || hint_ != null;
@@ -1081,6 +1116,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
+     * @return The hint.
      */
     public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
       if (hintBuilder_ == null) {

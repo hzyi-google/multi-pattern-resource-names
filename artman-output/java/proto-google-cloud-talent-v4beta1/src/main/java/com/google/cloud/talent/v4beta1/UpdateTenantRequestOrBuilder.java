@@ -9,26 +9,25 @@ public interface UpdateTenantRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The tenant resource to replace the current resource in the
-   * system.
+   * Required. The tenant resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the tenant field is set.
    */
   boolean hasTenant();
   /**
    * <pre>
-   * Required. The tenant resource to replace the current resource in the
-   * system.
+   * Required. The tenant resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The tenant.
    */
   com.google.cloud.talent.v4beta1.Tenant getTenant();
   /**
    * <pre>
-   * Required. The tenant resource to replace the current resource in the
-   * system.
+   * Required. The tenant resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,46 +37,36 @@ public interface UpdateTenantRequestOrBuilder extends
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
-   * is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
-   * supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
-   * is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
-   * supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask]
-   * is provided, only the specified fields in
-   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateTenantRequest.update_mask] is provided, only the specified fields in
+   * [tenant][google.cloud.talent.v4beta1.UpdateTenantRequest.tenant] are updated. Otherwise all the fields are updated.
    * A field mask to specify the tenant fields to be updated. Only
-   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are
-   * supported.
+   * top level fields of [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

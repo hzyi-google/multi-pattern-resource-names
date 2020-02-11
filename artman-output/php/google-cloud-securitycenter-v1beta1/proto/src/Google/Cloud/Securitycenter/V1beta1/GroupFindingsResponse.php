@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.GroupFindingsResponse</code>
  */
-final class GroupFindingsResponse extends \Google\Protobuf\Internal\Message
+class GroupFindingsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Group results. There exists an element for each existing unique
@@ -28,14 +28,14 @@ final class GroupFindingsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
-    private $read_time = null;
+    protected $read_time = null;
     /**
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
      *
      * Generated from protobuf field <code>string next_page_token = 3;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

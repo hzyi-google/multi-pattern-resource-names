@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TimePartConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -87,11 +93,19 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * <pre>
+   * Components that make up time.
+   * </pre>
+   *
    * Protobuf enum {@code google.privacy.dlp.v2.TimePartConfig.TimePart}
    */
   public enum TimePart
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused
+     * </pre>
+     *
      * <code>TIME_PART_UNSPECIFIED = 0;</code>
      */
     TIME_PART_UNSPECIFIED(0),
@@ -147,6 +161,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused
+     * </pre>
+     *
      * <code>TIME_PART_UNSPECIFIED = 0;</code>
      */
     public static final int TIME_PART_UNSPECIFIED_VALUE = 0;
@@ -209,6 +227,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -216,6 +236,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimePart forNumber(int value) {
       switch (value) {
         case 0: return TIME_PART_UNSPECIFIED;
@@ -280,13 +304,23 @@ private static final long serialVersionUID = 0L;
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
   private int partToExtract_;
   /**
+   * <pre>
+   * The part of the time to keep.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   * @return The enum numeric value on the wire for partToExtract.
    */
   public int getPartToExtractValue() {
     return partToExtract_;
   }
   /**
+   * <pre>
+   * The part of the time to keep.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+   * @return The partToExtract.
    */
   public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
     @SuppressWarnings("deprecation")
@@ -602,13 +636,24 @@ private static final long serialVersionUID = 0L;
 
     private int partToExtract_ = 0;
     /**
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     * @return The enum numeric value on the wire for partToExtract.
      */
     public int getPartToExtractValue() {
       return partToExtract_;
     }
     /**
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     * @param value The enum numeric value on the wire for partToExtract to set.
+     * @return This builder for chaining.
      */
     public Builder setPartToExtractValue(int value) {
       partToExtract_ = value;
@@ -616,7 +661,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     * @return The partToExtract.
      */
     public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
       @SuppressWarnings("deprecation")
@@ -624,7 +674,13 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     * @param value The partToExtract to set.
+     * @return This builder for chaining.
      */
     public Builder setPartToExtract(com.google.privacy.dlp.v2.TimePartConfig.TimePart value) {
       if (value == null) {
@@ -636,7 +692,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPartToExtract() {
       

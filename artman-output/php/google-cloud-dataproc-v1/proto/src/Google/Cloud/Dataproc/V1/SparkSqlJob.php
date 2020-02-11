@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Cloud Dataproc job for running [Apache Spark
+ * A Dataproc job for running [Apache Spark
  * SQL](http://spark.apache.org/sql/) queries.
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.SparkSqlJob</code>
  */
-final class SparkSqlJob extends \Google\Protobuf\Internal\Message
+class SparkSqlJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Mapping of query variable names to values (equivalent to the
@@ -26,7 +26,7 @@ final class SparkSqlJob extends \Google\Protobuf\Internal\Message
     /**
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      *
      * Generated from protobuf field <code>map<string, string> properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -42,7 +42,7 @@ final class SparkSqlJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
     protected $queries;
 
     /**
@@ -61,7 +61,7 @@ final class SparkSqlJob extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $properties
      *           Optional. A mapping of property names to values, used to configure
      *           Spark SQL's SparkConf. Properties that conflict with values set by the
-     *           Cloud Dataproc API may be overwritten.
+     *           Dataproc API may be overwritten.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $jar_file_uris
      *           Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      *     @type \Google\Cloud\Dataproc\V1\LoggingConfig $logging_config
@@ -156,7 +156,7 @@ final class SparkSqlJob extends \Google\Protobuf\Internal\Message
     /**
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      *
      * Generated from protobuf field <code>map<string, string> properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -169,7 +169,7 @@ final class SparkSqlJob extends \Google\Protobuf\Internal\Message
     /**
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
-     * Cloud Dataproc API may be overwritten.
+     * Dataproc API may be overwritten.
      *
      * Generated from protobuf field <code>map<string, string> properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

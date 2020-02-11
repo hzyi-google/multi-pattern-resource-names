@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Key.PathElement</code>
  */
-final class PathElement extends \Google\Protobuf\Internal\Message
+class PathElement extends \Google\Protobuf\Internal\Message
 {
     /**
      * The kind of the entity.
@@ -25,7 +25,7 @@ final class PathElement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string kind = 1;</code>
      */
-    private $kind = '';
+    protected $kind = '';
     protected $id_type;
 
     /**

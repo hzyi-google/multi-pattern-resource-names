@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new FieldTransformation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -132,11 +139,11 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.FieldTransformation.class, com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
   }
 
-  private int bitField0_;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
   public enum TransformationCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PRIMITIVE_TRANSFORMATION(4),
     INFO_TYPE_TRANSFORMATIONS(5),
     TRANSFORMATION_NOT_SET(0);
@@ -145,6 +152,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -175,20 +184,20 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.privacy.dlp.v2.FieldId> fields_;
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList() {
     return fields_;
   }
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
       getFieldsOrBuilderList() {
@@ -196,30 +205,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getFieldsCount() {
     return fields_.size();
   }
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.FieldId getFields(int index) {
     return fields_.get(index);
   }
   /**
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
       int index) {
@@ -232,7 +241,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -240,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   * @return Whether the condition field is set.
    */
   public boolean hasCondition() {
     return condition_ != null;
@@ -248,7 +258,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -256,6 +266,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+   * @return The condition.
    */
   public com.google.privacy.dlp.v2.RecordCondition getCondition() {
     return condition_ == null ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance() : condition_;
@@ -264,7 +275,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -284,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   * @return Whether the primitiveTransformation field is set.
    */
   public boolean hasPrimitiveTransformation() {
     return transformationCase_ == 4;
@@ -294,6 +306,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+   * @return The primitiveTransformation.
    */
   public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
     if (transformationCase_ == 4) {
@@ -323,6 +336,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   * @return Whether the infoTypeTransformations field is set.
    */
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 5;
@@ -334,6 +348,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+   * @return The infoTypeTransformations.
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 5) {
@@ -652,7 +667,6 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.FieldTransformation buildPartial() {
       com.google.privacy.dlp.v2.FieldTransformation result = new com.google.privacy.dlp.v2.FieldTransformation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -681,7 +695,6 @@ private static final long serialVersionUID = 0L;
           result.transformation_ = infoTypeTransformationsBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.transformationCase_ = transformationCase_;
       onBuilt();
       return result;
@@ -832,10 +845,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList() {
       if (fieldsBuilder_ == null) {
@@ -846,10 +859,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getFieldsCount() {
       if (fieldsBuilder_ == null) {
@@ -860,10 +873,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldId getFields(int index) {
       if (fieldsBuilder_ == null) {
@@ -874,10 +887,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setFields(
         int index, com.google.privacy.dlp.v2.FieldId value) {
@@ -895,10 +908,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setFields(
         int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -913,10 +926,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFields(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
@@ -933,10 +946,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFields(
         int index, com.google.privacy.dlp.v2.FieldId value) {
@@ -954,10 +967,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFields(
         com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -972,10 +985,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFields(
         int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -990,10 +1003,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllFields(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
@@ -1009,10 +1022,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
@@ -1026,10 +1039,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder removeFields(int index) {
       if (fieldsBuilder_ == null) {
@@ -1043,10 +1056,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldsBuilder(
         int index) {
@@ -1054,10 +1067,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
         int index) {
@@ -1068,10 +1081,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
          getFieldsOrBuilderList() {
@@ -1083,10 +1096,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder() {
       return getFieldsFieldBuilder().addBuilder(
@@ -1094,10 +1107,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder(
         int index) {
@@ -1106,10 +1119,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
          getFieldsBuilderList() {
@@ -1137,7 +1150,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1145,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+     * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
       return conditionBuilder_ != null || condition_ != null;
@@ -1153,7 +1167,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1161,6 +1175,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
+     * @return The condition.
      */
     public com.google.privacy.dlp.v2.RecordCondition getCondition() {
       if (conditionBuilder_ == null) {
@@ -1173,7 +1188,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1199,7 +1214,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1223,7 +1238,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1251,7 +1266,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1275,7 +1290,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1293,7 +1308,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1314,7 +1329,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1345,6 +1360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+     * @return Whether the primitiveTransformation field is set.
      */
     public boolean hasPrimitiveTransformation() {
       return transformationCase_ == 4;
@@ -1355,6 +1371,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
+     * @return The primitiveTransformation.
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
       if (primitiveTransformationBuilder_ == null) {
@@ -1518,6 +1535,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+     * @return Whether the infoTypeTransformations field is set.
      */
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 5;
@@ -1529,6 +1547,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
+     * @return The infoTypeTransformations.
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
       if (infoTypeTransformationsBuilder_ == null) {

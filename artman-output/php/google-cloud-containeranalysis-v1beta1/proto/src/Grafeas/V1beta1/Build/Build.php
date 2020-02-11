@@ -10,25 +10,25 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Note holding the version of the provider's builder and the signature of the
- * provenance message in linked BuildDetails.
+ * provenance message in the build details occurrence.
  *
  * Generated from protobuf message <code>grafeas.v1beta1.build.Build</code>
  */
-final class Build extends \Google\Protobuf\Internal\Message
+class Build extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      *
      * Generated from protobuf field <code>string builder_version = 1;</code>
      */
-    private $builder_version = '';
+    protected $builder_version = '';
     /**
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
      */
-    private $signature = null;
+    protected $signature = null;
 
     /**
      * Constructor.
@@ -37,10 +37,10 @@ final class Build extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $builder_version
-     *           Version of the builder which produced this Note.
+     *           Required. Immutable. Version of the builder which produced this build.
      *     @type \Grafeas\V1beta1\Build\BuildSignature $signature
-     *           Signature of the build in Occurrences pointing to the Note containing this
-     *           `BuilderDetails`.
+     *           Signature of the build in occurrences pointing to this build note
+     *           containing build details.
      * }
      */
     public function __construct($data = NULL) {
@@ -49,7 +49,7 @@ final class Build extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      *
      * Generated from protobuf field <code>string builder_version = 1;</code>
      * @return string
@@ -60,7 +60,7 @@ final class Build extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      *
      * Generated from protobuf field <code>string builder_version = 1;</code>
      * @param string $var
@@ -75,8 +75,8 @@ final class Build extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
      * @return \Grafeas\V1beta1\Build\BuildSignature
@@ -87,8 +87,8 @@ final class Build extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
      * @param \Grafeas\V1beta1\Build\BuildSignature $var

@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ApplicationJobFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -102,11 +108,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The job requisition id in the application. The API does an exact match on
-   * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   * @return The jobRequisitionId.
    */
   public java.lang.String getJobRequisitionId() {
     java.lang.Object ref = jobRequisitionId_;
@@ -123,11 +129,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The job requisition id in the application. The API does an exact match on
-   * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
+   * @return The bytes for jobRequisitionId.
    */
   public com.google.protobuf.ByteString
       getJobRequisitionIdBytes() {
@@ -148,11 +154,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The job title in the application. The API does an exact match on the
-   * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   * @return The jobTitle.
    */
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
@@ -169,11 +175,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The job title in the application. The API does an exact match on the
-   * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_title = 3;</code>
+   * @return The bytes for jobTitle.
    */
   public com.google.protobuf.ByteString
       getJobTitleBytes() {
@@ -193,12 +199,12 @@ private static final long serialVersionUID = 0L;
   private boolean negated_;
   /**
    * <pre>
-   * If true, the API excludes all profiles with any
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] matching the
-   * filters.
+   * If true, the API excludes all profiles with any [Application.job][google.cloud.talent.v4beta1.Application.job]
+   * matching the filters.
    * </pre>
    *
    * <code>bool negated = 4;</code>
+   * @return The negated.
    */
   public boolean getNegated() {
     return negated_;
@@ -549,11 +555,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job requisition id in the application. The API does an exact match on
-     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     * @return The jobRequisitionId.
      */
     public java.lang.String getJobRequisitionId() {
       java.lang.Object ref = jobRequisitionId_;
@@ -570,11 +576,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job requisition id in the application. The API does an exact match on
-     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     * @return The bytes for jobRequisitionId.
      */
     public com.google.protobuf.ByteString
         getJobRequisitionIdBytes() {
@@ -592,11 +598,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job requisition id in the application. The API does an exact match on
-     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     * @param value The jobRequisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobRequisitionId(
         java.lang.String value) {
@@ -611,11 +618,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job requisition id in the application. The API does an exact match on
-     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobRequisitionId() {
       
@@ -626,11 +633,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job requisition id in the application. The API does an exact match on
-     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * the [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_requisition_id = 2;</code>
+     * @param value The bytes for jobRequisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setJobRequisitionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -648,11 +656,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job title in the application. The API does an exact match on the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     * @return The jobTitle.
      */
     public java.lang.String getJobTitle() {
       java.lang.Object ref = jobTitle_;
@@ -669,11 +677,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job title in the application. The API does an exact match on the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     * @return The bytes for jobTitle.
      */
     public com.google.protobuf.ByteString
         getJobTitleBytes() {
@@ -691,11 +699,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job title in the application. The API does an exact match on the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitle(
         java.lang.String value) {
@@ -710,11 +719,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job title in the application. The API does an exact match on the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobTitle() {
       
@@ -725,11 +734,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The job title in the application. The API does an exact match on the
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
      * </pre>
      *
      * <code>string job_title = 3;</code>
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
      */
     public Builder setJobTitleBytes(
         com.google.protobuf.ByteString value) {
@@ -746,24 +756,25 @@ private static final long serialVersionUID = 0L;
     private boolean negated_ ;
     /**
      * <pre>
-     * If true, the API excludes all profiles with any
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] matching the
-     * filters.
+     * If true, the API excludes all profiles with any [Application.job][google.cloud.talent.v4beta1.Application.job]
+     * matching the filters.
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     * @return The negated.
      */
     public boolean getNegated() {
       return negated_;
     }
     /**
      * <pre>
-     * If true, the API excludes all profiles with any
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] matching the
-     * filters.
+     * If true, the API excludes all profiles with any [Application.job][google.cloud.talent.v4beta1.Application.job]
+     * matching the filters.
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     * @param value The negated to set.
+     * @return This builder for chaining.
      */
     public Builder setNegated(boolean value) {
       
@@ -773,12 +784,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If true, the API excludes all profiles with any
-     * [Application.job][google.cloud.talent.v4beta1.Application.job] matching the
-     * filters.
+     * If true, the API excludes all profiles with any [Application.job][google.cloud.talent.v4beta1.Application.job]
+     * matching the filters.
      * </pre>
      *
      * <code>bool negated = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegated() {
       

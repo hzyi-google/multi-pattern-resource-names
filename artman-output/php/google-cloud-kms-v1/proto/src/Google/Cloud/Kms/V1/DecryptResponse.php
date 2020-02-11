@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.DecryptResponse</code>
  */
-final class DecryptResponse extends \Google\Protobuf\Internal\Message
+class DecryptResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The decrypted data originally supplied in [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
      *
      * Generated from protobuf field <code>bytes plaintext = 1;</code>
      */
-    private $plaintext = '';
+    protected $plaintext = '';
 
     /**
      * Constructor.

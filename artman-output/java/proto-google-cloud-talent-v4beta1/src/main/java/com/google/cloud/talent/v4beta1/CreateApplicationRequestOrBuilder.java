@@ -9,26 +9,26 @@ public interface CreateApplicationRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -39,6 +39,7 @@ public interface CreateApplicationRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the application field is set.
    */
   boolean hasApplication();
   /**
@@ -47,6 +48,7 @@ public interface CreateApplicationRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The application.
    */
   com.google.cloud.talent.v4beta1.Application getApplication();
   /**

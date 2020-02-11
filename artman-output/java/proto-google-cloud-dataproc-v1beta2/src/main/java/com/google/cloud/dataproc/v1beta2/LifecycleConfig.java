@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LifecycleConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,7 +141,8 @@ private static final long serialVersionUID = 0L;
   private int ttlCase_ = 0;
   private java.lang.Object ttl_;
   public enum TtlCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AUTO_DELETE_TIME(2),
     AUTO_DELETE_TTL(3),
     TTL_NOT_SET(0);
@@ -144,6 +151,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -182,6 +191,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the idleDeleteTtl field is set.
    */
   public boolean hasIdleDeleteTtl() {
     return idleDeleteTtl_ != null;
@@ -196,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The idleDeleteTtl.
    */
   public com.google.protobuf.Duration getIdleDeleteTtl() {
     return idleDeleteTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleDeleteTtl_;
@@ -222,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   * @return Whether the autoDeleteTime field is set.
    */
   public boolean hasAutoDeleteTime() {
     return ttlCase_ == 2;
@@ -232,6 +244,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+   * @return The autoDeleteTime.
    */
   public com.google.protobuf.Timestamp getAutoDeleteTime() {
     if (ttlCase_ == 2) {
@@ -262,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   * @return Whether the autoDeleteTtl field is set.
    */
   public boolean hasAutoDeleteTtl() {
     return ttlCase_ == 3;
@@ -274,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+   * @return The autoDeleteTtl.
    */
   public com.google.protobuf.Duration getAutoDeleteTtl() {
     if (ttlCase_ == 3) {
@@ -306,6 +321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the idleStartTime field is set.
    */
   public boolean hasIdleStartTime() {
     return idleStartTime_ != null;
@@ -317,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The idleStartTime.
    */
   public com.google.protobuf.Timestamp getIdleStartTime() {
     return idleStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : idleStartTime_;
@@ -779,6 +796,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the idleDeleteTtl field is set.
      */
     public boolean hasIdleDeleteTtl() {
       return idleDeleteTtlBuilder_ != null || idleDeleteTtl_ != null;
@@ -793,6 +811,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The idleDeleteTtl.
      */
     public com.google.protobuf.Duration getIdleDeleteTtl() {
       if (idleDeleteTtlBuilder_ == null) {
@@ -963,6 +982,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * @return Whether the autoDeleteTime field is set.
      */
     public boolean hasAutoDeleteTime() {
       return ttlCase_ == 2;
@@ -973,6 +993,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
+     * @return The autoDeleteTime.
      */
     public com.google.protobuf.Timestamp getAutoDeleteTime() {
       if (autoDeleteTimeBuilder_ == null) {
@@ -1137,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * @return Whether the autoDeleteTtl field is set.
      */
     public boolean hasAutoDeleteTtl() {
       return ttlCase_ == 3;
@@ -1149,6 +1171,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
+     * @return The autoDeleteTtl.
      */
     public com.google.protobuf.Duration getAutoDeleteTtl() {
       if (autoDeleteTtlBuilder_ == null) {
@@ -1327,6 +1350,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the idleStartTime field is set.
      */
     public boolean hasIdleStartTime() {
       return idleStartTimeBuilder_ != null || idleStartTime_ != null;
@@ -1338,6 +1362,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The idleStartTime.
      */
     public com.google.protobuf.Timestamp getIdleStartTime() {
       if (idleStartTimeBuilder_ == null) {

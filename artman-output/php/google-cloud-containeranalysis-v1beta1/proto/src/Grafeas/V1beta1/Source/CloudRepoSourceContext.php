@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.source.CloudRepoSourceContext</code>
  */
-final class CloudRepoSourceContext extends \Google\Protobuf\Internal\Message
+class CloudRepoSourceContext extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the repo.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.source.RepoId repo_id = 1;</code>
      */
-    private $repo_id = null;
+    protected $repo_id = null;
     protected $revision;
 
     /**

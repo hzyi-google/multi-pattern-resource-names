@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateTopicRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   * @return Whether the topic field is set.
    */
   public boolean hasTopic() {
     return topic_ != null;
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
+   * @return The topic.
    */
   public com.google.pubsub.v1.Topic getTopic() {
     return topic_ == null ? com.google.pubsub.v1.Topic.getDefaultInstance() : topic_;
@@ -149,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -163,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -540,6 +550,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * @return Whether the topic field is set.
      */
     public boolean hasTopic() {
       return topicBuilder_ != null || topic_ != null;
@@ -550,6 +561,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
+     * @return The topic.
      */
     public com.google.pubsub.v1.Topic getTopic() {
       if (topicBuilder_ == null) {
@@ -697,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -711,6 +724,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

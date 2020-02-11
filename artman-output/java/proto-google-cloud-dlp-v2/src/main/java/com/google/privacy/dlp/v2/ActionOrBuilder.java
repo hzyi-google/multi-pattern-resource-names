@@ -13,6 +13,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   * @return Whether the saveFindings field is set.
    */
   boolean hasSaveFindings();
   /**
@@ -21,6 +22,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
+   * @return The saveFindings.
    */
   com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings();
   /**
@@ -38,6 +40,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   * @return Whether the pubSub field is set.
    */
   boolean hasPubSub();
   /**
@@ -46,6 +49,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
+   * @return The pubSub.
    */
   com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub();
   /**
@@ -63,6 +67,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   * @return Whether the publishSummaryToCscc field is set.
    */
   boolean hasPublishSummaryToCscc();
   /**
@@ -71,6 +76,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
+   * @return The publishSummaryToCscc.
    */
   com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc();
   /**
@@ -88,6 +94,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+   * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   boolean hasPublishFindingsToCloudDataCatalog();
   /**
@@ -96,6 +103,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;</code>
+   * @return The publishFindingsToCloudDataCatalog.
    */
   com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog getPublishFindingsToCloudDataCatalog();
   /**
@@ -109,25 +117,27 @@ public interface ActionOrBuilder extends
 
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   * @return Whether the jobNotificationEmails field is set.
    */
   boolean hasJobNotificationEmails();
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   * @return The jobNotificationEmails.
    */
   com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails();
   /**
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -141,6 +151,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   * @return Whether the publishToStackdriver field is set.
    */
   boolean hasPublishToStackdriver();
   /**
@@ -149,6 +160,7 @@ public interface ActionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   * @return The publishToStackdriver.
    */
   com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver();
   /**

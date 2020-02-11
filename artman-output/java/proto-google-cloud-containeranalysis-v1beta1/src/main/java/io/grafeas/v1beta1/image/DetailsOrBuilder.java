@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
+   * @return Whether the derivedImage field is set.
    */
   boolean hasDerivedImage();
   /**
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
+   * @return The derivedImage.
    */
   io.grafeas.v1beta1.image.Derived getDerivedImage();
   /**
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>

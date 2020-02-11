@@ -14,6 +14,7 @@ public interface CloudStorageFileSetOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -23,6 +24,7 @@ public interface CloudStorageFileSetOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();

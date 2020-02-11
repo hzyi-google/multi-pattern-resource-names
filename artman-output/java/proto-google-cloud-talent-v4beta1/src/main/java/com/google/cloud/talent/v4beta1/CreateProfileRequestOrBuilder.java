@@ -14,7 +14,8 @@ public interface CreateProfileRequestOrBuilder extends
    * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -24,7 +25,8 @@ public interface CreateProfileRequestOrBuilder extends
    * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -35,6 +37,7 @@ public interface CreateProfileRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the profile field is set.
    */
   boolean hasProfile();
   /**
@@ -43,6 +46,7 @@ public interface CreateProfileRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The profile.
    */
   com.google.cloud.talent.v4beta1.Profile getProfile();
   /**

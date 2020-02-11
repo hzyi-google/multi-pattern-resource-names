@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig</code>
  */
-final class ImageRedactionConfig extends \Google\Protobuf\Internal\Message
+class ImageRedactionConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * The color to use when redacting content from an image. If not specified,
@@ -21,7 +21,7 @@ final class ImageRedactionConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
      */
-    private $redaction_color = null;
+    protected $redaction_color = null;
     protected $target;
 
     /**

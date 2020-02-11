@@ -95,6 +95,8 @@ public enum Visibility
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -102,6 +104,10 @@ public enum Visibility
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static Visibility forNumber(int value) {
     switch (value) {
       case 0: return VISIBILITY_UNSPECIFIED;

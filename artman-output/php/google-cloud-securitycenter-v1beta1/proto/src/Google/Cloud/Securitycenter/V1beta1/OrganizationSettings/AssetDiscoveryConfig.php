@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig</code>
  */
-final class AssetDiscoveryConfig extends \Google\Protobuf\Internal\Message
+class AssetDiscoveryConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * The project ids to use for filtering asset discovery.
@@ -26,7 +26,7 @@ final class AssetDiscoveryConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
      */
-    private $inclusion_mode = 0;
+    protected $inclusion_mode = 0;
 
     /**
      * Constructor.

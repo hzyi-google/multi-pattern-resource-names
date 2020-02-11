@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * ApplicationServiceSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceSettings.newBuilder();
- * applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * applicationServiceSettingsBuilder
+ *     .createApplicationSettings()
+ *     .setRetrySettings(
+ *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ApplicationServiceSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
  * </code>
  * </pre>

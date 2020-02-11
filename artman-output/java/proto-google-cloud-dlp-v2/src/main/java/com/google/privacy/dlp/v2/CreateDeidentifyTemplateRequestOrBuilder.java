@@ -14,6 +14,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -23,32 +24,35 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the deidentifyTemplate field is set.
    */
   boolean hasDeidentifyTemplate();
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The deidentifyTemplate.
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate();
   /**
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder();
 
@@ -61,6 +65,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   * @return The templateId.
    */
   java.lang.String getTemplateId();
   /**
@@ -72,6 +77,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string template_id = 3;</code>
+   * @return The bytes for templateId.
    */
   com.google.protobuf.ByteString
       getTemplateIdBytes();
@@ -83,6 +89,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The locationId.
    */
   java.lang.String getLocationId();
   /**
@@ -92,6 +99,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder extends
    * </pre>
    *
    * <code>string location_id = 4;</code>
+   * @return The bytes for locationId.
    */
   com.google.protobuf.ByteString
       getLocationIdBytes();

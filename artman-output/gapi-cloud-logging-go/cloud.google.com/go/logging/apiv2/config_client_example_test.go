@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -220,4 +220,40 @@ func ExampleConfigClient_DeleteExclusion() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+}
+
+func ExampleConfigClient_GetCmekSettings() {
+	ctx := context.Background()
+	c, err := logging.NewConfigClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.GetCmekSettingsRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.GetCmekSettings(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleConfigClient_UpdateCmekSettings() {
+	ctx := context.Background()
+	c, err := logging.NewConfigClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.UpdateCmekSettingsRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UpdateCmekSettings(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
 }

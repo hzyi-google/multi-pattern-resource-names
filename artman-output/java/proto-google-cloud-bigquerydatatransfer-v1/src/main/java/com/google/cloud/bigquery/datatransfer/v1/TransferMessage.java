@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TransferMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -192,6 +198,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -199,6 +207,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MessageSeverity forNumber(int value) {
       switch (value) {
         case 0: return MESSAGE_SEVERITY_UNSPECIFIED;
@@ -265,6 +277,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   * @return Whether the messageTime field is set.
    */
   public boolean hasMessageTime() {
     return messageTime_ != null;
@@ -275,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp message_time = 1;</code>
+   * @return The messageTime.
    */
   public com.google.protobuf.Timestamp getMessageTime() {
     return messageTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : messageTime_;
@@ -298,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+   * @return The enum numeric value on the wire for severity.
    */
   public int getSeverityValue() {
     return severity_;
@@ -308,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+   * @return The severity.
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
     @SuppressWarnings("deprecation")
@@ -323,6 +339,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   * @return The messageText.
    */
   public java.lang.String getMessageText() {
     java.lang.Object ref = messageText_;
@@ -342,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message_text = 3;</code>
+   * @return The bytes for messageText.
    */
   public com.google.protobuf.ByteString
       getMessageTextBytes() {
@@ -718,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
+     * @return Whether the messageTime field is set.
      */
     public boolean hasMessageTime() {
       return messageTimeBuilder_ != null || messageTime_ != null;
@@ -728,6 +747,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
+     * @return The messageTime.
      */
     public com.google.protobuf.Timestamp getMessageTime() {
       if (messageTimeBuilder_ == null) {
@@ -869,6 +889,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
@@ -879,6 +900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
       severity_ = value;
@@ -891,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+     * @return The severity.
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -903,6 +927,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+     * @param value The severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverity(com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity value) {
       if (value == null) {
@@ -919,6 +945,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSeverity() {
       
@@ -934,6 +961,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     * @return The messageText.
      */
     public java.lang.String getMessageText() {
       java.lang.Object ref = messageText_;
@@ -953,6 +981,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     * @return The bytes for messageText.
      */
     public com.google.protobuf.ByteString
         getMessageTextBytes() {
@@ -973,6 +1002,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     * @param value The messageText to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageText(
         java.lang.String value) {
@@ -990,6 +1021,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessageText() {
       
@@ -1003,6 +1035,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message_text = 3;</code>
+     * @param value The bytes for messageText to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageTextBytes(
         com.google.protobuf.ByteString value) {

@@ -4,6 +4,7 @@
 require 'google/protobuf'
 
 require 'google/api/annotations_pb'
+require 'google/api/client_pb'
 require 'google/devtools/containeranalysis/v1beta1/attestation/attestation_pb'
 require 'google/devtools/containeranalysis/v1beta1/build/build_pb'
 require 'google/devtools/containeranalysis/v1beta1/common/common_pb'

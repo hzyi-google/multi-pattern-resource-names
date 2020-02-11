@@ -14,37 +14,37 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.StoredInfoTypeVersion</code>
  */
-final class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
+class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
 {
     /**
      * StoredInfoType configuration.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
      */
-    private $config = null;
+    protected $config = null;
     /**
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
-    private $create_time = null;
+    protected $create_time = null;
     /**
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
      */
-    private $state = 0;
+    protected $state = 0;
     /**
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * <p>For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * <p>If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -57,7 +57,7 @@ final class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
      */
-    private $stats = null;
+    protected $stats = null;
 
     /**
      * Constructor.
@@ -78,10 +78,10 @@ final class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
      *           anomalies detected in the storedInfoType data that render it unusable. Only
      *           the five most recent errors will be displayed, with the most recent error
      *           appearing first.
-     *           <p>For example, some of the data for stored custom dictionaries is put in
+     *           For example, some of the data for stored custom dictionaries is put in
      *           the user's Google Cloud Storage bucket, and if this data is modified or
      *           deleted by the user or another system, the dictionary becomes invalid.
-     *           <p>If any errors occur, fix the problem indicated by the error message and
+     *           If any errors occur, fix the problem indicated by the error message and
      *           use the UpdateStoredInfoType API method to create another version of the
      *           storedInfoType to continue using it, reusing the same `config` if it was
      *           not the source of the error.
@@ -181,10 +181,10 @@ final class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * <p>For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * <p>If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.
@@ -202,10 +202,10 @@ final class StoredInfoTypeVersion extends \Google\Protobuf\Internal\Message
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
-     * <p>For example, some of the data for stored custom dictionaries is put in
+     * For example, some of the data for stored custom dictionaries is put in
      * the user's Google Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
-     * <p>If any errors occur, fix the problem indicated by the error message and
+     * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
      * not the source of the error.

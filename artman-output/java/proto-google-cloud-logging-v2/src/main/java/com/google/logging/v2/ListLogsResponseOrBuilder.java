@@ -15,6 +15,7 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @return A list containing the logNames.
    */
   java.util.List<java.lang.String>
       getLogNamesList();
@@ -26,6 +27,7 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @return The count of logNames.
    */
   int getLogNamesCount();
   /**
@@ -36,6 +38,8 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @param index The index of the element to return.
+   * @return The logNames at the given index.
    */
   java.lang.String getLogNames(int index);
   /**
@@ -46,6 +50,8 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string log_names = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the logNames at the given index.
    */
   com.google.protobuf.ByteString
       getLogNamesBytes(int index);
@@ -58,6 +64,7 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -68,6 +75,7 @@ public interface ListLogsResponseOrBuilder extends
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();

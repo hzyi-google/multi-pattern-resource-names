@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest</code>
  */
-final class CreateAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Message
+class CreateAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The "resource name" of the region or location, as described
@@ -27,13 +27,13 @@ final class CreateAutoscalingPolicyRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * The autoscaling policy to create.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.AutoscalingPolicy policy = 2;</code>
      */
-    private $policy = null;
+    protected $policy = null;
 
     /**
      * Constructor.

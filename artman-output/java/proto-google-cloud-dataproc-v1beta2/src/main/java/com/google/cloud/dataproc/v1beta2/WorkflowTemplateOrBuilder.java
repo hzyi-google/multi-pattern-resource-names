@@ -17,6 +17,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -29,6 +30,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -46,6 +48,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -61,6 +64,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -78,6 +82,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The version.
    */
   int getVersion();
 
@@ -87,6 +92,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -95,6 +101,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -112,6 +119,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -120,6 +128,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -231,6 +240,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+   * @return Whether the placement field is set.
    */
   boolean hasPlacement();
   /**
@@ -239,6 +249,7 @@ public interface WorkflowTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
+   * @return The placement.
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement();
   /**

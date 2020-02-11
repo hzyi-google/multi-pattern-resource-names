@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.CompleteQueryResponse</code>
  */
-final class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
+class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Results of the matching job/company candidates.
@@ -27,7 +27,7 @@ final class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
      */
-    private $metadata = null;
+    protected $metadata = null;
 
     /**
      * Constructor.

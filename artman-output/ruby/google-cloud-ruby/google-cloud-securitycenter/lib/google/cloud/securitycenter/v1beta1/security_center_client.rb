@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -453,10 +453,10 @@ module Google
           # Creates a source.
           #
           # @param parent [String]
-          #   Resource name of the new source's parent. Its format should be
+          #   Required. Resource name of the new source's parent. Its format should be
           #   "organizations/[organization_id]".
           # @param source [Google::Cloud::Securitycenter::V1beta1::Source | Hash]
-          #   The Source being created, only the display_name and description will be
+          #   Required. The Source being created, only the display_name and description will be
           #   used. All other fields will be ignored.
           #   A hash of the same form as `Google::Cloud::Securitycenter::V1beta1::Source`
           #   can also be provided.
@@ -495,14 +495,14 @@ module Google
           # to succeed.
           #
           # @param parent [String]
-          #   Resource name of the new finding's parent. Its format should be
+          #   Required. Resource name of the new finding's parent. Its format should be
           #   "organizations/[organization_id]/sources/[source_id]".
           # @param finding_id [String]
-          #   Unique identifier provided by the client within the parent scope.
+          #   Required. Unique identifier provided by the client within the parent scope.
           #   It must be alphanumeric and less than or equal to 32 characters and
           #   greater than 0 characters in length.
           # @param finding [Google::Cloud::Securitycenter::V1beta1::Finding | Hash]
-          #   The Finding being created. The name and security_marks will be ignored as
+          #   Required. The Finding being created. The name and security_marks will be ignored as
           #   they are both output only fields on this resource.
           #   A hash of the same form as `Google::Cloud::Securitycenter::V1beta1::Finding`
           #   can also be provided.
@@ -583,7 +583,7 @@ module Google
           # Gets the settings for an organization.
           #
           # @param name [String]
-          #   Name of the organization to get organization settings for. Its format is
+          #   Required. Name of the organization to get organization settings for. Its format is
           #   "organizations/[organization_id]/organizationSettings".
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -614,7 +614,7 @@ module Google
           # Gets a source.
           #
           # @param name [String]
-          #   Relative resource name of the source. Its format is
+          #   Required. Relative resource name of the source. Its format is
           #   "organizations/[organization_id]/source/[source_id]".
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -646,10 +646,10 @@ module Google
           # properties.
           #
           # @param parent [String]
-          #   Name of the organization to groupBy. Its format is
+          #   Required. Name of the organization to groupBy. Its format is
           #   "organizations/[organization_id]".
           # @param group_by [String]
-          #   Expression that defines what assets fields to use for grouping. The string
+          #   Required. Expression that defines what assets fields to use for grouping. The string
           #   value should follow SQL syntax: comma separated list of fields. For
           #   example:
           #   "security_center_properties.resource_project,security_center_properties.project".
@@ -787,15 +787,15 @@ module Google
           # specified properties.
           #
           # To group across all sources provide a `-` as the source id.
-          # Example: /v1beta1/organizations/123/sources/-/findings
+          # Example: /v1beta1/organizations/{organization_id}/sources/-/findings
           #
           # @param parent [String]
-          #   Name of the source to groupBy. Its format is
+          #   Required. Name of the source to groupBy. Its format is
           #   "organizations/[organization_id]/sources/[source_id]". To groupBy across
           #   all sources provide a source_id of `-`. For example:
-          #   organizations/123/sources/-
+          #   organizations/{organization_id}/sources/-
           # @param group_by [String]
-          #   Expression that defines what assets fields to use for grouping (including
+          #   Required. Expression that defines what assets fields to use for grouping (including
           #   `state`). The string value should follow SQL syntax: comma separated list
           #   of fields. For example:
           #   "parent,resource_name".
@@ -901,7 +901,7 @@ module Google
           # Lists an organization's assets.
           #
           # @param parent [String]
-          #   Name of the organization assets should belong to. Its format is
+          #   Required. Name of the organization assets should belong to. Its format is
           #   "organizations/[organization_id]".
           # @param filter [String]
           #   Expression that defines the filter to apply across assets.
@@ -974,9 +974,7 @@ module Google
           #   A hash of the same form as `Google::Protobuf::Duration`
           #   can also be provided.
           # @param field_mask [Google::Protobuf::FieldMask | Hash]
-          #   Optional.
-          #
-          #   A field mask to specify the ListAssetsResult fields to be listed in the
+          #   Optional. A field mask to specify the ListAssetsResult fields to be listed in the
           #   response.
           #   An empty field mask will list all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
@@ -1044,13 +1042,13 @@ module Google
           # Lists an organization or source's findings.
           #
           # To list across all sources provide a `-` as the source id.
-          # Example: /v1beta1/organizations/123/sources/-/findings
+          # Example: /v1beta1/organizations/{organization_id}/sources/-/findings
           #
           # @param parent [String]
-          #   Name of the source the findings belong to. Its format is
+          #   Required. Name of the source the findings belong to. Its format is
           #   "organizations/[organization_id]/sources/[source_id]". To list across all
           #   sources provide a source_id of `-`. For example:
-          #   organizations/123/sources/-
+          #   organizations/{organization_id}/sources/-
           # @param filter [String]
           #   Expression that defines the filter to apply across findings.
           #   The expression is a list of one or more restrictions combined via logical
@@ -1094,9 +1092,7 @@ module Google
           #   A hash of the same form as `Google::Protobuf::Timestamp`
           #   can also be provided.
           # @param field_mask [Google::Protobuf::FieldMask | Hash]
-          #   Optional.
-          #
-          #   A field mask to specify the Finding fields to be listed in the response.
+          #   Optional. A field mask to specify the Finding fields to be listed in the response.
           #   An empty field mask will list all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
@@ -1161,7 +1157,7 @@ module Google
           # Lists all sources belonging to an organization.
           #
           # @param parent [String]
-          #   Resource name of the parent of sources to list. Its format should be
+          #   Required. Resource name of the parent of sources to list. Its format should be
           #   "organizations/[organization_id]".
           # @param page_size [Integer]
           #   The maximum number of resources contained in the underlying API
@@ -1221,7 +1217,7 @@ module Google
           # error.
           #
           # @param parent [String]
-          #   Name of the organization to run asset discovery for. Its format is
+          #   Required. Name of the organization to run asset discovery for. Its format is
           #   "organizations/[organization_id]".
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -1282,14 +1278,14 @@ module Google
           # Updates the state of a finding.
           #
           # @param name [String]
-          #   The relative resource name of the finding. See:
+          #   Required. The relative resource name of the finding. See:
           #   https://cloud.google.com/apis/design/resource_names#relative_resource_name
           #   Example:
-          #   "organizations/123/sources/456/finding/789".
+          #   "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
           # @param state [Google::Cloud::Securitycenter::V1beta1::Finding::State]
-          #   The desired State of the finding.
+          #   Required. The desired State of the finding.
           # @param start_time [Google::Protobuf::Timestamp | Hash]
-          #   The time at which the updated state takes effect.
+          #   Required. The time at which the updated state takes effect.
           #   A hash of the same form as `Google::Protobuf::Timestamp`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -1416,7 +1412,7 @@ module Google
           # finding creation to succeed.
           #
           # @param finding [Google::Cloud::Securitycenter::V1beta1::Finding | Hash]
-          #   The finding resource to update or create if it does not already exist.
+          #   Required. The finding resource to update or create if it does not already exist.
           #   parent, security_marks, and update_time will be ignored.
           #
           #   In the case of creation, the finding id portion of the name must
@@ -1462,7 +1458,7 @@ module Google
           # Updates an organization's settings.
           #
           # @param organization_settings [Google::Cloud::Securitycenter::V1beta1::OrganizationSettings | Hash]
-          #   The organization settings resource to update.
+          #   Required. The organization settings resource to update.
           #   A hash of the same form as `Google::Cloud::Securitycenter::V1beta1::OrganizationSettings`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
@@ -1502,7 +1498,7 @@ module Google
           # Updates a source.
           #
           # @param source [Google::Cloud::Securitycenter::V1beta1::Source | Hash]
-          #   The source resource to update.
+          #   Required. The source resource to update.
           #   A hash of the same form as `Google::Cloud::Securitycenter::V1beta1::Source`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
@@ -1542,7 +1538,7 @@ module Google
           # Updates security marks.
           #
           # @param security_marks [Google::Cloud::Securitycenter::V1beta1::SecurityMarks | Hash]
-          #   The security marks resource to update.
+          #   Required. The security marks resource to update.
           #   A hash of the same form as `Google::Cloud::Securitycenter::V1beta1::SecurityMarks`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]

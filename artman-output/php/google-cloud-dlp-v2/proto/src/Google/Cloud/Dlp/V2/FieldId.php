@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.FieldId</code>
  */
-final class FieldId extends \Google\Protobuf\Internal\Message
+class FieldId extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name describing the field.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Interview();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   * @return Whether the rating field is set.
    */
   public boolean hasRating() {
     return rating_ != null;
@@ -116,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+   * @return The rating.
    */
   public com.google.cloud.talent.v4beta1.Rating getRating() {
     return rating_ == null ? com.google.cloud.talent.v4beta1.Rating.getDefaultInstance() : rating_;
@@ -135,22 +143,24 @@ private static final long serialVersionUID = 0L;
   private int outcome_;
   /**
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for outcome.
    */
   public int getOutcomeValue() {
     return outcome_;
   }
   /**
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The outcome.
    */
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
@@ -502,6 +512,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+     * @return Whether the rating field is set.
      */
     public boolean hasRating() {
       return ratingBuilder_ != null || rating_ != null;
@@ -512,6 +523,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
+     * @return The rating.
      */
     public com.google.cloud.talent.v4beta1.Rating getRating() {
       if (ratingBuilder_ == null) {
@@ -649,22 +661,25 @@ private static final long serialVersionUID = 0L;
     private int outcome_ = 0;
     /**
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for outcome.
      */
     public int getOutcomeValue() {
       return outcome_;
     }
     /**
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
       outcome_ = value;
@@ -673,11 +688,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The outcome.
      */
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
@@ -686,11 +702,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The outcome to set.
+     * @return This builder for chaining.
      */
     public Builder setOutcome(com.google.cloud.talent.v4beta1.Outcome value) {
       if (value == null) {
@@ -703,11 +721,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearOutcome() {
       

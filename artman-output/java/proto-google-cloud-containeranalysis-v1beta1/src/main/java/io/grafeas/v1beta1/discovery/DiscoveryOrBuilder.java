@@ -9,18 +9,22 @@ public interface DiscoveryOrBuilder extends
 
   /**
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+   * @return The enum numeric value on the wire for analysisKind.
    */
   int getAnalysisKindValue();
   /**
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+   * @return The analysisKind.
    */
   io.grafeas.v1beta1.common.NoteKind getAnalysisKind();
 }

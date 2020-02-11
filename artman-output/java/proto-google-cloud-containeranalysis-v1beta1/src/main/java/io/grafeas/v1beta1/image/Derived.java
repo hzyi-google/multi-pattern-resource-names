@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Derived();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -69,9 +76,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               layerInfo_ = new java.util.ArrayList<io.grafeas.v1beta1.image.Layer>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             layerInfo_.add(
                 input.readMessage(io.grafeas.v1beta1.image.Layer.parser(), extensionRegistry));
@@ -98,7 +105,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         layerInfo_ = java.util.Collections.unmodifiableList(layerInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -118,32 +125,33 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1beta1.image.Derived.class, io.grafeas.v1beta1.image.Derived.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.image.Fingerprint fingerprint_;
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   * @return Whether the fingerprint field is set.
    */
   public boolean hasFingerprint() {
     return fingerprint_ != null;
   }
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+   * @return The fingerprint.
    */
   public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
     return fingerprint_ == null ? io.grafeas.v1beta1.image.Fingerprint.getDefaultInstance() : fingerprint_;
   }
   /**
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -161,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 distance = 2;</code>
+   * @return The distance.
    */
   public int getDistance() {
     return distance_;
@@ -240,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   * @return The baseResourceUrl.
    */
   public java.lang.String getBaseResourceUrl() {
     java.lang.Object ref = baseResourceUrl_;
@@ -260,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string base_resource_url = 4;</code>
+   * @return The bytes for baseResourceUrl.
    */
   public com.google.protobuf.ByteString
       getBaseResourceUrlBytes() {
@@ -524,7 +535,7 @@ private static final long serialVersionUID = 0L;
 
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         layerInfoBuilder_.clear();
       }
@@ -557,7 +568,6 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.image.Derived buildPartial() {
       io.grafeas.v1beta1.image.Derived result = new io.grafeas.v1beta1.image.Derived(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fingerprintBuilder_ == null) {
         result.fingerprint_ = fingerprint_;
       } else {
@@ -565,16 +575,15 @@ private static final long serialVersionUID = 0L;
       }
       result.distance_ = distance_;
       if (layerInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           layerInfo_ = java.util.Collections.unmodifiableList(layerInfo_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.layerInfo_ = layerInfo_;
       } else {
         result.layerInfo_ = layerInfoBuilder_.build();
       }
       result.baseResourceUrl_ = baseResourceUrl_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -633,7 +642,7 @@ private static final long serialVersionUID = 0L;
         if (!other.layerInfo_.isEmpty()) {
           if (layerInfo_.isEmpty()) {
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLayerInfoIsMutable();
             layerInfo_.addAll(other.layerInfo_);
@@ -646,7 +655,7 @@ private static final long serialVersionUID = 0L;
             layerInfoBuilder_.dispose();
             layerInfoBuilder_ = null;
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             layerInfoBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLayerInfoFieldBuilder() : null;
@@ -694,20 +703,22 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1beta1.image.Fingerprint, io.grafeas.v1beta1.image.Fingerprint.Builder, io.grafeas.v1beta1.image.FingerprintOrBuilder> fingerprintBuilder_;
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+     * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
       return fingerprintBuilder_ != null || fingerprint_ != null;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
+     * @return The fingerprint.
      */
     public io.grafeas.v1beta1.image.Fingerprint getFingerprint() {
       if (fingerprintBuilder_ == null) {
@@ -718,7 +729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -738,7 +749,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -756,7 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -778,7 +789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -796,7 +807,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -808,7 +819,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -823,7 +834,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fingerprint of the derived image.
+     * Required. The fingerprint of the derived image.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -850,6 +861,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     * @return The distance.
      */
     public int getDistance() {
       return distance_;
@@ -861,6 +873,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     * @param value The distance to set.
+     * @return This builder for chaining.
      */
     public Builder setDistance(int value) {
       
@@ -875,6 +889,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 distance = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDistance() {
       
@@ -886,9 +901,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grafeas.v1beta1.image.Layer> layerInfo_ =
       java.util.Collections.emptyList();
     private void ensureLayerInfoIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         layerInfo_ = new java.util.ArrayList<io.grafeas.v1beta1.image.Layer>(layerInfo_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1104,7 +1119,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLayerInfo() {
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         layerInfoBuilder_.clear();
@@ -1223,7 +1238,7 @@ private static final long serialVersionUID = 0L;
         layerInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grafeas.v1beta1.image.Layer, io.grafeas.v1beta1.image.Layer.Builder, io.grafeas.v1beta1.image.LayerOrBuilder>(
                 layerInfo_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         layerInfo_ = null;
@@ -1239,6 +1254,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     * @return The baseResourceUrl.
      */
     public java.lang.String getBaseResourceUrl() {
       java.lang.Object ref = baseResourceUrl_;
@@ -1259,6 +1275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     * @return The bytes for baseResourceUrl.
      */
     public com.google.protobuf.ByteString
         getBaseResourceUrlBytes() {
@@ -1280,6 +1297,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     * @param value The baseResourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseResourceUrl(
         java.lang.String value) {
@@ -1298,6 +1317,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBaseResourceUrl() {
       
@@ -1312,6 +1332,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string base_resource_url = 4;</code>
+     * @param value The bytes for baseResourceUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseResourceUrlBytes(
         com.google.protobuf.ByteString value) {

@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PgpSignedAttestation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -161,6 +167,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -168,6 +176,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ContentType forNumber(int value) {
       switch (value) {
         case 0: return CONTENT_TYPE_UNSPECIFIED;
@@ -227,7 +239,8 @@ private static final long serialVersionUID = 0L;
   private int keyIdCase_ = 0;
   private java.lang.Object keyId_;
   public enum KeyIdCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PGP_KEY_ID(2),
     KEYID_NOT_SET(0);
     private final int value;
@@ -235,6 +248,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -264,9 +279,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object signature_;
   /**
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -276,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string signature = 1;</code>
+   * @return The signature.
    */
   public java.lang.String getSignature() {
     java.lang.Object ref = signature_;
@@ -291,9 +307,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -303,6 +319,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string signature = 1;</code>
+   * @return The bytes for signature.
    */
   public com.google.protobuf.ByteString
       getSignatureBytes() {
@@ -329,6 +346,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   * @return The enum numeric value on the wire for contentType.
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -342,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+   * @return The contentType.
    */
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -371,6 +390,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   * @return The pgpKeyId.
    */
   public java.lang.String getPgpKeyId() {
     java.lang.Object ref = "";
@@ -410,6 +430,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string pgp_key_id = 2;</code>
+   * @return The bytes for pgpKeyId.
    */
   public com.google.protobuf.ByteString
       getPgpKeyIdBytes() {
@@ -812,9 +833,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object signature_ = "";
     /**
      * <pre>
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -824,6 +845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string signature = 1;</code>
+     * @return The signature.
      */
     public java.lang.String getSignature() {
       java.lang.Object ref = signature_;
@@ -839,9 +861,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -851,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string signature = 1;</code>
+     * @return The bytes for signature.
      */
     public com.google.protobuf.ByteString
         getSignatureBytes() {
@@ -867,9 +890,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -879,6 +902,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string signature = 1;</code>
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(
         java.lang.String value) {
@@ -892,9 +917,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -904,6 +929,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string signature = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
       
@@ -913,9 +939,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-     * equivalent.  Since this message only supports attached signatures, the
-     * payload that was signed must be attached. While the signature format
+     * Required. The raw content of the signature, as output by GNU Privacy Guard
+     * (GPG) or equivalent. Since this message only supports attached signatures,
+     * the payload that was signed must be attached. While the signature format
      * supported is dependent on the verification implementation, currently only
      * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
      * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -925,6 +951,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string signature = 1;</code>
+     * @param value The bytes for signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureBytes(
         com.google.protobuf.ByteString value) {
@@ -948,6 +976,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     * @return The enum numeric value on the wire for contentType.
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -961,6 +990,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     * @param value The enum numeric value on the wire for contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -976,6 +1007,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     * @return The contentType.
      */
     public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -991,6 +1023,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     * @param value The contentType to set.
+     * @return This builder for chaining.
      */
     public Builder setContentType(io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType value) {
       if (value == null) {
@@ -1010,6 +1044,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType content_type = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContentType() {
       
@@ -1039,6 +1074,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     * @return The pgpKeyId.
      */
     public java.lang.String getPgpKeyId() {
       java.lang.Object ref = "";
@@ -1078,6 +1114,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     * @return The bytes for pgpKeyId.
      */
     public com.google.protobuf.ByteString
         getPgpKeyIdBytes() {
@@ -1118,6 +1155,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     * @param value The pgpKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPgpKeyId(
         java.lang.String value) {
@@ -1150,6 +1189,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPgpKeyId() {
       if (keyIdCase_ == 2) {
@@ -1180,6 +1220,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string pgp_key_id = 2;</code>
+     * @param value The bytes for pgpKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPgpKeyIdBytes(
         com.google.protobuf.ByteString value) {

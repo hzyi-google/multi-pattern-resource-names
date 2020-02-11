@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,6 +51,7 @@ public class WorkflowTemplateServiceClientTest {
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper serviceHelper;
   private WorkflowTemplateServiceClient client;
   private LocalChannelProvider channelProvider;
@@ -59,11 +61,15 @@ public class WorkflowTemplateServiceClientTest {
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService,
+                mockAutoscalingPolicyService));
     serviceHelper.start();
   }
 

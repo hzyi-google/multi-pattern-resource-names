@@ -13,29 +13,29 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.InspectContentRequest</code>
  */
-final class InspectContentRequest extends \Google\Protobuf\Internal\Message
+class InspectContentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The parent resource name, for example projects/my-project-id.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Configuration for the inspector. What specified here will override
      * the template referenced by the inspect_template_name argument.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
-    private $inspect_config = null;
+    protected $inspect_config = null;
     /**
      * The item to inspect.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
      */
-    private $item = null;
+    protected $item = null;
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -43,14 +43,14 @@ final class InspectContentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string inspect_template_name = 4;</code>
      */
-    private $inspect_template_name = '';
+    protected $inspect_template_name = '';
     /**
      * The geographic location to process content inspection. Reserved for future
      * extensions.
      *
      * Generated from protobuf field <code>string location_id = 5;</code>
      */
-    private $location_id = '';
+    protected $location_id = '';
 
     /**
      * Constructor.
@@ -66,7 +66,7 @@ final class InspectContentRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dlp\V2\ContentItem $item
      *           The item to inspect.
      *     @type string $inspect_template_name
-     *           Optional template to use. Any configuration directly specified in
+     *           Template to use. Any configuration directly specified in
      *           inspect_config will override those set in the template. Singular fields
      *           that are set in this request will replace their corresponding fields in the
      *           template. Repeated fields are appended. Singular sub-messages and groups
@@ -162,7 +162,7 @@ final class InspectContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -177,7 +177,7 @@ final class InspectContentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups

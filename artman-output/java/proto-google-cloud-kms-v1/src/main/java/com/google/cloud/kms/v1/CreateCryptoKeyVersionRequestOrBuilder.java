@@ -13,7 +13,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -22,33 +23,36 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKeyVersion field is set.
    */
   boolean hasCryptoKeyVersion();
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersion.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
   /**
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder();
 }

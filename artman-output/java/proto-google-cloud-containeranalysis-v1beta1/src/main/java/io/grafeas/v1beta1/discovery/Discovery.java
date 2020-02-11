@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Discovery();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -91,20 +97,24 @@ private static final long serialVersionUID = 0L;
   private int analysisKind_;
   /**
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+   * @return The enum numeric value on the wire for analysisKind.
    */
   public int getAnalysisKindValue() {
     return analysisKind_;
   }
   /**
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+   * @return The analysisKind.
    */
   public io.grafeas.v1beta1.common.NoteKind getAnalysisKind() {
     @SuppressWarnings("deprecation")
@@ -422,20 +432,25 @@ private static final long serialVersionUID = 0L;
     private int analysisKind_ = 0;
     /**
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+     * @return The enum numeric value on the wire for analysisKind.
      */
     public int getAnalysisKindValue() {
       return analysisKind_;
     }
     /**
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+     * @param value The enum numeric value on the wire for analysisKind to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisKindValue(int value) {
       analysisKind_ = value;
@@ -444,10 +459,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+     * @return The analysisKind.
      */
     public io.grafeas.v1beta1.common.NoteKind getAnalysisKind() {
       @SuppressWarnings("deprecation")
@@ -456,10 +473,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+     * @param value The analysisKind to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisKind(io.grafeas.v1beta1.common.NoteKind value) {
       if (value == null) {
@@ -472,10 +492,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAnalysisKind() {
       

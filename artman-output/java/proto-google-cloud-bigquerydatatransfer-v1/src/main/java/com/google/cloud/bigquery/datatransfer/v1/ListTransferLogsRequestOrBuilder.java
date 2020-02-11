@@ -15,6 +15,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -25,6 +26,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -39,6 +41,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -51,6 +54,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
@@ -61,6 +65,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 page_size = 5;</code>
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -71,6 +76,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * @return A list containing the messageTypes.
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity> getMessageTypesList();
   /**
@@ -80,6 +86,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * @return The count of messageTypes.
    */
   int getMessageTypesCount();
   /**
@@ -89,6 +96,8 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * @param index The index of the element to return.
+   * @return The messageTypes at the given index.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(int index);
   /**
@@ -98,6 +107,7 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * @return A list containing the enum numeric values on the wire for messageTypes.
    */
   java.util.List<java.lang.Integer>
   getMessageTypesValueList();
@@ -108,6 +118,8 @@ public interface ListTransferLogsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of messageTypes at the given index.
    */
   int getMessageTypesValue(int index);
 }

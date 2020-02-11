@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterSelector();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -54,10 +61,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               clusterLabels_ = com.google.protobuf.MapField.newMapField(
                   ClusterLabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             clusterLabels__ = input.readMessage(
@@ -110,7 +117,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.ClusterSelector.class, com.google.cloud.dataproc.v1beta2.ClusterSelector.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ZONE_FIELD_NUMBER = 1;
   private volatile java.lang.Object zone_;
   /**
@@ -122,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string zone = 1;</code>
+   * @return The zone.
    */
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -144,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string zone = 1;</code>
+   * @return The bytes for zone.
    */
   public com.google.protobuf.ByteString
       getZoneBytes() {
@@ -525,11 +533,9 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.ClusterSelector buildPartial() {
       com.google.cloud.dataproc.v1beta2.ClusterSelector result = new com.google.cloud.dataproc.v1beta2.ClusterSelector(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.zone_ = zone_;
       result.clusterLabels_ = internalGetClusterLabels();
       result.clusterLabels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -624,6 +630,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone = 1;</code>
+     * @return The zone.
      */
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
@@ -646,6 +653,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone = 1;</code>
+     * @return The bytes for zone.
      */
     public com.google.protobuf.ByteString
         getZoneBytes() {
@@ -669,6 +677,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone = 1;</code>
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZone(
         java.lang.String value) {
@@ -689,6 +699,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearZone() {
       
@@ -705,6 +716,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string zone = 1;</code>
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneBytes(
         com.google.protobuf.ByteString value) {

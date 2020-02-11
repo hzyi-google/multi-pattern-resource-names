@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -633,12 +633,16 @@ class SecurityCenterClient {
    *   The following fields are supported when compare_duration is not set:
    *
    *   * security_center_properties.resource_project
+   *   * security_center_properties.resource_project_display_name
    *   * security_center_properties.resource_type
    *   * security_center_properties.resource_parent
+   *   * security_center_properties.resource_parent_display_name
    *
    *   The following fields are supported when compare_duration is set:
    *
    *   * security_center_properties.resource_type
+   *   * security_center_properties.resource_project_display_name
+   *   * security_center_properties.resource_parent_display_name
    * @param {string} [request.filter]
    *   Expression that defines the filter to apply across assets.
    *   The expression is a list of zero or more restrictions combined via logical
@@ -687,9 +691,12 @@ class SecurityCenterClient {
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *   * security_marks.marks: `=`, `:`
    *   * security_center_properties.resource_name: `=`, `:`
+   *   * security_center_properties.resource_display_name: `=`, `:`
    *   * security_center_properties.resource_type: `=`, `:`
    *   * security_center_properties.resource_parent: `=`, `:`
+   *   * security_center_properties.resource_parent_display_name: `=`, `:`
    *   * security_center_properties.resource_project: `=`, `:`
+   *   * security_center_properties.resource_project_display_name: `=`, `:`
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
@@ -861,12 +868,16 @@ class SecurityCenterClient {
    *   The following fields are supported when compare_duration is not set:
    *
    *   * security_center_properties.resource_project
+   *   * security_center_properties.resource_project_display_name
    *   * security_center_properties.resource_type
    *   * security_center_properties.resource_parent
+   *   * security_center_properties.resource_parent_display_name
    *
    *   The following fields are supported when compare_duration is set:
    *
    *   * security_center_properties.resource_type
+   *   * security_center_properties.resource_project_display_name
+   *   * security_center_properties.resource_parent_display_name
    * @param {string} [request.filter]
    *   Expression that defines the filter to apply across assets.
    *   The expression is a list of zero or more restrictions combined via logical
@@ -915,9 +926,12 @@ class SecurityCenterClient {
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *   * security_marks.marks: `=`, `:`
    *   * security_center_properties.resource_name: `=`, `:`
+   *   * security_center_properties.resource_display_name: `=`, `:`
    *   * security_center_properties.resource_type: `=`, `:`
    *   * security_center_properties.resource_parent: `=`, `:`
+   *   * security_center_properties.resource_parent_display_name: `=`, `:`
    *   * security_center_properties.resource_project: `=`, `:`
+   *   * security_center_properties.resource_project_display_name: `=`, `:`
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
@@ -1428,9 +1442,12 @@ class SecurityCenterClient {
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *   * security_marks.marks: `=`, `:`
    *   * security_center_properties.resource_name: `=`, `:`
+   *   * security_center_properties.resource_display_name: `=`, `:`
    *   * security_center_properties.resource_type: `=`, `:`
    *   * security_center_properties.resource_parent: `=`, `:`
+   *   * security_center_properties.resource_parent_display_name: `=`, `:`
    *   * security_center_properties.resource_project: `=`, `:`
+   *   * security_center_properties.resource_project_display_name: `=`, `:`
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
@@ -1450,8 +1467,11 @@ class SecurityCenterClient {
    *   resource_properties
    *   security_marks.marks
    *   security_center_properties.resource_name
+   *   security_center_properties.resource_display_name
    *   security_center_properties.resource_parent
+   *   security_center_properties.resource_parent_display_name
    *   security_center_properties.resource_project
+   *   security_center_properties.resource_project_display_name
    *   security_center_properties.resource_type
    * @param {Object} [request.readTime]
    *   Time used as a reference point when filtering assets. The filter is limited
@@ -1653,9 +1673,12 @@ class SecurityCenterClient {
    *   * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
    *   * security_marks.marks: `=`, `:`
    *   * security_center_properties.resource_name: `=`, `:`
+   *   * security_center_properties.resource_display_name: `=`, `:`
    *   * security_center_properties.resource_type: `=`, `:`
    *   * security_center_properties.resource_parent: `=`, `:`
+   *   * security_center_properties.resource_parent_display_name: `=`, `:`
    *   * security_center_properties.resource_project: `=`, `:`
+   *   * security_center_properties.resource_project_display_name: `=`, `:`
    *   * security_center_properties.resource_owners: `=`, `:`
    *
    *   For example, `resource_properties.size = 100` is a valid filter string.
@@ -1675,8 +1698,11 @@ class SecurityCenterClient {
    *   resource_properties
    *   security_marks.marks
    *   security_center_properties.resource_name
+   *   security_center_properties.resource_display_name
    *   security_center_properties.resource_parent
+   *   security_center_properties.resource_parent_display_name
    *   security_center_properties.resource_project
+   *   security_center_properties.resource_project_display_name
    *   security_center_properties.resource_type
    * @param {Object} [request.readTime]
    *   Time used as a reference point when filtering assets. The filter is limited

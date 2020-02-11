@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -483,7 +483,7 @@ class MetricsServiceV2GapicClient
      * }
      * ```
      *
-     * @param string $metricName The resource name of the desired metric:
+     * @param string $metricName Required. The resource name of the desired metric:
      *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * @param array $optionalArgs {
@@ -536,12 +536,12 @@ class MetricsServiceV2GapicClient
      * }
      * ```
      *
-     * @param string $parent The resource name of the project in which to create the metric:
+     * @param string $parent Required. The resource name of the project in which to create the metric:
      *
      *     "projects/[PROJECT_ID]"
      *
      * The new metric must be provided in the request.
-     * @param LogMetric $metric       The new logs-based metric, which must not have an identifier that
+     * @param LogMetric $metric       Required. The new logs-based metric, which must not have an identifier that
      *                                already exists.
      * @param array     $optionalArgs {
      *                                Optional.
@@ -594,14 +594,14 @@ class MetricsServiceV2GapicClient
      * }
      * ```
      *
-     * @param string $metricName The resource name of the metric to update:
+     * @param string $metricName Required. The resource name of the metric to update:
      *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      *
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
-     * @param LogMetric $metric       The updated metric.
+     * @param LogMetric $metric       Required. The updated metric.
      * @param array     $optionalArgs {
      *                                Optional.
      *
@@ -652,7 +652,7 @@ class MetricsServiceV2GapicClient
      * }
      * ```
      *
-     * @param string $metricName The resource name of the metric to delete:
+     * @param string $metricName Required. The resource name of the metric to delete:
      *
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * @param array $optionalArgs {

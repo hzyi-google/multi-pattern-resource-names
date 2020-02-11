@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -1327,7 +1327,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="callSettings">
@@ -1349,7 +1349,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="cancellationToken">
@@ -1368,7 +1368,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="callSettings">
@@ -1390,7 +1390,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="callSettings">
@@ -1412,7 +1412,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="cancellationToken">
@@ -1431,7 +1431,7 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Gets the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="callSettings">
@@ -1509,11 +1509,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Lists scan configurations for the specified project.
         /// </summary>
         /// <param name="parent">
-        /// The name of the project to list scan configurations for in the form of
+        /// Required. The name of the project to list scan configurations for in the form of
         /// `projects/[PROJECT_ID]`.
         /// </param>
         /// <param name="filter">
-        /// The filter expression.
+        /// Required. The filter expression.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -1548,11 +1548,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Lists scan configurations for the specified project.
         /// </summary>
         /// <param name="parent">
-        /// The name of the project to list scan configurations for in the form of
+        /// Required. The name of the project to list scan configurations for in the form of
         /// `projects/[PROJECT_ID]`.
         /// </param>
         /// <param name="filter">
-        /// The filter expression.
+        /// Required. The filter expression.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -1587,11 +1587,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Lists scan configurations for the specified project.
         /// </summary>
         /// <param name="parent">
-        /// The name of the project to list scan configurations for in the form of
+        /// Required. The name of the project to list scan configurations for in the form of
         /// `projects/[PROJECT_ID]`.
         /// </param>
         /// <param name="filter">
-        /// The filter expression.
+        /// Required. The filter expression.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -1626,11 +1626,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Lists scan configurations for the specified project.
         /// </summary>
         /// <param name="parent">
-        /// The name of the project to list scan configurations for in the form of
+        /// Required. The name of the project to list scan configurations for in the form of
         /// `projects/[PROJECT_ID]`.
         /// </param>
         /// <param name="filter">
-        /// The filter expression.
+        /// Required. The filter expression.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -1703,11 +1703,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1730,11 +1730,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1754,11 +1754,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1781,11 +1781,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1808,11 +1808,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1832,11 +1832,11 @@ namespace Google.Devtools.Containeranalysis.V1beta1
         /// Updates the specified scan configuration.
         /// </summary>
         /// <param name="name">
-        /// The name of the scan configuration in the form of
+        /// Required. The name of the scan configuration in the form of
         /// `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
         /// </param>
         /// <param name="scanConfig">
-        /// The updated scan configuration.
+        /// Required. The updated scan configuration.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.

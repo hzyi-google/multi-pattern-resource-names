@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.RunAssetDiscoveryRequest</code>
  */
-final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
+class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Name of the organization to run asset discovery for. Its format is
@@ -21,7 +21,7 @@ final class RunAssetDiscoveryRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
 
     /**
      * Constructor.

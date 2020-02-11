@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,8 +85,12 @@ import org.threeten.bp.Duration;
  * <code>
  * WorkflowTemplateServiceStubSettings.Builder workflowTemplateServiceSettingsBuilder =
  *     WorkflowTemplateServiceStubSettings.newBuilder();
- * workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * workflowTemplateServiceSettingsBuilder
+ *     .createWorkflowTemplateSettings()
+ *     .setRetrySettings(
+ *         workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WorkflowTemplateServiceStubSettings workflowTemplateServiceSettings = workflowTemplateServiceSettingsBuilder.build();
  * </code>
  * </pre>

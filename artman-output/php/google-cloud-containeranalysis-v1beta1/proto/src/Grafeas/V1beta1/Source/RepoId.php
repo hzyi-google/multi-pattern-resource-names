@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.source.RepoId</code>
  */
-final class RepoId extends \Google\Protobuf\Internal\Message
+class RepoId extends \Google\Protobuf\Internal\Message
 {
     protected $id;
 

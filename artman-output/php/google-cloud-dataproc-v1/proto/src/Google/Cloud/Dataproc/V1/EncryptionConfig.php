@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.EncryptionConfig</code>
  */
-final class EncryptionConfig extends \Google\Protobuf\Internal\Message
+class EncryptionConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The Cloud KMS key name to use for PD disk encryption for all
@@ -21,7 +21,7 @@ final class EncryptionConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $gce_pd_kms_key_name = '';
+    protected $gce_pd_kms_key_name = '';
 
     /**
      * Constructor.

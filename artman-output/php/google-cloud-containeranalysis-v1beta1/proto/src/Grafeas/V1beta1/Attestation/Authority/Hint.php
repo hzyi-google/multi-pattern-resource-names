@@ -10,23 +10,24 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * This submessage provides human-readable hints about the purpose of the
- * Authority. Because the name of a Note acts as its resource reference, it is
+ * authority. Because the name of a note acts as its resource reference, it is
  * important to disambiguate the canonical name of the Note (which might be a
  * UUID for security purposes) from "readable" names more suitable for debug
- * output. Note that these hints should NOT be used to look up authorities in
- * security sensitive contexts, such as when looking up Attestations to
+ * output. Note that these hints should not be used to look up authorities in
+ * security sensitive contexts, such as when looking up attestations to
  * verify.
  *
  * Generated from protobuf message <code>grafeas.v1beta1.attestation.Authority.Hint</code>
  */
-final class Hint extends \Google\Protobuf\Internal\Message
+class Hint extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      *
      * Generated from protobuf field <code>string human_readable_name = 1;</code>
      */
-    private $human_readable_name = '';
+    protected $human_readable_name = '';
 
     /**
      * Constructor.
@@ -35,7 +36,8 @@ final class Hint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $human_readable_name
-     *           The human readable name of this Attestation Authority, for example "qa".
+     *           Required. The human readable name of this attestation authority, for
+     *           example "qa".
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +46,8 @@ final class Hint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      *
      * Generated from protobuf field <code>string human_readable_name = 1;</code>
      * @return string
@@ -55,7 +58,8 @@ final class Hint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The human readable name of this Attestation Authority, for example "qa".
+     * Required. The human readable name of this attestation authority, for
+     * example "qa".
      *
      * Generated from protobuf field <code>string human_readable_name = 1;</code>
      * @param string $var

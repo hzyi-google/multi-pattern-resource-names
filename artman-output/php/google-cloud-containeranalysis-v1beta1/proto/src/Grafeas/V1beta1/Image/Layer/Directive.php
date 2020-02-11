@@ -20,103 +20,103 @@ class Directive
      */
     const DIRECTIVE_UNSPECIFIED = 0;
     /**
-     * https://docs.docker.com/reference/builder/#maintainer
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>MAINTAINER = 1;</code>
      */
     const MAINTAINER = 1;
     /**
-     * https://docs.docker.com/reference/builder/#run
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>RUN = 2;</code>
      */
     const RUN = 2;
     /**
-     * https://docs.docker.com/reference/builder/#cmd
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>CMD = 3;</code>
      */
     const CMD = 3;
     /**
-     * https://docs.docker.com/reference/builder/#label
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>LABEL = 4;</code>
      */
     const LABEL = 4;
     /**
-     * https://docs.docker.com/reference/builder/#expose
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>EXPOSE = 5;</code>
      */
     const EXPOSE = 5;
     /**
-     * https://docs.docker.com/reference/builder/#env
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>ENV = 6;</code>
      */
     const ENV = 6;
     /**
-     * https://docs.docker.com/reference/builder/#add
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>ADD = 7;</code>
      */
     const ADD = 7;
     /**
-     * https://docs.docker.com/reference/builder/#copy
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>COPY = 8;</code>
      */
     const COPY = 8;
     /**
-     * https://docs.docker.com/reference/builder/#entrypoint
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>ENTRYPOINT = 9;</code>
      */
     const ENTRYPOINT = 9;
     /**
-     * https://docs.docker.com/reference/builder/#volume
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>VOLUME = 10;</code>
      */
     const VOLUME = 10;
     /**
-     * https://docs.docker.com/reference/builder/#user
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>USER = 11;</code>
      */
     const USER = 11;
     /**
-     * https://docs.docker.com/reference/builder/#workdir
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>WORKDIR = 12;</code>
      */
     const WORKDIR = 12;
     /**
-     * https://docs.docker.com/reference/builder/#arg
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>ARG = 13;</code>
      */
     const ARG = 13;
     /**
-     * https://docs.docker.com/reference/builder/#onbuild
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>ONBUILD = 14;</code>
      */
     const ONBUILD = 14;
     /**
-     * https://docs.docker.com/reference/builder/#stopsignal
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>STOPSIGNAL = 15;</code>
      */
     const STOPSIGNAL = 15;
     /**
-     * https://docs.docker.com/reference/builder/#healthcheck
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>HEALTHCHECK = 16;</code>
      */
     const HEALTHCHECK = 16;
     /**
-     * https://docs.docker.com/reference/builder/#shell
+     * https://docs.docker.com/engine/reference/builder/
      *
      * Generated from protobuf enum <code>SHELL = 17;</code>
      */

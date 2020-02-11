@@ -9,23 +9,25 @@ public interface DetailsOrBuilder extends
 
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
+   * @return The deployment.
    */
   io.grafeas.v1beta1.deployment.Deployment getDeployment();
   /**
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>

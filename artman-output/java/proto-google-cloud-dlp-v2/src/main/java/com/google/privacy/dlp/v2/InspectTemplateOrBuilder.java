@@ -9,24 +9,26 @@ public interface InspectTemplateOrBuilder extends
 
   /**
    * <pre>
-   * The template name. Output only.
+   * Output only. The template name.
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The template name. Output only.
+   * Output only. The template name.
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -37,6 +39,7 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -45,6 +48,7 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -55,6 +59,7 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -63,57 +68,62 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * The creation timestamp of an inspectTemplate, output only field.
+   * Output only. The creation timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
    * <pre>
-   * The last update timestamp of an inspectTemplate, output only field.
+   * Output only. The last update timestamp of an inspectTemplate.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -123,6 +133,7 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
   /**
@@ -131,6 +142,7 @@ public interface InspectTemplateOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
+   * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**

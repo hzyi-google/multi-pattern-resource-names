@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CompensationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -56,9 +63,9 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               units_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             units_.add(rawValue);
             break;
@@ -68,9 +75,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 units_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               units_.add(rawValue);
             }
@@ -110,7 +117,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
       }
       this.unknownFields = unknownFields.build();
@@ -151,13 +158,10 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units]. Populate
-     * one or more
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
+     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * Populate one or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -168,15 +172,12 @@ private static final long serialVersionUID = 0L;
      * Filter by `base compensation entry's` unit and amount / range. A job
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided
-     * [CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit]
-     * and amount or range overlaps with provided
+     * [CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit] and
+     * amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4beta1.CompensationInfo.CompensationRange].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
-     * Set exactly one
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units] and
-     * populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4beta1.CompensationFilter.units] and populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -185,9 +186,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit. Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -196,9 +195,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit . Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>
@@ -219,13 +216,10 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units]. Populate
-     * one or more
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
+     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * Populate one or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -236,15 +230,12 @@ private static final long serialVersionUID = 0L;
      * Filter by `base compensation entry's` unit and amount / range. A job
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided
-     * [CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit]
-     * and amount or range overlaps with provided
+     * [CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit] and
+     * amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4beta1.CompensationInfo.CompensationRange].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
-     * Set exactly one
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units] and
-     * populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4beta1.CompensationFilter.units] and populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -253,9 +244,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit. Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -264,9 +253,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit . Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>
@@ -283,6 +270,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -290,6 +279,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static FilterType forNumber(int value) {
       switch (value) {
         case 0: return FILTER_TYPE_UNSPECIFIED;
@@ -349,7 +342,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompensationFilter.FilterType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -358,6 +350,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -368,6 +361,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
     @SuppressWarnings("deprecation")
@@ -394,6 +388,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the units.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> getUnitsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -406,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of units.
    */
   public int getUnitsCount() {
     return units_.size();
@@ -417,6 +413,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The units at the given index.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
     return units_converter_.convert(units_.get(index));
@@ -428,6 +426,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the enum numeric values on the wire for units.
    */
   public java.util.List<java.lang.Integer>
   getUnitsValueList() {
@@ -440,6 +439,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of units at the given index.
    */
   public int getUnitsValue(int index) {
     return units_.get(index);
@@ -454,6 +455,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   * @return Whether the range field is set.
    */
   public boolean hasRange() {
     return range_ != null;
@@ -464,6 +466,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   * @return The range.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
     return range_ == null ? com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.getDefaultInstance() : range_;
@@ -488,6 +491,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+   * @return The includeJobsWithUnspecifiedCompensationRange.
    */
   public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
     return includeJobsWithUnspecifiedCompensationRange_;
@@ -745,7 +749,7 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
 
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (rangeBuilder_ == null) {
         range_ = null;
       } else {
@@ -781,11 +785,10 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.CompensationFilter buildPartial() {
       com.google.cloud.talent.v4beta1.CompensationFilter result = new com.google.cloud.talent.v4beta1.CompensationFilter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.units_ = units_;
       if (rangeBuilder_ == null) {
@@ -794,7 +797,6 @@ private static final long serialVersionUID = 0L;
         result.range_ = rangeBuilder_.build();
       }
       result.includeJobsWithUnspecifiedCompensationRange_ = includeJobsWithUnspecifiedCompensationRange_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -849,7 +851,7 @@ private static final long serialVersionUID = 0L;
       if (!other.units_.isEmpty()) {
         if (units_.isEmpty()) {
           units_ = other.units_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureUnitsIsMutable();
           units_.addAll(other.units_);
@@ -899,6 +901,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -909,6 +912,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -921,6 +926,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
       @SuppressWarnings("deprecation")
@@ -933,6 +939,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.CompensationFilter.FilterType value) {
       if (value == null) {
@@ -949,6 +957,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -960,9 +969,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> units_ =
       java.util.Collections.emptyList();
     private void ensureUnitsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         units_ = new java.util.ArrayList<java.lang.Integer>(units_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -972,6 +981,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the units.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> getUnitsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -984,6 +994,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The count of units.
      */
     public int getUnitsCount() {
       return units_.size();
@@ -995,6 +1006,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the element to return.
+     * @return The units at the given index.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
       return units_converter_.convert(units_.get(index));
@@ -1006,6 +1019,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index to set the value at.
+     * @param value The units to set.
+     * @return This builder for chaining.
      */
     public Builder setUnits(
         int index, com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
@@ -1024,6 +1040,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The units to add.
+     * @return This builder for chaining.
      */
     public Builder addUnits(com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit value) {
       if (value == null) {
@@ -1041,6 +1059,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The units to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUnits(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> values) {
@@ -1058,10 +1078,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearUnits() {
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1072,6 +1093,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the enum numeric values on the wire for units.
      */
     public java.util.List<java.lang.Integer>
     getUnitsValueList() {
@@ -1084,6 +1106,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of units at the given index.
      */
     public int getUnitsValue(int index) {
       return units_.get(index);
@@ -1095,6 +1119,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of units at the given index.
+     * @return This builder for chaining.
      */
     public Builder setUnitsValue(
         int index, int value) {
@@ -1110,6 +1137,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for units to add.
+     * @return This builder for chaining.
      */
     public Builder addUnitsValue(int value) {
       ensureUnitsIsMutable();
@@ -1124,6 +1153,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The enum numeric values on the wire for units to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUnitsValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -1144,6 +1175,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return rangeBuilder_ != null || range_ != null;
@@ -1154,6 +1186,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
       if (rangeBuilder_ == null) {
@@ -1296,6 +1329,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     * @return The includeJobsWithUnspecifiedCompensationRange.
      */
     public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
       return includeJobsWithUnspecifiedCompensationRange_;
@@ -1307,6 +1341,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     * @param value The includeJobsWithUnspecifiedCompensationRange to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludeJobsWithUnspecifiedCompensationRange(boolean value) {
       
@@ -1321,6 +1357,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIncludeJobsWithUnspecifiedCompensationRange() {
       

@@ -9,38 +9,40 @@ public interface UpdateFindingRequestOrBuilder extends
 
   /**
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the finding field is set.
    */
   boolean hasFinding();
   /**
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The finding.
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFinding();
   /**
    * <pre>
-   * The finding resource to update or create if it does not already exist.
+   * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingOrBuilder();
 
@@ -51,6 +53,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -60,6 +63,7 @@ public interface UpdateFindingRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

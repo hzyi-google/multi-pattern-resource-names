@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Source();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -40,7 +47,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,10 +114,11 @@ private static final long serialVersionUID = 0L;
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -130,10 +137,11 @@ private static final long serialVersionUID = 0L;
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -156,13 +164,12 @@ private static final long serialVersionUID = 0L;
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -181,13 +188,12 @@ private static final long serialVersionUID = 0L;
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -217,6 +223,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -242,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -605,10 +613,11 @@ private static final long serialVersionUID = 0L;
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -627,10 +636,11 @@ private static final long serialVersionUID = 0L;
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -650,10 +660,12 @@ private static final long serialVersionUID = 0L;
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -670,10 +682,11 @@ private static final long serialVersionUID = 0L;
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -686,10 +699,12 @@ private static final long serialVersionUID = 0L;
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -709,13 +724,12 @@ private static final long serialVersionUID = 0L;
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -734,13 +748,12 @@ private static final long serialVersionUID = 0L;
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -760,13 +773,13 @@ private static final long serialVersionUID = 0L;
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -783,13 +796,12 @@ private static final long serialVersionUID = 0L;
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -802,13 +814,13 @@ private static final long serialVersionUID = 0L;
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -835,6 +847,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -860,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -886,6 +900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -909,6 +925,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -928,6 +945,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {

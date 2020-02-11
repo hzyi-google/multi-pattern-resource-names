@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DocumentLocation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,6 +98,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 file_offset = 1;</code>
+   * @return The fileOffset.
    */
   public long getFileOffset() {
     return fileOffset_;
@@ -412,6 +419,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 file_offset = 1;</code>
+     * @return The fileOffset.
      */
     public long getFileOffset() {
       return fileOffset_;
@@ -423,6 +431,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 file_offset = 1;</code>
+     * @param value The fileOffset to set.
+     * @return This builder for chaining.
      */
     public Builder setFileOffset(long value) {
       
@@ -437,6 +447,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 file_offset = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileOffset() {
       

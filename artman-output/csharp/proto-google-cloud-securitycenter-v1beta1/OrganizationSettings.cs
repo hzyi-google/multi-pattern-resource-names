@@ -26,24 +26,27 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
           string.Concat(
             "Cj9nb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMS9vcmdhbml6",
             "YXRpb25fc2V0dGluZ3MucHJvdG8SI2dvb2dsZS5jbG91ZC5zZWN1cml0eWNl",
-            "bnRlci52MWJldGExGhxnb29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIqgD",
-            "ChRPcmdhbml6YXRpb25TZXR0aW5ncxIMCgRuYW1lGAEgASgJEh4KFmVuYWJs",
-            "ZV9hc3NldF9kaXNjb3ZlcnkYAiABKAgSbgoWYXNzZXRfZGlzY292ZXJ5X2Nv",
-            "bmZpZxgDIAEoCzJOLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJl",
-            "dGExLk9yZ2FuaXphdGlvblNldHRpbmdzLkFzc2V0RGlzY292ZXJ5Q29uZmln",
-            "GvEBChRBc3NldERpc2NvdmVyeUNvbmZpZxITCgtwcm9qZWN0X2lkcxgBIAMo",
-            "CRJ0Cg5pbmNsdXNpb25fbW9kZRgCIAEoDjJcLmdvb2dsZS5jbG91ZC5zZWN1",
-            "cml0eWNlbnRlci52MWJldGExLk9yZ2FuaXphdGlvblNldHRpbmdzLkFzc2V0",
-            "RGlzY292ZXJ5Q29uZmlnLkluY2x1c2lvbk1vZGUiTgoNSW5jbHVzaW9uTW9k",
-            "ZRIeChpJTkNMVVNJT05fTU9ERV9VTlNQRUNJRklFRBAAEhAKDElOQ0xVREVf",
-            "T05MWRABEgsKB0VYQ0xVREUQAkJ+Cidjb20uZ29vZ2xlLmNsb3VkLnNlY3Vy",
+            "bnRlci52MWJldGExGhlnb29nbGUvYXBpL3Jlc291cmNlLnByb3RvGhxnb29n",
+            "bGUvYXBpL2Fubm90YXRpb25zLnByb3RvIpQEChRPcmdhbml6YXRpb25TZXR0",
+            "aW5ncxIMCgRuYW1lGAEgASgJEh4KFmVuYWJsZV9hc3NldF9kaXNjb3ZlcnkY",
+            "AiABKAgSbgoWYXNzZXRfZGlzY292ZXJ5X2NvbmZpZxgDIAEoCzJOLmdvb2ds",
+            "ZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExLk9yZ2FuaXphdGlvblNl",
+            "dHRpbmdzLkFzc2V0RGlzY292ZXJ5Q29uZmlnGvEBChRBc3NldERpc2NvdmVy",
+            "eUNvbmZpZxITCgtwcm9qZWN0X2lkcxgBIAMoCRJ0Cg5pbmNsdXNpb25fbW9k",
+            "ZRgCIAEoDjJcLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGEx",
+            "Lk9yZ2FuaXphdGlvblNldHRpbmdzLkFzc2V0RGlzY292ZXJ5Q29uZmlnLklu",
+            "Y2x1c2lvbk1vZGUiTgoNSW5jbHVzaW9uTW9kZRIeChpJTkNMVVNJT05fTU9E",
+            "RV9VTlNQRUNJRklFRBAAEhAKDElOQ0xVREVfT05MWRABEgsKB0VYQ0xVREUQ",
+            "Ajpq6kFnCjJzZWN1cml0eWNlbnRlci5nb29nbGVhcGlzLmNvbS9Pcmdhbml6",
+            "YXRpb25TZXR0aW5ncxIxb3JnYW5pemF0aW9ucy97b3JnYW5pemF0aW9ufS9v",
+            "cmdhbml6YXRpb25TZXR0aW5nc0J+Cidjb20uZ29vZ2xlLmNsb3VkLnNlY3Vy",
             "aXR5Y2VudGVyLnYxYmV0YTFQAVpRZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJv",
             "dG8vZ29vZ2xlYXBpcy9jbG91ZC9zZWN1cml0eWNlbnRlci92MWJldGExO3Nl",
             "Y3VyaXR5Y2VudGVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings), global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Parser, new[]{ "Name", "EnableAssetDiscovery", "AssetDiscoveryConfig" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig), global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Parser, new[]{ "ProjectIds", "InclusionMode" }, null, new[]{ typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode) }, null)})
+          new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings), global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Parser, new[]{ "Name", "EnableAssetDiscovery", "AssetDiscoveryConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig), global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Parser, new[]{ "ProjectIds", "InclusionMode" }, null, new[]{ typeof(global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode) }, null, null)})
           }));
     }
     #endregion
@@ -97,7 +100,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The relative resource name of the settings. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// Example:
-    /// "organizations/123/organizationSettings".
+    /// "organizations/{organization_id}/organizationSettings".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -315,7 +318,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
 
         /// <summary>Field number for the "inclusion_mode" field.</summary>
         public const int InclusionModeFieldNumber = 2;
-        private global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode inclusionMode_ = 0;
+        private global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode inclusionMode_ = global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode.Unspecified;
         /// <summary>
         /// The mode to use for filtering asset discovery.
         /// </summary>
@@ -349,7 +352,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
         public override int GetHashCode() {
           int hash = 1;
           hash ^= projectIds_.GetHashCode();
-          if (InclusionMode != 0) hash ^= InclusionMode.GetHashCode();
+          if (InclusionMode != global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode.Unspecified) hash ^= InclusionMode.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -364,7 +367,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           projectIds_.WriteTo(output, _repeated_projectIds_codec);
-          if (InclusionMode != 0) {
+          if (InclusionMode != global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode.Unspecified) {
             output.WriteRawTag(16);
             output.WriteEnum((int) InclusionMode);
           }
@@ -377,7 +380,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
         public int CalculateSize() {
           int size = 0;
           size += projectIds_.CalculateSize(_repeated_projectIds_codec);
-          if (InclusionMode != 0) {
+          if (InclusionMode != global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode.Unspecified) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InclusionMode);
           }
           if (_unknownFields != null) {
@@ -392,7 +395,7 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
             return;
           }
           projectIds_.Add(other.projectIds_);
-          if (other.InclusionMode != 0) {
+          if (other.InclusionMode != global::Google.Cloud.Securitycenter.V1Beta1.OrganizationSettings.Types.AssetDiscoveryConfig.Types.InclusionMode.Unspecified) {
             InclusionMode = other.InclusionMode;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

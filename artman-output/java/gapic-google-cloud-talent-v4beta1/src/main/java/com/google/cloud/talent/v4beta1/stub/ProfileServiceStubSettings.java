@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ProfileServiceStubSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceStubSettings.newBuilder();
- * profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * profileServiceSettingsBuilder
+ *     .createProfileSettings()
+ *     .setRetrySettings(
+ *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProfileServiceStubSettings profileServiceSettings = profileServiceSettingsBuilder.build();
  * </code>
  * </pre>

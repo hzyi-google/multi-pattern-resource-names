@@ -9,26 +9,25 @@ public interface UpdateCompanyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The company resource to replace the current resource in the
-   * system.
+   * Required. The company resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the company field is set.
    */
   boolean hasCompany();
   /**
    * <pre>
-   * Required. The company resource to replace the current resource in the
-   * system.
+   * Required. The company resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The company.
    */
   com.google.cloud.talent.v4beta1.Company getCompany();
   /**
    * <pre>
-   * Required. The company resource to replace the current resource in the
-   * system.
+   * Required. The company resource to replace the current resource in the system.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,46 +37,36 @@ public interface UpdateCompanyRequestOrBuilder extends
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
-   * is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
-   * supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
-   * is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
-   * supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
-   * is provided, only the specified fields in
-   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are
-   * updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask] is provided, only the specified fields in
+   * [company][google.cloud.talent.v4beta1.UpdateCompanyRequest.company] are updated. Otherwise all the fields are updated.
    * A field mask to specify the company fields to be updated. Only
-   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are
-   * supported.
+   * top level fields of [Company][google.cloud.talent.v4beta1.Company] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

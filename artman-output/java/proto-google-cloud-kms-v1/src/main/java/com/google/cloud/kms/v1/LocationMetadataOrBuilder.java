@@ -15,6 +15,7 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>bool hsm_available = 1;</code>
+   * @return The hsmAvailable.
    */
   boolean getHsmAvailable();
 }

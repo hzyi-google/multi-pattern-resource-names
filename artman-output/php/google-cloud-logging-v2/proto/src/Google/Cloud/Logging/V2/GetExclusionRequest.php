@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.GetExclusionRequest</code>
  */
-final class GetExclusionRequest extends \Google\Protobuf\Internal\Message
+class GetExclusionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of an existing exclusion:
@@ -23,9 +23,9 @@ final class GetExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ final class GetExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -71,7 +71,7 @@ final class GetExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

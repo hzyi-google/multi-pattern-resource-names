@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.kms.v1.UpdateCryptoKeyVersionRequest</code>
  */
-final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Message
+class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $crypto_key_version = null;
+    protected $crypto_key_version = null;
     /**
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.
@@ -35,9 +35,9 @@ final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Kms\V1\CryptoKeyVersion $crypto_key_version
-     *           [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     *           Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Required list of fields to be updated in this request.
+     *           Required. List of fields to be updated in this request.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Kms\V1\CryptoKeyVersion
      */
     public function getCryptoKeyVersion()
@@ -57,9 +57,9 @@ final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+     * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
      *
-     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Kms\V1\CryptoKeyVersion $var
      * @return $this
      */
@@ -72,9 +72,9 @@ final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask
      */
     public function getUpdateMask()
@@ -83,9 +83,9 @@ final class UpdateCryptoKeyVersionRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Required list of fields to be updated in this request.
+     * Required. List of fields to be updated in this request.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Layer();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,7 +117,7 @@ private static final long serialVersionUID = 0L;
     DIRECTIVE_UNSPECIFIED(0),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#maintainer
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>MAINTAINER = 1;</code>
@@ -119,7 +125,7 @@ private static final long serialVersionUID = 0L;
     MAINTAINER(1),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#run
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>RUN = 2;</code>
@@ -127,7 +133,7 @@ private static final long serialVersionUID = 0L;
     RUN(2),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#cmd
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>CMD = 3;</code>
@@ -135,7 +141,7 @@ private static final long serialVersionUID = 0L;
     CMD(3),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#label
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>LABEL = 4;</code>
@@ -143,7 +149,7 @@ private static final long serialVersionUID = 0L;
     LABEL(4),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#expose
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>EXPOSE = 5;</code>
@@ -151,7 +157,7 @@ private static final long serialVersionUID = 0L;
     EXPOSE(5),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#env
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENV = 6;</code>
@@ -159,7 +165,7 @@ private static final long serialVersionUID = 0L;
     ENV(6),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#add
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ADD = 7;</code>
@@ -167,7 +173,7 @@ private static final long serialVersionUID = 0L;
     ADD(7),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#copy
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>COPY = 8;</code>
@@ -175,7 +181,7 @@ private static final long serialVersionUID = 0L;
     COPY(8),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#entrypoint
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENTRYPOINT = 9;</code>
@@ -183,7 +189,7 @@ private static final long serialVersionUID = 0L;
     ENTRYPOINT(9),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#volume
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>VOLUME = 10;</code>
@@ -191,7 +197,7 @@ private static final long serialVersionUID = 0L;
     VOLUME(10),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#user
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>USER = 11;</code>
@@ -199,7 +205,7 @@ private static final long serialVersionUID = 0L;
     USER(11),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#workdir
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>WORKDIR = 12;</code>
@@ -207,7 +213,7 @@ private static final long serialVersionUID = 0L;
     WORKDIR(12),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#arg
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ARG = 13;</code>
@@ -215,7 +221,7 @@ private static final long serialVersionUID = 0L;
     ARG(13),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#onbuild
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ONBUILD = 14;</code>
@@ -223,7 +229,7 @@ private static final long serialVersionUID = 0L;
     ONBUILD(14),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#stopsignal
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>STOPSIGNAL = 15;</code>
@@ -231,7 +237,7 @@ private static final long serialVersionUID = 0L;
     STOPSIGNAL(15),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#healthcheck
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>HEALTHCHECK = 16;</code>
@@ -239,7 +245,7 @@ private static final long serialVersionUID = 0L;
     HEALTHCHECK(16),
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#shell
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>SHELL = 17;</code>
@@ -258,7 +264,7 @@ private static final long serialVersionUID = 0L;
     public static final int DIRECTIVE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#maintainer
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>MAINTAINER = 1;</code>
@@ -266,7 +272,7 @@ private static final long serialVersionUID = 0L;
     public static final int MAINTAINER_VALUE = 1;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#run
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>RUN = 2;</code>
@@ -274,7 +280,7 @@ private static final long serialVersionUID = 0L;
     public static final int RUN_VALUE = 2;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#cmd
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>CMD = 3;</code>
@@ -282,7 +288,7 @@ private static final long serialVersionUID = 0L;
     public static final int CMD_VALUE = 3;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#label
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>LABEL = 4;</code>
@@ -290,7 +296,7 @@ private static final long serialVersionUID = 0L;
     public static final int LABEL_VALUE = 4;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#expose
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>EXPOSE = 5;</code>
@@ -298,7 +304,7 @@ private static final long serialVersionUID = 0L;
     public static final int EXPOSE_VALUE = 5;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#env
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENV = 6;</code>
@@ -306,7 +312,7 @@ private static final long serialVersionUID = 0L;
     public static final int ENV_VALUE = 6;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#add
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ADD = 7;</code>
@@ -314,7 +320,7 @@ private static final long serialVersionUID = 0L;
     public static final int ADD_VALUE = 7;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#copy
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>COPY = 8;</code>
@@ -322,7 +328,7 @@ private static final long serialVersionUID = 0L;
     public static final int COPY_VALUE = 8;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#entrypoint
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENTRYPOINT = 9;</code>
@@ -330,7 +336,7 @@ private static final long serialVersionUID = 0L;
     public static final int ENTRYPOINT_VALUE = 9;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#volume
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>VOLUME = 10;</code>
@@ -338,7 +344,7 @@ private static final long serialVersionUID = 0L;
     public static final int VOLUME_VALUE = 10;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#user
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>USER = 11;</code>
@@ -346,7 +352,7 @@ private static final long serialVersionUID = 0L;
     public static final int USER_VALUE = 11;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#workdir
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>WORKDIR = 12;</code>
@@ -354,7 +360,7 @@ private static final long serialVersionUID = 0L;
     public static final int WORKDIR_VALUE = 12;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#arg
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ARG = 13;</code>
@@ -362,7 +368,7 @@ private static final long serialVersionUID = 0L;
     public static final int ARG_VALUE = 13;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#onbuild
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ONBUILD = 14;</code>
@@ -370,7 +376,7 @@ private static final long serialVersionUID = 0L;
     public static final int ONBUILD_VALUE = 14;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#stopsignal
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>STOPSIGNAL = 15;</code>
@@ -378,7 +384,7 @@ private static final long serialVersionUID = 0L;
     public static final int STOPSIGNAL_VALUE = 15;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#healthcheck
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>HEALTHCHECK = 16;</code>
@@ -386,7 +392,7 @@ private static final long serialVersionUID = 0L;
     public static final int HEALTHCHECK_VALUE = 16;
     /**
      * <pre>
-     * https://docs.docker.com/reference/builder/#shell
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>SHELL = 17;</code>
@@ -403,6 +409,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -410,6 +418,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Directive forNumber(int value) {
       switch (value) {
         case 0: return DIRECTIVE_UNSPECIFIED;
@@ -486,20 +498,22 @@ private static final long serialVersionUID = 0L;
   private int directive_;
   /**
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   * @return The enum numeric value on the wire for directive.
    */
   public int getDirectiveValue() {
     return directive_;
   }
   /**
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+   * @return The directive.
    */
   public io.grafeas.v1beta1.image.Layer.Directive getDirective() {
     @SuppressWarnings("deprecation")
@@ -515,6 +529,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   * @return The arguments.
    */
   public java.lang.String getArguments() {
     java.lang.Object ref = arguments_;
@@ -534,6 +549,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   * @return The bytes for arguments.
    */
   public com.google.protobuf.ByteString
       getArgumentsBytes() {
@@ -874,20 +890,23 @@ private static final long serialVersionUID = 0L;
     private int directive_ = 0;
     /**
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     * @return The enum numeric value on the wire for directive.
      */
     public int getDirectiveValue() {
       return directive_;
     }
     /**
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     * @param value The enum numeric value on the wire for directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirectiveValue(int value) {
       directive_ = value;
@@ -896,10 +915,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     * @return The directive.
      */
     public io.grafeas.v1beta1.image.Layer.Directive getDirective() {
       @SuppressWarnings("deprecation")
@@ -908,10 +928,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     * @param value The directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirective(io.grafeas.v1beta1.image.Layer.Directive value) {
       if (value == null) {
@@ -924,10 +946,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDirective() {
       
@@ -943,6 +966,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     * @return The arguments.
      */
     public java.lang.String getArguments() {
       java.lang.Object ref = arguments_;
@@ -962,6 +986,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     * @return The bytes for arguments.
      */
     public com.google.protobuf.ByteString
         getArgumentsBytes() {
@@ -982,6 +1007,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     * @param value The arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArguments(
         java.lang.String value) {
@@ -999,6 +1026,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearArguments() {
       
@@ -1012,6 +1040,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     * @param value The bytes for arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArgumentsBytes(
         com.google.protobuf.ByteString value) {

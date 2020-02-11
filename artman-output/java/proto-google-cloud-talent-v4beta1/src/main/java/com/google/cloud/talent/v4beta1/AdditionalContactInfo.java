@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AdditionalContactInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The enum numeric value on the wire for usage.
    */
   public int getUsageValue() {
     return usage_;
@@ -118,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+   * @return The usage.
    */
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
@@ -135,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -156,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -180,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string contact_id = 3;</code>
+   * @return The contactId.
    */
   public java.lang.String getContactId() {
     java.lang.Object ref = contactId_;
@@ -200,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string contact_id = 3;</code>
+   * @return The bytes for contactId.
    */
   public com.google.protobuf.ByteString
       getContactIdBytes() {
@@ -562,6 +574,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The enum numeric value on the wire for usage.
      */
     public int getUsageValue() {
       return usage_;
@@ -572,6 +585,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The enum numeric value on the wire for usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
       usage_ = value;
@@ -584,6 +599,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return The usage.
      */
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
@@ -596,6 +612,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(com.google.cloud.talent.v4beta1.ContactInfoUsage value) {
       if (value == null) {
@@ -612,6 +630,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
       
@@ -629,6 +648,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -650,6 +670,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -672,6 +693,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -691,6 +714,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -706,6 +730,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -727,6 +753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string contact_id = 3;</code>
+     * @return The contactId.
      */
     public java.lang.String getContactId() {
       java.lang.Object ref = contactId_;
@@ -747,6 +774,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string contact_id = 3;</code>
+     * @return The bytes for contactId.
      */
     public com.google.protobuf.ByteString
         getContactIdBytes() {
@@ -768,6 +796,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string contact_id = 3;</code>
+     * @param value The contactId to set.
+     * @return This builder for chaining.
      */
     public Builder setContactId(
         java.lang.String value) {
@@ -786,6 +816,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string contact_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContactId() {
       
@@ -800,6 +831,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string contact_id = 3;</code>
+     * @param value The bytes for contactId to set.
+     * @return This builder for chaining.
      */
     public Builder setContactIdBytes(
         com.google.protobuf.ByteString value) {

@@ -9,51 +9,55 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder extends
 
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cryptoKeyVersion field is set.
    */
   boolean hasCryptoKeyVersion();
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cryptoKeyVersion.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
   /**
    * <pre>
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1;</code>
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder();
 
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

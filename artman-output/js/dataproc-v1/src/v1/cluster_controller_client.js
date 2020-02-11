@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -296,7 +296,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {Object} request.cluster
    *   Required. The cluster to create.
    *
@@ -429,7 +429,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project the
    *   cluster belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} request.cluster
@@ -641,7 +641,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {string} [request.clusterUuid]
@@ -773,7 +773,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} [options]
@@ -832,7 +832,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} [request.filter]
    *   Optional. A filter constraining the clusters to list. Filters are
    *   case-sensitive and have the following syntax:
@@ -970,7 +970,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} [request.filter]
    *   Optional. A filter constraining the clusters to list. Filters are
    *   case-sensitive and have the following syntax:
@@ -1049,7 +1049,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} [options]

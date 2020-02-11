@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -88,6 +88,7 @@ module Google
         # * {Google::Cloud::Kms::V1::KeyRing KeyRing}
         # * {Google::Cloud::Kms::V1::CryptoKey CryptoKey}
         # * {Google::Cloud::Kms::V1::CryptoKeyVersion CryptoKeyVersion}
+        # * {Google::Cloud::Kms::V1::ImportJob ImportJob}
         #
         # If you are using manual gRPC libraries, see
         # [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).

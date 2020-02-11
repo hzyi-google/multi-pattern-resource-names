@@ -14,6 +14,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The mainPythonFileUri.
    */
   java.lang.String getMainPythonFileUri();
   /**
@@ -23,6 +24,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for mainPythonFileUri.
    */
   com.google.protobuf.ByteString
       getMainPythonFileUriBytes();
@@ -35,6 +37,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the args.
    */
   java.util.List<java.lang.String>
       getArgsList();
@@ -46,6 +49,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of args.
    */
   int getArgsCount();
   /**
@@ -56,6 +60,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
   /**
@@ -66,6 +72,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the args at the given index.
    */
   com.google.protobuf.ByteString
       getArgsBytes(int index);
@@ -77,6 +85,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the pythonFileUris.
    */
   java.util.List<java.lang.String>
       getPythonFileUrisList();
@@ -87,6 +96,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of pythonFileUris.
    */
   int getPythonFileUrisCount();
   /**
@@ -96,6 +106,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The pythonFileUris at the given index.
    */
   java.lang.String getPythonFileUris(int index);
   /**
@@ -105,6 +117,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the pythonFileUris at the given index.
    */
   com.google.protobuf.ByteString
       getPythonFileUrisBytes(int index);
@@ -116,6 +130,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String>
       getJarFileUrisList();
@@ -126,6 +141,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
   /**
@@ -135,6 +151,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
   /**
@@ -144,6 +162,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   com.google.protobuf.ByteString
       getJarFileUrisBytes(int index);
@@ -155,6 +175,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the fileUris.
    */
   java.util.List<java.lang.String>
       getFileUrisList();
@@ -165,6 +186,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of fileUris.
    */
   int getFileUrisCount();
   /**
@@ -174,6 +196,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The fileUris at the given index.
    */
   java.lang.String getFileUris(int index);
   /**
@@ -183,6 +207,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the fileUris at the given index.
    */
   com.google.protobuf.ByteString
       getFileUrisBytes(int index);
@@ -194,6 +220,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the archiveUris.
    */
   java.util.List<java.lang.String>
       getArchiveUrisList();
@@ -204,6 +231,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of archiveUris.
    */
   int getArchiveUrisCount();
   /**
@@ -213,6 +241,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The archiveUris at the given index.
    */
   java.lang.String getArchiveUris(int index);
   /**
@@ -222,6 +252,8 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the archiveUris at the given index.
    */
   com.google.protobuf.ByteString
       getArchiveUrisBytes(int index);
@@ -229,7 +261,7 @@ public interface PySparkJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -240,7 +272,7 @@ public interface PySparkJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -258,7 +290,7 @@ public interface PySparkJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -270,7 +302,7 @@ public interface PySparkJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -284,7 +316,7 @@ public interface PySparkJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
@@ -301,6 +333,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
   /**
@@ -309,6 +342,7 @@ public interface PySparkJobOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
   /**

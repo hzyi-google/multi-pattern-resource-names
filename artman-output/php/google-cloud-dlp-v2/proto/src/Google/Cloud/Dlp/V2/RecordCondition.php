@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.RecordCondition</code>
  */
-final class RecordCondition extends \Google\Protobuf\Internal\Message
+class RecordCondition extends \Google\Protobuf\Internal\Message
 {
     /**
      * An expression.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
      */
-    private $expressions = null;
+    protected $expressions = null;
 
     /**
      * Constructor.

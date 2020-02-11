@@ -13,6 +13,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
   /**
@@ -21,6 +22,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   * @return The startDate.
    */
   com.google.type.Date getStartDate();
   /**
@@ -38,6 +40,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
   /**
@@ -46,6 +49,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   * @return The endDate.
    */
   com.google.type.Date getEndDate();
   /**
@@ -65,6 +69,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string employer_name = 3;</code>
+   * @return The employerName.
    */
   java.lang.String getEmployerName();
   /**
@@ -75,6 +80,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string employer_name = 3;</code>
+   * @return The bytes for employerName.
    */
   com.google.protobuf.ByteString
       getEmployerNameBytes();
@@ -87,6 +93,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string division_name = 4;</code>
+   * @return The divisionName.
    */
   java.lang.String getDivisionName();
   /**
@@ -97,6 +104,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string division_name = 4;</code>
+   * @return The bytes for divisionName.
    */
   com.google.protobuf.ByteString
       getDivisionNameBytes();
@@ -107,6 +115,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   * @return Whether the address field is set.
    */
   boolean hasAddress();
   /**
@@ -115,6 +124,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
+   * @return The address.
    */
   com.google.cloud.talent.v4beta1.Address getAddress();
   /**
@@ -134,6 +144,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string job_title = 6;</code>
+   * @return The jobTitle.
    */
   java.lang.String getJobTitle();
   /**
@@ -144,6 +155,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string job_title = 6;</code>
+   * @return The bytes for jobTitle.
    */
   com.google.protobuf.ByteString
       getJobTitleBytes();
@@ -155,6 +167,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string job_description = 7;</code>
+   * @return The jobDescription.
    */
   java.lang.String getJobDescription();
   /**
@@ -164,6 +177,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>string job_description = 7;</code>
+   * @return The bytes for jobDescription.
    */
   com.google.protobuf.ByteString
       getJobDescriptionBytes();
@@ -174,6 +188,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+   * @return Whether the isSupervisor field is set.
    */
   boolean hasIsSupervisor();
   /**
@@ -182,6 +197,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
+   * @return The isSupervisor.
    */
   com.google.protobuf.BoolValue getIsSupervisor();
   /**
@@ -199,6 +215,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+   * @return Whether the isSelfEmployed field is set.
    */
   boolean hasIsSelfEmployed();
   /**
@@ -207,6 +224,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
+   * @return The isSelfEmployed.
    */
   com.google.protobuf.BoolValue getIsSelfEmployed();
   /**
@@ -224,6 +242,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
+   * @return Whether the isCurrent field is set.
    */
   boolean hasIsCurrent();
   /**
@@ -232,6 +251,7 @@ public interface EmploymentRecordOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
+   * @return The isCurrent.
    */
   com.google.protobuf.BoolValue getIsCurrent();
   /**
@@ -245,78 +265,72 @@ public interface EmploymentRecordOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The job title snippet shows how the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
-   * related to a search query. It's empty if the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
-   * related to the search query.
+   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
+   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The jobTitleSnippet.
    */
   java.lang.String getJobTitleSnippet();
   /**
    * <pre>
-   * Output only. The job title snippet shows how the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
-   * related to a search query. It's empty if the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
-   * related to the search query.
+   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
+   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for jobTitleSnippet.
    */
   com.google.protobuf.ByteString
       getJobTitleSnippetBytes();
 
   /**
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * isn't related to the search query.
+   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The jobDescriptionSnippet.
    */
   java.lang.String getJobDescriptionSnippet();
   /**
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * isn't related to the search query.
+   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for jobDescriptionSnippet.
    */
   com.google.protobuf.ByteString
       getJobDescriptionSnippetBytes();
 
   /**
    * <pre>
-   * Output only. The employer name snippet shows how the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * is related to a search query. It's empty if the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * isn't related to the search query.
+   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
+   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The employerNameSnippet.
    */
   java.lang.String getEmployerNameSnippet();
   /**
    * <pre>
-   * Output only. The employer name snippet shows how the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * is related to a search query. It's empty if the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * isn't related to the search query.
+   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
+   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for employerNameSnippet.
    */
   com.google.protobuf.ByteString
       getEmployerNameSnippetBytes();

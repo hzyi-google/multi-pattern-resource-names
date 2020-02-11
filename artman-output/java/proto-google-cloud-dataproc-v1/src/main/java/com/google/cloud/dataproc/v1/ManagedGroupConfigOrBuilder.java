@@ -14,6 +14,7 @@ public interface ManagedGroupConfigOrBuilder extends
    * </pre>
    *
    * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The instanceTemplateName.
    */
   java.lang.String getInstanceTemplateName();
   /**
@@ -23,6 +24,7 @@ public interface ManagedGroupConfigOrBuilder extends
    * </pre>
    *
    * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for instanceTemplateName.
    */
   com.google.protobuf.ByteString
       getInstanceTemplateNameBytes();
@@ -33,6 +35,7 @@ public interface ManagedGroupConfigOrBuilder extends
    * </pre>
    *
    * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The instanceGroupManagerName.
    */
   java.lang.String getInstanceGroupManagerName();
   /**
@@ -41,6 +44,7 @@ public interface ManagedGroupConfigOrBuilder extends
    * </pre>
    *
    * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for instanceGroupManagerName.
    */
   com.google.protobuf.ByteString
       getInstanceGroupManagerNameBytes();

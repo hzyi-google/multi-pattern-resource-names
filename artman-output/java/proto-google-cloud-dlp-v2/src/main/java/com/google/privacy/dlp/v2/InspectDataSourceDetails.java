@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InspectDataSourceDetails();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +121,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * @return Whether the snapshotInspectTemplate field is set.
      */
     boolean hasSnapshotInspectTemplate();
     /**
@@ -124,6 +131,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * @return The snapshotInspectTemplate.
      */
     com.google.privacy.dlp.v2.InspectTemplate getSnapshotInspectTemplate();
     /**
@@ -137,19 +145,37 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.InspectTemplateOrBuilder getSnapshotInspectTemplateOrBuilder();
 
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     * @return Whether the jobConfig field is set.
      */
     boolean hasJobConfig();
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     * @return The jobConfig.
      */
     com.google.privacy.dlp.v2.InspectJobConfig getJobConfig();
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      */
     com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder();
   }
   /**
+   * <pre>
+   * Snapshot of the inspection configuration.
+   * </pre>
+   *
    * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions}
    */
   public  static final class RequestedOptions extends
@@ -165,6 +191,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RequestedOptions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -177,7 +210,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -255,6 +287,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * @return Whether the snapshotInspectTemplate field is set.
      */
     public boolean hasSnapshotInspectTemplate() {
       return snapshotInspectTemplate_ != null;
@@ -266,6 +299,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * @return The snapshotInspectTemplate.
      */
     public com.google.privacy.dlp.v2.InspectTemplate getSnapshotInspectTemplate() {
       return snapshotInspectTemplate_ == null ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance() : snapshotInspectTemplate_;
@@ -285,18 +319,32 @@ private static final long serialVersionUID = 0L;
     public static final int JOB_CONFIG_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.InspectJobConfig jobConfig_;
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     * @return Whether the jobConfig field is set.
      */
     public boolean hasJobConfig() {
       return jobConfig_ != null;
     }
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     * @return The jobConfig.
      */
     public com.google.privacy.dlp.v2.InspectJobConfig getJobConfig() {
       return jobConfig_ == null ? com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance() : jobConfig_;
     }
     /**
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder() {
@@ -480,6 +528,10 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     * <pre>
+     * Snapshot of the inspection configuration.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions}
      */
     public static final class Builder extends
@@ -658,6 +710,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * @return Whether the snapshotInspectTemplate field is set.
        */
       public boolean hasSnapshotInspectTemplate() {
         return snapshotInspectTemplateBuilder_ != null || snapshotInspectTemplate_ != null;
@@ -669,6 +722,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * @return The snapshotInspectTemplate.
        */
       public com.google.privacy.dlp.v2.InspectTemplate getSnapshotInspectTemplate() {
         if (snapshotInspectTemplateBuilder_ == null) {
@@ -814,13 +868,23 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> jobConfigBuilder_;
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       * @return Whether the jobConfig field is set.
        */
       public boolean hasJobConfig() {
         return jobConfigBuilder_ != null || jobConfig_ != null;
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       * @return The jobConfig.
        */
       public com.google.privacy.dlp.v2.InspectJobConfig getJobConfig() {
         if (jobConfigBuilder_ == null) {
@@ -830,6 +894,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public Builder setJobConfig(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -846,6 +914,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public Builder setJobConfig(
@@ -860,6 +932,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public Builder mergeJobConfig(com.google.privacy.dlp.v2.InspectJobConfig value) {
@@ -878,6 +954,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public Builder clearJobConfig() {
@@ -892,6 +972,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public com.google.privacy.dlp.v2.InspectJobConfig.Builder getJobConfigBuilder() {
@@ -900,6 +984,10 @@ private static final long serialVersionUID = 0L;
         return getJobConfigFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder() {
@@ -911,6 +999,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -989,6 +1081,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 processed_bytes = 1;</code>
+     * @return The processedBytes.
      */
     long getProcessedBytes();
 
@@ -998,6 +1091,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 total_estimated_bytes = 2;</code>
+     * @return The totalEstimatedBytes.
      */
     long getTotalEstimatedBytes();
 
@@ -1071,6 +1165,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1105,9 +1206,9 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 infoTypeStats_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               infoTypeStats_.add(
                   input.readMessage(com.google.privacy.dlp.v2.InfoTypeStats.parser(), extensionRegistry));
@@ -1128,7 +1229,7 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
         }
         this.unknownFields = unknownFields.build();
@@ -1148,7 +1249,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.class, com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PROCESSED_BYTES_FIELD_NUMBER = 1;
     private long processedBytes_;
     /**
@@ -1157,6 +1257,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 processed_bytes = 1;</code>
+     * @return The processedBytes.
      */
     public long getProcessedBytes() {
       return processedBytes_;
@@ -1170,6 +1271,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 total_estimated_bytes = 2;</code>
+     * @return The totalEstimatedBytes.
      */
     public long getTotalEstimatedBytes() {
       return totalEstimatedBytes_;
@@ -1465,7 +1567,7 @@ private static final long serialVersionUID = 0L;
 
         if (infoTypeStatsBuilder_ == null) {
           infoTypeStats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           infoTypeStatsBuilder_.clear();
         }
@@ -1496,19 +1598,17 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.InspectDataSourceDetails.Result buildPartial() {
         com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = new com.google.privacy.dlp.v2.InspectDataSourceDetails.Result(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.processedBytes_ = processedBytes_;
         result.totalEstimatedBytes_ = totalEstimatedBytes_;
         if (infoTypeStatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.infoTypeStats_ = infoTypeStats_;
         } else {
           result.infoTypeStats_ = infoTypeStatsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1567,7 +1667,7 @@ private static final long serialVersionUID = 0L;
           if (!other.infoTypeStats_.isEmpty()) {
             if (infoTypeStats_.isEmpty()) {
               infoTypeStats_ = other.infoTypeStats_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureInfoTypeStatsIsMutable();
               infoTypeStats_.addAll(other.infoTypeStats_);
@@ -1580,7 +1680,7 @@ private static final long serialVersionUID = 0L;
               infoTypeStatsBuilder_.dispose();
               infoTypeStatsBuilder_ = null;
               infoTypeStats_ = other.infoTypeStats_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               infoTypeStatsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInfoTypeStatsFieldBuilder() : null;
@@ -1626,6 +1726,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 processed_bytes = 1;</code>
+       * @return The processedBytes.
        */
       public long getProcessedBytes() {
         return processedBytes_;
@@ -1636,6 +1737,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 processed_bytes = 1;</code>
+       * @param value The processedBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessedBytes(long value) {
         
@@ -1649,6 +1752,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 processed_bytes = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProcessedBytes() {
         
@@ -1664,6 +1768,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 total_estimated_bytes = 2;</code>
+       * @return The totalEstimatedBytes.
        */
       public long getTotalEstimatedBytes() {
         return totalEstimatedBytes_;
@@ -1674,6 +1779,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 total_estimated_bytes = 2;</code>
+       * @param value The totalEstimatedBytes to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalEstimatedBytes(long value) {
         
@@ -1687,6 +1794,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 total_estimated_bytes = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotalEstimatedBytes() {
         
@@ -1698,9 +1806,9 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.privacy.dlp.v2.InfoTypeStats> infoTypeStats_ =
         java.util.Collections.emptyList();
       private void ensureInfoTypeStatsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           infoTypeStats_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>(infoTypeStats_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1905,7 +2013,7 @@ private static final long serialVersionUID = 0L;
       public Builder clearInfoTypeStats() {
         if (infoTypeStatsBuilder_ == null) {
           infoTypeStats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           infoTypeStatsBuilder_.clear();
@@ -2017,7 +2125,7 @@ private static final long serialVersionUID = 0L;
           infoTypeStatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.privacy.dlp.v2.InfoTypeStats, com.google.privacy.dlp.v2.InfoTypeStats.Builder, com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder>(
                   infoTypeStats_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           infoTypeStats_ = null;
@@ -2085,6 +2193,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * @return Whether the requestedOptions field is set.
    */
   public boolean hasRequestedOptions() {
     return requestedOptions_ != null;
@@ -2095,6 +2204,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * @return The requestedOptions.
    */
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions getRequestedOptions() {
     return requestedOptions_ == null ? com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions.getDefaultInstance() : requestedOptions_;
@@ -2118,6 +2228,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * @return Whether the result field is set.
    */
   public boolean hasResult() {
     return result_ != null;
@@ -2128,6 +2239,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * @return The result.
    */
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.Result getResult() {
     return result_ == null ? com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.getDefaultInstance() : result_;
@@ -2501,6 +2613,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+     * @return Whether the requestedOptions field is set.
      */
     public boolean hasRequestedOptions() {
       return requestedOptionsBuilder_ != null || requestedOptions_ != null;
@@ -2511,6 +2624,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+     * @return The requestedOptions.
      */
     public com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions getRequestedOptions() {
       if (requestedOptionsBuilder_ == null) {
@@ -2654,6 +2768,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * @return Whether the result field is set.
      */
     public boolean hasResult() {
       return resultBuilder_ != null || result_ != null;
@@ -2664,6 +2779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * @return The result.
      */
     public com.google.privacy.dlp.v2.InspectDataSourceDetails.Result getResult() {
       if (resultBuilder_ == null) {

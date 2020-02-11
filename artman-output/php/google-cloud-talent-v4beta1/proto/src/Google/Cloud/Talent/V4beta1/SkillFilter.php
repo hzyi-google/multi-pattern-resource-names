@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.SkillFilter</code>
  */
-final class SkillFilter extends \Google\Protobuf\Internal\Message
+class SkillFilter extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The skill name. For example, "java", "j2ee", and so on.
      *
      * Generated from protobuf field <code>string skill = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $skill = '';
+    protected $skill = '';
     /**
      * Whether to apply negation to the filter so profiles matching the filter
      * are excluded.
      *
      * Generated from protobuf field <code>bool negated = 2;</code>
      */
-    private $negated = false;
+    protected $negated = false;
 
     /**
      * Constructor.

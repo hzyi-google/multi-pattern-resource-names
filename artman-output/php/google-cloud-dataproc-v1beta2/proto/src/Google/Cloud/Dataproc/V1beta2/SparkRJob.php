@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.SparkRJob</code>
  */
-final class SparkRJob extends \Google\Protobuf\Internal\Message
+class SparkRJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The HCFS URI of the main R file to use as the driver.
@@ -23,7 +23,7 @@ final class SparkRJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $main_r_file_uri = '';
+    protected $main_r_file_uri = '';
     /**
      * Optional. The arguments to pass to the driver.  Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -61,7 +61,7 @@ final class SparkRJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
 
     /**
      * Constructor.

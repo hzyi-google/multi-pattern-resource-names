@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SearchProfilesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -88,18 +95,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               histogramQueryResults_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             histogramQueryResults_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.HistogramQueryResult.parser(), extensionRegistry));
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               summarizedProfiles_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000002;
             }
             summarizedProfiles_.add(
                 input.readMessage(com.google.cloud.talent.v4beta1.SummarizedProfile.parser(), extensionRegistry));
@@ -126,10 +133,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
       }
       this.unknownFields = unknownFields.build();
@@ -149,7 +156,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.talent.v4beta1.SearchProfilesResponse.class, com.google.cloud.talent.v4beta1.SearchProfilesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ESTIMATED_TOTAL_SIZE_FIELD_NUMBER = 1;
   private long estimatedTotalSize_;
   /**
@@ -159,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 estimated_total_size = 1;</code>
+   * @return The estimatedTotalSize.
    */
   public long getEstimatedTotalSize() {
     return estimatedTotalSize_;
@@ -172,6 +179,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   * @return Whether the spellCorrection field is set.
    */
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
@@ -182,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+   * @return The spellCorrection.
    */
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null ? com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance() : spellCorrection_;
@@ -206,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -217,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+   * @return The metadata.
    */
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance() : metadata_;
@@ -242,6 +253,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -262,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string next_page_token = 4;</code>
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
       getNextPageTokenBytes() {
@@ -341,8 +354,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.talent.v4beta1.SummarizedProfile> summarizedProfiles_;
   /**
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -352,8 +364,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -364,8 +375,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -375,8 +385,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -386,8 +395,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -402,11 +410,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An id that uniquely identifies the result set of a
-   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-   * call for consistent results.
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+   * results.
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   * @return The resultSetId.
    */
   public java.lang.String getResultSetId() {
     java.lang.Object ref = resultSetId_;
@@ -423,11 +432,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An id that uniquely identifies the result set of a
-   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-   * call for consistent results.
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+   * results.
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
+   * @return The bytes for resultSetId.
    */
   public com.google.protobuf.ByteString
       getResultSetIdBytes() {
@@ -739,13 +749,13 @@ private static final long serialVersionUID = 0L;
 
       if (histogramQueryResultsBuilder_ == null) {
         histogramQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         histogramQueryResultsBuilder_.clear();
       }
       if (summarizedProfilesBuilder_ == null) {
         summarizedProfiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         summarizedProfilesBuilder_.clear();
       }
@@ -778,7 +788,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.SearchProfilesResponse buildPartial() {
       com.google.cloud.talent.v4beta1.SearchProfilesResponse result = new com.google.cloud.talent.v4beta1.SearchProfilesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.estimatedTotalSize_ = estimatedTotalSize_;
       if (spellCorrectionBuilder_ == null) {
         result.spellCorrection_ = spellCorrection_;
@@ -792,25 +801,24 @@ private static final long serialVersionUID = 0L;
       }
       result.nextPageToken_ = nextPageToken_;
       if (histogramQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.histogramQueryResults_ = histogramQueryResults_;
       } else {
         result.histogramQueryResults_ = histogramQueryResultsBuilder_.build();
       }
       if (summarizedProfilesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.summarizedProfiles_ = summarizedProfiles_;
       } else {
         result.summarizedProfiles_ = summarizedProfilesBuilder_.build();
       }
       result.resultSetId_ = resultSetId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -876,7 +884,7 @@ private static final long serialVersionUID = 0L;
         if (!other.histogramQueryResults_.isEmpty()) {
           if (histogramQueryResults_.isEmpty()) {
             histogramQueryResults_ = other.histogramQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureHistogramQueryResultsIsMutable();
             histogramQueryResults_.addAll(other.histogramQueryResults_);
@@ -889,7 +897,7 @@ private static final long serialVersionUID = 0L;
             histogramQueryResultsBuilder_.dispose();
             histogramQueryResultsBuilder_ = null;
             histogramQueryResults_ = other.histogramQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             histogramQueryResultsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getHistogramQueryResultsFieldBuilder() : null;
@@ -902,7 +910,7 @@ private static final long serialVersionUID = 0L;
         if (!other.summarizedProfiles_.isEmpty()) {
           if (summarizedProfiles_.isEmpty()) {
             summarizedProfiles_ = other.summarizedProfiles_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSummarizedProfilesIsMutable();
             summarizedProfiles_.addAll(other.summarizedProfiles_);
@@ -915,7 +923,7 @@ private static final long serialVersionUID = 0L;
             summarizedProfilesBuilder_.dispose();
             summarizedProfilesBuilder_ = null;
             summarizedProfiles_ = other.summarizedProfiles_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             summarizedProfilesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSummarizedProfilesFieldBuilder() : null;
@@ -966,6 +974,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     * @return The estimatedTotalSize.
      */
     public long getEstimatedTotalSize() {
       return estimatedTotalSize_;
@@ -977,6 +986,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     * @param value The estimatedTotalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setEstimatedTotalSize(long value) {
       
@@ -991,6 +1002,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 estimated_total_size = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEstimatedTotalSize() {
       
@@ -1008,6 +1020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+     * @return Whether the spellCorrection field is set.
      */
     public boolean hasSpellCorrection() {
       return spellCorrectionBuilder_ != null || spellCorrection_ != null;
@@ -1018,6 +1031,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
+     * @return The spellCorrection.
      */
     public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
       if (spellCorrectionBuilder_ == null) {
@@ -1162,6 +1176,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1173,6 +1188,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
+     * @return The metadata.
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -1322,6 +1338,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1342,6 +1359,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
         getNextPageTokenBytes() {
@@ -1363,6 +1381,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(
         java.lang.String value) {
@@ -1381,6 +1401,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
       
@@ -1395,6 +1416,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string next_page_token = 4;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -1411,9 +1434,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.HistogramQueryResult> histogramQueryResults_ =
       java.util.Collections.emptyList();
     private void ensureHistogramQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         histogramQueryResults_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>(histogramQueryResults_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1618,7 +1641,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearHistogramQueryResults() {
       if (histogramQueryResultsBuilder_ == null) {
         histogramQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         histogramQueryResultsBuilder_.clear();
@@ -1730,7 +1753,7 @@ private static final long serialVersionUID = 0L;
         histogramQueryResultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.HistogramQueryResult, com.google.cloud.talent.v4beta1.HistogramQueryResult.Builder, com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>(
                 histogramQueryResults_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueryResults_ = null;
@@ -1741,9 +1764,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.SummarizedProfile> summarizedProfiles_ =
       java.util.Collections.emptyList();
     private void ensureSummarizedProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         summarizedProfiles_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>(summarizedProfiles_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1752,8 +1775,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1767,8 +1789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1782,8 +1803,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1797,8 +1817,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1819,8 +1838,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1838,8 +1856,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1859,8 +1876,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1881,8 +1897,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1900,8 +1915,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1919,8 +1933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1939,8 +1952,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1948,7 +1960,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSummarizedProfiles() {
       if (summarizedProfilesBuilder_ == null) {
         summarizedProfiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         summarizedProfilesBuilder_.clear();
@@ -1957,8 +1969,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1975,8 +1986,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -1987,8 +1997,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2002,8 +2011,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2018,8 +2026,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2030,8 +2037,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2043,8 +2049,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2060,7 +2065,7 @@ private static final long serialVersionUID = 0L;
         summarizedProfilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.talent.v4beta1.SummarizedProfile, com.google.cloud.talent.v4beta1.SummarizedProfile.Builder, com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder>(
                 summarizedProfiles_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         summarizedProfiles_ = null;
@@ -2072,11 +2077,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     * @return The resultSetId.
      */
     public java.lang.String getResultSetId() {
       java.lang.Object ref = resultSetId_;
@@ -2093,11 +2099,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     * @return The bytes for resultSetId.
      */
     public com.google.protobuf.ByteString
         getResultSetIdBytes() {
@@ -2115,11 +2122,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     * @param value The resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetId(
         java.lang.String value) {
@@ -2134,11 +2143,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResultSetId() {
       
@@ -2149,11 +2159,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
+     * @param value The bytes for resultSetId to set.
+     * @return This builder for chaining.
      */
     public Builder setResultSetIdBytes(
         com.google.protobuf.ByteString value) {

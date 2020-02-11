@@ -13,6 +13,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -21,6 +22,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The type.
    */
   com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType();
 
@@ -31,6 +33,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the units.
    */
   java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> getUnitsList();
   /**
@@ -40,6 +43,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of units.
    */
   int getUnitsCount();
   /**
@@ -49,6 +53,8 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The units at the given index.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index);
   /**
@@ -58,6 +64,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the enum numeric values on the wire for units.
    */
   java.util.List<java.lang.Integer>
   getUnitsValueList();
@@ -68,6 +75,8 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of units at the given index.
    */
   int getUnitsValue(int index);
 
@@ -77,6 +86,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   * @return Whether the range field is set.
    */
   boolean hasRange();
   /**
@@ -85,6 +95,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
+   * @return The range.
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange();
   /**
@@ -103,6 +114,7 @@ public interface CompensationFilterOrBuilder extends
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>
+   * @return The includeJobsWithUnspecifiedCompensationRange.
    */
   boolean getIncludeJobsWithUnspecifiedCompensationRange();
 }

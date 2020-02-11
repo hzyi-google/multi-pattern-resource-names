@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.PySparkJob</code>
  */
-final class PySparkJob extends \Google\Protobuf\Internal\Message
+class PySparkJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The HCFS URI of the main Python file to use as the driver. Must
@@ -24,7 +24,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $main_python_file_uri = '';
+    protected $main_python_file_uri = '';
     /**
      * Optional. The arguments to pass to the driver.  Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -75,7 +75,7 @@ final class PySparkJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
      */
-    private $logging_config = null;
+    protected $logging_config = null;
 
     /**
      * Constructor.

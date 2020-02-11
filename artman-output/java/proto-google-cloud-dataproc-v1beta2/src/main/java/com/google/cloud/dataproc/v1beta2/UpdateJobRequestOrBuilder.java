@@ -14,6 +14,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
@@ -23,6 +24,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
@@ -33,6 +35,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   java.lang.String getRegion();
   /**
@@ -41,6 +44,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
@@ -51,6 +55,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobId.
    */
   java.lang.String getJobId();
   /**
@@ -59,6 +64,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString
       getJobIdBytes();
@@ -69,6 +75,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the job field is set.
    */
   boolean hasJob();
   /**
@@ -77,6 +84,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The job.
    */
   com.google.cloud.dataproc.v1beta2.Job getJob();
   /**
@@ -99,6 +107,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -112,6 +121,7 @@ public interface UpdateJobRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CreateClientEventRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,7 +114,8 @@ private static final long serialVersionUID = 0L;
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -130,7 +137,8 @@ private static final long serialVersionUID = 0L;
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -150,30 +158,32 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.talent.v4beta1.ClientEvent clientEvent_;
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the clientEvent field is set.
    */
   public boolean hasClientEvent() {
     return clientEvent_ != null;
   }
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clientEvent.
    */
   public com.google.cloud.talent.v4beta1.ClientEvent getClientEvent() {
     return clientEvent_ == null ? com.google.cloud.talent.v4beta1.ClientEvent.getDefaultInstance() : clientEvent_;
   }
   /**
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -527,7 +537,8 @@ private static final long serialVersionUID = 0L;
      * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -549,7 +560,8 @@ private static final long serialVersionUID = 0L;
      * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -572,7 +584,9 @@ private static final long serialVersionUID = 0L;
      * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -592,7 +606,8 @@ private static final long serialVersionUID = 0L;
      * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -608,7 +623,9 @@ private static final long serialVersionUID = 0L;
      * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -627,22 +644,24 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.talent.v4beta1.ClientEvent, com.google.cloud.talent.v4beta1.ClientEvent.Builder, com.google.cloud.talent.v4beta1.ClientEventOrBuilder> clientEventBuilder_;
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the clientEvent field is set.
      */
     public boolean hasClientEvent() {
       return clientEventBuilder_ != null || clientEvent_ != null;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The clientEvent.
      */
     public com.google.cloud.talent.v4beta1.ClientEvent getClientEvent() {
       if (clientEventBuilder_ == null) {
@@ -653,8 +672,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -674,8 +693,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -693,8 +712,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -716,8 +735,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -735,8 +754,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -748,8 +767,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -764,8 +783,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>

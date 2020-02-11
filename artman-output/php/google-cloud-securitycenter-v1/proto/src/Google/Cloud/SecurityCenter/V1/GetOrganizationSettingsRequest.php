@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.GetOrganizationSettingsRequest</code>
  */
-final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
+class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Name of the organization to get organization settings for. Its format is
@@ -21,7 +21,7 @@ final class GetOrganizationSettingsRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.

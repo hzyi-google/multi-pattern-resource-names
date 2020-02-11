@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.Source</code>
  */
-final class Source extends \Google\Protobuf\Internal\Message
+class Source extends \Google\Protobuf\Internal\Message
 {
     /**
      * The relative resource name of this source. See:
@@ -26,7 +26,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
@@ -36,7 +36,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      */
-    private $display_name = '';
+    protected $display_name = '';
     /**
      * The description of the source (max of 1024 characters).
      * Example:
@@ -48,7 +48,7 @@ final class Source extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.

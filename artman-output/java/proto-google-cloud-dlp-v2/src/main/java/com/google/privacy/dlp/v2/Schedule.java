@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Schedule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,7 +101,8 @@ private static final long serialVersionUID = 0L;
   private int optionCase_ = 0;
   private java.lang.Object option_;
   public enum OptionCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RECURRENCE_PERIOD_DURATION(1),
     OPTION_NOT_SET(0);
     private final int value;
@@ -103,6 +110,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -140,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   * @return Whether the recurrencePeriodDuration field is set.
    */
   public boolean hasRecurrencePeriodDuration() {
     return optionCase_ == 1;
@@ -155,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+   * @return The recurrencePeriodDuration.
    */
   public com.google.protobuf.Duration getRecurrencePeriodDuration() {
     if (optionCase_ == 1) {
@@ -541,6 +552,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+     * @return Whether the recurrencePeriodDuration field is set.
      */
     public boolean hasRecurrencePeriodDuration() {
       return optionCase_ == 1;
@@ -556,6 +568,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
+     * @return The recurrencePeriodDuration.
      */
     public com.google.protobuf.Duration getRecurrencePeriodDuration() {
       if (recurrencePeriodDurationBuilder_ == null) {

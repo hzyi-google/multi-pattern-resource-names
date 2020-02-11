@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListAssetsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -159,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -179,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -233,14 +241,18 @@ private static final long serialVersionUID = 0L;
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -291,14 +303,18 @@ private static final long serialVersionUID = 0L;
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
       getFilterBytes() {
@@ -332,12 +348,16 @@ private static final long serialVersionUID = 0L;
    * resource_properties
    * security_marks.marks
    * security_center_properties.resource_name
+   * security_center_properties.resource_display_name
    * security_center_properties.resource_parent
+   * security_center_properties.resource_parent_display_name
    * security_center_properties.resource_project
+   * security_center_properties.resource_project_display_name
    * security_center_properties.resource_type
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -367,12 +387,16 @@ private static final long serialVersionUID = 0L;
    * resource_properties
    * security_marks.marks
    * security_center_properties.resource_name
+   * security_center_properties.resource_display_name
    * security_center_properties.resource_parent
+   * security_center_properties.resource_parent_display_name
    * security_center_properties.resource_project
+   * security_center_properties.resource_project_display_name
    * security_center_properties.resource_type
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString
       getOrderByBytes() {
@@ -399,6 +423,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -412,6 +437,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -457,6 +483,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   * @return Whether the compareDuration field is set.
    */
   public boolean hasCompareDuration() {
     return compareDuration_ != null;
@@ -486,6 +513,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   * @return The compareDuration.
    */
   public com.google.protobuf.Duration getCompareDuration() {
     return compareDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : compareDuration_;
@@ -530,6 +558,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fieldMask field is set.
    */
   public boolean hasFieldMask() {
     return fieldMask_ != null;
@@ -542,6 +571,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fieldMask.
    */
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
@@ -569,6 +599,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 8;</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -590,6 +621,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string page_token = 8;</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -614,6 +646,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 page_size = 9;</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -1091,6 +1124,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1111,6 +1145,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -1132,6 +1167,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -1150,6 +1187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -1164,6 +1202,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -1215,14 +1255,18 @@ private static final long serialVersionUID = 0L;
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1273,14 +1317,18 @@ private static final long serialVersionUID = 0L;
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
         getFilterBytes() {
@@ -1332,14 +1380,19 @@ private static final long serialVersionUID = 0L;
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(
         java.lang.String value) {
@@ -1388,14 +1441,18 @@ private static final long serialVersionUID = 0L;
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
       
@@ -1440,14 +1497,19 @@ private static final long serialVersionUID = 0L;
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(
         com.google.protobuf.ByteString value) {
@@ -1478,12 +1540,16 @@ private static final long serialVersionUID = 0L;
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1513,12 +1579,16 @@ private static final long serialVersionUID = 0L;
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString
         getOrderByBytes() {
@@ -1549,12 +1619,17 @@ private static final long serialVersionUID = 0L;
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(
         java.lang.String value) {
@@ -1582,12 +1657,16 @@ private static final long serialVersionUID = 0L;
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
       
@@ -1611,12 +1690,17 @@ private static final long serialVersionUID = 0L;
      * resource_properties
      * security_marks.marks
      * security_center_properties.resource_name
+     * security_center_properties.resource_display_name
      * security_center_properties.resource_parent
+     * security_center_properties.resource_parent_display_name
      * security_center_properties.resource_project
+     * security_center_properties.resource_project_display_name
      * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(
         com.google.protobuf.ByteString value) {
@@ -1642,6 +1726,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -1655,6 +1740,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -1838,6 +1924,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration compare_duration = 5;</code>
+     * @return Whether the compareDuration field is set.
      */
     public boolean hasCompareDuration() {
       return compareDurationBuilder_ != null || compareDuration_ != null;
@@ -1867,6 +1954,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration compare_duration = 5;</code>
+     * @return The compareDuration.
      */
     public com.google.protobuf.Duration getCompareDuration() {
       if (compareDurationBuilder_ == null) {
@@ -2145,6 +2233,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
       return fieldMaskBuilder_ != null || fieldMask_ != null;
@@ -2157,6 +2246,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The fieldMask.
      */
     public com.google.protobuf.FieldMask getFieldMask() {
       if (fieldMaskBuilder_ == null) {
@@ -2314,6 +2404,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 8;</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -2335,6 +2426,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 8;</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -2357,6 +2449,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 8;</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -2376,6 +2470,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -2391,6 +2486,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string page_token = 8;</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -2412,6 +2509,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 9;</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -2423,6 +2521,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 9;</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -2437,6 +2537,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 page_size = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       

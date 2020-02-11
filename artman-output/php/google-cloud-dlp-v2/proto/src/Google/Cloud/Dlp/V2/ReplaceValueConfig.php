@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.ReplaceValueConfig</code>
  */
-final class ReplaceValueConfig extends \Google\Protobuf\Internal\Message
+class ReplaceValueConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value to replace it with.
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
      */
-    private $new_value = null;
+    protected $new_value = null;
 
     /**
      * Constructor.

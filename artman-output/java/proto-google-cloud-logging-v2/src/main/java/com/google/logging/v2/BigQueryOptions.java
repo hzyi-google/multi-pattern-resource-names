@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BigQueryOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -49,6 +55,11 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             usePartitionedTables_ = input.readBool();
+            break;
+          }
+          case 24: {
+
+            usesTimestampColumnPartitioning_ = input.readBool();
             break;
           }
           default: {
@@ -97,9 +108,29 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool use_partitioned_tables = 1;</code>
+   * @return The usePartitionedTables.
    */
   public boolean getUsePartitionedTables() {
     return usePartitionedTables_;
+  }
+
+  public static final int USES_TIMESTAMP_COLUMN_PARTITIONING_FIELD_NUMBER = 3;
+  private boolean usesTimestampColumnPartitioning_;
+  /**
+   * <pre>
+   * Output only. True if new timestamp column based partitioning is in use,
+   * false if legacy ingestion-time partitioning is in use.
+   * All new sinks will have this field set true and will use timestamp column
+   * based partitioning. If use_partitioned_tables is false, this value has no
+   * meaning and will be false. Legacy sinks using partitioned tables will have
+   * this field set to false.
+   * </pre>
+   *
+   * <code>bool uses_timestamp_column_partitioning = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The usesTimestampColumnPartitioning.
+   */
+  public boolean getUsesTimestampColumnPartitioning() {
+    return usesTimestampColumnPartitioning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -119,6 +150,9 @@ private static final long serialVersionUID = 0L;
     if (usePartitionedTables_ != false) {
       output.writeBool(1, usePartitionedTables_);
     }
+    if (usesTimestampColumnPartitioning_ != false) {
+      output.writeBool(3, usesTimestampColumnPartitioning_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -131,6 +165,10 @@ private static final long serialVersionUID = 0L;
     if (usePartitionedTables_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, usePartitionedTables_);
+    }
+    if (usesTimestampColumnPartitioning_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, usesTimestampColumnPartitioning_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -149,6 +187,8 @@ private static final long serialVersionUID = 0L;
 
     if (getUsePartitionedTables()
         != other.getUsePartitionedTables()) return false;
+    if (getUsesTimestampColumnPartitioning()
+        != other.getUsesTimestampColumnPartitioning()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -163,6 +203,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USE_PARTITIONED_TABLES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getUsePartitionedTables());
+    hash = (37 * hash) + USES_TIMESTAMP_COLUMN_PARTITIONING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUsesTimestampColumnPartitioning());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -302,6 +345,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       usePartitionedTables_ = false;
 
+      usesTimestampColumnPartitioning_ = false;
+
       return this;
     }
 
@@ -329,6 +374,7 @@ private static final long serialVersionUID = 0L;
     public com.google.logging.v2.BigQueryOptions buildPartial() {
       com.google.logging.v2.BigQueryOptions result = new com.google.logging.v2.BigQueryOptions(this);
       result.usePartitionedTables_ = usePartitionedTables_;
+      result.usesTimestampColumnPartitioning_ = usesTimestampColumnPartitioning_;
       onBuilt();
       return result;
     }
@@ -380,6 +426,9 @@ private static final long serialVersionUID = 0L;
       if (other.getUsePartitionedTables() != false) {
         setUsePartitionedTables(other.getUsePartitionedTables());
       }
+      if (other.getUsesTimestampColumnPartitioning() != false) {
+        setUsesTimestampColumnPartitioning(other.getUsesTimestampColumnPartitioning());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -422,6 +471,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     * @return The usePartitionedTables.
      */
     public boolean getUsePartitionedTables() {
       return usePartitionedTables_;
@@ -438,6 +488,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     * @param value The usePartitionedTables to set.
+     * @return This builder for chaining.
      */
     public Builder setUsePartitionedTables(boolean value) {
       
@@ -457,10 +509,68 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool use_partitioned_tables = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsePartitionedTables() {
       
       usePartitionedTables_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean usesTimestampColumnPartitioning_ ;
+    /**
+     * <pre>
+     * Output only. True if new timestamp column based partitioning is in use,
+     * false if legacy ingestion-time partitioning is in use.
+     * All new sinks will have this field set true and will use timestamp column
+     * based partitioning. If use_partitioned_tables is false, this value has no
+     * meaning and will be false. Legacy sinks using partitioned tables will have
+     * this field set to false.
+     * </pre>
+     *
+     * <code>bool uses_timestamp_column_partitioning = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The usesTimestampColumnPartitioning.
+     */
+    public boolean getUsesTimestampColumnPartitioning() {
+      return usesTimestampColumnPartitioning_;
+    }
+    /**
+     * <pre>
+     * Output only. True if new timestamp column based partitioning is in use,
+     * false if legacy ingestion-time partitioning is in use.
+     * All new sinks will have this field set true and will use timestamp column
+     * based partitioning. If use_partitioned_tables is false, this value has no
+     * meaning and will be false. Legacy sinks using partitioned tables will have
+     * this field set to false.
+     * </pre>
+     *
+     * <code>bool uses_timestamp_column_partitioning = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The usesTimestampColumnPartitioning to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsesTimestampColumnPartitioning(boolean value) {
+      
+      usesTimestampColumnPartitioning_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. True if new timestamp column based partitioning is in use,
+     * false if legacy ingestion-time partitioning is in use.
+     * All new sinks will have this field set true and will use timestamp column
+     * based partitioning. If use_partitioned_tables is false, this value has no
+     * meaning and will be false. Legacy sinks using partitioned tables will have
+     * this field set to false.
+     * </pre>
+     *
+     * <code>bool uses_timestamp_column_partitioning = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsesTimestampColumnPartitioning() {
+      
+      usesTimestampColumnPartitioning_ = false;
       onChanged();
       return this;
     }

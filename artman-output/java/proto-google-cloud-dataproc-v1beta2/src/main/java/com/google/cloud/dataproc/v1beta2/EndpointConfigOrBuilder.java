@@ -73,6 +73,7 @@ public interface EndpointConfigOrBuilder extends
    * </pre>
    *
    * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enableHttpPortAccess.
    */
   boolean getEnableHttpPortAccess();
 }

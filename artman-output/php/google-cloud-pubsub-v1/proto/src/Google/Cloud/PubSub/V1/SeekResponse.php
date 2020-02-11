@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.SeekResponse</code>
  */
-final class SeekResponse extends \Google\Protobuf\Internal\Message
+class SeekResponse extends \Google\Protobuf\Internal\Message
 {
 
     /**

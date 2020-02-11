@@ -13,6 +13,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -21,6 +22,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -31,6 +33,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The topic.
    */
   java.lang.String getTopic();
   /**
@@ -39,6 +42,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>string topic = 2;</code>
+   * @return The bytes for topic.
    */
   com.google.protobuf.ByteString
       getTopicBytes();
@@ -58,6 +62,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
   /**
@@ -75,6 +80,7 @@ public interface SnapshotOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**

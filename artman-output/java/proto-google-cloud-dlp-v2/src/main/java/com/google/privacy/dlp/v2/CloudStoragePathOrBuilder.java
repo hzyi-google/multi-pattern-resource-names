@@ -14,6 +14,7 @@ public interface CloudStoragePathOrBuilder extends
    * </pre>
    *
    * <code>string path = 1;</code>
+   * @return The path.
    */
   java.lang.String getPath();
   /**
@@ -23,6 +24,7 @@ public interface CloudStoragePathOrBuilder extends
    * </pre>
    *
    * <code>string path = 1;</code>
+   * @return The bytes for path.
    */
   com.google.protobuf.ByteString
       getPathBytes();

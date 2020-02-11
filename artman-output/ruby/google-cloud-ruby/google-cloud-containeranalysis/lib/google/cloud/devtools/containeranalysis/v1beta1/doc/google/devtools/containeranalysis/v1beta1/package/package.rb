@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ module Grafeas
       # E.g., Debian's jessie-backports dpkg mirror.
       # @!attribute [rw] cpe_uri
       #   @return [String]
-      #     The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+      #     Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
       #     denoting the package manager version distributing a package.
       # @!attribute [rw] architecture
       #   @return [Grafeas::V1beta1::Package::Architecture]
@@ -27,8 +27,7 @@ module Grafeas
       #     built.
       # @!attribute [rw] latest_version
       #   @return [Grafeas::V1beta1::Package::Version]
-      #     The latest available version of this package in this distribution
-      #     channel.
+      #     The latest available version of this package in this distribution channel.
       # @!attribute [rw] maintainer
       #   @return [String]
       #     A freeform string denoting the maintainer of this package.
@@ -41,10 +40,10 @@ module Grafeas
       class Distribution; end
 
       # An occurrence of a particular package installation found within a system's
-      # filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+      # filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
       # @!attribute [rw] cpe_uri
       #   @return [String]
-      #     The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+      #     Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
       #     denoting the package manager version distributing a package.
       # @!attribute [rw] version
       #   @return [Grafeas::V1beta1::Package::Version]
@@ -59,7 +58,7 @@ module Grafeas
       # versions.
       # @!attribute [rw] name
       #   @return [String]
-      #     The name of the package.
+      #     Required. Immutable. The name of the package.
       # @!attribute [rw] distribution
       #   @return [Array<Grafeas::V1beta1::Package::Distribution>]
       #     The various channels by which a package is distributed.
@@ -68,7 +67,7 @@ module Grafeas
       # Details of a package occurrence.
       # @!attribute [rw] installation
       #   @return [Grafeas::V1beta1::Package::Installation]
-      #     Where the package was installed.
+      #     Required. Where the package was installed.
       class Details; end
 
       # This represents how a particular software package may be installed on a
@@ -78,7 +77,7 @@ module Grafeas
       #     Output only. The name of the installed package.
       # @!attribute [rw] location
       #   @return [Array<Grafeas::V1beta1::Package::Location>]
-      #     All of the places within the filesystem versions of this package
+      #     Required. All of the places within the filesystem versions of this package
       #     have been found.
       class Installation; end
 
@@ -88,29 +87,28 @@ module Grafeas
       #     Used to correct mistakes in the version numbering scheme.
       # @!attribute [rw] name
       #   @return [String]
-      #     The main part of the version name.
+      #     Required only when version kind is NORMAL. The main part of the version
+      #     name.
       # @!attribute [rw] revision
       #   @return [String]
       #     The iteration of the package build from the above version.
       # @!attribute [rw] kind
       #   @return [Grafeas::V1beta1::Package::Version::VersionKind]
-      #     Distinguish between sentinel MIN/MAX versions and normal versions. If
-      #     kind is not NORMAL, then the other fields are ignored.
+      #     Required. Distinguishes between sentinel MIN/MAX versions and normal
+      #     versions.
       class Version
         # Whether this is an ordinary package version or a sentinel MIN/MAX version.
         module VersionKind
           # Unknown.
           VERSION_KIND_UNSPECIFIED = 0
 
-          # A standard package version, defined by the other fields.
+          # A standard package version.
           NORMAL = 1
 
-          # A special version representing negative infinity, other fields are
-          # ignored.
+          # A special version representing negative infinity.
           MINIMUM = 2
 
-          # A special version representing positive infinity, other fields are
-          # ignored.
+          # A special version representing positive infinity.
           MAXIMUM = 3
         end
       end

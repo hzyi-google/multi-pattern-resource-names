@@ -13,6 +13,7 @@ public interface RecordConditionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   * @return Whether the expressions field is set.
    */
   boolean hasExpressions();
   /**
@@ -21,6 +22,7 @@ public interface RecordConditionOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
+   * @return The expressions.
    */
   com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions();
   /**

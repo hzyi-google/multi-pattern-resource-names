@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.JobScheduling</code>
  */
-final class JobScheduling extends \Google\Protobuf\Internal\Message
+class JobScheduling extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. Maximum number of times per hour a driver may be restarted as
@@ -25,7 +25,7 @@ final class JobScheduling extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $max_failures_per_hour = 0;
+    protected $max_failures_per_hour = 0;
 
     /**
      * Constructor.

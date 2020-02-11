@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ManagedCluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -67,10 +74,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -123,7 +130,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.ManagedCluster.class, com.google.cloud.dataproc.v1.ManagedCluster.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object clusterName_;
   /**
@@ -136,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -159,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
       getClusterNameBytes() {
@@ -182,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -192,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The config.
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
     return config_ == null ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance() : config_;
@@ -615,7 +625,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.ManagedCluster buildPartial() {
       com.google.cloud.dataproc.v1.ManagedCluster result = new com.google.cloud.dataproc.v1.ManagedCluster(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.clusterName_ = clusterName_;
       if (configBuilder_ == null) {
         result.config_ = config_;
@@ -624,7 +633,6 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -723,6 +731,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -746,6 +755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
         getClusterNameBytes() {
@@ -770,6 +780,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(
         java.lang.String value) {
@@ -791,6 +803,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
       
@@ -808,6 +821,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(
         com.google.protobuf.ByteString value) {
@@ -830,6 +845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -840,6 +856,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The config.
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {

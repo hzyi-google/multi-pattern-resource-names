@@ -9,15 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container message for hashes of byte content of files, used in Source
+ * Container message for hashes of byte content of files, used in source
  * messages to verify integrity of source input to the build.
  *
  * Generated from protobuf message <code>grafeas.v1beta1.provenance.FileHashes</code>
  */
-final class FileHashes extends \Google\Protobuf\Internal\Message
+class FileHashes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
@@ -30,7 +30,7 @@ final class FileHashes extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Provenance\Hash[]|\Google\Protobuf\Internal\RepeatedField $file_hash
-     *           Collection of file hashes.
+     *           Required. Collection of file hashes.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ final class FileHashes extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -50,7 +50,7 @@ final class FileHashes extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      *
      * Generated from protobuf field <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      * @param \Grafeas\V1beta1\Provenance\Hash[]|\Google\Protobuf\Internal\RepeatedField $var

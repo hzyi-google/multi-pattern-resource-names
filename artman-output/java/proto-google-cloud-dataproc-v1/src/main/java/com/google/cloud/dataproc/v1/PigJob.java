@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1;
 
 /**
  * <pre>
- * A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+ * A Dataproc job for running [Apache Pig](https://pig.apache.org/)
  * queries on YARN.
  * </pre>
  *
@@ -22,6 +22,13 @@ private static final long serialVersionUID = 0L;
   }
   private PigJob() {
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PigJob();
   }
 
   @java.lang.Override
@@ -74,10 +81,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               scriptVariables_ = com.google.protobuf.MapField.newMapField(
                   ScriptVariablesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             scriptVariables__ = input.readMessage(
@@ -87,10 +94,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               properties_ = com.google.protobuf.MapField.newMapField(
                   PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             properties__ = input.readMessage(
@@ -101,9 +108,9 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000004;
             }
             jarFileUris_.add(s);
             break;
@@ -136,7 +143,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -170,11 +177,11 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.PigJob.class, com.google.cloud.dataproc.v1.PigJob.Builder.class);
   }
 
-  private int bitField0_;
   private int queriesCase_ = 0;
   private java.lang.Object queries_;
   public enum QueriesCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     QUERY_FILE_URI(1),
     QUERY_LIST(2),
     QUERIES_NOT_SET(0);
@@ -183,6 +190,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -216,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return The queryFileUri.
    */
   public java.lang.String getQueryFileUri() {
     java.lang.Object ref = "";
@@ -240,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return The bytes for queryFileUri.
    */
   public com.google.protobuf.ByteString
       getQueryFileUriBytes() {
@@ -267,6 +278,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   * @return Whether the queryList field is set.
    */
   public boolean hasQueryList() {
     return queriesCase_ == 2;
@@ -277,6 +289,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+   * @return The queryList.
    */
   public com.google.cloud.dataproc.v1.QueryList getQueryList() {
     if (queriesCase_ == 2) {
@@ -308,6 +321,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The continueOnFailure.
    */
   public boolean getContinueOnFailure() {
     return continueOnFailure_;
@@ -438,7 +452,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -461,7 +475,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -475,7 +489,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -494,7 +508,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
@@ -522,6 +536,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList
       getJarFileUrisList() {
@@ -534,6 +549,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -545,6 +561,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The jarFileUris at the given index.
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -556,6 +574,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jarFileUris at the given index.
    */
   public com.google.protobuf.ByteString
       getJarFileUrisBytes(int index) {
@@ -570,6 +590,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the loggingConfig field is set.
    */
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
@@ -580,6 +601,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The loggingConfig.
    */
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
@@ -868,7 +890,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Cloud Dataproc job for running [Apache Pig](https://pig.apache.org/)
+   * A Dataproc job for running [Apache Pig](https://pig.apache.org/)
    * queries on YARN.
    * </pre>
    *
@@ -940,7 +962,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableScriptVariables().clear();
       internalGetMutableProperties().clear();
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
       } else {
@@ -976,7 +998,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.PigJob buildPartial() {
       com.google.cloud.dataproc.v1.PigJob result = new com.google.cloud.dataproc.v1.PigJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (queriesCase_ == 1) {
         result.queries_ = queries_;
       }
@@ -992,9 +1013,9 @@ private static final long serialVersionUID = 0L;
       result.scriptVariables_.makeImmutable();
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jarFileUris_ = jarFileUris_;
       if (loggingConfigBuilder_ == null) {
@@ -1002,7 +1023,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.queriesCase_ = queriesCase_;
       onBuilt();
       return result;
@@ -1062,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1138,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     * @return The queryFileUri.
      */
     public java.lang.String getQueryFileUri() {
       java.lang.Object ref = "";
@@ -1162,6 +1183,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     * @return The bytes for queryFileUri.
      */
     public com.google.protobuf.ByteString
         getQueryFileUriBytes() {
@@ -1187,6 +1209,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     * @param value The queryFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryFileUri(
         java.lang.String value) {
@@ -1204,6 +1228,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearQueryFileUri() {
       if (queriesCase_ == 1) {
@@ -1219,6 +1244,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
+     * @param value The bytes for queryFileUri to set.
+     * @return This builder for chaining.
      */
     public Builder setQueryFileUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1240,6 +1267,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+     * @return Whether the queryList field is set.
      */
     public boolean hasQueryList() {
       return queriesCase_ == 2;
@@ -1250,6 +1278,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
+     * @return The queryList.
      */
     public com.google.cloud.dataproc.v1.QueryList getQueryList() {
       if (queryListBuilder_ == null) {
@@ -1413,6 +1442,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The continueOnFailure.
      */
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
@@ -1425,6 +1455,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The continueOnFailure to set.
+     * @return This builder for chaining.
      */
     public Builder setContinueOnFailure(boolean value) {
       
@@ -1440,6 +1472,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearContinueOnFailure() {
       
@@ -1635,7 +1668,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1658,7 +1691,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1672,7 +1705,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1691,7 +1724,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1718,7 +1751,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1744,7 +1777,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1763,7 +1796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure Pig.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/pig/conf/pig.properties, and classes in user code.
      * </pre>
@@ -1780,9 +1813,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1792,6 +1825,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList
         getJarFileUrisList() {
@@ -1804,6 +1838,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1815,6 +1850,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The jarFileUris at the given index.
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1826,6 +1863,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jarFileUris at the given index.
      */
     public com.google.protobuf.ByteString
         getJarFileUrisBytes(int index) {
@@ -1838,6 +1877,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The jarFileUris to set.
+     * @return This builder for chaining.
      */
     public Builder setJarFileUris(
         int index, java.lang.String value) {
@@ -1856,6 +1898,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUris(
         java.lang.String value) {
@@ -1874,6 +1918,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJarFileUris(
         java.lang.Iterable<java.lang.String> values) {
@@ -1890,10 +1936,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1904,6 +1951,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the jarFileUris to add.
+     * @return This builder for chaining.
      */
     public Builder addJarFileUrisBytes(
         com.google.protobuf.ByteString value) {
@@ -1926,6 +1975,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
@@ -1936,6 +1986,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The loggingConfig.
      */
     public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {

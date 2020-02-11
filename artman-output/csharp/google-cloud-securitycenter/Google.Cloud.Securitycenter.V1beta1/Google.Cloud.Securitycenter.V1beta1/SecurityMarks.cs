@@ -26,18 +26,23 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
           string.Concat(
             "Cjhnb29nbGUvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMS9zZWN1cml0",
             "eV9tYXJrcy5wcm90bxIjZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYx",
-            "YmV0YTEaHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8imQEKDVNlY3Vy",
-            "aXR5TWFya3MSDAoEbmFtZRgBIAEoCRJMCgVtYXJrcxgCIAMoCzI9Lmdvb2ds",
-            "ZS5jbG91ZC5zZWN1cml0eWNlbnRlci52MWJldGExLlNlY3VyaXR5TWFya3Mu",
-            "TWFya3NFbnRyeRosCgpNYXJrc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1",
-            "ZRgCIAEoCToCOAFCfgonY29tLmdvb2dsZS5jbG91ZC5zZWN1cml0eWNlbnRl",
-            "ci52MWJldGExUAFaUWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvY2xvdWQvc2VjdXJpdHljZW50ZXIvdjFiZXRhMTtzZWN1cml0eWNl",
-            "bnRlcmIGcHJvdG8z"));
+            "YmV0YTEaGWdvb2dsZS9hcGkvcmVzb3VyY2UucHJvdG8aHGdvb2dsZS9hcGkv",
+            "YW5ub3RhdGlvbnMucHJvdG8i2AIKDVNlY3VyaXR5TWFya3MSDAoEbmFtZRgB",
+            "IAEoCRJMCgVtYXJrcxgCIAMoCzI9Lmdvb2dsZS5jbG91ZC5zZWN1cml0eWNl",
+            "bnRlci52MWJldGExLlNlY3VyaXR5TWFya3MuTWFya3NFbnRyeRosCgpNYXJr",
+            "c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAE6vAHqQbgB",
+            "CitzZWN1cml0eWNlbnRlci5nb29nbGVhcGlzLmNvbS9TZWN1cml0eU1hcmtz",
+            "Ejlvcmdhbml6YXRpb25zL3tvcmdhbml6YXRpb259L2Fzc2V0cy97YXNzZXR9",
+            "L3NlY3VyaXR5TWFya3MSTm9yZ2FuaXphdGlvbnMve29yZ2FuaXphdGlvbn0v",
+            "c291cmNlcy97c291cmNlfS9maW5kaW5ncy97ZmluZGluZ30vc2VjdXJpdHlN",
+            "YXJrc0J+Cidjb20uZ29vZ2xlLmNsb3VkLnNlY3VyaXR5Y2VudGVyLnYxYmV0",
+            "YTFQAVpRZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9j",
+            "bG91ZC9zZWN1cml0eWNlbnRlci92MWJldGExO3NlY3VyaXR5Y2VudGVyYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarks), global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarks.Parser, new[]{ "Name", "Marks" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarks), global::Google.Cloud.Securitycenter.V1Beta1.SecurityMarks.Parser, new[]{ "Name", "Marks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -92,8 +97,8 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// The relative resource name of the SecurityMarks. See:
     /// https://cloud.google.com/apis/design/resource_names#relative_resource_name
     /// Examples:
-    /// "organizations/123/assets/456/securityMarks"
-    /// "organizations/123/sources/456/findings/789/securityMarks".
+    /// "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+    /// "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -106,14 +111,16 @@ namespace Google.Cloud.Securitycenter.V1Beta1 {
     /// <summary>Field number for the "marks" field.</summary>
     public const int MarksFieldNumber = 2;
     private static readonly pbc::MapField<string, string>.Codec _map_marks_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 18);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
     private readonly pbc::MapField<string, string> marks_ = new pbc::MapField<string, string>();
     /// <summary>
     /// Mutable user specified security marks belonging to the parent resource.
     /// Constraints are as follows:
-    ///   - Keys and values are treated as case insensitive
-    ///   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-    ///   - Values have leading and trailing whitespace trimmed, remaining
+    ///
+    ///   * Keys and values are treated as case insensitive
+    ///   * Keys must be between 1 - 256 characters (inclusive)
+    ///   * Keys must be letters, numbers, underscores, or dashes
+    ///   * Values have leading and trailing whitespace trimmed, remaining
     ///     characters must be between 1 - 4096 characters (inclusive)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

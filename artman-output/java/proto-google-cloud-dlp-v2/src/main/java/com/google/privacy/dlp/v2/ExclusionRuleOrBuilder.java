@@ -13,6 +13,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+   * @return Whether the dictionary field is set.
    */
   boolean hasDictionary();
   /**
@@ -21,6 +22,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
+   * @return The dictionary.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
   /**
@@ -38,6 +40,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+   * @return Whether the regex field is set.
    */
   boolean hasRegex();
   /**
@@ -46,6 +49,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
+   * @return The regex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
   /**
@@ -63,6 +67,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+   * @return Whether the excludeInfoTypes field is set.
    */
   boolean hasExcludeInfoTypes();
   /**
@@ -71,6 +76,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
+   * @return The excludeInfoTypes.
    */
   com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes();
   /**
@@ -88,6 +94,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+   * @return The enum numeric value on the wire for matchingType.
    */
   int getMatchingTypeValue();
   /**
@@ -96,6 +103,7 @@ public interface ExclusionRuleOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.MatchingType matching_type = 4;</code>
+   * @return The matchingType.
    */
   com.google.privacy.dlp.v2.MatchingType getMatchingType();
 

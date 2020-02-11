@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.LogEntry</code>
  */
-final class LogEntry extends \Google\Protobuf\Internal\Message
+class LogEntry extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the log to which this log entry belongs:
@@ -37,7 +37,7 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string log_name = 12;</code>
      */
-    private $log_name = '';
+    protected $log_name = '';
     /**
      * Required. The monitored resource that produced this log entry.
      * Example: a log entry that reports a database error would be associated with
@@ -46,7 +46,7 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 8;</code>
      */
-    private $resource = null;
+    protected $resource = null;
     /**
      * Optional. The time the event described by the log entry occurred.  This
      * time is used to compute the log entry's age and to enforce the logs
@@ -62,38 +62,41 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 9;</code>
      */
-    private $timestamp = null;
+    protected $timestamp = null;
     /**
      * Output only. The time the log entry was received by Logging.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
      */
-    private $receive_timestamp = null;
+    protected $receive_timestamp = null;
     /**
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
      *
      * Generated from protobuf field <code>.google.logging.type.LogSeverity severity = 10;</code>
      */
-    private $severity = 0;
+    protected $severity = 0;
     /**
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project, with the same
-     * `timestamp`, and with the same `insert_id` to be duplicates which can be
-     * removed. If omitted in new log entries, then Logging assigns its own unique
-     * identifier. The `insert_id` is also used to order log entries that have the
-     * same `timestamp` value.
+     * `timestamp`, and with the same `insert_id` to be duplicates which are
+     * removed in a single query result. However, there are no guarantees of
+     * de-duplication in the export of logs.
+     * If the `insert_id` is omitted when writing a log entry, the Logging API
+     *  assigns its own unique identifier in this field.
+     * In queries, the `insert_id` is also used to order log entries that have
+     * the same `log_name` and `timestamp` values.
      *
      * Generated from protobuf field <code>string insert_id = 4;</code>
      */
-    private $insert_id = '';
+    protected $insert_id = '';
     /**
      * Optional. Information about the HTTP request associated with this log
      * entry, if applicable.
      *
      * Generated from protobuf field <code>.google.logging.type.HttpRequest http_request = 7;</code>
      */
-    private $http_request = null;
+    protected $http_request = null;
     /**
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -113,14 +116,14 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
      */
-    private $metadata = null;
+    protected $metadata = null;
     /**
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
      */
-    private $operation = null;
+    protected $operation = null;
     /**
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -129,7 +132,7 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string trace = 22;</code>
      */
-    private $trace = '';
+    protected $trace = '';
     /**
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
@@ -138,7 +141,7 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string span_id = 27;</code>
      */
-    private $span_id = '';
+    protected $span_id = '';
     /**
      * Optional. The sampling decision of the trace associated with the log entry.
      * True means that the trace resource name in the `trace` field was sampled
@@ -149,14 +152,14 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool trace_sampled = 30;</code>
      */
-    private $trace_sampled = false;
+    protected $trace_sampled = false;
     /**
      * Optional. Source code location information associated with the log entry,
      * if any.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
      */
-    private $source_location = null;
+    protected $source_location = null;
     protected $payload;
 
     /**
@@ -221,10 +224,13 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
      *     @type string $insert_id
      *           Optional. A unique identifier for the log entry. If you provide a value,
      *           then Logging considers other log entries in the same project, with the same
-     *           `timestamp`, and with the same `insert_id` to be duplicates which can be
-     *           removed. If omitted in new log entries, then Logging assigns its own unique
-     *           identifier. The `insert_id` is also used to order log entries that have the
-     *           same `timestamp` value.
+     *           `timestamp`, and with the same `insert_id` to be duplicates which are
+     *           removed in a single query result. However, there are no guarantees of
+     *           de-duplication in the export of logs.
+     *           If the `insert_id` is omitted when writing a log entry, the Logging API
+     *            assigns its own unique identifier in this field.
+     *           In queries, the `insert_id` is also used to order log entries that have
+     *           the same `log_name` and `timestamp` values.
      *     @type \Google\Cloud\Logging\Type\HttpRequest $http_request
      *           Optional. Information about the HTTP request associated with this log
      *           entry, if applicable.
@@ -555,10 +561,13 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
     /**
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project, with the same
-     * `timestamp`, and with the same `insert_id` to be duplicates which can be
-     * removed. If omitted in new log entries, then Logging assigns its own unique
-     * identifier. The `insert_id` is also used to order log entries that have the
-     * same `timestamp` value.
+     * `timestamp`, and with the same `insert_id` to be duplicates which are
+     * removed in a single query result. However, there are no guarantees of
+     * de-duplication in the export of logs.
+     * If the `insert_id` is omitted when writing a log entry, the Logging API
+     *  assigns its own unique identifier in this field.
+     * In queries, the `insert_id` is also used to order log entries that have
+     * the same `log_name` and `timestamp` values.
      *
      * Generated from protobuf field <code>string insert_id = 4;</code>
      * @return string
@@ -571,10 +580,13 @@ final class LogEntry extends \Google\Protobuf\Internal\Message
     /**
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project, with the same
-     * `timestamp`, and with the same `insert_id` to be duplicates which can be
-     * removed. If omitted in new log entries, then Logging assigns its own unique
-     * identifier. The `insert_id` is also used to order log entries that have the
-     * same `timestamp` value.
+     * `timestamp`, and with the same `insert_id` to be duplicates which are
+     * removed in a single query result. However, there are no guarantees of
+     * de-duplication in the export of logs.
+     * If the `insert_id` is omitted when writing a log entry, the Logging API
+     *  assigns its own unique identifier in this field.
+     * In queries, the `insert_id` is also used to order log entries that have
+     * the same `log_name` and `timestamp` values.
      *
      * Generated from protobuf field <code>string insert_id = 4;</code>
      * @param string $var

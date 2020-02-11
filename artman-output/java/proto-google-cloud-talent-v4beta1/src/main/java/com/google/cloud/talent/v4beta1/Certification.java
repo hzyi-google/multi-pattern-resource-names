@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Certification();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -154,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -177,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
+   * @return Whether the acquireDate field is set.
    */
   public boolean hasAcquireDate() {
     return acquireDate_ != null;
@@ -187,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date acquire_date = 2;</code>
+   * @return The acquireDate.
    */
   public com.google.type.Date getAcquireDate() {
     return acquireDate_ == null ? com.google.type.Date.getDefaultInstance() : acquireDate_;
@@ -210,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
+   * @return Whether the expireDate field is set.
    */
   public boolean hasExpireDate() {
     return expireDate_ != null;
@@ -220,6 +231,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.Date expire_date = 3;</code>
+   * @return The expireDate.
    */
   public com.google.type.Date getExpireDate() {
     return expireDate_ == null ? com.google.type.Date.getDefaultInstance() : expireDate_;
@@ -244,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string authority = 4;</code>
+   * @return The authority.
    */
   public java.lang.String getAuthority() {
     java.lang.Object ref = authority_;
@@ -264,6 +277,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string authority = 4;</code>
+   * @return The bytes for authority.
    */
   public com.google.protobuf.ByteString
       getAuthorityBytes() {
@@ -288,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 5;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -308,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 5;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -731,6 +747,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -751,6 +768,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -772,6 +790,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -790,6 +810,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -804,6 +825,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -826,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date acquire_date = 2;</code>
+     * @return Whether the acquireDate field is set.
      */
     public boolean hasAcquireDate() {
       return acquireDateBuilder_ != null || acquireDate_ != null;
@@ -836,6 +860,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date acquire_date = 2;</code>
+     * @return The acquireDate.
      */
     public com.google.type.Date getAcquireDate() {
       if (acquireDateBuilder_ == null) {
@@ -979,6 +1004,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date expire_date = 3;</code>
+     * @return Whether the expireDate field is set.
      */
     public boolean hasExpireDate() {
       return expireDateBuilder_ != null || expireDate_ != null;
@@ -989,6 +1015,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.type.Date expire_date = 3;</code>
+     * @return The expireDate.
      */
     public com.google.type.Date getExpireDate() {
       if (expireDateBuilder_ == null) {
@@ -1131,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authority = 4;</code>
+     * @return The authority.
      */
     public java.lang.String getAuthority() {
       java.lang.Object ref = authority_;
@@ -1151,6 +1179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authority = 4;</code>
+     * @return The bytes for authority.
      */
     public com.google.protobuf.ByteString
         getAuthorityBytes() {
@@ -1172,6 +1201,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authority = 4;</code>
+     * @param value The authority to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthority(
         java.lang.String value) {
@@ -1190,6 +1221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authority = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAuthority() {
       
@@ -1204,6 +1236,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string authority = 4;</code>
+     * @param value The bytes for authority to set.
+     * @return This builder for chaining.
      */
     public Builder setAuthorityBytes(
         com.google.protobuf.ByteString value) {
@@ -1225,6 +1259,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1245,6 +1280,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1266,6 +1302,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1284,6 +1322,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1298,6 +1337,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 5;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {

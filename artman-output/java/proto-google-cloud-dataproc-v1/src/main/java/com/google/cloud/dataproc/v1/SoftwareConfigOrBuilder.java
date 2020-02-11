@@ -10,7 +10,7 @@ public interface SoftwareConfigOrBuilder extends
   /**
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
-   * supported [Cloud Dataproc
+   * supported [Dataproc
    * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
@@ -19,12 +19,13 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The imageVersion.
    */
   java.lang.String getImageVersion();
   /**
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the
-   * supported [Cloud Dataproc
+   * supported [Dataproc
    * Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
@@ -33,6 +34,7 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for imageVersion.
    */
   com.google.protobuf.ByteString
       getImageVersionBytes();
@@ -167,6 +169,7 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the optionalComponents.
    */
   java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList();
   /**
@@ -175,6 +178,7 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of optionalComponents.
    */
   int getOptionalComponentsCount();
   /**
@@ -183,6 +187,8 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The optionalComponents at the given index.
    */
   com.google.cloud.dataproc.v1.Component getOptionalComponents(int index);
   /**
@@ -191,6 +197,7 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
   java.util.List<java.lang.Integer>
   getOptionalComponentsValueList();
@@ -200,6 +207,8 @@ public interface SoftwareConfigOrBuilder extends
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of optionalComponents at the given index.
    */
   int getOptionalComponentsValue(int index);
 }

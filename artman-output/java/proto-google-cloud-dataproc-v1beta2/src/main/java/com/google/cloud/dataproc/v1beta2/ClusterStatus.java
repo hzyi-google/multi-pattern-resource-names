@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ClusterStatus();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -231,6 +237,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -238,6 +246,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN;
@@ -379,6 +391,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -386,6 +400,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Substate forNumber(int value) {
       switch (value) {
         case 0: return UNSPECIFIED;
@@ -451,6 +469,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -461,6 +480,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -476,6 +496,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The detail.
    */
   public java.lang.String getDetail() {
     java.lang.Object ref = detail_;
@@ -495,6 +516,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for detail.
    */
   public com.google.protobuf.ByteString
       getDetailBytes() {
@@ -518,6 +540,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the stateStartTime field is set.
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -528,6 +551,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The stateStartTime.
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateStartTime_;
@@ -552,6 +576,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for substate.
    */
   public int getSubstateValue() {
     return substate_;
@@ -563,6 +588,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The substate.
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
@@ -945,6 +971,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -955,6 +982,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -967,6 +996,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The state.
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -979,6 +1009,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.dataproc.v1beta2.ClusterStatus.State value) {
       if (value == null) {
@@ -995,6 +1027,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearState() {
       
@@ -1010,6 +1043,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The detail.
      */
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
@@ -1029,6 +1063,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for detail.
      */
     public com.google.protobuf.ByteString
         getDetailBytes() {
@@ -1049,6 +1084,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetail(
         java.lang.String value) {
@@ -1066,6 +1103,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDetail() {
       
@@ -1079,6 +1117,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailBytes(
         com.google.protobuf.ByteString value) {
@@ -1101,6 +1141,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the stateStartTime field is set.
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1111,6 +1152,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The stateStartTime.
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1253,6 +1295,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for substate.
      */
     public int getSubstateValue() {
       return substate_;
@@ -1264,6 +1307,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for substate to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstateValue(int value) {
       substate_ = value;
@@ -1277,6 +1322,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The substate.
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
@@ -1290,6 +1336,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The substate to set.
+     * @return This builder for chaining.
      */
     public Builder setSubstate(com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate value) {
       if (value == null) {
@@ -1307,6 +1355,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSubstate() {
       

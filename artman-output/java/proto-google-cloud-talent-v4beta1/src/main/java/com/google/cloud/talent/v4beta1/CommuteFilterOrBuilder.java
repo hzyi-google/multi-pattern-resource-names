@@ -13,6 +13,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for commuteMethod.
    */
   int getCommuteMethodValue();
   /**
@@ -21,6 +22,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteMethod commute_method = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The commuteMethod.
    */
   com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod();
 
@@ -31,6 +33,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the startCoordinates field is set.
    */
   boolean hasStartCoordinates();
   /**
@@ -40,6 +43,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The startCoordinates.
    */
   com.google.type.LatLng getStartCoordinates();
   /**
@@ -54,26 +58,28 @@ public interface CommuteFilterOrBuilder extends
 
   /**
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the travelDuration field is set.
    */
   boolean hasTravelDuration();
   /**
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The travelDuration.
    */
   com.google.protobuf.Duration getTravelDuration();
   /**
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,6 +96,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>bool allow_imprecise_addresses = 4;</code>
+   * @return The allowImpreciseAddresses.
    */
   boolean getAllowImpreciseAddresses();
 
@@ -99,6 +106,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   * @return The enum numeric value on the wire for roadTraffic.
    */
   int getRoadTrafficValue();
   /**
@@ -107,6 +115,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   * @return The roadTraffic.
    */
   com.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic getRoadTraffic();
 
@@ -118,6 +127,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.TimeOfDay departure_time = 6;</code>
+   * @return Whether the departureTime field is set.
    */
   boolean hasDepartureTime();
   /**
@@ -128,6 +138,7 @@ public interface CommuteFilterOrBuilder extends
    * </pre>
    *
    * <code>.google.type.TimeOfDay departure_time = 6;</code>
+   * @return The departureTime.
    */
   com.google.type.TimeOfDay getDepartureTime();
   /**

@@ -9,20 +9,22 @@ public interface DistributionOrBuilder extends
 
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The cpeUri.
    */
   java.lang.String getCpeUri();
   /**
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   * @return The bytes for cpeUri.
    */
   com.google.protobuf.ByteString
       getCpeUriBytes();
@@ -34,6 +36,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+   * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
   /**
@@ -43,31 +46,31 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Architecture architecture = 2;</code>
+   * @return The architecture.
    */
   io.grafeas.v1beta1.pkg.Architecture getArchitecture();
 
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+   * @return Whether the latestVersion field is set.
    */
   boolean hasLatestVersion();
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
+   * @return The latestVersion.
    */
   io.grafeas.v1beta1.pkg.Version getLatestVersion();
   /**
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -80,6 +83,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   * @return The maintainer.
    */
   java.lang.String getMaintainer();
   /**
@@ -88,6 +92,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   * @return The bytes for maintainer.
    */
   com.google.protobuf.ByteString
       getMaintainerBytes();
@@ -98,6 +103,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -106,6 +112,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();
@@ -116,6 +123,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string description = 6;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -124,6 +132,7 @@ public interface DistributionOrBuilder extends
    * </pre>
    *
    * <code>string description = 6;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();

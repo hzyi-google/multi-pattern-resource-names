@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new OutputStorageConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,6 +115,10 @@ private static final long serialVersionUID = 0L;
   public enum OutputSchema
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code>
      */
     OUTPUT_SCHEMA_UNSPECIFIED(0),
@@ -157,6 +167,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * Unused.
+     * </pre>
+     *
      * <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code>
      */
     public static final int OUTPUT_SCHEMA_UNSPECIFIED_VALUE = 0;
@@ -212,6 +226,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -219,6 +235,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static OutputSchema forNumber(int value) {
       switch (value) {
         case 0: return OUTPUT_SCHEMA_UNSPECIFIED;
@@ -282,7 +302,8 @@ private static final long serialVersionUID = 0L;
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TABLE(1),
     TYPE_NOT_SET(0);
     private final int value;
@@ -290,6 +311,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -333,6 +356,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   * @return Whether the table field is set.
    */
   public boolean hasTable() {
     return typeCase_ == 1;
@@ -354,6 +378,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+   * @return The table.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     if (typeCase_ == 1) {
@@ -401,6 +426,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   * @return The enum numeric value on the wire for outputSchema.
    */
   public int getOutputSchemaValue() {
     return outputSchema_;
@@ -418,6 +444,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+   * @return The outputSchema.
    */
   public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
     @SuppressWarnings("deprecation")
@@ -807,6 +834,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+     * @return Whether the table field is set.
      */
     public boolean hasTable() {
       return typeCase_ == 1;
@@ -828,6 +856,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
+     * @return The table.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getTable() {
       if (tableBuilder_ == null) {
@@ -1073,6 +1102,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     * @return The enum numeric value on the wire for outputSchema.
      */
     public int getOutputSchemaValue() {
       return outputSchema_;
@@ -1090,6 +1120,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     * @param value The enum numeric value on the wire for outputSchema to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputSchemaValue(int value) {
       outputSchema_ = value;
@@ -1109,6 +1141,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     * @return The outputSchema.
      */
     public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
       @SuppressWarnings("deprecation")
@@ -1128,6 +1161,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     * @param value The outputSchema to set.
+     * @return This builder for chaining.
      */
     public Builder setOutputSchema(com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema value) {
       if (value == null) {
@@ -1151,6 +1186,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOutputSchema() {
       

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,7 @@
  *
  * ============================= WorkflowTemplateServiceClient =============================
  *
- * <p>Service Description: The API interface for managing Workflow Templates in the Cloud Dataproc
- * API.
+ * <p>Service Description: The API interface for managing Workflow Templates in the Dataproc API.
  *
  * <p>Sample for WorkflowTemplateServiceClient:
  *
@@ -67,6 +66,22 @@
  *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
  *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
  *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============================== AutoscalingPolicyServiceClient ==============================
+ *
+ * <p>Service Description: The API interface for managing autoscaling policies in the Dataproc API.
+ *
+ * <p>Sample for AutoscalingPolicyServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
+ *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+ *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
+ *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(formattedParent, policy);
  * }
  * </code>
  * </pre>

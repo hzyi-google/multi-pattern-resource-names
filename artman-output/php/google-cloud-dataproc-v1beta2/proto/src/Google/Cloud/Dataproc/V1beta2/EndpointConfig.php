@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.EndpointConfig</code>
  */
-final class EndpointConfig extends \Google\Protobuf\Internal\Message
+class EndpointConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The map of port descriptions to URLs. Will only be populated
@@ -28,7 +28,7 @@ final class EndpointConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $enable_http_port_access = false;
+    protected $enable_http_port_access = false;
 
     /**
      * Constructor.

@@ -37,6 +37,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DataSourceParameter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -102,9 +109,9 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               allowedValues_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000001;
             }
             allowedValues_.add(s);
             break;
@@ -136,9 +143,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               fields_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000002;
             }
             fields_.add(
                 input.readMessage(com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.parser(), extensionRegistry));
@@ -186,10 +193,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = allowedValues_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
       }
       this.unknownFields = unknownFields.build();
@@ -346,6 +353,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -353,6 +362,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Type forNumber(int value) {
       switch (value) {
         case 0: return TYPE_UNSPECIFIED;
@@ -414,7 +427,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type)
   }
 
-  private int bitField0_;
   public static final int PARAM_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object paramId_;
   /**
@@ -423,6 +435,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string param_id = 1;</code>
+   * @return The paramId.
    */
   public java.lang.String getParamId() {
     java.lang.Object ref = paramId_;
@@ -442,6 +455,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string param_id = 1;</code>
+   * @return The bytes for paramId.
    */
   public com.google.protobuf.ByteString
       getParamIdBytes() {
@@ -465,6 +479,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -484,6 +499,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -507,6 +523,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -526,6 +543,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 3;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -549,6 +567,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -559,6 +578,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+   * @return The type.
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type getType() {
     @SuppressWarnings("deprecation")
@@ -574,6 +594,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool required = 5;</code>
+   * @return The required.
    */
   public boolean getRequired() {
     return required_;
@@ -587,6 +608,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool repeated = 6;</code>
+   * @return The repeated.
    */
   public boolean getRepeated() {
     return repeated_;
@@ -600,6 +622,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_regex = 7;</code>
+   * @return The validationRegex.
    */
   public java.lang.String getValidationRegex() {
     java.lang.Object ref = validationRegex_;
@@ -619,6 +642,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_regex = 7;</code>
+   * @return The bytes for validationRegex.
    */
   public com.google.protobuf.ByteString
       getValidationRegexBytes() {
@@ -642,6 +666,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   * @return A list containing the allowedValues.
    */
   public com.google.protobuf.ProtocolStringList
       getAllowedValuesList() {
@@ -653,6 +678,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   * @return The count of allowedValues.
    */
   public int getAllowedValuesCount() {
     return allowedValues_.size();
@@ -663,6 +689,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   * @param index The index of the element to return.
+   * @return The allowedValues at the given index.
    */
   public java.lang.String getAllowedValues(int index) {
     return allowedValues_.get(index);
@@ -673,6 +701,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string allowed_values = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedValues at the given index.
    */
   public com.google.protobuf.ByteString
       getAllowedValuesBytes(int index) {
@@ -687,6 +717,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+   * @return Whether the minValue field is set.
    */
   public boolean hasMinValue() {
     return minValue_ != null;
@@ -697,6 +728,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+   * @return The minValue.
    */
   public com.google.protobuf.DoubleValue getMinValue() {
     return minValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : minValue_;
@@ -720,6 +752,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+   * @return Whether the maxValue field is set.
    */
   public boolean hasMaxValue() {
     return maxValue_ != null;
@@ -730,6 +763,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+   * @return The maxValue.
    */
   public com.google.protobuf.DoubleValue getMaxValue() {
     return maxValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : maxValue_;
@@ -809,6 +843,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_description = 12;</code>
+   * @return The validationDescription.
    */
   public java.lang.String getValidationDescription() {
     java.lang.Object ref = validationDescription_;
@@ -829,6 +864,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_description = 12;</code>
+   * @return The bytes for validationDescription.
    */
   public com.google.protobuf.ByteString
       getValidationDescriptionBytes() {
@@ -852,6 +888,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_help_url = 13;</code>
+   * @return The validationHelpUrl.
    */
   public java.lang.String getValidationHelpUrl() {
     java.lang.Object ref = validationHelpUrl_;
@@ -871,6 +908,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validation_help_url = 13;</code>
+   * @return The bytes for validationHelpUrl.
    */
   public com.google.protobuf.ByteString
       getValidationHelpUrlBytes() {
@@ -894,6 +932,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool immutable = 14;</code>
+   * @return The immutable.
    */
   public boolean getImmutable() {
     return immutable_;
@@ -907,6 +946,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool recurse = 15;</code>
+   * @return The recurse.
    */
   public boolean getRecurse() {
     return recurse_;
@@ -921,6 +961,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool deprecated = 20;</code>
+   * @return The deprecated.
    */
   public boolean getDeprecated() {
     return deprecated_;
@@ -1325,7 +1366,7 @@ private static final long serialVersionUID = 0L;
       validationRegex_ = "";
 
       allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (minValueBuilder_ == null) {
         minValue_ = null;
       } else {
@@ -1340,7 +1381,7 @@ private static final long serialVersionUID = 0L;
       }
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         fieldsBuilder_.clear();
       }
@@ -1381,7 +1422,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter result = new com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.paramId_ = paramId_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -1389,9 +1429,9 @@ private static final long serialVersionUID = 0L;
       result.required_ = required_;
       result.repeated_ = repeated_;
       result.validationRegex_ = validationRegex_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = allowedValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowedValues_ = allowedValues_;
       if (minValueBuilder_ == null) {
@@ -1405,9 +1445,9 @@ private static final long serialVersionUID = 0L;
         result.maxValue_ = maxValueBuilder_.build();
       }
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.fields_ = fields_;
       } else {
@@ -1418,7 +1458,6 @@ private static final long serialVersionUID = 0L;
       result.immutable_ = immutable_;
       result.recurse_ = recurse_;
       result.deprecated_ = deprecated_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1495,7 +1534,7 @@ private static final long serialVersionUID = 0L;
       if (!other.allowedValues_.isEmpty()) {
         if (allowedValues_.isEmpty()) {
           allowedValues_ = other.allowedValues_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAllowedValuesIsMutable();
           allowedValues_.addAll(other.allowedValues_);
@@ -1512,7 +1551,7 @@ private static final long serialVersionUID = 0L;
         if (!other.fields_.isEmpty()) {
           if (fields_.isEmpty()) {
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFieldsIsMutable();
             fields_.addAll(other.fields_);
@@ -1525,7 +1564,7 @@ private static final long serialVersionUID = 0L;
             fieldsBuilder_.dispose();
             fieldsBuilder_ = null;
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             fieldsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFieldsFieldBuilder() : null;
@@ -1588,6 +1627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string param_id = 1;</code>
+     * @return The paramId.
      */
     public java.lang.String getParamId() {
       java.lang.Object ref = paramId_;
@@ -1607,6 +1647,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string param_id = 1;</code>
+     * @return The bytes for paramId.
      */
     public com.google.protobuf.ByteString
         getParamIdBytes() {
@@ -1627,6 +1668,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string param_id = 1;</code>
+     * @param value The paramId to set.
+     * @return This builder for chaining.
      */
     public Builder setParamId(
         java.lang.String value) {
@@ -1644,6 +1687,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string param_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearParamId() {
       
@@ -1657,6 +1701,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string param_id = 1;</code>
+     * @param value The bytes for paramId to set.
+     * @return This builder for chaining.
      */
     public Builder setParamIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1677,6 +1723,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1696,6 +1743,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -1716,6 +1764,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -1733,6 +1783,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -1746,6 +1797,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1766,6 +1819,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1785,6 +1839,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1805,6 +1860,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1822,6 +1879,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1835,6 +1893,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 3;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1855,6 +1915,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1865,6 +1926,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1877,6 +1940,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+     * @return The type.
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type getType() {
       @SuppressWarnings("deprecation")
@@ -1889,6 +1953,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type value) {
       if (value == null) {
@@ -1905,6 +1971,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type type = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1920,6 +1987,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool required = 5;</code>
+     * @return The required.
      */
     public boolean getRequired() {
       return required_;
@@ -1930,6 +1998,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool required = 5;</code>
+     * @param value The required to set.
+     * @return This builder for chaining.
      */
     public Builder setRequired(boolean value) {
       
@@ -1943,6 +2013,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool required = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRequired() {
       
@@ -1958,6 +2029,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool repeated = 6;</code>
+     * @return The repeated.
      */
     public boolean getRepeated() {
       return repeated_;
@@ -1968,6 +2040,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool repeated = 6;</code>
+     * @param value The repeated to set.
+     * @return This builder for chaining.
      */
     public Builder setRepeated(boolean value) {
       
@@ -1981,6 +2055,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool repeated = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRepeated() {
       
@@ -1996,6 +2071,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_regex = 7;</code>
+     * @return The validationRegex.
      */
     public java.lang.String getValidationRegex() {
       java.lang.Object ref = validationRegex_;
@@ -2015,6 +2091,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_regex = 7;</code>
+     * @return The bytes for validationRegex.
      */
     public com.google.protobuf.ByteString
         getValidationRegexBytes() {
@@ -2035,6 +2112,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_regex = 7;</code>
+     * @param value The validationRegex to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationRegex(
         java.lang.String value) {
@@ -2052,6 +2131,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_regex = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValidationRegex() {
       
@@ -2065,6 +2145,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_regex = 7;</code>
+     * @param value The bytes for validationRegex to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationRegexBytes(
         com.google.protobuf.ByteString value) {
@@ -2080,9 +2162,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAllowedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -2091,6 +2173,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @return A list containing the allowedValues.
      */
     public com.google.protobuf.ProtocolStringList
         getAllowedValuesList() {
@@ -2102,6 +2185,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @return The count of allowedValues.
      */
     public int getAllowedValuesCount() {
       return allowedValues_.size();
@@ -2112,6 +2196,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param index The index of the element to return.
+     * @return The allowedValues at the given index.
      */
     public java.lang.String getAllowedValues(int index) {
       return allowedValues_.get(index);
@@ -2122,6 +2208,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedValues at the given index.
      */
     public com.google.protobuf.ByteString
         getAllowedValuesBytes(int index) {
@@ -2133,6 +2221,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The allowedValues to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowedValues(
         int index, java.lang.String value) {
@@ -2150,6 +2241,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param value The allowedValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedValues(
         java.lang.String value) {
@@ -2167,6 +2260,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param values The allowedValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAllowedValues(
         java.lang.Iterable<java.lang.String> values) {
@@ -2182,10 +2277,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAllowedValues() {
       allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2195,6 +2291,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string allowed_values = 8;</code>
+     * @param value The bytes of the allowedValues to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedValuesBytes(
         com.google.protobuf.ByteString value) {
@@ -2217,6 +2315,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+     * @return Whether the minValue field is set.
      */
     public boolean hasMinValue() {
       return minValueBuilder_ != null || minValue_ != null;
@@ -2227,6 +2326,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue min_value = 9;</code>
+     * @return The minValue.
      */
     public com.google.protobuf.DoubleValue getMinValue() {
       if (minValueBuilder_ == null) {
@@ -2370,6 +2470,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+     * @return Whether the maxValue field is set.
      */
     public boolean hasMaxValue() {
       return maxValueBuilder_ != null || maxValue_ != null;
@@ -2380,6 +2481,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
+     * @return The maxValue.
      */
     public com.google.protobuf.DoubleValue getMaxValue() {
       if (maxValueBuilder_ == null) {
@@ -2517,9 +2619,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> fields_ =
       java.util.Collections.emptyList();
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(fields_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2713,7 +2815,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         fieldsBuilder_.clear();
@@ -2818,7 +2920,7 @@ private static final long serialVersionUID = 0L;
         fieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
                 fields_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         fields_ = null;
@@ -2834,6 +2936,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_description = 12;</code>
+     * @return The validationDescription.
      */
     public java.lang.String getValidationDescription() {
       java.lang.Object ref = validationDescription_;
@@ -2854,6 +2957,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_description = 12;</code>
+     * @return The bytes for validationDescription.
      */
     public com.google.protobuf.ByteString
         getValidationDescriptionBytes() {
@@ -2875,6 +2979,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_description = 12;</code>
+     * @param value The validationDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationDescription(
         java.lang.String value) {
@@ -2893,6 +2999,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_description = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValidationDescription() {
       
@@ -2907,6 +3014,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_description = 12;</code>
+     * @param value The bytes for validationDescription to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2927,6 +3036,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_help_url = 13;</code>
+     * @return The validationHelpUrl.
      */
     public java.lang.String getValidationHelpUrl() {
       java.lang.Object ref = validationHelpUrl_;
@@ -2946,6 +3056,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_help_url = 13;</code>
+     * @return The bytes for validationHelpUrl.
      */
     public com.google.protobuf.ByteString
         getValidationHelpUrlBytes() {
@@ -2966,6 +3077,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_help_url = 13;</code>
+     * @param value The validationHelpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationHelpUrl(
         java.lang.String value) {
@@ -2983,6 +3096,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_help_url = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValidationHelpUrl() {
       
@@ -2996,6 +3110,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validation_help_url = 13;</code>
+     * @param value The bytes for validationHelpUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setValidationHelpUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -3016,6 +3132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool immutable = 14;</code>
+     * @return The immutable.
      */
     public boolean getImmutable() {
       return immutable_;
@@ -3026,6 +3143,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool immutable = 14;</code>
+     * @param value The immutable to set.
+     * @return This builder for chaining.
      */
     public Builder setImmutable(boolean value) {
       
@@ -3039,6 +3158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool immutable = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearImmutable() {
       
@@ -3054,6 +3174,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool recurse = 15;</code>
+     * @return The recurse.
      */
     public boolean getRecurse() {
       return recurse_;
@@ -3064,6 +3185,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool recurse = 15;</code>
+     * @param value The recurse to set.
+     * @return This builder for chaining.
      */
     public Builder setRecurse(boolean value) {
       
@@ -3077,6 +3200,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool recurse = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRecurse() {
       
@@ -3093,6 +3217,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool deprecated = 20;</code>
+     * @return The deprecated.
      */
     public boolean getDeprecated() {
       return deprecated_;
@@ -3104,6 +3229,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool deprecated = 20;</code>
+     * @param value The deprecated to set.
+     * @return This builder for chaining.
      */
     public Builder setDeprecated(boolean value) {
       
@@ -3118,6 +3245,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool deprecated = 20;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeprecated() {
       

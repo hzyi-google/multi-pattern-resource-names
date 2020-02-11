@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InstantiateInlineWorkflowTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -153,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -176,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the template field is set.
    */
   public boolean hasTemplate() {
     return template_ != null;
@@ -186,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The template.
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
     return template_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance() : template_;
@@ -209,6 +219,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string instance_id = 3;</code>
+   * @return The instanceId.
    */
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
@@ -228,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string instance_id = 3;</code>
+   * @return The bytes for instanceId.
    */
   public com.google.protobuf.ByteString
       getInstanceIdBytes() {
@@ -257,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string request_id = 4;</code>
+   * @return The requestId.
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -282,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string request_id = 4;</code>
+   * @return The bytes for requestId.
    */
   public com.google.protobuf.ByteString
       getRequestIdBytes() {
@@ -681,6 +695,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -707,6 +722,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -734,6 +750,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -758,6 +776,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -778,6 +797,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -800,6 +821,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
       return templateBuilder_ != null || template_ != null;
@@ -810,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The template.
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {
@@ -951,6 +974,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instance_id = 3;</code>
+     * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
@@ -970,6 +994,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instance_id = 3;</code>
+     * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString
         getInstanceIdBytes() {
@@ -990,6 +1015,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instance_id = 3;</code>
+     * @param value The instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceId(
         java.lang.String value) {
@@ -1007,6 +1034,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instance_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
       
@@ -1020,6 +1048,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instance_id = 3;</code>
+     * @param value The bytes for instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1046,6 +1076,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 4;</code>
+     * @return The requestId.
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -1071,6 +1102,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 4;</code>
+     * @return The bytes for requestId.
      */
     public com.google.protobuf.ByteString
         getRequestIdBytes() {
@@ -1097,6 +1129,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 4;</code>
+     * @param value The requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestId(
         java.lang.String value) {
@@ -1120,6 +1154,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRequestId() {
       
@@ -1139,6 +1174,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 4;</code>
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(
         com.google.protobuf.ByteString value) {

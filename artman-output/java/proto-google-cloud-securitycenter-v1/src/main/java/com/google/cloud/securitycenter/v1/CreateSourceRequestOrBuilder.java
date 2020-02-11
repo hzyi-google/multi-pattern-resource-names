@@ -14,6 +14,7 @@ public interface CreateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -23,6 +24,7 @@ public interface CreateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
@@ -34,6 +36,7 @@ public interface CreateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the source field is set.
    */
   boolean hasSource();
   /**
@@ -43,6 +46,7 @@ public interface CreateSourceRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The source.
    */
   com.google.cloud.securitycenter.v1.Source getSource();
   /**

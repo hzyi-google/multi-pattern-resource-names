@@ -20,6 +20,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -35,6 +36,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -45,6 +47,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -53,6 +56,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -65,6 +69,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
@@ -75,6 +80,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
@@ -85,6 +91,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+   * @return The enum numeric value on the wire for size.
    */
   int getSizeValue();
   /**
@@ -93,6 +100,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
+   * @return The size.
    */
   com.google.cloud.talent.v4beta1.CompanySize getSize();
 
@@ -101,11 +109,11 @@ public interface CompanyOrBuilder extends
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in
-   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
+   * @return The headquartersAddress.
    */
   java.lang.String getHeadquartersAddress();
   /**
@@ -113,11 +121,11 @@ public interface CompanyOrBuilder extends
    * The street address of the company's main headquarters, which may be
    * different from the job location. The service attempts
    * to geolocate the provided address, and populates a more specific
-   * location wherever possible in
-   * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
+   * location wherever possible in [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
    * <code>string headquarters_address = 5;</code>
+   * @return The bytes for headquartersAddress.
    */
   com.google.protobuf.ByteString
       getHeadquartersAddressBytes();
@@ -130,6 +138,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>bool hiring_agency = 6;</code>
+   * @return The hiringAgency.
    */
   boolean getHiringAgency();
 
@@ -142,6 +151,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string eeo_text = 7;</code>
+   * @return The eeoText.
    */
   java.lang.String getEeoText();
   /**
@@ -153,6 +163,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string eeo_text = 7;</code>
+   * @return The bytes for eeoText.
    */
   com.google.protobuf.ByteString
       getEeoTextBytes();
@@ -165,6 +176,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string website_uri = 8;</code>
+   * @return The websiteUri.
    */
   java.lang.String getWebsiteUri();
   /**
@@ -175,6 +187,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string website_uri = 8;</code>
+   * @return The bytes for websiteUri.
    */
   com.google.protobuf.ByteString
       getWebsiteUriBytes();
@@ -186,6 +199,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
+   * @return The careerSiteUri.
    */
   java.lang.String getCareerSiteUri();
   /**
@@ -195,6 +209,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
+   * @return The bytes for careerSiteUri.
    */
   com.google.protobuf.ByteString
       getCareerSiteUriBytes();
@@ -205,6 +220,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string image_uri = 10;</code>
+   * @return The imageUri.
    */
   java.lang.String getImageUri();
   /**
@@ -213,15 +229,15 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>string image_uri = 10;</code>
+   * @return The bytes for imageUri.
    */
   com.google.protobuf.ByteString
       getImageUriBytes();
 
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -229,14 +245,14 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @return A list containing the keywordSearchableJobCustomAttributes.
    */
   java.util.List<java.lang.String>
       getKeywordSearchableJobCustomAttributesList();
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -244,13 +260,13 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @return The count of keywordSearchableJobCustomAttributes.
    */
   int getKeywordSearchableJobCustomAttributesCount();
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -258,13 +274,14 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @param index The index of the element to return.
+   * @return The keywordSearchableJobCustomAttributes at the given index.
    */
   java.lang.String getKeywordSearchableJobCustomAttributes(int index);
   /**
    * <pre>
-   * A list of keys of filterable
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
-   * whose corresponding `string_values` are used in keyword searches. Jobs with
+   * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
@@ -272,6 +289,8 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
    */
   com.google.protobuf.ByteString
       getKeywordSearchableJobCustomAttributesBytes(int index);
@@ -282,6 +301,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the derivedInfo field is set.
    */
   boolean hasDerivedInfo();
   /**
@@ -290,6 +310,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The derivedInfo.
    */
   com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo();
   /**
@@ -309,6 +330,7 @@ public interface CompanyOrBuilder extends
    * </pre>
    *
    * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The suspended.
    */
   boolean getSuspended();
 }

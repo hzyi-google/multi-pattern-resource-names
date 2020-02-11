@@ -5,7 +5,7 @@ package io.grafeas.v1beta1.provenance;
 
 /**
  * <pre>
- * Container message for hashes of byte content of files, used in Source
+ * Container message for hashes of byte content of files, used in source
  * messages to verify integrity of source input to the build.
  * </pre>
  *
@@ -22,6 +22,13 @@ private static final long serialVersionUID = 0L;
   }
   private FileHashes() {
     fileHash_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new FileHashes();
   }
 
   @java.lang.Override
@@ -96,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<io.grafeas.v1beta1.provenance.Hash> fileHash_;
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -106,7 +113,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -117,7 +124,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -127,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -137,7 +144,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -306,7 +313,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Container message for hashes of byte content of files, used in Source
+   * Container message for hashes of byte content of files, used in source
    * messages to verify integrity of source input to the build.
    * </pre>
    *
@@ -508,7 +515,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -522,7 +529,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -536,7 +543,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -550,7 +557,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -571,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -589,7 +596,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -609,7 +616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -630,7 +637,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -648,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -666,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -685,7 +692,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -702,7 +709,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -719,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -730,7 +737,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -744,7 +751,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -759,7 +766,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -770,7 +777,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -782,7 +789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>

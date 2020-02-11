@@ -6,9 +6,8 @@ package com.google.cloud.talent.v4beta1;
 /**
  * <pre>
  * A Job resource represents a job posting (also referred to as a "job listing"
- * or "job requisition"). A job belongs to a
- * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
- * responsible for the job.
+ * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
+ * entity responsible for the job.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -41,6 +40,13 @@ private static final long serialVersionUID = 0L;
     postingRegion_ = 0;
     visibility_ = 0;
     companyDisplayName_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Job();
   }
 
   @java.lang.Override
@@ -99,9 +105,9 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               addresses_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             addresses_.add(s);
             break;
@@ -121,9 +127,9 @@ private static final long serialVersionUID = 0L;
           }
           case 64: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               jobBenefits_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000002;
             }
             jobBenefits_.add(rawValue);
             break;
@@ -133,9 +139,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 jobBenefits_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               jobBenefits_.add(rawValue);
             }
@@ -156,10 +162,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               customAttributes_ = com.google.protobuf.MapField.newMapField(
                   CustomAttributesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000004;
             }
             com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
             customAttributes__ = input.readMessage(
@@ -170,9 +176,9 @@ private static final long serialVersionUID = 0L;
           }
           case 88: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               degreeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000008;
             }
             degreeTypes_.add(rawValue);
             break;
@@ -182,9 +188,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 degreeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000008;
               }
               degreeTypes_.add(rawValue);
             }
@@ -199,9 +205,9 @@ private static final long serialVersionUID = 0L;
           }
           case 104: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00001000;
+              mutable_bitField0_ |= 0x00000010;
             }
             employmentTypes_.add(rawValue);
             break;
@@ -211,9 +217,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00000010;
               }
               employmentTypes_.add(rawValue);
             }
@@ -392,16 +398,16 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         addresses_ = addresses_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         jobBenefits_ = java.util.Collections.unmodifiableList(jobBenefits_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         degreeTypes_ = java.util.Collections.unmodifiableList(degreeTypes_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -445,6 +451,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @return A list containing the emails.
      */
     java.util.List<java.lang.String>
         getEmailsList();
@@ -456,6 +463,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @return The count of emails.
      */
     int getEmailsCount();
     /**
@@ -466,6 +474,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @param index The index of the element to return.
+     * @return The emails at the given index.
      */
     java.lang.String getEmails(int index);
     /**
@@ -476,6 +486,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the emails at the given index.
      */
     com.google.protobuf.ByteString
         getEmailsBytes(int index);
@@ -490,6 +502,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instruction = 2;</code>
+     * @return The instruction.
      */
     java.lang.String getInstruction();
     /**
@@ -502,6 +515,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instruction = 2;</code>
+     * @return The bytes for instruction.
      */
     com.google.protobuf.ByteString
         getInstructionBytes();
@@ -514,6 +528,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @return A list containing the uris.
      */
     java.util.List<java.lang.String>
         getUrisList();
@@ -525,6 +540,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @return The count of uris.
      */
     int getUrisCount();
     /**
@@ -535,6 +551,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
      */
     java.lang.String getUris(int index);
     /**
@@ -545,6 +563,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
      */
     com.google.protobuf.ByteString
         getUrisBytes(int index);
@@ -569,6 +589,13 @@ private static final long serialVersionUID = 0L;
       emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       instruction_ = "";
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ApplicationInfo();
     }
 
     @java.lang.Override
@@ -612,9 +639,9 @@ private static final long serialVersionUID = 0L;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 uris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               uris_.add(s);
               break;
@@ -637,7 +664,7 @@ private static final long serialVersionUID = 0L;
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           emails_ = emails_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           uris_ = uris_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -657,7 +684,6 @@ private static final long serialVersionUID = 0L;
               com.google.cloud.talent.v4beta1.Job.ApplicationInfo.class, com.google.cloud.talent.v4beta1.Job.ApplicationInfo.Builder.class);
     }
 
-    private int bitField0_;
     public static final int EMAILS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList emails_;
     /**
@@ -668,6 +694,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @return A list containing the emails.
      */
     public com.google.protobuf.ProtocolStringList
         getEmailsList() {
@@ -681,6 +708,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @return The count of emails.
      */
     public int getEmailsCount() {
       return emails_.size();
@@ -693,6 +721,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @param index The index of the element to return.
+     * @return The emails at the given index.
      */
     public java.lang.String getEmails(int index) {
       return emails_.get(index);
@@ -705,6 +735,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string emails = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the emails at the given index.
      */
     public com.google.protobuf.ByteString
         getEmailsBytes(int index) {
@@ -723,6 +755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instruction = 2;</code>
+     * @return The instruction.
      */
     public java.lang.String getInstruction() {
       java.lang.Object ref = instruction_;
@@ -746,6 +779,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string instruction = 2;</code>
+     * @return The bytes for instruction.
      */
     public com.google.protobuf.ByteString
         getInstructionBytes() {
@@ -771,6 +805,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @return A list containing the uris.
      */
     public com.google.protobuf.ProtocolStringList
         getUrisList() {
@@ -784,6 +819,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @return The count of uris.
      */
     public int getUrisCount() {
       return uris_.size();
@@ -796,6 +832,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
      */
     public java.lang.String getUris(int index) {
       return uris_.get(index);
@@ -808,6 +846,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string uris = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
      */
     public com.google.protobuf.ByteString
         getUrisBytes(int index) {
@@ -1049,7 +1089,7 @@ private static final long serialVersionUID = 0L;
         instruction_ = "";
 
         uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1077,19 +1117,17 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.talent.v4beta1.Job.ApplicationInfo buildPartial() {
         com.google.cloud.talent.v4beta1.Job.ApplicationInfo result = new com.google.cloud.talent.v4beta1.Job.ApplicationInfo(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           emails_ = emails_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.emails_ = emails_;
         result.instruction_ = instruction_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           uris_ = uris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.uris_ = uris_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1155,7 +1193,7 @@ private static final long serialVersionUID = 0L;
         if (!other.uris_.isEmpty()) {
           if (uris_.isEmpty()) {
             uris_ = other.uris_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUrisIsMutable();
             uris_.addAll(other.uris_);
@@ -1207,6 +1245,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @return A list containing the emails.
        */
       public com.google.protobuf.ProtocolStringList
           getEmailsList() {
@@ -1220,6 +1259,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @return The count of emails.
        */
       public int getEmailsCount() {
         return emails_.size();
@@ -1232,6 +1272,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param index The index of the element to return.
+       * @return The emails at the given index.
        */
       public java.lang.String getEmails(int index) {
         return emails_.get(index);
@@ -1244,6 +1286,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the emails at the given index.
        */
       public com.google.protobuf.ByteString
           getEmailsBytes(int index) {
@@ -1257,6 +1301,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The emails to set.
+       * @return This builder for chaining.
        */
       public Builder setEmails(
           int index, java.lang.String value) {
@@ -1276,6 +1323,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param value The emails to add.
+       * @return This builder for chaining.
        */
       public Builder addEmails(
           java.lang.String value) {
@@ -1295,6 +1344,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param values The emails to add.
+       * @return This builder for chaining.
        */
       public Builder addAllEmails(
           java.lang.Iterable<java.lang.String> values) {
@@ -1312,6 +1363,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEmails() {
         emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1327,6 +1379,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string emails = 1;</code>
+       * @param value The bytes of the emails to add.
+       * @return This builder for chaining.
        */
       public Builder addEmailsBytes(
           com.google.protobuf.ByteString value) {
@@ -1351,6 +1405,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string instruction = 2;</code>
+       * @return The instruction.
        */
       public java.lang.String getInstruction() {
         java.lang.Object ref = instruction_;
@@ -1374,6 +1429,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string instruction = 2;</code>
+       * @return The bytes for instruction.
        */
       public com.google.protobuf.ByteString
           getInstructionBytes() {
@@ -1398,6 +1454,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string instruction = 2;</code>
+       * @param value The instruction to set.
+       * @return This builder for chaining.
        */
       public Builder setInstruction(
           java.lang.String value) {
@@ -1419,6 +1477,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string instruction = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInstruction() {
         
@@ -1436,6 +1495,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string instruction = 2;</code>
+       * @param value The bytes for instruction to set.
+       * @return This builder for chaining.
        */
       public Builder setInstructionBytes(
           com.google.protobuf.ByteString value) {
@@ -1451,9 +1512,9 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.LazyStringList uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureUrisIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -1464,6 +1525,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @return A list containing the uris.
        */
       public com.google.protobuf.ProtocolStringList
           getUrisList() {
@@ -1477,6 +1539,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @return The count of uris.
        */
       public int getUrisCount() {
         return uris_.size();
@@ -1489,6 +1552,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param index The index of the element to return.
+       * @return The uris at the given index.
        */
       public java.lang.String getUris(int index) {
         return uris_.get(index);
@@ -1501,6 +1566,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the uris at the given index.
        */
       public com.google.protobuf.ByteString
           getUrisBytes(int index) {
@@ -1514,6 +1581,9 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The uris to set.
+       * @return This builder for chaining.
        */
       public Builder setUris(
           int index, java.lang.String value) {
@@ -1533,6 +1603,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param value The uris to add.
+       * @return This builder for chaining.
        */
       public Builder addUris(
           java.lang.String value) {
@@ -1552,6 +1624,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param values The uris to add.
+       * @return This builder for chaining.
        */
       public Builder addAllUris(
           java.lang.Iterable<java.lang.String> values) {
@@ -1569,10 +1643,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUris() {
         uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1584,6 +1659,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>repeated string uris = 3;</code>
+       * @param value The bytes of the uris to add.
+       * @return This builder for chaining.
        */
       public Builder addUrisBytes(
           com.google.protobuf.ByteString value) {
@@ -1655,11 +1732,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1669,11 +1743,8 @@ private static final long serialVersionUID = 0L;
         getLocationsList();
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1682,11 +1753,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.talent.v4beta1.Location getLocations(int index);
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1695,11 +1763,8 @@ private static final long serialVersionUID = 0L;
     int getLocationsCount();
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1709,11 +1774,8 @@ private static final long serialVersionUID = 0L;
         getLocationsOrBuilderList();
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1724,53 +1786,50 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return A list containing the jobCategories.
      */
     java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList();
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return The count of jobCategories.
      */
     int getJobCategoriesCount();
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @param index The index of the element to return.
+     * @return The jobCategories at the given index.
      */
     com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index);
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return A list containing the enum numeric values on the wire for jobCategories.
      */
     java.util.List<java.lang.Integer>
     getJobCategoriesValueList();
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobCategories at the given index.
      */
     int getJobCategoriesValue(int index);
   }
@@ -1793,6 +1852,13 @@ private static final long serialVersionUID = 0L;
     private DerivedInfo() {
       locations_ = java.util.Collections.emptyList();
       jobCategories_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DerivedInfo();
     }
 
     @java.lang.Override
@@ -1893,11 +1959,8 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.talent.v4beta1.Location> locations_;
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1908,11 +1971,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1924,11 +1984,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1939,11 +1996,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1954,11 +2008,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1983,12 +2034,11 @@ private static final long serialVersionUID = 0L;
             };
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return A list containing the jobCategories.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1996,36 +2046,34 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return The count of jobCategories.
      */
     public int getJobCategoriesCount() {
       return jobCategories_.size();
     }
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @param index The index of the element to return.
+     * @return The jobCategories at the given index.
      */
     public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
       return jobCategories_converter_.convert(jobCategories_.get(index));
     }
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @return A list containing the enum numeric values on the wire for jobCategories.
      */
     public java.util.List<java.lang.Integer>
     getJobCategoriesValueList() {
@@ -2033,12 +2081,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobCategories at the given index.
      */
     public int getJobCategoriesValue(int index) {
       return jobCategories_.get(index);
@@ -2447,11 +2495,8 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2466,11 +2511,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2485,11 +2527,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2504,11 +2543,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2530,11 +2566,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2553,11 +2586,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2578,11 +2608,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2604,11 +2631,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2627,11 +2651,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2650,11 +2671,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2674,11 +2692,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2696,11 +2711,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2718,11 +2730,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2734,11 +2743,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2753,11 +2759,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2773,11 +2776,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2789,11 +2789,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2806,11 +2803,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2845,12 +2839,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @return A list containing the jobCategories.
        */
       public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
         return new com.google.protobuf.Internal.ListAdapter<
@@ -2858,36 +2851,36 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @return The count of jobCategories.
        */
       public int getJobCategoriesCount() {
         return jobCategories_.size();
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param index The index of the element to return.
+       * @return The jobCategories at the given index.
        */
       public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
         return jobCategories_converter_.convert(jobCategories_.get(index));
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The jobCategories to set.
+       * @return This builder for chaining.
        */
       public Builder setJobCategories(
           int index, com.google.cloud.talent.v4beta1.JobCategory value) {
@@ -2901,12 +2894,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param value The jobCategories to add.
+       * @return This builder for chaining.
        */
       public Builder addJobCategories(com.google.cloud.talent.v4beta1.JobCategory value) {
         if (value == null) {
@@ -2919,12 +2912,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param values The jobCategories to add.
+       * @return This builder for chaining.
        */
       public Builder addAllJobCategories(
           java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.JobCategory> values) {
@@ -2937,12 +2930,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJobCategories() {
         jobCategories_ = java.util.Collections.emptyList();
@@ -2952,12 +2944,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @return A list containing the enum numeric values on the wire for jobCategories.
        */
       public java.util.List<java.lang.Integer>
       getJobCategoriesValueList() {
@@ -2965,24 +2956,25 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of jobCategories at the given index.
        */
       public int getJobCategoriesValue(int index) {
         return jobCategories_.get(index);
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of jobCategories at the given index.
+       * @return This builder for chaining.
        */
       public Builder setJobCategoriesValue(
           int index, int value) {
@@ -2993,12 +2985,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param value The enum numeric value on the wire for jobCategories to add.
+       * @return This builder for chaining.
        */
       public Builder addJobCategoriesValue(int value) {
         ensureJobCategoriesIsMutable();
@@ -3008,12 +3000,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
+       * @param values The enum numeric values on the wire for jobCategories to add.
+       * @return This builder for chaining.
        */
       public Builder addAllJobCategoriesValue(
           java.lang.Iterable<java.lang.Integer> values) {
@@ -3088,6 +3080,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_street_address_resolution = 1;</code>
+     * @return The disableStreetAddressResolution.
      */
     boolean getDisableStreetAddressResolution();
 
@@ -3101,11 +3094,11 @@ private static final long serialVersionUID = 0L;
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+     * @return The enum numeric value on the wire for htmlSanitization.
      */
     int getHtmlSanitizationValue();
     /**
@@ -3118,11 +3111,11 @@ private static final long serialVersionUID = 0L;
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+     * @return The htmlSanitization.
      */
     com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization();
   }
@@ -3147,6 +3140,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProcessingOptions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3159,7 +3159,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3222,6 +3221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_street_address_resolution = 1;</code>
+     * @return The disableStreetAddressResolution.
      */
     public boolean getDisableStreetAddressResolution() {
       return disableStreetAddressResolution_;
@@ -3239,11 +3239,11 @@ private static final long serialVersionUID = 0L;
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+     * @return The enum numeric value on the wire for htmlSanitization.
      */
     public int getHtmlSanitizationValue() {
       return htmlSanitization_;
@@ -3258,11 +3258,11 @@ private static final long serialVersionUID = 0L;
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+     * @return The htmlSanitization.
      */
     public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
       @SuppressWarnings("deprecation")
@@ -3601,6 +3601,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool disable_street_address_resolution = 1;</code>
+       * @return The disableStreetAddressResolution.
        */
       public boolean getDisableStreetAddressResolution() {
         return disableStreetAddressResolution_;
@@ -3612,6 +3613,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool disable_street_address_resolution = 1;</code>
+       * @param value The disableStreetAddressResolution to set.
+       * @return This builder for chaining.
        */
       public Builder setDisableStreetAddressResolution(boolean value) {
         
@@ -3626,6 +3629,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool disable_street_address_resolution = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDisableStreetAddressResolution() {
         
@@ -3645,11 +3649,11 @@ private static final long serialVersionUID = 0L;
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+       * @return The enum numeric value on the wire for htmlSanitization.
        */
       public int getHtmlSanitizationValue() {
         return htmlSanitization_;
@@ -3664,11 +3668,12 @@ private static final long serialVersionUID = 0L;
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+       * @param value The enum numeric value on the wire for htmlSanitization to set.
+       * @return This builder for chaining.
        */
       public Builder setHtmlSanitizationValue(int value) {
         htmlSanitization_ = value;
@@ -3685,11 +3690,11 @@ private static final long serialVersionUID = 0L;
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+       * @return The htmlSanitization.
        */
       public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
         @SuppressWarnings("deprecation")
@@ -3706,11 +3711,12 @@ private static final long serialVersionUID = 0L;
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+       * @param value The htmlSanitization to set.
+       * @return This builder for chaining.
        */
       public Builder setHtmlSanitization(com.google.cloud.talent.v4beta1.HtmlSanitization value) {
         if (value == null) {
@@ -3731,11 +3737,11 @@ private static final long serialVersionUID = 0L;
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHtmlSanitization() {
         
@@ -3796,7 +3802,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -3810,11 +3815,11 @@ private static final long serialVersionUID = 0L;
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -3839,11 +3844,11 @@ private static final long serialVersionUID = 0L;
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -3871,7 +3876,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The company.
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -3895,7 +3901,8 @@ private static final long serialVersionUID = 0L;
    * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for company.
    */
   public com.google.protobuf.ByteString
       getCompanyBytes() {
@@ -3915,17 +3922,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object requisitionId_;
   /**
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is
-   * assigned by the client to identify a job. This field is intended to be used
-   * by clients for client identification and tracking of postings. A job isn't
-   * allowed to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+   * client to identify a job. This field is intended to be used by clients
+   * for client identification and tracking of postings. A job isn't allowed
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The requisitionId.
    */
   public java.lang.String getRequisitionId() {
     java.lang.Object ref = requisitionId_;
@@ -3941,17 +3947,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is
-   * assigned by the client to identify a job. This field is intended to be used
-   * by clients for client identification and tracking of postings. A job isn't
-   * allowed to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+   * client to identify a job. This field is intended to be used by clients
+   * for client identification and tracking of postings. A job isn't allowed
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
    * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for requisitionId.
    */
   public com.google.protobuf.ByteString
       getRequisitionIdBytes() {
@@ -3976,6 +3981,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The title.
    */
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
@@ -3996,6 +4002,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for title.
    */
   public com.google.protobuf.ByteString
       getTitleBytes() {
@@ -4015,18 +4022,18 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Required. The description of the job, which typically includes a
-   * multi-paragraph description of the company and related information.
-   * Separate fields are provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a multi-paragraph
+   * description of the company and related information. Separate fields are
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -4042,18 +4049,18 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The description of the job, which typically includes a
-   * multi-paragraph description of the company and related information.
-   * Separate fields are provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a multi-paragraph
+   * description of the company and related information. Separate fields are
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -4079,20 +4086,17 @@ private static final long serialVersionUID = 0L;
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @return A list containing the addresses.
    */
   public com.google.protobuf.ProtocolStringList
       getAddressesList() {
@@ -4106,20 +4110,17 @@ private static final long serialVersionUID = 0L;
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @return The count of addresses.
    */
   public int getAddressesCount() {
     return addresses_.size();
@@ -4132,20 +4133,18 @@ private static final long serialVersionUID = 0L;
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @param index The index of the element to return.
+   * @return The addresses at the given index.
    */
   public java.lang.String getAddresses(int index) {
     return addresses_.get(index);
@@ -4158,20 +4157,18 @@ private static final long serialVersionUID = 0L;
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-   * same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
    * <code>repeated string addresses = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addresses at the given index.
    */
   public com.google.protobuf.ByteString
       getAddressesBytes(int index) {
@@ -4186,6 +4183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   * @return Whether the applicationInfo field is set.
    */
   public boolean hasApplicationInfo() {
     return applicationInfo_ != null;
@@ -4196,6 +4194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+   * @return The applicationInfo.
    */
   public com.google.cloud.talent.v4beta1.Job.ApplicationInfo getApplicationInfo() {
     return applicationInfo_ == null ? com.google.cloud.talent.v4beta1.Job.ApplicationInfo.getDefaultInstance() : applicationInfo_;
@@ -4229,6 +4228,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return A list containing the jobBenefits.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.JobBenefit> getJobBenefitsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -4240,6 +4240,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return The count of jobBenefits.
    */
   public int getJobBenefitsCount() {
     return jobBenefits_.size();
@@ -4250,6 +4251,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @param index The index of the element to return.
+   * @return The jobBenefits at the given index.
    */
   public com.google.cloud.talent.v4beta1.JobBenefit getJobBenefits(int index) {
     return jobBenefits_converter_.convert(jobBenefits_.get(index));
@@ -4260,6 +4263,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @return A list containing the enum numeric values on the wire for jobBenefits.
    */
   public java.util.List<java.lang.Integer>
   getJobBenefitsValueList() {
@@ -4271,6 +4275,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of jobBenefits at the given index.
    */
   public int getJobBenefitsValue(int index) {
     return jobBenefits_.get(index);
@@ -4286,6 +4292,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   * @return Whether the compensationInfo field is set.
    */
   public boolean hasCompensationInfo() {
     return compensationInfo_ != null;
@@ -4297,6 +4304,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+   * @return The compensationInfo.
    */
   public com.google.cloud.talent.v4beta1.CompensationInfo getCompensationInfo() {
     return compensationInfo_ == null ? com.google.cloud.talent.v4beta1.CompensationInfo.getDefaultInstance() : compensationInfo_;
@@ -4459,6 +4467,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return A list containing the degreeTypes.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.DegreeType> getDegreeTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -4470,6 +4479,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return The count of degreeTypes.
    */
   public int getDegreeTypesCount() {
     return degreeTypes_.size();
@@ -4480,6 +4490,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @param index The index of the element to return.
+   * @return The degreeTypes at the given index.
    */
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeTypes(int index) {
     return degreeTypes_converter_.convert(degreeTypes_.get(index));
@@ -4490,6 +4502,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @return A list containing the enum numeric values on the wire for degreeTypes.
    */
   public java.util.List<java.lang.Integer>
   getDegreeTypesValueList() {
@@ -4501,6 +4514,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of degreeTypes at the given index.
    */
   public int getDegreeTypesValue(int index) {
     return degreeTypes_.get(index);
@@ -4517,6 +4532,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string department = 12;</code>
+   * @return The department.
    */
   public java.lang.String getDepartment() {
     java.lang.Object ref = department_;
@@ -4538,6 +4554,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string department = 12;</code>
+   * @return The bytes for department.
    */
   public com.google.protobuf.ByteString
       getDepartmentBytes() {
@@ -4573,6 +4590,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return A list containing the employmentTypes.
    */
   public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -4586,6 +4604,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return The count of employmentTypes.
    */
   public int getEmploymentTypesCount() {
     return employmentTypes_.size();
@@ -4598,6 +4617,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @param index The index of the element to return.
+   * @return The employmentTypes at the given index.
    */
   public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
     return employmentTypes_converter_.convert(employmentTypes_.get(index));
@@ -4610,6 +4631,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
   public java.util.List<java.lang.Integer>
   getEmploymentTypesValueList() {
@@ -4623,6 +4645,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
   public int getEmploymentTypesValue(int index) {
     return employmentTypes_.get(index);
@@ -4639,6 +4663,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   * @return The incentives.
    */
   public java.lang.String getIncentives() {
     java.lang.Object ref = incentives_;
@@ -4660,6 +4685,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string incentives = 14;</code>
+   * @return The bytes for incentives.
    */
   public com.google.protobuf.ByteString
       getIncentivesBytes() {
@@ -4685,14 +4711,13 @@ private static final long serialVersionUID = 0L;
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   * @return The languageCode.
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -4714,14 +4739,13 @@ private static final long serialVersionUID = 0L;
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
+   * @return The bytes for languageCode.
    */
   public com.google.protobuf.ByteString
       getLanguageCodeBytes() {
@@ -4745,6 +4769,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   * @return The enum numeric value on the wire for jobLevel.
    */
   public int getJobLevelValue() {
     return jobLevel_;
@@ -4755,6 +4780,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+   * @return The jobLevel.
    */
   public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
     @SuppressWarnings("deprecation")
@@ -4775,6 +4801,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 promotion_value = 17;</code>
+   * @return The promotionValue.
    */
   public int getPromotionValue() {
     return promotionValue_;
@@ -4786,14 +4813,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   * @return The qualifications.
    */
   public java.lang.String getQualifications() {
     java.lang.Object ref = qualifications_;
@@ -4811,14 +4838,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string qualifications = 18;</code>
+   * @return The bytes for qualifications.
    */
   public com.google.protobuf.ByteString
       getQualificationsBytes() {
@@ -4839,14 +4866,15 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   * @return The responsibilities.
    */
   public java.lang.String getResponsibilities() {
     java.lang.Object ref = responsibilities_;
@@ -4863,14 +4891,15 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
    * </pre>
    *
    * <code>string responsibilities = 19;</code>
+   * @return The bytes for responsibilities.
    */
   public com.google.protobuf.ByteString
       getResponsibilitiesBytes() {
@@ -4890,38 +4919,34 @@ private static final long serialVersionUID = 0L;
   private int postingRegion_;
   /**
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   * @return The enum numeric value on the wire for postingRegion.
    */
   public int getPostingRegionValue() {
     return postingRegion_;
   }
   /**
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+   * @return The postingRegion.
    */
   public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
     @SuppressWarnings("deprecation")
@@ -4935,12 +4960,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Deprecated public int getVisibilityValue() {
     return visibility_;
@@ -4949,12 +4973,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+   * @return The visibility.
    */
   @java.lang.Deprecated public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
     @SuppressWarnings("deprecation")
@@ -4971,6 +4994,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   * @return Whether the jobStartTime field is set.
    */
   public boolean hasJobStartTime() {
     return jobStartTime_ != null;
@@ -4982,6 +5006,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+   * @return The jobStartTime.
    */
   public com.google.protobuf.Timestamp getJobStartTime() {
     return jobStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jobStartTime_;
@@ -5007,6 +5032,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   * @return Whether the jobEndTime field is set.
    */
   public boolean hasJobEndTime() {
     return jobEndTime_ != null;
@@ -5018,6 +5044,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+   * @return The jobEndTime.
    */
   public com.google.protobuf.Timestamp getJobEndTime() {
     return jobEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jobEndTime_;
@@ -5044,6 +5071,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   * @return Whether the postingPublishTime field is set.
    */
   public boolean hasPostingPublishTime() {
     return postingPublishTime_ != null;
@@ -5056,6 +5084,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+   * @return The postingPublishTime.
    */
   public com.google.protobuf.Timestamp getPostingPublishTime() {
     return postingPublishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : postingPublishTime_;
@@ -5080,18 +5109,13 @@ private static final long serialVersionUID = 0L;
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5102,28 +5126,25 @@ private static final long serialVersionUID = 0L;
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   * @return Whether the postingExpireTime field is set.
    */
   public boolean hasPostingExpireTime() {
     return postingExpireTime_ != null;
@@ -5133,18 +5154,13 @@ private static final long serialVersionUID = 0L;
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5155,28 +5171,25 @@ private static final long serialVersionUID = 0L;
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+   * @return The postingExpireTime.
    */
   public com.google.protobuf.Timestamp getPostingExpireTime() {
     return postingExpireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : postingExpireTime_;
@@ -5186,18 +5199,13 @@ private static final long serialVersionUID = 0L;
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the
-   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-   * be retrieved with the
-   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-   * deleted with the
-   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-   * expired job can be updated and opened again by using a future expiration
-   * timestamp. Updating an expired job fails if there is another existing open
-   * job with same [company][google.cloud.talent.v4beta1.Job.company],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+   * be updated and opened again by using a future expiration timestamp.
+   * Updating an expired job fails if there is another existing open job with
+   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5208,25 +5216,21 @@ private static final long serialVersionUID = 0L;
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-   * must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-   * The purpose of this feature is to allow other objects, such as
-   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-   * didn't exist in the system prior to becoming expired. If you want to modify
-   * a job that was expired on creation, delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+   * that didn't exist in the system prior to becoming expired. If you
+   * want to modify a job that was expired on creation,
+   * delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-   * are empty meaning that every field is updated, the job posting expires
-   * after 30 days from the job's last update time. Otherwise the expiration
-   * date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -5243,6 +5247,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the postingCreateTime field is set.
    */
   public boolean hasPostingCreateTime() {
     return postingCreateTime_ != null;
@@ -5253,6 +5258,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The postingCreateTime.
    */
   public com.google.protobuf.Timestamp getPostingCreateTime() {
     return postingCreateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : postingCreateTime_;
@@ -5276,6 +5282,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the postingUpdateTime field is set.
    */
   public boolean hasPostingUpdateTime() {
     return postingUpdateTime_ != null;
@@ -5286,6 +5293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The postingUpdateTime.
    */
   public com.google.protobuf.Timestamp getPostingUpdateTime() {
     return postingUpdateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : postingUpdateTime_;
@@ -5309,6 +5317,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The companyDisplayName.
    */
   public java.lang.String getCompanyDisplayName() {
     java.lang.Object ref = companyDisplayName_;
@@ -5328,6 +5337,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for companyDisplayName.
    */
   public com.google.protobuf.ByteString
       getCompanyDisplayNameBytes() {
@@ -5351,6 +5361,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the derivedInfo field is set.
    */
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
@@ -5361,6 +5372,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The derivedInfo.
    */
   public com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null ? com.google.cloud.talent.v4beta1.Job.DerivedInfo.getDefaultInstance() : derivedInfo_;
@@ -5384,6 +5396,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   * @return Whether the processingOptions field is set.
    */
   public boolean hasProcessingOptions() {
     return processingOptions_ != null;
@@ -5394,6 +5407,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+   * @return The processingOptions.
    */
   public com.google.cloud.talent.v4beta1.Job.ProcessingOptions getProcessingOptions() {
     return processingOptions_ == null ? com.google.cloud.talent.v4beta1.Job.ProcessingOptions.getDefaultInstance() : processingOptions_;
@@ -5979,9 +5993,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A Job resource represents a job posting (also referred to as a "job listing"
-   * or "job requisition"). A job belongs to a
-   * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
-   * responsible for the job.
+   * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
+   * entity responsible for the job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -6054,7 +6067,7 @@ private static final long serialVersionUID = 0L;
       description_ = "";
 
       addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (applicationInfoBuilder_ == null) {
         applicationInfo_ = null;
       } else {
@@ -6062,7 +6075,7 @@ private static final long serialVersionUID = 0L;
         applicationInfoBuilder_ = null;
       }
       jobBenefits_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (compensationInfoBuilder_ == null) {
         compensationInfo_ = null;
       } else {
@@ -6071,11 +6084,11 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableCustomAttributes().clear();
       degreeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000008);
       department_ = "";
 
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000010);
       incentives_ = "";
 
       languageCode_ = "";
@@ -6169,15 +6182,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.Job buildPartial() {
       com.google.cloud.talent.v4beta1.Job result = new com.google.cloud.talent.v4beta1.Job(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.company_ = company_;
       result.requisitionId_ = requisitionId_;
       result.title_ = title_;
       result.description_ = description_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         addresses_ = addresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.addresses_ = addresses_;
       if (applicationInfoBuilder_ == null) {
@@ -6185,9 +6197,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.applicationInfo_ = applicationInfoBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         jobBenefits_ = java.util.Collections.unmodifiableList(jobBenefits_);
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.jobBenefits_ = jobBenefits_;
       if (compensationInfoBuilder_ == null) {
@@ -6197,15 +6209,15 @@ private static final long serialVersionUID = 0L;
       }
       result.customAttributes_ = internalGetCustomAttributes();
       result.customAttributes_.makeImmutable();
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         degreeTypes_ = java.util.Collections.unmodifiableList(degreeTypes_);
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.degreeTypes_ = degreeTypes_;
       result.department_ = department_;
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.employmentTypes_ = employmentTypes_;
       result.incentives_ = incentives_;
@@ -6257,7 +6269,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.processingOptions_ = processingOptionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -6329,7 +6340,7 @@ private static final long serialVersionUID = 0L;
       if (!other.addresses_.isEmpty()) {
         if (addresses_.isEmpty()) {
           addresses_ = other.addresses_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAddressesIsMutable();
           addresses_.addAll(other.addresses_);
@@ -6342,7 +6353,7 @@ private static final long serialVersionUID = 0L;
       if (!other.jobBenefits_.isEmpty()) {
         if (jobBenefits_.isEmpty()) {
           jobBenefits_ = other.jobBenefits_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureJobBenefitsIsMutable();
           jobBenefits_.addAll(other.jobBenefits_);
@@ -6357,7 +6368,7 @@ private static final long serialVersionUID = 0L;
       if (!other.degreeTypes_.isEmpty()) {
         if (degreeTypes_.isEmpty()) {
           degreeTypes_ = other.degreeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDegreeTypesIsMutable();
           degreeTypes_.addAll(other.degreeTypes_);
@@ -6371,7 +6382,7 @@ private static final long serialVersionUID = 0L;
       if (!other.employmentTypes_.isEmpty()) {
         if (employmentTypes_.isEmpty()) {
           employmentTypes_ = other.employmentTypes_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureEmploymentTypesIsMutable();
           employmentTypes_.addAll(other.employmentTypes_);
@@ -6476,11 +6487,11 @@ private static final long serialVersionUID = 0L;
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -6505,11 +6516,11 @@ private static final long serialVersionUID = 0L;
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -6535,11 +6546,12 @@ private static final long serialVersionUID = 0L;
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -6562,11 +6574,11 @@ private static final long serialVersionUID = 0L;
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -6585,11 +6597,12 @@ private static final long serialVersionUID = 0L;
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -6614,7 +6627,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The company.
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -6638,7 +6652,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for company.
      */
     public com.google.protobuf.ByteString
         getCompanyBytes() {
@@ -6663,7 +6678,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompany(
         java.lang.String value) {
@@ -6685,7 +6702,8 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearCompany() {
       
@@ -6703,7 +6721,9 @@ private static final long serialVersionUID = 0L;
      * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for company to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyBytes(
         com.google.protobuf.ByteString value) {
@@ -6720,17 +6740,16 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object requisitionId_ = "";
     /**
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is
-     * assigned by the client to identify a job. This field is intended to be used
-     * by clients for client identification and tracking of postings. A job isn't
-     * allowed to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+     * client to identify a job. This field is intended to be used by clients
+     * for client identification and tracking of postings. A job isn't allowed
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The requisitionId.
      */
     public java.lang.String getRequisitionId() {
       java.lang.Object ref = requisitionId_;
@@ -6746,17 +6765,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is
-     * assigned by the client to identify a job. This field is intended to be used
-     * by clients for client identification and tracking of postings. A job isn't
-     * allowed to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+     * client to identify a job. This field is intended to be used by clients
+     * for client identification and tracking of postings. A job isn't allowed
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for requisitionId.
      */
     public com.google.protobuf.ByteString
         getRequisitionIdBytes() {
@@ -6773,17 +6791,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is
-     * assigned by the client to identify a job. This field is intended to be used
-     * by clients for client identification and tracking of postings. A job isn't
-     * allowed to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+     * client to identify a job. This field is intended to be used by clients
+     * for client identification and tracking of postings. A job isn't allowed
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The requisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequisitionId(
         java.lang.String value) {
@@ -6797,17 +6815,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is
-     * assigned by the client to identify a job. This field is intended to be used
-     * by clients for client identification and tracking of postings. A job isn't
-     * allowed to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+     * client to identify a job. This field is intended to be used by clients
+     * for client identification and tracking of postings. A job isn't allowed
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRequisitionId() {
       
@@ -6817,17 +6834,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is
-     * assigned by the client to identify a job. This field is intended to be used
-     * by clients for client identification and tracking of postings. A job isn't
-     * allowed to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
+     * client to identify a job. This field is intended to be used by clients
+     * for client identification and tracking of postings. A job isn't allowed
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
      * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for requisitionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequisitionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -6849,6 +6866,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -6869,6 +6887,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -6890,6 +6909,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitle(
         java.lang.String value) {
@@ -6908,6 +6929,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTitle() {
       
@@ -6922,6 +6944,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitleBytes(
         com.google.protobuf.ByteString value) {
@@ -6938,18 +6962,18 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Required. The description of the job, which typically includes a
-     * multi-paragraph description of the company and related information.
-     * Separate fields are provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a multi-paragraph
+     * description of the company and related information. Separate fields are
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -6965,18 +6989,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The description of the job, which typically includes a
-     * multi-paragraph description of the company and related information.
-     * Separate fields are provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a multi-paragraph
+     * description of the company and related information. Separate fields are
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -6993,18 +7017,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The description of the job, which typically includes a
-     * multi-paragraph description of the company and related information.
-     * Separate fields are provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a multi-paragraph
+     * description of the company and related information. Separate fields are
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -7018,18 +7043,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The description of the job, which typically includes a
-     * multi-paragraph description of the company and related information.
-     * Separate fields are provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a multi-paragraph
+     * description of the company and related information. Separate fields are
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -7039,18 +7064,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The description of the job, which typically includes a
-     * multi-paragraph description of the company and related information.
-     * Separate fields are provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a multi-paragraph
+     * description of the company and related information. Separate fields are
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -7066,9 +7092,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -7079,20 +7105,17 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @return A list containing the addresses.
      */
     public com.google.protobuf.ProtocolStringList
         getAddressesList() {
@@ -7106,20 +7129,17 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @return The count of addresses.
      */
     public int getAddressesCount() {
       return addresses_.size();
@@ -7132,20 +7152,18 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
      */
     public java.lang.String getAddresses(int index) {
       return addresses_.get(index);
@@ -7158,20 +7176,18 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
      */
     public com.google.protobuf.ByteString
         getAddressesBytes(int index) {
@@ -7185,20 +7201,19 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The addresses to set.
+     * @return This builder for chaining.
      */
     public Builder setAddresses(
         int index, java.lang.String value) {
@@ -7218,20 +7233,18 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param value The addresses to add.
+     * @return This builder for chaining.
      */
     public Builder addAddresses(
         java.lang.String value) {
@@ -7251,20 +7264,18 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param values The addresses to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAddresses(
         java.lang.Iterable<java.lang.String> values) {
@@ -7282,24 +7293,21 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAddresses() {
       addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7311,20 +7319,18 @@ private static final long serialVersionUID = 0L;
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
-     * same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
      * <code>repeated string addresses = 6;</code>
+     * @param value The bytes of the addresses to add.
+     * @return This builder for chaining.
      */
     public Builder addAddressesBytes(
         com.google.protobuf.ByteString value) {
@@ -7347,6 +7353,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+     * @return Whether the applicationInfo field is set.
      */
     public boolean hasApplicationInfo() {
       return applicationInfoBuilder_ != null || applicationInfo_ != null;
@@ -7357,6 +7364,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
+     * @return The applicationInfo.
      */
     public com.google.cloud.talent.v4beta1.Job.ApplicationInfo getApplicationInfo() {
       if (applicationInfoBuilder_ == null) {
@@ -7494,9 +7502,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> jobBenefits_ =
       java.util.Collections.emptyList();
     private void ensureJobBenefitsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         jobBenefits_ = new java.util.ArrayList<java.lang.Integer>(jobBenefits_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -7505,6 +7513,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @return A list containing the jobBenefits.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.JobBenefit> getJobBenefitsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -7516,6 +7525,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @return The count of jobBenefits.
      */
     public int getJobBenefitsCount() {
       return jobBenefits_.size();
@@ -7526,6 +7536,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param index The index of the element to return.
+     * @return The jobBenefits at the given index.
      */
     public com.google.cloud.talent.v4beta1.JobBenefit getJobBenefits(int index) {
       return jobBenefits_converter_.convert(jobBenefits_.get(index));
@@ -7536,6 +7548,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The jobBenefits to set.
+     * @return This builder for chaining.
      */
     public Builder setJobBenefits(
         int index, com.google.cloud.talent.v4beta1.JobBenefit value) {
@@ -7553,6 +7568,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param value The jobBenefits to add.
+     * @return This builder for chaining.
      */
     public Builder addJobBenefits(com.google.cloud.talent.v4beta1.JobBenefit value) {
       if (value == null) {
@@ -7569,6 +7586,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param values The jobBenefits to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobBenefits(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.JobBenefit> values) {
@@ -7585,10 +7604,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobBenefits() {
       jobBenefits_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -7598,6 +7618,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @return A list containing the enum numeric values on the wire for jobBenefits.
      */
     public java.util.List<java.lang.Integer>
     getJobBenefitsValueList() {
@@ -7609,6 +7630,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobBenefits at the given index.
      */
     public int getJobBenefitsValue(int index) {
       return jobBenefits_.get(index);
@@ -7619,6 +7642,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of jobBenefits at the given index.
+     * @return This builder for chaining.
      */
     public Builder setJobBenefitsValue(
         int index, int value) {
@@ -7633,6 +7659,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param value The enum numeric value on the wire for jobBenefits to add.
+     * @return This builder for chaining.
      */
     public Builder addJobBenefitsValue(int value) {
       ensureJobBenefitsIsMutable();
@@ -7646,6 +7674,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
+     * @param values The enum numeric values on the wire for jobBenefits to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobBenefitsValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -7667,6 +7697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+     * @return Whether the compensationInfo field is set.
      */
     public boolean hasCompensationInfo() {
       return compensationInfoBuilder_ != null || compensationInfo_ != null;
@@ -7678,6 +7709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
+     * @return The compensationInfo.
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo getCompensationInfo() {
       if (compensationInfoBuilder_ == null) {
@@ -8036,9 +8068,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> degreeTypes_ =
       java.util.Collections.emptyList();
     private void ensureDegreeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         degreeTypes_ = new java.util.ArrayList<java.lang.Integer>(degreeTypes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -8047,6 +8079,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @return A list containing the degreeTypes.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.DegreeType> getDegreeTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -8058,6 +8091,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @return The count of degreeTypes.
      */
     public int getDegreeTypesCount() {
       return degreeTypes_.size();
@@ -8068,6 +8102,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param index The index of the element to return.
+     * @return The degreeTypes at the given index.
      */
     public com.google.cloud.talent.v4beta1.DegreeType getDegreeTypes(int index) {
       return degreeTypes_converter_.convert(degreeTypes_.get(index));
@@ -8078,6 +8114,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param index The index to set the value at.
+     * @param value The degreeTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setDegreeTypes(
         int index, com.google.cloud.talent.v4beta1.DegreeType value) {
@@ -8095,6 +8134,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param value The degreeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addDegreeTypes(com.google.cloud.talent.v4beta1.DegreeType value) {
       if (value == null) {
@@ -8111,6 +8152,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param values The degreeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDegreeTypes(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.DegreeType> values) {
@@ -8127,10 +8170,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDegreeTypes() {
       degreeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -8140,6 +8184,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @return A list containing the enum numeric values on the wire for degreeTypes.
      */
     public java.util.List<java.lang.Integer>
     getDegreeTypesValueList() {
@@ -8151,6 +8196,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of degreeTypes at the given index.
      */
     public int getDegreeTypesValue(int index) {
       return degreeTypes_.get(index);
@@ -8161,6 +8208,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of degreeTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setDegreeTypesValue(
         int index, int value) {
@@ -8175,6 +8225,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param value The enum numeric value on the wire for degreeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addDegreeTypesValue(int value) {
       ensureDegreeTypesIsMutable();
@@ -8188,6 +8240,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
+     * @param values The enum numeric values on the wire for degreeTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDegreeTypesValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -8208,6 +8262,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string department = 12;</code>
+     * @return The department.
      */
     public java.lang.String getDepartment() {
       java.lang.Object ref = department_;
@@ -8229,6 +8284,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string department = 12;</code>
+     * @return The bytes for department.
      */
     public com.google.protobuf.ByteString
         getDepartmentBytes() {
@@ -8251,6 +8307,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string department = 12;</code>
+     * @param value The department to set.
+     * @return This builder for chaining.
      */
     public Builder setDepartment(
         java.lang.String value) {
@@ -8270,6 +8328,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string department = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDepartment() {
       
@@ -8285,6 +8344,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string department = 12;</code>
+     * @param value The bytes for department to set.
+     * @return This builder for chaining.
      */
     public Builder setDepartmentBytes(
         com.google.protobuf.ByteString value) {
@@ -8301,9 +8362,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> employmentTypes_ =
       java.util.Collections.emptyList();
     private void ensureEmploymentTypesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         employmentTypes_ = new java.util.ArrayList<java.lang.Integer>(employmentTypes_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -8314,6 +8375,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @return A list containing the employmentTypes.
      */
     public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -8327,6 +8389,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @return The count of employmentTypes.
      */
     public int getEmploymentTypesCount() {
       return employmentTypes_.size();
@@ -8339,6 +8402,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param index The index of the element to return.
+     * @return The employmentTypes at the given index.
      */
     public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
       return employmentTypes_converter_.convert(employmentTypes_.get(index));
@@ -8351,6 +8416,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The employmentTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setEmploymentTypes(
         int index, com.google.cloud.talent.v4beta1.EmploymentType value) {
@@ -8370,6 +8438,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param value The employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addEmploymentTypes(com.google.cloud.talent.v4beta1.EmploymentType value) {
       if (value == null) {
@@ -8388,6 +8458,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param values The employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEmploymentTypes(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.EmploymentType> values) {
@@ -8406,10 +8478,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEmploymentTypes() {
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -8421,6 +8494,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @return A list containing the enum numeric values on the wire for employmentTypes.
      */
     public java.util.List<java.lang.Integer>
     getEmploymentTypesValueList() {
@@ -8434,6 +8508,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of employmentTypes at the given index.
      */
     public int getEmploymentTypesValue(int index) {
       return employmentTypes_.get(index);
@@ -8446,6 +8522,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of employmentTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setEmploymentTypesValue(
         int index, int value) {
@@ -8462,6 +8541,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param value The enum numeric value on the wire for employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addEmploymentTypesValue(int value) {
       ensureEmploymentTypesIsMutable();
@@ -8477,6 +8558,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentType employment_types = 13;</code>
+     * @param values The enum numeric values on the wire for employmentTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEmploymentTypesValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -8497,6 +8580,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string incentives = 14;</code>
+     * @return The incentives.
      */
     public java.lang.String getIncentives() {
       java.lang.Object ref = incentives_;
@@ -8518,6 +8602,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string incentives = 14;</code>
+     * @return The bytes for incentives.
      */
     public com.google.protobuf.ByteString
         getIncentivesBytes() {
@@ -8540,6 +8625,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string incentives = 14;</code>
+     * @param value The incentives to set.
+     * @return This builder for chaining.
      */
     public Builder setIncentives(
         java.lang.String value) {
@@ -8559,6 +8646,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string incentives = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIncentives() {
       
@@ -8574,6 +8662,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string incentives = 14;</code>
+     * @param value The bytes for incentives to set.
+     * @return This builder for chaining.
      */
     public Builder setIncentivesBytes(
         com.google.protobuf.ByteString value) {
@@ -8596,14 +8686,13 @@ private static final long serialVersionUID = 0L;
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     * @return The languageCode.
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -8625,14 +8714,13 @@ private static final long serialVersionUID = 0L;
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     * @return The bytes for languageCode.
      */
     public com.google.protobuf.ByteString
         getLanguageCodeBytes() {
@@ -8655,14 +8743,14 @@ private static final long serialVersionUID = 0L;
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCode(
         java.lang.String value) {
@@ -8682,14 +8770,13 @@ private static final long serialVersionUID = 0L;
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
       
@@ -8705,14 +8792,14 @@ private static final long serialVersionUID = 0L;
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageCodeBytes(
         com.google.protobuf.ByteString value) {
@@ -8733,6 +8820,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+     * @return The enum numeric value on the wire for jobLevel.
      */
     public int getJobLevelValue() {
       return jobLevel_;
@@ -8743,6 +8831,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+     * @param value The enum numeric value on the wire for jobLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setJobLevelValue(int value) {
       jobLevel_ = value;
@@ -8755,6 +8845,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+     * @return The jobLevel.
      */
     public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
       @SuppressWarnings("deprecation")
@@ -8767,6 +8858,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+     * @param value The jobLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setJobLevel(com.google.cloud.talent.v4beta1.JobLevel value) {
       if (value == null) {
@@ -8783,6 +8876,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobLevel() {
       
@@ -8803,6 +8897,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 promotion_value = 17;</code>
+     * @return The promotionValue.
      */
     public int getPromotionValue() {
       return promotionValue_;
@@ -8818,6 +8913,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 promotion_value = 17;</code>
+     * @param value The promotionValue to set.
+     * @return This builder for chaining.
      */
     public Builder setPromotionValue(int value) {
       
@@ -8836,6 +8933,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 promotion_value = 17;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPromotionValue() {
       
@@ -8849,14 +8947,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string qualifications = 18;</code>
+     * @return The qualifications.
      */
     public java.lang.String getQualifications() {
       java.lang.Object ref = qualifications_;
@@ -8874,14 +8972,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string qualifications = 18;</code>
+     * @return The bytes for qualifications.
      */
     public com.google.protobuf.ByteString
         getQualificationsBytes() {
@@ -8900,14 +8998,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string qualifications = 18;</code>
+     * @param value The qualifications to set.
+     * @return This builder for chaining.
      */
     public Builder setQualifications(
         java.lang.String value) {
@@ -8923,14 +9022,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string qualifications = 18;</code>
+     * @return This builder for chaining.
      */
     public Builder clearQualifications() {
       
@@ -8942,14 +9041,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string qualifications = 18;</code>
+     * @param value The bytes for qualifications to set.
+     * @return This builder for chaining.
      */
     public Builder setQualificationsBytes(
         com.google.protobuf.ByteString value) {
@@ -8967,14 +9067,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string responsibilities = 19;</code>
+     * @return The responsibilities.
      */
     public java.lang.String getResponsibilities() {
       java.lang.Object ref = responsibilities_;
@@ -8991,14 +9092,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string responsibilities = 19;</code>
+     * @return The bytes for responsibilities.
      */
     public com.google.protobuf.ByteString
         getResponsibilitiesBytes() {
@@ -9016,14 +9118,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string responsibilities = 19;</code>
+     * @param value The responsibilities to set.
+     * @return This builder for chaining.
      */
     public Builder setResponsibilities(
         java.lang.String value) {
@@ -9038,14 +9142,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string responsibilities = 19;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResponsibilities() {
       
@@ -9056,14 +9161,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
      * </pre>
      *
      * <code>string responsibilities = 19;</code>
+     * @param value The bytes for responsibilities to set.
+     * @return This builder for chaining.
      */
     public Builder setResponsibilitiesBytes(
         com.google.protobuf.ByteString value) {
@@ -9080,38 +9187,35 @@ private static final long serialVersionUID = 0L;
     private int postingRegion_ = 0;
     /**
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+     * @return The enum numeric value on the wire for postingRegion.
      */
     public int getPostingRegionValue() {
       return postingRegion_;
     }
     /**
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+     * @param value The enum numeric value on the wire for postingRegion to set.
+     * @return This builder for chaining.
      */
     public Builder setPostingRegionValue(int value) {
       postingRegion_ = value;
@@ -9120,19 +9224,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+     * @return The postingRegion.
      */
     public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
       @SuppressWarnings("deprecation")
@@ -9141,19 +9243,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+     * @param value The postingRegion to set.
+     * @return This builder for chaining.
      */
     public Builder setPostingRegion(com.google.cloud.talent.v4beta1.PostingRegion value) {
       if (value == null) {
@@ -9166,19 +9267,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPostingRegion() {
       
@@ -9192,12 +9291,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+     * @return The enum numeric value on the wire for visibility.
      */
     @java.lang.Deprecated public int getVisibilityValue() {
       return visibility_;
@@ -9206,12 +9304,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+     * @param value The enum numeric value on the wire for visibility to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setVisibilityValue(int value) {
       visibility_ = value;
@@ -9222,12 +9320,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+     * @return The visibility.
      */
     @java.lang.Deprecated public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
       @SuppressWarnings("deprecation")
@@ -9238,12 +9335,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+     * @param value The visibility to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setVisibility(com.google.cloud.talent.v4beta1.Visibility value) {
       if (value == null) {
@@ -9258,12 +9355,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearVisibility() {
       
@@ -9282,6 +9378,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+     * @return Whether the jobStartTime field is set.
      */
     public boolean hasJobStartTime() {
       return jobStartTimeBuilder_ != null || jobStartTime_ != null;
@@ -9293,6 +9390,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
+     * @return The jobStartTime.
      */
     public com.google.protobuf.Timestamp getJobStartTime() {
       if (jobStartTimeBuilder_ == null) {
@@ -9444,6 +9542,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+     * @return Whether the jobEndTime field is set.
      */
     public boolean hasJobEndTime() {
       return jobEndTimeBuilder_ != null || jobEndTime_ != null;
@@ -9455,6 +9554,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
+     * @return The jobEndTime.
      */
     public com.google.protobuf.Timestamp getJobEndTime() {
       if (jobEndTimeBuilder_ == null) {
@@ -9607,6 +9707,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+     * @return Whether the postingPublishTime field is set.
      */
     public boolean hasPostingPublishTime() {
       return postingPublishTimeBuilder_ != null || postingPublishTime_ != null;
@@ -9619,6 +9720,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
+     * @return The postingPublishTime.
      */
     public com.google.protobuf.Timestamp getPostingPublishTime() {
       if (postingPublishTimeBuilder_ == null) {
@@ -9775,18 +9877,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -9797,28 +9894,25 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+     * @return Whether the postingExpireTime field is set.
      */
     public boolean hasPostingExpireTime() {
       return postingExpireTimeBuilder_ != null || postingExpireTime_ != null;
@@ -9828,18 +9922,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -9850,28 +9939,25 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
+     * @return The postingExpireTime.
      */
     public com.google.protobuf.Timestamp getPostingExpireTime() {
       if (postingExpireTimeBuilder_ == null) {
@@ -9885,18 +9971,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -9907,25 +9988,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -9948,18 +10025,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -9970,25 +10042,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10009,18 +10077,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10031,25 +10094,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10074,18 +10133,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10096,25 +10150,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10135,18 +10185,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10157,25 +10202,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10190,18 +10231,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10212,25 +10248,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10248,18 +10280,13 @@ private static final long serialVersionUID = 0L;
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the
-     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
-     * be retrieved with the
-     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
-     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
-     * deleted with the
-     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
-     * expired job can be updated and opened again by using a future expiration
-     * timestamp. Updating an expired job fails if there is another existing open
-     * job with same [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
+     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
+     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
+     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
+     * be updated and opened again by using a future expiration timestamp.
+     * Updating an expired job fails if there is another existing open job with
+     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10270,25 +10297,21 @@ private static final long serialVersionUID = 0L;
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
-     * must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
-     * The purpose of this feature is to allow other objects, such as
-     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
-     * didn't exist in the system prior to becoming expired. If you want to modify
-     * a job that was expired on creation, delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
+     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
+     * that didn't exist in the system prior to becoming expired. If you
+     * want to modify a job that was expired on creation,
+     * delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
-     * are empty meaning that every field is updated, the job posting expires
-     * after 30 days from the job's last update time. Otherwise the expiration
-     * date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10316,6 +10339,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the postingCreateTime field is set.
      */
     public boolean hasPostingCreateTime() {
       return postingCreateTimeBuilder_ != null || postingCreateTime_ != null;
@@ -10326,6 +10350,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The postingCreateTime.
      */
     public com.google.protobuf.Timestamp getPostingCreateTime() {
       if (postingCreateTimeBuilder_ == null) {
@@ -10469,6 +10494,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the postingUpdateTime field is set.
      */
     public boolean hasPostingUpdateTime() {
       return postingUpdateTimeBuilder_ != null || postingUpdateTime_ != null;
@@ -10479,6 +10505,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The postingUpdateTime.
      */
     public com.google.protobuf.Timestamp getPostingUpdateTime() {
       if (postingUpdateTimeBuilder_ == null) {
@@ -10620,6 +10647,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The companyDisplayName.
      */
     public java.lang.String getCompanyDisplayName() {
       java.lang.Object ref = companyDisplayName_;
@@ -10639,6 +10667,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for companyDisplayName.
      */
     public com.google.protobuf.ByteString
         getCompanyDisplayNameBytes() {
@@ -10659,6 +10688,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The companyDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyDisplayName(
         java.lang.String value) {
@@ -10676,6 +10707,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearCompanyDisplayName() {
       
@@ -10689,6 +10721,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for companyDisplayName to set.
+     * @return This builder for chaining.
      */
     public Builder setCompanyDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -10711,6 +10745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the derivedInfo field is set.
      */
     public boolean hasDerivedInfo() {
       return derivedInfoBuilder_ != null || derivedInfo_ != null;
@@ -10721,6 +10756,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The derivedInfo.
      */
     public com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -10864,6 +10900,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+     * @return Whether the processingOptions field is set.
      */
     public boolean hasProcessingOptions() {
       return processingOptionsBuilder_ != null || processingOptions_ != null;
@@ -10874,6 +10911,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
+     * @return The processingOptions.
      */
     public com.google.cloud.talent.v4beta1.Job.ProcessingOptions getProcessingOptions() {
       if (processingOptionsBuilder_ == null) {

@@ -11,27 +11,24 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Work experience filter.
  * This filter is used to search for profiles with working experience length
- * between
- * [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience]
- * and
- * [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
+ * between [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience] and [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.WorkExperienceFilter</code>
  */
-final class WorkExperienceFilter extends \Google\Protobuf\Internal\Message
+class WorkExperienceFilter extends \Google\Protobuf\Internal\Message
 {
     /**
      * The minimum duration of the work experience (inclusive).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_experience = 1;</code>
      */
-    private $min_experience = null;
+    protected $min_experience = null;
     /**
      * The maximum duration of the work experience (exclusive).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration max_experience = 2;</code>
      */
-    private $max_experience = null;
+    protected $max_experience = null;
 
     /**
      * Constructor.

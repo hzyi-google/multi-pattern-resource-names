@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.securitycenter.v1.OrganizationSettings</code>
  */
-final class OrganizationSettings extends \Google\Protobuf\Internal\Message
+class OrganizationSettings extends \Google\Protobuf\Internal\Message
 {
     /**
      * The relative resource name of the settings. See:
@@ -24,7 +24,7 @@ final class OrganizationSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
      * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -33,13 +33,13 @@ final class OrganizationSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool enable_asset_discovery = 2;</code>
      */
-    private $enable_asset_discovery = false;
+    protected $enable_asset_discovery = false;
     /**
      * The configuration used for Asset Discovery runs.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
      */
-    private $asset_discovery_config = null;
+    protected $asset_discovery_config = null;
 
     /**
      * Constructor.

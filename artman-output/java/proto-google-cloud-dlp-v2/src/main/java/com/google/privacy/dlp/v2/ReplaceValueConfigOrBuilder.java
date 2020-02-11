@@ -13,6 +13,7 @@ public interface ReplaceValueConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   * @return Whether the newValue field is set.
    */
   boolean hasNewValue();
   /**
@@ -21,6 +22,7 @@ public interface ReplaceValueConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
+   * @return The newValue.
    */
   com.google.privacy.dlp.v2.Value getNewValue();
   /**

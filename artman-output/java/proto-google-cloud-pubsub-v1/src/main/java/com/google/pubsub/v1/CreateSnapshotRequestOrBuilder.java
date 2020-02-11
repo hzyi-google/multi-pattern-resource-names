@@ -9,30 +9,30 @@ public interface CreateSnapshotRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional user-provided name for this snapshot.
-   * If the name is not provided in the request, the server will assign a random
-   * name for this snapshot on the same project as the subscription.
-   * Note that for REST API requests, you must specify a name.  See the
-   * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-   * resource name rules&lt;/a&gt;.
-   * Format is `projects/{project}/snapshots/{snap}`.
+   * User-provided name for this snapshot. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same
+   * project as the subscription. Note that for REST API requests, you must
+   * specify a name.  See the &lt;a
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
+   * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Optional user-provided name for this snapshot.
-   * If the name is not provided in the request, the server will assign a random
-   * name for this snapshot on the same project as the subscription.
-   * Note that for REST API requests, you must specify a name.  See the
-   * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-   * resource name rules&lt;/a&gt;.
-   * Format is `projects/{project}/snapshots/{snap}`.
+   * User-provided name for this snapshot. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same
+   * project as the subscription. Note that for REST API requests, you must
+   * specify a name.  See the &lt;a
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
+   * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -51,6 +51,7 @@ public interface CreateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>string subscription = 2;</code>
+   * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
@@ -67,6 +68,7 @@ public interface CreateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>string subscription = 2;</code>
+   * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
       getSubscriptionBytes();

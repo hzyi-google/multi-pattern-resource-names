@@ -23,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BigQueryKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,6 +110,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return Whether the tableReference field is set.
    */
   public boolean hasTableReference() {
     return tableReference_ != null;
@@ -114,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+   * @return The tableReference.
    */
   public com.google.privacy.dlp.v2.BigQueryTable getTableReference() {
     return tableReference_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : tableReference_;
@@ -138,6 +146,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 row_number = 2;</code>
+   * @return The rowNumber.
    */
   public long getRowNumber() {
     return rowNumber_;
@@ -489,6 +498,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+     * @return Whether the tableReference field is set.
      */
     public boolean hasTableReference() {
       return tableReferenceBuilder_ != null || tableReference_ != null;
@@ -499,6 +509,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
+     * @return The tableReference.
      */
     public com.google.privacy.dlp.v2.BigQueryTable getTableReference() {
       if (tableReferenceBuilder_ == null) {
@@ -641,6 +652,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 row_number = 2;</code>
+     * @return The rowNumber.
      */
     public long getRowNumber() {
       return rowNumber_;
@@ -652,6 +664,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 row_number = 2;</code>
+     * @param value The rowNumber to set.
+     * @return This builder for chaining.
      */
     public Builder setRowNumber(long value) {
       
@@ -666,6 +680,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 row_number = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRowNumber() {
       

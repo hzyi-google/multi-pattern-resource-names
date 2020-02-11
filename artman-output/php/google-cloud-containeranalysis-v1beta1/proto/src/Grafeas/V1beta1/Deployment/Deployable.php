@@ -13,10 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.deployment.Deployable</code>
  */
-final class Deployable extends \Google\Protobuf\Internal\Message
+class Deployable extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      *
      * Generated from protobuf field <code>repeated string resource_uri = 1;</code>
      */
@@ -29,7 +29,7 @@ final class Deployable extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $resource_uri
-     *           Resource URI for the artifact being deployed.
+     *           Required. Resource URI for the artifact being deployed.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Deployable extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      *
      * Generated from protobuf field <code>repeated string resource_uri = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -49,7 +49,7 @@ final class Deployable extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      *
      * Generated from protobuf field <code>repeated string resource_uri = 1;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

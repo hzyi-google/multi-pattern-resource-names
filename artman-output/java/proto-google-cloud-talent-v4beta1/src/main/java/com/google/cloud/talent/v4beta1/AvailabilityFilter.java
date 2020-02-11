@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AvailabilityFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for signalType.
    */
   public int getSignalTypeValue() {
     return signalType_;
@@ -121,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The signalType.
    */
   public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
     @SuppressWarnings("deprecation")
@@ -136,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the range field is set.
    */
   public boolean hasRange() {
     return range_ != null;
@@ -146,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The range.
    */
   public com.google.cloud.talent.v4beta1.TimestampRange getRange() {
     return range_ == null ? com.google.cloud.talent.v4beta1.TimestampRange.getDefaultInstance() : range_;
@@ -165,16 +175,14 @@ private static final long serialVersionUID = 0L;
   private boolean required_;
   /**
    * <pre>
-   * If multiple
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-   * provided, the default behavior is to OR all filters, but if this field is
-   * set to true, this particular
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-   * be AND'ed against other
+   * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+   * behavior is to OR all filters, but if this field is set to true, this
+   * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
    * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
    * </pre>
    *
    * <code>bool required = 3;</code>
+   * @return The required.
    */
   public boolean getRequired() {
     return required_;
@@ -540,6 +548,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for signalType.
      */
     public int getSignalTypeValue() {
       return signalType_;
@@ -550,6 +559,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for signalType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignalTypeValue(int value) {
       signalType_ = value;
@@ -562,6 +573,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The signalType.
      */
     public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
       @SuppressWarnings("deprecation")
@@ -574,6 +586,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The signalType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignalType(com.google.cloud.talent.v4beta1.AvailabilitySignalType value) {
       if (value == null) {
@@ -590,6 +604,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.AvailabilitySignalType signal_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSignalType() {
       
@@ -607,6 +622,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the range field is set.
      */
     public boolean hasRange() {
       return rangeBuilder_ != null || range_ != null;
@@ -617,6 +633,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The range.
      */
     public com.google.cloud.talent.v4beta1.TimestampRange getRange() {
       if (rangeBuilder_ == null) {
@@ -754,32 +771,29 @@ private static final long serialVersionUID = 0L;
     private boolean required_ ;
     /**
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *
      * <code>bool required = 3;</code>
+     * @return The required.
      */
     public boolean getRequired() {
       return required_;
     }
     /**
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *
      * <code>bool required = 3;</code>
+     * @param value The required to set.
+     * @return This builder for chaining.
      */
     public Builder setRequired(boolean value) {
       
@@ -789,16 +803,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *
      * <code>bool required = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRequired() {
       

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.WorkflowNode</code>
  */
-final class WorkflowNode extends \Google\Protobuf\Internal\Message
+class WorkflowNode extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The name of the node.
      *
      * Generated from protobuf field <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $step_id = '';
+    protected $step_id = '';
     /**
      * Output only. Node's prerequisite nodes.
      *
@@ -32,19 +32,19 @@ final class WorkflowNode extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $job_id = '';
+    protected $job_id = '';
     /**
      * Output only. The node state.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $state = 0;
+    protected $state = 0;
     /**
      * Output only. The error detail.
      *
      * Generated from protobuf field <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    private $error = '';
+    protected $error = '';
 
     /**
      * Constructor.

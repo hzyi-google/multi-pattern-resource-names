@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,8 +19,7 @@ module Google
         # The Request of the CreateApplication method.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Required. Resource name of the profile under which the application is
-        #     created.
+        #     Required. Resource name of the profile under which the application is created.
         #
         #     The format is
         #     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
@@ -43,21 +42,16 @@ module Google
         # Request for updating a specified application.
         # @!attribute [rw] application
         #   @return [Google::Cloud::Talent::V4beta1::Application]
-        #     Required. The application resource to replace the current resource in the
-        #     system.
+        #     Required. The application resource to replace the current resource in the system.
         # @!attribute [rw] update_mask
         #   @return [Google::Protobuf::FieldMask]
         #     Strongly recommended for the best service experience.
         #
-        #     If
-        #     {Google::Cloud::Talent::V4beta1::UpdateApplicationRequest#update_mask update_mask}
-        #     is provided, only the specified fields in
-        #     {Google::Cloud::Talent::V4beta1::UpdateApplicationRequest#application application}
-        #     are updated. Otherwise all the fields are updated.
+        #     If {Google::Cloud::Talent::V4beta1::UpdateApplicationRequest#update_mask update_mask} is provided, only the specified fields in
+        #     {Google::Cloud::Talent::V4beta1::UpdateApplicationRequest#application application} are updated. Otherwise all the fields are updated.
         #
         #     A field mask to specify the application fields to be updated. Only
-        #     top level fields of {Google::Cloud::Talent::V4beta1::Application Application}
-        #     are supported.
+        #     top level fields of {Google::Cloud::Talent::V4beta1::Application Application} are supported.
         class UpdateApplicationRequest; end
 
         # Request to delete a application.
@@ -73,8 +67,7 @@ module Google
         # List applications for which the client has ACL visibility.
         # @!attribute [rw] parent
         #   @return [String]
-        #     Required. Resource name of the profile under which the application is
-        #     created.
+        #     Required. Resource name of the profile under which the application is created.
         #
         #     The format is
         #     "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}", for

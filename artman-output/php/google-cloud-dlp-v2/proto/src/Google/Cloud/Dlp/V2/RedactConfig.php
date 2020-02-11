@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.RedactConfig</code>
  */
-final class RedactConfig extends \Google\Protobuf\Internal\Message
+class RedactConfig extends \Google\Protobuf\Internal\Message
 {
 
     /**

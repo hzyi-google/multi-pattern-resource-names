@@ -13,7 +13,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder extends
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the template field is set.
    */
   boolean hasTemplate();
   /**
@@ -22,7 +23,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder extends
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The template.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate();
   /**
@@ -31,7 +33,7 @@ public interface UpdateWorkflowTemplateRequestOrBuilder extends
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder();
 }

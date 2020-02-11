@@ -9,10 +9,7 @@ public interface CustomAttributeOrBuilder extends
 
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -23,15 +20,13 @@ public interface CustomAttributeOrBuilder extends
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @return A list containing the stringValues.
    */
   java.util.List<java.lang.String>
       getStringValuesList();
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -42,14 +37,12 @@ public interface CustomAttributeOrBuilder extends
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @return The count of stringValues.
    */
   int getStringValuesCount();
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -60,14 +53,13 @@ public interface CustomAttributeOrBuilder extends
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @param index The index of the element to return.
+   * @return The stringValues at the given index.
    */
   java.lang.String getStringValues(int index);
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
@@ -78,56 +70,47 @@ public interface CustomAttributeOrBuilder extends
    * </pre>
    *
    * <code>repeated string string_values = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the stringValues at the given index.
    */
   com.google.protobuf.ByteString
       getStringValuesBytes(int index);
 
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @return A list containing the longValues.
    */
   java.util.List<java.lang.Long> getLongValuesList();
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @return The count of longValues.
    */
   int getLongValuesCount();
   /**
    * <pre>
-   * Exactly one of
-   * [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values]
-   * or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values]
-   * must be specified.
+   * Exactly one of [string_values][google.cloud.talent.v4beta1.CustomAttribute.string_values] or [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] must be specified.
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
-   * Currently at most 1
-   * [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is
-   * supported.
+   * Currently at most 1 [long_values][google.cloud.talent.v4beta1.CustomAttribute.long_values] is supported.
    * </pre>
    *
    * <code>repeated int64 long_values = 2;</code>
+   * @param index The index of the element to return.
+   * @return The longValues at the given index.
    */
   long getLongValues(int index);
 
@@ -139,6 +122,7 @@ public interface CustomAttributeOrBuilder extends
    * </pre>
    *
    * <code>bool filterable = 3;</code>
+   * @return The filterable.
    */
   boolean getFilterable();
 }

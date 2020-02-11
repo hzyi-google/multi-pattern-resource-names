@@ -17,21 +17,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.image.Basis</code>
  */
-final class Basis extends \Google\Protobuf\Internal\Message
+class Basis extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      *
      * Generated from protobuf field <code>string resource_url = 1;</code>
      */
-    private $resource_url = '';
+    protected $resource_url = '';
     /**
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
      */
-    private $fingerprint = null;
+    protected $fingerprint = null;
 
     /**
      * Constructor.
@@ -40,10 +40,10 @@ final class Basis extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_url
-     *           The resource_url for the resource representing the basis of
-     *           associated occurrence images.
+     *           Required. Immutable. The resource_url for the resource representing the
+     *           basis of associated occurrence images.
      *     @type \Grafeas\V1beta1\Image\Fingerprint $fingerprint
-     *           The fingerprint of the base image.
+     *           Required. Immutable. The fingerprint of the base image.
      * }
      */
     public function __construct($data = NULL) {
@@ -52,8 +52,8 @@ final class Basis extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      *
      * Generated from protobuf field <code>string resource_url = 1;</code>
      * @return string
@@ -64,8 +64,8 @@ final class Basis extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource_url for the resource representing the basis of
-     * associated occurrence images.
+     * Required. Immutable. The resource_url for the resource representing the
+     * basis of associated occurrence images.
      *
      * Generated from protobuf field <code>string resource_url = 1;</code>
      * @param string $var
@@ -80,7 +80,7 @@ final class Basis extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
      * @return \Grafeas\V1beta1\Image\Fingerprint
@@ -91,7 +91,7 @@ final class Basis extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fingerprint of the base image.
+     * Required. Immutable. The fingerprint of the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
      * @param \Grafeas\V1beta1\Image\Fingerprint $var

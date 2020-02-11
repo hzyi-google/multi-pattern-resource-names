@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.CreateJobRequest</code>
  */
-final class CreateJobRequest extends \Google\Protobuf\Internal\Message
+class CreateJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the tenant under which the job is created.
@@ -21,15 +21,15 @@ final class CreateJobRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. The Job to be created.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $job = null;
+    protected $job = null;
 
     /**
      * Constructor.
@@ -57,7 +57,7 @@ final class CreateJobRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -71,7 +71,7 @@ final class CreateJobRequest extends \Google\Protobuf\Internal\Message
      * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
      * is created. For example, "projects/foo".
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

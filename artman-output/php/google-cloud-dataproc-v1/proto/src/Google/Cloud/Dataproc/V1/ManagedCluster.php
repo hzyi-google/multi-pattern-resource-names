@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.ManagedCluster</code>
  */
-final class ManagedCluster extends \Google\Protobuf\Internal\Message
+class ManagedCluster extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The cluster name prefix. A unique cluster name will be formed by
@@ -24,13 +24,13 @@ final class ManagedCluster extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $cluster_name = '';
+    protected $cluster_name = '';
     /**
      * Required. The cluster configuration.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $config = null;
+    protected $config = null;
     /**
      * Optional. The labels to associate with this cluster.
      * Label keys must be between 1 and 63 characters long, and must conform to

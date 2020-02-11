@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -58,9 +65,9 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               jobs_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             jobs_.add(s);
             break;
@@ -86,7 +93,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -181,9 +188,7 @@ private static final long serialVersionUID = 0L;
      * submitted an application for a job with a single click without
      * entering information. If a job seeker performs this action, send only
      * this event to the service. Do not also send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START]
-     * or
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START] or [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
      * events.
      * </pre>
      *
@@ -218,12 +223,8 @@ private static final long serialVersionUID = 0L;
      * (without viewing the details of the job posting), and is redirected
      * to a different website to complete the application. If a candidate
      * performs this action, send only this event to the service. Do not also
-     * send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
-     * or
-     * [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW]
-     * events.
+     * send [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH] or [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] events.
      * </pre>
      *
      * <code>APPLICATION_REDIRECT_FROM_SEARCH = 9;</code>
@@ -360,9 +361,7 @@ private static final long serialVersionUID = 0L;
      * submitted an application for a job with a single click without
      * entering information. If a job seeker performs this action, send only
      * this event to the service. Do not also send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START]
-     * or
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START] or [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
      * events.
      * </pre>
      *
@@ -397,12 +396,8 @@ private static final long serialVersionUID = 0L;
      * (without viewing the details of the job posting), and is redirected
      * to a different website to complete the application. If a candidate
      * performs this action, send only this event to the service. Do not also
-     * send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
-     * or
-     * [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW]
-     * events.
+     * send [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH] or [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] events.
      * </pre>
      *
      * <code>APPLICATION_REDIRECT_FROM_SEARCH = 9;</code>
@@ -482,6 +477,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -489,6 +486,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static JobEventType forNumber(int value) {
       switch (value) {
         case 0: return JOB_EVENT_TYPE_UNSPECIFIED;
@@ -559,27 +560,26 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.JobEvent.JobEventType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
    * <pre>
-   * Required. The type of the event (see
-   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
   }
   /**
    * <pre>
-   * Required. The type of the event (see
-   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The type.
    */
   public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
     @SuppressWarnings("deprecation")
@@ -591,19 +591,18 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList jobs_;
   /**
    * <pre>
-   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this event. For example, if this is an
-   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-   * event, this field contains the identifiers of all jobs shown to the job
-   * seeker. If this was a
-   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-   * field contains the identifier of the viewed job.
+   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+   * this field contains the identifiers of all jobs shown to the job seeker.
+   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+   * identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return A list containing the jobs.
    */
   public com.google.protobuf.ProtocolStringList
       getJobsList() {
@@ -611,57 +610,56 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this event. For example, if this is an
-   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-   * event, this field contains the identifiers of all jobs shown to the job
-   * seeker. If this was a
-   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-   * field contains the identifier of the viewed job.
+   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+   * this field contains the identifiers of all jobs shown to the job seeker.
+   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+   * identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The count of jobs.
    */
   public int getJobsCount() {
     return jobs_.size();
   }
   /**
    * <pre>
-   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this event. For example, if this is an
-   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-   * event, this field contains the identifiers of all jobs shown to the job
-   * seeker. If this was a
-   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-   * field contains the identifier of the viewed job.
+   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+   * this field contains the identifiers of all jobs shown to the job seeker.
+   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+   * identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
    */
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
   }
   /**
    * <pre>
-   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-   * associated with this event. For example, if this is an
-   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-   * event, this field contains the identifiers of all jobs shown to the job
-   * seeker. If this was a
-   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-   * field contains the identifier of the viewed job.
+   * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+   * this field contains the identifiers of all jobs shown to the job seeker.
+   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+   * identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
    */
   public com.google.protobuf.ByteString
       getJobsBytes(int index) {
@@ -672,14 +670,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object profile_;
   /**
    * <pre>
-   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>
+   * @return The profile.
    */
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
@@ -695,14 +693,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>
+   * @return The bytes for profile.
    */
   public com.google.protobuf.ByteString
       getProfileBytes() {
@@ -945,7 +943,7 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
 
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       profile_ = "";
 
       return this;
@@ -975,15 +973,13 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.talent.v4beta1.JobEvent buildPartial() {
       com.google.cloud.talent.v4beta1.JobEvent result = new com.google.cloud.talent.v4beta1.JobEvent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.jobs_ = jobs_;
       result.profile_ = profile_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1038,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -1082,22 +1078,23 @@ private static final long serialVersionUID = 0L;
     private int type_ = 0;
     /**
      * <pre>
-     * Required. The type of the event (see
-     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <pre>
-     * Required. The type of the event (see
-     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1106,11 +1103,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The type of the event (see
-     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The type.
      */
     public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
       @SuppressWarnings("deprecation")
@@ -1119,11 +1116,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The type of the event (see
-     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.cloud.talent.v4beta1.JobEvent.JobEventType value) {
       if (value == null) {
@@ -1136,11 +1134,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The type of the event (see
-     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * Required. The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1151,26 +1149,25 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return A list containing the jobs.
      */
     public com.google.protobuf.ProtocolStringList
         getJobsList() {
@@ -1178,57 +1175,56 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The count of jobs.
      */
     public int getJobsCount() {
       return jobs_.size();
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the element to return.
+     * @return The jobs at the given index.
      */
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jobs at the given index.
      */
     public com.google.protobuf.ByteString
         getJobsBytes(int index) {
@@ -1236,19 +1232,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param index The index to set the value at.
+     * @param value The jobs to set.
+     * @return This builder for chaining.
      */
     public Builder setJobs(
         int index, java.lang.String value) {
@@ -1262,19 +1259,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobs(
         java.lang.String value) {
@@ -1288,19 +1285,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param values The jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addAllJobs(
         java.lang.Iterable<java.lang.String> values) {
@@ -1312,41 +1309,40 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name]
-     * associated with this event. For example, if this is an
-     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
-     * event, this field contains the identifiers of all jobs shown to the job
-     * seeker. If this was a
-     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
-     * field contains the identifier of the viewed job.
+     * Required. The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
+     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
+     * this field contains the identifiers of all jobs shown to the job seeker.
+     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
+     * identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes of the jobs to add.
+     * @return This builder for chaining.
      */
     public Builder addJobsBytes(
         com.google.protobuf.ByteString value) {
@@ -1363,14 +1359,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object profile_ = "";
     /**
      * <pre>
-     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
+     * @return The profile.
      */
     public java.lang.String getProfile() {
       java.lang.Object ref = profile_;
@@ -1386,14 +1382,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
+     * @return The bytes for profile.
      */
     public com.google.protobuf.ByteString
         getProfileBytes() {
@@ -1410,14 +1406,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
+     * @param value The profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfile(
         java.lang.String value) {
@@ -1431,14 +1428,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearProfile() {
       
@@ -1448,14 +1445,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
-     * with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
+     * @param value The bytes for profile to set.
+     * @return This builder for chaining.
      */
     public Builder setProfileBytes(
         com.google.protobuf.ByteString value) {

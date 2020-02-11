@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateClusterRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -174,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -197,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The region.
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -216,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for region.
    */
   public com.google.protobuf.ByteString
       getRegionBytes() {
@@ -239,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -258,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
       getClusterNameBytes() {
@@ -281,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the cluster field is set.
    */
   public boolean hasCluster() {
     return cluster_ != null;
@@ -291,6 +304,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The cluster.
    */
   public com.google.cloud.dataproc.v1beta2.Cluster getCluster() {
     return cluster_ == null ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance() : cluster_;
@@ -320,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the gracefulDecommissionTimeout field is set.
    */
   public boolean hasGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ != null;
@@ -336,6 +351,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The gracefulDecommissionTimeout.
    */
   public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
@@ -420,6 +436,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -485,6 +502,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -571,6 +589,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The requestId.
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -598,6 +617,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for requestId.
    */
   public com.google.protobuf.ByteString
       getRequestIdBytes() {
@@ -1068,6 +1088,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1088,6 +1109,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -1109,6 +1131,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -1127,6 +1151,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -1141,6 +1166,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1161,6 +1188,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -1180,6 +1208,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
@@ -1200,6 +1229,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegion(
         java.lang.String value) {
@@ -1217,6 +1248,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegion() {
       
@@ -1230,6 +1262,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
      */
     public Builder setRegionBytes(
         com.google.protobuf.ByteString value) {
@@ -1250,6 +1284,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1269,6 +1304,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
         getClusterNameBytes() {
@@ -1289,6 +1325,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(
         java.lang.String value) {
@@ -1306,6 +1344,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
       
@@ -1319,6 +1358,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1341,6 +1382,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
       return clusterBuilder_ != null || cluster_ != null;
@@ -1351,6 +1393,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The cluster.
      */
     public com.google.cloud.dataproc.v1beta2.Cluster getCluster() {
       if (clusterBuilder_ == null) {
@@ -1500,6 +1543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the gracefulDecommissionTimeout field is set.
      */
     public boolean hasGracefulDecommissionTimeout() {
       return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
@@ -1516,6 +1560,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The gracefulDecommissionTimeout.
      */
     public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
@@ -1756,6 +1801,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1821,6 +1867,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -2355,6 +2402,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The requestId.
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -2382,6 +2430,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for requestId.
      */
     public com.google.protobuf.ByteString
         getRequestIdBytes() {
@@ -2410,6 +2459,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestId(
         java.lang.String value) {
@@ -2435,6 +2486,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRequestId() {
       
@@ -2456,6 +2508,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(
         com.google.protobuf.ByteString value) {

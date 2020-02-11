@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InfoTypeTransformations();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -154,26 +161,28 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the primitiveTransformation field is set.
      */
     boolean hasPrimitiveTransformation();
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The primitiveTransformation.
      */
     com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder();
   }
@@ -196,6 +205,13 @@ private static final long serialVersionUID = 0L;
     }
     private InfoTypeTransformation() {
       infoTypes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InfoTypeTransformation();
     }
 
     @java.lang.Override
@@ -279,7 +295,6 @@ private static final long serialVersionUID = 0L;
               com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.class, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder.class);
     }
 
-    private int bitField0_;
     public static final int INFO_TYPES_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
     /**
@@ -349,30 +364,32 @@ private static final long serialVersionUID = 0L;
     private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_;
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the primitiveTransformation field is set.
      */
     public boolean hasPrimitiveTransformation() {
       return primitiveTransformation_ != null;
     }
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The primitiveTransformation.
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
       return primitiveTransformation_ == null ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance() : primitiveTransformation_;
     }
     /**
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
       return getPrimitiveTransformation();
@@ -634,7 +651,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation buildPartial() {
         com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result = new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (infoTypesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -649,7 +665,6 @@ private static final long serialVersionUID = 0L;
         } else {
           result.primitiveTransformation_ = primitiveTransformationBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1110,20 +1125,22 @@ private static final long serialVersionUID = 0L;
           com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> primitiveTransformationBuilder_;
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the primitiveTransformation field is set.
        */
       public boolean hasPrimitiveTransformation() {
         return primitiveTransformationBuilder_ != null || primitiveTransformation_ != null;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The primitiveTransformation.
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
         if (primitiveTransformationBuilder_ == null) {
@@ -1134,10 +1151,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
         if (primitiveTransformationBuilder_ == null) {
@@ -1154,10 +1171,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPrimitiveTransformation(
           com.google.privacy.dlp.v2.PrimitiveTransformation.Builder builderForValue) {
@@ -1172,10 +1189,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergePrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
         if (primitiveTransformationBuilder_ == null) {
@@ -1194,10 +1211,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearPrimitiveTransformation() {
         if (primitiveTransformationBuilder_ == null) {
@@ -1212,10 +1229,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder getPrimitiveTransformationBuilder() {
         
@@ -1224,10 +1241,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
         if (primitiveTransformationBuilder_ != null) {
@@ -1239,10 +1256,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> 
@@ -1314,22 +1331,22 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> transformations_;
   /**
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> getTransformationsList() {
     return transformations_;
   }
   /**
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> 
       getTransformationsOrBuilderList() {
@@ -1337,33 +1354,33 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getTransformationsCount() {
     return transformations_.size();
   }
   /**
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(int index) {
     return transformations_.get(index);
   }
   /**
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder getTransformationsOrBuilder(
       int index) {
@@ -1733,11 +1750,11 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> getTransformationsList() {
       if (transformationsBuilder_ == null) {
@@ -1748,11 +1765,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getTransformationsCount() {
       if (transformationsBuilder_ == null) {
@@ -1763,11 +1780,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(int index) {
       if (transformationsBuilder_ == null) {
@@ -1778,11 +1795,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
@@ -1800,11 +1817,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
@@ -1819,11 +1836,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addTransformations(com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
       if (transformationsBuilder_ == null) {
@@ -1840,11 +1857,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
@@ -1862,11 +1879,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addTransformations(
         com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
@@ -1881,11 +1898,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
@@ -1900,11 +1917,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllTransformations(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> values) {
@@ -1920,11 +1937,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTransformations() {
       if (transformationsBuilder_ == null) {
@@ -1938,11 +1955,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder removeTransformations(int index) {
       if (transformationsBuilder_ == null) {
@@ -1956,11 +1973,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder getTransformationsBuilder(
         int index) {
@@ -1968,11 +1985,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder getTransformationsOrBuilder(
         int index) {
@@ -1983,11 +2000,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> 
          getTransformationsOrBuilderList() {
@@ -1999,11 +2016,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder addTransformationsBuilder() {
       return getTransformationsFieldBuilder().addBuilder(
@@ -2011,11 +2028,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder addTransformationsBuilder(
         int index) {
@@ -2024,11 +2041,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder> 
          getTransformationsBuilderList() {

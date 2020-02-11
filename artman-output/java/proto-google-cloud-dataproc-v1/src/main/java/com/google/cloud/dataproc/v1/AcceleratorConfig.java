@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AcceleratorConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -103,7 +109,7 @@ private static final long serialVersionUID = 0L;
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
@@ -111,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   * @return The acceleratorTypeUri.
    */
   public java.lang.String getAcceleratorTypeUri() {
     java.lang.Object ref = acceleratorTypeUri_;
@@ -134,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
@@ -142,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string accelerator_type_uri = 1;</code>
+   * @return The bytes for acceleratorTypeUri.
    */
   public com.google.protobuf.ByteString
       getAcceleratorTypeUriBytes() {
@@ -165,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 accelerator_count = 2;</code>
+   * @return The acceleratorCount.
    */
   public int getAcceleratorCount() {
     return acceleratorCount_;
@@ -505,7 +514,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
@@ -513,6 +522,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     * @return The acceleratorTypeUri.
      */
     public java.lang.String getAcceleratorTypeUri() {
       java.lang.Object ref = acceleratorTypeUri_;
@@ -536,7 +546,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
@@ -544,6 +554,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     * @return The bytes for acceleratorTypeUri.
      */
     public com.google.protobuf.ByteString
         getAcceleratorTypeUriBytes() {
@@ -568,7 +579,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
@@ -576,6 +587,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     * @param value The acceleratorTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeUri(
         java.lang.String value) {
@@ -597,7 +610,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
@@ -605,6 +618,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorTypeUri() {
       
@@ -622,7 +636,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
@@ -630,6 +644,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string accelerator_type_uri = 1;</code>
+     * @param value The bytes for acceleratorTypeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeUriBytes(
         com.google.protobuf.ByteString value) {
@@ -650,6 +666,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     * @return The acceleratorCount.
      */
     public int getAcceleratorCount() {
       return acceleratorCount_;
@@ -660,6 +677,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     * @param value The acceleratorCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorCount(int value) {
       
@@ -673,6 +692,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accelerator_count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
       

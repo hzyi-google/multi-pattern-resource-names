@@ -27,6 +27,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ListKeyRingsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -119,7 +125,8 @@ private static final long serialVersionUID = 0L;
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -139,7 +146,8 @@ private static final long serialVersionUID = 0L;
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -159,13 +167,14 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+   * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
    * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
    * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
    * request.  If unspecified, the server will pick an appropriate default.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -175,11 +184,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Optional pagination token, returned earlier via
+   * Optional. Optional pagination token, returned earlier via
    * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -195,11 +205,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional pagination token, returned earlier via
+   * Optional. Optional pagination token, returned earlier via
    * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
       getPageTokenBytes() {
@@ -219,10 +230,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For
+   * more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -238,10 +253,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For
+   * more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
       getFilterBytes() {
@@ -262,10 +281,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Specify how the results should be sorted. If not specified, the
-   * results will be sorted in the default order.
+   * results will be sorted in the default order.  For more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The orderBy.
    */
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
@@ -282,10 +304,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Specify how the results should be sorted. If not specified, the
-   * results will be sorted in the default order.
+   * results will be sorted in the default order.  For more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for orderBy.
    */
   public com.google.protobuf.ByteString
       getOrderByBytes() {
@@ -682,7 +707,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -702,7 +728,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -723,7 +750,9 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -741,7 +770,8 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -755,7 +785,9 @@ private static final long serialVersionUID = 0L;
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -772,26 +804,29 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
     }
     /**
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
       
@@ -801,13 +836,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
       
@@ -819,11 +855,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -839,11 +876,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
         getPageTokenBytes() {
@@ -860,11 +898,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(
         java.lang.String value) {
@@ -878,11 +918,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       
@@ -892,11 +933,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
@@ -913,10 +956,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -932,10 +979,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
         getFilterBytes() {
@@ -952,10 +1003,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(
         java.lang.String value) {
@@ -969,10 +1025,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
       
@@ -982,10 +1042,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(
         com.google.protobuf.ByteString value) {
@@ -1003,10 +1068,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The orderBy.
      */
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
@@ -1023,10 +1091,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for orderBy.
      */
     public com.google.protobuf.ByteString
         getOrderByBytes() {
@@ -1044,10 +1115,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderBy(
         java.lang.String value) {
@@ -1062,10 +1137,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
       
@@ -1076,10 +1154,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
      */
     public Builder setOrderByBytes(
         com.google.protobuf.ByteString value) {

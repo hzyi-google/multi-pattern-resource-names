@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.ClusterSelector</code>
  */
-final class ClusterSelector extends \Google\Protobuf\Internal\Message
+class ClusterSelector extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The zone where workflow process executes. This parameter does not
@@ -23,7 +23,7 @@ final class ClusterSelector extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $zone = '';
+    protected $zone = '';
     /**
      * Required. The cluster labels. Cluster must have all labels
      * to match.

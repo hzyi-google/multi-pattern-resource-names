@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>grafeas.v1beta1.image.Details</code>
  */
-final class Details extends \Google\Protobuf\Internal\Message
+class Details extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The child image derived from the base image.
+     * Required. Immutable. The child image derived from the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
      */
-    private $derived_image = null;
+    protected $derived_image = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ final class Details extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grafeas\V1beta1\Image\Derived $derived_image
-     *           The child image derived from the base image.
+     *           Required. Immutable. The child image derived from the base image.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The child image derived from the base image.
+     * Required. Immutable. The child image derived from the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
      * @return \Grafeas\V1beta1\Image\Derived
@@ -49,7 +49,7 @@ final class Details extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The child image derived from the base image.
+     * Required. Immutable. The child image derived from the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
      * @param \Grafeas\V1beta1\Image\Derived $var

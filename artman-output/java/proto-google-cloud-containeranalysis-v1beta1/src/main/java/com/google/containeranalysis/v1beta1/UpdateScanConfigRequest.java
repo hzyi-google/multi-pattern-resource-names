@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new UpdateScanConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -102,11 +108,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -122,11 +129,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -146,30 +154,32 @@ private static final long serialVersionUID = 0L;
   private com.google.containeranalysis.v1beta1.ScanConfig scanConfig_;
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the scanConfig field is set.
    */
   public boolean hasScanConfig() {
     return scanConfig_ != null;
   }
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The scanConfig.
    */
   public com.google.containeranalysis.v1beta1.ScanConfig getScanConfig() {
     return scanConfig_ == null ? com.google.containeranalysis.v1beta1.ScanConfig.getDefaultInstance() : scanConfig_;
   }
   /**
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
@@ -514,11 +524,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -534,11 +545,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -555,11 +567,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -573,11 +587,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -587,11 +602,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -610,20 +627,22 @@ private static final long serialVersionUID = 0L;
         com.google.containeranalysis.v1beta1.ScanConfig, com.google.containeranalysis.v1beta1.ScanConfig.Builder, com.google.containeranalysis.v1beta1.ScanConfigOrBuilder> scanConfigBuilder_;
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the scanConfig field is set.
      */
     public boolean hasScanConfig() {
       return scanConfigBuilder_ != null || scanConfig_ != null;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The scanConfig.
      */
     public com.google.containeranalysis.v1beta1.ScanConfig getScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -634,10 +653,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setScanConfig(com.google.containeranalysis.v1beta1.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -654,10 +673,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setScanConfig(
         com.google.containeranalysis.v1beta1.ScanConfig.Builder builderForValue) {
@@ -672,10 +691,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeScanConfig(com.google.containeranalysis.v1beta1.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -694,10 +713,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -712,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.containeranalysis.v1beta1.ScanConfig.Builder getScanConfigBuilder() {
       
@@ -724,10 +743,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder() {
       if (scanConfigBuilder_ != null) {
@@ -739,10 +758,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.containeranalysis.v1beta1.ScanConfig, com.google.containeranalysis.v1beta1.ScanConfig.Builder, com.google.containeranalysis.v1beta1.ScanConfigOrBuilder> 

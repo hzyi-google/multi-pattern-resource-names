@@ -13,6 +13,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * @return Whether the snapshot field is set.
    */
   boolean hasSnapshot();
   /**
@@ -21,6 +22,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
+   * @return The snapshot.
    */
   com.google.pubsub.v1.Snapshot getSnapshot();
   /**
@@ -39,6 +41,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -48,6 +51,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

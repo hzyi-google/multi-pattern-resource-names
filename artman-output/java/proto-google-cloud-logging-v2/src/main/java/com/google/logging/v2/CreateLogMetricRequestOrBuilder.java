@@ -9,51 +9,55 @@ public interface CreateLogMetricRequestOrBuilder extends
 
   /**
    * <pre>
-   * The resource name of the project in which to create the metric:
+   * Required. The resource name of the project in which to create the metric:
    *     "projects/[PROJECT_ID]"
    * The new metric must be provided in the request.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * The resource name of the project in which to create the metric:
+   * Required. The resource name of the project in which to create the metric:
    *     "projects/[PROJECT_ID]"
    * The new metric must be provided in the request.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
       getParentBytes();
 
   /**
    * <pre>
-   * The new logs-based metric, which must not have an identifier that
+   * Required. The new logs-based metric, which must not have an identifier that
    * already exists.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
    * <pre>
-   * The new logs-based metric, which must not have an identifier that
+   * Required. The new logs-based metric, which must not have an identifier that
    * already exists.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The metric.
    */
   com.google.logging.v2.LogMetric getMetric();
   /**
    * <pre>
-   * The new logs-based metric, which must not have an identifier that
+   * Required. The new logs-based metric, which must not have an identifier that
    * already exists.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder();
 }

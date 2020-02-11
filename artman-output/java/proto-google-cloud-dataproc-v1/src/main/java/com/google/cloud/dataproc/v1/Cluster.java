@@ -28,6 +28,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Cluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -96,19 +103,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000002;
             }
             statusHistory_.add(
                 input.readMessage(com.google.cloud.dataproc.v1.ClusterStatus.parser(), extensionRegistry));
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -145,7 +152,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -177,7 +184,6 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1.Cluster.class, com.google.cloud.dataproc.v1.Cluster.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
@@ -185,7 +191,8 @@ private static final long serialVersionUID = 0L;
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -204,7 +211,8 @@ private static final long serialVersionUID = 0L;
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString
       getProjectIdBytes() {
@@ -228,7 +236,8 @@ private static final long serialVersionUID = 0L;
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The clusterName.
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -248,7 +257,8 @@ private static final long serialVersionUID = 0L;
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
       getClusterNameBytes() {
@@ -268,33 +278,35 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.ClusterConfig config_;
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
   }
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The config.
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
     return config_ == null ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance() : config_;
   }
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -424,6 +436,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -434,6 +447,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The status.
    */
   public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
     return status_ == null ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance() : status_;
@@ -508,11 +522,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clusterUuid_;
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterUuid.
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -528,11 +543,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
    * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for clusterUuid.
    */
   public com.google.protobuf.ByteString
       getClusterUuidBytes() {
@@ -558,6 +574,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * @return Whether the metrics field is set.
    */
   public boolean hasMetrics() {
     return metrics_ != null;
@@ -570,6 +587,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+   * @return The metrics.
    */
   public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
     return metrics_ == null ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance() : metrics_;
@@ -929,7 +947,7 @@ private static final long serialVersionUID = 0L;
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         statusHistoryBuilder_.clear();
       }
@@ -968,7 +986,6 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.Cluster buildPartial() {
       com.google.cloud.dataproc.v1.Cluster result = new com.google.cloud.dataproc.v1.Cluster(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.clusterName_ = clusterName_;
       if (configBuilder_ == null) {
@@ -984,9 +1001,9 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.statusHistory_ = statusHistory_;
       } else {
@@ -998,7 +1015,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1067,7 +1083,7 @@ private static final long serialVersionUID = 0L;
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1080,7 +1096,7 @@ private static final long serialVersionUID = 0L;
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             statusHistoryBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getStatusHistoryFieldBuilder() : null;
@@ -1132,7 +1148,8 @@ private static final long serialVersionUID = 0L;
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1151,7 +1168,8 @@ private static final long serialVersionUID = 0L;
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
         getProjectIdBytes() {
@@ -1171,7 +1189,9 @@ private static final long serialVersionUID = 0L;
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(
         java.lang.String value) {
@@ -1188,7 +1208,8 @@ private static final long serialVersionUID = 0L;
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
@@ -1201,7 +1222,9 @@ private static final long serialVersionUID = 0L;
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1222,7 +1245,8 @@ private static final long serialVersionUID = 0L;
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The clusterName.
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1242,7 +1266,8 @@ private static final long serialVersionUID = 0L;
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
         getClusterNameBytes() {
@@ -1263,7 +1288,9 @@ private static final long serialVersionUID = 0L;
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterName(
         java.lang.String value) {
@@ -1281,7 +1308,8 @@ private static final long serialVersionUID = 0L;
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterName() {
       
@@ -1295,7 +1323,9 @@ private static final long serialVersionUID = 0L;
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for clusterName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1314,22 +1344,24 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.ClusterConfig, com.google.cloud.dataproc.v1.ClusterConfig.Builder, com.google.cloud.dataproc.v1.ClusterConfigOrBuilder> configBuilder_;
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The config.
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {
@@ -1340,11 +1372,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1361,11 +1393,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setConfig(
         com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
@@ -1380,11 +1412,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1403,11 +1435,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -1422,11 +1454,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig.Builder getConfigBuilder() {
       
@@ -1435,11 +1467,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -1451,11 +1483,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1.ClusterConfig, com.google.cloud.dataproc.v1.ClusterConfig.Builder, com.google.cloud.dataproc.v1.ClusterConfigOrBuilder> 
@@ -1673,6 +1705,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1683,6 +1716,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The status.
      */
     public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -1820,9 +1854,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> statusHistory_ =
       java.util.Collections.emptyList();
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>(statusHistory_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2016,7 +2050,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -2121,7 +2155,7 @@ private static final long serialVersionUID = 0L;
         statusHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -2132,11 +2166,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clusterUuid_ = "";
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The clusterUuid.
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -2152,11 +2187,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for clusterUuid.
      */
     public com.google.protobuf.ByteString
         getClusterUuidBytes() {
@@ -2173,11 +2209,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuid(
         java.lang.String value) {
@@ -2191,11 +2229,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
       
@@ -2205,11 +2244,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for clusterUuid to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterUuidBytes(
         com.google.protobuf.ByteString value) {
@@ -2234,6 +2275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
       return metricsBuilder_ != null || metrics_ != null;
@@ -2246,6 +2288,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
+     * @return The metrics.
      */
     public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
       if (metricsBuilder_ == null) {

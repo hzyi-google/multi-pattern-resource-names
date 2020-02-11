@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest</code>
  */
-final class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
+class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the workflow template, as described
@@ -27,7 +27,7 @@ final class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Optional. The version of workflow template to instantiate. If specified,
      * the workflow will be instantiated only if the current version of
@@ -37,7 +37,7 @@ final class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal
      *
      * Generated from protobuf field <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $version = 0;
+    protected $version = 0;
     /**
      * Optional. A tag that prevents multiple concurrent workflow
      * instances with the same tag from running. This mitigates risk of
@@ -49,7 +49,7 @@ final class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal
      *
      * Generated from protobuf field <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $request_id = '';
+    protected $request_id = '';
     /**
      * Optional. Map from parameter names to values that should be used for those
      * parameters. Values may not exceed 100 characters.

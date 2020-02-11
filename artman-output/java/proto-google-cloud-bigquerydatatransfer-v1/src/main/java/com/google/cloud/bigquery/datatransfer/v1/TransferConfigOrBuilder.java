@@ -19,6 +19,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -33,6 +34,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -43,6 +45,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string destination_dataset_id = 2;</code>
+   * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();
   /**
@@ -51,6 +54,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string destination_dataset_id = 2;</code>
+   * @return The bytes for destinationDatasetId.
    */
   com.google.protobuf.ByteString
       getDestinationDatasetIdBytes();
@@ -61,6 +65,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -69,6 +74,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 3;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -79,6 +85,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string data_source_id = 5;</code>
+   * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
   /**
@@ -87,6 +94,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string data_source_id = 5;</code>
+   * @return The bytes for dataSourceId.
    */
   com.google.protobuf.ByteString
       getDataSourceIdBytes();
@@ -97,6 +105,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
+   * @return Whether the params field is set.
    */
   boolean hasParams();
   /**
@@ -105,6 +114,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
+   * @return The params.
    */
   com.google.protobuf.Struct getParams();
   /**
@@ -133,6 +143,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string schedule = 7;</code>
+   * @return The schedule.
    */
   java.lang.String getSchedule();
   /**
@@ -152,6 +163,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string schedule = 7;</code>
+   * @return The bytes for schedule.
    */
   com.google.protobuf.ByteString
       getScheduleBytes();
@@ -162,6 +174,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   * @return Whether the scheduleOptions field is set.
    */
   boolean hasScheduleOptions();
   /**
@@ -170,6 +183,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
+   * @return The scheduleOptions.
    */
   com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions();
   /**
@@ -192,6 +206,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>int32 data_refresh_window_days = 12;</code>
+   * @return The dataRefreshWindowDays.
    */
   int getDataRefreshWindowDays();
 
@@ -202,6 +217,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>bool disabled = 13;</code>
+   * @return The disabled.
    */
   boolean getDisabled();
 
@@ -211,6 +227,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -219,6 +236,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -236,6 +254,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the nextRunTime field is set.
    */
   boolean hasNextRunTime();
   /**
@@ -244,6 +263,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The nextRunTime.
    */
   com.google.protobuf.Timestamp getNextRunTime();
   /**
@@ -261,6 +281,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -269,6 +290,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The state.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getState();
 
@@ -278,6 +300,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>int64 user_id = 11;</code>
+   * @return The userId.
    */
   long getUserId();
 
@@ -287,6 +310,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string dataset_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The datasetRegion.
    */
   java.lang.String getDatasetRegion();
   /**
@@ -295,6 +319,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string dataset_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for datasetRegion.
    */
   com.google.protobuf.ByteString
       getDatasetRegionBytes();
@@ -306,6 +331,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
+   * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
   /**
@@ -315,6 +341,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
+   * @return The bytes for notificationPubsubTopic.
    */
   com.google.protobuf.ByteString
       getNotificationPubsubTopicBytes();
@@ -326,6 +353,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   * @return Whether the emailPreferences field is set.
    */
   boolean hasEmailPreferences();
   /**
@@ -335,6 +363,7 @@ public interface TransferConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
+   * @return The emailPreferences.
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
   /**

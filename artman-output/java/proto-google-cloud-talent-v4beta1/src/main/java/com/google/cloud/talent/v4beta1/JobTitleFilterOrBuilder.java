@@ -9,20 +9,20 @@ public interface JobTitleFilterOrBuilder extends
 
   /**
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The jobTitle.
    */
   java.lang.String getJobTitle();
   /**
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for jobTitle.
    */
   com.google.protobuf.ByteString
       getJobTitleBytes();
@@ -34,6 +34,7 @@ public interface JobTitleFilterOrBuilder extends
    * </pre>
    *
    * <code>bool negated = 2;</code>
+   * @return The negated.
    */
   boolean getNegated();
 }

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListLogEntriesResponse</code>
  */
-final class ListLogEntriesResponse extends \Google\Protobuf\Internal\Message
+class ListLogEntriesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
@@ -36,7 +36,7 @@ final class ListLogEntriesResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

@@ -10,31 +10,31 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * An occurrence of a particular package installation found within a system's
- * filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+ * filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
  *
  * Generated from protobuf message <code>grafeas.v1beta1.package.Location</code>
  */
-final class Location extends \Google\Protobuf\Internal\Message
+class Location extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      *
      * Generated from protobuf field <code>string cpe_uri = 1;</code>
      */
-    private $cpe_uri = '';
+    protected $cpe_uri = '';
     /**
      * The version installed at this location.
      *
      * Generated from protobuf field <code>.grafeas.v1beta1.package.Version version = 2;</code>
      */
-    private $version = null;
+    protected $version = null;
     /**
      * The path from which we gathered that this package/version is installed.
      *
      * Generated from protobuf field <code>string path = 3;</code>
      */
-    private $path = '';
+    protected $path = '';
 
     /**
      * Constructor.
@@ -43,7 +43,7 @@ final class Location extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $cpe_uri
-     *           The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     *           Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      *           denoting the package manager version distributing a package.
      *     @type \Grafeas\V1beta1\Package\Version $version
      *           The version installed at this location.
@@ -57,7 +57,7 @@ final class Location extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      *
      * Generated from protobuf field <code>string cpe_uri = 1;</code>
@@ -69,7 +69,7 @@ final class Location extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      *
      * Generated from protobuf field <code>string cpe_uri = 1;</code>

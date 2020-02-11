@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@
  *   The relative resource name of this asset. See:
  *   https://cloud.google.com/apis/design/resource_names#relative_resource_name
  *   Example:
- *   "organizations/123/assets/456".
+ *   "organizations/{organization_id}/assets/{asset_id}".
  *
  * @property {Object} securityCenterProperties
  *   Cloud SCC managed properties. These properties are managed by
@@ -68,7 +68,7 @@ const Asset = {
    * cannot be modified by the user.
    *
    * @property {string} resourceName
-   *   The full resource name of the GCP resource this asset
+   *   Immutable. The full resource name of the GCP resource this asset
    *   represents. This field is immutable after create time. See:
    *   https://cloud.google.com/apis/design/resource_names#full_resource_name
    *

@@ -26,6 +26,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new InspectContentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -152,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString
       getParentBytes() {
@@ -176,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return Whether the inspectConfig field is set.
    */
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
@@ -187,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+   * @return The inspectConfig.
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
@@ -211,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+   * @return Whether the item field is set.
    */
   public boolean hasItem() {
     return item_ != null;
@@ -221,6 +232,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+   * @return The item.
    */
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
@@ -240,7 +252,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object inspectTemplateName_;
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -248,6 +260,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inspect_template_name = 4;</code>
+   * @return The inspectTemplateName.
    */
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
@@ -263,7 +276,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -271,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string inspect_template_name = 4;</code>
+   * @return The bytes for inspectTemplateName.
    */
   public com.google.protobuf.ByteString
       getInspectTemplateNameBytes() {
@@ -295,6 +309,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The locationId.
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -315,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string location_id = 5;</code>
+   * @return The bytes for locationId.
    */
   public com.google.protobuf.ByteString
       getLocationIdBytes() {
@@ -737,6 +753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -756,6 +773,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
@@ -776,6 +794,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(
         java.lang.String value) {
@@ -793,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
       
@@ -806,6 +827,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
@@ -829,6 +852,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
@@ -840,6 +864,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
+     * @return The inspectConfig.
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
@@ -990,6 +1015,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+     * @return Whether the item field is set.
      */
     public boolean hasItem() {
       return itemBuilder_ != null || item_ != null;
@@ -1000,6 +1026,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
+     * @return The item.
      */
     public com.google.privacy.dlp.v2.ContentItem getItem() {
       if (itemBuilder_ == null) {
@@ -1137,7 +1164,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object inspectTemplateName_ = "";
     /**
      * <pre>
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -1145,6 +1172,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 4;</code>
+     * @return The inspectTemplateName.
      */
     public java.lang.String getInspectTemplateName() {
       java.lang.Object ref = inspectTemplateName_;
@@ -1160,7 +1188,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -1168,6 +1196,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 4;</code>
+     * @return The bytes for inspectTemplateName.
      */
     public com.google.protobuf.ByteString
         getInspectTemplateNameBytes() {
@@ -1184,7 +1213,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -1192,6 +1221,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 4;</code>
+     * @param value The inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateName(
         java.lang.String value) {
@@ -1205,7 +1236,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -1213,6 +1244,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInspectTemplateName() {
       
@@ -1222,7 +1254,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional template to use. Any configuration directly specified in
+     * Template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
      * that are set in this request will replace their corresponding fields in the
      * template. Repeated fields are appended. Singular sub-messages and groups
@@ -1230,6 +1262,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string inspect_template_name = 4;</code>
+     * @param value The bytes for inspectTemplateName to set.
+     * @return This builder for chaining.
      */
     public Builder setInspectTemplateNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1251,6 +1285,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The locationId.
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1271,6 +1306,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return The bytes for locationId.
      */
     public com.google.protobuf.ByteString
         getLocationIdBytes() {
@@ -1292,6 +1328,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationId(
         java.lang.String value) {
@@ -1310,6 +1348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLocationId() {
       
@@ -1324,6 +1363,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string location_id = 5;</code>
+     * @param value The bytes for locationId to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationIdBytes(
         com.google.protobuf.ByteString value) {

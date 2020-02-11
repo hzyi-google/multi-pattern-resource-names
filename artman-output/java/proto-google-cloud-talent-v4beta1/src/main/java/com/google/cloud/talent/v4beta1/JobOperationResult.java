@@ -5,13 +5,9 @@ package com.google.cloud.talent.v4beta1;
 
 /**
  * <pre>
- * The result of
- * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
- * or
- * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs]
- * APIs. It's used to replace
- * [google.longrunning.Operation.response][google.longrunning.Operation.response]
- * in case of success.
+ * The result of [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs] or
+ * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs] APIs. It's used to
+ * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.JobOperationResult}
@@ -27,6 +23,13 @@ private static final long serialVersionUID = 0L;
   }
   private JobOperationResult() {
     jobResults_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new JobOperationResult();
   }
 
   @java.lang.Override
@@ -103,41 +106,34 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return Whether the job field is set.
      */
     boolean hasJob();
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return The job.
      */
     com.google.cloud.talent.v4beta1.Job getJob();
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -147,31 +143,27 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     * @return The status.
      */
     com.google.rpc.Status getStatus();
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -198,6 +190,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new JobResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -210,7 +209,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -283,45 +281,38 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.talent.v4beta1.Job job_;
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return Whether the job field is set.
      */
     public boolean hasJob() {
       return job_ != null;
     }
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+     * @return The job.
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
     /**
      * <pre>
-     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-     * information including [name][google.cloud.talent.v4beta1.Job.name],
-     * [company][google.cloud.talent.v4beta1.Job.company],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-     * getJob method to retrieve detailed information of the created/updated
-     * job.
+     * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+     * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+     * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+     * detailed information of the created/updated job.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -335,12 +326,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -348,12 +338,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     * @return The status.
      */
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -361,9 +350,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The status of the job processed. This field is populated if the
-     * processing of the
-     * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-     * fails.
+     * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -726,32 +713,28 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.talent.v4beta1.Job, com.google.cloud.talent.v4beta1.Job.Builder, com.google.cloud.talent.v4beta1.JobOrBuilder> jobBuilder_;
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       * @return Whether the job field is set.
        */
       public boolean hasJob() {
         return jobBuilder_ != null || job_ != null;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
+       * @return The job.
        */
       public com.google.cloud.talent.v4beta1.Job getJob() {
         if (jobBuilder_ == null) {
@@ -762,13 +745,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -788,13 +768,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -812,13 +789,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -840,13 +814,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -864,13 +835,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -882,13 +850,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -903,13 +868,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic
-       * information including [name][google.cloud.talent.v4beta1.Job.name],
-       * [company][google.cloud.talent.v4beta1.Job.company],
-       * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-       * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use
-       * getJob method to retrieve detailed information of the created/updated
-       * job.
+       * Here [Job][google.cloud.talent.v4beta1.Job] only contains basic information including [name][google.cloud.talent.v4beta1.Job.name],
+       * [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code]
+       * and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id], use getJob method to retrieve
+       * detailed information of the created/updated job.
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -934,12 +896,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -947,12 +908,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       * @return The status.
        */
       public com.google.rpc.Status getStatus() {
         if (statusBuilder_ == null) {
@@ -964,9 +924,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -987,9 +945,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1008,9 +964,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1033,9 +987,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1054,9 +1006,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1069,9 +1019,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1087,9 +1035,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The status of the job processed. This field is populated if the
-       * processing of the
-       * [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job]
-       * fails.
+       * processing of the [job][google.cloud.talent.v4beta1.JobOperationResult.JobResult.job] fails.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1379,13 +1325,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The result of
-   * [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs]
-   * or
-   * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs]
-   * APIs. It's used to replace
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
-   * in case of success.
+   * The result of [JobService.BatchCreateJobs][google.cloud.talent.v4beta1.JobService.BatchCreateJobs] or
+   * [JobService.BatchUpdateJobs][google.cloud.talent.v4beta1.JobService.BatchUpdateJobs] APIs. It's used to
+   * replace [google.longrunning.Operation.response][google.longrunning.Operation.response] in case of success.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.JobOperationResult}

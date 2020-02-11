@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.CreateExclusionRequest</code>
  */
-final class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
+class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent resource in which to create the exclusion:
@@ -23,16 +23,16 @@ final class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]"
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $parent = '';
+    protected $parent = '';
     /**
      * Required. The new exclusion, whose `name` parameter is an exclusion name
      * that is not already used in the parent resource.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
      */
-    private $exclusion = null;
+    protected $exclusion = null;
 
     /**
      * Constructor.
@@ -65,7 +65,7 @@ final class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]"
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -81,7 +81,7 @@ final class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
      *     "folders/[FOLDER_ID]"
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

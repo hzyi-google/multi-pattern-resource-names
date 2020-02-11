@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.talent.v4beta1.UpdateProfileRequest</code>
  */
-final class UpdateProfileRequest extends \Google\Protobuf\Internal\Message
+class UpdateProfileRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Profile to be updated.
      *
      * Generated from protobuf field <code>.google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    private $profile = null;
+    protected $profile = null;
     /**
      * A field mask to specify the profile fields to update.
      * A full update is performed if it is unset.
@@ -74,7 +74,7 @@ final class UpdateProfileRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

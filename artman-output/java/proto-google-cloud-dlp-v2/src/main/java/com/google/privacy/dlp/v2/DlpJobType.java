@@ -5,7 +5,7 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * An enum to represent the various type of DLP jobs.
+ * An enum to represent the various types of DLP jobs.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.DlpJobType}
@@ -13,6 +13,10 @@ package com.google.privacy.dlp.v2;
 public enum DlpJobType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Unused
+   * </pre>
+   *
    * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
    */
   DLP_JOB_TYPE_UNSPECIFIED(0),
@@ -36,6 +40,10 @@ public enum DlpJobType
   ;
 
   /**
+   * <pre>
+   * Unused
+   * </pre>
+   *
    * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DLP_JOB_TYPE_UNSPECIFIED_VALUE = 0;
@@ -66,6 +74,8 @@ public enum DlpJobType
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -73,6 +83,10 @@ public enum DlpJobType
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static DlpJobType forNumber(int value) {
     switch (value) {
       case 0: return DLP_JOB_TYPE_UNSPECIFIED;

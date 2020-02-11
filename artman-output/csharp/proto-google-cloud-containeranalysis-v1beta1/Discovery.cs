@@ -49,10 +49,10 @@ namespace Grafeas.V1Beta1.Discovery {
             "O2Rpc2NvdmVyeaICA0dSQWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grafeas.V1Beta1.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Rpc.StatusReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Discovery), global::Grafeas.V1Beta1.Discovery.Discovery.Parser, new[]{ "AnalysisKind" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Details), global::Grafeas.V1Beta1.Discovery.Details.Parser, new[]{ "Discovered" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Discovered), global::Grafeas.V1Beta1.Discovery.Discovered.Parser, new[]{ "ContinuousAnalysis", "LastAnalysisTime", "AnalysisStatus", "AnalysisStatusError" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis), typeof(global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus) }, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Discovery), global::Grafeas.V1Beta1.Discovery.Discovery.Parser, new[]{ "AnalysisKind" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Details), global::Grafeas.V1Beta1.Discovery.Details.Parser, new[]{ "Discovered" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1Beta1.Discovery.Discovered), global::Grafeas.V1Beta1.Discovery.Discovered.Parser, new[]{ "ContinuousAnalysis", "LastAnalysisTime", "AnalysisStatus", "AnalysisStatusError" }, null, new[]{ typeof(global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis), typeof(global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus) }, null, null)
           }));
     }
     #endregion
@@ -100,9 +100,10 @@ namespace Grafeas.V1Beta1.Discovery {
 
     /// <summary>Field number for the "analysis_kind" field.</summary>
     public const int AnalysisKindFieldNumber = 1;
-    private global::Grafeas.V1Beta1.NoteKind analysisKind_ = 0;
+    private global::Grafeas.V1Beta1.NoteKind analysisKind_ = global::Grafeas.V1Beta1.NoteKind.Unspecified;
     /// <summary>
-    /// The kind of analysis that is handled by this discovery.
+    /// Required. Immutable. The kind of analysis that is handled by this
+    /// discovery.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.NoteKind AnalysisKind {
@@ -132,7 +133,7 @@ namespace Grafeas.V1Beta1.Discovery {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (AnalysisKind != 0) hash ^= AnalysisKind.GetHashCode();
+      if (AnalysisKind != global::Grafeas.V1Beta1.NoteKind.Unspecified) hash ^= AnalysisKind.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -146,7 +147,7 @@ namespace Grafeas.V1Beta1.Discovery {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (AnalysisKind != 0) {
+      if (AnalysisKind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) AnalysisKind);
       }
@@ -158,7 +159,7 @@ namespace Grafeas.V1Beta1.Discovery {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (AnalysisKind != 0) {
+      if (AnalysisKind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AnalysisKind);
       }
       if (_unknownFields != null) {
@@ -172,7 +173,7 @@ namespace Grafeas.V1Beta1.Discovery {
       if (other == null) {
         return;
       }
-      if (other.AnalysisKind != 0) {
+      if (other.AnalysisKind != global::Grafeas.V1Beta1.NoteKind.Unspecified) {
         AnalysisKind = other.AnalysisKind;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -237,7 +238,7 @@ namespace Grafeas.V1Beta1.Discovery {
     public const int DiscoveredFieldNumber = 1;
     private global::Grafeas.V1Beta1.Discovery.Discovered discovered_;
     /// <summary>
-    /// Analysis status for the discovered resource.
+    /// Required. Analysis status for the discovered resource.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Grafeas.V1Beta1.Discovery.Discovered Discovered {
@@ -379,7 +380,7 @@ namespace Grafeas.V1Beta1.Discovery {
 
     /// <summary>Field number for the "continuous_analysis" field.</summary>
     public const int ContinuousAnalysisFieldNumber = 1;
-    private global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis continuousAnalysis_ = 0;
+    private global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis continuousAnalysis_ = global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis.Unspecified;
     /// <summary>
     /// Whether the resource is continuously analyzed.
     /// </summary>
@@ -407,7 +408,7 @@ namespace Grafeas.V1Beta1.Discovery {
 
     /// <summary>Field number for the "analysis_status" field.</summary>
     public const int AnalysisStatusFieldNumber = 3;
-    private global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus analysisStatus_ = 0;
+    private global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus analysisStatus_ = global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus.Unspecified;
     /// <summary>
     /// The status of discovery for the resource.
     /// </summary>
@@ -458,9 +459,9 @@ namespace Grafeas.V1Beta1.Discovery {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ContinuousAnalysis != 0) hash ^= ContinuousAnalysis.GetHashCode();
+      if (ContinuousAnalysis != global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis.Unspecified) hash ^= ContinuousAnalysis.GetHashCode();
       if (lastAnalysisTime_ != null) hash ^= LastAnalysisTime.GetHashCode();
-      if (AnalysisStatus != 0) hash ^= AnalysisStatus.GetHashCode();
+      if (AnalysisStatus != global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus.Unspecified) hash ^= AnalysisStatus.GetHashCode();
       if (analysisStatusError_ != null) hash ^= AnalysisStatusError.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -475,7 +476,7 @@ namespace Grafeas.V1Beta1.Discovery {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ContinuousAnalysis != 0) {
+      if (ContinuousAnalysis != global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ContinuousAnalysis);
       }
@@ -483,7 +484,7 @@ namespace Grafeas.V1Beta1.Discovery {
         output.WriteRawTag(18);
         output.WriteMessage(LastAnalysisTime);
       }
-      if (AnalysisStatus != 0) {
+      if (AnalysisStatus != global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) AnalysisStatus);
       }
@@ -499,13 +500,13 @@ namespace Grafeas.V1Beta1.Discovery {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ContinuousAnalysis != 0) {
+      if (ContinuousAnalysis != global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ContinuousAnalysis);
       }
       if (lastAnalysisTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastAnalysisTime);
       }
-      if (AnalysisStatus != 0) {
+      if (AnalysisStatus != global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AnalysisStatus);
       }
       if (analysisStatusError_ != null) {
@@ -522,7 +523,7 @@ namespace Grafeas.V1Beta1.Discovery {
       if (other == null) {
         return;
       }
-      if (other.ContinuousAnalysis != 0) {
+      if (other.ContinuousAnalysis != global::Grafeas.V1Beta1.Discovery.Discovered.Types.ContinuousAnalysis.Unspecified) {
         ContinuousAnalysis = other.ContinuousAnalysis;
       }
       if (other.lastAnalysisTime_ != null) {
@@ -531,7 +532,7 @@ namespace Grafeas.V1Beta1.Discovery {
         }
         LastAnalysisTime.MergeFrom(other.LastAnalysisTime);
       }
-      if (other.AnalysisStatus != 0) {
+      if (other.AnalysisStatus != global::Grafeas.V1Beta1.Discovery.Discovered.Types.AnalysisStatus.Unspecified) {
         AnalysisStatus = other.AnalysisStatus;
       }
       if (other.analysisStatusError_ != null) {

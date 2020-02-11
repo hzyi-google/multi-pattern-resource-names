@@ -1,3 +1,18 @@
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import * as Long from "long";
 import * as $protobuf from "protobufjs";
 /** Namespace grafeas. */
 export namespace grafeas {
@@ -357,7 +372,7 @@ export namespace grafeas {
             noteName?: (string|null);
 
             /** Occurrence kind */
-            kind?: (grafeas.v1beta1.NoteKind|null);
+            kind?: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind|null);
 
             /** Occurrence remediation */
             remediation?: (string|null);
@@ -409,7 +424,7 @@ export namespace grafeas {
             public noteName: string;
 
             /** Occurrence kind. */
-            public kind: grafeas.v1beta1.NoteKind;
+            public kind: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind);
 
             /** Occurrence remediation. */
             public remediation: string;
@@ -630,7 +645,7 @@ export namespace grafeas {
             longDescription?: (string|null);
 
             /** Note kind */
-            kind?: (grafeas.v1beta1.NoteKind|null);
+            kind?: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind|null);
 
             /** Note relatedUrl */
             relatedUrl?: (grafeas.v1beta1.IRelatedUrl[]|null);
@@ -688,7 +703,7 @@ export namespace grafeas {
             public longDescription: string;
 
             /** Note kind. */
-            public kind: grafeas.v1beta1.NoteKind;
+            public kind: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind);
 
             /** Note relatedUrl. */
             public relatedUrl: grafeas.v1beta1.IRelatedUrl[];
@@ -2831,13 +2846,13 @@ export namespace grafeas {
                 resource?: (grafeas.v1beta1.IResource|null);
 
                 /** FixableTotalByDigest severity */
-                severity?: (grafeas.v1beta1.vulnerability.Severity|null);
+                severity?: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity|null);
 
                 /** FixableTotalByDigest fixableCount */
-                fixableCount?: (number|Long|null);
+                fixableCount?: (number|Long|string|null);
 
                 /** FixableTotalByDigest totalCount */
-                totalCount?: (number|Long|null);
+                totalCount?: (number|Long|string|null);
             }
 
             /** Represents a FixableTotalByDigest. */
@@ -2853,13 +2868,13 @@ export namespace grafeas {
                 public resource?: (grafeas.v1beta1.IResource|null);
 
                 /** FixableTotalByDigest severity. */
-                public severity: grafeas.v1beta1.vulnerability.Severity;
+                public severity: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity);
 
                 /** FixableTotalByDigest fixableCount. */
-                public fixableCount: (number|Long);
+                public fixableCount: (number|Long|string);
 
                 /** FixableTotalByDigest totalCount. */
-                public totalCount: (number|Long);
+                public totalCount: (number|Long|string);
 
                 /**
                  * Creates a new FixableTotalByDigest instance using the specified properties.
@@ -2943,7 +2958,7 @@ export namespace grafeas {
                 signature?: (string|null);
 
                 /** PgpSignedAttestation contentType */
-                contentType?: (grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType|null);
+                contentType?: (grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType|keyof typeof grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType|null);
 
                 /** PgpSignedAttestation pgpKeyId */
                 pgpKeyId?: (string|null);
@@ -2962,7 +2977,7 @@ export namespace grafeas {
                 public signature: string;
 
                 /** PgpSignedAttestation contentType. */
-                public contentType: grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType;
+                public contentType: (grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType|keyof typeof grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType);
 
                 /** PgpSignedAttestation pgpKeyId. */
                 public pgpKeyId: string;
@@ -3042,6 +3057,117 @@ export namespace grafeas {
             }
 
             namespace PgpSignedAttestation {
+
+                /** ContentType enum. */
+                enum ContentType {
+                    CONTENT_TYPE_UNSPECIFIED = 0,
+                    SIMPLE_SIGNING_JSON = 1
+                }
+            }
+
+            /** Properties of a GenericSignedAttestation. */
+            interface IGenericSignedAttestation {
+
+                /** GenericSignedAttestation contentType */
+                contentType?: (grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType|keyof typeof grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType|null);
+
+                /** GenericSignedAttestation serializedPayload */
+                serializedPayload?: (Uint8Array|string|null);
+
+                /** GenericSignedAttestation signatures */
+                signatures?: (grafeas.v1beta1.ISignature[]|null);
+            }
+
+            /** Represents a GenericSignedAttestation. */
+            class GenericSignedAttestation implements IGenericSignedAttestation {
+
+                /**
+                 * Constructs a new GenericSignedAttestation.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: grafeas.v1beta1.attestation.IGenericSignedAttestation);
+
+                /** GenericSignedAttestation contentType. */
+                public contentType: (grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType|keyof typeof grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType);
+
+                /** GenericSignedAttestation serializedPayload. */
+                public serializedPayload: (Uint8Array|string);
+
+                /** GenericSignedAttestation signatures. */
+                public signatures: grafeas.v1beta1.ISignature[];
+
+                /**
+                 * Creates a new GenericSignedAttestation instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GenericSignedAttestation instance
+                 */
+                public static create(properties?: grafeas.v1beta1.attestation.IGenericSignedAttestation): grafeas.v1beta1.attestation.GenericSignedAttestation;
+
+                /**
+                 * Encodes the specified GenericSignedAttestation message. Does not implicitly {@link grafeas.v1beta1.attestation.GenericSignedAttestation.verify|verify} messages.
+                 * @param message GenericSignedAttestation message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: grafeas.v1beta1.attestation.IGenericSignedAttestation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GenericSignedAttestation message, length delimited. Does not implicitly {@link grafeas.v1beta1.attestation.GenericSignedAttestation.verify|verify} messages.
+                 * @param message GenericSignedAttestation message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: grafeas.v1beta1.attestation.IGenericSignedAttestation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GenericSignedAttestation message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GenericSignedAttestation
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.attestation.GenericSignedAttestation;
+
+                /**
+                 * Decodes a GenericSignedAttestation message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GenericSignedAttestation
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.attestation.GenericSignedAttestation;
+
+                /**
+                 * Verifies a GenericSignedAttestation message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GenericSignedAttestation message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GenericSignedAttestation
+                 */
+                public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.attestation.GenericSignedAttestation;
+
+                /**
+                 * Creates a plain object from a GenericSignedAttestation message. Also converts values to other types if specified.
+                 * @param message GenericSignedAttestation
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: grafeas.v1beta1.attestation.GenericSignedAttestation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GenericSignedAttestation to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace GenericSignedAttestation {
 
                 /** ContentType enum. */
                 enum ContentType {
@@ -3328,6 +3454,9 @@ export namespace grafeas {
 
                 /** Attestation pgpSignedAttestation */
                 pgpSignedAttestation?: (grafeas.v1beta1.attestation.IPgpSignedAttestation|null);
+
+                /** Attestation genericSignedAttestation */
+                genericSignedAttestation?: (grafeas.v1beta1.attestation.IGenericSignedAttestation|null);
             }
 
             /** Represents an Attestation. */
@@ -3342,8 +3471,11 @@ export namespace grafeas {
                 /** Attestation pgpSignedAttestation. */
                 public pgpSignedAttestation?: (grafeas.v1beta1.attestation.IPgpSignedAttestation|null);
 
+                /** Attestation genericSignedAttestation. */
+                public genericSignedAttestation?: (grafeas.v1beta1.attestation.IGenericSignedAttestation|null);
+
                 /** Attestation signature. */
-                public signature?: "pgpSignedAttestation";
+                public signature?: ("pgpSignedAttestation"|"genericSignedAttestation");
 
                 /**
                  * Creates a new Attestation instance using the specified properties.
@@ -3415,6 +3547,210 @@ export namespace grafeas {
                  */
                 public toJSON(): { [k: string]: any };
             }
+        }
+
+        /** NoteKind enum. */
+        enum NoteKind {
+            NOTE_KIND_UNSPECIFIED = 0,
+            VULNERABILITY = 1,
+            BUILD = 2,
+            IMAGE = 3,
+            PACKAGE = 4,
+            DEPLOYMENT = 5,
+            DISCOVERY = 6,
+            ATTESTATION = 7
+        }
+
+        /** Properties of a RelatedUrl. */
+        interface IRelatedUrl {
+
+            /** RelatedUrl url */
+            url?: (string|null);
+
+            /** RelatedUrl label */
+            label?: (string|null);
+        }
+
+        /** Represents a RelatedUrl. */
+        class RelatedUrl implements IRelatedUrl {
+
+            /**
+             * Constructs a new RelatedUrl.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: grafeas.v1beta1.IRelatedUrl);
+
+            /** RelatedUrl url. */
+            public url: string;
+
+            /** RelatedUrl label. */
+            public label: string;
+
+            /**
+             * Creates a new RelatedUrl instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RelatedUrl instance
+             */
+            public static create(properties?: grafeas.v1beta1.IRelatedUrl): grafeas.v1beta1.RelatedUrl;
+
+            /**
+             * Encodes the specified RelatedUrl message. Does not implicitly {@link grafeas.v1beta1.RelatedUrl.verify|verify} messages.
+             * @param message RelatedUrl message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: grafeas.v1beta1.IRelatedUrl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified RelatedUrl message, length delimited. Does not implicitly {@link grafeas.v1beta1.RelatedUrl.verify|verify} messages.
+             * @param message RelatedUrl message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: grafeas.v1beta1.IRelatedUrl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RelatedUrl message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RelatedUrl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.RelatedUrl;
+
+            /**
+             * Decodes a RelatedUrl message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns RelatedUrl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.RelatedUrl;
+
+            /**
+             * Verifies a RelatedUrl message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a RelatedUrl message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns RelatedUrl
+             */
+            public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.RelatedUrl;
+
+            /**
+             * Creates a plain object from a RelatedUrl message. Also converts values to other types if specified.
+             * @param message RelatedUrl
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: grafeas.v1beta1.RelatedUrl, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this RelatedUrl to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a Signature. */
+        interface ISignature {
+
+            /** Signature signature */
+            signature?: (Uint8Array|string|null);
+
+            /** Signature publicKeyId */
+            publicKeyId?: (string|null);
+        }
+
+        /** Represents a Signature. */
+        class Signature implements ISignature {
+
+            /**
+             * Constructs a new Signature.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: grafeas.v1beta1.ISignature);
+
+            /** Signature signature. */
+            public signature: (Uint8Array|string);
+
+            /** Signature publicKeyId. */
+            public publicKeyId: string;
+
+            /**
+             * Creates a new Signature instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Signature instance
+             */
+            public static create(properties?: grafeas.v1beta1.ISignature): grafeas.v1beta1.Signature;
+
+            /**
+             * Encodes the specified Signature message. Does not implicitly {@link grafeas.v1beta1.Signature.verify|verify} messages.
+             * @param message Signature message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: grafeas.v1beta1.ISignature, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Signature message, length delimited. Does not implicitly {@link grafeas.v1beta1.Signature.verify|verify} messages.
+             * @param message Signature message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: grafeas.v1beta1.ISignature, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Signature message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Signature
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.Signature;
+
+            /**
+             * Decodes a Signature message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Signature
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.Signature;
+
+            /**
+             * Verifies a Signature message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Signature message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Signature
+             */
+            public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.Signature;
+
+            /**
+             * Creates a plain object from a Signature message. Also converts values to other types if specified.
+             * @param message Signature
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: grafeas.v1beta1.Signature, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Signature to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
         }
 
         /** Namespace build. */
@@ -3523,13 +3859,13 @@ export namespace grafeas {
                 publicKey?: (string|null);
 
                 /** BuildSignature signature */
-                signature?: (Uint8Array|null);
+                signature?: (Uint8Array|string|null);
 
                 /** BuildSignature keyId */
                 keyId?: (string|null);
 
                 /** BuildSignature keyType */
-                keyType?: (grafeas.v1beta1.build.BuildSignature.KeyType|null);
+                keyType?: (grafeas.v1beta1.build.BuildSignature.KeyType|keyof typeof grafeas.v1beta1.build.BuildSignature.KeyType|null);
             }
 
             /** Represents a BuildSignature. */
@@ -3545,13 +3881,13 @@ export namespace grafeas {
                 public publicKey: string;
 
                 /** BuildSignature signature. */
-                public signature: Uint8Array;
+                public signature: (Uint8Array|string);
 
                 /** BuildSignature keyId. */
                 public keyId: string;
 
                 /** BuildSignature keyType. */
-                public keyType: grafeas.v1beta1.build.BuildSignature.KeyType;
+                public keyType: (grafeas.v1beta1.build.BuildSignature.KeyType|keyof typeof grafeas.v1beta1.build.BuildSignature.KeyType);
 
                 /**
                  * Creates a new BuildSignature instance using the specified properties.
@@ -4098,10 +4434,10 @@ export namespace grafeas {
             interface IHash {
 
                 /** Hash type */
-                type?: (grafeas.v1beta1.provenance.Hash.HashType|null);
+                type?: (grafeas.v1beta1.provenance.Hash.HashType|keyof typeof grafeas.v1beta1.provenance.Hash.HashType|null);
 
                 /** Hash value */
-                value?: (Uint8Array|null);
+                value?: (Uint8Array|string|null);
             }
 
             /** Represents a Hash. */
@@ -4114,10 +4450,10 @@ export namespace grafeas {
                 constructor(properties?: grafeas.v1beta1.provenance.IHash);
 
                 /** Hash type. */
-                public type: grafeas.v1beta1.provenance.Hash.HashType;
+                public type: (grafeas.v1beta1.provenance.Hash.HashType|keyof typeof grafeas.v1beta1.provenance.Hash.HashType);
 
                 /** Hash value. */
-                public value: Uint8Array;
+                public value: (Uint8Array|string);
 
                 /**
                  * Creates a new Hash instance using the specified properties.
@@ -4540,7 +4876,7 @@ export namespace grafeas {
             interface IAliasContext {
 
                 /** AliasContext kind */
-                kind?: (grafeas.v1beta1.source.AliasContext.Kind|null);
+                kind?: (grafeas.v1beta1.source.AliasContext.Kind|keyof typeof grafeas.v1beta1.source.AliasContext.Kind|null);
 
                 /** AliasContext name */
                 name?: (string|null);
@@ -4556,7 +4892,7 @@ export namespace grafeas {
                 constructor(properties?: grafeas.v1beta1.source.IAliasContext);
 
                 /** AliasContext kind. */
-                public kind: grafeas.v1beta1.source.AliasContext.Kind;
+                public kind: (grafeas.v1beta1.source.AliasContext.Kind|keyof typeof grafeas.v1beta1.source.AliasContext.Kind);
 
                 /** AliasContext name. */
                 public name: string;
@@ -5151,114 +5487,6 @@ export namespace grafeas {
             }
         }
 
-        /** NoteKind enum. */
-        enum NoteKind {
-            NOTE_KIND_UNSPECIFIED = 0,
-            VULNERABILITY = 1,
-            BUILD = 2,
-            IMAGE = 3,
-            PACKAGE = 4,
-            DEPLOYMENT = 5,
-            DISCOVERY = 6,
-            ATTESTATION = 7
-        }
-
-        /** Properties of a RelatedUrl. */
-        interface IRelatedUrl {
-
-            /** RelatedUrl url */
-            url?: (string|null);
-
-            /** RelatedUrl label */
-            label?: (string|null);
-        }
-
-        /** Represents a RelatedUrl. */
-        class RelatedUrl implements IRelatedUrl {
-
-            /**
-             * Constructs a new RelatedUrl.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: grafeas.v1beta1.IRelatedUrl);
-
-            /** RelatedUrl url. */
-            public url: string;
-
-            /** RelatedUrl label. */
-            public label: string;
-
-            /**
-             * Creates a new RelatedUrl instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RelatedUrl instance
-             */
-            public static create(properties?: grafeas.v1beta1.IRelatedUrl): grafeas.v1beta1.RelatedUrl;
-
-            /**
-             * Encodes the specified RelatedUrl message. Does not implicitly {@link grafeas.v1beta1.RelatedUrl.verify|verify} messages.
-             * @param message RelatedUrl message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: grafeas.v1beta1.IRelatedUrl, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified RelatedUrl message, length delimited. Does not implicitly {@link grafeas.v1beta1.RelatedUrl.verify|verify} messages.
-             * @param message RelatedUrl message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: grafeas.v1beta1.IRelatedUrl, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RelatedUrl message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RelatedUrl
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.RelatedUrl;
-
-            /**
-             * Decodes a RelatedUrl message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns RelatedUrl
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.RelatedUrl;
-
-            /**
-             * Verifies a RelatedUrl message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a RelatedUrl message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns RelatedUrl
-             */
-            public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.RelatedUrl;
-
-            /**
-             * Creates a plain object from a RelatedUrl message. Also converts values to other types if specified.
-             * @param message RelatedUrl
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: grafeas.v1beta1.RelatedUrl, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this RelatedUrl to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
         /** Namespace deployment. */
         namespace deployment {
 
@@ -5464,7 +5692,7 @@ export namespace grafeas {
                 resourceUri?: (string[]|null);
 
                 /** Deployment platform */
-                platform?: (grafeas.v1beta1.deployment.Deployment.Platform|null);
+                platform?: (grafeas.v1beta1.deployment.Deployment.Platform|keyof typeof grafeas.v1beta1.deployment.Deployment.Platform|null);
             }
 
             /** Represents a Deployment. */
@@ -5495,7 +5723,7 @@ export namespace grafeas {
                 public resourceUri: string[];
 
                 /** Deployment platform. */
-                public platform: grafeas.v1beta1.deployment.Deployment.Platform;
+                public platform: (grafeas.v1beta1.deployment.Deployment.Platform|keyof typeof grafeas.v1beta1.deployment.Deployment.Platform);
 
                 /**
                  * Creates a new Deployment instance using the specified properties.
@@ -5587,7 +5815,7 @@ export namespace grafeas {
             interface IDiscovery {
 
                 /** Discovery analysisKind */
-                analysisKind?: (grafeas.v1beta1.NoteKind|null);
+                analysisKind?: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind|null);
             }
 
             /** Represents a Discovery. */
@@ -5600,7 +5828,7 @@ export namespace grafeas {
                 constructor(properties?: grafeas.v1beta1.discovery.IDiscovery);
 
                 /** Discovery analysisKind. */
-                public analysisKind: grafeas.v1beta1.NoteKind;
+                public analysisKind: (grafeas.v1beta1.NoteKind|keyof typeof grafeas.v1beta1.NoteKind);
 
                 /**
                  * Creates a new Discovery instance using the specified properties.
@@ -5767,13 +5995,13 @@ export namespace grafeas {
             interface IDiscovered {
 
                 /** Discovered continuousAnalysis */
-                continuousAnalysis?: (grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis|null);
+                continuousAnalysis?: (grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis|keyof typeof grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis|null);
 
                 /** Discovered lastAnalysisTime */
                 lastAnalysisTime?: (google.protobuf.ITimestamp|null);
 
                 /** Discovered analysisStatus */
-                analysisStatus?: (grafeas.v1beta1.discovery.Discovered.AnalysisStatus|null);
+                analysisStatus?: (grafeas.v1beta1.discovery.Discovered.AnalysisStatus|keyof typeof grafeas.v1beta1.discovery.Discovered.AnalysisStatus|null);
 
                 /** Discovered analysisStatusError */
                 analysisStatusError?: (google.rpc.IStatus|null);
@@ -5789,13 +6017,13 @@ export namespace grafeas {
                 constructor(properties?: grafeas.v1beta1.discovery.IDiscovered);
 
                 /** Discovered continuousAnalysis. */
-                public continuousAnalysis: grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis;
+                public continuousAnalysis: (grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis|keyof typeof grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis);
 
                 /** Discovered lastAnalysisTime. */
                 public lastAnalysisTime?: (google.protobuf.ITimestamp|null);
 
                 /** Discovered analysisStatus. */
-                public analysisStatus: grafeas.v1beta1.discovery.Discovered.AnalysisStatus;
+                public analysisStatus: (grafeas.v1beta1.discovery.Discovered.AnalysisStatus|keyof typeof grafeas.v1beta1.discovery.Discovered.AnalysisStatus);
 
                 /** Discovered analysisStatusError. */
                 public analysisStatusError?: (google.rpc.IStatus|null);
@@ -5899,7 +6127,7 @@ export namespace grafeas {
             interface ILayer {
 
                 /** Layer directive */
-                directive?: (grafeas.v1beta1.image.Layer.Directive|null);
+                directive?: (grafeas.v1beta1.image.Layer.Directive|keyof typeof grafeas.v1beta1.image.Layer.Directive|null);
 
                 /** Layer arguments */
                 "arguments"?: (string|null);
@@ -5915,7 +6143,7 @@ export namespace grafeas {
                 constructor(properties?: grafeas.v1beta1.image.ILayer);
 
                 /** Layer directive. */
-                public directive: grafeas.v1beta1.image.Layer.Directive;
+                public directive: (grafeas.v1beta1.image.Layer.Directive|keyof typeof grafeas.v1beta1.image.Layer.Directive);
 
                 /** Layer arguments. */
                 public arguments: string;
@@ -6430,7 +6658,7 @@ export namespace grafeas {
                 cpeUri?: (string|null);
 
                 /** Distribution architecture */
-                architecture?: (grafeas.v1beta1.package_.Architecture|null);
+                architecture?: (grafeas.v1beta1.package_.Architecture|keyof typeof grafeas.v1beta1.package_.Architecture|null);
 
                 /** Distribution latestVersion */
                 latestVersion?: (grafeas.v1beta1.package_.IVersion|null);
@@ -6458,7 +6686,7 @@ export namespace grafeas {
                 public cpeUri: string;
 
                 /** Distribution architecture. */
-                public architecture: grafeas.v1beta1.package_.Architecture;
+                public architecture: (grafeas.v1beta1.package_.Architecture|keyof typeof grafeas.v1beta1.package_.Architecture);
 
                 /** Distribution latestVersion. */
                 public latestVersion?: (grafeas.v1beta1.package_.IVersion|null);
@@ -6940,7 +7168,7 @@ export namespace grafeas {
                 revision?: (string|null);
 
                 /** Version kind */
-                kind?: (grafeas.v1beta1.package_.Version.VersionKind|null);
+                kind?: (grafeas.v1beta1.package_.Version.VersionKind|keyof typeof grafeas.v1beta1.package_.Version.VersionKind|null);
             }
 
             /** Represents a Version. */
@@ -6962,7 +7190,7 @@ export namespace grafeas {
                 public revision: string;
 
                 /** Version kind. */
-                public kind: grafeas.v1beta1.package_.Version.VersionKind;
+                public kind: (grafeas.v1beta1.package_.Version.VersionKind|keyof typeof grafeas.v1beta1.package_.Version.VersionKind);
 
                 /**
                  * Creates a new Version instance using the specified properties.
@@ -7067,10 +7295,19 @@ export namespace grafeas {
                 cvssScore?: (number|null);
 
                 /** Vulnerability severity */
-                severity?: (grafeas.v1beta1.vulnerability.Severity|null);
+                severity?: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity|null);
 
                 /** Vulnerability details */
                 details?: (grafeas.v1beta1.vulnerability.Vulnerability.IDetail[]|null);
+
+                /** Vulnerability cvssV3 */
+                cvssV3?: (grafeas.v1beta1.vulnerability.ICVSSv3|null);
+
+                /** Vulnerability windowsDetails */
+                windowsDetails?: (grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail[]|null);
+
+                /** Vulnerability sourceUpdateTime */
+                sourceUpdateTime?: (google.protobuf.ITimestamp|null);
             }
 
             /** Represents a Vulnerability. */
@@ -7086,10 +7323,19 @@ export namespace grafeas {
                 public cvssScore: number;
 
                 /** Vulnerability severity. */
-                public severity: grafeas.v1beta1.vulnerability.Severity;
+                public severity: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity);
 
                 /** Vulnerability details. */
                 public details: grafeas.v1beta1.vulnerability.Vulnerability.IDetail[];
+
+                /** Vulnerability cvssV3. */
+                public cvssV3?: (grafeas.v1beta1.vulnerability.ICVSSv3|null);
+
+                /** Vulnerability windowsDetails. */
+                public windowsDetails: grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail[];
+
+                /** Vulnerability sourceUpdateTime. */
+                public sourceUpdateTime?: (google.protobuf.ITimestamp|null);
 
                 /**
                  * Creates a new Vulnerability instance using the specified properties.
@@ -7193,6 +7439,9 @@ export namespace grafeas {
 
                     /** Detail isObsolete */
                     isObsolete?: (boolean|null);
+
+                    /** Detail sourceUpdateTime */
+                    sourceUpdateTime?: (google.protobuf.ITimestamp|null);
                 }
 
                 /** Represents a Detail. */
@@ -7230,6 +7479,9 @@ export namespace grafeas {
 
                     /** Detail isObsolete. */
                     public isObsolete: boolean;
+
+                    /** Detail sourceUpdateTime. */
+                    public sourceUpdateTime?: (google.protobuf.ITimestamp|null);
 
                     /**
                      * Creates a new Detail instance using the specified properties.
@@ -7301,6 +7553,213 @@ export namespace grafeas {
                      */
                     public toJSON(): { [k: string]: any };
                 }
+
+                /** Properties of a WindowsDetail. */
+                interface IWindowsDetail {
+
+                    /** WindowsDetail cpeUri */
+                    cpeUri?: (string|null);
+
+                    /** WindowsDetail name */
+                    name?: (string|null);
+
+                    /** WindowsDetail description */
+                    description?: (string|null);
+
+                    /** WindowsDetail fixingKbs */
+                    fixingKbs?: (grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase[]|null);
+                }
+
+                /** Represents a WindowsDetail. */
+                class WindowsDetail implements IWindowsDetail {
+
+                    /**
+                     * Constructs a new WindowsDetail.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail);
+
+                    /** WindowsDetail cpeUri. */
+                    public cpeUri: string;
+
+                    /** WindowsDetail name. */
+                    public name: string;
+
+                    /** WindowsDetail description. */
+                    public description: string;
+
+                    /** WindowsDetail fixingKbs. */
+                    public fixingKbs: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase[];
+
+                    /**
+                     * Creates a new WindowsDetail instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns WindowsDetail instance
+                     */
+                    public static create(properties?: grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail;
+
+                    /**
+                     * Encodes the specified WindowsDetail message. Does not implicitly {@link grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.verify|verify} messages.
+                     * @param message WindowsDetail message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified WindowsDetail message, length delimited. Does not implicitly {@link grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.verify|verify} messages.
+                     * @param message WindowsDetail message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: grafeas.v1beta1.vulnerability.Vulnerability.IWindowsDetail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a WindowsDetail message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns WindowsDetail
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail;
+
+                    /**
+                     * Decodes a WindowsDetail message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns WindowsDetail
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail;
+
+                    /**
+                     * Verifies a WindowsDetail message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a WindowsDetail message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns WindowsDetail
+                     */
+                    public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail;
+
+                    /**
+                     * Creates a plain object from a WindowsDetail message. Also converts values to other types if specified.
+                     * @param message WindowsDetail
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this WindowsDetail to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                namespace WindowsDetail {
+
+                    /** Properties of a KnowledgeBase. */
+                    interface IKnowledgeBase {
+
+                        /** KnowledgeBase name */
+                        name?: (string|null);
+
+                        /** KnowledgeBase url */
+                        url?: (string|null);
+                    }
+
+                    /** Represents a KnowledgeBase. */
+                    class KnowledgeBase implements IKnowledgeBase {
+
+                        /**
+                         * Constructs a new KnowledgeBase.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase);
+
+                        /** KnowledgeBase name. */
+                        public name: string;
+
+                        /** KnowledgeBase url. */
+                        public url: string;
+
+                        /**
+                         * Creates a new KnowledgeBase instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns KnowledgeBase instance
+                         */
+                        public static create(properties?: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase;
+
+                        /**
+                         * Encodes the specified KnowledgeBase message. Does not implicitly {@link grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase.verify|verify} messages.
+                         * @param message KnowledgeBase message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified KnowledgeBase message, length delimited. Does not implicitly {@link grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase.verify|verify} messages.
+                         * @param message KnowledgeBase message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.IKnowledgeBase, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a KnowledgeBase message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns KnowledgeBase
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase;
+
+                        /**
+                         * Decodes a KnowledgeBase message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns KnowledgeBase
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase;
+
+                        /**
+                         * Verifies a KnowledgeBase message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a KnowledgeBase message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns KnowledgeBase
+                         */
+                        public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase;
+
+                        /**
+                         * Creates a plain object from a KnowledgeBase message. Also converts values to other types if specified.
+                         * @param message KnowledgeBase
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: grafeas.v1beta1.vulnerability.Vulnerability.WindowsDetail.KnowledgeBase, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this KnowledgeBase to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+                }
             }
 
             /** Properties of a Details. */
@@ -7310,7 +7769,7 @@ export namespace grafeas {
                 type?: (string|null);
 
                 /** Details severity */
-                severity?: (grafeas.v1beta1.vulnerability.Severity|null);
+                severity?: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity|null);
 
                 /** Details cvssScore */
                 cvssScore?: (number|null);
@@ -7326,6 +7785,9 @@ export namespace grafeas {
 
                 /** Details relatedUrls */
                 relatedUrls?: (grafeas.v1beta1.IRelatedUrl[]|null);
+
+                /** Details effectiveSeverity */
+                effectiveSeverity?: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity|null);
             }
 
             /** Represents a Details. */
@@ -7341,7 +7803,7 @@ export namespace grafeas {
                 public type: string;
 
                 /** Details severity. */
-                public severity: grafeas.v1beta1.vulnerability.Severity;
+                public severity: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity);
 
                 /** Details cvssScore. */
                 public cvssScore: number;
@@ -7357,6 +7819,9 @@ export namespace grafeas {
 
                 /** Details relatedUrls. */
                 public relatedUrls: grafeas.v1beta1.IRelatedUrl[];
+
+                /** Details effectiveSeverity. */
+                public effectiveSeverity: (grafeas.v1beta1.vulnerability.Severity|keyof typeof grafeas.v1beta1.vulnerability.Severity);
 
                 /**
                  * Creates a new Details instance using the specified properties.
@@ -7631,6 +8096,205 @@ export namespace grafeas {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a CVSSv3. */
+            interface ICVSSv3 {
+
+                /** CVSSv3 baseScore */
+                baseScore?: (number|null);
+
+                /** CVSSv3 exploitabilityScore */
+                exploitabilityScore?: (number|null);
+
+                /** CVSSv3 impactScore */
+                impactScore?: (number|null);
+
+                /** CVSSv3 attackVector */
+                attackVector?: (grafeas.v1beta1.vulnerability.CVSSv3.AttackVector|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.AttackVector|null);
+
+                /** CVSSv3 attackComplexity */
+                attackComplexity?: (grafeas.v1beta1.vulnerability.CVSSv3.AttackComplexity|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.AttackComplexity|null);
+
+                /** CVSSv3 privilegesRequired */
+                privilegesRequired?: (grafeas.v1beta1.vulnerability.CVSSv3.PrivilegesRequired|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.PrivilegesRequired|null);
+
+                /** CVSSv3 userInteraction */
+                userInteraction?: (grafeas.v1beta1.vulnerability.CVSSv3.UserInteraction|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.UserInteraction|null);
+
+                /** CVSSv3 scope */
+                scope?: (grafeas.v1beta1.vulnerability.CVSSv3.Scope|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Scope|null);
+
+                /** CVSSv3 confidentialityImpact */
+                confidentialityImpact?: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact|null);
+
+                /** CVSSv3 integrityImpact */
+                integrityImpact?: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact|null);
+
+                /** CVSSv3 availabilityImpact */
+                availabilityImpact?: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact|null);
+            }
+
+            /** Represents a CVSSv3. */
+            class CVSSv3 implements ICVSSv3 {
+
+                /**
+                 * Constructs a new CVSSv3.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: grafeas.v1beta1.vulnerability.ICVSSv3);
+
+                /** CVSSv3 baseScore. */
+                public baseScore: number;
+
+                /** CVSSv3 exploitabilityScore. */
+                public exploitabilityScore: number;
+
+                /** CVSSv3 impactScore. */
+                public impactScore: number;
+
+                /** CVSSv3 attackVector. */
+                public attackVector: (grafeas.v1beta1.vulnerability.CVSSv3.AttackVector|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.AttackVector);
+
+                /** CVSSv3 attackComplexity. */
+                public attackComplexity: (grafeas.v1beta1.vulnerability.CVSSv3.AttackComplexity|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.AttackComplexity);
+
+                /** CVSSv3 privilegesRequired. */
+                public privilegesRequired: (grafeas.v1beta1.vulnerability.CVSSv3.PrivilegesRequired|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.PrivilegesRequired);
+
+                /** CVSSv3 userInteraction. */
+                public userInteraction: (grafeas.v1beta1.vulnerability.CVSSv3.UserInteraction|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.UserInteraction);
+
+                /** CVSSv3 scope. */
+                public scope: (grafeas.v1beta1.vulnerability.CVSSv3.Scope|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Scope);
+
+                /** CVSSv3 confidentialityImpact. */
+                public confidentialityImpact: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact);
+
+                /** CVSSv3 integrityImpact. */
+                public integrityImpact: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact);
+
+                /** CVSSv3 availabilityImpact. */
+                public availabilityImpact: (grafeas.v1beta1.vulnerability.CVSSv3.Impact|keyof typeof grafeas.v1beta1.vulnerability.CVSSv3.Impact);
+
+                /**
+                 * Creates a new CVSSv3 instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns CVSSv3 instance
+                 */
+                public static create(properties?: grafeas.v1beta1.vulnerability.ICVSSv3): grafeas.v1beta1.vulnerability.CVSSv3;
+
+                /**
+                 * Encodes the specified CVSSv3 message. Does not implicitly {@link grafeas.v1beta1.vulnerability.CVSSv3.verify|verify} messages.
+                 * @param message CVSSv3 message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: grafeas.v1beta1.vulnerability.ICVSSv3, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified CVSSv3 message, length delimited. Does not implicitly {@link grafeas.v1beta1.vulnerability.CVSSv3.verify|verify} messages.
+                 * @param message CVSSv3 message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: grafeas.v1beta1.vulnerability.ICVSSv3, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a CVSSv3 message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns CVSSv3
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): grafeas.v1beta1.vulnerability.CVSSv3;
+
+                /**
+                 * Decodes a CVSSv3 message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns CVSSv3
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): grafeas.v1beta1.vulnerability.CVSSv3;
+
+                /**
+                 * Verifies a CVSSv3 message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a CVSSv3 message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns CVSSv3
+                 */
+                public static fromObject(object: { [k: string]: any }): grafeas.v1beta1.vulnerability.CVSSv3;
+
+                /**
+                 * Creates a plain object from a CVSSv3 message. Also converts values to other types if specified.
+                 * @param message CVSSv3
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: grafeas.v1beta1.vulnerability.CVSSv3, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this CVSSv3 to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace CVSSv3 {
+
+                /** AttackVector enum. */
+                enum AttackVector {
+                    ATTACK_VECTOR_UNSPECIFIED = 0,
+                    ATTACK_VECTOR_NETWORK = 1,
+                    ATTACK_VECTOR_ADJACENT = 2,
+                    ATTACK_VECTOR_LOCAL = 3,
+                    ATTACK_VECTOR_PHYSICAL = 4
+                }
+
+                /** AttackComplexity enum. */
+                enum AttackComplexity {
+                    ATTACK_COMPLEXITY_UNSPECIFIED = 0,
+                    ATTACK_COMPLEXITY_LOW = 1,
+                    ATTACK_COMPLEXITY_HIGH = 2
+                }
+
+                /** PrivilegesRequired enum. */
+                enum PrivilegesRequired {
+                    PRIVILEGES_REQUIRED_UNSPECIFIED = 0,
+                    PRIVILEGES_REQUIRED_NONE = 1,
+                    PRIVILEGES_REQUIRED_LOW = 2,
+                    PRIVILEGES_REQUIRED_HIGH = 3
+                }
+
+                /** UserInteraction enum. */
+                enum UserInteraction {
+                    USER_INTERACTION_UNSPECIFIED = 0,
+                    USER_INTERACTION_NONE = 1,
+                    USER_INTERACTION_REQUIRED = 2
+                }
+
+                /** Scope enum. */
+                enum Scope {
+                    SCOPE_UNSPECIFIED = 0,
+                    SCOPE_UNCHANGED = 1,
+                    SCOPE_CHANGED = 2
+                }
+
+                /** Impact enum. */
+                enum Impact {
+                    IMPACT_UNSPECIFIED = 0,
+                    IMPACT_HIGH = 1,
+                    IMPACT_LOW = 2,
+                    IMPACT_NONE = 3
+                }
             }
         }
     }
@@ -8646,6 +9310,242 @@ export namespace google {
              */
             public toJSON(): { [k: string]: any };
         }
+
+        /** FieldBehavior enum. */
+        enum FieldBehavior {
+            FIELD_BEHAVIOR_UNSPECIFIED = 0,
+            OPTIONAL = 1,
+            REQUIRED = 2,
+            OUTPUT_ONLY = 3,
+            INPUT_ONLY = 4,
+            IMMUTABLE = 5
+        }
+
+        /** Properties of a ResourceDescriptor. */
+        interface IResourceDescriptor {
+
+            /** ResourceDescriptor type */
+            type?: (string|null);
+
+            /** ResourceDescriptor pattern */
+            pattern?: (string[]|null);
+
+            /** ResourceDescriptor nameField */
+            nameField?: (string|null);
+
+            /** ResourceDescriptor history */
+            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
+
+            /** ResourceDescriptor plural */
+            plural?: (string|null);
+
+            /** ResourceDescriptor singular */
+            singular?: (string|null);
+        }
+
+        /** Represents a ResourceDescriptor. */
+        class ResourceDescriptor implements IResourceDescriptor {
+
+            /**
+             * Constructs a new ResourceDescriptor.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.api.IResourceDescriptor);
+
+            /** ResourceDescriptor type. */
+            public type: string;
+
+            /** ResourceDescriptor pattern. */
+            public pattern: string[];
+
+            /** ResourceDescriptor nameField. */
+            public nameField: string;
+
+            /** ResourceDescriptor history. */
+            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
+
+            /** ResourceDescriptor plural. */
+            public plural: string;
+
+            /** ResourceDescriptor singular. */
+            public singular: string;
+
+            /**
+             * Creates a new ResourceDescriptor instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceDescriptor instance
+             */
+            public static create(properties?: google.api.IResourceDescriptor): google.api.ResourceDescriptor;
+
+            /**
+             * Encodes the specified ResourceDescriptor message. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
+             * @param message ResourceDescriptor message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ResourceDescriptor message, length delimited. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
+             * @param message ResourceDescriptor message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceDescriptor message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceDescriptor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceDescriptor;
+
+            /**
+             * Decodes a ResourceDescriptor message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ResourceDescriptor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceDescriptor;
+
+            /**
+             * Verifies a ResourceDescriptor message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ResourceDescriptor message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ResourceDescriptor
+             */
+            public static fromObject(object: { [k: string]: any }): google.api.ResourceDescriptor;
+
+            /**
+             * Creates a plain object from a ResourceDescriptor message. Also converts values to other types if specified.
+             * @param message ResourceDescriptor
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.api.ResourceDescriptor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ResourceDescriptor to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace ResourceDescriptor {
+
+            /** History enum. */
+            enum History {
+                HISTORY_UNSPECIFIED = 0,
+                ORIGINALLY_SINGLE_PATTERN = 1,
+                FUTURE_MULTI_PATTERN = 2
+            }
+        }
+
+        /** Properties of a ResourceReference. */
+        interface IResourceReference {
+
+            /** ResourceReference type */
+            type?: (string|null);
+
+            /** ResourceReference childType */
+            childType?: (string|null);
+        }
+
+        /** Represents a ResourceReference. */
+        class ResourceReference implements IResourceReference {
+
+            /**
+             * Constructs a new ResourceReference.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.api.IResourceReference);
+
+            /** ResourceReference type. */
+            public type: string;
+
+            /** ResourceReference childType. */
+            public childType: string;
+
+            /**
+             * Creates a new ResourceReference instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceReference instance
+             */
+            public static create(properties?: google.api.IResourceReference): google.api.ResourceReference;
+
+            /**
+             * Encodes the specified ResourceReference message. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
+             * @param message ResourceReference message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ResourceReference message, length delimited. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
+             * @param message ResourceReference message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceReference message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceReference
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceReference;
+
+            /**
+             * Decodes a ResourceReference message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ResourceReference
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceReference;
+
+            /**
+             * Verifies a ResourceReference message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ResourceReference message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ResourceReference
+             */
+            public static fromObject(object: { [k: string]: any }): google.api.ResourceReference;
+
+            /**
+             * Creates a plain object from a ResourceReference message. Also converts values to other types if specified.
+             * @param message ResourceReference
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.api.ResourceReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ResourceReference to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
     }
 
     /** Namespace protobuf. */
@@ -9342,10 +10242,10 @@ export namespace google {
             number?: (number|null);
 
             /** FieldDescriptorProto label */
-            label?: (google.protobuf.FieldDescriptorProto.Label|null);
+            label?: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label|null);
 
             /** FieldDescriptorProto type */
-            type?: (google.protobuf.FieldDescriptorProto.Type|null);
+            type?: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type|null);
 
             /** FieldDescriptorProto typeName */
             typeName?: (string|null);
@@ -9382,10 +10282,10 @@ export namespace google {
             public number: number;
 
             /** FieldDescriptorProto label. */
-            public label: google.protobuf.FieldDescriptorProto.Label;
+            public label: (google.protobuf.FieldDescriptorProto.Label|keyof typeof google.protobuf.FieldDescriptorProto.Label);
 
             /** FieldDescriptorProto type. */
-            public type: google.protobuf.FieldDescriptorProto.Type;
+            public type: (google.protobuf.FieldDescriptorProto.Type|keyof typeof google.protobuf.FieldDescriptorProto.Type);
 
             /** FieldDescriptorProto typeName. */
             public typeName: string;
@@ -10160,7 +11060,7 @@ export namespace google {
             javaStringCheckUtf8?: (boolean|null);
 
             /** FileOptions optimizeFor */
-            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|null);
+            optimizeFor?: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode|null);
 
             /** FileOptions goPackage */
             goPackage?: (string|null);
@@ -10206,6 +11106,9 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FileOptions .google.api.resourceDefinition */
+            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -10233,7 +11136,7 @@ export namespace google {
             public javaStringCheckUtf8: boolean;
 
             /** FileOptions optimizeFor. */
-            public optimizeFor: google.protobuf.FileOptions.OptimizeMode;
+            public optimizeFor: (google.protobuf.FileOptions.OptimizeMode|keyof typeof google.protobuf.FileOptions.OptimizeMode);
 
             /** FileOptions goPackage. */
             public goPackage: string;
@@ -10378,6 +11281,9 @@ export namespace google {
 
             /** MessageOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** MessageOptions .google.api.resource */
+            ".google.api.resource"?: (google.api.IResourceDescriptor|null);
         }
 
         /** Represents a MessageOptions. */
@@ -10479,13 +11385,13 @@ export namespace google {
         interface IFieldOptions {
 
             /** FieldOptions ctype */
-            ctype?: (google.protobuf.FieldOptions.CType|null);
+            ctype?: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType|null);
 
             /** FieldOptions packed */
             packed?: (boolean|null);
 
             /** FieldOptions jstype */
-            jstype?: (google.protobuf.FieldOptions.JSType|null);
+            jstype?: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType|null);
 
             /** FieldOptions lazy */
             lazy?: (boolean|null);
@@ -10498,6 +11404,12 @@ export namespace google {
 
             /** FieldOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
+
+            /** FieldOptions .google.api.fieldBehavior */
+            ".google.api.fieldBehavior"?: (google.api.FieldBehavior[]|null);
+
+            /** FieldOptions .google.api.resourceReference */
+            ".google.api.resourceReference"?: (google.api.IResourceReference|null);
         }
 
         /** Represents a FieldOptions. */
@@ -10510,13 +11422,13 @@ export namespace google {
             constructor(properties?: google.protobuf.IFieldOptions);
 
             /** FieldOptions ctype. */
-            public ctype: google.protobuf.FieldOptions.CType;
+            public ctype: (google.protobuf.FieldOptions.CType|keyof typeof google.protobuf.FieldOptions.CType);
 
             /** FieldOptions packed. */
             public packed: boolean;
 
             /** FieldOptions jstype. */
-            public jstype: google.protobuf.FieldOptions.JSType;
+            public jstype: (google.protobuf.FieldOptions.JSType|keyof typeof google.protobuf.FieldOptions.JSType);
 
             /** FieldOptions lazy. */
             public lazy: boolean;
@@ -11015,7 +11927,7 @@ export namespace google {
             deprecated?: (boolean|null);
 
             /** MethodOptions idempotencyLevel */
-            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|null);
+            idempotencyLevel?: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel|null);
 
             /** MethodOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
@@ -11040,7 +11952,7 @@ export namespace google {
             public deprecated: boolean;
 
             /** MethodOptions idempotencyLevel. */
-            public idempotencyLevel: google.protobuf.MethodOptions.IdempotencyLevel;
+            public idempotencyLevel: (google.protobuf.MethodOptions.IdempotencyLevel|keyof typeof google.protobuf.MethodOptions.IdempotencyLevel);
 
             /** MethodOptions uninterpretedOption. */
             public uninterpretedOption: google.protobuf.IUninterpretedOption[];
@@ -11136,16 +12048,16 @@ export namespace google {
             identifierValue?: (string|null);
 
             /** UninterpretedOption positiveIntValue */
-            positiveIntValue?: (number|Long|null);
+            positiveIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption negativeIntValue */
-            negativeIntValue?: (number|Long|null);
+            negativeIntValue?: (number|Long|string|null);
 
             /** UninterpretedOption doubleValue */
             doubleValue?: (number|null);
 
             /** UninterpretedOption stringValue */
-            stringValue?: (Uint8Array|null);
+            stringValue?: (Uint8Array|string|null);
 
             /** UninterpretedOption aggregateValue */
             aggregateValue?: (string|null);
@@ -11167,16 +12079,16 @@ export namespace google {
             public identifierValue: string;
 
             /** UninterpretedOption positiveIntValue. */
-            public positiveIntValue: (number|Long);
+            public positiveIntValue: (number|Long|string);
 
             /** UninterpretedOption negativeIntValue. */
-            public negativeIntValue: (number|Long);
+            public negativeIntValue: (number|Long|string);
 
             /** UninterpretedOption doubleValue. */
             public doubleValue: number;
 
             /** UninterpretedOption stringValue. */
-            public stringValue: Uint8Array;
+            public stringValue: (Uint8Array|string);
 
             /** UninterpretedOption aggregateValue. */
             public aggregateValue: string;
@@ -11763,7 +12675,7 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|Long|string|null);
 
             /** Timestamp nanos */
             nanos?: (number|null);
@@ -11779,7 +12691,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number|Long);
+            public seconds: (number|Long|string);
 
             /** Timestamp nanos. */
             public nanos: number;
@@ -11862,7 +12774,7 @@ export namespace google {
             type_url?: (string|null);
 
             /** Any value */
-            value?: (Uint8Array|null);
+            value?: (Uint8Array|string|null);
         }
 
         /** Represents an Any. */
@@ -11878,7 +12790,7 @@ export namespace google {
             public type_url: string;
 
             /** Any value. */
-            public value: Uint8Array;
+            public value: (Uint8Array|string);
 
             /**
              * Creates a new Any instance using the specified properties.
@@ -12697,7 +13609,7 @@ export namespace google {
                 bindings?: (google.iam.v1.IBinding[]|null);
 
                 /** Policy etag */
-                etag?: (Uint8Array|null);
+                etag?: (Uint8Array|string|null);
             }
 
             /** Represents a Policy. */
@@ -12716,7 +13628,7 @@ export namespace google {
                 public bindings: google.iam.v1.IBinding[];
 
                 /** Policy etag. */
-                public etag: Uint8Array;
+                public etag: (Uint8Array|string);
 
                 /**
                  * Creates a new Policy instance using the specified properties.
@@ -12991,7 +13903,7 @@ export namespace google {
             interface IBindingDelta {
 
                 /** BindingDelta action */
-                action?: (google.iam.v1.BindingDelta.Action|null);
+                action?: (google.iam.v1.BindingDelta.Action|keyof typeof google.iam.v1.BindingDelta.Action|null);
 
                 /** BindingDelta role */
                 role?: (string|null);
@@ -13013,7 +13925,7 @@ export namespace google {
                 constructor(properties?: google.iam.v1.IBindingDelta);
 
                 /** BindingDelta action. */
-                public action: google.iam.v1.BindingDelta.Action;
+                public action: (google.iam.v1.BindingDelta.Action|keyof typeof google.iam.v1.BindingDelta.Action);
 
                 /** BindingDelta role. */
                 public role: string;
@@ -13109,7 +14021,7 @@ export namespace google {
             interface IAuditConfigDelta {
 
                 /** AuditConfigDelta action */
-                action?: (google.iam.v1.AuditConfigDelta.Action|null);
+                action?: (google.iam.v1.AuditConfigDelta.Action|keyof typeof google.iam.v1.AuditConfigDelta.Action|null);
 
                 /** AuditConfigDelta service */
                 service?: (string|null);
@@ -13131,7 +14043,7 @@ export namespace google {
                 constructor(properties?: google.iam.v1.IAuditConfigDelta);
 
                 /** AuditConfigDelta action. */
-                public action: google.iam.v1.AuditConfigDelta.Action;
+                public action: (google.iam.v1.AuditConfigDelta.Action|keyof typeof google.iam.v1.AuditConfigDelta.Action);
 
                 /** AuditConfigDelta service. */
                 public service: string;

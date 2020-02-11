@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.Location</code>
  */
-final class Location extends \Google\Protobuf\Internal\Message
+class Location extends \Google\Protobuf\Internal\Message
 {
     /**
      * Zero-based byte offsets delimiting the finding.
@@ -24,7 +24,7 @@ final class Location extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
      */
-    private $byte_range = null;
+    protected $byte_range = null;
     /**
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
@@ -32,7 +32,7 @@ final class Location extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
      */
-    private $codepoint_range = null;
+    protected $codepoint_range = null;
     /**
      * List of nested objects pointing to the precise location of the finding
      * within the file or record.

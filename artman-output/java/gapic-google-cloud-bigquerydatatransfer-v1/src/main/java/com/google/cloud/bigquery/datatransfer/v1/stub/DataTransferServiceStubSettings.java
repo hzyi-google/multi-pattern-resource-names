@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,8 +99,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DataTransferServiceStubSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceStubSettings.newBuilder();
- * dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataTransferServiceSettingsBuilder
+ *     .getDataSourceSettings()
+ *     .setRetrySettings(
+ *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataTransferServiceStubSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
  * </code>
  * </pre>

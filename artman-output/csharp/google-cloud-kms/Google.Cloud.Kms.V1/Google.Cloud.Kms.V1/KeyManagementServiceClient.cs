@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -1873,7 +1873,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1894,7 +1894,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1912,7 +1912,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1933,7 +1933,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1954,7 +1954,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1972,7 +1972,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+        /// Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2049,7 +2049,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2070,7 +2070,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2088,7 +2088,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2109,7 +2109,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2130,7 +2130,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2148,7 +2148,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+        /// Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2226,7 +2226,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2248,7 +2248,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2267,7 +2267,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2289,7 +2289,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2311,7 +2311,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2330,7 +2330,7 @@ namespace Google.Cloud.Kms.V1
         /// [primary][google.cloud.kms.v1.CryptoKey.primary] [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2410,7 +2410,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2431,7 +2431,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2449,7 +2449,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2470,7 +2470,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2491,7 +2491,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2509,7 +2509,7 @@ namespace Google.Cloud.Kms.V1
         /// Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2594,7 +2594,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2627,7 +2627,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2657,7 +2657,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2690,7 +2690,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2723,7 +2723,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2753,7 +2753,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="keyRing">
-        /// A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+        /// Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3112,7 +3112,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3149,7 +3149,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3183,7 +3183,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3220,7 +3220,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3257,7 +3257,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3291,7 +3291,7 @@ namespace Google.Cloud.Kms.V1
         /// expression `[a-zA-Z0-9_-]{1,63}`
         /// </param>
         /// <param name="cryptoKey">
-        /// A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+        /// Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3392,7 +3392,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3423,7 +3423,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3451,7 +3451,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3482,7 +3482,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3513,7 +3513,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3541,7 +3541,7 @@ namespace Google.Cloud.Kms.V1
         /// the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
         /// </param>
         /// <param name="cryptoKeyVersion">
-        /// A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+        /// Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3700,10 +3700,10 @@ namespace Google.Cloud.Kms.V1
         /// Update a [CryptoKey][google.cloud.kms.v1.CryptoKey].
         /// </summary>
         /// <param name="cryptoKey">
-        /// [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+        /// Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3726,10 +3726,10 @@ namespace Google.Cloud.Kms.V1
         /// Update a [CryptoKey][google.cloud.kms.v1.CryptoKey].
         /// </summary>
         /// <param name="cryptoKey">
-        /// [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+        /// Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3749,10 +3749,10 @@ namespace Google.Cloud.Kms.V1
         /// Update a [CryptoKey][google.cloud.kms.v1.CryptoKey].
         /// </summary>
         /// <param name="cryptoKey">
-        /// [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+        /// Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3837,10 +3837,10 @@ namespace Google.Cloud.Kms.V1
         /// move between other states.
         /// </summary>
         /// <param name="cryptoKeyVersion">
-        /// [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+        /// Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -3869,10 +3869,10 @@ namespace Google.Cloud.Kms.V1
         /// move between other states.
         /// </summary>
         /// <param name="cryptoKeyVersion">
-        /// [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+        /// Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -3898,10 +3898,10 @@ namespace Google.Cloud.Kms.V1
         /// move between other states.
         /// </summary>
         /// <param name="cryptoKeyVersion">
-        /// [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+        /// Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
         /// </param>
         /// <param name="updateMask">
-        /// Required list of fields to be updated in this request.
+        /// Required. List of fields to be updated in this request.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4517,10 +4517,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4545,10 +4545,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -4570,10 +4570,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4598,10 +4598,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4626,10 +4626,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -4651,10 +4651,10 @@ namespace Google.Cloud.Kms.V1
         /// Returns an error if called on an asymmetric key.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        /// Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
         /// </param>
         /// <param name="cryptoKeyVersionId">
-        /// The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+        /// Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4750,7 +4750,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4782,7 +4782,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -4811,7 +4811,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4843,7 +4843,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -4875,7 +4875,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -4904,7 +4904,7 @@ namespace Google.Cloud.Kms.V1
         /// [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -5020,7 +5020,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -5047,7 +5047,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -5071,7 +5071,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -5098,7 +5098,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -5125,7 +5125,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -5149,7 +5149,7 @@ namespace Google.Cloud.Kms.V1
         /// and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
         /// </summary>
         /// <param name="name">
-        /// The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+        /// Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -5247,7 +5247,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="callSettings">
@@ -5272,7 +5272,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="cancellationToken">
@@ -5294,7 +5294,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="callSettings">
@@ -5319,7 +5319,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="callSettings">
@@ -5344,7 +5344,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="cancellationToken">
@@ -5366,7 +5366,7 @@ namespace Google.Cloud.Kms.V1
         /// [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
         /// </summary>
         /// <param name="name">
-        /// The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
+        /// Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
         /// get.
         /// </param>
         /// <param name="callSettings">
@@ -5924,6 +5924,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -5955,6 +5958,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -5983,6 +5989,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -6014,6 +6023,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -6045,6 +6057,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -6073,6 +6088,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="resource">
         /// REQUIRED: The resource for which the policy is being specified.
@@ -6104,6 +6122,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -6124,6 +6145,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -6143,6 +6167,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -7909,6 +7936,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -7930,6 +7960,9 @@ namespace Google.Cloud.Kms.V1
         /// <summary>
         /// Sets the access control policy on the specified resource. Replaces
         /// any existing policy.
+        ///
+        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
+        /// PERMISSION_DENIED
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment</code>
  */
-final class LikelihoodAdjustment extends \Google\Protobuf\Internal\Message
+class LikelihoodAdjustment extends \Google\Protobuf\Internal\Message
 {
     protected $adjustment;
 

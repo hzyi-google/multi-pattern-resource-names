@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.logging.v2.ListExclusionsResponse</code>
  */
-final class ListExclusionsResponse extends \Google\Protobuf\Internal\Message
+class ListExclusionsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of exclusions.
@@ -28,7 +28,7 @@ final class ListExclusionsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

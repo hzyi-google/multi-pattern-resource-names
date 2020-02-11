@@ -17,6 +17,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the gracefulDecommissionTimeout field is set.
    */
   boolean hasGracefulDecommissionTimeout();
   /**
@@ -29,6 +30,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The gracefulDecommissionTimeout.
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
   /**
@@ -55,6 +57,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The scaleUpFactor.
    */
   double getScaleUpFactor();
 
@@ -69,6 +72,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The scaleDownFactor.
    */
   double getScaleDownFactor();
 
@@ -83,6 +87,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The scaleUpMinWorkerFraction.
    */
   double getScaleUpMinWorkerFraction();
 
@@ -97,6 +102,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder extends
    * </pre>
    *
    * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The scaleDownMinWorkerFraction.
    */
   double getScaleDownMinWorkerFraction();
 }

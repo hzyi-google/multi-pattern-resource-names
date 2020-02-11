@@ -15,6 +15,7 @@ public interface PublishResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   * @return A list containing the messageIds.
    */
   java.util.List<java.lang.String>
       getMessageIdsList();
@@ -26,6 +27,7 @@ public interface PublishResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   * @return The count of messageIds.
    */
   int getMessageIdsCount();
   /**
@@ -36,6 +38,8 @@ public interface PublishResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   * @param index The index of the element to return.
+   * @return The messageIds at the given index.
    */
   java.lang.String getMessageIds(int index);
   /**
@@ -46,6 +50,8 @@ public interface PublishResponseOrBuilder extends
    * </pre>
    *
    * <code>repeated string message_ids = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the messageIds at the given index.
    */
   com.google.protobuf.ByteString
       getMessageIdsBytes(int index);

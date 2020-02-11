@@ -13,6 +13,7 @@ public interface TableLocationOrBuilder extends
    * </pre>
    *
    * <code>int64 row_index = 1;</code>
+   * @return The rowIndex.
    */
   long getRowIndex();
 }

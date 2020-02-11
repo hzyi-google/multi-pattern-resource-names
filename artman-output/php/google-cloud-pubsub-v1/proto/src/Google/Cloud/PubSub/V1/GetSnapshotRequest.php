@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.pubsub.v1.GetSnapshotRequest</code>
  */
-final class GetSnapshotRequest extends \Google\Protobuf\Internal\Message
+class GetSnapshotRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the snapshot to get.
@@ -21,7 +21,7 @@ final class GetSnapshotRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string snapshot = 1;</code>
      */
-    private $snapshot = '';
+    protected $snapshot = '';
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.dataproc.v1beta2.AutoscalingConfig</code>
  */
-final class AutoscalingConfig extends \Google\Protobuf\Internal\Message
+class AutoscalingConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The autoscaling policy used by the cluster.
@@ -25,7 +25,7 @@ final class AutoscalingConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    private $policy_uri = '';
+    protected $policy_uri = '';
 
     /**
      * Constructor.

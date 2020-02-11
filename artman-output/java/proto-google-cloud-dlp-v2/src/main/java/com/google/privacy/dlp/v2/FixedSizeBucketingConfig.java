@@ -10,7 +10,7 @@ package com.google.privacy.dlp.v2;
  * but requires more configuration. This message is provided as a convenience to
  * the user for simple bucketing strategies.
  * The transformed value will be a hyphenated string of
- * &lt;lower_bound&gt;-&lt;upper_bound&gt;, i.e if lower_bound = 10 and upper_bound = 20
+ * {lower_bound}-{upper_bound}, i.e if lower_bound = 10 and upper_bound = 20
  * all values that are within this bucket will be replaced with "10-20".
  * This can be used on data of type: double, long.
  * If the bound Value type differs from the type of data
@@ -34,6 +34,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new FixedSizeBucketingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -46,7 +53,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,36 +130,38 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.Value lowerBound_;
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the lowerBound field is set.
    */
   public boolean hasLowerBound() {
     return lowerBound_ != null;
   }
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The lowerBound.
    */
   public com.google.privacy.dlp.v2.Value getLowerBound() {
     return lowerBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : lowerBound_;
   }
   /**
    * <pre>
-   * Lower bound value of buckets. All values less than `lower_bound` are
+   * Required. Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
-   * then all values less than 10 are replaced with the value “-10”. [Required].
+   * then all values less than 10 are replaced with the value “-10”.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+   * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder() {
     return getLowerBound();
@@ -163,39 +171,38 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.Value upperBound_;
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the upperBound field is set.
    */
   public boolean hasUpperBound() {
     return upperBound_ != null;
   }
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The upperBound.
    */
   public com.google.privacy.dlp.v2.Value getUpperBound() {
     return upperBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : upperBound_;
   }
   /**
    * <pre>
-   * Upper bound value of buckets. All values greater than upper_bound are
+   * Required. Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
    * then all values greater than 89 are replaced with the value “89+”.
-   * [Required].
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+   * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder() {
     return getUpperBound();
@@ -205,13 +212,14 @@ private static final long serialVersionUID = 0L;
   private double bucketSize_;
   /**
    * <pre>
-   * Size of each bucket (except for minimum and maximum buckets). So if
+   * Required. Size of each bucket (except for minimum and maximum buckets). So if
    * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
    * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
-   * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. [Required].
+   * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
    * </pre>
    *
-   * <code>double bucket_size = 3;</code>
+   * <code>double bucket_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bucketSize.
    */
   public double getBucketSize() {
     return bucketSize_;
@@ -413,7 +421,7 @@ private static final long serialVersionUID = 0L;
    * but requires more configuration. This message is provided as a convenience to
    * the user for simple bucketing strategies.
    * The transformed value will be a hyphenated string of
-   * &lt;lower_bound&gt;-&lt;upper_bound&gt;, i.e if lower_bound = 10 and upper_bound = 20
+   * {lower_bound}-{upper_bound}, i.e if lower_bound = 10 and upper_bound = 20
    * all values that are within this bucket will be replaced with "10-20".
    * This can be used on data of type: double, long.
    * If the bound Value type differs from the type of data
@@ -601,24 +609,26 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> lowerBoundBuilder_;
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the lowerBound field is set.
      */
     public boolean hasLowerBound() {
       return lowerBoundBuilder_ != null || lowerBound_ != null;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The lowerBound.
      */
     public com.google.privacy.dlp.v2.Value getLowerBound() {
       if (lowerBoundBuilder_ == null) {
@@ -629,12 +639,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLowerBound(com.google.privacy.dlp.v2.Value value) {
       if (lowerBoundBuilder_ == null) {
@@ -651,12 +661,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLowerBound(
         com.google.privacy.dlp.v2.Value.Builder builderForValue) {
@@ -671,12 +681,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeLowerBound(com.google.privacy.dlp.v2.Value value) {
       if (lowerBoundBuilder_ == null) {
@@ -695,12 +705,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearLowerBound() {
       if (lowerBoundBuilder_ == null) {
@@ -715,12 +725,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getLowerBoundBuilder() {
       
@@ -729,12 +739,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder() {
       if (lowerBoundBuilder_ != null) {
@@ -746,12 +756,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Lower bound value of buckets. All values less than `lower_bound` are
+     * Required. Lower bound value of buckets. All values less than `lower_bound` are
      * grouped together into a single bucket; for example if `lower_bound` = 10,
-     * then all values less than 10 are replaced with the value “-10”. [Required].
+     * then all values less than 10 are replaced with the value “-10”.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value lower_bound = 1;</code>
+     * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
@@ -772,26 +782,26 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> upperBoundBuilder_;
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the upperBound field is set.
      */
     public boolean hasUpperBound() {
       return upperBoundBuilder_ != null || upperBound_ != null;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The upperBound.
      */
     public com.google.privacy.dlp.v2.Value getUpperBound() {
       if (upperBoundBuilder_ == null) {
@@ -802,13 +812,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpperBound(com.google.privacy.dlp.v2.Value value) {
       if (upperBoundBuilder_ == null) {
@@ -825,13 +834,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpperBound(
         com.google.privacy.dlp.v2.Value.Builder builderForValue) {
@@ -846,13 +854,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeUpperBound(com.google.privacy.dlp.v2.Value value) {
       if (upperBoundBuilder_ == null) {
@@ -871,13 +878,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUpperBound() {
       if (upperBoundBuilder_ == null) {
@@ -892,13 +898,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getUpperBoundBuilder() {
       
@@ -907,13 +912,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder() {
       if (upperBoundBuilder_ != null) {
@@ -925,13 +929,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Upper bound value of buckets. All values greater than upper_bound are
+     * Required. Upper bound value of buckets. All values greater than upper_bound are
      * grouped together into a single bucket; for example if `upper_bound` = 89,
      * then all values greater than 89 are replaced with the value “89+”.
-     * [Required].
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value upper_bound = 2;</code>
+     * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
@@ -950,26 +953,29 @@ private static final long serialVersionUID = 0L;
     private double bucketSize_ ;
     /**
      * <pre>
-     * Size of each bucket (except for minimum and maximum buckets). So if
+     * Required. Size of each bucket (except for minimum and maximum buckets). So if
      * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
      * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
-     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. [Required].
+     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
      * </pre>
      *
-     * <code>double bucket_size = 3;</code>
+     * <code>double bucket_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bucketSize.
      */
     public double getBucketSize() {
       return bucketSize_;
     }
     /**
      * <pre>
-     * Size of each bucket (except for minimum and maximum buckets). So if
+     * Required. Size of each bucket (except for minimum and maximum buckets). So if
      * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
      * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
-     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. [Required].
+     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
      * </pre>
      *
-     * <code>double bucket_size = 3;</code>
+     * <code>double bucket_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bucketSize to set.
+     * @return This builder for chaining.
      */
     public Builder setBucketSize(double value) {
       
@@ -979,13 +985,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Size of each bucket (except for minimum and maximum buckets). So if
+     * Required. Size of each bucket (except for minimum and maximum buckets). So if
      * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
      * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
-     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. [Required].
+     * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
      * </pre>
      *
-     * <code>double bucket_size = 3;</code>
+     * <code>double bucket_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
      */
     public Builder clearBucketSize() {
       

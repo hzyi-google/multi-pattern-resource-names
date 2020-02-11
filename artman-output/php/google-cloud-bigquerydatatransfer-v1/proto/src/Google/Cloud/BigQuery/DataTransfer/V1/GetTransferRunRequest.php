@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest</code>
  */
-final class GetTransferRunRequest extends \Google\Protobuf\Internal\Message
+class GetTransferRunRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The field will contain name of the resource requested, for example:
@@ -22,7 +22,7 @@ final class GetTransferRunRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $name = '';
+    protected $name = '';
 
     /**
      * Constructor.
