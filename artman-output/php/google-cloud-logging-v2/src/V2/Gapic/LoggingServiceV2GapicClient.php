@@ -105,7 +105,7 @@ class LoggingServiceV2GapicClient
         'https://www.googleapis.com/auth/logging.read',
         'https://www.googleapis.com/auth/logging.write',
     ];
-    private static $billingAccountNameTemplate;
+    private static $billingNameTemplate;
     private static $billingLogNameTemplate;
     private static $folderNameTemplate;
     private static $folderLogNameTemplate;
@@ -134,13 +134,13 @@ class LoggingServiceV2GapicClient
         ];
     }
 
-    private static function getBillingAccountNameTemplate()
+    private static function getBillingNameTemplate()
     {
-        if (null == self::$billingAccountNameTemplate) {
-            self::$billingAccountNameTemplate = new PathTemplate('billingAccounts/{billing_account}');
+        if (null == self::$billingNameTemplate) {
+            self::$billingNameTemplate = new PathTemplate('billingAccounts/{billing_account}');
         }
 
-        return self::$billingAccountNameTemplate;
+        return self::$billingNameTemplate;
     }
 
     private static function getBillingLogNameTemplate()
@@ -210,7 +210,7 @@ class LoggingServiceV2GapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'billingAccount' => self::getBillingAccountNameTemplate(),
+                'billing' => self::getBillingNameTemplate(),
                 'billingLog' => self::getBillingLogNameTemplate(),
                 'folder' => self::getFolderNameTemplate(),
                 'folderLog' => self::getFolderLogNameTemplate(),
@@ -226,16 +226,16 @@ class LoggingServiceV2GapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a billing_account resource.
+     * a billing resource.
      *
      * @param string $billingAccount
      *
-     * @return string The formatted billing_account resource.
+     * @return string The formatted billing resource.
      * @experimental
      */
-    public static function billingAccountName($billingAccount)
+    public static function billingName($billingAccount)
     {
-        return self::getBillingAccountNameTemplate()->render([
+        return self::getBillingNameTemplate()->render([
             'billing_account' => $billingAccount,
         ]);
     }
@@ -372,7 +372,7 @@ class LoggingServiceV2GapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - billingAccount: billingAccounts/{billing_account}
+     * - billing: billingAccounts/{billing_account}
      * - billingLog: billingAccounts/{billing_account}/logs/{log}
      * - folder: folders/{folder}
      * - folderLog: folders/{folder}/logs/{log}

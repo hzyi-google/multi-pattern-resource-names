@@ -123,7 +123,7 @@ class LoggingServiceV2Client {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      billingAccountPathTemplate: new gaxModule.PathTemplate(
+      billingPathTemplate: new gaxModule.PathTemplate(
         'billingAccounts/{billing_account}'
       ),
       billingLogPathTemplate: new gaxModule.PathTemplate(
@@ -984,13 +984,13 @@ class LoggingServiceV2Client {
   // --------------------
 
   /**
-   * Return a fully-qualified billing_account resource name string.
+   * Return a fully-qualified billing resource name string.
    *
    * @param {String} billingAccount
    * @returns {String}
    */
-  billingAccountPath(billingAccount) {
-    return this._pathTemplates.billingAccountPathTemplate.render({
+  billingPath(billingAccount) {
+    return this._pathTemplates.billingPathTemplate.render({
       billing_account: billingAccount,
     });
   }
@@ -1092,15 +1092,15 @@ class LoggingServiceV2Client {
   }
 
   /**
-   * Parse the billingAccountName from a billing_account resource.
+   * Parse the billingName from a billing resource.
    *
-   * @param {String} billingAccountName
-   *   A fully-qualified path representing a billing_account resources.
+   * @param {String} billingName
+   *   A fully-qualified path representing a billing resources.
    * @returns {String} - A string representing the billing_account.
    */
-  matchBillingAccountFromBillingAccountName(billingAccountName) {
-    return this._pathTemplates.billingAccountPathTemplate
-      .match(billingAccountName)
+  matchBillingAccountFromBillingName(billingName) {
+    return this._pathTemplates.billingPathTemplate
+      .match(billingName)
       .billing_account;
   }
 

@@ -89,11 +89,11 @@ module Google
           ].freeze
 
 
-          BILLING_ACCOUNT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+          BILLING_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}"
           )
 
-          private_constant :BILLING_ACCOUNT_PATH_TEMPLATE
+          private_constant :BILLING_PATH_TEMPLATE
 
           BILLING_LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}/logs/{log}"
@@ -137,11 +137,11 @@ module Google
 
           private_constant :PROJECT_PATH_TEMPLATE
 
-          # Returns a fully-qualified billing_account resource name string.
+          # Returns a fully-qualified billing resource name string.
           # @param billing_account [String]
           # @return [String]
-          def self.billing_account_path billing_account
-            BILLING_ACCOUNT_PATH_TEMPLATE.render(
+          def self.billing_path billing_account
+            BILLING_PATH_TEMPLATE.render(
               :"billing_account" => billing_account
             )
           end
