@@ -187,7 +187,7 @@ describe('MetricsServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedParent = client.metricPath('[PROJECT]', '[METRIC]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const metric = {};
       const request = {
         parent: formattedParent,
@@ -226,7 +226,7 @@ describe('MetricsServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedParent = client.metricPath('[PROJECT]', '[METRIC]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const metric = {};
       const request = {
         parent: formattedParent,
@@ -1194,55 +1194,6 @@ describe('LoggingServiceV2Client', () => {
     assert(client);
   });
 
-  describe('deleteLog', () => {
-    it('invokes deleteLog without error', done => {
-      const client = new loggingModule.v2.LoggingServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedLogName = client.projectPath('[PROJECT]');
-      const request = {
-        logName: formattedLogName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteLog = mockSimpleGrpcMethod(request);
-
-      client.deleteLog(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes deleteLog with error', done => {
-      const client = new loggingModule.v2.LoggingServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedLogName = client.projectPath('[PROJECT]');
-      const request = {
-        logName: formattedLogName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteLog = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.deleteLog(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-  });
-
   describe('writeLogEntries', () => {
     it('invokes writeLogEntries without error', done => {
       const client = new loggingModule.v2.LoggingServiceV2Client({
@@ -1295,6 +1246,55 @@ describe('LoggingServiceV2Client', () => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('deleteLog', () => {
+    it('invokes deleteLog without error', done => {
+      const client = new loggingModule.v2.LoggingServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedLogName = client.logPath('[PROJECT]', '[LOG]');
+      const request = {
+        logName: formattedLogName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteLog = mockSimpleGrpcMethod(request);
+
+      client.deleteLog(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteLog with error', done => {
+      const client = new loggingModule.v2.LoggingServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedLogName = client.logPath('[PROJECT]', '[LOG]');
+      const request = {
+        logName: formattedLogName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteLog = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteLog(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
         done();
       });
     });

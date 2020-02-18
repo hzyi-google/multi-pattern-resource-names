@@ -489,7 +489,7 @@ class MetricsServiceV2Client {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.metricPath('[PROJECT]', '[METRIC]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const metric = {};
    * const request = {
    *   parent: formattedParent,

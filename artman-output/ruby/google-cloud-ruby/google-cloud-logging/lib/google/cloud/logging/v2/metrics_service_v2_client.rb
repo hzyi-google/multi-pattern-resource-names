@@ -361,7 +361,7 @@ module Google
           #   require "google/cloud/logging"
           #
           #   metrics_client = Google::Cloud::Logging::Metrics.new(version: :v2)
-          #   formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+          #   formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `metric`:
           #   metric = {}

@@ -2493,11 +2493,11 @@ namespace Google.Cloud.Logging.V2
     public partial class CreateLogMetricRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.MetricName"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.MetricName ParentAsMetricName
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.MetricName.Parse(Parent); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -2545,11 +2545,11 @@ namespace Google.Cloud.Logging.V2
     public partial class DeleteLogRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="LogName"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.LogNameOneof"/>-typed view over the <see cref="LogName"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ProjectName LogNameAsProjectName
+        public Google.Cloud.Logging.V2.LogNameOneof LogNameAsLogNameOneof
         {
-            get { return string.IsNullOrEmpty(LogName) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(LogName); }
+            get { return string.IsNullOrEmpty(LogName) ? null : Google.Cloud.Logging.V2.LogNameOneof.Parse(LogName, true); }
             set { LogName = value != null ? value.ToString() : ""; }
         }
 

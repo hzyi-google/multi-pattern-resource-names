@@ -133,7 +133,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest expectedRequest = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
@@ -146,7 +146,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateLogMetric(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogMetric metric = new LogMetric();
             LogMetric response = client.CreateLogMetric(parent, metric);
             Assert.Same(expectedResponse, response);
@@ -159,7 +159,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest expectedRequest = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
@@ -172,7 +172,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateLogMetricAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogMetric>(Task.FromResult(expectedResponse), null, null, null, null));
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogMetric metric = new LogMetric();
             LogMetric response = await client.CreateLogMetricAsync(parent, metric);
             Assert.Same(expectedResponse, response);
@@ -185,7 +185,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
@@ -209,7 +209,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric

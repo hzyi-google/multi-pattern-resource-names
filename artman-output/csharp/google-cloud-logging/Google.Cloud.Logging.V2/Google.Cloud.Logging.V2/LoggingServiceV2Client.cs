@@ -50,8 +50,8 @@ namespace Google.Cloud.Logging.V2
         private LoggingServiceV2Settings(LoggingServiceV2Settings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
-            DeleteLogSettings = existing.DeleteLogSettings;
             WriteLogEntriesSettings = existing.WriteLogEntriesSettings;
+            DeleteLogSettings = existing.DeleteLogSettings;
             ListLogEntriesSettings = existing.ListLogEntriesSettings;
             ListMonitoredResourceDescriptorsSettings = existing.ListMonitoredResourceDescriptorsSettings;
             ListLogsSettings = existing.ListLogsSettings;
@@ -126,35 +126,6 @@ namespace Google.Cloud.Logging.V2
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>LoggingServiceV2Client.DeleteLog</c> and <c>LoggingServiceV2Client.DeleteLogAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>LoggingServiceV2Client.DeleteLog</c> and
-        /// <c>LoggingServiceV2Client.DeleteLogAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description>No status codes</description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings DeleteLogSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: NonIdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
         /// <c>LoggingServiceV2Client.WriteLogEntries</c> and <c>LoggingServiceV2Client.WriteLogEntriesAsync</c>.
         /// </summary>
         /// <remarks>
@@ -175,6 +146,35 @@ namespace Google.Cloud.Logging.V2
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings WriteLogEntriesSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>LoggingServiceV2Client.DeleteLog</c> and <c>LoggingServiceV2Client.DeleteLogAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>LoggingServiceV2Client.DeleteLog</c> and
+        /// <c>LoggingServiceV2Client.DeleteLogAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteLogSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
@@ -479,563 +479,6 @@ namespace Google.Cloud.Logging.V2
         }
 
         /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            ProjectName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
-                new DeleteLogRequest
-                {
-                    LogNameAsProjectName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            ProjectName logName,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                logName,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            ProjectName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
-                new DeleteLogRequest
-                {
-                    LogNameAsProjectName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            OrganizationName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
-                new DeleteLogRequest
-                {
-                    LogNameAsOrganizationName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            OrganizationName logName,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                logName,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            OrganizationName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
-                new DeleteLogRequest
-                {
-                    LogNameAsOrganizationName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            FolderName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
-                new DeleteLogRequest
-                {
-                    LogNameAsFolderName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            FolderName logName,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                logName,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            FolderName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
-                new DeleteLogRequest
-                {
-                    LogNameAsFolderName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            BillingAccountName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
-                new DeleteLogRequest
-                {
-                    LogNameAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            BillingAccountName logName,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                logName,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            BillingAccountName logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
-                new DeleteLogRequest
-                {
-                    LogNameAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            string logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
-                new DeleteLogRequest
-                {
-                    LogName = gax::GaxPreconditions.CheckNotNullOrEmpty(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            string logName,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                logName,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="logName">
-        /// Required. The resource name of the log to delete:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example,
-        /// `"projects/my-project-id/logs/syslog"`,
-        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-        /// For more information about log names, see
-        /// [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            string logName,
-            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
-                new DeleteLogRequest
-                {
-                    LogName = gax::GaxPreconditions.CheckNotNullOrEmpty(logName, nameof(logName)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteLogAsync(
-            DeleteLogRequest request,
-            st::CancellationToken cancellationToken) => DeleteLogAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteLog(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
         /// Writes log entries to Logging. This API method is the
         /// only way to send log entries to Logging. This method
         /// is used, directly or indirectly, by the Logging agent
@@ -1638,6 +1081,266 @@ namespace Google.Cloud.Logging.V2
         /// </returns>
         public virtual WriteLogEntriesResponse WriteLogEntries(
             WriteLogEntriesRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            LogNameOneof logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
+                new DeleteLogRequest
+                {
+                    LogNameAsLogNameOneof = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            LogNameOneof logName,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                logName,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            LogNameOneof logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
+                new DeleteLogRequest
+                {
+                    LogNameAsLogNameOneof = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            string logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
+                new DeleteLogRequest
+                {
+                    LogName = gax::GaxPreconditions.CheckNotNullOrEmpty(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            string logName,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                logName,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            string logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
+                new DeleteLogRequest
+                {
+                    LogName = gax::GaxPreconditions.CheckNotNullOrEmpty(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            DeleteLogRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            DeleteLogRequest request,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            DeleteLogRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
             throw new sys::NotImplementedException();
@@ -2810,8 +2513,8 @@ namespace Google.Cloud.Logging.V2
     /// </summary>
     public sealed partial class LoggingServiceV2ClientImpl : LoggingServiceV2Client
     {
-        private readonly gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> _callDeleteLog;
         private readonly gaxgrpc::ApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse> _callWriteLogEntries;
+        private readonly gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> _callDeleteLog;
         private readonly gaxgrpc::ApiCall<ListLogEntriesRequest, ListLogEntriesResponse> _callListLogEntries;
         private readonly gaxgrpc::ApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse> _callListMonitoredResourceDescriptors;
         private readonly gaxgrpc::ApiCall<ListLogsRequest, ListLogsResponse> _callListLogs;
@@ -2826,11 +2529,11 @@ namespace Google.Cloud.Logging.V2
             GrpcClient = grpcClient;
             LoggingServiceV2Settings effectiveSettings = settings ?? LoggingServiceV2Settings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callWriteLogEntries = clientHelper.BuildApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse>(
+                GrpcClient.WriteLogEntriesAsync, GrpcClient.WriteLogEntries, effectiveSettings.WriteLogEntriesSettings);
             _callDeleteLog = clientHelper.BuildApiCall<DeleteLogRequest, pbwkt::Empty>(
                 GrpcClient.DeleteLogAsync, GrpcClient.DeleteLog, effectiveSettings.DeleteLogSettings)
                 .WithGoogleRequestParam("log_name", request => request.LogName);
-            _callWriteLogEntries = clientHelper.BuildApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse>(
-                GrpcClient.WriteLogEntriesAsync, GrpcClient.WriteLogEntries, effectiveSettings.WriteLogEntriesSettings);
             _callListLogEntries = clientHelper.BuildApiCall<ListLogEntriesRequest, ListLogEntriesResponse>(
                 GrpcClient.ListLogEntriesAsync, GrpcClient.ListLogEntries, effectiveSettings.ListLogEntriesSettings);
             _callListMonitoredResourceDescriptors = clientHelper.BuildApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>(
@@ -2838,10 +2541,10 @@ namespace Google.Cloud.Logging.V2
             _callListLogs = clientHelper.BuildApiCall<ListLogsRequest, ListLogsResponse>(
                 GrpcClient.ListLogsAsync, GrpcClient.ListLogs, effectiveSettings.ListLogsSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
-            Modify_ApiCall(ref _callDeleteLog);
-            Modify_DeleteLogApiCall(ref _callDeleteLog);
             Modify_ApiCall(ref _callWriteLogEntries);
             Modify_WriteLogEntriesApiCall(ref _callWriteLogEntries);
+            Modify_ApiCall(ref _callDeleteLog);
+            Modify_DeleteLogApiCall(ref _callDeleteLog);
             Modify_ApiCall(ref _callListLogEntries);
             Modify_ListLogEntriesApiCall(ref _callListLogEntries);
             Modify_ApiCall(ref _callListMonitoredResourceDescriptors);
@@ -2861,8 +2564,8 @@ namespace Google.Cloud.Logging.V2
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
-        partial void Modify_DeleteLogApiCall(ref gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> call);
         partial void Modify_WriteLogEntriesApiCall(ref gaxgrpc::ApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse> call);
+        partial void Modify_DeleteLogApiCall(ref gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> call);
         partial void Modify_ListLogEntriesApiCall(ref gaxgrpc::ApiCall<ListLogEntriesRequest, ListLogEntriesResponse> call);
         partial void Modify_ListMonitoredResourceDescriptorsApiCall(ref gaxgrpc::ApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse> call);
         partial void Modify_ListLogsApiCall(ref gaxgrpc::ApiCall<ListLogsRequest, ListLogsResponse> call);
@@ -2876,54 +2579,11 @@ namespace Google.Cloud.Logging.V2
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
-        partial void Modify_DeleteLogRequest(ref DeleteLogRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_WriteLogEntriesRequest(ref WriteLogEntriesRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_DeleteLogRequest(ref DeleteLogRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListLogEntriesRequest(ref ListLogEntriesRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListMonitoredResourceDescriptorsRequest(ref ListMonitoredResourceDescriptorsRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListLogsRequest(ref ListLogsRequest request, ref gaxgrpc::CallSettings settings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteLogAsync(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteLogRequest(ref request, ref callSettings);
-            return _callDeleteLog.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteLog(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteLogRequest(ref request, ref callSettings);
-            _callDeleteLog.Sync(request, callSettings);
-        }
 
         /// <summary>
         /// Writes log entries to Logging. This API method is the
@@ -2975,6 +2635,49 @@ namespace Google.Cloud.Logging.V2
         {
             Modify_WriteLogEntriesRequest(ref request, ref callSettings);
             return _callWriteLogEntries.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task DeleteLogAsync(
+            DeleteLogRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteLogRequest(ref request, ref callSettings);
+            return _callDeleteLog.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void DeleteLog(
+            DeleteLogRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteLogRequest(ref request, ref callSettings);
+            _callDeleteLog.Sync(request, callSettings);
         }
 
         /// <summary>

@@ -58,8 +58,11 @@
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   ProjectName logName = ProjectName.of("[PROJECT]");
- *   loggingClient.deleteLog(logName);
+ *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+ *   MonitoredResource resource = MonitoredResource.newBuilder().build();
+ *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
+ *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+ *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName, resource, labels, entries);
  * }
  * </code>
  * </pre>

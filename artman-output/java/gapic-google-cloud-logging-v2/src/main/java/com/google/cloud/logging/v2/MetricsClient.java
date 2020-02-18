@@ -395,7 +395,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.createLogMetric(parent, metric);
    * }
@@ -408,7 +408,7 @@ public class MetricsClient implements BackgroundResource {
    *     already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric createLogMetric(MetricName parent, LogMetric metric) {
+  public final LogMetric createLogMetric(ProjectName parent, LogMetric metric) {
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -425,7 +425,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.createLogMetric(parent.toString(), metric);
    * }
@@ -452,7 +452,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -477,7 +477,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(parent.toString())

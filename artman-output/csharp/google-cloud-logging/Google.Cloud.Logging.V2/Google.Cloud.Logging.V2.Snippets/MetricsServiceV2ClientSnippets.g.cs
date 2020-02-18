@@ -278,12 +278,12 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateLogMetricAsync</summary>
         public async Task CreateLogMetricAsync()
         {
-            // Snippet: CreateLogMetricAsync(MetricName,LogMetric,CallSettings)
-            // Additional: CreateLogMetricAsync(MetricName,LogMetric,CancellationToken)
+            // Snippet: CreateLogMetricAsync(ProjectName,LogMetric,CallSettings)
+            // Additional: CreateLogMetricAsync(ProjectName,LogMetric,CancellationToken)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = await MetricsServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogMetric metric = new LogMetric();
             // Make the request
             LogMetric response = await metricsServiceV2Client.CreateLogMetricAsync(parent, metric);
@@ -293,11 +293,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateLogMetric</summary>
         public void CreateLogMetric()
         {
-            // Snippet: CreateLogMetric(MetricName,LogMetric,CallSettings)
+            // Snippet: CreateLogMetric(ProjectName,LogMetric,CallSettings)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.Create();
             // Initialize request argument(s)
-            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogMetric metric = new LogMetric();
             // Make the request
             LogMetric response = metricsServiceV2Client.CreateLogMetric(parent, metric);
@@ -314,7 +314,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             // Make the request
@@ -331,7 +331,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Metric = new LogMetric(),
             };
             // Make the request

@@ -62,8 +62,11 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   ProjectName logName = ProjectName.of("[PROJECT]");
- *   loggingClient.deleteLog(logName);
+ *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+ *   MonitoredResource resource = MonitoredResource.newBuilder().build();
+ *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
+ *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+ *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName, resource, labels, entries);
  * }
  * </code>
  * </pre>
@@ -168,207 +171,6 @@ public class LoggingClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LoggingServiceV2Stub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ProjectName logName = ProjectName.of("[PROJECT]");
-   *   loggingClient.deleteLog(logName);
-   * }
-   * </code></pre>
-   *
-   * @param logName Required. The resource name of the log to delete:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(ProjectName logName) {
-    DeleteLogRequest request =
-        DeleteLogRequest.newBuilder()
-            .setLogName(logName == null ? null : logName.toString())
-            .build();
-    deleteLog(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   OrganizationName logName = OrganizationName.of("[ORGANIZATION]");
-   *   loggingClient.deleteLog(logName);
-   * }
-   * </code></pre>
-   *
-   * @param logName Required. The resource name of the log to delete:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(OrganizationName logName) {
-    DeleteLogRequest request =
-        DeleteLogRequest.newBuilder()
-            .setLogName(logName == null ? null : logName.toString())
-            .build();
-    deleteLog(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   FolderName logName = FolderName.of("[FOLDER]");
-   *   loggingClient.deleteLog(logName);
-   * }
-   * </code></pre>
-   *
-   * @param logName Required. The resource name of the log to delete:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(FolderName logName) {
-    DeleteLogRequest request =
-        DeleteLogRequest.newBuilder()
-            .setLogName(logName == null ? null : logName.toString())
-            .build();
-    deleteLog(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   BillingAccountName logName = BillingAccountName.of("[BILLING_ACCOUNT]");
-   *   loggingClient.deleteLog(logName);
-   * }
-   * </code></pre>
-   *
-   * @param logName Required. The resource name of the log to delete:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(BillingAccountName logName) {
-    DeleteLogRequest request =
-        DeleteLogRequest.newBuilder()
-            .setLogName(logName == null ? null : logName.toString())
-            .build();
-    deleteLog(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ProjectName logName = ProjectName.of("[PROJECT]");
-   *   loggingClient.deleteLog(logName.toString());
-   * }
-   * </code></pre>
-   *
-   * @param logName Required. The resource name of the log to delete:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(String logName) {
-    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
-    deleteLog(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ProjectName logName = ProjectName.of("[PROJECT]");
-   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogName(logName.toString())
-   *     .build();
-   *   loggingClient.deleteLog(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteLog(DeleteLogRequest request) {
-    deleteLogCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
-   * written shortly before the delete operation might not be deleted. Entries received after the
-   * delete operation with a timestamp before the operation will be deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ProjectName logName = ProjectName.of("[PROJECT]");
-   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogName(logName.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = loggingClient.deleteLogCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable() {
-    return stub.deleteLogCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -567,6 +369,114 @@ public class LoggingClient implements BackgroundResource {
   public final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable() {
     return stub.writeLogEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   loggingClient.deleteLog(logName);
+   * }
+   * </code></pre>
+   *
+   * @param logName Required. The resource name of the log to delete:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLog(LogName logName) {
+    DeleteLogRequest request =
+        DeleteLogRequest.newBuilder()
+            .setLogName(logName == null ? null : logName.toString())
+            .build();
+    deleteLog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   loggingClient.deleteLog(logName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param logName Required. The resource name of the log to delete:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLog(String logName) {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
+    deleteLog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
+   *     .setLogName(logName.toString())
+   *     .build();
+   *   loggingClient.deleteLog(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLog(DeleteLogRequest request) {
+    deleteLogCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted. Entries received after the
+   * delete operation with a timestamp before the operation will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
+   *     .setLogName(logName.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = loggingClient.deleteLogCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable() {
+    return stub.deleteLogCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

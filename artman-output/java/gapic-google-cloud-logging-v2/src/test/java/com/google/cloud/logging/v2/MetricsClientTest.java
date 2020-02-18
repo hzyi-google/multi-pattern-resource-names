@@ -205,7 +205,7 @@ public class MetricsClientTest {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     LogMetric metric = LogMetric.newBuilder().build();
 
     LogMetric actualResponse = client.createLogMetric(parent, metric);
@@ -215,7 +215,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateLogMetricRequest actualRequest = (CreateLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, MetricName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(metric, actualRequest.getMetric());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -230,7 +230,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      MetricName parent = MetricName.of("[PROJECT]", "[METRIC]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       LogMetric metric = LogMetric.newBuilder().build();
 
       client.createLogMetric(parent, metric);

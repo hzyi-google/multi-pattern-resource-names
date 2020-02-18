@@ -142,7 +142,7 @@ message DeleteLogRequest {
   string log_name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "logging.googleapis.com/Log"
+      type: "logging.googleapis.com/Log"
     }
   ];
 }

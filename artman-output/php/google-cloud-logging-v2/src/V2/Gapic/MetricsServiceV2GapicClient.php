@@ -444,7 +444,7 @@ class MetricsServiceV2GapicClient
      * ```
      * $metricsServiceV2Client = new MetricsServiceV2Client();
      * try {
-     *     $formattedParent = $metricsServiceV2Client->metricName('[PROJECT]', '[METRIC]');
+     *     $formattedParent = $metricsServiceV2Client->projectName('[PROJECT]');
      *     $metric = new LogMetric();
      *     $response = $metricsServiceV2Client->createLogMetric($formattedParent, $metric);
      * } finally {

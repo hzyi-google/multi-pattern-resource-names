@@ -96,7 +96,7 @@ public final class LoggingMetricsProto {
       "\n\023GetLogMetricRequest\022:\n\013metric_name\030\001 \001" +
       "(\tB%\340A\002\372A\037\n\035logging.googleapis.com/Metri" +
       "c\"\202\001\n\026CreateLogMetricRequest\0225\n\006parent\030\001" +
-      " \001(\tB%\340A\002\372A\037\n\035logging.googleapis.com/Met" +
+      " \001(\tB%\340A\002\372A\037\022\035logging.googleapis.com/Met" +
       "ric\0221\n\006metric\030\002 \001(\0132\034.google.logging.v2." +
       "LogMetricB\003\340A\002\"\207\001\n\026UpdateLogMetricReques" +
       "t\022:\n\013metric_name\030\001 \001(\tB%\340A\002\372A\037\n\035logging." +

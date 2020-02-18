@@ -37,8 +37,8 @@ import (
 
 // CallOptions contains the retry settings for each method of Client.
 type CallOptions struct {
-	DeleteLog                        []gax.CallOption
 	WriteLogEntries                  []gax.CallOption
+	DeleteLog                        []gax.CallOption
 	ListLogEntries                   []gax.CallOption
 	ListMonitoredResourceDescriptors []gax.CallOption
 	ListLogs                         []gax.CallOption
@@ -69,8 +69,8 @@ func defaultCallOptions() *CallOptions {
 		},
 	}
 	return &CallOptions{
-		DeleteLog:                        retry[[2]string{"default", "non_idempotent"}],
 		WriteLogEntries:                  retry[[2]string{"default", "non_idempotent"}],
+		DeleteLog:                        retry[[2]string{"default", "non_idempotent"}],
 		ListLogEntries:                   retry[[2]string{"default", "non_idempotent"}],
 		ListMonitoredResourceDescriptors: retry[[2]string{"default", "idempotent"}],
 		ListLogs:                         retry[[2]string{"default", "idempotent"}],
@@ -132,22 +132,6 @@ func (c *Client) SetGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// DeleteLog deletes all the log entries in a log. The log reappears if it receives new
-// entries. Log entries written shortly before the delete operation might not
-// be deleted. Entries received after the delete operation with a timestamp
-// before the operation will be deleted.
-func (c *Client) DeleteLog(ctx context.Context, req *loggingpb.DeleteLogRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "log_name", url.QueryEscape(req.GetLogName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteLog[0:len(c.CallOptions.DeleteLog):len(c.CallOptions.DeleteLog)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.client.DeleteLog(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
-}
-
 // WriteLogEntries writes log entries to Logging. This API method is the
 // only way to send log entries to Logging. This method
 // is used, directly or indirectly, by the Logging agent
@@ -168,6 +152,22 @@ func (c *Client) WriteLogEntries(ctx context.Context, req *loggingpb.WriteLogEnt
 		return nil, err
 	}
 	return resp, nil
+}
+
+// DeleteLog deletes all the log entries in a log. The log reappears if it receives new
+// entries. Log entries written shortly before the delete operation might not
+// be deleted. Entries received after the delete operation with a timestamp
+// before the operation will be deleted.
+func (c *Client) DeleteLog(ctx context.Context, req *loggingpb.DeleteLogRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "log_name", url.QueryEscape(req.GetLogName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteLog[0:len(c.CallOptions.DeleteLog):len(c.CallOptions.DeleteLog)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.client.DeleteLog(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
 }
 
 // ListLogEntries lists log entries.  Use this method to retrieve log entries that originated

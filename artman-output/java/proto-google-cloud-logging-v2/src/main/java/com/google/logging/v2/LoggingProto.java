@@ -94,7 +94,7 @@ public final class LoggingProto {
       "protobuf/empty.proto\032\037google/protobuf/ti" +
       "mestamp.proto\032\027google/rpc/status.proto\"H" +
       "\n\020DeleteLogRequest\0224\n\010log_name\030\001 \001(\tB\"\340A" +
-      "\002\372A\034\022\032logging.googleapis.com/Log\"\317\002\n\026Wri" +
+      "\002\372A\034\n\032logging.googleapis.com/Log\"\317\002\n\026Wri" +
       "teLogEntriesRequest\0221\n\010log_name\030\001 \001(\tB\037\372" +
       "A\034\n\032logging.googleapis.com/Log\022/\n\010resour" +
       "ce\030\002 \001(\0132\035.google.api.MonitoredResource\022" +

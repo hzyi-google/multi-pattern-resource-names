@@ -544,7 +544,7 @@ func TestMetricsServiceV2CreateLogMetric(t *testing.T) {
 
 	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
 	var request = &loggingpb.CreateLogMetricRequest{
 		Parent: formattedParent,
@@ -575,7 +575,7 @@ func TestMetricsServiceV2CreateLogMetricError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockMetrics.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
 	var request = &loggingpb.CreateLogMetricRequest{
 		Parent: formattedParent,
@@ -1503,58 +1503,6 @@ func TestConfigServiceV2UpdateCmekSettingsError(t *testing.T) {
 	}
 	_ = resp
 }
-func TestLoggingServiceV2DeleteLog(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockLogging.err = nil
-	mockLogging.reqs = nil
-
-	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
-
-	var formattedLogName string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.DeleteLogRequest{
-		LogName: formattedLogName,
-	}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLog(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockLogging.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestLoggingServiceV2DeleteLogError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockLogging.err = gstatus.Error(errCode, "test error")
-
-	var formattedLogName string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.DeleteLogRequest{
-		LogName: formattedLogName,
-	}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLog(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-}
 func TestLoggingServiceV2WriteLogEntries(t *testing.T) {
 	var expectedResponse *loggingpb.WriteLogEntriesResponse = &loggingpb.WriteLogEntriesResponse{}
 
@@ -1610,6 +1558,58 @@ func TestLoggingServiceV2WriteLogEntriesError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
+}
+func TestLoggingServiceV2DeleteLog(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockLogging.err = nil
+	mockLogging.reqs = nil
+
+	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
+
+	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
+	var request = &loggingpb.DeleteLogRequest{
+		LogName: formattedLogName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLog(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockLogging.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestLoggingServiceV2DeleteLogError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockLogging.err = gstatus.Error(errCode, "test error")
+
+	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
+	var request = &loggingpb.DeleteLogRequest{
+		LogName: formattedLogName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLog(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
 }
 func TestLoggingServiceV2ListLogEntries(t *testing.T) {
 	var nextPageToken string = ""

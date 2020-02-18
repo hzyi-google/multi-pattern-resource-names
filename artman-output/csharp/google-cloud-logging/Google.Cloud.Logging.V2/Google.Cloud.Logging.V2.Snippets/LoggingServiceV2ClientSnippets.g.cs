@@ -34,66 +34,6 @@ namespace Google.Cloud.Logging.V2.Snippets
     /// <summary>Generated snippets</summary>
     public class GeneratedLoggingServiceV2ClientSnippets
     {
-        /// <summary>Snippet for DeleteLogAsync</summary>
-        public async Task DeleteLogAsync()
-        {
-            // Snippet: DeleteLogAsync(ProjectName,CallSettings)
-            // Additional: DeleteLogAsync(ProjectName,CancellationToken)
-            // Create client
-            LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
-            // Initialize request argument(s)
-            ProjectName logName = new ProjectName("[PROJECT]");
-            // Make the request
-            await loggingServiceV2Client.DeleteLogAsync(logName);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteLog</summary>
-        public void DeleteLog()
-        {
-            // Snippet: DeleteLog(ProjectName,CallSettings)
-            // Create client
-            LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
-            // Initialize request argument(s)
-            ProjectName logName = new ProjectName("[PROJECT]");
-            // Make the request
-            loggingServiceV2Client.DeleteLog(logName);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteLogAsync</summary>
-        public async Task DeleteLogAsync_RequestObject()
-        {
-            // Snippet: DeleteLogAsync(DeleteLogRequest,CallSettings)
-            // Additional: DeleteLogAsync(DeleteLogRequest,CancellationToken)
-            // Create client
-            LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
-            // Initialize request argument(s)
-            DeleteLogRequest request = new DeleteLogRequest
-            {
-                LogNameAsProjectName = new ProjectName("[PROJECT]"),
-            };
-            // Make the request
-            await loggingServiceV2Client.DeleteLogAsync(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteLog</summary>
-        public void DeleteLog_RequestObject()
-        {
-            // Snippet: DeleteLog(DeleteLogRequest,CallSettings)
-            // Create client
-            LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
-            // Initialize request argument(s)
-            DeleteLogRequest request = new DeleteLogRequest
-            {
-                LogNameAsProjectName = new ProjectName("[PROJECT]"),
-            };
-            // Make the request
-            loggingServiceV2Client.DeleteLog(request);
-            // End snippet
-        }
-
         /// <summary>Snippet for WriteLogEntriesAsync</summary>
         public async Task WriteLogEntriesAsync()
         {
@@ -157,6 +97,66 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             WriteLogEntriesResponse response = loggingServiceV2Client.WriteLogEntries(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteLogAsync</summary>
+        public async Task DeleteLogAsync()
+        {
+            // Snippet: DeleteLogAsync(LogNameOneof,CallSettings)
+            // Additional: DeleteLogAsync(LogNameOneof,CancellationToken)
+            // Create client
+            LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
+            // Initialize request argument(s)
+            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            // Make the request
+            await loggingServiceV2Client.DeleteLogAsync(logName);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteLog</summary>
+        public void DeleteLog()
+        {
+            // Snippet: DeleteLog(LogNameOneof,CallSettings)
+            // Create client
+            LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
+            // Initialize request argument(s)
+            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            // Make the request
+            loggingServiceV2Client.DeleteLog(logName);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteLogAsync</summary>
+        public async Task DeleteLogAsync_RequestObject()
+        {
+            // Snippet: DeleteLogAsync(DeleteLogRequest,CallSettings)
+            // Additional: DeleteLogAsync(DeleteLogRequest,CancellationToken)
+            // Create client
+            LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
+            // Initialize request argument(s)
+            DeleteLogRequest request = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+            };
+            // Make the request
+            await loggingServiceV2Client.DeleteLogAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteLog</summary>
+        public void DeleteLog_RequestObject()
+        {
+            // Snippet: DeleteLog(DeleteLogRequest,CallSettings)
+            // Create client
+            LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
+            // Initialize request argument(s)
+            DeleteLogRequest request = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+            };
+            // Make the request
+            loggingServiceV2Client.DeleteLog(request);
             // End snippet
         }
 

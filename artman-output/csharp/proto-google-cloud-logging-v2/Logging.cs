@@ -33,7 +33,7 @@ namespace Google.Cloud.Logging.V2 {
             "ZmlnLnByb3RvGh5nb29nbGUvcHJvdG9idWYvZHVyYXRpb24ucHJvdG8aG2dv",
             "b2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3Rp",
             "bWVzdGFtcC5wcm90bxoXZ29vZ2xlL3JwYy9zdGF0dXMucHJvdG8iSAoQRGVs",
-            "ZXRlTG9nUmVxdWVzdBI0Cghsb2dfbmFtZRgBIAEoCUIi4EEC+kEcEhpsb2dn",
+            "ZXRlTG9nUmVxdWVzdBI0Cghsb2dfbmFtZRgBIAEoCUIi4EEC+kEcChpsb2dn",
             "aW5nLmdvb2dsZWFwaXMuY29tL0xvZyLPAgoWV3JpdGVMb2dFbnRyaWVzUmVx",
             "dWVzdBIxCghsb2dfbmFtZRgBIAEoCUIf+kEcChpsb2dnaW5nLmdvb2dsZWFw",
             "aXMuY29tL0xvZxIvCghyZXNvdXJjZRgCIAEoCzIdLmdvb2dsZS5hcGkuTW9u",

@@ -251,7 +251,7 @@ class MetricsServiceV2ClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedParent = $client->metricName('[PROJECT]', '[METRIC]');
+        $formattedParent = $client->projectName('[PROJECT]');
         $metric = new LogMetric();
 
         $response = $client->createLogMetric($formattedParent, $metric);
@@ -295,7 +295,7 @@ class MetricsServiceV2ClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedParent = $client->metricName('[PROJECT]', '[METRIC]');
+        $formattedParent = $client->projectName('[PROJECT]');
         $metric = new LogMetric();
 
         try {

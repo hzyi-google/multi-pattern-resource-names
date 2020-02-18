@@ -67,75 +67,6 @@ end
 
 describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
 
-  describe 'delete_log' do
-    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::LoggingServiceV2Client#delete_log."
-
-    it 'invokes delete_log without error' do
-      # Create request parameters
-      formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Logging::V2::DeleteLogRequest, request)
-        assert_equal(formatted_log_name, request.log_name)
-        OpenStruct.new(execute: nil)
-      end
-      mock_stub = MockGrpcClientStub_v2.new(:delete_log, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockLoggingServiceV2Credentials_v2.new("delete_log")
-
-      Google::Logging::V2::LoggingServiceV2::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Logging::Logging.new(version: :v2)
-
-          # Call method
-          response = client.delete_log(formatted_log_name)
-
-          # Verify the response
-          assert_nil(response)
-
-          # Call method with block
-          client.delete_log(formatted_log_name) do |response, operation|
-            # Verify the response
-            assert_nil(response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes delete_log with error' do
-      # Create request parameters
-      formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Logging::V2::DeleteLogRequest, request)
-        assert_equal(formatted_log_name, request.log_name)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v2.new(:delete_log, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockLoggingServiceV2Credentials_v2.new("delete_log")
-
-      Google::Logging::V2::LoggingServiceV2::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Logging::Logging.new(version: :v2)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.delete_log(formatted_log_name)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'write_log_entries' do
     custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::LoggingServiceV2Client#write_log_entries."
 
@@ -206,6 +137,75 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
             client.write_log_entries(entries)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'delete_log' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::LoggingServiceV2Client#delete_log."
+
+    it 'invokes delete_log without error' do
+      # Create request parameters
+      formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.log_path("[PROJECT]", "[LOG]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::DeleteLogRequest, request)
+        assert_equal(formatted_log_name, request.log_name)
+        OpenStruct.new(execute: nil)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:delete_log, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockLoggingServiceV2Credentials_v2.new("delete_log")
+
+      Google::Logging::V2::LoggingServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Logging.new(version: :v2)
+
+          # Call method
+          response = client.delete_log(formatted_log_name)
+
+          # Verify the response
+          assert_nil(response)
+
+          # Call method with block
+          client.delete_log(formatted_log_name) do |response, operation|
+            # Verify the response
+            assert_nil(response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes delete_log with error' do
+      # Create request parameters
+      formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.log_path("[PROJECT]", "[LOG]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::DeleteLogRequest, request)
+        assert_equal(formatted_log_name, request.log_name)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:delete_log, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockLoggingServiceV2Credentials_v2.new("delete_log")
+
+      Google::Logging::V2::LoggingServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Logging.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.delete_log(formatted_log_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

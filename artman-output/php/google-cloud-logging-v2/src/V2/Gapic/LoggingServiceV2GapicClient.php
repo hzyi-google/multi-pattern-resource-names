@@ -57,8 +57,8 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $loggingServiceV2Client = new LoggingServiceV2Client();
  * try {
- *     $formattedLogName = $loggingServiceV2Client->projectName('[PROJECT]');
- *     $loggingServiceV2Client->deleteLog($formattedLogName);
+ *     $entries = [];
+ *     $response = $loggingServiceV2Client->writeLogEntries($entries);
  * } finally {
  *     $loggingServiceV2Client->close();
  * }
@@ -475,68 +475,6 @@ class LoggingServiceV2GapicClient
     }
 
     /**
-     * Deletes all the log entries in a log. The log reappears if it receives new
-     * entries. Log entries written shortly before the delete operation might not
-     * be deleted. Entries received after the delete operation with a timestamp
-     * before the operation will be deleted.
-     *
-     * Sample code:
-     * ```
-     * $loggingServiceV2Client = new LoggingServiceV2Client();
-     * try {
-     *     $formattedLogName = $loggingServiceV2Client->projectName('[PROJECT]');
-     *     $loggingServiceV2Client->deleteLog($formattedLogName);
-     * } finally {
-     *     $loggingServiceV2Client->close();
-     * }
-     * ```
-     *
-     * @param string $logName Required. The resource name of the log to delete:
-     *
-     *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-     *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-     *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     *
-     * `[LOG_ID]` must be URL-encoded. For example,
-     * `"projects/my-project-id/logs/syslog"`,
-     * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-     * For more information about log names, see
-     * [LogEntry][google.logging.v2.LogEntry].
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteLog($logName, array $optionalArgs = [])
-    {
-        $request = new DeleteLogRequest();
-        $request->setLogName($logName);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'log_name' => $request->getLogName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteLog',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
      * Writes log entries to Logging. This API method is the
      * only way to send log entries to Logging. This method
      * is used, directly or indirectly, by the Logging agent
@@ -659,6 +597,68 @@ class LoggingServiceV2GapicClient
         return $this->startCall(
             'WriteLogEntries',
             WriteLogEntriesResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Deletes all the log entries in a log. The log reappears if it receives new
+     * entries. Log entries written shortly before the delete operation might not
+     * be deleted. Entries received after the delete operation with a timestamp
+     * before the operation will be deleted.
+     *
+     * Sample code:
+     * ```
+     * $loggingServiceV2Client = new LoggingServiceV2Client();
+     * try {
+     *     $formattedLogName = $loggingServiceV2Client->logName('[PROJECT]', '[LOG]');
+     *     $loggingServiceV2Client->deleteLog($formattedLogName);
+     * } finally {
+     *     $loggingServiceV2Client->close();
+     * }
+     * ```
+     *
+     * @param string $logName Required. The resource name of the log to delete:
+     *
+     *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+     *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+     *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+     *
+     * `[LOG_ID]` must be URL-encoded. For example,
+     * `"projects/my-project-id/logs/syslog"`,
+     * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+     * For more information about log names, see
+     * [LogEntry][google.logging.v2.LogEntry].
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function deleteLog($logName, array $optionalArgs = [])
+    {
+        $request = new DeleteLogRequest();
+        $request->setLogName($logName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'log_name' => $request->getLogName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'DeleteLog',
+            GPBEmpty::class,
             $optionalArgs,
             $request
         )->wait();

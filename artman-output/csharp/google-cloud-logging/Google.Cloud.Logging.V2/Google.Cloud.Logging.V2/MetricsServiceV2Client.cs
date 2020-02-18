@@ -864,12 +864,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> CreateLogMetricAsync(
-            MetricName parent,
+            ProjectName parent,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => CreateLogMetricAsync(
                 new CreateLogMetricRequest
                 {
-                    ParentAsMetricName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);
@@ -895,7 +895,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> CreateLogMetricAsync(
-            MetricName parent,
+            ProjectName parent,
             LogMetric metric,
             st::CancellationToken cancellationToken) => CreateLogMetricAsync(
                 parent,
@@ -923,12 +923,12 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogMetric CreateLogMetric(
-            MetricName parent,
+            ProjectName parent,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => CreateLogMetric(
                 new CreateLogMetricRequest
                 {
-                    ParentAsMetricName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);

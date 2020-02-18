@@ -34,22 +34,6 @@ func ExampleNewClient() {
 	_ = c
 }
 
-func ExampleClient_DeleteLog() {
-	ctx := context.Background()
-	c, err := logging.NewClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &loggingpb.DeleteLogRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.DeleteLog(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-}
-
 func ExampleClient_WriteLogEntries() {
 	ctx := context.Background()
 	c, err := logging.NewClient(ctx)
@@ -66,6 +50,22 @@ func ExampleClient_WriteLogEntries() {
 	}
 	// TODO: Use resp.
 	_ = resp
+}
+
+func ExampleClient_DeleteLog() {
+	ctx := context.Background()
+	c, err := logging.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.DeleteLogRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteLog(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
 }
 
 func ExampleClient_ListLogEntries() {
