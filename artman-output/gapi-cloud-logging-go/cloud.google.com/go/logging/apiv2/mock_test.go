@@ -48,6 +48,81 @@ var _ = io.EOF
 var _ = ptypes.MarshalAny
 var _ status.Status
 
+type mockMetricsServer struct {
+	// Embed for forward compatibility.
+	// Tests will keep working if more methods are added
+	// in the future.
+	loggingpb.MetricsServiceV2Server
+
+	reqs []proto.Message
+
+	// If set, all calls return this error.
+	err error
+
+	// responses to return if err == nil
+	resps []proto.Message
+}
+
+func (s *mockMetricsServer) ListLogMetrics(ctx context.Context, req *loggingpb.ListLogMetricsRequest) (*loggingpb.ListLogMetricsResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.ListLogMetricsResponse), nil
+}
+
+func (s *mockMetricsServer) GetLogMetric(ctx context.Context, req *loggingpb.GetLogMetricRequest) (*loggingpb.LogMetric, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.LogMetric), nil
+}
+
+func (s *mockMetricsServer) CreateLogMetric(ctx context.Context, req *loggingpb.CreateLogMetricRequest) (*loggingpb.LogMetric, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.LogMetric), nil
+}
+
+func (s *mockMetricsServer) UpdateLogMetric(ctx context.Context, req *loggingpb.UpdateLogMetricRequest) (*loggingpb.LogMetric, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.LogMetric), nil
+}
+
+func (s *mockMetricsServer) DeleteLogMetric(ctx context.Context, req *loggingpb.DeleteLogMetricRequest) (*emptypb.Empty, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*emptypb.Empty), nil
+}
+
 type mockConfigServer struct {
 	// Embed for forward compatibility.
 	// Tests will keep working if more methods are added
@@ -282,98 +357,23 @@ func (s *mockLoggingServer) ListLogs(ctx context.Context, req *loggingpb.ListLog
 	return s.resps[0].(*loggingpb.ListLogsResponse), nil
 }
 
-type mockMetricsServer struct {
-	// Embed for forward compatibility.
-	// Tests will keep working if more methods are added
-	// in the future.
-	loggingpb.MetricsServiceV2Server
-
-	reqs []proto.Message
-
-	// If set, all calls return this error.
-	err error
-
-	// responses to return if err == nil
-	resps []proto.Message
-}
-
-func (s *mockMetricsServer) ListLogMetrics(ctx context.Context, req *loggingpb.ListLogMetricsRequest) (*loggingpb.ListLogMetricsResponse, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*loggingpb.ListLogMetricsResponse), nil
-}
-
-func (s *mockMetricsServer) GetLogMetric(ctx context.Context, req *loggingpb.GetLogMetricRequest) (*loggingpb.LogMetric, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*loggingpb.LogMetric), nil
-}
-
-func (s *mockMetricsServer) CreateLogMetric(ctx context.Context, req *loggingpb.CreateLogMetricRequest) (*loggingpb.LogMetric, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*loggingpb.LogMetric), nil
-}
-
-func (s *mockMetricsServer) UpdateLogMetric(ctx context.Context, req *loggingpb.UpdateLogMetricRequest) (*loggingpb.LogMetric, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*loggingpb.LogMetric), nil
-}
-
-func (s *mockMetricsServer) DeleteLogMetric(ctx context.Context, req *loggingpb.DeleteLogMetricRequest) (*emptypb.Empty, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*emptypb.Empty), nil
-}
-
 // clientOpt is the option tests should use to connect to the test server.
 // It is initialized by TestMain.
 var clientOpt option.ClientOption
 
 var (
+	mockMetrics mockMetricsServer
 	mockConfig  mockConfigServer
 	mockLogging mockLoggingServer
-	mockMetrics mockMetricsServer
 )
 
 func TestMain(m *testing.M) {
 	flag.Parse()
 
 	serv := grpc.NewServer()
+	loggingpb.RegisterMetricsServiceV2Server(serv, &mockMetrics)
 	loggingpb.RegisterConfigServiceV2Server(serv, &mockConfig)
 	loggingpb.RegisterLoggingServiceV2Server(serv, &mockLogging)
-	loggingpb.RegisterMetricsServiceV2Server(serv, &mockMetrics)
 
 	lis, err := net.Listen("tcp", "localhost:0")
 	if err != nil {
@@ -390,6 +390,333 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
+func TestMetricsServiceV2ListLogMetrics(t *testing.T) {
+	var nextPageToken string = ""
+	var metricsElement *loggingpb.LogMetric = &loggingpb.LogMetric{}
+	var metrics = []*loggingpb.LogMetric{metricsElement}
+	var expectedResponse = &loggingpb.ListLogMetricsResponse{
+		NextPageToken: nextPageToken,
+		Metrics:       metrics,
+	}
+
+	mockMetrics.err = nil
+	mockMetrics.reqs = nil
+
+	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var request = &loggingpb.ListLogMetricsRequest{
+		Parent: formattedParent,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListLogMetrics(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.Metrics[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestMetricsServiceV2ListLogMetricsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockMetrics.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var request = &loggingpb.ListLogMetricsRequest{
+		Parent: formattedParent,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListLogMetrics(context.Background(), request).Next()
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestMetricsServiceV2GetLogMetric(t *testing.T) {
+	var name string = "name3373707"
+	var description string = "description-1724546052"
+	var filter string = "filter-1274492040"
+	var valueExtractor string = "valueExtractor2047672534"
+	var expectedResponse = &loggingpb.LogMetric{
+		Name:           name,
+		Description:    description,
+		Filter:         filter,
+		ValueExtractor: valueExtractor,
+	}
+
+	mockMetrics.err = nil
+	mockMetrics.reqs = nil
+
+	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var request = &loggingpb.GetLogMetricRequest{
+		MetricName: formattedMetricName,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetLogMetric(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestMetricsServiceV2GetLogMetricError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockMetrics.err = gstatus.Error(errCode, "test error")
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var request = &loggingpb.GetLogMetricRequest{
+		MetricName: formattedMetricName,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetLogMetric(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestMetricsServiceV2CreateLogMetric(t *testing.T) {
+	var name string = "name3373707"
+	var description string = "description-1724546052"
+	var filter string = "filter-1274492040"
+	var valueExtractor string = "valueExtractor2047672534"
+	var expectedResponse = &loggingpb.LogMetric{
+		Name:           name,
+		Description:    description,
+		Filter:         filter,
+		ValueExtractor: valueExtractor,
+	}
+
+	mockMetrics.err = nil
+	mockMetrics.reqs = nil
+
+	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
+	var request = &loggingpb.CreateLogMetricRequest{
+		Parent: formattedParent,
+		Metric: metric,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CreateLogMetric(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestMetricsServiceV2CreateLogMetricError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockMetrics.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
+	var request = &loggingpb.CreateLogMetricRequest{
+		Parent: formattedParent,
+		Metric: metric,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CreateLogMetric(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestMetricsServiceV2UpdateLogMetric(t *testing.T) {
+	var name string = "name3373707"
+	var description string = "description-1724546052"
+	var filter string = "filter-1274492040"
+	var valueExtractor string = "valueExtractor2047672534"
+	var expectedResponse = &loggingpb.LogMetric{
+		Name:           name,
+		Description:    description,
+		Filter:         filter,
+		ValueExtractor: valueExtractor,
+	}
+
+	mockMetrics.err = nil
+	mockMetrics.reqs = nil
+
+	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
+	var request = &loggingpb.UpdateLogMetricRequest{
+		MetricName: formattedMetricName,
+		Metric:     metric,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateLogMetric(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestMetricsServiceV2UpdateLogMetricError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockMetrics.err = gstatus.Error(errCode, "test error")
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
+	var request = &loggingpb.UpdateLogMetricRequest{
+		MetricName: formattedMetricName,
+		Metric:     metric,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateLogMetric(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestMetricsServiceV2DeleteLogMetric(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockMetrics.err = nil
+	mockMetrics.reqs = nil
+
+	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var request = &loggingpb.DeleteLogMetricRequest{
+		MetricName: formattedMetricName,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLogMetric(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestMetricsServiceV2DeleteLogMetricError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockMetrics.err = gstatus.Error(errCode, "test error")
+
+	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
+	var request = &loggingpb.DeleteLogMetricRequest{
+		MetricName: formattedMetricName,
+	}
+
+	c, err := NewMetricsClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLogMetric(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+}
 func TestConfigServiceV2ListSinks(t *testing.T) {
 	var nextPageToken string = ""
 	var sinksElement *loggingpb.LogSink = &loggingpb.LogSink{}
@@ -890,10 +1217,8 @@ func TestConfigServiceV2CreateExclusion(t *testing.T) {
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
 	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var exclusion *loggingpb.LogExclusion = &loggingpb.LogExclusion{}
 	var request = &loggingpb.CreateExclusionRequest{
-		Parent:    formattedParent,
-		Exclusion: exclusion,
+		Parent: formattedParent,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -921,10 +1246,8 @@ func TestConfigServiceV2CreateExclusionError(t *testing.T) {
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
 	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var exclusion *loggingpb.LogExclusion = &loggingpb.LogExclusion{}
 	var request = &loggingpb.CreateExclusionRequest{
-		Parent:    formattedParent,
-		Exclusion: exclusion,
+		Parent: formattedParent,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -1188,7 +1511,7 @@ func TestLoggingServiceV2DeleteLog(t *testing.T) {
 
 	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
 
-	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
+	var formattedLogName string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var request = &loggingpb.DeleteLogRequest{
 		LogName: formattedLogName,
 	}
@@ -1214,7 +1537,7 @@ func TestLoggingServiceV2DeleteLogError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockLogging.err = gstatus.Error(errCode, "test error")
 
-	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
+	var formattedLogName string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var request = &loggingpb.DeleteLogRequest{
 		LogName: formattedLogName,
 	}
@@ -1440,10 +1763,7 @@ func TestLoggingServiceV2ListLogs(t *testing.T) {
 
 	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.ListLogsRequest{
-		Parent: formattedParent,
-	}
+	var request *loggingpb.ListLogsRequest = &loggingpb.ListLogsRequest{}
 
 	c, err := NewClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1479,10 +1799,7 @@ func TestLoggingServiceV2ListLogsError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockLogging.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.ListLogsRequest{
-		Parent: formattedParent,
-	}
+	var request *loggingpb.ListLogsRequest = &loggingpb.ListLogsRequest{}
 
 	c, err := NewClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1497,331 +1814,4 @@ func TestLoggingServiceV2ListLogsError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
-}
-func TestMetricsServiceV2ListLogMetrics(t *testing.T) {
-	var nextPageToken string = ""
-	var metricsElement *loggingpb.LogMetric = &loggingpb.LogMetric{}
-	var metrics = []*loggingpb.LogMetric{metricsElement}
-	var expectedResponse = &loggingpb.ListLogMetricsResponse{
-		NextPageToken: nextPageToken,
-		Metrics:       metrics,
-	}
-
-	mockMetrics.err = nil
-	mockMetrics.reqs = nil
-
-	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.ListLogMetricsRequest{
-		Parent: formattedParent,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListLogMetrics(context.Background(), request).Next()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	want := (interface{})(expectedResponse.Metrics[0])
-	got := (interface{})(resp)
-	var ok bool
-
-	switch want := (want).(type) {
-	case proto.Message:
-		ok = proto.Equal(want, got.(proto.Message))
-	default:
-		ok = want == got
-	}
-	if !ok {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestMetricsServiceV2ListLogMetricsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockMetrics.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var request = &loggingpb.ListLogMetricsRequest{
-		Parent: formattedParent,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListLogMetrics(context.Background(), request).Next()
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestMetricsServiceV2GetLogMetric(t *testing.T) {
-	var name string = "name3373707"
-	var description string = "description-1724546052"
-	var filter string = "filter-1274492040"
-	var valueExtractor string = "valueExtractor2047672534"
-	var expectedResponse = &loggingpb.LogMetric{
-		Name:           name,
-		Description:    description,
-		Filter:         filter,
-		ValueExtractor: valueExtractor,
-	}
-
-	mockMetrics.err = nil
-	mockMetrics.reqs = nil
-
-	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var request = &loggingpb.GetLogMetricRequest{
-		MetricName: formattedMetricName,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.GetLogMetric(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestMetricsServiceV2GetLogMetricError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockMetrics.err = gstatus.Error(errCode, "test error")
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var request = &loggingpb.GetLogMetricRequest{
-		MetricName: formattedMetricName,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.GetLogMetric(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestMetricsServiceV2CreateLogMetric(t *testing.T) {
-	var name string = "name3373707"
-	var description string = "description-1724546052"
-	var filter string = "filter-1274492040"
-	var valueExtractor string = "valueExtractor2047672534"
-	var expectedResponse = &loggingpb.LogMetric{
-		Name:           name,
-		Description:    description,
-		Filter:         filter,
-		ValueExtractor: valueExtractor,
-	}
-
-	mockMetrics.err = nil
-	mockMetrics.reqs = nil
-
-	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
-	var request = &loggingpb.CreateLogMetricRequest{
-		Parent: formattedParent,
-		Metric: metric,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateLogMetric(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestMetricsServiceV2CreateLogMetricError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockMetrics.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
-	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
-	var request = &loggingpb.CreateLogMetricRequest{
-		Parent: formattedParent,
-		Metric: metric,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateLogMetric(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestMetricsServiceV2UpdateLogMetric(t *testing.T) {
-	var name string = "name3373707"
-	var description string = "description-1724546052"
-	var filter string = "filter-1274492040"
-	var valueExtractor string = "valueExtractor2047672534"
-	var expectedResponse = &loggingpb.LogMetric{
-		Name:           name,
-		Description:    description,
-		Filter:         filter,
-		ValueExtractor: valueExtractor,
-	}
-
-	mockMetrics.err = nil
-	mockMetrics.reqs = nil
-
-	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
-	var request = &loggingpb.UpdateLogMetricRequest{
-		MetricName: formattedMetricName,
-		Metric:     metric,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.UpdateLogMetric(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestMetricsServiceV2UpdateLogMetricError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockMetrics.err = gstatus.Error(errCode, "test error")
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var metric *loggingpb.LogMetric = &loggingpb.LogMetric{}
-	var request = &loggingpb.UpdateLogMetricRequest{
-		MetricName: formattedMetricName,
-		Metric:     metric,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.UpdateLogMetric(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestMetricsServiceV2DeleteLogMetric(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockMetrics.err = nil
-	mockMetrics.reqs = nil
-
-	mockMetrics.resps = append(mockMetrics.resps[:0], expectedResponse)
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var request = &loggingpb.DeleteLogMetricRequest{
-		MetricName: formattedMetricName,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLogMetric(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockMetrics.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestMetricsServiceV2DeleteLogMetricError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockMetrics.err = gstatus.Error(errCode, "test error")
-
-	var formattedMetricName string = fmt.Sprintf("projects/%s/metrics/%s", "[PROJECT]", "[METRIC]")
-	var request = &loggingpb.DeleteLogMetricRequest{
-		MetricName: formattedMetricName,
-	}
-
-	c, err := NewMetricsClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLogMetric(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
 }

@@ -132,7 +132,7 @@ public class OrganizationLogName extends LogName {
   }
 
   /** Builder for OrganizationLogName. */
-  public static class Builder {
+  public static class Builder extends LogName.Builder {
 
     private String organization;
     private String log;

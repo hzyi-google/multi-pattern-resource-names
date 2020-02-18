@@ -123,7 +123,7 @@ class LoggingServiceV2Client {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      billingPathTemplate: new gaxModule.PathTemplate(
+      billingAccountPathTemplate: new gaxModule.PathTemplate(
         'billingAccounts/{billing_account}'
       ),
       billingLogPathTemplate: new gaxModule.PathTemplate(
@@ -170,25 +170,6 @@ class LoggingServiceV2Client {
       ),
     };
 
-    const protoFilesRoot = opts.fallback ?
-      gaxModule.protobuf.Root.fromJSON(require("../../protos/protos.json")) :
-      gaxModule.protobuf.loadSync(nodejsProtoPath);
-
-    // Some methods on this API support automatically batching
-    // requests; denote this.
-    this._descriptors.batching = {
-      writeLogEntries: new gaxModule.BundleDescriptor(
-        'entries',
-        [
-          'logName',
-          'resource',
-          'labels',
-        ],
-        null,
-        gax.createByteLengthFunction(protoFilesRoot.lookup('google.logging.v2.LogEntry'))
-      ),
-    };
-
     // Put together the default options sent with requests.
     const defaults = gaxGrpc.constructSettings(
       'google.logging.v2.LoggingServiceV2',
@@ -232,7 +213,7 @@ class LoggingServiceV2Client {
       this._innerApiCalls[methodName] = gaxModule.createApiCall(
         innerCallPromise,
         defaults[methodName],
-        this._descriptors.page[methodName] || this._descriptors.batching[methodName]
+        this._descriptors.page[methodName]
       );
     }
   }
@@ -323,7 +304,7 @@ class LoggingServiceV2Client {
    *   // optional auth parameters.
    * });
    *
-   * const formattedLogName = client.logPath('[PROJECT]', '[LOG]');
+   * const formattedLogName = client.projectPath('[PROJECT]');
    * client.deleteLog({logName: formattedLogName}).catch(err => {
    *   console.error(err);
    * });
@@ -822,7 +803,7 @@ class LoggingServiceV2Client {
    *
    * @param {Object} request
    *   The request object that will be sent.
-   * @param {string} request.parent
+   * @param {string} [request.parent]
    *   Required. The resource name that owns the logs:
    *
    *       "projects/[PROJECT_ID]"
@@ -867,9 +848,7 @@ class LoggingServiceV2Client {
    * });
    *
    * // Iterate over all elements.
-   * const formattedParent = client.projectPath('[PROJECT]');
-   *
-   * client.listLogs({parent: formattedParent})
+   * client.listLogs({})
    *   .then(responses => {
    *     const resources = responses[0];
    *     for (const resource of resources) {
@@ -881,8 +860,6 @@ class LoggingServiceV2Client {
    *   });
    *
    * // Or obtain the paged response.
-   * const formattedParent = client.projectPath('[PROJECT]');
-   *
    *
    * const options = {autoPaginate: false};
    * const callback = responses => {
@@ -900,7 +877,7 @@ class LoggingServiceV2Client {
    *     return client.listLogs(nextRequest, options).then(callback);
    *   }
    * }
-   * client.listLogs({parent: formattedParent}, options)
+   * client.listLogs({}, options)
    *   .then(callback)
    *   .catch(err => {
    *     console.error(err);
@@ -938,7 +915,7 @@ class LoggingServiceV2Client {
    *
    * @param {Object} request
    *   The request object that will be sent.
-   * @param {string} request.parent
+   * @param {string} [request.parent]
    *   Required. The resource name that owns the logs:
    *
    *       "projects/[PROJECT_ID]"
@@ -965,8 +942,8 @@ class LoggingServiceV2Client {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.projectPath('[PROJECT]');
-   * client.listLogsStream({parent: formattedParent})
+   *
+   * client.listLogsStream({})
    *   .on('data', element => {
    *     // doThingsWith(element)
    *   }).on('error', err => {
@@ -988,18 +965,19 @@ class LoggingServiceV2Client {
   // --------------------
 
   /**
-   * Return a fully-qualified billing resource name string.
+   * Return a fully-qualified billing_account resource name string.
    *
    * @param {String} billingAccount
    * @returns {String}
    */
-  billingPath(billingAccount) {
-    return this._pathTemplates.billingPathTemplate.render({
+  billingAccountPath(billingAccount) {
+    return this._pathTemplates.billingAccountPathTemplate.render({
       billing_account: billingAccount,
     });
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified billing_log resource name string.
    *
    * @param {String} billingAccount
@@ -1026,6 +1004,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified folder_log resource name string.
    *
    * @param {String} folder
@@ -1040,6 +1019,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified log resource name string.
    *
    * @param {String} project
@@ -1066,6 +1046,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified organization_log resource name string.
    *
    * @param {String} organization
@@ -1092,19 +1073,20 @@ class LoggingServiceV2Client {
   }
 
   /**
-   * Parse the billingName from a billing resource.
+   * Parse the billingAccountName from a billing_account resource.
    *
-   * @param {String} billingName
-   *   A fully-qualified path representing a billing resources.
+   * @param {String} billingAccountName
+   *   A fully-qualified path representing a billing_account resources.
    * @returns {String} - A string representing the billing_account.
    */
-  matchBillingAccountFromBillingName(billingName) {
-    return this._pathTemplates.billingPathTemplate
-      .match(billingName)
+  matchBillingAccountFromBillingAccountName(billingAccountName) {
+    return this._pathTemplates.billingAccountPathTemplate
+      .match(billingAccountName)
       .billing_account;
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingLogName from a billing_log resource.
    *
    * @param {String} billingLogName
@@ -1118,6 +1100,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingLogName from a billing_log resource.
    *
    * @param {String} billingLogName
@@ -1144,6 +1127,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderLogName from a folder_log resource.
    *
    * @param {String} folderLogName
@@ -1157,6 +1141,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderLogName from a folder_log resource.
    *
    * @param {String} folderLogName
@@ -1170,6 +1155,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the logName from a log resource.
    *
    * @param {String} logName
@@ -1183,6 +1169,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the logName from a log resource.
    *
    * @param {String} logName
@@ -1209,6 +1196,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationLogName from a organization_log resource.
    *
    * @param {String} organizationLogName
@@ -1222,6 +1210,7 @@ class LoggingServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationLogName from a organization_log resource.
    *
    * @param {String} organizationLogName

@@ -59,7 +59,6 @@ func defaultCallOptions() *CallOptions {
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.DeadlineExceeded,
-					codes.Internal,
 					codes.Unavailable,
 				}, gax.Backoff{
 					Initial:    100 * time.Millisecond,
@@ -70,9 +69,9 @@ func defaultCallOptions() *CallOptions {
 		},
 	}
 	return &CallOptions{
-		DeleteLog:                        retry[[2]string{"default", "idempotent"}],
-		WriteLogEntries:                  retry[[2]string{"default", "idempotent"}],
-		ListLogEntries:                   retry[[2]string{"default", "idempotent"}],
+		DeleteLog:                        retry[[2]string{"default", "non_idempotent"}],
+		WriteLogEntries:                  retry[[2]string{"default", "non_idempotent"}],
+		ListLogEntries:                   retry[[2]string{"default", "non_idempotent"}],
 		ListMonitoredResourceDescriptors: retry[[2]string{"default", "idempotent"}],
 		ListLogs:                         retry[[2]string{"default", "idempotent"}],
 	}

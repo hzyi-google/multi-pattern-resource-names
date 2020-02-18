@@ -14,12 +14,447 @@
 
 package com.google.logging.v2;
 
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import com.google.api.core.BetaApi;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * AUTO-GENERATED DOCUMENTATION AND CLASS
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public abstract class ExclusionName implements ResourceName {
-  protected ExclusionName() {}
+public class ExclusionName implements ResourceName {
+  
+  @Deprecated
+  protected ExclusionName() { }
+
+  private static final PathTemplate PROJECT_EXCLUSION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/exclusions/{exclusion}");
+  private static final PathTemplate ORGANIZATION_EXCLUSION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/exclusions/{exclusion}");
+  private static final PathTemplate FOLDER_EXCLUSION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}/exclusions/{exclusion}");
+  private static final PathTemplate BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}/exclusions/{exclusion}");
+
+  private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
+
+  private String project;
+  private String exclusion;
+  private String organization;
+  private String folder;
+  private String billingAccount;
+
+  public String getProject() {
+    return project;
+  }
+
+  public String getExclusion() {
+    return exclusion;
+  }
+
+  public String getOrganization() {
+    return organization;
+  }
+
+  public String getFolder() {
+    return folder;
+  }
+
+  public String getBillingAccount() {
+    return billingAccount;
+  }
+
+
+  private ExclusionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    pathTemplate = PROJECT_EXCLUSION_PATH_TEMPLATE;
+  }
+
+  private ExclusionName(OrganizationExclusionBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    pathTemplate = ORGANIZATION_EXCLUSION_PATH_TEMPLATE;
+  }
+
+  private ExclusionName(FolderExclusionBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    pathTemplate = FOLDER_EXCLUSION_PATH_TEMPLATE;
+  }
+
+  private ExclusionName(BillingAccountExclusionBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    pathTemplate = BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public static Builder newProjectExclusionBuilder() {
+    return new Builder();
+  }
+
+  public static OrganizationExclusionBuilder newOrganizationExclusionBuilder() {
+    return new OrganizationExclusionBuilder();
+  }
+
+  public static FolderExclusionBuilder newFolderExclusionBuilder() {
+    return new FolderExclusionBuilder();
+  }
+
+  public static BillingAccountExclusionBuilder newBillingAccountExclusionBuilder() {
+    return new BillingAccountExclusionBuilder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+  
+  public static ExclusionName of(String project, String exclusion) {
+    return newProjectExclusionBuilder()
+        .setProject(project)
+        .setExclusion(exclusion)
+        .build();
+  }
+
+  public static ExclusionName ofProjectExclusionName(String project, String exclusion) {
+    return newProjectExclusionBuilder()
+        .setProject(project)
+        .setExclusion(exclusion)
+        .build();
+  }
+
+  public static ExclusionName ofOrganizationExclusionName(String organization, String exclusion) {
+    return newOrganizationExclusionBuilder()
+        .setOrganization(organization)
+        .setExclusion(exclusion)
+        .build();
+  }
+
+  public static ExclusionName ofFolderExclusionName(String folder, String exclusion) {
+    return newFolderExclusionBuilder()
+        .setFolder(folder)
+        .setExclusion(exclusion)
+        .build();
+  }
+
+  public static ExclusionName ofBillingAccountExclusionName(String billingAccount, String exclusion) {
+    return newBillingAccountExclusionBuilder()
+        .setBillingAccount(billingAccount)
+        .setExclusion(exclusion)
+        .build();
+  }
+
+  public static String format(String project, String exclusion) {
+    return newBuilder()
+        .setProject(project)
+        .setExclusion(exclusion)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectExclusionName(String project, String exclusion) {
+    return newBuilder()
+        .setProject(project)
+        .setExclusion(exclusion)
+        .build()
+        .toString();
+  }
+
+  public static String formatOrganizationExclusionName(String organization, String exclusion) {
+    return newOrganizationExclusionBuilder()
+        .setOrganization(organization)
+        .setExclusion(exclusion)
+        .build()
+        .toString();
+  }
+
+  public static String formatFolderExclusionName(String folder, String exclusion) {
+    return newFolderExclusionBuilder()
+        .setFolder(folder)
+        .setExclusion(exclusion)
+        .build()
+        .toString();
+  }
+
+  public static String formatBillingAccountExclusionName(String billingAccount, String exclusion) {
+    return newBillingAccountExclusionBuilder()
+        .setBillingAccount(billingAccount)
+        .setExclusion(exclusion)
+        .build()
+        .toString();
+  }
+
+  public static ExclusionName parse(String formattedString) {
+    if (formattedString.isEmpty()) {
+      return null;
+    }
+    if (PROJECT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+      return ofProjectExclusionName(
+          matchMap.get("project"), 
+          matchMap.get("exclusion"));
+    } else if (ORGANIZATION_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationExclusionName(
+          matchMap.get("organization"), 
+          matchMap.get("exclusion"));
+    } else if (FOLDER_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+      return ofFolderExclusionName(
+          matchMap.get("folder"), 
+          matchMap.get("exclusion"));
+    } else if (BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+      return ofBillingAccountExclusionName(
+          matchMap.get("billing_account"), 
+          matchMap.get("exclusion"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
+  }
+
+  @BetaApi("The method will be renamed to parseList after subclasses of this class are removed.")
+  public static List<ExclusionName> parse(List<String> formattedStrings) {
+    List<ExclusionName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  @BetaApi("The method will be renamed to toStringList after subclasses of this class are removed.")
+  public static List<String> toStrings(List<ExclusionName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (ExclusionName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
+  }
+
+  public static boolean isParsableFrom(String formattedString) {
+    return PROJECT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)    
+        || ORGANIZATION_EXCLUSION_PATH_TEMPLATE.matches(formattedString)    
+        || FOLDER_EXCLUSION_PATH_TEMPLATE.matches(formattedString)    
+        || BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.matches(formattedString);
+  }
+  
+  @Override
+  public Map<String, String> getFieldValuesMap() {
+    if (fieldValuesMap == null) {
+      synchronized (this) {
+        if (fieldValuesMap == null) {
+          ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (exclusion != null) {
+            fieldMapBuilder.put("exclusion", exclusion);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
+          if (billingAccount != null) {
+            fieldMapBuilder.put("billing_account", billingAccount);
+          }
+          fieldValuesMap = fieldMapBuilder.build();
+        }
+      }
+    }
+    return fieldValuesMap;
+  }
+
+  public String getFieldValue(String fieldName) {
+    return getFieldValuesMap().get(fieldName);
+  }
+
+  @Override
+  public String toString() {
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+  }
+
+  /** Builder for projects/{project}/exclusions/{exclusion}. */
+  public static class Builder {
+
+    private String project;
+    private String exclusion;
+
+    protected Builder() { }
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getExclusion() {
+      return exclusion;
+    }
+
+    public Builder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public Builder setExclusion(String exclusion) {
+      this.exclusion = exclusion;
+      return this;
+    }
+
+    private Builder(ExclusionName exclusionName) {
+        Preconditions.checkArgument(
+            exclusionName.pathTemplate == PROJECT_EXCLUSION_PATH_TEMPLATE,
+            "toBuilder is only supported when ExclusionName has the pattern of "
+            + "projects/{project}/exclusions/{exclusion}.");
+      project = exclusionName.project;
+      exclusion = exclusionName.exclusion;
+    }
+
+    public ExclusionName build() {
+      return new ExclusionName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/exclusions/{exclusion}. */
+  public static class OrganizationExclusionBuilder {
+
+    private String organization;
+    private String exclusion;
+
+    private OrganizationExclusionBuilder() { }
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getExclusion() {
+      return exclusion;
+    }
+
+    public OrganizationExclusionBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationExclusionBuilder setExclusion(String exclusion) {
+      this.exclusion = exclusion;
+      return this;
+    }
+
+    public ExclusionName build() {
+      return new ExclusionName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/exclusions/{exclusion}. */
+  public static class FolderExclusionBuilder {
+
+    private String folder;
+    private String exclusion;
+
+    private FolderExclusionBuilder() { }
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getExclusion() {
+      return exclusion;
+    }
+
+    public FolderExclusionBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderExclusionBuilder setExclusion(String exclusion) {
+      this.exclusion = exclusion;
+      return this;
+    }
+
+    public ExclusionName build() {
+      return new ExclusionName(this);
+    }
+  }
+
+  /** Builder for billingAccounts/{billing_account}/exclusions/{exclusion}. */
+  public static class BillingAccountExclusionBuilder {
+
+    private String billingAccount;
+    private String exclusion;
+
+    private BillingAccountExclusionBuilder() { }
+
+    public String getBillingAccount() {
+      return billingAccount;
+    }
+
+    public String getExclusion() {
+      return exclusion;
+    }
+
+    public BillingAccountExclusionBuilder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
+      return this;
+    }
+
+    public BillingAccountExclusionBuilder setExclusion(String exclusion) {
+      this.exclusion = exclusion;
+      return this;
+    }
+
+    public ExclusionName build() {
+      return new ExclusionName(this);
+    }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      ExclusionName that = (ExclusionName) o;
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.exclusion, that.exclusion))
+          && (Objects.equals(this.organization, that.organization))
+          && (Objects.equals(this.folder, that.folder))
+          && (Objects.equals(this.billingAccount, that.billingAccount));
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(exclusion);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
 }

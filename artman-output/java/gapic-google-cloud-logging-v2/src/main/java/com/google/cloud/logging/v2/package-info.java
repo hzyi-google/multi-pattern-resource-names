@@ -19,7 +19,22 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============ ConfigClient ============
+ * <p>============= MetricsClient =============
+ *
+ * <p>Service Description: Service for configuring logs-based metrics.
+ *
+ * <p>Sample for MetricsClient:
+ *
+ * <pre>
+ * <code>
+ * try (MetricsClient metricsClient = MetricsClient.create()) {
+ *   MetricName metricName = MetricName.of("[PROJECT]", "[METRIC]");
+ *   LogMetric response = metricsClient.getLogMetric(metricName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============ ConfigClient ============
  *
  * <p>Service Description: Service for configuring sinks used to route log entries.
  *
@@ -43,23 +58,8 @@
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+ *   ProjectName logName = ProjectName.of("[PROJECT]");
  *   loggingClient.deleteLog(logName);
- * }
- * </code>
- * </pre>
- *
- * ============= MetricsClient =============
- *
- * <p>Service Description: Service for configuring logs-based metrics.
- *
- * <p>Sample for MetricsClient:
- *
- * <pre>
- * <code>
- * try (MetricsClient metricsClient = MetricsClient.create()) {
- *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>
  * </pre>

@@ -68,12 +68,11 @@ namespace Google.Cloud.Logging.V2
         /// The eligible RPC <see cref="grpccore::StatusCode"/>s for retry for "Idempotent" RPC methods are:
         /// <list type="bullet">
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// </remarks>
         public static sys::Predicate<grpccore::RpcException> IdempotentRetryFilter { get; } =
-            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Internal, grpccore::StatusCode.Unavailable);
+            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable);
 
         /// <summary>
         /// The filter specifying which RPC <see cref="grpccore::StatusCode"/>s are eligible for retry
@@ -126,46 +125,6 @@ namespace Google.Cloud.Logging.V2
         );
 
         /// <summary>
-        /// "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </summary>
-        /// <returns>
-        /// The "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </returns>
-        /// <remarks>
-        /// The "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods is defined as:
-        /// <list type="bullet">
-        /// <item><description>Initial delay: 100 milliseconds</description></item>
-        /// <item><description>Maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Delay multiplier: 1.3</description></item>
-        /// </list>
-        /// </remarks>
-        public static gaxgrpc::BackoffSettings GetListRetryBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(100),
-            maxDelay: sys::TimeSpan.FromMilliseconds(60000),
-            delayMultiplier: 1.3
-        );
-
-        /// <summary>
-        /// "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </summary>
-        /// <returns>
-        /// The "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </returns>
-        /// <remarks>
-        /// The "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods is defined as:
-        /// <list type="bullet">
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Maximum timeout: 20000 milliseconds</description></item>
-        /// </list>
-        /// </remarks>
-        public static gaxgrpc::BackoffSettings GetListTimeoutBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(20000),
-            maxDelay: sys::TimeSpan.FromMilliseconds(20000),
-            delayMultiplier: 1.0
-        );
-
-        /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
         /// <c>LoggingServiceV2Client.DeleteLog</c> and <c>LoggingServiceV2Client.DeleteLogAsync</c>.
         /// </summary>
@@ -182,9 +141,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -193,7 +150,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -213,9 +170,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -224,7 +179,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -244,9 +199,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -255,7 +208,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -276,7 +229,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -307,7 +259,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -554,11 +505,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteLogAsync(
-            LogNameOneof logName,
+            ProjectName logName,
             gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
                 new DeleteLogRequest
                 {
-                    LogNameAsLogNameOneof = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                    LogNameAsProjectName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
                 },
                 callSettings);
 
@@ -589,7 +540,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteLogAsync(
-            LogNameOneof logName,
+            ProjectName logName,
             st::CancellationToken cancellationToken) => DeleteLogAsync(
                 logName,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -618,11 +569,308 @@ namespace Google.Cloud.Logging.V2
         /// If not null, applies overrides to this RPC call.
         /// </param>
         public virtual void DeleteLog(
-            LogNameOneof logName,
+            ProjectName logName,
             gaxgrpc::CallSettings callSettings = null) => DeleteLog(
                 new DeleteLogRequest
                 {
-                    LogNameAsLogNameOneof = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                    LogNameAsProjectName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            OrganizationName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
+                new DeleteLogRequest
+                {
+                    LogNameAsOrganizationName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            OrganizationName logName,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                logName,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            OrganizationName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
+                new DeleteLogRequest
+                {
+                    LogNameAsOrganizationName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            FolderName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
+                new DeleteLogRequest
+                {
+                    LogNameAsFolderName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            FolderName logName,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                logName,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            FolderName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
+                new DeleteLogRequest
+                {
+                    LogNameAsFolderName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            BillingAccountName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLogAsync(
+                new DeleteLogRequest
+                {
+                    LogNameAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteLogAsync(
+            BillingAccountName logName,
+            st::CancellationToken cancellationToken) => DeleteLogAsync(
+                logName,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="logName">
+        /// Required. The resource name of the log to delete:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example,
+        /// `"projects/my-project-id/logs/syslog"`,
+        /// `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+        /// For more information about log names, see
+        /// [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteLog(
+            BillingAccountName logName,
+            gaxgrpc::CallSettings callSettings = null) => DeleteLog(
+                new DeleteLogRequest
+                {
+                    LogNameAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(logName, nameof(logName)),
                 },
                 callSettings);
 
@@ -1444,7 +1692,7 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
-            scg::IEnumerable<ParentNameOneof> resourceNames,
+            scg::IEnumerable<ProjectName> resourceNames,
             string filter,
             string orderBy,
             string pageToken = null,
@@ -1452,7 +1700,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
                 new ListLogEntriesRequest
                 {
-                    ResourceNamesAsParentNameOneofs = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    ResourceNamesAsProjectNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
                     Filter = filter ?? "", // Optional
                     OrderBy = orderBy ?? "", // Optional
                     PageToken = pageToken ?? "",
@@ -1509,7 +1757,7 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="LogEntry"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
-            scg::IEnumerable<ParentNameOneof> resourceNames,
+            scg::IEnumerable<ProjectName> resourceNames,
             string filter,
             string orderBy,
             string pageToken = null,
@@ -1517,7 +1765,397 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
                 new ListLogEntriesRequest
                 {
-                    ResourceNamesAsParentNameOneofs = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    ResourceNamesAsProjectNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<OrganizationName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsOrganizationNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<OrganizationName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsOrganizationNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<FolderName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsFolderNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<FolderName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsFolderNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<BillingAccountName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsBillingAccountNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<BillingAccountName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsBillingAccountNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
                     Filter = filter ?? "", // Optional
                     OrderBy = orderBy ?? "", // Optional
                     PageToken = pageToken ?? "",
@@ -1762,13 +2400,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = parent, // Optional
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1801,13 +2439,247 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsOrganizationName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsOrganizationName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsFolderName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsFolderName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsBillingAccountName = parent, // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsBillingAccountName = parent, // Optional
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1846,7 +2718,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                    Parent = parent ?? "", // Optional
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1885,7 +2757,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                    Parent = parent ?? "", // Optional
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },

@@ -23,6 +23,352 @@ const FAKE_STATUS_CODE = 1;
 const error = new Error();
 error.code = FAKE_STATUS_CODE;
 
+describe('MetricsServiceV2Client', () => {
+  it('has servicePath', () => {
+    const servicePath = loggingModule.v2.MetricsServiceV2Client.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint = loggingModule.v2.MetricsServiceV2Client.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = loggingModule.v2.MetricsServiceV2Client.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
+  it('should create a client with no options', () => {
+    const client = new loggingModule.v2.MetricsServiceV2Client();
+    assert(client);
+  });
+
+  it('should create a client with gRPC fallback', () => {
+    const client = new loggingModule.v2.MetricsServiceV2Client({fallback: true});
+    assert(client);
+  });
+
+  describe('listLogMetrics', () => {
+    it('invokes listLogMetrics without error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock response
+      const nextPageToken = '';
+      const metricsElement = {};
+      const metrics = [metricsElement];
+      const expectedResponse = {
+        nextPageToken: nextPageToken,
+        metrics: metrics,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listLogMetrics = (actualRequest, options, callback) => {
+        assert.deepStrictEqual(actualRequest, request);
+        callback(null, expectedResponse.metrics);
+      };
+
+      client.listLogMetrics(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse.metrics);
+        done();
+      });
+    });
+
+    it('invokes listLogMetrics with error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listLogMetrics = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.listLogMetrics(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('getLogMetric', () => {
+    it('invokes getLogMetric without error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const request = {
+        metricName: formattedMetricName,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const description = 'description-1724546052';
+      const filter = 'filter-1274492040';
+      const valueExtractor = 'valueExtractor2047672534';
+      const expectedResponse = {
+        name: name,
+        description: description,
+        filter: filter,
+        valueExtractor: valueExtractor,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getLogMetric = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getLogMetric(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getLogMetric with error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const request = {
+        metricName: formattedMetricName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getLogMetric = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getLogMetric(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('createLogMetric', () => {
+    it('invokes createLogMetric without error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.metricPath('[PROJECT]', '[METRIC]');
+      const metric = {};
+      const request = {
+        parent: formattedParent,
+        metric: metric,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const description = 'description-1724546052';
+      const filter = 'filter-1274492040';
+      const valueExtractor = 'valueExtractor2047672534';
+      const expectedResponse = {
+        name: name,
+        description: description,
+        filter: filter,
+        valueExtractor: valueExtractor,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createLogMetric = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.createLogMetric(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes createLogMetric with error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.metricPath('[PROJECT]', '[METRIC]');
+      const metric = {};
+      const request = {
+        parent: formattedParent,
+        metric: metric,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createLogMetric = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.createLogMetric(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('updateLogMetric', () => {
+    it('invokes updateLogMetric without error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const metric = {};
+      const request = {
+        metricName: formattedMetricName,
+        metric: metric,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const description = 'description-1724546052';
+      const filter = 'filter-1274492040';
+      const valueExtractor = 'valueExtractor2047672534';
+      const expectedResponse = {
+        name: name,
+        description: description,
+        filter: filter,
+        valueExtractor: valueExtractor,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateLogMetric = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.updateLogMetric(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes updateLogMetric with error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const metric = {};
+      const request = {
+        metricName: formattedMetricName,
+        metric: metric,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateLogMetric = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.updateLogMetric(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('deleteLogMetric', () => {
+    it('invokes deleteLogMetric without error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const request = {
+        metricName: formattedMetricName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteLogMetric = mockSimpleGrpcMethod(request);
+
+      client.deleteLogMetric(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteLogMetric with error', done => {
+      const client = new loggingModule.v2.MetricsServiceV2Client({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
+      const request = {
+        metricName: formattedMetricName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteLogMetric = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteLogMetric(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+});
 describe('ConfigServiceV2Client', () => {
   it('has servicePath', () => {
     const servicePath = loggingModule.v2.ConfigServiceV2Client.servicePath;
@@ -524,10 +870,8 @@ describe('ConfigServiceV2Client', () => {
 
       // Mock request
       const formattedParent = client.projectPath('[PROJECT]');
-      const exclusion = {};
       const request = {
         parent: formattedParent,
-        exclusion: exclusion,
       };
 
       // Mock response
@@ -563,10 +907,8 @@ describe('ConfigServiceV2Client', () => {
 
       // Mock request
       const formattedParent = client.projectPath('[PROJECT]');
-      const exclusion = {};
       const request = {
         parent: formattedParent,
-        exclusion: exclusion,
       };
 
       // Mock Grpc layer
@@ -860,7 +1202,7 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedLogName = client.logPath('[PROJECT]', '[LOG]');
+      const formattedLogName = client.projectPath('[PROJECT]');
       const request = {
         logName: formattedLogName,
       };
@@ -881,7 +1223,7 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedLogName = client.logPath('[PROJECT]', '[LOG]');
+      const formattedLogName = client.projectPath('[PROJECT]');
       const request = {
         logName: formattedLogName,
       };
@@ -1086,10 +1428,7 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const request = {
-        parent: formattedParent,
-      };
+      const request = {};
 
       // Mock response
       const nextPageToken = '';
@@ -1120,10 +1459,7 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const request = {
-        parent: formattedParent,
-      };
+      const request = {};
 
       // Mock Grpc layer
       client._innerApiCalls.listLogs = mockSimpleGrpcMethod(
@@ -1136,352 +1472,6 @@ describe('LoggingServiceV2Client', () => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-});
-describe('MetricsServiceV2Client', () => {
-  it('has servicePath', () => {
-    const servicePath = loggingModule.v2.MetricsServiceV2Client.servicePath;
-    assert(servicePath);
-  });
-
-  it('has apiEndpoint', () => {
-    const apiEndpoint = loggingModule.v2.MetricsServiceV2Client.apiEndpoint;
-    assert(apiEndpoint);
-  });
-
-  it('has port', () => {
-    const port = loggingModule.v2.MetricsServiceV2Client.port;
-    assert(port);
-    assert(typeof port === 'number');
-  });
-
-  it('should create a client with no options', () => {
-    const client = new loggingModule.v2.MetricsServiceV2Client();
-    assert(client);
-  });
-
-  it('should create a client with gRPC fallback', () => {
-    const client = new loggingModule.v2.MetricsServiceV2Client({fallback: true});
-    assert(client);
-  });
-
-  describe('listLogMetrics', () => {
-    it('invokes listLogMetrics without error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const request = {
-        parent: formattedParent,
-      };
-
-      // Mock response
-      const nextPageToken = '';
-      const metricsElement = {};
-      const metrics = [metricsElement];
-      const expectedResponse = {
-        nextPageToken: nextPageToken,
-        metrics: metrics,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.listLogMetrics = (actualRequest, options, callback) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse.metrics);
-      };
-
-      client.listLogMetrics(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse.metrics);
-        done();
-      });
-    });
-
-    it('invokes listLogMetrics with error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const request = {
-        parent: formattedParent,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.listLogMetrics = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.listLogMetrics(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('getLogMetric', () => {
-    it('invokes getLogMetric without error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const request = {
-        metricName: formattedMetricName,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const description = 'description-1724546052';
-      const filter = 'filter-1274492040';
-      const valueExtractor = 'valueExtractor2047672534';
-      const expectedResponse = {
-        name: name,
-        description: description,
-        filter: filter,
-        valueExtractor: valueExtractor,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getLogMetric = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.getLogMetric(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getLogMetric with error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const request = {
-        metricName: formattedMetricName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getLogMetric = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.getLogMetric(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('createLogMetric', () => {
-    it('invokes createLogMetric without error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const metric = {};
-      const request = {
-        parent: formattedParent,
-        metric: metric,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const description = 'description-1724546052';
-      const filter = 'filter-1274492040';
-      const valueExtractor = 'valueExtractor2047672534';
-      const expectedResponse = {
-        name: name,
-        description: description,
-        filter: filter,
-        valueExtractor: valueExtractor,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createLogMetric = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.createLogMetric(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createLogMetric with error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.projectPath('[PROJECT]');
-      const metric = {};
-      const request = {
-        parent: formattedParent,
-        metric: metric,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createLogMetric = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.createLogMetric(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('updateLogMetric', () => {
-    it('invokes updateLogMetric without error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const metric = {};
-      const request = {
-        metricName: formattedMetricName,
-        metric: metric,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const description = 'description-1724546052';
-      const filter = 'filter-1274492040';
-      const valueExtractor = 'valueExtractor2047672534';
-      const expectedResponse = {
-        name: name,
-        description: description,
-        filter: filter,
-        valueExtractor: valueExtractor,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.updateLogMetric = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.updateLogMetric(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes updateLogMetric with error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const metric = {};
-      const request = {
-        metricName: formattedMetricName,
-        metric: metric,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.updateLogMetric = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.updateLogMetric(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('deleteLogMetric', () => {
-    it('invokes deleteLogMetric without error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const request = {
-        metricName: formattedMetricName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteLogMetric = mockSimpleGrpcMethod(request);
-
-      client.deleteLogMetric(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes deleteLogMetric with error', done => {
-      const client = new loggingModule.v2.MetricsServiceV2Client({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedMetricName = client.metricPath('[PROJECT]', '[METRIC]');
-      const request = {
-        metricName: formattedMetricName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteLogMetric = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.deleteLogMetric(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
         done();
       });
     });

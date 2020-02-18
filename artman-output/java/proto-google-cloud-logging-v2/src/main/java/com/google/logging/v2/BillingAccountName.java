@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.google.logging.type;
+package com.google.logging.v2;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -26,22 +26,17 @@ import java.util.List;
  * AUTO-GENERATED DOCUMENTATION AND CLASS
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class MetricName implements ResourceName {
+public class BillingAccountName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
+      PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}");
 
   private volatile Map<String, String> fieldValuesMap;
 
-  private final String project;
-  private final String metric;
+  private final String billingAccount;
 
-  public String getProject() {
-    return project;
-  }
-
-  public String getMetric() {
-    return metric;
+  public String getBillingAccount() {
+    return billingAccount;
   }
 
   public static Builder newBuilder() {
@@ -52,46 +47,43 @@ public class MetricName implements ResourceName {
     return new Builder(this);
   }
 
-  private MetricName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    metric = Preconditions.checkNotNull(builder.getMetric());
+  private BillingAccountName(Builder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
   }
 
-  public static MetricName of(String project, String metric) {
+  public static BillingAccountName of(String billingAccount) {
     return newBuilder()
-      .setProject(project)
-      .setMetric(metric)
+      .setBillingAccount(billingAccount)
       .build();
   }
 
-  public static String format(String project, String metric) {
+  public static String format(String billingAccount) {
     return newBuilder()
-      .setProject(project)
-      .setMetric(metric)
+      .setBillingAccount(billingAccount)
       .build()
       .toString();
   }
 
-  public static MetricName parse(String formattedString) {
+  public static BillingAccountName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "MetricName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("metric"));
+        PATH_TEMPLATE.validatedMatch(formattedString, "BillingAccountName.parse: formattedString not in valid format");
+    return of(matchMap.get("billing_account"));
   }
 
-  public static List<MetricName> parseList(List<String> formattedStrings) {
-    List<MetricName> list = new ArrayList<>(formattedStrings.size());
+  public static List<BillingAccountName> parseList(List<String> formattedStrings) {
+    List<BillingAccountName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<MetricName> values) {
+  public static List<String> toStringList(List<BillingAccountName> values) {
     List<String> list = new ArrayList<String>(values.size());
-    for (MetricName value : values) {
+    for (BillingAccountName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -110,8 +102,7 @@ public class MetricName implements ResourceName {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("metric", metric);
+          fieldMapBuilder.put("billingAccount", billingAccount);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -125,43 +116,32 @@ public class MetricName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "metric", metric);
+    return PATH_TEMPLATE.instantiate("billing_account", billingAccount);
   }
 
-  /** Builder for MetricName. */
+  /** Builder for BillingAccountName. */
   public static class Builder {
 
-    private String project;
-    private String metric;
+    private String billingAccount;
 
-    public String getProject() {
-      return project;
+    public String getBillingAccount() {
+      return billingAccount;
     }
 
-    public String getMetric() {
-      return metric;
-    }
-
-    public Builder setProject(String project) {
-      this.project = project;
-      return this;
-    }
-
-    public Builder setMetric(String metric) {
-      this.metric = metric;
+    public Builder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
       return this;
     }
 
     private Builder() {
     }
 
-    private Builder(MetricName metricName) {
-      project = metricName.project;
-      metric = metricName.metric;
+    private Builder(BillingAccountName billingAccountName) {
+      billingAccount = billingAccountName.billingAccount;
     }
 
-    public MetricName build() {
-      return new MetricName(this);
+    public BillingAccountName build() {
+      return new BillingAccountName(this);
     }
   }
 
@@ -170,10 +150,9 @@ public class MetricName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof MetricName) {
-      MetricName that = (MetricName) o;
-      return (this.project.equals(that.project))
-          && (this.metric.equals(that.metric));
+    if (o instanceof BillingAccountName) {
+      BillingAccountName that = (BillingAccountName) o;
+      return (this.billingAccount.equals(that.billingAccount));
     }
     return false;
   }
@@ -182,9 +161,7 @@ public class MetricName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= metric.hashCode();
+    h ^= billingAccount.hashCode();
     return h;
   }
 }

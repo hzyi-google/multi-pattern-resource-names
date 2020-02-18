@@ -66,18 +66,6 @@ module Google
 
           private_constant :PAGE_DESCRIPTORS
 
-          BUNDLE_DESCRIPTORS = {
-            "write_log_entries" => Google::Gax::BundleDescriptor.new(
-              "entries",
-              [
-                "logName",
-                "resource",
-                "labels"
-              ])
-          }.freeze
-
-          private_constant :BUNDLE_DESCRIPTORS
-
           # The scopes needed to make gRPC calls to all of the methods defined in
           # this service.
           ALL_SCOPES = [
@@ -89,11 +77,11 @@ module Google
           ].freeze
 
 
-          BILLING_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+          BILLING_ACCOUNT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}"
           )
 
-          private_constant :BILLING_PATH_TEMPLATE
+          private_constant :BILLING_ACCOUNT_PATH_TEMPLATE
 
           BILLING_LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}/logs/{log}"
@@ -137,16 +125,18 @@ module Google
 
           private_constant :PROJECT_PATH_TEMPLATE
 
-          # Returns a fully-qualified billing resource name string.
+          # Returns a fully-qualified billing_account resource name string.
           # @param billing_account [String]
           # @return [String]
-          def self.billing_path billing_account
-            BILLING_PATH_TEMPLATE.render(
+          def self.billing_account_path billing_account
+            BILLING_ACCOUNT_PATH_TEMPLATE.render(
               :"billing_account" => billing_account
             )
           end
 
           # Returns a fully-qualified billing_log resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param billing_account [String]
           # @param log [String]
           # @return [String]
@@ -167,6 +157,8 @@ module Google
           end
 
           # Returns a fully-qualified folder_log resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param folder [String]
           # @param log [String]
           # @return [String]
@@ -178,6 +170,8 @@ module Google
           end
 
           # Returns a fully-qualified log resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param log [String]
           # @return [String]
@@ -198,6 +192,8 @@ module Google
           end
 
           # Returns a fully-qualified organization_log resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param organization [String]
           # @param log [String]
           # @return [String]
@@ -299,7 +295,6 @@ module Google
                 client_config,
                 Google::Gax::Grpc::STATUS_CODE_NAMES,
                 timeout,
-                bundle_descriptors: BUNDLE_DESCRIPTORS,
                 page_descriptors: PAGE_DESCRIPTORS,
                 errors: Google::Gax::Grpc::API_ERRORS,
                 metadata: headers
@@ -385,7 +380,7 @@ module Google
           #   require "google/cloud/logging"
           #
           #   logging_client = Google::Cloud::Logging::Logging.new(version: :v2)
-          #   formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.log_path("[PROJECT]", "[LOG]")
+          #   formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
           #   logging_client.delete_log(formatted_log_name)
 
           def delete_log \
@@ -689,15 +684,14 @@ module Google
           #   require "google/cloud/logging"
           #
           #   logging_client = Google::Cloud::Logging::Logging.new(version: :v2)
-          #   formatted_parent = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
           #
           #   # Iterate over all results.
-          #   logging_client.list_logs(formatted_parent).each do |element|
+          #   logging_client.list_logs.each do |element|
           #     # Process element.
           #   end
           #
           #   # Or iterate over results one page at a time.
-          #   logging_client.list_logs(formatted_parent).each_page do |page|
+          #   logging_client.list_logs.each_page do |page|
           #     # Process each page at a time.
           #     page.each do |element|
           #       # Process element.
@@ -705,7 +699,7 @@ module Google
           #   end
 
           def list_logs \
-              parent,
+              parent: nil,
               page_size: nil,
               options: nil,
               &block

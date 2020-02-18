@@ -43,8 +43,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -70,8 +70,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -97,8 +97,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -123,8 +123,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -145,13 +145,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateSinkRequest expectedRequest = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -161,7 +161,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateSink(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             ConfigServiceV2Client client = new ConfigServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogSink sink = new LogSink();
             LogSink response = client.CreateSink(parent, sink);
             Assert.Same(expectedResponse, response);
@@ -174,13 +174,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateSinkRequest expectedRequest = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -190,7 +190,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateSinkAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogSink>(Task.FromResult(expectedResponse), null, null, null, null));
             ConfigServiceV2Client client = new ConfigServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogSink sink = new LogSink();
             LogSink response = await client.CreateSinkAsync(parent, sink);
             Assert.Same(expectedResponse, response);
@@ -203,13 +203,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateSinkRequest request = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -230,13 +230,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateSinkRequest request = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -263,8 +263,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -294,8 +294,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -324,8 +324,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -353,8 +353,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -382,8 +382,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -409,8 +409,8 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogSink expectedResponse = new LogSink
             {
-                Name = "name3373707",
-                DestinationAsResourceName = new BillingName("[BILLING_ACCOUNT]"),
+                SinkNameOneof = SinkNameOneof.From(new SinkName("[PROJECT]", "[SINK]")),
+                DestinationAsResourceName = new BillingAccountName("[BILLING_ACCOUNT]"),
                 Filter = "filter-1274492040",
                 Description = "description-1724546052",
                 Disabled = true,
@@ -501,7 +501,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -525,7 +525,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -549,7 +549,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -572,7 +572,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -591,12 +591,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateExclusionRequest expectedRequest = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Exclusion = new LogExclusion(),
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name3373707",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -604,7 +604,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateExclusion(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             ConfigServiceV2Client client = new ConfigServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogExclusion exclusion = new LogExclusion();
             LogExclusion response = client.CreateExclusion(parent, exclusion);
             Assert.Same(expectedResponse, response);
@@ -617,12 +617,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateExclusionRequest expectedRequest = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Exclusion = new LogExclusion(),
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name3373707",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -630,7 +630,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateExclusionAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogExclusion>(Task.FromResult(expectedResponse), null, null, null, null));
             ConfigServiceV2Client client = new ConfigServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogExclusion exclusion = new LogExclusion();
             LogExclusion response = await client.CreateExclusionAsync(parent, exclusion);
             Assert.Same(expectedResponse, response);
@@ -643,12 +643,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateExclusionRequest request = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-                Exclusion = new LogExclusion(),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name3373707",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -667,12 +666,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<ConfigServiceV2.ConfigServiceV2Client> mockGrpcClient = new Mock<ConfigServiceV2.ConfigServiceV2Client>(MockBehavior.Strict);
             CreateExclusionRequest request = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-                Exclusion = new LogExclusion(),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name3373707",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -697,7 +695,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -725,7 +723,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -753,7 +751,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,
@@ -778,7 +776,7 @@ namespace Google.Cloud.Logging.V2.Tests
             };
             LogExclusion expectedResponse = new LogExclusion
             {
-                Name = "name2-1052831874",
+                ExclusionNameOneof = ExclusionNameOneof.From(new ExclusionName("[PROJECT]", "[EXCLUSION]")),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 Disabled = true,

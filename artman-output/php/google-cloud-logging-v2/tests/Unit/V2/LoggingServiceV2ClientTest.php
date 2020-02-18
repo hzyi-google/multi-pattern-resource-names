@@ -89,7 +89,7 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedLogName = $client->logName('[PROJECT]', '[LOG]');
+        $formattedLogName = $client->projectName('[PROJECT]');
 
         $client->deleteLog($formattedLogName);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,7 +128,7 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedLogName = $client->logName('[PROJECT]', '[LOG]');
+        $formattedLogName = $client->projectName('[PROJECT]');
 
         try {
             $client->deleteLog($formattedLogName);
@@ -383,10 +383,7 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $expectedResponse->setLogNames($logNames);
         $transport->addResponse($expectedResponse);
 
-        // Mock request
-        $formattedParent = $client->projectName('[PROJECT]');
-
-        $response = $client->listLogs($formattedParent);
+        $response = $client->listLogs();
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -398,9 +395,6 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.logging.v2.LoggingServiceV2/ListLogs', $actualFuncCall);
 
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -426,11 +420,8 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
 
-        // Mock request
-        $formattedParent = $client->projectName('[PROJECT]');
-
         try {
-            $client->listLogs($formattedParent);
+            $client->listLogs();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

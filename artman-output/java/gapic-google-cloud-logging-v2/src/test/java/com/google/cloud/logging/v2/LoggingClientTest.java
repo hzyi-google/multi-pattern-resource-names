@@ -39,8 +39,6 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.LogNames;
-import com.google.logging.v2.ParentName;
-import com.google.logging.v2.ParentNames;
 import com.google.logging.v2.ProjectLogName;
 import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.WriteLogEntriesRequest;
@@ -65,23 +63,23 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class LoggingClientTest {
+  private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockConfigServiceV2 mockConfigServiceV2;
   private static MockLoggingServiceV2 mockLoggingServiceV2;
-  private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper serviceHelper;
   private LoggingClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockMetricsServiceV2 = new MockMetricsServiceV2();
     mockConfigServiceV2 = new MockConfigServiceV2();
     mockLoggingServiceV2 = new MockLoggingServiceV2();
-    mockMetricsServiceV2 = new MockMetricsServiceV2();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockConfigServiceV2, mockLoggingServiceV2, mockMetricsServiceV2));
+                mockMetricsServiceV2, mockConfigServiceV2, mockLoggingServiceV2));
     serviceHelper.start();
   }
 
@@ -113,7 +111,7 @@ public class LoggingClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+    ProjectName logName = ProjectName.of("[PROJECT]");
 
     client.deleteLog(logName);
 
@@ -121,7 +119,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogRequest actualRequest = (DeleteLogRequest) actualRequests.get(0);
 
-    Assert.assertEquals(logName, LogNames.parse(actualRequest.getLogName()));
+    Assert.assertEquals(logName, ProjectName.parse(actualRequest.getLogName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -135,7 +133,7 @@ public class LoggingClientTest {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+      ProjectName logName = ProjectName.of("[PROJECT]");
 
       client.deleteLog(logName);
       Assert.fail("No exception raised");
@@ -314,7 +312,7 @@ public class LoggingClientTest {
             .build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    ParentName parent = ProjectName.of("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListLogsPagedResponse pagedListResponse = client.listLogs(parent);
 
@@ -326,7 +324,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListLogsRequest actualRequest = (ListLogsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -340,7 +338,7 @@ public class LoggingClientTest {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      ParentName parent = ProjectName.of("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listLogs(parent);
       Assert.fail("No exception raised");

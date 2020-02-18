@@ -670,9 +670,8 @@ class ConfigServiceV2ClientTest extends GeneratedTest
 
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
-        $exclusion = new LogExclusion();
 
-        $response = $client->createExclusion($formattedParent, $exclusion);
+        $response = $client->createExclusion($formattedParent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -683,9 +682,6 @@ class ConfigServiceV2ClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getParent();
 
         $this->assertProtobufEquals($formattedParent, $actualValue);
-        $actualValue = $actualRequestObject->getExclusion();
-
-        $this->assertProtobufEquals($exclusion, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -714,10 +710,9 @@ class ConfigServiceV2ClientTest extends GeneratedTest
 
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
-        $exclusion = new LogExclusion();
 
         try {
-            $client->createExclusion($formattedParent, $exclusion);
+            $client->createExclusion($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

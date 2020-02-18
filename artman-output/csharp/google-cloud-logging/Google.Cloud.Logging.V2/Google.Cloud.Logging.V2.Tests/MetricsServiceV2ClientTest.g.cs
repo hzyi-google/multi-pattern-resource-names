@@ -39,11 +39,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             GetLogMetricRequest expectedRequest = new GetLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -51,7 +51,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.GetLogMetric(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric response = client.GetLogMetric(metricName);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -63,11 +63,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             GetLogMetricRequest expectedRequest = new GetLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -75,7 +75,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.GetLogMetricAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogMetric>(Task.FromResult(expectedResponse), null, null, null, null));
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric response = await client.GetLogMetricAsync(metricName);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -87,11 +87,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             GetLogMetricRequest request = new GetLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -110,11 +110,11 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             GetLogMetricRequest request = new GetLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -133,12 +133,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest expectedRequest = new CreateLogMetricRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -146,7 +146,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateLogMetric(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric metric = new LogMetric();
             LogMetric response = client.CreateLogMetric(parent, metric);
             Assert.Same(expectedResponse, response);
@@ -159,12 +159,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest expectedRequest = new CreateLogMetricRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -172,7 +172,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.CreateLogMetricAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogMetric>(Task.FromResult(expectedResponse), null, null, null, null));
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            MetricName parent = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric metric = new LogMetric();
             LogMetric response = await client.CreateLogMetricAsync(parent, metric);
             Assert.Same(expectedResponse, response);
@@ -185,12 +185,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -209,12 +209,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             CreateLogMetricRequest request = new CreateLogMetricRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -233,12 +233,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             UpdateLogMetricRequest expectedRequest = new UpdateLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -246,7 +246,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.UpdateLogMetric(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric metric = new LogMetric();
             LogMetric response = client.UpdateLogMetric(metricName, metric);
             Assert.Same(expectedResponse, response);
@@ -259,12 +259,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             UpdateLogMetricRequest expectedRequest = new UpdateLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -272,7 +272,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.UpdateLogMetricAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<LogMetric>(Task.FromResult(expectedResponse), null, null, null, null));
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             LogMetric metric = new LogMetric();
             LogMetric response = await client.UpdateLogMetricAsync(metricName, metric);
             Assert.Same(expectedResponse, response);
@@ -285,12 +285,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             UpdateLogMetricRequest request = new UpdateLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -309,12 +309,12 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             UpdateLogMetricRequest request = new UpdateLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Metric = new LogMetric(),
             };
             LogMetric expectedResponse = new LogMetric
             {
-                MetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricName = new MetricName("[PROJECT]", "[METRIC]"),
                 Description = "description-1724546052",
                 Filter = "filter-1274492040",
                 ValueExtractor = "valueExtractor2047672534",
@@ -333,13 +333,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             DeleteLogMetricRequest expectedRequest = new DeleteLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteLogMetric(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             client.DeleteLogMetric(metricName);
             mockGrpcClient.VerifyAll();
         }
@@ -350,13 +350,13 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             DeleteLogMetricRequest expectedRequest = new DeleteLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteLogMetricAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
             MetricsServiceV2Client client = new MetricsServiceV2ClientImpl(mockGrpcClient.Object, null);
-            MetricNameOneof metricName = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]"));
+            MetricName metricName = new MetricName("[PROJECT]", "[METRIC]");
             await client.DeleteLogMetricAsync(metricName);
             mockGrpcClient.VerifyAll();
         }
@@ -367,7 +367,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             DeleteLogMetricRequest request = new DeleteLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteLogMetric(request, It.IsAny<CallOptions>()))
@@ -383,7 +383,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<MetricsServiceV2.MetricsServiceV2Client> mockGrpcClient = new Mock<MetricsServiceV2.MetricsServiceV2Client>(MockBehavior.Strict);
             DeleteLogMetricRequest request = new DeleteLogMetricRequest
             {
-                MetricNameAsMetricNameOneof = MetricNameOneof.From(new MetricName("[PROJECT]", "[METRIC]")),
+                MetricNameAsMetricName = new MetricName("[PROJECT]", "[METRIC]"),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteLogMetricAsync(request, It.IsAny<CallOptions>()))

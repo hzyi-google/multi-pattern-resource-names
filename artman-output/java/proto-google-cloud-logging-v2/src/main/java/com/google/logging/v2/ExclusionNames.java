@@ -27,17 +27,17 @@ public class ExclusionNames {
   private ExclusionNames() {}
 
   public static ExclusionName parse(String resourceNameString) {
+    if (BillingExclusionName.isParsableFrom(resourceNameString)) {
+      return BillingExclusionName.parse(resourceNameString);
+    }
     if (ProjectExclusionName.isParsableFrom(resourceNameString)) {
       return ProjectExclusionName.parse(resourceNameString);
-    }
-    if (OrganizationExclusionName.isParsableFrom(resourceNameString)) {
-      return OrganizationExclusionName.parse(resourceNameString);
     }
     if (FolderExclusionName.isParsableFrom(resourceNameString)) {
       return FolderExclusionName.parse(resourceNameString);
     }
-    if (BillingExclusionName.isParsableFrom(resourceNameString)) {
-      return BillingExclusionName.parse(resourceNameString);
+    if (OrganizationExclusionName.isParsableFrom(resourceNameString)) {
+      return OrganizationExclusionName.parse(resourceNameString);
     }
     return UntypedExclusionName.parse(resourceNameString);
   }

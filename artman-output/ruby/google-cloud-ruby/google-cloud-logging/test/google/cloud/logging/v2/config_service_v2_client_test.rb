@@ -640,7 +640,6 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     it 'invokes create_exclusion without error' do
       # Create request parameters
       formatted_parent = Google::Cloud::Logging::V2::ConfigServiceV2Client.project_path("[PROJECT]")
-      exclusion = {}
 
       # Create expected grpc response
       name = "name3373707"
@@ -659,7 +658,6 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::CreateExclusionRequest, request)
         assert_equal(formatted_parent, request.parent)
-        assert_equal(Google::Gax::to_proto(exclusion, Google::Logging::V2::LogExclusion), request.exclusion)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:create_exclusion, mock_method)
@@ -672,13 +670,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.create_exclusion(formatted_parent, exclusion)
+          response = client.create_exclusion(formatted_parent)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.create_exclusion(formatted_parent, exclusion) do |response, operation|
+          client.create_exclusion(formatted_parent) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -690,13 +688,11 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     it 'invokes create_exclusion with error' do
       # Create request parameters
       formatted_parent = Google::Cloud::Logging::V2::ConfigServiceV2Client.project_path("[PROJECT]")
-      exclusion = {}
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::CreateExclusionRequest, request)
         assert_equal(formatted_parent, request.parent)
-        assert_equal(Google::Gax::to_proto(exclusion, Google::Logging::V2::LogExclusion), request.exclusion)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:create_exclusion, mock_method)
@@ -710,7 +706,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.create_exclusion(formatted_parent, exclusion)
+            client.create_exclusion(formatted_parent)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

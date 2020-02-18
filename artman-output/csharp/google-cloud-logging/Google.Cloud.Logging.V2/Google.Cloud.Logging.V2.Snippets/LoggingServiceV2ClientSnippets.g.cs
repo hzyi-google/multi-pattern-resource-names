@@ -37,12 +37,12 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for DeleteLogAsync</summary>
         public async Task DeleteLogAsync()
         {
-            // Snippet: DeleteLogAsync(LogNameOneof,CallSettings)
-            // Additional: DeleteLogAsync(LogNameOneof,CancellationToken)
+            // Snippet: DeleteLogAsync(ProjectName,CallSettings)
+            // Additional: DeleteLogAsync(ProjectName,CancellationToken)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            ProjectName logName = new ProjectName("[PROJECT]");
             // Make the request
             await loggingServiceV2Client.DeleteLogAsync(logName);
             // End snippet
@@ -51,11 +51,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for DeleteLog</summary>
         public void DeleteLog()
         {
-            // Snippet: DeleteLog(LogNameOneof,CallSettings)
+            // Snippet: DeleteLog(ProjectName,CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            ProjectName logName = new ProjectName("[PROJECT]");
             // Make the request
             loggingServiceV2Client.DeleteLog(logName);
             // End snippet
@@ -71,7 +71,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             DeleteLogRequest request = new DeleteLogRequest
             {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+                LogNameAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             await loggingServiceV2Client.DeleteLogAsync(request);
@@ -87,7 +87,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             DeleteLogRequest request = new DeleteLogRequest
             {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+                LogNameAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             loggingServiceV2Client.DeleteLog(request);
@@ -163,11 +163,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListLogEntriesAsync</summary>
         public async Task ListLogEntriesAsync()
         {
-            // Snippet: ListLogEntriesAsync(IEnumerable<ParentNameOneof>,string,string,string,int?,CallSettings)
+            // Snippet: ListLogEntriesAsync(IEnumerable<ProjectName>,string,string,string,int?,CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            IEnumerable<ParentNameOneof> resourceNames = new List<ParentNameOneof>();
+            IEnumerable<ProjectName> resourceNames = new List<ProjectName>();
             string filter = "";
             string orderBy = "";
             // Make the request
@@ -209,11 +209,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListLogEntries</summary>
         public void ListLogEntries()
         {
-            // Snippet: ListLogEntries(IEnumerable<ParentNameOneof>,string,string,string,int?,CallSettings)
+            // Snippet: ListLogEntries(IEnumerable<ProjectName>,string,string,string,int?,CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
-            IEnumerable<ParentNameOneof> resourceNames = new List<ParentNameOneof>();
+            IEnumerable<ProjectName> resourceNames = new List<ProjectName>();
             string filter = "";
             string orderBy = "";
             // Make the request
@@ -261,7 +261,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListLogEntriesRequest request = new ListLogEntriesRequest
             {
-                ResourceNamesAsParentNameOneofs = { },
+                ResourceNamesAsProjectNames = { },
             };
             // Make the request
             PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> response =
@@ -308,7 +308,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListLogEntriesRequest request = new ListLogEntriesRequest
             {
-                ResourceNamesAsParentNameOneofs = { },
+                ResourceNamesAsProjectNames = { },
             };
             // Make the request
             PagedEnumerable<ListLogEntriesResponse, LogEntry> response =
@@ -437,11 +437,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListLogsAsync</summary>
         public async Task ListLogsAsync()
         {
-            // Snippet: ListLogsAsync(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListLogsAsync(ProjectName,string,int?,CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedAsyncEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogsAsync(parent);
@@ -481,11 +481,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListLogs</summary>
         public void ListLogs()
         {
-            // Snippet: ListLogs(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListLogs(ProjectName,string,int?,CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogs(parent);
@@ -529,10 +529,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ListLogsRequest request = new ListLogsRequest
-            {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-            };
+            ListLogsRequest request = new ListLogsRequest();
             // Make the request
             PagedAsyncEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogsAsync(request);
@@ -576,10 +573,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
-            ListLogsRequest request = new ListLogsRequest
-            {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-            };
+            ListLogsRequest request = new ListLogsRequest();
             // Make the request
             PagedEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogs(request);

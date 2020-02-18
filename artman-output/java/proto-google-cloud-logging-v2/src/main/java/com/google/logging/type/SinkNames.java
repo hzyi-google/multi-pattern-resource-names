@@ -27,17 +27,17 @@ public class SinkNames {
   private SinkNames() {}
 
   public static SinkName parse(String resourceNameString) {
-    if (ProjectSinkName.isParsableFrom(resourceNameString)) {
-      return ProjectSinkName.parse(resourceNameString);
-    }
-    if (OrganizationSinkName.isParsableFrom(resourceNameString)) {
-      return OrganizationSinkName.parse(resourceNameString);
+    if (BillingSinkName.isParsableFrom(resourceNameString)) {
+      return BillingSinkName.parse(resourceNameString);
     }
     if (FolderSinkName.isParsableFrom(resourceNameString)) {
       return FolderSinkName.parse(resourceNameString);
     }
-    if (BillingSinkName.isParsableFrom(resourceNameString)) {
-      return BillingSinkName.parse(resourceNameString);
+    if (OrganizationSinkName.isParsableFrom(resourceNameString)) {
+      return OrganizationSinkName.parse(resourceNameString);
+    }
+    if (ProjectSinkName.isParsableFrom(resourceNameString)) {
+      return ProjectSinkName.parse(resourceNameString);
     }
     return UntypedSinkName.parse(resourceNameString);
   }

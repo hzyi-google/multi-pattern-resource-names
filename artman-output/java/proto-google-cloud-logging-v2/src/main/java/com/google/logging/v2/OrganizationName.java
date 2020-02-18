@@ -24,12 +24,9 @@ import java.util.List;
 
 /**
  * AUTO-GENERATED DOCUMENTATION AND CLASS
- *
- * @deprecated This resource name class will be removed in the next major version.
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-@Deprecated
-public class OrganizationName extends ParentName {
+public class OrganizationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}");

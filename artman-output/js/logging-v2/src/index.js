@@ -35,20 +35,20 @@ const gapic = Object.freeze({
 /**
  * The `@google-cloud/logging` package has the following named exports:
  *
+ * - `MetricsServiceV2Client` - Reference to
+ *   {@link v2.MetricsServiceV2Client}
  * - `ConfigServiceV2Client` - Reference to
  *   {@link v2.ConfigServiceV2Client}
  * - `LoggingServiceV2Client` - Reference to
  *   {@link v2.LoggingServiceV2Client}
- * - `MetricsServiceV2Client` - Reference to
- *   {@link v2.MetricsServiceV2Client}
  * - `v2` - This is used for selecting or pinning a
  *   particular backend service version. It exports:
+ *     - `MetricsServiceV2Client` - Reference to
+ *       {@link v2.MetricsServiceV2Client}
  *     - `ConfigServiceV2Client` - Reference to
  *       {@link v2.ConfigServiceV2Client}
  *     - `LoggingServiceV2Client` - Reference to
  *       {@link v2.LoggingServiceV2Client}
- *     - `MetricsServiceV2Client` - Reference to
- *       {@link v2.MetricsServiceV2Client}
  *
  * @module {object} @google-cloud/logging
  * @alias nodejs-logging
@@ -60,10 +60,10 @@ const gapic = Object.freeze({
  * const logging = require('@google-cloud/logging');
  *
  * @example <caption>Create a client that uses <a href="https://goo.gl/64dyYX">Application Default Credentials (ADC)</a>:</caption>
- * const client = new logging.ConfigServiceV2Client();
+ * const client = new logging.MetricsServiceV2Client();
  *
  * @example <caption>Create a client with <a href="https://goo.gl/RXp6VL">explicit credentials</a>:</caption>
- * const client = new logging.ConfigServiceV2Client({
+ * const client = new logging.MetricsServiceV2Client({
  *   projectId: 'your-project-id',
  *   keyFilename: '/path/to/keyfile.json',
  * });
@@ -71,23 +71,23 @@ const gapic = Object.freeze({
 
 /**
  * @type {object}
+ * @property {constructor} MetricsServiceV2Client
+ *   Reference to {@link v2.MetricsServiceV2Client}
  * @property {constructor} ConfigServiceV2Client
  *   Reference to {@link v2.ConfigServiceV2Client}
  * @property {constructor} LoggingServiceV2Client
  *   Reference to {@link v2.LoggingServiceV2Client}
- * @property {constructor} MetricsServiceV2Client
- *   Reference to {@link v2.MetricsServiceV2Client}
  */
 module.exports = gapic.v2;
 
 /**
  * @type {object}
+ * @property {constructor} MetricsServiceV2Client
+ *   Reference to {@link v2.MetricsServiceV2Client}
  * @property {constructor} ConfigServiceV2Client
  *   Reference to {@link v2.ConfigServiceV2Client}
  * @property {constructor} LoggingServiceV2Client
  *   Reference to {@link v2.LoggingServiceV2Client}
- * @property {constructor} MetricsServiceV2Client
- *   Reference to {@link v2.MetricsServiceV2Client}
  */
 module.exports.v2 = gapic.v2;
 

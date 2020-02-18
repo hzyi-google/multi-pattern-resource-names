@@ -226,7 +226,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes create_log_metric without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
       metric = {}
 
       # Create expected grpc response
@@ -276,7 +276,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes create_log_metric with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.project_path("[PROJECT]")
+      formatted_parent = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
       metric = {}
 
       # Mock Grpc layer

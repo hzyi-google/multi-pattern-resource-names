@@ -73,11 +73,11 @@ module Google
           ].freeze
 
 
-          BILLING_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+          BILLING_ACCOUNT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}"
           )
 
-          private_constant :BILLING_PATH_TEMPLATE
+          private_constant :BILLING_ACCOUNT_PATH_TEMPLATE
 
           BILLING_EXCLUSION_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}/exclusions/{exclusion}"
@@ -145,16 +145,18 @@ module Google
 
           private_constant :SINK_PATH_TEMPLATE
 
-          # Returns a fully-qualified billing resource name string.
+          # Returns a fully-qualified billing_account resource name string.
           # @param billing_account [String]
           # @return [String]
-          def self.billing_path billing_account
-            BILLING_PATH_TEMPLATE.render(
+          def self.billing_account_path billing_account
+            BILLING_ACCOUNT_PATH_TEMPLATE.render(
               :"billing_account" => billing_account
             )
           end
 
           # Returns a fully-qualified billing_exclusion resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param billing_account [String]
           # @param exclusion [String]
           # @return [String]
@@ -166,6 +168,8 @@ module Google
           end
 
           # Returns a fully-qualified billing_sink resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param billing_account [String]
           # @param sink [String]
           # @return [String]
@@ -177,6 +181,8 @@ module Google
           end
 
           # Returns a fully-qualified exclusion resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param exclusion [String]
           # @return [String]
@@ -197,6 +203,8 @@ module Google
           end
 
           # Returns a fully-qualified folder_exclusion resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param folder [String]
           # @param exclusion [String]
           # @return [String]
@@ -208,6 +216,8 @@ module Google
           end
 
           # Returns a fully-qualified folder_sink resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param folder [String]
           # @param sink [String]
           # @return [String]
@@ -228,6 +238,8 @@ module Google
           end
 
           # Returns a fully-qualified organization_exclusion resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param organization [String]
           # @param exclusion [String]
           # @return [String]
@@ -239,6 +251,8 @@ module Google
           end
 
           # Returns a fully-qualified organization_sink resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param organization [String]
           # @param sink [String]
           # @return [String]
@@ -259,6 +273,8 @@ module Google
           end
 
           # Returns a fully-qualified sink resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param sink [String]
           # @return [String]
@@ -883,14 +899,11 @@ module Google
           #
           #   config_client = Google::Cloud::Logging::Config.new(version: :v2)
           #   formatted_parent = Google::Cloud::Logging::V2::ConfigServiceV2Client.project_path("[PROJECT]")
-          #
-          #   # TODO: Initialize `exclusion`:
-          #   exclusion = {}
-          #   response = config_client.create_exclusion(formatted_parent, exclusion)
+          #   response = config_client.create_exclusion(formatted_parent)
 
           def create_exclusion \
               parent,
-              exclusion,
+              exclusion: nil,
               options: nil,
               &block
             req = {

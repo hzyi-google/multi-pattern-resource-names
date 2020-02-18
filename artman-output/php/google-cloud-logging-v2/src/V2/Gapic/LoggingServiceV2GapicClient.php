@@ -57,7 +57,7 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $loggingServiceV2Client = new LoggingServiceV2Client();
  * try {
- *     $formattedLogName = $loggingServiceV2Client->logName('[PROJECT]', '[LOG]');
+ *     $formattedLogName = $loggingServiceV2Client->projectName('[PROJECT]');
  *     $loggingServiceV2Client->deleteLog($formattedLogName);
  * } finally {
  *     $loggingServiceV2Client->close();
@@ -105,7 +105,7 @@ class LoggingServiceV2GapicClient
         'https://www.googleapis.com/auth/logging.read',
         'https://www.googleapis.com/auth/logging.write',
     ];
-    private static $billingNameTemplate;
+    private static $billingAccountNameTemplate;
     private static $billingLogNameTemplate;
     private static $folderNameTemplate;
     private static $folderLogNameTemplate;
@@ -134,13 +134,13 @@ class LoggingServiceV2GapicClient
         ];
     }
 
-    private static function getBillingNameTemplate()
+    private static function getBillingAccountNameTemplate()
     {
-        if (null == self::$billingNameTemplate) {
-            self::$billingNameTemplate = new PathTemplate('billingAccounts/{billing_account}');
+        if (null == self::$billingAccountNameTemplate) {
+            self::$billingAccountNameTemplate = new PathTemplate('billingAccounts/{billing_account}');
         }
 
-        return self::$billingNameTemplate;
+        return self::$billingAccountNameTemplate;
     }
 
     private static function getBillingLogNameTemplate()
@@ -210,7 +210,7 @@ class LoggingServiceV2GapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'billing' => self::getBillingNameTemplate(),
+                'billingAccount' => self::getBillingAccountNameTemplate(),
                 'billingLog' => self::getBillingLogNameTemplate(),
                 'folder' => self::getFolderNameTemplate(),
                 'folderLog' => self::getFolderLogNameTemplate(),
@@ -226,16 +226,16 @@ class LoggingServiceV2GapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a billing resource.
+     * a billing_account resource.
      *
      * @param string $billingAccount
      *
-     * @return string The formatted billing resource.
+     * @return string The formatted billing_account resource.
      * @experimental
      */
-    public static function billingName($billingAccount)
+    public static function billingAccountName($billingAccount)
     {
-        return self::getBillingNameTemplate()->render([
+        return self::getBillingAccountNameTemplate()->render([
             'billing_account' => $billingAccount,
         ]);
     }
@@ -248,7 +248,9 @@ class LoggingServiceV2GapicClient
      * @param string $log
      *
      * @return string The formatted billing_log resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function billingLogName($billingAccount, $log)
     {
@@ -282,7 +284,9 @@ class LoggingServiceV2GapicClient
      * @param string $log
      *
      * @return string The formatted folder_log resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function folderLogName($folder, $log)
     {
@@ -300,7 +304,9 @@ class LoggingServiceV2GapicClient
      * @param string $log
      *
      * @return string The formatted log resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function logName($project, $log)
     {
@@ -334,7 +340,9 @@ class LoggingServiceV2GapicClient
      * @param string $log
      *
      * @return string The formatted organization_log resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function organizationLogName($organization, $log)
     {
@@ -364,7 +372,7 @@ class LoggingServiceV2GapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - billing: billingAccounts/{billing_account}
+     * - billingAccount: billingAccounts/{billing_account}
      * - billingLog: billingAccounts/{billing_account}/logs/{log}
      * - folder: folders/{folder}
      * - folderLog: folders/{folder}/logs/{log}
@@ -476,7 +484,7 @@ class LoggingServiceV2GapicClient
      * ```
      * $loggingServiceV2Client = new LoggingServiceV2Client();
      * try {
-     *     $formattedLogName = $loggingServiceV2Client->logName('[PROJECT]', '[LOG]');
+     *     $formattedLogName = $loggingServiceV2Client->projectName('[PROJECT]');
      *     $loggingServiceV2Client->deleteLog($formattedLogName);
      * } finally {
      *     $loggingServiceV2Client->close();
@@ -843,9 +851,8 @@ class LoggingServiceV2GapicClient
      * ```
      * $loggingServiceV2Client = new LoggingServiceV2Client();
      * try {
-     *     $formattedParent = $loggingServiceV2Client->projectName('[PROJECT]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $loggingServiceV2Client->listLogs($formattedParent);
+     *     $pagedResponse = $loggingServiceV2Client->listLogs();
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -856,7 +863,7 @@ class LoggingServiceV2GapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $loggingServiceV2Client->listLogs($formattedParent);
+     *     $pagedResponse = $loggingServiceV2Client->listLogs();
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -865,15 +872,16 @@ class LoggingServiceV2GapicClient
      * }
      * ```
      *
-     * @param string $parent Required. The resource name that owns the logs:
-     *
-     *     "projects/[PROJECT_ID]"
-     *     "organizations/[ORGANIZATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-     *     "folders/[FOLDER_ID]"
      * @param array $optionalArgs {
      *                            Optional.
      *
+     *     @type string $parent
+     *          Required. The resource name that owns the logs:
+     *
+     *              "projects/[PROJECT_ID]"
+     *              "organizations/[ORGANIZATION_ID]"
+     *              "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *              "folders/[FOLDER_ID]"
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -895,10 +903,12 @@ class LoggingServiceV2GapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listLogs($parent, array $optionalArgs = [])
+    public function listLogs(array $optionalArgs = [])
     {
         $request = new ListLogsRequest();
-        $request->setParent($parent);
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }

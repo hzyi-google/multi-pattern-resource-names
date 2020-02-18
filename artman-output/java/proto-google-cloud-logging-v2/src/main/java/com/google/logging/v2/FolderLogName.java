@@ -132,7 +132,7 @@ public class FolderLogName extends LogName {
   }
 
   /** Builder for FolderLogName. */
-  public static class Builder {
+  public static class Builder extends LogName.Builder {
 
     private String folder;
     private String log;

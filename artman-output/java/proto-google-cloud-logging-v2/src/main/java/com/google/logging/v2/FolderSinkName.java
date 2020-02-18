@@ -132,7 +132,7 @@ public class FolderSinkName extends SinkName {
   }
 
   /** Builder for FolderSinkName. */
-  public static class Builder {
+  public static class Builder extends SinkName.Builder {
 
     private String folder;
     private String sink;
