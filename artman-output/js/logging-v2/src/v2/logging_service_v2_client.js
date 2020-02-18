@@ -822,7 +822,7 @@ class LoggingServiceV2Client {
    *
    * @param {Object} request
    *   The request object that will be sent.
-   * @param {string} [request.parent]
+   * @param {string} request.parent
    *   Required. The resource name that owns the logs:
    *
    *       "projects/[PROJECT_ID]"
@@ -867,7 +867,9 @@ class LoggingServiceV2Client {
    * });
    *
    * // Iterate over all elements.
-   * client.listLogs({})
+   * const formattedParent = client.projectPath('[PROJECT]');
+   *
+   * client.listLogs({parent: formattedParent})
    *   .then(responses => {
    *     const resources = responses[0];
    *     for (const resource of resources) {
@@ -879,6 +881,8 @@ class LoggingServiceV2Client {
    *   });
    *
    * // Or obtain the paged response.
+   * const formattedParent = client.projectPath('[PROJECT]');
+   *
    *
    * const options = {autoPaginate: false};
    * const callback = responses => {
@@ -896,7 +900,7 @@ class LoggingServiceV2Client {
    *     return client.listLogs(nextRequest, options).then(callback);
    *   }
    * }
-   * client.listLogs({}, options)
+   * client.listLogs({parent: formattedParent}, options)
    *   .then(callback)
    *   .catch(err => {
    *     console.error(err);
@@ -934,7 +938,7 @@ class LoggingServiceV2Client {
    *
    * @param {Object} request
    *   The request object that will be sent.
-   * @param {string} [request.parent]
+   * @param {string} request.parent
    *   Required. The resource name that owns the logs:
    *
    *       "projects/[PROJECT_ID]"
@@ -961,8 +965,8 @@ class LoggingServiceV2Client {
    *   // optional auth parameters.
    * });
    *
-   *
-   * client.listLogsStream({})
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * client.listLogsStream({parent: formattedParent})
    *   .on('data', element => {
    *     // doThingsWith(element)
    *   }).on('error', err => {

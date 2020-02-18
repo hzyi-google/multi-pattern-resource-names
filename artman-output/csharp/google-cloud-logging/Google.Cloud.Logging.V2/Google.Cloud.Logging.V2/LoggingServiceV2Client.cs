@@ -2109,7 +2109,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsProjectName = parent, // Optional
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2148,7 +2148,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsProjectName = parent, // Optional
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2187,7 +2187,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsOrganizationName = parent, // Optional
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2226,7 +2226,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsOrganizationName = parent, // Optional
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2265,7 +2265,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsFolderName = parent, // Optional
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2304,7 +2304,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsFolderName = parent, // Optional
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2343,7 +2343,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsBillingAccountName = parent, // Optional
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2382,7 +2382,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsBillingAccountName = parent, // Optional
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2421,7 +2421,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    Parent = parent ?? "", // Optional
+                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2460,7 +2460,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    Parent = parent ?? "", // Optional
+                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },

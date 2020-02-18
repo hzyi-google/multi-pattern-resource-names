@@ -834,7 +834,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ListLogsRequest request = ListLogsRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   for (String element : loggingClient.listLogs(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -857,7 +860,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ListLogsRequest request = ListLogsRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;ListLogsPagedResponse&gt; future = loggingClient.listLogsPagedCallable().futureCall(request);
    *   // Do something
    *   for (String element : future.get().iterateAll()) {
@@ -879,7 +885,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ListLogsRequest request = ListLogsRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   while (true) {
    *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);
    *     for (String element : response.getLogNamesList()) {

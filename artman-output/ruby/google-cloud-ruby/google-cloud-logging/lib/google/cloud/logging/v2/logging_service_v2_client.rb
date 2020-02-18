@@ -697,14 +697,15 @@ module Google
           #   require "google/cloud/logging"
           #
           #   logging_client = Google::Cloud::Logging::Logging.new(version: :v2)
+          #   formatted_parent = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
           #
           #   # Iterate over all results.
-          #   logging_client.list_logs.each do |element|
+          #   logging_client.list_logs(formatted_parent).each do |element|
           #     # Process element.
           #   end
           #
           #   # Or iterate over results one page at a time.
-          #   logging_client.list_logs.each_page do |page|
+          #   logging_client.list_logs(formatted_parent).each_page do |page|
           #     # Process each page at a time.
           #     page.each do |element|
           #       # Process element.
@@ -712,7 +713,7 @@ module Google
           #   end
 
           def list_logs \
-              parent: nil,
+              parent,
               page_size: nil,
               options: nil,
               &block

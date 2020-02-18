@@ -722,7 +722,8 @@
                       "type": "string",
                       "id": 1,
                       "options": {
-                        "(google.api.resource_reference).child_type": "logging.googleapis.com/Log"
+                        "(google.api.resource_reference).child_type": "logging.googleapis.com/Log",
+                        "(google.api.field_behavior)": "REQUIRED"
                       }
                     },
                     "pageSize": {

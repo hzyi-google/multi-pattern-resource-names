@@ -1428,7 +1428,10 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const request = {};
+      const formattedParent = client.projectPath('[PROJECT]');
+      const request = {
+        parent: formattedParent,
+      };
 
       // Mock response
       const nextPageToken = '';
@@ -1459,7 +1462,10 @@ describe('LoggingServiceV2Client', () => {
       });
 
       // Mock request
-      const request = {};
+      const formattedParent = client.projectPath('[PROJECT]');
+      const request = {
+        parent: formattedParent,
+      };
 
       // Mock Grpc layer
       client._innerApiCalls.listLogs = mockSimpleGrpcMethod(

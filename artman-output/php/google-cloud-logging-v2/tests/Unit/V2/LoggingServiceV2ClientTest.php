@@ -383,7 +383,10 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $expectedResponse->setLogNames($logNames);
         $transport->addResponse($expectedResponse);
 
-        $response = $client->listLogs();
+        // Mock request
+        $formattedParent = $client->projectName('[PROJECT]');
+
+        $response = $client->listLogs($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -395,6 +398,9 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.logging.v2.LoggingServiceV2/ListLogs', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getParent();
+
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -420,8 +426,11 @@ class LoggingServiceV2ClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
 
+        // Mock request
+        $formattedParent = $client->projectName('[PROJECT]');
+
         try {
-            $client->listLogs();
+            $client->listLogs($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -851,8 +851,9 @@ class LoggingServiceV2GapicClient
      * ```
      * $loggingServiceV2Client = new LoggingServiceV2Client();
      * try {
+     *     $formattedParent = $loggingServiceV2Client->projectName('[PROJECT]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $loggingServiceV2Client->listLogs();
+     *     $pagedResponse = $loggingServiceV2Client->listLogs($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -863,7 +864,7 @@ class LoggingServiceV2GapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $loggingServiceV2Client->listLogs();
+     *     $pagedResponse = $loggingServiceV2Client->listLogs($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -872,16 +873,15 @@ class LoggingServiceV2GapicClient
      * }
      * ```
      *
+     * @param string $parent Required. The resource name that owns the logs:
+     *
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
      * @param array $optionalArgs {
      *                            Optional.
      *
-     *     @type string $parent
-     *          Required. The resource name that owns the logs:
-     *
-     *              "projects/[PROJECT_ID]"
-     *              "organizations/[ORGANIZATION_ID]"
-     *              "billingAccounts/[BILLING_ACCOUNT_ID]"
-     *              "folders/[FOLDER_ID]"
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -903,12 +903,10 @@ class LoggingServiceV2GapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listLogs(array $optionalArgs = [])
+    public function listLogs($parent, array $optionalArgs = [])
     {
         $request = new ListLogsRequest();
-        if (isset($optionalArgs['parent'])) {
-            $request->setParent($optionalArgs['parent']);
-        }
+        $request->setParent($parent);
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }

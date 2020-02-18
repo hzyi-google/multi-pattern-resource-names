@@ -529,7 +529,10 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ListLogsRequest request = new ListLogsRequest();
+            ListLogsRequest request = new ListLogsRequest
+            {
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
+            };
             // Make the request
             PagedAsyncEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogsAsync(request);
@@ -573,7 +576,10 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
-            ListLogsRequest request = new ListLogsRequest();
+            ListLogsRequest request = new ListLogsRequest
+            {
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
+            };
             // Make the request
             PagedEnumerable<ListLogsResponse, string> response =
                 loggingServiceV2Client.ListLogs(request);

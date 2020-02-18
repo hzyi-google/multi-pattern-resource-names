@@ -1763,7 +1763,10 @@ func TestLoggingServiceV2ListLogs(t *testing.T) {
 
 	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
 
-	var request *loggingpb.ListLogsRequest = &loggingpb.ListLogsRequest{}
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var request = &loggingpb.ListLogsRequest{
+		Parent: formattedParent,
+	}
 
 	c, err := NewClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1799,7 +1802,10 @@ func TestLoggingServiceV2ListLogsError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockLogging.err = gstatus.Error(errCode, "test error")
 
-	var request *loggingpb.ListLogsRequest = &loggingpb.ListLogsRequest{}
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var request = &loggingpb.ListLogsRequest{
+		Parent: formattedParent,
+	}
 
 	c, err := NewClient(context.Background(), clientOpt)
 	if err != nil {

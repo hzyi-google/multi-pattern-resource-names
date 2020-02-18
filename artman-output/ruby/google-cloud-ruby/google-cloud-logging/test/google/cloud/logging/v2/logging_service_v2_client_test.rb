@@ -353,6 +353,9 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
     custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::LoggingServiceV2Client#list_logs."
 
     it 'invokes list_logs without error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
+
       # Create expected grpc response
       next_page_token = ""
       log_names_element = "logNamesElement-1079688374"
@@ -361,7 +364,9 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
       expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::ListLogsResponse)
 
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::ListLogsRequest, request)
+        assert_equal(formatted_parent, request.parent)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:list_logs, mock_method)
@@ -374,7 +379,7 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
           client = Google::Cloud::Logging::Logging.new(version: :v2)
 
           # Call method
-          response = client.list_logs
+          response = client.list_logs(formatted_parent)
 
           # Verify the response
           assert(response.instance_of?(Google::Gax::PagedEnumerable))
@@ -386,8 +391,13 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
     end
 
     it 'invokes list_logs with error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Logging::V2::LoggingServiceV2Client.project_path("[PROJECT]")
+
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::ListLogsRequest, request)
+        assert_equal(formatted_parent, request.parent)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:list_logs, mock_method)
@@ -401,7 +411,7 @@ describe Google::Cloud::Logging::V2::LoggingServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.list_logs
+            client.list_logs(formatted_parent)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

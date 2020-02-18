@@ -348,8 +348,9 @@ message ListLogsRequest {
   //     "billingAccounts/[BILLING_ACCOUNT_ID]"
   //     "folders/[FOLDER_ID]"
   string parent = 1 [(google.api.resource_reference) = {
-                       child_type: "logging.googleapis.com/Log"
-                     }];
+                       child_type: "logging.googleapis.com/Log",
+                     },
+                     (google.api.field_behavior) = REQUIRED];
 
   // Optional. The maximum number of results to return from this request.
   // Non-positive values are ignored.  The presence of `nextPageToken` in the
