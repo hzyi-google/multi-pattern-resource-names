@@ -17,7 +17,7 @@ steps:
 
 ### Installation
 ```
-$ gem install google-cloud-securitycenter
+$ gem install google-cloud-security_center
 ```
 
 ### Next Steps
@@ -28,7 +28,7 @@ $ gem install google-cloud-securitycenter
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-securitycenter/latest/google/cloud/securitycenter/v1beta1
+[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-security_center/latest/google/cloud/securitycenter/v1
 [Product Documentation]: https://cloud.google.com/securitycenter
 
 ## Enabling Logging

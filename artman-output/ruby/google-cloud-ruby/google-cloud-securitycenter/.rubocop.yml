@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "google-cloud-securitycenter.gemspec"
+    - "google-cloud-security_center.gemspec"
     - "lib/google/**/*"
     - "Rakefile"
     - "test/**/*"

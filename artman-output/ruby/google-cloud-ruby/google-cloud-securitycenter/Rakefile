@@ -30,7 +30,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-cloud-securitycenter"
+      command_name "google-cloud-security_center"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -40,7 +40,7 @@ namespace :test do
 end
 
 # Acceptance tests
-desc "Run the google-cloud-securitycenter acceptance tests."
+desc "Run the google-cloud-security_center acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
 
   Rake::Task["acceptance:run"].invoke
@@ -48,7 +48,7 @@ end
 
 namespace :acceptance do
   task :run do
-    puts "The google-cloud-securitycenter gem does not have acceptance tests."
+    puts "The google-cloud-security_center gem does not have acceptance tests."
   end
 
   desc "Run acceptance tests with coverage."
@@ -64,7 +64,7 @@ require "yard"
 require "yard/rake/yardoc_task"
 YARD::Rake::YardocTask.new
 
-desc "Generates JSON output from google-cloud-securitycenter .yardoc"
+desc "Generates JSON output from google-cloud-security_center .yardoc"
 task :jsondoc => :yard do
   require "rubygems"
   require "gcloud/jsondoc"
@@ -75,11 +75,11 @@ task :jsondoc => :yard do
     documents: [
       {
         type: "toc",
-        title: "Google::Cloud::Securitycenter::V1beta1::DataTypes",
+        title: "Google::Cloud::Securitycenter::V1::DataTypes",
         modules: [
           {
-            title: "Google::Cloud::Securitycenter::V1beta1",
-            include: ["google/cloud/securitycenter/v1beta1"]
+            title: "Google::Cloud::Securitycenter::V1",
+            include: ["google/cloud/security_center/v1"]
           },
           {
             title: "Google::Protobuf",
@@ -95,7 +95,7 @@ task :jsondoc => :yard do
   }
 
   generator = Gcloud::Jsondoc::Generator.new registry,
-                                             "google-cloud-securitycenter",
+                                             "google-cloud-security_center",
                                              generate: toc_config
   rm_rf "jsondoc", verbose: true
   generator.write_to "jsondoc"
@@ -104,19 +104,19 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-cloud-securitycenter gem does not have doctest tests."
+  puts "The google-cloud-security_center gem does not have doctest tests."
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-cloud-securitycenter"
-  header "google-cloud-securitycenter rubocop", "*"
+  header "BUILDING google-cloud-security_center"
+  header "google-cloud-security_center rubocop", "*"
   sh "bundle exec rake rubocop"
-  header "google-cloud-securitycenter jsondoc", "*"
+  header "google-cloud-security_center jsondoc", "*"
   sh "bundle exec rake jsondoc"
-  header "google-cloud-securitycenter doctest", "*"
+  header "google-cloud-security_center doctest", "*"
   sh "bundle exec rake doctest"
-  header "google-cloud-securitycenter test", "*"
+  header "google-cloud-security_center test", "*"
   sh "bundle exec rake test"
 end
 
@@ -124,7 +124,7 @@ namespace :ci do
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task["ci"].invoke
-    header "google-cloud-securitycenter acceptance", "*"
+    header "google-cloud-security_center acceptance", "*"
     sh "bundle exec rake acceptance -v"
   end
   task :a do
