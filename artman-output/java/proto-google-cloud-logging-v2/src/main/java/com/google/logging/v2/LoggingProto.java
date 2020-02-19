@@ -94,7 +94,7 @@ public final class LoggingProto {
       "protobuf/empty.proto\032\037google/protobuf/ti" +
       "mestamp.proto\032\027google/rpc/status.proto\"H" +
       "\n\020DeleteLogRequest\0224\n\010log_name\030\001 \001(\tB\"\340A" +
-      "\002\372A\034\022\032logging.googleapis.com/Log\"\317\002\n\026Wri" +
+      "\002\372A\034\n\032logging.googleapis.com/Log\"\317\002\n\026Wri" +
       "teLogEntriesRequest\0221\n\010log_name\030\001 \001(\tB\037\372" +
       "A\034\n\032logging.googleapis.com/Log\022/\n\010resour" +
       "ce\030\002 \001(\0132\035.google.api.MonitoredResource\022" +
@@ -121,50 +121,50 @@ public final class LoggingProto {
       "\001(\t\"\212\001\n(ListMonitoredResourceDescriptors" +
       "Response\022E\n\024resource_descriptors\030\001 \003(\0132\'" +
       ".google.api.MonitoredResourceDescriptor\022" +
-      "\027\n\017next_page_token\030\002 \001(\t\"i\n\017ListLogsRequ" +
-      "est\022/\n\006parent\030\001 \001(\tB\037\372A\034\022\032logging.google" +
-      "apis.com/Log\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\">\n\020ListLogsResponse\022\021\n\tlog_n" +
-      "ames\030\003 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2\335\n\n\020" +
-      "LoggingServiceV2\022\223\002\n\tDeleteLog\022#.google." +
-      "logging.v2.DeleteLogRequest\032\026.google.pro" +
-      "tobuf.Empty\"\310\001\202\323\344\223\002\266\001* /v2/{log_name=pro" +
-      "jects/*/logs/*}Z\033*\031/v2/{log_name=*/*/log" +
-      "s/*}Z\'*%/v2/{log_name=organizations/*/lo" +
-      "gs/*}Z!*\037/v2/{log_name=folders/*/logs/*}" +
-      "Z)*\'/v2/{log_name=billingAccounts/*/logs" +
-      "/*}\332A\010log_name\022\251\001\n\017WriteLogEntries\022).goo" +
-      "gle.logging.v2.WriteLogEntriesRequest\032*." +
-      "google.logging.v2.WriteLogEntriesRespons" +
-      "e\"?\202\323\344\223\002\026\"\021/v2/entries:write:\001*\332A log_na" +
-      "me,resource,labels,entries\022\243\001\n\016ListLogEn" +
-      "tries\022(.google.logging.v2.ListLogEntries" +
-      "Request\032).google.logging.v2.ListLogEntri" +
-      "esResponse\"<\202\323\344\223\002\025\"\020/v2/entries:list:\001*\332" +
-      "A\036resource_names,filter,order_by\022\305\001\n Lis" +
-      "tMonitoredResourceDescriptors\022:.google.l" +
-      "ogging.v2.ListMonitoredResourceDescripto" +
-      "rsRequest\032;.google.logging.v2.ListMonito" +
-      "redResourceDescriptorsResponse\"(\202\323\344\223\002\"\022 " +
-      "/v2/monitoredResourceDescriptors\022\210\002\n\010Lis" +
-      "tLogs\022\".google.logging.v2.ListLogsReques" +
-      "t\032#.google.logging.v2.ListLogsResponse\"\262" +
-      "\001\202\323\344\223\002\242\001\022\025/v2/{parent=*/*}/logsZ\036\022\034/v2/{" +
-      "parent=projects/*}/logsZ#\022!/v2/{parent=o" +
-      "rganizations/*}/logsZ\035\022\033/v2/{parent=fold" +
-      "ers/*}/logsZ%\022#/v2/{parent=billingAccoun" +
-      "ts/*}/logs\332A\006parent\032\215\002\312A\026logging.googlea" +
-      "pis.com\322A\360\001https://www.googleapis.com/au" +
-      "th/cloud-platform,https://www.googleapis" +
-      ".com/auth/cloud-platform.read-only,https" +
-      "://www.googleapis.com/auth/logging.admin" +
-      ",https://www.googleapis.com/auth/logging" +
-      ".read,https://www.googleapis.com/auth/lo" +
-      "gging.writeB\230\001\n\025com.google.logging.v2B\014L" +
-      "oggingProtoP\001Z8google.golang.org/genprot" +
-      "o/googleapis/logging/v2;logging\370\001\001\252\002\027Goo" +
-      "gle.Cloud.Logging.V2\312\002\027Google\\Cloud\\Logg" +
-      "ing\\V2b\006proto3"
+      "\027\n\017next_page_token\030\002 \001(\t\"l\n\017ListLogsRequ" +
+      "est\0222\n\006parent\030\001 \001(\tB\"\372A\034\022\032logging.google" +
+      "apis.com/Log\340A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa" +
+      "ge_token\030\003 \001(\t\">\n\020ListLogsResponse\022\021\n\tlo" +
+      "g_names\030\003 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2\335" +
+      "\n\n\020LoggingServiceV2\022\223\002\n\tDeleteLog\022#.goog" +
+      "le.logging.v2.DeleteLogRequest\032\026.google." +
+      "protobuf.Empty\"\310\001\202\323\344\223\002\266\001* /v2/{log_name=" +
+      "projects/*/logs/*}Z\033*\031/v2/{log_name=*/*/" +
+      "logs/*}Z\'*%/v2/{log_name=organizations/*" +
+      "/logs/*}Z!*\037/v2/{log_name=folders/*/logs" +
+      "/*}Z)*\'/v2/{log_name=billingAccounts/*/l" +
+      "ogs/*}\332A\010log_name\022\251\001\n\017WriteLogEntries\022)." +
+      "google.logging.v2.WriteLogEntriesRequest" +
+      "\032*.google.logging.v2.WriteLogEntriesResp" +
+      "onse\"?\202\323\344\223\002\026\"\021/v2/entries:write:\001*\332A log" +
+      "_name,resource,labels,entries\022\243\001\n\016ListLo" +
+      "gEntries\022(.google.logging.v2.ListLogEntr" +
+      "iesRequest\032).google.logging.v2.ListLogEn" +
+      "triesResponse\"<\202\323\344\223\002\025\"\020/v2/entries:list:" +
+      "\001*\332A\036resource_names,filter,order_by\022\305\001\n " +
+      "ListMonitoredResourceDescriptors\022:.googl" +
+      "e.logging.v2.ListMonitoredResourceDescri" +
+      "ptorsRequest\032;.google.logging.v2.ListMon" +
+      "itoredResourceDescriptorsResponse\"(\202\323\344\223\002" +
+      "\"\022 /v2/monitoredResourceDescriptors\022\210\002\n\010" +
+      "ListLogs\022\".google.logging.v2.ListLogsReq" +
+      "uest\032#.google.logging.v2.ListLogsRespons" +
+      "e\"\262\001\202\323\344\223\002\242\001\022\025/v2/{parent=*/*}/logsZ\036\022\034/v" +
+      "2/{parent=projects/*}/logsZ#\022!/v2/{paren" +
+      "t=organizations/*}/logsZ\035\022\033/v2/{parent=f" +
+      "olders/*}/logsZ%\022#/v2/{parent=billingAcc" +
+      "ounts/*}/logs\332A\006parent\032\215\002\312A\026logging.goog" +
+      "leapis.com\322A\360\001https://www.googleapis.com" +
+      "/auth/cloud-platform,https://www.googlea" +
+      "pis.com/auth/cloud-platform.read-only,ht" +
+      "tps://www.googleapis.com/auth/logging.ad" +
+      "min,https://www.googleapis.com/auth/logg" +
+      "ing.read,https://www.googleapis.com/auth" +
+      "/logging.writeB\230\001\n\025com.google.logging.v2" +
+      "B\014LoggingProtoP\001Z8google.golang.org/genp" +
+      "roto/googleapis/logging/v2;logging\370\001\001\252\002\027" +
+      "Google.Cloud.Logging.V2\312\002\027Google\\Cloud\\L" +
+      "ogging\\V2b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

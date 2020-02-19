@@ -36,11 +36,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListSinksAsync</summary>
         public async Task ListSinksAsync()
         {
-            // Snippet: ListSinksAsync(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListSinksAsync(ProjectName,string,int?,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedAsyncEnumerable<ListSinksResponse, LogSink> response =
                 configServiceV2Client.ListSinksAsync(parent);
@@ -80,11 +80,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListSinks</summary>
         public void ListSinks()
         {
-            // Snippet: ListSinks(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListSinks(ProjectName,string,int?,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedEnumerable<ListSinksResponse, LogSink> response =
                 configServiceV2Client.ListSinks(parent);
@@ -130,7 +130,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListSinksRequest request = new ListSinksRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             PagedAsyncEnumerable<ListSinksResponse, LogSink> response =
@@ -177,7 +177,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListSinksRequest request = new ListSinksRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             PagedEnumerable<ListSinksResponse, LogSink> response =
@@ -278,12 +278,12 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateSinkAsync</summary>
         public async Task CreateSinkAsync()
         {
-            // Snippet: CreateSinkAsync(ParentNameOneof,LogSink,CallSettings)
-            // Additional: CreateSinkAsync(ParentNameOneof,LogSink,CancellationToken)
+            // Snippet: CreateSinkAsync(ProjectName,LogSink,CallSettings)
+            // Additional: CreateSinkAsync(ProjectName,LogSink,CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogSink sink = new LogSink();
             // Make the request
             LogSink response = await configServiceV2Client.CreateSinkAsync(parent, sink);
@@ -293,11 +293,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateSink</summary>
         public void CreateSink()
         {
-            // Snippet: CreateSink(ParentNameOneof,LogSink,CallSettings)
+            // Snippet: CreateSink(ProjectName,LogSink,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogSink sink = new LogSink();
             // Make the request
             LogSink response = configServiceV2Client.CreateSink(parent, sink);
@@ -314,7 +314,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateSinkRequest request = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             // Make the request
@@ -331,7 +331,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateSinkRequest request = new CreateSinkRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Sink = new LogSink(),
             };
             // Make the request
@@ -497,11 +497,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListExclusionsAsync</summary>
         public async Task ListExclusionsAsync()
         {
-            // Snippet: ListExclusionsAsync(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListExclusionsAsync(ProjectName,string,int?,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> response =
                 configServiceV2Client.ListExclusionsAsync(parent);
@@ -541,11 +541,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for ListExclusions</summary>
         public void ListExclusions()
         {
-            // Snippet: ListExclusions(ParentNameOneof,string,int?,CallSettings)
+            // Snippet: ListExclusions(ProjectName,string,int?,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             // Make the request
             PagedEnumerable<ListExclusionsResponse, LogExclusion> response =
                 configServiceV2Client.ListExclusions(parent);
@@ -591,7 +591,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListExclusionsRequest request = new ListExclusionsRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> response =
@@ -638,7 +638,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             ListExclusionsRequest request = new ListExclusionsRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             PagedEnumerable<ListExclusionsResponse, LogExclusion> response =
@@ -739,12 +739,12 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateExclusionAsync</summary>
         public async Task CreateExclusionAsync()
         {
-            // Snippet: CreateExclusionAsync(ParentNameOneof,LogExclusion,CallSettings)
-            // Additional: CreateExclusionAsync(ParentNameOneof,LogExclusion,CancellationToken)
+            // Snippet: CreateExclusionAsync(ProjectName,LogExclusion,CallSettings)
+            // Additional: CreateExclusionAsync(ProjectName,LogExclusion,CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogExclusion exclusion = new LogExclusion();
             // Make the request
             LogExclusion response = await configServiceV2Client.CreateExclusionAsync(parent, exclusion);
@@ -754,11 +754,11 @@ namespace Google.Cloud.Logging.V2.Snippets
         /// <summary>Snippet for CreateExclusion</summary>
         public void CreateExclusion()
         {
-            // Snippet: CreateExclusion(ParentNameOneof,LogExclusion,CallSettings)
+            // Snippet: CreateExclusion(ProjectName,LogExclusion,CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
-            ParentNameOneof parent = ParentNameOneof.From(new ProjectName("[PROJECT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             LogExclusion exclusion = new LogExclusion();
             // Make the request
             LogExclusion response = configServiceV2Client.CreateExclusion(parent, exclusion);
@@ -775,8 +775,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateExclusionRequest request = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-                Exclusion = new LogExclusion(),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             LogExclusion response = await configServiceV2Client.CreateExclusionAsync(request);
@@ -792,8 +791,7 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Initialize request argument(s)
             CreateExclusionRequest request = new CreateExclusionRequest
             {
-                ParentAsParentNameOneof = ParentNameOneof.From(new ProjectName("[PROJECT]")),
-                Exclusion = new LogExclusion(),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             LogExclusion response = configServiceV2Client.CreateExclusion(request);

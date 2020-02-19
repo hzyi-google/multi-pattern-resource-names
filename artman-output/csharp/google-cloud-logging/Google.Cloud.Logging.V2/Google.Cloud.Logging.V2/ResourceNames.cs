@@ -22,44 +22,44 @@ using linq = System.Linq;
 namespace Google.Cloud.Logging.V2
 {
     /// <summary>
-    /// Resource name for the 'billing' resource.
+    /// Resource name for the 'billing_account' resource.
     /// </summary>
-    public sealed partial class BillingName : gax::IResourceName, sys::IEquatable<BillingName>
+    public sealed partial class BillingAccountName : gax::IResourceName, sys::IEquatable<BillingAccountName>
     {
         private static readonly gax::PathTemplate s_template = new gax::PathTemplate("billingAccounts/{billing_account}");
 
         /// <summary>
-        /// Parses the given billing resource name in string form into a new
-        /// <see cref="BillingName"/> instance.
+        /// Parses the given billing_account resource name in string form into a new
+        /// <see cref="BillingAccountName"/> instance.
         /// </summary>
-        /// <param name="billingName">The billing resource name in string form. Must not be <c>null</c>.</param>
-        /// <returns>The parsed <see cref="BillingName"/> if successful.</returns>
-        public static BillingName Parse(string billingName)
+        /// <param name="billingAccountName">The billing_account resource name in string form. Must not be <c>null</c>.</param>
+        /// <returns>The parsed <see cref="BillingAccountName"/> if successful.</returns>
+        public static BillingAccountName Parse(string billingAccountName)
         {
-            gax::GaxPreconditions.CheckNotNull(billingName, nameof(billingName));
-            gax::TemplatedResourceName resourceName = s_template.ParseName(billingName);
-            return new BillingName(resourceName[0]);
+            gax::GaxPreconditions.CheckNotNull(billingAccountName, nameof(billingAccountName));
+            gax::TemplatedResourceName resourceName = s_template.ParseName(billingAccountName);
+            return new BillingAccountName(resourceName[0]);
         }
 
         /// <summary>
-        /// Tries to parse the given billing resource name in string form into a new
-        /// <see cref="BillingName"/> instance.
+        /// Tries to parse the given billing_account resource name in string form into a new
+        /// <see cref="BillingAccountName"/> instance.
         /// </summary>
         /// <remarks>
-        /// This method still throws <see cref="sys::ArgumentNullException"/> if <paramref name="billingName"/> is null,
+        /// This method still throws <see cref="sys::ArgumentNullException"/> if <paramref name="billingAccountName"/> is null,
         /// as this would usually indicate a programming error rather than a data error.
         /// </remarks>
-        /// <param name="billingName">The billing resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="result">When this method returns, the parsed <see cref="BillingName"/>,
+        /// <param name="billingAccountName">The billing_account resource name in string form. Must not be <c>null</c>.</param>
+        /// <param name="result">When this method returns, the parsed <see cref="BillingAccountName"/>,
         /// or <c>null</c> if parsing fails.</param>
         /// <returns><c>true</c> if the name was parsed successfully; <c>false</c> otherwise.</returns>
-        public static bool TryParse(string billingName, out BillingName result)
+        public static bool TryParse(string billingAccountName, out BillingAccountName result)
         {
-            gax::GaxPreconditions.CheckNotNull(billingName, nameof(billingName));
+            gax::GaxPreconditions.CheckNotNull(billingAccountName, nameof(billingAccountName));
             gax::TemplatedResourceName resourceName;
-            if (s_template.TryParseName(billingName, out resourceName))
+            if (s_template.TryParseName(billingAccountName, out resourceName))
             {
-                result = new BillingName(resourceName[0]);
+                result = new BillingAccountName(resourceName[0]);
                 return true;
             }
             else
@@ -69,18 +69,18 @@ namespace Google.Cloud.Logging.V2
             }
         }
 
-        /// <summary>Formats the IDs into the string representation of the <see cref="BillingName"/>.</summary>
+        /// <summary>Formats the IDs into the string representation of the <see cref="BillingAccountName"/>.</summary>
         /// <param name="billingAccountId">The <c>billingAccount</c> ID. Must not be <c>null</c>.</param>
-        /// <returns>The string representation of the <see cref="BillingName"/>.</returns>
+        /// <returns>The string representation of the <see cref="BillingAccountName"/>.</returns>
         public static string Format(string billingAccountId) =>
             s_template.Expand(gax::GaxPreconditions.CheckNotNull(billingAccountId, nameof(billingAccountId)));
 
         /// <summary>
-        /// Constructs a new instance of the <see cref="BillingName"/> resource name class
+        /// Constructs a new instance of the <see cref="BillingAccountName"/> resource name class
         /// from its component parts.
         /// </summary>
         /// <param name="billingAccountId">The billingAccount ID. Must not be <c>null</c>.</param>
-        public BillingName(string billingAccountId)
+        public BillingAccountName(string billingAccountId)
         {
             BillingAccountId = gax::GaxPreconditions.CheckNotNull(billingAccountId, nameof(billingAccountId));
         }
@@ -100,16 +100,16 @@ namespace Google.Cloud.Logging.V2
         public override int GetHashCode() => ToString().GetHashCode();
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => Equals(obj as BillingName);
+        public override bool Equals(object obj) => Equals(obj as BillingAccountName);
 
         /// <inheritdoc />
-        public bool Equals(BillingName other) => ToString() == other?.ToString();
+        public bool Equals(BillingAccountName other) => ToString() == other?.ToString();
 
         /// <inheritdoc />
-        public static bool operator ==(BillingName a, BillingName b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
+        public static bool operator ==(BillingAccountName a, BillingAccountName b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
 
         /// <inheritdoc />
-        public static bool operator !=(BillingName a, BillingName b) => !(a == b);
+        public static bool operator !=(BillingAccountName a, BillingAccountName b) => !(a == b);
     }
 
     /// <summary>
@@ -1631,178 +1631,6 @@ namespace Google.Cloud.Logging.V2
     }
 
     /// <summary>
-    /// Resource name which will contain one of a choice of resource names.
-    /// </summary>
-    /// <remarks>
-    /// This resource name will contain one of the following:
-    /// <list type="bullet">
-    /// <item><description>MetricName: A resource of type 'metric'.</description></item>
-    /// </list>
-    /// </remarks>
-    public sealed partial class MetricNameOneof : gax::IResourceName, sys::IEquatable<MetricNameOneof>
-    {
-        /// <summary>
-        /// The possible contents of <see cref="MetricNameOneof"/>.
-        /// </summary>
-        public enum OneofType
-        {
-            /// <summary>
-            /// A resource of an unknown type.
-            /// </summary>
-            Unknown = 0,
-
-            /// <summary>
-            /// A resource of type 'metric'.
-            /// </summary>
-            MetricName = 1,
-        }
-
-        /// <summary>
-        /// Parses a resource name in string form into a new <see cref="MetricNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>MetricName: A resource of type 'metric'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>; otherwise will throw an
-        /// <see cref="sys::ArgumentException"/> if an unknown resource name is given.</param>
-        /// <returns>The parsed <see cref="MetricNameOneof"/> if successful.</returns>
-        public static MetricNameOneof Parse(string name, bool allowUnknown)
-        {
-            MetricNameOneof result;
-            if (TryParse(name, allowUnknown, out result))
-            {
-                return result;
-            }
-            throw new sys::ArgumentException("Invalid name", nameof(name));
-        }
-
-        /// <summary>
-        /// Tries to parse a resource name in string form into a new <see cref="MetricNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>MetricName: A resource of type 'metric'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>.</param>
-        /// <param name="result">When this method returns, the parsed <see cref="MetricNameOneof"/>,
-        /// or <c>null</c> if parsing fails.</param>
-        /// <returns><c>true</c> if the name was parsed succssfully; <c>false</c> otherwise.</returns>
-        public static bool TryParse(string name, bool allowUnknown, out MetricNameOneof result)
-        {
-            gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            MetricName metricName;
-            if (MetricName.TryParse(name, out metricName))
-            {
-                result = new MetricNameOneof(OneofType.MetricName, metricName);
-                return true;
-            }
-            if (allowUnknown)
-            {
-                gax::UnknownResourceName unknownResourceName;
-                if (gax::UnknownResourceName.TryParse(name, out unknownResourceName))
-                {
-                    result = new MetricNameOneof(OneofType.Unknown, unknownResourceName);
-                    return true;
-                }
-            }
-            result = null;
-            return false;
-        }
-
-        /// <summary>
-        /// Construct a new instance of <see cref="MetricNameOneof"/> from the provided <see cref="MetricName"/>
-        /// </summary>
-        /// <param name="metricName">The <see cref="MetricName"/> to be contained within
-        /// the returned <see cref="MetricNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="MetricNameOneof"/>, containing <paramref name="metricName"/>.</returns>
-        public static MetricNameOneof From(MetricName metricName) => new MetricNameOneof(OneofType.MetricName, metricName);
-
-        private static bool IsValid(OneofType type, gax::IResourceName name)
-        {
-            switch (type)
-            {
-                case OneofType.Unknown: return true; // Anything goes with Unknown.
-                case OneofType.MetricName: return name is MetricName;
-                default: return false;
-            }
-        }
-
-        /// <summary>
-        /// Constructs a new instance of the <see cref="MetricNameOneof"/> resource name class
-        /// from a suitable <see cref="gax::IResourceName"/> instance.
-        /// </summary>
-        public MetricNameOneof(OneofType type, gax::IResourceName name)
-        {
-            Type = gax::GaxPreconditions.CheckEnumValue<OneofType>(type, nameof(type));
-            Name = gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            if (!IsValid(type, name))
-            {
-                throw new sys::ArgumentException($"Mismatched OneofType '{type}' and resource name '{name}'");
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OneofType"/> of the Name contained in this instance.
-        /// </summary>
-        public OneofType Type { get; }
-
-        /// <summary>
-        /// The <see cref="gax::IResourceName"/> contained in this instance.
-        /// </summary>
-        public gax::IResourceName Name { get; }
-
-        private T CheckAndReturn<T>(OneofType type)
-        {
-            if (Type != type)
-            {
-                throw new sys::InvalidOperationException($"Requested type {type}, but this one-of contains type {Type}");
-            }
-            return (T)Name;
-        }
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="MetricName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="MetricName"/>.
-        /// </remarks>
-        public MetricName MetricName => CheckAndReturn<MetricName>(OneofType.MetricName);
-
-        /// <inheritdoc />
-        public gax::ResourceNameKind Kind => gax::ResourceNameKind.Oneof;
-
-        /// <inheritdoc />
-        public override string ToString() => Name.ToString();
-
-        /// <inheritdoc />
-        public override int GetHashCode() => ToString().GetHashCode();
-
-        /// <inheritdoc />
-        public override bool Equals(object obj) => Equals(obj as MetricNameOneof);
-
-        /// <inheritdoc />
-        public bool Equals(MetricNameOneof other) => ToString() == other?.ToString();
-
-        /// <inheritdoc />
-        public static bool operator ==(MetricNameOneof a, MetricNameOneof b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
-
-        /// <inheritdoc />
-        public static bool operator !=(MetricNameOneof a, MetricNameOneof b) => !(a == b);
-    }
-
-    /// <summary>
     /// Resource name for the 'organization' resource.
     /// </summary>
     public sealed partial class OrganizationName : gax::IResourceName, sys::IEquatable<OrganizationName>
@@ -2188,274 +2016,6 @@ namespace Google.Cloud.Logging.V2
 
         /// <inheritdoc />
         public static bool operator !=(OrganizationSinkName a, OrganizationSinkName b) => !(a == b);
-    }
-
-    /// <summary>
-    /// Resource name which will contain one of a choice of resource names.
-    /// </summary>
-    /// <remarks>
-    /// This resource name will contain one of the following:
-    /// <list type="bullet">
-    /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-    /// <item><description>OrganizationName: A resource of type 'organization'.</description></item>
-    /// <item><description>FolderName: A resource of type 'folder'.</description></item>
-    /// <item><description>BillingName: A resource of type 'billing'.</description></item>
-    /// </list>
-    /// </remarks>
-    public sealed partial class ParentNameOneof : gax::IResourceName, sys::IEquatable<ParentNameOneof>
-    {
-        /// <summary>
-        /// The possible contents of <see cref="ParentNameOneof"/>.
-        /// </summary>
-        public enum OneofType
-        {
-            /// <summary>
-            /// A resource of an unknown type.
-            /// </summary>
-            Unknown = 0,
-
-            /// <summary>
-            /// A resource of type 'project'.
-            /// </summary>
-            ProjectName = 1,
-
-            /// <summary>
-            /// A resource of type 'organization'.
-            /// </summary>
-            OrganizationName = 2,
-
-            /// <summary>
-            /// A resource of type 'folder'.
-            /// </summary>
-            FolderName = 3,
-
-            /// <summary>
-            /// A resource of type 'billing'.
-            /// </summary>
-            BillingName = 4,
-        }
-
-        /// <summary>
-        /// Parses a resource name in string form into a new <see cref="ParentNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-        /// <item><description>OrganizationName: A resource of type 'organization'.</description></item>
-        /// <item><description>FolderName: A resource of type 'folder'.</description></item>
-        /// <item><description>BillingName: A resource of type 'billing'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>; otherwise will throw an
-        /// <see cref="sys::ArgumentException"/> if an unknown resource name is given.</param>
-        /// <returns>The parsed <see cref="ParentNameOneof"/> if successful.</returns>
-        public static ParentNameOneof Parse(string name, bool allowUnknown)
-        {
-            ParentNameOneof result;
-            if (TryParse(name, allowUnknown, out result))
-            {
-                return result;
-            }
-            throw new sys::ArgumentException("Invalid name", nameof(name));
-        }
-
-        /// <summary>
-        /// Tries to parse a resource name in string form into a new <see cref="ParentNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-        /// <item><description>OrganizationName: A resource of type 'organization'.</description></item>
-        /// <item><description>FolderName: A resource of type 'folder'.</description></item>
-        /// <item><description>BillingName: A resource of type 'billing'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>.</param>
-        /// <param name="result">When this method returns, the parsed <see cref="ParentNameOneof"/>,
-        /// or <c>null</c> if parsing fails.</param>
-        /// <returns><c>true</c> if the name was parsed succssfully; <c>false</c> otherwise.</returns>
-        public static bool TryParse(string name, bool allowUnknown, out ParentNameOneof result)
-        {
-            gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            ProjectName projectName;
-            if (ProjectName.TryParse(name, out projectName))
-            {
-                result = new ParentNameOneof(OneofType.ProjectName, projectName);
-                return true;
-            }
-            OrganizationName organizationName;
-            if (OrganizationName.TryParse(name, out organizationName))
-            {
-                result = new ParentNameOneof(OneofType.OrganizationName, organizationName);
-                return true;
-            }
-            FolderName folderName;
-            if (FolderName.TryParse(name, out folderName))
-            {
-                result = new ParentNameOneof(OneofType.FolderName, folderName);
-                return true;
-            }
-            BillingName billingName;
-            if (BillingName.TryParse(name, out billingName))
-            {
-                result = new ParentNameOneof(OneofType.BillingName, billingName);
-                return true;
-            }
-            if (allowUnknown)
-            {
-                gax::UnknownResourceName unknownResourceName;
-                if (gax::UnknownResourceName.TryParse(name, out unknownResourceName))
-                {
-                    result = new ParentNameOneof(OneofType.Unknown, unknownResourceName);
-                    return true;
-                }
-            }
-            result = null;
-            return false;
-        }
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="ProjectName"/>
-        /// </summary>
-        /// <param name="projectName">The <see cref="ProjectName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="projectName"/>.</returns>
-        public static ParentNameOneof From(ProjectName projectName) => new ParentNameOneof(OneofType.ProjectName, projectName);
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="OrganizationName"/>
-        /// </summary>
-        /// <param name="organizationName">The <see cref="OrganizationName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="organizationName"/>.</returns>
-        public static ParentNameOneof From(OrganizationName organizationName) => new ParentNameOneof(OneofType.OrganizationName, organizationName);
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="FolderName"/>
-        /// </summary>
-        /// <param name="folderName">The <see cref="FolderName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="folderName"/>.</returns>
-        public static ParentNameOneof From(FolderName folderName) => new ParentNameOneof(OneofType.FolderName, folderName);
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="BillingName"/>
-        /// </summary>
-        /// <param name="billingName">The <see cref="BillingName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="billingName"/>.</returns>
-        public static ParentNameOneof From(BillingName billingName) => new ParentNameOneof(OneofType.BillingName, billingName);
-
-        private static bool IsValid(OneofType type, gax::IResourceName name)
-        {
-            switch (type)
-            {
-                case OneofType.Unknown: return true; // Anything goes with Unknown.
-                case OneofType.ProjectName: return name is ProjectName;
-                case OneofType.OrganizationName: return name is OrganizationName;
-                case OneofType.FolderName: return name is FolderName;
-                case OneofType.BillingName: return name is BillingName;
-                default: return false;
-            }
-        }
-
-        /// <summary>
-        /// Constructs a new instance of the <see cref="ParentNameOneof"/> resource name class
-        /// from a suitable <see cref="gax::IResourceName"/> instance.
-        /// </summary>
-        public ParentNameOneof(OneofType type, gax::IResourceName name)
-        {
-            Type = gax::GaxPreconditions.CheckEnumValue<OneofType>(type, nameof(type));
-            Name = gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            if (!IsValid(type, name))
-            {
-                throw new sys::ArgumentException($"Mismatched OneofType '{type}' and resource name '{name}'");
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OneofType"/> of the Name contained in this instance.
-        /// </summary>
-        public OneofType Type { get; }
-
-        /// <summary>
-        /// The <see cref="gax::IResourceName"/> contained in this instance.
-        /// </summary>
-        public gax::IResourceName Name { get; }
-
-        private T CheckAndReturn<T>(OneofType type)
-        {
-            if (Type != type)
-            {
-                throw new sys::InvalidOperationException($"Requested type {type}, but this one-of contains type {Type}");
-            }
-            return (T)Name;
-        }
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="ProjectName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="ProjectName"/>.
-        /// </remarks>
-        public ProjectName ProjectName => CheckAndReturn<ProjectName>(OneofType.ProjectName);
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="OrganizationName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="OrganizationName"/>.
-        /// </remarks>
-        public OrganizationName OrganizationName => CheckAndReturn<OrganizationName>(OneofType.OrganizationName);
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="FolderName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="FolderName"/>.
-        /// </remarks>
-        public FolderName FolderName => CheckAndReturn<FolderName>(OneofType.FolderName);
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="BillingName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="BillingName"/>.
-        /// </remarks>
-        public BillingName BillingName => CheckAndReturn<BillingName>(OneofType.BillingName);
-
-        /// <inheritdoc />
-        public gax::ResourceNameKind Kind => gax::ResourceNameKind.Oneof;
-
-        /// <inheritdoc />
-        public override string ToString() => Name.ToString();
-
-        /// <inheritdoc />
-        public override int GetHashCode() => ToString().GetHashCode();
-
-        /// <inheritdoc />
-        public override bool Equals(object obj) => Equals(obj as ParentNameOneof);
-
-        /// <inheritdoc />
-        public bool Equals(ParentNameOneof other) => ToString() == other?.ToString();
-
-        /// <inheritdoc />
-        public static bool operator ==(ParentNameOneof a, ParentNameOneof b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
-
-        /// <inheritdoc />
-        public static bool operator !=(ParentNameOneof a, ParentNameOneof b) => !(a == b);
     }
 
     /// <summary>
@@ -2920,11 +2480,11 @@ namespace Google.Cloud.Logging.V2
     public partial class CreateExclusionRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -2933,11 +2493,11 @@ namespace Google.Cloud.Logging.V2
     public partial class CreateLogMetricRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -2946,11 +2506,11 @@ namespace Google.Cloud.Logging.V2
     public partial class CreateSinkRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -2972,11 +2532,11 @@ namespace Google.Cloud.Logging.V2
     public partial class DeleteLogMetricRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.MetricNameOneof"/>-typed view over the <see cref="MetricName"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.MetricName"/>-typed view over the <see cref="MetricName"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.MetricNameOneof MetricNameAsMetricNameOneof
+        public Google.Cloud.Logging.V2.MetricName MetricNameAsMetricName
         {
-            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricNameOneof.Parse(MetricName, true); }
+            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricName.Parse(MetricName); }
             set { MetricName = value != null ? value.ToString() : ""; }
         }
 
@@ -3024,11 +2584,11 @@ namespace Google.Cloud.Logging.V2
     public partial class GetLogMetricRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.MetricNameOneof"/>-typed view over the <see cref="MetricName"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.MetricName"/>-typed view over the <see cref="MetricName"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.MetricNameOneof MetricNameAsMetricNameOneof
+        public Google.Cloud.Logging.V2.MetricName MetricNameAsMetricName
         {
-            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricNameOneof.Parse(MetricName, true); }
+            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricName.Parse(MetricName); }
             set { MetricName = value != null ? value.ToString() : ""; }
         }
 
@@ -3050,11 +2610,11 @@ namespace Google.Cloud.Logging.V2
     public partial class ListExclusionsRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -3063,22 +2623,22 @@ namespace Google.Cloud.Logging.V2
     public partial class ListLogEntriesRequest
     {
         /// <summary>
-        /// <see cref="gax::ResourceNameList{ParentNameOneof}"/>-typed view over the <see cref="ResourceNames"/> resource name property.
+        /// <see cref="gax::ResourceNameList{ProjectName}"/>-typed view over the <see cref="ResourceNames"/> resource name property.
         /// </summary>
-        public gax::ResourceNameList<ParentNameOneof> ResourceNamesAsParentNameOneofs =>
-            new gax::ResourceNameList<ParentNameOneof>(ResourceNames,
-                str => ParentNameOneof.Parse(str, true));
+        public gax::ResourceNameList<ProjectName> ResourceNamesAsProjectNames =>
+            new gax::ResourceNameList<ProjectName>(ResourceNames,
+                str => ProjectName.Parse(str));
 
     }
 
     public partial class ListLogMetricsRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -3087,11 +2647,11 @@ namespace Google.Cloud.Logging.V2
     public partial class ListLogsRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -3100,11 +2660,11 @@ namespace Google.Cloud.Logging.V2
     public partial class ListSinksRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.ParentNameOneof ParentAsParentNameOneof
+        public Google.Cloud.Logging.V2.ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.Logging.V2.ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -3123,14 +2683,27 @@ namespace Google.Cloud.Logging.V2
 
     }
 
+    public partial class LogExclusion
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.Logging.V2.ExclusionNameOneof"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public Google.Cloud.Logging.V2.ExclusionNameOneof ExclusionNameOneof
+        {
+            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.Logging.V2.ExclusionNameOneof.Parse(Name, true); }
+            set { Name = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
     public partial class LogMetric
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.MetricNameOneof"/>-typed view over the <see cref="Name"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.MetricName"/>-typed view over the <see cref="Name"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.MetricNameOneof MetricNameOneof
+        public Google.Cloud.Logging.V2.MetricName MetricName
         {
-            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.Logging.V2.MetricNameOneof.Parse(Name, true); }
+            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.Logging.V2.MetricName.Parse(Name); }
             set { Name = value != null ? value.ToString() : ""; }
         }
 
@@ -3138,6 +2711,15 @@ namespace Google.Cloud.Logging.V2
 
     public partial class LogSink
     {
+        /// <summary>
+        /// <see cref="Google.Cloud.Logging.V2.SinkNameOneof"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public Google.Cloud.Logging.V2.SinkNameOneof SinkNameOneof
+        {
+            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.Logging.V2.SinkNameOneof.Parse(Name, true); }
+            set { Name = value != null ? value.ToString() : ""; }
+        }
+
         /// <summary>
         /// <see cref="gax::IResourceName"/>-typed view over the <see cref="Destination"/> resource name property.
         /// </summary>
@@ -3165,11 +2747,11 @@ namespace Google.Cloud.Logging.V2
     public partial class UpdateLogMetricRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.Logging.V2.MetricNameOneof"/>-typed view over the <see cref="MetricName"/> resource name property.
+        /// <see cref="Google.Cloud.Logging.V2.MetricName"/>-typed view over the <see cref="MetricName"/> resource name property.
         /// </summary>
-        public Google.Cloud.Logging.V2.MetricNameOneof MetricNameAsMetricNameOneof
+        public Google.Cloud.Logging.V2.MetricName MetricNameAsMetricName
         {
-            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricNameOneof.Parse(MetricName, true); }
+            get { return string.IsNullOrEmpty(MetricName) ? null : Google.Cloud.Logging.V2.MetricName.Parse(MetricName); }
             set { MetricName = value != null ? value.ToString() : ""; }
         }
 

@@ -24,12 +24,9 @@ import java.util.List;
 
 /**
  * AUTO-GENERATED DOCUMENTATION AND CLASS
- *
- * @deprecated This resource name class will be removed in the next major version.
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-@Deprecated
-public class LocationName extends ParentName {
+public class LocationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");

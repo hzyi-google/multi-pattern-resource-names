@@ -132,7 +132,7 @@ public class BillingExclusionName extends ExclusionName {
   }
 
   /** Builder for BillingExclusionName. */
-  public static class Builder {
+  public static class Builder extends ExclusionName.Builder {
 
     private String billingAccount;
     private String exclusion;

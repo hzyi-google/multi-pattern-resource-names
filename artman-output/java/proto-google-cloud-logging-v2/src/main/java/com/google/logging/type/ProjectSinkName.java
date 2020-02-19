@@ -132,7 +132,7 @@ public class ProjectSinkName extends SinkName {
   }
 
   /** Builder for ProjectSinkName. */
-  public static class Builder {
+  public static class Builder extends SinkName.Builder {
 
     private String project;
     private String sink;

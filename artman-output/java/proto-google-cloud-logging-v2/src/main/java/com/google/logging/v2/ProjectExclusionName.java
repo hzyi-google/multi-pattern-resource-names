@@ -132,7 +132,7 @@ public class ProjectExclusionName extends ExclusionName {
   }
 
   /** Builder for ProjectExclusionName. */
-  public static class Builder {
+  public static class Builder extends ExclusionName.Builder {
 
     private String project;
     private String exclusion;

@@ -992,7 +992,7 @@ class ConfigServiceV2Client {
    *       "folders/[FOLDER_ID]"
    *
    *   Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
-   * @param {Object} request.exclusion
+   * @param {Object} [request.exclusion]
    *   Required. The new exclusion, whose `name` parameter is an exclusion name
    *   that is not already used in the parent resource.
    *
@@ -1017,12 +1017,7 @@ class ConfigServiceV2Client {
    * });
    *
    * const formattedParent = client.projectPath('[PROJECT]');
-   * const exclusion = {};
-   * const request = {
-   *   parent: formattedParent,
-   *   exclusion: exclusion,
-   * };
-   * client.createExclusion(request)
+   * client.createExclusion({parent: formattedParent})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -1364,6 +1359,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified billing_exclusion resource name string.
    *
    * @param {String} billingAccount
@@ -1378,6 +1374,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified billing_sink resource name string.
    *
    * @param {String} billingAccount
@@ -1392,6 +1389,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified exclusion resource name string.
    *
    * @param {String} project
@@ -1418,6 +1416,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified folder_exclusion resource name string.
    *
    * @param {String} folder
@@ -1432,6 +1431,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified folder_sink resource name string.
    *
    * @param {String} folder
@@ -1458,6 +1458,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified organization_exclusion resource name string.
    *
    * @param {String} organization
@@ -1472,6 +1473,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified organization_sink resource name string.
    *
    * @param {String} organization
@@ -1498,6 +1500,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified sink resource name string.
    *
    * @param {String} project
@@ -1525,6 +1528,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingExclusionName from a billing_exclusion resource.
    *
    * @param {String} billingExclusionName
@@ -1538,6 +1542,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingExclusionName from a billing_exclusion resource.
    *
    * @param {String} billingExclusionName
@@ -1551,6 +1556,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingSinkName from a billing_sink resource.
    *
    * @param {String} billingSinkName
@@ -1564,6 +1570,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the billingSinkName from a billing_sink resource.
    *
    * @param {String} billingSinkName
@@ -1577,6 +1584,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the exclusionName from a exclusion resource.
    *
    * @param {String} exclusionName
@@ -1590,6 +1598,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the exclusionName from a exclusion resource.
    *
    * @param {String} exclusionName
@@ -1616,6 +1625,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderExclusionName from a folder_exclusion resource.
    *
    * @param {String} folderExclusionName
@@ -1629,6 +1639,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderExclusionName from a folder_exclusion resource.
    *
    * @param {String} folderExclusionName
@@ -1642,6 +1653,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderSinkName from a folder_sink resource.
    *
    * @param {String} folderSinkName
@@ -1655,6 +1667,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the folderSinkName from a folder_sink resource.
    *
    * @param {String} folderSinkName
@@ -1681,6 +1694,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationExclusionName from a organization_exclusion resource.
    *
    * @param {String} organizationExclusionName
@@ -1694,6 +1708,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationExclusionName from a organization_exclusion resource.
    *
    * @param {String} organizationExclusionName
@@ -1707,6 +1722,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationSinkName from a organization_sink resource.
    *
    * @param {String} organizationSinkName
@@ -1720,6 +1736,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the organizationSinkName from a organization_sink resource.
    *
    * @param {String} organizationSinkName
@@ -1746,6 +1763,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the sinkName from a sink resource.
    *
    * @param {String} sinkName
@@ -1759,6 +1777,7 @@ class ConfigServiceV2Client {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the sinkName from a sink resource.
    *
    * @param {String} sinkName

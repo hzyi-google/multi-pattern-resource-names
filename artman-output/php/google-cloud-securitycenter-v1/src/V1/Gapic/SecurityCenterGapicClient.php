@@ -127,13 +127,11 @@ class SecurityCenterGapicClient
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
     ];
-    private static $assetNameTemplate;
     private static $assetSecurityMarksNameTemplate;
     private static $findingNameTemplate;
     private static $findingSecurityMarksNameTemplate;
     private static $organizationNameTemplate;
     private static $organizationSettingsNameTemplate;
-    private static $organizationSourcesNameTemplate;
     private static $sourceNameTemplate;
     private static $pathTemplateMap;
 
@@ -156,15 +154,6 @@ class SecurityCenterGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function getAssetNameTemplate()
-    {
-        if (null == self::$assetNameTemplate) {
-            self::$assetNameTemplate = new PathTemplate('organizations/{organization}/assets/{asset}');
-        }
-
-        return self::$assetNameTemplate;
     }
 
     private static function getAssetSecurityMarksNameTemplate()
@@ -212,15 +201,6 @@ class SecurityCenterGapicClient
         return self::$organizationSettingsNameTemplate;
     }
 
-    private static function getOrganizationSourcesNameTemplate()
-    {
-        if (null == self::$organizationSourcesNameTemplate) {
-            self::$organizationSourcesNameTemplate = new PathTemplate('organizations/{organization}/sources/-');
-        }
-
-        return self::$organizationSourcesNameTemplate;
-    }
-
     private static function getSourceNameTemplate()
     {
         if (null == self::$sourceNameTemplate) {
@@ -234,36 +214,16 @@ class SecurityCenterGapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'asset' => self::getAssetNameTemplate(),
                 'assetSecurityMarks' => self::getAssetSecurityMarksNameTemplate(),
                 'finding' => self::getFindingNameTemplate(),
                 'findingSecurityMarks' => self::getFindingSecurityMarksNameTemplate(),
                 'organization' => self::getOrganizationNameTemplate(),
                 'organizationSettings' => self::getOrganizationSettingsNameTemplate(),
-                'organizationSources' => self::getOrganizationSourcesNameTemplate(),
                 'source' => self::getSourceNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a asset resource.
-     *
-     * @param string $organization
-     * @param string $asset
-     *
-     * @return string The formatted asset resource.
-     * @experimental
-     */
-    public static function assetName($organization, $asset)
-    {
-        return self::getAssetNameTemplate()->render([
-            'organization' => $organization,
-            'asset' => $asset,
-        ]);
     }
 
     /**
@@ -274,7 +234,9 @@ class SecurityCenterGapicClient
      * @param string $asset
      *
      * @return string The formatted asset_security_marks resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function assetSecurityMarksName($organization, $asset)
     {
@@ -313,7 +275,9 @@ class SecurityCenterGapicClient
      * @param string $finding
      *
      * @return string The formatted finding_security_marks resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function findingSecurityMarksName($organization, $source, $finding)
     {
@@ -358,22 +322,6 @@ class SecurityCenterGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a organization_sources resource.
-     *
-     * @param string $organization
-     *
-     * @return string The formatted organization_sources resource.
-     * @experimental
-     */
-    public static function organizationSourcesName($organization)
-    {
-        return self::getOrganizationSourcesNameTemplate()->render([
-            'organization' => $organization,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
      * a source resource.
      *
      * @param string $organization
@@ -394,13 +342,11 @@ class SecurityCenterGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - asset: organizations/{organization}/assets/{asset}
      * - assetSecurityMarks: organizations/{organization}/assets/{asset}/securityMarks
      * - finding: organizations/{organization}/sources/{source}/findings/{finding}
      * - findingSecurityMarks: organizations/{organization}/sources/{source}/findings/{finding}/securityMarks
      * - organization: organizations/{organization}
      * - organizationSettings: organizations/{organization}/organizationSettings
-     * - organizationSources: organizations/{organization}/sources/-
      * - source: organizations/{organization}/sources/{source}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
@@ -655,8 +601,8 @@ class SecurityCenterGapicClient
      * ```
      * $securityCenterClient = new SecurityCenterClient();
      * try {
-     *     $formattedResource = $securityCenterClient->sourceName('[ORGANIZATION]', '[SOURCE]');
-     *     $response = $securityCenterClient->getIamPolicy($formattedResource);
+     *     $resource = '';
+     *     $response = $securityCenterClient->getIamPolicy($resource);
      * } finally {
      *     $securityCenterClient->close();
      * }
@@ -1834,9 +1780,9 @@ class SecurityCenterGapicClient
      * ```
      * $securityCenterClient = new SecurityCenterClient();
      * try {
-     *     $formattedResource = $securityCenterClient->sourceName('[ORGANIZATION]', '[SOURCE]');
+     *     $resource = '';
      *     $policy = new Policy();
-     *     $response = $securityCenterClient->setIamPolicy($formattedResource, $policy);
+     *     $response = $securityCenterClient->setIamPolicy($resource, $policy);
      * } finally {
      *     $securityCenterClient->close();
      * }
@@ -1891,9 +1837,9 @@ class SecurityCenterGapicClient
      * ```
      * $securityCenterClient = new SecurityCenterClient();
      * try {
-     *     $formattedResource = $securityCenterClient->sourceName('[ORGANIZATION]', '[SOURCE]');
+     *     $resource = '';
      *     $permissions = [];
-     *     $response = $securityCenterClient->testIamPermissions($formattedResource, $permissions);
+     *     $response = $securityCenterClient->testIamPermissions($resource, $permissions);
      * } finally {
      *     $securityCenterClient->close();
      * }

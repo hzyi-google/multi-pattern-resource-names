@@ -123,17 +123,8 @@ class MetricsServiceV2Client {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      billingPathTemplate: new gaxModule.PathTemplate(
-        'billingAccounts/{billing_account}'
-      ),
-      folderPathTemplate: new gaxModule.PathTemplate(
-        'folders/{folder}'
-      ),
       metricPathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/metrics/{metric}'
-      ),
-      organizationPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}'
       ),
       projectPathTemplate: new gaxModule.PathTemplate(
         'projects/{project}'
@@ -650,30 +641,6 @@ class MetricsServiceV2Client {
   // --------------------
 
   /**
-   * Return a fully-qualified billing resource name string.
-   *
-   * @param {String} billingAccount
-   * @returns {String}
-   */
-  billingPath(billingAccount) {
-    return this._pathTemplates.billingPathTemplate.render({
-      billing_account: billingAccount,
-    });
-  }
-
-  /**
-   * Return a fully-qualified folder resource name string.
-   *
-   * @param {String} folder
-   * @returns {String}
-   */
-  folderPath(folder) {
-    return this._pathTemplates.folderPathTemplate.render({
-      folder: folder,
-    });
-  }
-
-  /**
    * Return a fully-qualified metric resource name string.
    *
    * @param {String} project
@@ -688,18 +655,6 @@ class MetricsServiceV2Client {
   }
 
   /**
-   * Return a fully-qualified organization resource name string.
-   *
-   * @param {String} organization
-   * @returns {String}
-   */
-  organizationPath(organization) {
-    return this._pathTemplates.organizationPathTemplate.render({
-      organization: organization,
-    });
-  }
-
-  /**
    * Return a fully-qualified project resource name string.
    *
    * @param {String} project
@@ -709,32 +664,6 @@ class MetricsServiceV2Client {
     return this._pathTemplates.projectPathTemplate.render({
       project: project,
     });
-  }
-
-  /**
-   * Parse the billingName from a billing resource.
-   *
-   * @param {String} billingName
-   *   A fully-qualified path representing a billing resources.
-   * @returns {String} - A string representing the billing_account.
-   */
-  matchBillingAccountFromBillingName(billingName) {
-    return this._pathTemplates.billingPathTemplate
-      .match(billingName)
-      .billing_account;
-  }
-
-  /**
-   * Parse the folderName from a folder resource.
-   *
-   * @param {String} folderName
-   *   A fully-qualified path representing a folder resources.
-   * @returns {String} - A string representing the folder.
-   */
-  matchFolderFromFolderName(folderName) {
-    return this._pathTemplates.folderPathTemplate
-      .match(folderName)
-      .folder;
   }
 
   /**
@@ -761,19 +690,6 @@ class MetricsServiceV2Client {
     return this._pathTemplates.metricPathTemplate
       .match(metricName)
       .metric;
-  }
-
-  /**
-   * Parse the organizationName from a organization resource.
-   *
-   * @param {String} organizationName
-   *   A fully-qualified path representing a organization resources.
-   * @returns {String} - A string representing the organization.
-   */
-  matchOrganizationFromOrganizationName(organizationName) {
-    return this._pathTemplates.organizationPathTemplate
-      .match(organizationName)
-      .organization;
   }
 
   /**

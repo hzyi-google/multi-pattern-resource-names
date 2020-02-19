@@ -29,7 +29,7 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 @Deprecated
-public class AssetSecurityMarksName extends SecuritymarksName {
+public class AssetSecurityMarksName extends SecurityMarksName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/assets/{asset}/securityMarks");
@@ -132,7 +132,7 @@ public class AssetSecurityMarksName extends SecuritymarksName {
   }
 
   /** Builder for AssetSecurityMarksName. */
-  public static class Builder {
+  public static class Builder extends SecurityMarksName.Builder {
 
     private String organization;
     private String asset;

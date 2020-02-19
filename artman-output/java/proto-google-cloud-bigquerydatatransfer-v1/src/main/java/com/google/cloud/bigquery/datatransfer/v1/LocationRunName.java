@@ -150,7 +150,7 @@ public class LocationRunName extends RunName {
   }
 
   /** Builder for LocationRunName. */
-  public static class Builder {
+  public static class Builder extends RunName.Builder {
 
     private String project;
     private String location;

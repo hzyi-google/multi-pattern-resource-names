@@ -67,12 +67,11 @@ namespace Google.Cloud.Logging.V2
         /// The eligible RPC <see cref="grpccore::StatusCode"/>s for retry for "Idempotent" RPC methods are:
         /// <list type="bullet">
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// </remarks>
         public static sys::Predicate<grpccore::RpcException> IdempotentRetryFilter { get; } =
-            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Internal, grpccore::StatusCode.Unavailable);
+            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable);
 
         /// <summary>
         /// The filter specifying which RPC <see cref="grpccore::StatusCode"/>s are eligible for retry
@@ -142,7 +141,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -173,7 +171,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -232,9 +229,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -243,7 +238,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -263,9 +258,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -274,7 +267,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -507,13 +500,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="LogMetric"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListLogMetricsResponse, LogMetric> ListLogMetricsAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogMetricsAsync(
                 new ListLogMetricsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -542,13 +535,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="LogMetric"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListLogMetricsResponse, LogMetric> ListLogMetrics(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogMetrics(
                 new ListLogMetricsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -677,11 +670,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> GetLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             gaxgrpc::CallSettings callSettings = null) => GetLogMetricAsync(
                 new GetLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                 },
                 callSettings);
 
@@ -700,7 +693,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> GetLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             st::CancellationToken cancellationToken) => GetLogMetricAsync(
                 metricName,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -720,11 +713,11 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogMetric GetLogMetric(
-            MetricNameOneof metricName,
+            MetricName metricName,
             gaxgrpc::CallSettings callSettings = null) => GetLogMetric(
                 new GetLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                 },
                 callSettings);
 
@@ -871,12 +864,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> CreateLogMetricAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => CreateLogMetricAsync(
                 new CreateLogMetricRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);
@@ -902,7 +895,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> CreateLogMetricAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogMetric metric,
             st::CancellationToken cancellationToken) => CreateLogMetricAsync(
                 parent,
@@ -930,12 +923,12 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogMetric CreateLogMetric(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => CreateLogMetric(
                 new CreateLogMetricRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);
@@ -1108,12 +1101,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> UpdateLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => UpdateLogMetricAsync(
                 new UpdateLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);
@@ -1140,7 +1133,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogMetric> UpdateLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             LogMetric metric,
             st::CancellationToken cancellationToken) => UpdateLogMetricAsync(
                 metricName,
@@ -1169,12 +1162,12 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogMetric UpdateLogMetric(
-            MetricNameOneof metricName,
+            MetricName metricName,
             LogMetric metric,
             gaxgrpc::CallSettings callSettings = null) => UpdateLogMetric(
                 new UpdateLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                     Metric = gax::GaxPreconditions.CheckNotNull(metric, nameof(metric)),
                 },
                 callSettings);
@@ -1343,11 +1336,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             gaxgrpc::CallSettings callSettings = null) => DeleteLogMetricAsync(
                 new DeleteLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                 },
                 callSettings);
 
@@ -1366,7 +1359,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteLogMetricAsync(
-            MetricNameOneof metricName,
+            MetricName metricName,
             st::CancellationToken cancellationToken) => DeleteLogMetricAsync(
                 metricName,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -1383,11 +1376,11 @@ namespace Google.Cloud.Logging.V2
         /// If not null, applies overrides to this RPC call.
         /// </param>
         public virtual void DeleteLogMetric(
-            MetricNameOneof metricName,
+            MetricName metricName,
             gaxgrpc::CallSettings callSettings = null) => DeleteLogMetric(
                 new DeleteLogMetricRequest
                 {
-                    MetricNameAsMetricNameOneof = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
+                    MetricNameAsMetricName = gax::GaxPreconditions.CheckNotNull(metricName, nameof(metricName)),
                 },
                 callSettings);
 

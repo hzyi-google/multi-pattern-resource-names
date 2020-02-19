@@ -65,19 +65,6 @@ func defaultConfigCallOptions() *ConfigCallOptions {
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.DeadlineExceeded,
-					codes.Internal,
-					codes.Unavailable,
-				}, gax.Backoff{
-					Initial:    100 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.3,
-				})
-			}),
-		},
-		{"default", "idempotent2"}: {
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.DeadlineExceeded,
 					codes.Unavailable,
 				}, gax.Backoff{
 					Initial:    100 * time.Millisecond,
@@ -91,14 +78,14 @@ func defaultConfigCallOptions() *ConfigCallOptions {
 		ListSinks:          retry[[2]string{"default", "idempotent"}],
 		GetSink:            retry[[2]string{"default", "idempotent"}],
 		CreateSink:         retry[[2]string{"default", "non_idempotent"}],
-		UpdateSink:         retry[[2]string{"default", "idempotent"}],
-		DeleteSink:         retry[[2]string{"default", "idempotent"}],
+		UpdateSink:         retry[[2]string{"default", "non_idempotent"}],
+		DeleteSink:         retry[[2]string{"default", "non_idempotent"}],
 		ListExclusions:     retry[[2]string{"default", "idempotent"}],
 		GetExclusion:       retry[[2]string{"default", "idempotent"}],
 		CreateExclusion:    retry[[2]string{"default", "non_idempotent"}],
 		UpdateExclusion:    retry[[2]string{"default", "non_idempotent"}],
-		DeleteExclusion:    retry[[2]string{"default", "idempotent"}],
-		GetCmekSettings:    retry[[2]string{"default", "idempotent2"}],
+		DeleteExclusion:    retry[[2]string{"default", "non_idempotent"}],
+		GetCmekSettings:    retry[[2]string{"default", "idempotent"}],
 		UpdateCmekSettings: retry[[2]string{"default", "non_idempotent"}],
 	}
 }

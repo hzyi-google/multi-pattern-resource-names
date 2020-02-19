@@ -314,7 +314,9 @@ class ConfigServiceV2GapicClient
      * @param string $exclusion
      *
      * @return string The formatted billing_exclusion resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function billingExclusionName($billingAccount, $exclusion)
     {
@@ -332,7 +334,9 @@ class ConfigServiceV2GapicClient
      * @param string $sink
      *
      * @return string The formatted billing_sink resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function billingSinkName($billingAccount, $sink)
     {
@@ -350,7 +354,9 @@ class ConfigServiceV2GapicClient
      * @param string $exclusion
      *
      * @return string The formatted exclusion resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function exclusionName($project, $exclusion)
     {
@@ -384,7 +390,9 @@ class ConfigServiceV2GapicClient
      * @param string $exclusion
      *
      * @return string The formatted folder_exclusion resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function folderExclusionName($folder, $exclusion)
     {
@@ -402,7 +410,9 @@ class ConfigServiceV2GapicClient
      * @param string $sink
      *
      * @return string The formatted folder_sink resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function folderSinkName($folder, $sink)
     {
@@ -436,7 +446,9 @@ class ConfigServiceV2GapicClient
      * @param string $exclusion
      *
      * @return string The formatted organization_exclusion resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function organizationExclusionName($organization, $exclusion)
     {
@@ -454,7 +466,9 @@ class ConfigServiceV2GapicClient
      * @param string $sink
      *
      * @return string The formatted organization_sink resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function organizationSinkName($organization, $sink)
     {
@@ -488,7 +502,9 @@ class ConfigServiceV2GapicClient
      * @param string $sink
      *
      * @return string The formatted sink resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function sinkName($project, $sink)
     {
@@ -1137,8 +1153,7 @@ class ConfigServiceV2GapicClient
      * $configServiceV2Client = new ConfigServiceV2Client();
      * try {
      *     $formattedParent = $configServiceV2Client->projectName('[PROJECT]');
-     *     $exclusion = new LogExclusion();
-     *     $response = $configServiceV2Client->createExclusion($formattedParent, $exclusion);
+     *     $response = $configServiceV2Client->createExclusion($formattedParent);
      * } finally {
      *     $configServiceV2Client->close();
      * }
@@ -1152,11 +1167,12 @@ class ConfigServiceV2GapicClient
      *     "folders/[FOLDER_ID]"
      *
      * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
-     * @param LogExclusion $exclusion    Required. The new exclusion, whose `name` parameter is an exclusion name
-     *                                   that is not already used in the parent resource.
-     * @param array        $optionalArgs {
-     *                                   Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type LogExclusion $exclusion
+     *          Required. The new exclusion, whose `name` parameter is an exclusion name
+     *          that is not already used in the parent resource.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1169,11 +1185,13 @@ class ConfigServiceV2GapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function createExclusion($parent, $exclusion, array $optionalArgs = [])
+    public function createExclusion($parent, array $optionalArgs = [])
     {
         $request = new CreateExclusionRequest();
         $request->setParent($parent);
-        $request->setExclusion($exclusion);
+        if (isset($optionalArgs['exclusion'])) {
+            $request->setExclusion($optionalArgs['exclusion']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'parent' => $request->getParent(),

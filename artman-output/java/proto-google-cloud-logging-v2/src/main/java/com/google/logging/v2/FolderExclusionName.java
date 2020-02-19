@@ -132,7 +132,7 @@ public class FolderExclusionName extends ExclusionName {
   }
 
   /** Builder for FolderExclusionName. */
-  public static class Builder {
+  public static class Builder extends ExclusionName.Builder {
 
     private String folder;
     private String exclusion;

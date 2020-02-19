@@ -132,7 +132,7 @@ public class BillingSinkName extends SinkName {
   }
 
   /** Builder for BillingSinkName. */
-  public static class Builder {
+  public static class Builder extends SinkName.Builder {
 
     private String billingAccount;
     private String sink;
