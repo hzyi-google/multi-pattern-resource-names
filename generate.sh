@@ -1,6 +1,7 @@
 #/bin/bash
 # rm -rf artman-output
 # mkdir -p artman-output
+rm -rf googleapis/artman-output
 
 while true; do
 	case "$1" in
@@ -58,5 +59,5 @@ do
   done
 done
 
-rm -rf artman-output/*
+# rm -rf artman-output/*
 cp -r googleapis/artman-output .
