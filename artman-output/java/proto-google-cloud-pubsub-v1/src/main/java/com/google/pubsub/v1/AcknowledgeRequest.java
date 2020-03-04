@@ -109,11 +109,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object subscription_;
   /**
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   public java.lang.String getSubscription() {
@@ -130,11 +130,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
@@ -155,11 +155,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList ackIds_;
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the ackIds.
    */
   public com.google.protobuf.ProtocolStringList
@@ -168,11 +168,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of ackIds.
    */
   public int getAckIdsCount() {
@@ -180,11 +180,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
    */
@@ -193,11 +193,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
    */
@@ -551,11 +551,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object subscription_ = "";
     /**
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The subscription.
      */
     public java.lang.String getSubscription() {
@@ -572,11 +572,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
@@ -594,11 +594,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The subscription to set.
      * @return This builder for chaining.
      */
@@ -614,11 +614,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
@@ -629,11 +629,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription whose message is being acknowledged.
+     * Required. The subscription whose message is being acknowledged.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
      */
@@ -658,11 +658,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the ackIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -671,11 +671,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of ackIds.
      */
     public int getAckIdsCount() {
@@ -683,11 +683,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
      */
@@ -696,11 +696,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
      */
@@ -710,11 +710,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index to set the value at.
      * @param value The ackIds to set.
      * @return This builder for chaining.
@@ -731,11 +731,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The ackIds to add.
      * @return This builder for chaining.
      */
@@ -751,11 +751,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param values The ackIds to add.
      * @return This builder for chaining.
      */
@@ -769,11 +769,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearAckIds() {
@@ -784,11 +784,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The acknowledgment ID for the messages being acknowledged that was returned
+     * Required. The acknowledgment ID for the messages being acknowledged that was returned
      * by the Pub/Sub system in the `Pull` response. Must not be empty.
      * </pre>
      *
-     * <code>repeated string ack_ids = 2;</code>
+     * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes of the ackIds to add.
      * @return This builder for chaining.
      */

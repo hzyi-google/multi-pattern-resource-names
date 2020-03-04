@@ -9,21 +9,21 @@ public interface AcknowledgeRequestOrBuilder extends
 
   /**
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
    * <pre>
-   * The subscription whose message is being acknowledged.
+   * Required. The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
@@ -31,43 +31,43 @@ public interface AcknowledgeRequestOrBuilder extends
 
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String>
       getAckIdsList();
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of ackIds.
    */
   int getAckIdsCount();
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
   /**
    * <pre>
-   * The acknowledgment ID for the messages being acknowledged that was returned
+   * Required. The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * </pre>
    *
-   * <code>repeated string ack_ids = 2;</code>
+   * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
    */

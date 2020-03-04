@@ -9,7 +9,7 @@ public interface SubscriptionOrBuilder extends
 
   /**
    * <pre>
-   * The name of the subscription. It must have the format
+   * Required. The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
    * start with a letter, and contain only letters (`[A-Za-z]`), numbers
    * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -17,13 +17,13 @@ public interface SubscriptionOrBuilder extends
    * in length, and it must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The name of the subscription. It must have the format
+   * Required. The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
    * start with a letter, and contain only letters (`[A-Za-z]`), numbers
    * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -31,7 +31,7 @@ public interface SubscriptionOrBuilder extends
    * in length, and it must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -39,25 +39,25 @@ public interface SubscriptionOrBuilder extends
 
   /**
    * <pre>
-   * The name of the topic from which this subscription is receiving messages.
+   * Required. The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
    * The value of this field will be `_deleted-topic_` if the topic has been
    * deleted.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The topic.
    */
   java.lang.String getTopic();
   /**
    * <pre>
-   * The name of the topic from which this subscription is receiving messages.
+   * Required. The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
    * The value of this field will be `_deleted-topic_` if the topic has been
    * deleted.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for topic.
    */
   com.google.protobuf.ByteString

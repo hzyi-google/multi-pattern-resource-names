@@ -95,11 +95,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * Name of the topic to delete.
+   * Required. Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The topic.
    */
   public java.lang.String getTopic() {
@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the topic to delete.
+   * Required. Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString
@@ -446,11 +446,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * Name of the topic to delete.
+     * Required. Name of the topic to delete.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The topic.
      */
     public java.lang.String getTopic() {
@@ -467,11 +467,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to delete.
+     * Required. Name of the topic to delete.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
@@ -489,11 +489,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to delete.
+     * Required. Name of the topic to delete.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The topic to set.
      * @return This builder for chaining.
      */
@@ -509,11 +509,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to delete.
+     * Required. Name of the topic to delete.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
@@ -524,11 +524,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the topic to delete.
+     * Required. Name of the topic to delete.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for topic to set.
      * @return This builder for chaining.
      */

@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The name of the topic. It must have the format
+   * Required. The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
    * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
    * must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   public java.lang.String getName() {
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the topic. It must have the format
+   * Required. The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
    * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The name of the topic. It must have the format
+     * Required. The name of the topic. It must have the format
      * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
      * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
      * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * must not start with `"goog"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the topic. It must have the format
+     * Required. The name of the topic. It must have the format
      * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
      * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
      * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
      * must not start with `"goog"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the topic. It must have the format
+     * Required. The name of the topic. It must have the format
      * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
      * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
      * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
      * must not start with `"goog"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the topic. It must have the format
+     * Required. The name of the topic. It must have the format
      * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
      * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
      * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
      * must not start with `"goog"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the topic. It must have the format
+     * Required. The name of the topic. It must have the format
      * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
      * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
      * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * must not start with `"goog"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

@@ -123,9 +123,6 @@ class SecurityCenterClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      assetPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/assets/{asset}'
-      ),
       assetSecurityMarksPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/assets/{asset}/securityMarks'
       ),
@@ -140,9 +137,6 @@ class SecurityCenterClient {
       ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
-      ),
-      organizationSourcesPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/sources/-'
       ),
       sourcePathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}'
@@ -480,8 +474,8 @@ class SecurityCenterClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-   * client.getIamPolicy({resource: formattedResource})
+   * const resource = '';
+   * client.getIamPolicy({resource: resource})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -2517,10 +2511,10 @@ class SecurityCenterClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+   * const resource = '';
    * const policy = {};
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   policy: policy,
    * };
    * client.setIamPolicy(request)
@@ -2581,10 +2575,10 @@ class SecurityCenterClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+   * const resource = '';
    * const permissions = [];
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   permissions: permissions,
    * };
    * client.testIamPermissions(request)
@@ -2880,20 +2874,7 @@ class SecurityCenterClient {
   // --------------------
 
   /**
-   * Return a fully-qualified asset resource name string.
-   *
-   * @param {String} organization
-   * @param {String} asset
-   * @returns {String}
-   */
-  assetPath(organization, asset) {
-    return this._pathTemplates.assetPathTemplate.render({
-      organization: organization,
-      asset: asset,
-    });
-  }
-
-  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified asset_security_marks resource name string.
    *
    * @param {String} organization
@@ -2924,6 +2905,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified finding_security_marks resource name string.
    *
    * @param {String} organization
@@ -2964,18 +2946,6 @@ class SecurityCenterClient {
   }
 
   /**
-   * Return a fully-qualified organization_sources resource name string.
-   *
-   * @param {String} organization
-   * @returns {String}
-   */
-  organizationSourcesPath(organization) {
-    return this._pathTemplates.organizationSourcesPathTemplate.render({
-      organization: organization,
-    });
-  }
-
-  /**
    * Return a fully-qualified source resource name string.
    *
    * @param {String} organization
@@ -2990,32 +2960,7 @@ class SecurityCenterClient {
   }
 
   /**
-   * Parse the assetName from a asset resource.
-   *
-   * @param {String} assetName
-   *   A fully-qualified path representing a asset resources.
-   * @returns {String} - A string representing the organization.
-   */
-  matchOrganizationFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate
-      .match(assetName)
-      .organization;
-  }
-
-  /**
-   * Parse the assetName from a asset resource.
-   *
-   * @param {String} assetName
-   *   A fully-qualified path representing a asset resources.
-   * @returns {String} - A string representing the asset.
-   */
-  matchAssetFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate
-      .match(assetName)
-      .asset;
-  }
-
-  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the assetSecurityMarksName from a asset_security_marks resource.
    *
    * @param {String} assetSecurityMarksName
@@ -3029,6 +2974,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the assetSecurityMarksName from a asset_security_marks resource.
    *
    * @param {String} assetSecurityMarksName
@@ -3081,6 +3027,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3094,6 +3041,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3107,6 +3055,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3142,19 +3091,6 @@ class SecurityCenterClient {
   matchOrganizationFromOrganizationSettingsName(organizationSettingsName) {
     return this._pathTemplates.organizationSettingsPathTemplate
       .match(organizationSettingsName)
-      .organization;
-  }
-
-  /**
-   * Parse the organizationSourcesName from a organization_sources resource.
-   *
-   * @param {String} organizationSourcesName
-   *   A fully-qualified path representing a organization_sources resources.
-   * @returns {String} - A string representing the organization.
-   */
-  matchOrganizationFromOrganizationSourcesName(organizationSourcesName) {
-    return this._pathTemplates.organizationSourcesPathTemplate
-      .match(organizationSourcesName)
       .organization;
   }
 

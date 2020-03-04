@@ -114,10 +114,10 @@ private static final long serialVersionUID = 0L;
   private com.google.pubsub.v1.Subscription subscription_;
   /**
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the subscription field is set.
    */
   public boolean hasSubscription() {
@@ -125,10 +125,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The subscription.
    */
   public com.google.pubsub.v1.Subscription getSubscription() {
@@ -136,10 +136,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The updated subscription object.
+   * Required. The updated subscription object.
    * </pre>
    *
-   * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+   * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionOrBuilder() {
     return getSubscription();
@@ -149,11 +149,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
@@ -161,11 +161,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
@@ -173,11 +173,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Indicates which fields in the provided subscription to update.
+   * Required. Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -537,10 +537,10 @@ private static final long serialVersionUID = 0L;
         com.google.pubsub.v1.Subscription, com.google.pubsub.v1.Subscription.Builder, com.google.pubsub.v1.SubscriptionOrBuilder> subscriptionBuilder_;
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the subscription field is set.
      */
     public boolean hasSubscription() {
@@ -548,10 +548,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The subscription.
      */
     public com.google.pubsub.v1.Subscription getSubscription() {
@@ -563,10 +563,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSubscription(com.google.pubsub.v1.Subscription value) {
       if (subscriptionBuilder_ == null) {
@@ -583,10 +583,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSubscription(
         com.google.pubsub.v1.Subscription.Builder builderForValue) {
@@ -601,10 +601,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSubscription(com.google.pubsub.v1.Subscription value) {
       if (subscriptionBuilder_ == null) {
@@ -623,10 +623,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSubscription() {
       if (subscriptionBuilder_ == null) {
@@ -641,10 +641,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.Subscription.Builder getSubscriptionBuilder() {
       
@@ -653,10 +653,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionOrBuilder() {
       if (subscriptionBuilder_ != null) {
@@ -668,10 +668,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated subscription object.
+     * Required. The updated subscription object.
      * </pre>
      *
-     * <code>.google.pubsub.v1.Subscription subscription = 1;</code>
+     * <code>.google.pubsub.v1.Subscription subscription = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.pubsub.v1.Subscription, com.google.pubsub.v1.Subscription.Builder, com.google.pubsub.v1.SubscriptionOrBuilder> 
@@ -692,11 +692,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -704,11 +704,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -720,11 +720,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -741,11 +741,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -760,11 +760,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -783,11 +783,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -802,11 +802,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -815,11 +815,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -831,11 +831,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided subscription to update.
+     * Required. Indicates which fields in the provided subscription to update.
      * Must be specified and non-empty.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

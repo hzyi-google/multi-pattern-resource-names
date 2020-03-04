@@ -109,11 +109,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The topic.
    */
   public java.lang.String getTopic() {
@@ -130,11 +130,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The messages in the request will be published on this topic.
+   * Required. The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for topic.
    */
   public com.google.protobuf.ByteString
@@ -155,20 +155,20 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.pubsub.v1.PubsubMessage> messages_;
   /**
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
     return messages_;
   }
   /**
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> 
       getMessagesOrBuilderList() {
@@ -176,30 +176,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getMessagesCount() {
     return messages_.size();
   }
   /**
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
     return messages_.get(index);
   }
   /**
    * <pre>
-   * The messages to publish.
+   * Required. The messages to publish.
    * </pre>
    *
-   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+   * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(
       int index) {
@@ -572,11 +572,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The topic.
      */
     public java.lang.String getTopic() {
@@ -593,11 +593,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
@@ -615,11 +615,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The topic to set.
      * @return This builder for chaining.
      */
@@ -635,11 +635,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
@@ -650,11 +650,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages in the request will be published on this topic.
+     * Required. The messages in the request will be published on this topic.
      * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string topic = 1;</code>
+     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for topic to set.
      * @return This builder for chaining.
      */
@@ -684,10 +684,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
       if (messagesBuilder_ == null) {
@@ -698,10 +698,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getMessagesCount() {
       if (messagesBuilder_ == null) {
@@ -712,10 +712,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -726,10 +726,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMessages(
         int index, com.google.pubsub.v1.PubsubMessage value) {
@@ -747,10 +747,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMessages(
         int index, com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
@@ -765,10 +765,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addMessages(com.google.pubsub.v1.PubsubMessage value) {
       if (messagesBuilder_ == null) {
@@ -785,10 +785,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addMessages(
         int index, com.google.pubsub.v1.PubsubMessage value) {
@@ -806,10 +806,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addMessages(
         com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
@@ -824,10 +824,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addMessages(
         int index, com.google.pubsub.v1.PubsubMessage.Builder builderForValue) {
@@ -842,10 +842,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllMessages(
         java.lang.Iterable<? extends com.google.pubsub.v1.PubsubMessage> values) {
@@ -861,10 +861,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
@@ -878,10 +878,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder removeMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -895,10 +895,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder getMessagesBuilder(
         int index) {
@@ -906,10 +906,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(
         int index) {
@@ -920,10 +920,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> 
          getMessagesOrBuilderList() {
@@ -935,10 +935,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder addMessagesBuilder() {
       return getMessagesFieldBuilder().addBuilder(
@@ -946,10 +946,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.pubsub.v1.PubsubMessage.Builder addMessagesBuilder(
         int index) {
@@ -958,10 +958,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The messages to publish.
+     * Required. The messages to publish.
      * </pre>
      *
-     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
+     * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.util.List<com.google.pubsub.v1.PubsubMessage.Builder> 
          getMessagesBuilderList() {

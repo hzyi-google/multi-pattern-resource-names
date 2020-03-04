@@ -9,19 +9,19 @@ public interface SeekRequestOrBuilder extends
 
   /**
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
    * <pre>
-   * The subscription to affect.
+   * Required. The subscription to affect.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
@@ -91,7 +91,7 @@ public interface SeekRequestOrBuilder extends
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
@@ -102,7 +102,7 @@ public interface SeekRequestOrBuilder extends
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 3;</code>
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for snapshot.
    */
   com.google.protobuf.ByteString
