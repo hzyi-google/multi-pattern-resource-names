@@ -68,12 +68,332 @@ end
 
 describe Google::Cloud::PubSub::V1::PublisherClient do
 
+  describe 'publish' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#publish."
+
+    it 'invokes publish without error' do
+      # Create request parameters
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      data = ''
+      messages_element = { data: data }
+      messages = [messages_element]
+
+      # Create expected grpc response
+      message_ids_element = "messageIdsElement-744837059"
+      message_ids = [message_ids_element]
+      expected_response = { message_ids: message_ids }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::PublishResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::PublishRequest, request)
+        assert_equal(formatted_topic, request.topic)
+        messages = messages.map do |req|
+          Google::Gax::to_proto(req, Google::Pubsub::V1::PubsubMessage)
+        end
+        assert_equal(messages, request.messages)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:publish, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("publish")
+
+      Google::Pubsub::V1::Publisher::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          response = client.publish(formatted_topic, messages)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.publish(formatted_topic, messages) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes publish with error' do
+      # Create request parameters
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      data = ''
+      messages_element = { data: data }
+      messages = [messages_element]
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::PublishRequest, request)
+        assert_equal(formatted_topic, request.topic)
+        messages = messages.map do |req|
+          Google::Gax::to_proto(req, Google::Pubsub::V1::PubsubMessage)
+        end
+        assert_equal(messages, request.messages)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:publish, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("publish")
+
+      Google::Pubsub::V1::Publisher::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.publish(formatted_topic, messages)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'set_iam_policy' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#set_iam_policy."
+
+    it 'invokes set_iam_policy without error' do
+      # Create request parameters
+      resource = ''
+      policy = {}
+
+      # Create expected grpc response
+      version = 351608024
+      etag = "21"
+      expected_response = { version: version, etag: etag }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
+        assert_equal(resource, request.resource)
+        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("set_iam_policy")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          response = client.set_iam_policy(resource, policy)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.set_iam_policy(resource, policy) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes set_iam_policy with error' do
+      # Create request parameters
+      resource = ''
+      policy = {}
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
+        assert_equal(resource, request.resource)
+        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("set_iam_policy")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.set_iam_policy(resource, policy)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'get_iam_policy' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#get_iam_policy."
+
+    it 'invokes get_iam_policy without error' do
+      # Create request parameters
+      resource = ''
+
+      # Create expected grpc response
+      version = 351608024
+      etag = "21"
+      expected_response = { version: version, etag: etag }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
+        assert_equal(resource, request.resource)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("get_iam_policy")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          response = client.get_iam_policy(resource)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_iam_policy(resource) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_iam_policy with error' do
+      # Create request parameters
+      resource = ''
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
+        assert_equal(resource, request.resource)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("get_iam_policy")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.get_iam_policy(resource)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'test_iam_permissions' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#test_iam_permissions."
+
+    it 'invokes test_iam_permissions without error' do
+      # Create request parameters
+      resource = ''
+      permissions = []
+
+      # Create expected grpc response
+      expected_response = {}
+      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::TestIamPermissionsResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
+        assert_equal(resource, request.resource)
+        assert_equal(permissions, request.permissions)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("test_iam_permissions")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          response = client.test_iam_permissions(resource, permissions)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.test_iam_permissions(resource, permissions) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes test_iam_permissions with error' do
+      # Create request parameters
+      resource = ''
+      permissions = []
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
+        assert_equal(resource, request.resource)
+        assert_equal(permissions, request.permissions)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockPublisherCredentials_v1.new("test_iam_permissions")
+
+      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.test_iam_permissions(resource, permissions)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
   describe 'create_topic' do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#create_topic."
 
     it 'invokes create_topic without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -114,7 +434,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes create_topic with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -222,101 +542,12 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
     end
   end
 
-  describe 'publish' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#publish."
-
-    it 'invokes publish without error' do
-      # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      data = ''
-      messages_element = { data: data }
-      messages = [messages_element]
-
-      # Create expected grpc response
-      message_ids_element = "messageIdsElement-744837059"
-      message_ids = [message_ids_element]
-      expected_response = { message_ids: message_ids }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::PublishResponse)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::PublishRequest, request)
-        assert_equal(formatted_topic, request.topic)
-        messages = messages.map do |req|
-          Google::Gax::to_proto(req, Google::Pubsub::V1::PubsubMessage)
-        end
-        assert_equal(messages, request.messages)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:publish, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("publish")
-
-      Google::Pubsub::V1::Publisher::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          response = client.publish(formatted_topic, messages)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.publish(formatted_topic, messages) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes publish with error' do
-      # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      data = ''
-      messages_element = { data: data }
-      messages = [messages_element]
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::PublishRequest, request)
-        assert_equal(formatted_topic, request.topic)
-        messages = messages.map do |req|
-          Google::Gax::to_proto(req, Google::Pubsub::V1::PubsubMessage)
-        end
-        assert_equal(messages, request.messages)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:publish, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("publish")
-
-      Google::Pubsub::V1::Publisher::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.publish(formatted_topic, messages)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'get_topic' do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#get_topic."
 
     it 'invokes get_topic without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Create expected grpc response
       name = "name3373707"
@@ -357,7 +588,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes get_topic with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -463,7 +694,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes list_topic_subscriptions without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Create expected grpc response
       next_page_token = ""
@@ -501,7 +732,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes list_topic_subscriptions with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -535,7 +766,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes delete_topic without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -570,7 +801,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes delete_topic with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -590,237 +821,6 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
             client.delete_topic(formatted_topic)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'set_iam_policy' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#set_iam_policy."
-
-    it 'invokes set_iam_policy without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      policy = {}
-
-      # Create expected grpc response
-      version = 351608024
-      etag = "21"
-      expected_response = { version: version, etag: etag }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("set_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          response = client.set_iam_policy(formatted_resource, policy)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.set_iam_policy(formatted_resource, policy) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes set_iam_policy with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      policy = {}
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("set_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.set_iam_policy(formatted_resource, policy)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'get_iam_policy' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#get_iam_policy."
-
-    it 'invokes get_iam_policy without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-
-      # Create expected grpc response
-      version = 351608024
-      etag = "21"
-      expected_response = { version: version, etag: etag }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("get_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          response = client.get_iam_policy(formatted_resource)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.get_iam_policy(formatted_resource) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes get_iam_policy with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("get_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.get_iam_policy(formatted_resource)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'test_iam_permissions' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::PublisherClient#test_iam_permissions."
-
-    it 'invokes test_iam_permissions without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      permissions = []
-
-      # Create expected grpc response
-      expected_response = {}
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::TestIamPermissionsResponse)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(permissions, request.permissions)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("test_iam_permissions")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          response = client.test_iam_permissions(formatted_resource, permissions)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.test_iam_permissions(formatted_resource, permissions) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes test_iam_permissions with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-      permissions = []
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(permissions, request.permissions)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockPublisherCredentials_v1.new("test_iam_permissions")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.test_iam_permissions(formatted_resource, permissions)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

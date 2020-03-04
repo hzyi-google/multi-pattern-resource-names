@@ -9,21 +9,21 @@ public interface ListSubscriptionsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the project in which to list subscriptions.
+   * Required. The name of the project in which to list subscriptions.
    * Format is `projects/{project-id}`.
    * </pre>
    *
-   * <code>string project = 1;</code>
+   * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The project.
    */
   java.lang.String getProject();
   /**
    * <pre>
-   * The name of the project in which to list subscriptions.
+   * Required. The name of the project in which to list subscriptions.
    * Format is `projects/{project-id}`.
    * </pre>
    *
-   * <code>string project = 1;</code>
+   * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for project.
    */
   com.google.protobuf.ByteString

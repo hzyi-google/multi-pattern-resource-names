@@ -5,9 +5,19 @@ return [
         'google.iam.v1.IAMPolicy' => [
             'SetIamPolicy' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{resource=projects/*/topics/*}:setIamPolicy',
+                'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:setIamPolicy',
                 'body' => '*',
                 'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta2/{resource=projects/*/subscriptions/*}:setIamPolicy',
+                        'body' => '*',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1/{resource=projects/*/topics/*}:setIamPolicy',
+                        'body' => '*',
+                    ],
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:setIamPolicy',
@@ -29,8 +39,16 @@ return [
             ],
             'GetIamPolicy' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/{resource=projects/*/topics/*}:getIamPolicy',
+                'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:getIamPolicy',
                 'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta2/{resource=projects/*/subscriptions/*}:getIamPolicy',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{resource=projects/*/topics/*}:getIamPolicy',
+                    ],
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:getIamPolicy',
@@ -50,9 +68,19 @@ return [
             ],
             'TestIamPermissions' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:testIamPermissions',
+                'uriTemplate' => '/v1beta2/{resource=projects/*/subscriptions/*}:testIamPermissions',
                 'body' => '*',
                 'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:testIamPermissions',
+                        'body' => '*',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:testIamPermissions',
+                        'body' => '*',
+                    ],
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1/{resource=projects/*/topics/*}:testIamPermissions',
@@ -86,17 +114,6 @@ return [
                     ],
                 ],
             ],
-            'GetSubscription' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{subscription=projects/*/subscriptions/*}',
-                'placeholders' => [
-                    'subscription' => [
-                        'getters' => [
-                            'getSubscription',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateSubscription' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1/{subscription.name=projects/*/subscriptions/*}',
@@ -106,28 +123,6 @@ return [
                         'getters' => [
                             'getSubscription',
                             'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListSubscriptions' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{project=projects/*}/subscriptions',
-                'placeholders' => [
-                    'project' => [
-                        'getters' => [
-                            'getProject',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteSubscription' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{subscription=projects/*/subscriptions/*}',
-                'placeholders' => [
-                    'subscription' => [
-                        'getters' => [
-                            'getSubscription',
                         ],
                     ],
                 ],
@@ -168,6 +163,52 @@ return [
                     ],
                 ],
             ],
+            'UpdateSnapshot' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{snapshot.name=projects/*/snapshots/*}',
+                'body' => '*',
+                'placeholders' => [
+                    'snapshot.name' => [
+                        'getters' => [
+                            'getSnapshot',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetSubscription' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{subscription=projects/*/subscriptions/*}',
+                'placeholders' => [
+                    'subscription' => [
+                        'getters' => [
+                            'getSubscription',
+                        ],
+                    ],
+                ],
+            ],
+            'ListSubscriptions' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{project=projects/*}/subscriptions',
+                'placeholders' => [
+                    'project' => [
+                        'getters' => [
+                            'getProject',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteSubscription' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{subscription=projects/*/subscriptions/*}',
+                'placeholders' => [
+                    'subscription' => [
+                        'getters' => [
+                            'getSubscription',
+                        ],
+                    ],
+                ],
+            ],
             'ModifyPushConfig' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{subscription=projects/*/subscriptions/*}:modifyPushConfig',
@@ -198,19 +239,6 @@ return [
                 'placeholders' => [
                     'name' => [
                         'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateSnapshot' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{snapshot.name=projects/*/snapshots/*}',
-                'body' => '*',
-                'placeholders' => [
-                    'snapshot.name' => [
-                        'getters' => [
-                            'getSnapshot',
                             'getName',
                         ],
                     ],

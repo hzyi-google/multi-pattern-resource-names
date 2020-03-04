@@ -9,21 +9,21 @@ public interface PullRequestOrBuilder extends
 
   /**
    * <pre>
-   * The subscription from which messages should be pulled.
+   * Required. The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
    * <pre>
-   * The subscription from which messages should be pulled.
+   * Required. The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
@@ -44,12 +44,12 @@ public interface PullRequestOrBuilder extends
 
   /**
    * <pre>
-   * The maximum number of messages to return for this request. Must be a
+   * Required. The maximum number of messages to return for this request. Must be a
    * positive integer. The Pub/Sub system may return fewer than the number
    * specified.
    * </pre>
    *
-   * <code>int32 max_messages = 3;</code>
+   * <code>int32 max_messages = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The maxMessages.
    */
   int getMaxMessages();

@@ -9,21 +9,21 @@ public interface GetTopicRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the topic to get.
+   * Required. The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The topic.
    */
   java.lang.String getTopic();
   /**
    * <pre>
-   * The name of the topic to get.
+   * Required. The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 1;</code>
+   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for topic.
    */
   com.google.protobuf.ByteString

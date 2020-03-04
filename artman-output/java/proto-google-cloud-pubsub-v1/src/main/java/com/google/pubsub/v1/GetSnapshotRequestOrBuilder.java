@@ -9,21 +9,21 @@ public interface GetSnapshotRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 1;</code>
+   * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
   /**
    * <pre>
-   * The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 1;</code>
+   * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for snapshot.
    */
   com.google.protobuf.ByteString

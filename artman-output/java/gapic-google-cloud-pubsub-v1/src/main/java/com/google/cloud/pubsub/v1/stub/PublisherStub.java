@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Cloud Pub/Sub API.
+ * Base stub class for Cloud Pub/Sub API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -49,16 +49,29 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class PublisherStub implements BackgroundResource {
 
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    throw new UnsupportedOperationException("Not implemented: publishCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
   public UnaryCallable<Topic, Topic> createTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: createTopicCallable()");
   }
 
   public UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTopicCallable()");
-  }
-
-  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
-    throw new UnsupportedOperationException("Not implemented: publishCallable()");
   }
 
   public UnaryCallable<GetTopicRequest, Topic> getTopicCallable() {
@@ -86,19 +99,6 @@ public abstract class PublisherStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTopicCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

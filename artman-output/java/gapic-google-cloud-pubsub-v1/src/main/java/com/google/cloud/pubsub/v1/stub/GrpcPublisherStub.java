@@ -52,7 +52,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Pub/Sub API.
+ * gRPC stub implementation for Cloud Pub/Sub API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -60,6 +60,37 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcPublisherStub extends PublisherStub {
 
+  private static final MethodDescriptor<PublishRequest, PublishResponse> publishMethodDescriptor =
+      MethodDescriptor.<PublishRequest, PublishResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/Publish")
+          .setRequestMarshaller(ProtoUtils.marshaller(PublishRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(PublishResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<Topic, Topic> createTopicMethodDescriptor =
       MethodDescriptor.<Topic, Topic>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -73,13 +104,6 @@ public class GrpcPublisherStub extends PublisherStub {
           .setFullMethodName("google.pubsub.v1.Publisher/UpdateTopic")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<PublishRequest, PublishResponse> publishMethodDescriptor =
-      MethodDescriptor.<PublishRequest, PublishResponse>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.pubsub.v1.Publisher/Publish")
-          .setRequestMarshaller(ProtoUtils.marshaller(PublishRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(PublishResponse.getDefaultInstance()))
           .build();
   private static final MethodDescriptor<GetTopicRequest, Topic> getTopicMethodDescriptor =
       MethodDescriptor.<GetTopicRequest, Topic>newBuilder()
@@ -115,36 +139,16 @@ public class GrpcPublisherStub extends PublisherStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
-      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
-      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<Topic, Topic> createTopicCallable;
   private final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable;
-  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
   private final UnaryCallable<GetTopicRequest, Topic> getTopicCallable;
   private final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
   private final UnaryCallable<ListTopicsRequest, ListTopicsPagedResponse> listTopicsPagedCallable;
@@ -153,10 +157,6 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsPagedCallable;
   private final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -196,6 +196,59 @@ public class GrpcPublisherStub extends PublisherStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
+        GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
+            .setMethodDescriptor(publishMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PublishRequest>() {
+                  @Override
+                  public Map<String, String> extract(PublishRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("topic", String.valueOf(request.getTopic()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<Topic, Topic> createTopicTransportSettings =
         GrpcCallSettings.<Topic, Topic>newBuilder()
             .setMethodDescriptor(createTopicMethodDescriptor)
@@ -218,19 +271,6 @@ public class GrpcPublisherStub extends PublisherStub {
                   public Map<String, String> extract(UpdateTopicRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("topic.name", String.valueOf(request.getTopic().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
-        GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
-            .setMethodDescriptor(publishMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<PublishRequest>() {
-                  @Override
-                  public Map<String, String> extract(PublishRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("topic", String.valueOf(request.getTopic()));
                     return params.build();
                   }
                 })
@@ -289,56 +329,27 @@ public class GrpcPublisherStub extends PublisherStub {
                   }
                 })
             .build();
-    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
-                    })
-                .build();
 
+    this.publishCallable =
+        callableFactory.createBatchingCallable(
+            publishTransportSettings, settings.publishSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.createTopicCallable =
         callableFactory.createUnaryCallable(
             createTopicTransportSettings, settings.createTopicSettings(), clientContext);
     this.updateTopicCallable =
         callableFactory.createUnaryCallable(
             updateTopicTransportSettings, settings.updateTopicSettings(), clientContext);
-    this.publishCallable =
-        callableFactory.createBatchingCallable(
-            publishTransportSettings, settings.publishSettings(), clientContext);
     this.getTopicCallable =
         callableFactory.createUnaryCallable(
             getTopicTransportSettings, settings.getTopicSettings(), clientContext);
@@ -361,19 +372,25 @@ public class GrpcPublisherStub extends PublisherStub {
     this.deleteTopicCallable =
         callableFactory.createUnaryCallable(
             deleteTopicTransportSettings, settings.deleteTopicSettings(), clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    return publishCallable;
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   public UnaryCallable<Topic, Topic> createTopicCallable() {
@@ -382,10 +399,6 @@ public class GrpcPublisherStub extends PublisherStub {
 
   public UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
     return updateTopicCallable;
-  }
-
-  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
-    return publishCallable;
   }
 
   public UnaryCallable<GetTopicRequest, Topic> getTopicCallable() {
@@ -412,19 +425,6 @@ public class GrpcPublisherStub extends PublisherStub {
 
   public UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
   }
 
   @Override

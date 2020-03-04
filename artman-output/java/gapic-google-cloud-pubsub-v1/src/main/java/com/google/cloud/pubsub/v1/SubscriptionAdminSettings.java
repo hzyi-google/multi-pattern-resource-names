@@ -100,26 +100,9 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
     return ((SubscriberStubSettings) getStubSettings()).createSubscriptionSettings();
   }
 
-  /** Returns the object with the settings used for calls to getSubscription. */
-  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).getSubscriptionSettings();
-  }
-
   /** Returns the object with the settings used for calls to updateSubscription. */
   public UnaryCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
     return ((SubscriberStubSettings) getStubSettings()).updateSubscriptionSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listSubscriptions. */
-  public PagedCallSettings<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-      listSubscriptionsSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).listSubscriptionsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteSubscription. */
-  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).deleteSubscriptionSettings();
   }
 
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
@@ -144,35 +127,9 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
     return ((SubscriberStubSettings) getStubSettings()).streamingPullSettings();
   }
 
-  /** Returns the object with the settings used for calls to modifyPushConfig. */
-  public UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).modifyPushConfigSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listSnapshots. */
-  public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
-      listSnapshotsSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).listSnapshotsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createSnapshot. */
-  public UnaryCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).createSnapshotSettings();
-  }
-
   /** Returns the object with the settings used for calls to updateSnapshot. */
   public UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
     return ((SubscriberStubSettings) getStubSettings()).updateSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteSnapshot. */
-  public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).deleteSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to seek. */
-  public UnaryCallSettings<SeekRequest, SeekResponse> seekSettings() {
-    return ((SubscriberStubSettings) getStubSettings()).seekSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -189,6 +146,49 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((SubscriberStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSubscription. */
+  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).getSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).listSubscriptionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).deleteSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to modifyPushConfig. */
+  public UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).modifyPushConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSnapshots. */
+  public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      listSnapshotsSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).listSnapshotsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public UnaryCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).createSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).deleteSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to seek. */
+  public UnaryCallSettings<SeekRequest, SeekResponse> seekSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).seekSettings();
   }
 
   public static final SubscriptionAdminSettings create(SubscriberStubSettings stub)
@@ -293,29 +293,10 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
       return getStubSettingsBuilder().createSubscriptionSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getSubscription. */
-    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
-        getSubscriptionSettings() {
-      return getStubSettingsBuilder().getSubscriptionSettings();
-    }
-
     /** Returns the builder for the settings used for calls to updateSubscription. */
     public UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionSettings() {
       return getStubSettingsBuilder().updateSubscriptionSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listSubscriptions. */
-    public PagedCallSettings.Builder<
-            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-        listSubscriptionsSettings() {
-      return getStubSettingsBuilder().listSubscriptionsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSubscription. */
-    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
-        deleteSubscriptionSettings() {
-      return getStubSettingsBuilder().deleteSubscriptionSettings();
     }
 
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */
@@ -341,6 +322,46 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
       return getStubSettingsBuilder().streamingPullSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
+      return getStubSettingsBuilder().updateSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSubscription. */
+    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings() {
+      return getStubSettingsBuilder().getSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return getStubSettingsBuilder().listSubscriptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings() {
+      return getStubSettingsBuilder().deleteSubscriptionSettings();
+    }
+
     /** Returns the builder for the settings used for calls to modifyPushConfig. */
     public UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return getStubSettingsBuilder().modifyPushConfigSettings();
@@ -358,11 +379,6 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
       return getStubSettingsBuilder().createSnapshotSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateSnapshot. */
-    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
-      return getStubSettingsBuilder().updateSnapshotSettings();
-    }
-
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
     public UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
       return getStubSettingsBuilder().deleteSnapshotSettings();
@@ -371,22 +387,6 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
     /** Returns the builder for the settings used for calls to seek. */
     public UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings() {
       return getStubSettingsBuilder().seekSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettingsBuilder().setIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

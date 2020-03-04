@@ -53,7 +53,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Cloud Pub/Sub API.
+ * Base stub class for Cloud Pub/Sub API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -65,26 +65,8 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createSubscriptionCallable()");
   }
 
-  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSubscriptionCallable()");
-  }
-
   public UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSubscriptionCallable()");
-  }
-
-  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
-      listSubscriptionsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
-  }
-
-  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
-      listSubscriptionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
-  }
-
-  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
   }
 
   public UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
@@ -104,6 +86,41 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: streamingPullCallable()");
   }
 
+  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
+  }
+
+  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
+  }
+
   public UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyPushConfigCallable()");
   }
@@ -121,29 +138,12 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
   }
 
-  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
-  }
-
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
   }
 
   public UnaryCallable<SeekRequest, SeekResponse> seekCallable() {
     throw new UnsupportedOperationException("Not implemented: seekCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

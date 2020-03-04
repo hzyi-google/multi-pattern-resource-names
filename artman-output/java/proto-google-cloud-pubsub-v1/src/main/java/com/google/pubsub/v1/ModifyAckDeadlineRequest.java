@@ -114,11 +114,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object subscription_;
   /**
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   public java.lang.String getSubscription() {
@@ -135,11 +135,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
@@ -160,10 +160,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList ackIds_;
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the ackIds.
    */
   public com.google.protobuf.ProtocolStringList
@@ -172,10 +172,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of ackIds.
    */
   public int getAckIdsCount() {
@@ -183,10 +183,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
    */
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
    */
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
   private int ackDeadlineSeconds_;
   /**
    * <pre>
-   * The new ack deadline with respect to the time this request was sent to
+   * Required. The new ack deadline with respect to the time this request was sent to
    * the Pub/Sub system. For example, if the value is 10, the new
    * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
    * was made. Specifying zero might immediately make the message available for
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * The maximum deadline you can specify is 600 seconds (10 minutes).
    * </pre>
    *
-   * <code>int32 ack_deadline_seconds = 3;</code>
+   * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The ackDeadlineSeconds.
    */
   public int getAckDeadlineSeconds() {
@@ -590,11 +590,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object subscription_ = "";
     /**
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The subscription.
      */
     public java.lang.String getSubscription() {
@@ -611,11 +611,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
@@ -633,11 +633,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The subscription to set.
      * @return This builder for chaining.
      */
@@ -653,11 +653,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
@@ -668,11 +668,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the subscription.
+     * Required. The name of the subscription.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
      */
@@ -697,10 +697,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the ackIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -709,10 +709,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of ackIds.
      */
     public int getAckIdsCount() {
@@ -720,10 +720,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The ackIds at the given index.
      */
@@ -732,10 +732,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the ackIds at the given index.
      */
@@ -745,10 +745,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index to set the value at.
      * @param value The ackIds to set.
      * @return This builder for chaining.
@@ -765,10 +765,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The ackIds to add.
      * @return This builder for chaining.
      */
@@ -784,10 +784,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param values The ackIds to add.
      * @return This builder for chaining.
      */
@@ -801,10 +801,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearAckIds() {
@@ -815,10 +815,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of acknowledgment IDs.
+     * Required. List of acknowledgment IDs.
      * </pre>
      *
-     * <code>repeated string ack_ids = 4;</code>
+     * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes of the ackIds to add.
      * @return This builder for chaining.
      */
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
     private int ackDeadlineSeconds_ ;
     /**
      * <pre>
-     * The new ack deadline with respect to the time this request was sent to
+     * Required. The new ack deadline with respect to the time this request was sent to
      * the Pub/Sub system. For example, if the value is 10, the new
      * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
      * was made. Specifying zero might immediately make the message available for
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 ack_deadline_seconds = 3;</code>
+     * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The ackDeadlineSeconds.
      */
     public int getAckDeadlineSeconds() {
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new ack deadline with respect to the time this request was sent to
+     * Required. The new ack deadline with respect to the time this request was sent to
      * the Pub/Sub system. For example, if the value is 10, the new
      * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
      * was made. Specifying zero might immediately make the message available for
@@ -865,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 ack_deadline_seconds = 3;</code>
+     * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The ackDeadlineSeconds to set.
      * @return This builder for chaining.
      */
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new ack deadline with respect to the time this request was sent to
+     * Required. The new ack deadline with respect to the time this request was sent to
      * the Pub/Sub system. For example, if the value is 10, the new
      * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
      * was made. Specifying zero might immediately make the message available for
@@ -887,7 +887,7 @@ private static final long serialVersionUID = 0L;
      * The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 ack_deadline_seconds = 3;</code>
+     * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearAckDeadlineSeconds() {

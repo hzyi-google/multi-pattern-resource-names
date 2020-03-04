@@ -66,16 +66,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createTopic to 30 seconds:
+ * <p>For example, to set the total timeout of publish to 30 seconds:
  *
  * <pre>
  * <code>
  * TopicAdminSettings.Builder topicAdminSettingsBuilder =
  *     TopicAdminSettings.newBuilder();
  * topicAdminSettingsBuilder
- *     .createTopicSettings()
+ *     .publishSettings()
  *     .setRetrySettings(
- *         topicAdminSettingsBuilder.createTopicSettings().getRetrySettings().toBuilder()
+ *         topicAdminSettingsBuilder.publishSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
@@ -84,6 +84,27 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
+  /** Returns the object with the settings used for calls to publish. */
+  /* package-private */ BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((PublisherStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((PublisherStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((PublisherStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createTopic. */
   public UnaryCallSettings<Topic, Topic> createTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).createTopicSettings();
@@ -92,11 +113,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** Returns the object with the settings used for calls to updateTopic. */
   public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).updateTopicSettings();
-  }
-
-  /** Returns the object with the settings used for calls to publish. */
-  /* package-private */ BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
-    return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
   /** Returns the object with the settings used for calls to getTopic. */
@@ -121,22 +137,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** Returns the object with the settings used for calls to deleteTopic. */
   public UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).deleteTopicSettings();
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return ((PublisherStubSettings) getStubSettings()).setIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return ((PublisherStubSettings) getStubSettings()).getIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((PublisherStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final TopicAdminSettings create(PublisherStubSettings stub) throws IOException {
@@ -235,6 +235,28 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to publish. */
+    /* package-private */ BatchingCallSettings.Builder<PublishRequest, PublishResponse>
+        publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createTopic. */
     public UnaryCallSettings.Builder<Topic, Topic> createTopicSettings() {
       return getStubSettingsBuilder().createTopicSettings();
@@ -243,12 +265,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     /** Returns the builder for the settings used for calls to updateTopic. */
     public UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
       return getStubSettingsBuilder().updateTopicSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to publish. */
-    /* package-private */ BatchingCallSettings.Builder<PublishRequest, PublishResponse>
-        publishSettings() {
-      return getStubSettingsBuilder().publishSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTopic. */
@@ -273,22 +289,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     /** Returns the builder for the settings used for calls to deleteTopic. */
     public UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
       return getStubSettingsBuilder().deleteTopicSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettingsBuilder().setIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

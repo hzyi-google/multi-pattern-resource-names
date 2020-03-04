@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Pub/Sub API.
+ * A client to Cloud Pub/Sub API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -31,8 +31,13 @@
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
- *   Topic response = topicAdminClient.createTopic(name);
+ *   TopicName topic = TopicName.ofDeletedTopicName();
+ *   ByteString data = ByteString.copyFromUtf8("");
+ *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+ *     .setData(data)
+ *     .build();
+ *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+ *   PublishResponse response = topicAdminClient.publish(topic, messages);
  * }
  * </code>
  * </pre>
@@ -50,11 +55,11 @@
  * <pre>
  * <code>
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
- *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
- *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+ *   String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.ofDeletedTopicName();
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriptionAdminClient.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>
