@@ -85,12 +85,6 @@ module Google
           ].freeze
 
 
-          DELETED_TOPIC_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "_deleted-topic_"
-          )
-
-          private_constant :DELETED_TOPIC_PATH_TEMPLATE
-
           PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "projects/{project}"
           )
@@ -102,16 +96,6 @@ module Google
           )
 
           private_constant :TOPIC_PATH_TEMPLATE
-
-          # Returns a fully-qualified deleted_topic resource name string.
-          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
-          # This helper function will be deleted in the next major version.
-          # @return [String]
-          def self.deleted_topic_path
-            DELETED_TOPIC_PATH_TEMPLATE.render(
-
-            )
-          end
 
           # Returns a fully-qualified project resource name string.
           # @param project [String]
@@ -356,7 +340,7 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
           #   data = ''
           #   messages_element = { data: data }
           #   messages = [messages_element]
@@ -551,7 +535,7 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_name = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+          #   formatted_name = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
           #   response = publisher_client.create_topic(formatted_name)
 
           def create_topic \
@@ -636,7 +620,7 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
           #   response = publisher_client.get_topic(formatted_topic)
 
           def get_topic \
@@ -732,7 +716,7 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
           #
           #   # Iterate over all results.
           #   publisher_client.list_topic_subscriptions(formatted_topic).each do |element|
@@ -780,7 +764,7 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+          #   formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
           #   publisher_client.delete_topic(formatted_topic)
 
           def delete_topic \

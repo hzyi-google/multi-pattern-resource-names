@@ -74,7 +74,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
     it 'invokes create_subscription without error' do
       # Create request parameters
       formatted_name = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -126,7 +126,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
     it 'invokes create_subscription with error' do
       # Create request parameters
       formatted_name = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|

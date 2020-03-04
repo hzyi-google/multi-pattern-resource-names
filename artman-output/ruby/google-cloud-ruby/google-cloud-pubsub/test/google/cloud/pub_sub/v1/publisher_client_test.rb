@@ -73,7 +73,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes publish without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
       data = ''
       messages_element = { data: data }
       messages = [messages_element]
@@ -121,7 +121,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes publish with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
       data = ''
       messages_element = { data: data }
       messages = [messages_element]
@@ -393,7 +393,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes create_topic without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -434,7 +434,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes create_topic with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_name = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -547,7 +547,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes get_topic without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Create expected grpc response
       name = "name3373707"
@@ -588,7 +588,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes get_topic with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -694,7 +694,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes list_topic_subscriptions without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Create expected grpc response
       next_page_token = ""
@@ -732,7 +732,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes list_topic_subscriptions with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -766,7 +766,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes delete_topic without error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -801,7 +801,7 @@ describe Google::Cloud::PubSub::V1::PublisherClient do
 
     it 'invokes delete_topic with error' do
       # Create request parameters
-      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.deleted_topic_path()
+      formatted_topic = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|

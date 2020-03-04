@@ -31,9 +31,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
-import com.google.iam.v1.DeletedTopicName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
+import com.google.iam.v1.ProjectName;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -53,7 +53,6 @@ import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
-import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.ProjectSnapshotName;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PullRequest;
@@ -523,7 +522,7 @@ public class SubscriptionAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    ResourceName resource = DeletedTopicName.of();
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
@@ -550,7 +549,7 @@ public class SubscriptionAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      ResourceName resource = DeletedTopicName.of();
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
@@ -573,7 +572,7 @@ public class SubscriptionAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    ResourceName resource = DeletedTopicName.of();
+    ResourceName resource = ProjectName.of("[PROJECT]");
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
@@ -598,7 +597,7 @@ public class SubscriptionAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      ResourceName resource = DeletedTopicName.of();
+      ResourceName resource = ProjectName.of("[PROJECT]");
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
@@ -615,7 +614,7 @@ public class SubscriptionAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    ResourceName resource = DeletedTopicName.of();
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -645,7 +644,7 @@ public class SubscriptionAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      ResourceName resource = DeletedTopicName.of();
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
@@ -726,7 +725,7 @@ public class SubscriptionAdminClientTest {
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    ProjectName project = ProjectName.of("[PROJECT]");
+    com.google.pubsub.v1.ProjectName project = com.google.pubsub.v1.ProjectName.of("[PROJECT]");
 
     ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(project);
 
@@ -738,7 +737,8 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSubscriptionsRequest actualRequest = (ListSubscriptionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(project, ProjectName.parse(actualRequest.getProject()));
+    Assert.assertEquals(
+        project, com.google.pubsub.v1.ProjectName.parse(actualRequest.getProject()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -752,7 +752,7 @@ public class SubscriptionAdminClientTest {
     mockSubscriber.addException(exception);
 
     try {
-      ProjectName project = ProjectName.of("[PROJECT]");
+      com.google.pubsub.v1.ProjectName project = com.google.pubsub.v1.ProjectName.of("[PROJECT]");
 
       client.listSubscriptions(project);
       Assert.fail("No exception raised");
@@ -857,7 +857,7 @@ public class SubscriptionAdminClientTest {
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    ProjectName project = ProjectName.of("[PROJECT]");
+    com.google.pubsub.v1.ProjectName project = com.google.pubsub.v1.ProjectName.of("[PROJECT]");
 
     ListSnapshotsPagedResponse pagedListResponse = client.listSnapshots(project);
 
@@ -869,7 +869,8 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(project, ProjectName.parse(actualRequest.getProject()));
+    Assert.assertEquals(
+        project, com.google.pubsub.v1.ProjectName.parse(actualRequest.getProject()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -883,7 +884,7 @@ public class SubscriptionAdminClientTest {
     mockSubscriber.addException(exception);
 
     try {
-      ProjectName project = ProjectName.of("[PROJECT]");
+      com.google.pubsub.v1.ProjectName project = com.google.pubsub.v1.ProjectName.of("[PROJECT]");
 
       client.listSnapshots(project);
       Assert.fail("No exception raised");

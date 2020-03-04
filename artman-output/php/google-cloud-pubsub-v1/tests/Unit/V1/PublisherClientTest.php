@@ -94,7 +94,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
         $data = '-86';
         $messagesElement = new PubsubMessage();
         $messagesElement->setData($data);
@@ -141,7 +141,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
         $data = '-86';
         $messagesElement = new PubsubMessage();
         $messagesElement->setData($data);
@@ -411,7 +411,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->deletedTopicName();
+        $formattedName = $client->topicName('[PROJECT]', '[TOPIC]');
 
         $response = $client->createTopic($formattedName);
         $this->assertEquals($expectedResponse, $response);
@@ -451,7 +451,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->deletedTopicName();
+        $formattedName = $client->topicName('[PROJECT]', '[TOPIC]');
 
         try {
             $client->createTopic($formattedName);
@@ -566,7 +566,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         $response = $client->getTopic($formattedTopic);
         $this->assertEquals($expectedResponse, $response);
@@ -606,7 +606,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         try {
             $client->getTopic($formattedTopic);
@@ -721,7 +721,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         $response = $client->listTopicSubscriptions($formattedTopic);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
@@ -764,7 +764,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         try {
             $client->listTopicSubscriptions($formattedTopic);
@@ -795,7 +795,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         $client->deleteTopic($formattedTopic);
         $actualRequests = $transport->popReceivedCalls();
@@ -834,7 +834,7 @@ class PublisherClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedTopic = $client->deletedTopicName();
+        $formattedTopic = $client->topicName('[PROJECT]', '[TOPIC]');
 
         try {
             $client->deleteTopic($formattedTopic);

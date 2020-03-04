@@ -75,12 +75,6 @@ module Google
           ].freeze
 
 
-          DELETED_TOPIC_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "_deleted-topic_"
-          )
-
-          private_constant :DELETED_TOPIC_PATH_TEMPLATE
-
           PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "projects/{project}"
           )
@@ -104,16 +98,6 @@ module Google
           )
 
           private_constant :TOPIC_PATH_TEMPLATE
-
-          # Returns a fully-qualified deleted_topic resource name string.
-          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
-          # This helper function will be deleted in the next major version.
-          # @return [String]
-          def self.deleted_topic_path
-            DELETED_TOPIC_PATH_TEMPLATE.render(
-
-            )
-          end
 
           # Returns a fully-qualified project resource name string.
           # @param project [String]
@@ -535,7 +519,7 @@ module Google
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
           #   formatted_name = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-          #   formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.deleted_topic_path()
+          #   formatted_topic = Google::Cloud::PubSub::V1::SubscriberClient.topic_path("[PROJECT]", "[TOPIC]")
           #   response = subscriber_client.create_subscription(formatted_name, formatted_topic)
 
           def create_subscription \
