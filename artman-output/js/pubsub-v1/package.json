@@ -3,7 +3,7 @@
   "name": "@google-cloud/pubsub",
   "version": "0.1.0",
   "author": "Google LLC",
-  "description": "Google Cloud Pub/Sub API client for Node.js",
+  "description": "Cloud Pub/Sub API client for Node.js",
   "main": "src/index.js",
   "browser": "src/browser.js",
   "files": [
@@ -23,7 +23,7 @@
     "cloud",
     "google pubsub",
     "pubsub",
-    "Google Cloud Pub/Sub API"
+    "Cloud Pub/Sub API"
   ],
   "dependencies": {
     "lodash.union": "^4.6.0",

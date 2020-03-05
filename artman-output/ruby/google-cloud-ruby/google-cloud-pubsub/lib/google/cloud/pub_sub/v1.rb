@@ -21,9 +21,9 @@ module Google
       # rubocop:disable LineLength
 
       ##
-      # # Ruby Client for Google Cloud Pub/Sub API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
+      # # Ruby Client for Cloud Pub/Sub API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
       #
-      # [Google Cloud Pub/Sub API][Product Documentation]:
+      # [Cloud Pub/Sub API][Product Documentation]:
       # Provides reliable, many-to-many, asynchronous messaging between
       # applications.
       # - [Product Documentation][]
@@ -34,7 +34,7 @@ module Google
       #
       # 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
       # 2. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-      # 3. [Enable the Google Cloud Pub/Sub API.](https://console.cloud.google.com/apis/library/pubsub.googleapis.com)
+      # 3. [Enable the Cloud Pub/Sub API.](https://console.cloud.google.com/apis/library/pubsub.googleapis.com)
       # 4. [Setup Authentication.](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud/master/guides/authentication)
       #
       # ### Installation
@@ -65,7 +65,7 @@ module Google
       # ```
       #
       # ### Next Steps
-      # - Read the [Google Cloud Pub/Sub API Product documentation][Product Documentation]
+      # - Read the [Cloud Pub/Sub API Product documentation][Product Documentation]
       #   to learn more about the product and see How-to Guides.
       # - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
       #   to see the full list of Cloud APIs that we cover.

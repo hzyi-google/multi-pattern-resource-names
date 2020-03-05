@@ -8,7 +8,7 @@
     <!-- TODO: NuGet packaging options -->
     <!--
       <Description>
-        Google Cloud Pub/Sub API
+        Cloud Pub/Sub API
         Provides reliable, many-to-many, asynchronous messaging between
 applications.
       </Description>

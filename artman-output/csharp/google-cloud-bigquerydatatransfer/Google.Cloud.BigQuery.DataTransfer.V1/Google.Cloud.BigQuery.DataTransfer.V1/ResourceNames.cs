@@ -15,6 +15,7 @@
 // Generated code. DO NOT EDIT!
 
 using gax = Google.Api.Gax;
+using gaxres = Google.Api.Gax.ResourceNames;
 using sys = System;
 using linq = System.Linq;
 
@@ -650,210 +651,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
 
         /// <inheritdoc />
         public static bool operator !=(LocationTransferConfigName a, LocationTransferConfigName b) => !(a == b);
-    }
-
-    /// <summary>
-    /// Resource name which will contain one of a choice of resource names.
-    /// </summary>
-    /// <remarks>
-    /// This resource name will contain one of the following:
-    /// <list type="bullet">
-    /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-    /// <item><description>LocationName: A resource of type 'location'.</description></item>
-    /// </list>
-    /// </remarks>
-    public sealed partial class ParentNameOneof : gax::IResourceName, sys::IEquatable<ParentNameOneof>
-    {
-        /// <summary>
-        /// The possible contents of <see cref="ParentNameOneof"/>.
-        /// </summary>
-        public enum OneofType
-        {
-            /// <summary>
-            /// A resource of an unknown type.
-            /// </summary>
-            Unknown = 0,
-
-            /// <summary>
-            /// A resource of type 'project'.
-            /// </summary>
-            ProjectName = 1,
-
-            /// <summary>
-            /// A resource of type 'location'.
-            /// </summary>
-            LocationName = 2,
-        }
-
-        /// <summary>
-        /// Parses a resource name in string form into a new <see cref="ParentNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-        /// <item><description>LocationName: A resource of type 'location'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>; otherwise will throw an
-        /// <see cref="sys::ArgumentException"/> if an unknown resource name is given.</param>
-        /// <returns>The parsed <see cref="ParentNameOneof"/> if successful.</returns>
-        public static ParentNameOneof Parse(string name, bool allowUnknown)
-        {
-            ParentNameOneof result;
-            if (TryParse(name, allowUnknown, out result))
-            {
-                return result;
-            }
-            throw new sys::ArgumentException("Invalid name", nameof(name));
-        }
-
-        /// <summary>
-        /// Tries to parse a resource name in string form into a new <see cref="ParentNameOneof"/> instance.
-        /// </summary>
-        /// <remarks>
-        /// To parse successfully the resource name must be one of the following:
-        /// <list type="bullet">
-        /// <item><description>ProjectName: A resource of type 'project'.</description></item>
-        /// <item><description>LocationName: A resource of type 'location'.</description></item>
-        /// </list>
-        /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
-        /// </remarks>
-        /// <param name="name">The resource name in string form. Must not be <c>null</c>.</param>
-        /// <param name="allowUnknown">If true, will successfully parse an unknown resource name
-        /// into an <see cref="gax::UnknownResourceName"/>.</param>
-        /// <param name="result">When this method returns, the parsed <see cref="ParentNameOneof"/>,
-        /// or <c>null</c> if parsing fails.</param>
-        /// <returns><c>true</c> if the name was parsed succssfully; <c>false</c> otherwise.</returns>
-        public static bool TryParse(string name, bool allowUnknown, out ParentNameOneof result)
-        {
-            gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            Google.Api.Gax.ResourceNames.ProjectName projectName;
-            if (Google.Api.Gax.ResourceNames.ProjectName.TryParse(name, out projectName))
-            {
-                result = new ParentNameOneof(OneofType.ProjectName, projectName);
-                return true;
-            }
-            LocationName locationName;
-            if (LocationName.TryParse(name, out locationName))
-            {
-                result = new ParentNameOneof(OneofType.LocationName, locationName);
-                return true;
-            }
-            if (allowUnknown)
-            {
-                gax::UnknownResourceName unknownResourceName;
-                if (gax::UnknownResourceName.TryParse(name, out unknownResourceName))
-                {
-                    result = new ParentNameOneof(OneofType.Unknown, unknownResourceName);
-                    return true;
-                }
-            }
-            result = null;
-            return false;
-        }
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="Google.Api.Gax.ResourceNames.ProjectName"/>
-        /// </summary>
-        /// <param name="projectName">The <see cref="Google.Api.Gax.ResourceNames.ProjectName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="projectName"/>.</returns>
-        public static ParentNameOneof From(Google.Api.Gax.ResourceNames.ProjectName projectName) => new ParentNameOneof(OneofType.ProjectName, projectName);
-
-        /// <summary>
-        /// Construct a new instance of <see cref="ParentNameOneof"/> from the provided <see cref="LocationName"/>
-        /// </summary>
-        /// <param name="locationName">The <see cref="LocationName"/> to be contained within
-        /// the returned <see cref="ParentNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="ParentNameOneof"/>, containing <paramref name="locationName"/>.</returns>
-        public static ParentNameOneof From(LocationName locationName) => new ParentNameOneof(OneofType.LocationName, locationName);
-
-        private static bool IsValid(OneofType type, gax::IResourceName name)
-        {
-            switch (type)
-            {
-                case OneofType.Unknown: return true; // Anything goes with Unknown.
-                case OneofType.ProjectName: return name is Google.Api.Gax.ResourceNames.ProjectName;
-                case OneofType.LocationName: return name is LocationName;
-                default: return false;
-            }
-        }
-
-        /// <summary>
-        /// Constructs a new instance of the <see cref="ParentNameOneof"/> resource name class
-        /// from a suitable <see cref="gax::IResourceName"/> instance.
-        /// </summary>
-        public ParentNameOneof(OneofType type, gax::IResourceName name)
-        {
-            Type = gax::GaxPreconditions.CheckEnumValue<OneofType>(type, nameof(type));
-            Name = gax::GaxPreconditions.CheckNotNull(name, nameof(name));
-            if (!IsValid(type, name))
-            {
-                throw new sys::ArgumentException($"Mismatched OneofType '{type}' and resource name '{name}'");
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OneofType"/> of the Name contained in this instance.
-        /// </summary>
-        public OneofType Type { get; }
-
-        /// <summary>
-        /// The <see cref="gax::IResourceName"/> contained in this instance.
-        /// </summary>
-        public gax::IResourceName Name { get; }
-
-        private T CheckAndReturn<T>(OneofType type)
-        {
-            if (Type != type)
-            {
-                throw new sys::InvalidOperationException($"Requested type {type}, but this one-of contains type {Type}");
-            }
-            return (T)Name;
-        }
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="Google.Api.Gax.ResourceNames.ProjectName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="Google.Api.Gax.ResourceNames.ProjectName"/>.
-        /// </remarks>
-        public Google.Api.Gax.ResourceNames.ProjectName ProjectName => CheckAndReturn<Google.Api.Gax.ResourceNames.ProjectName>(OneofType.ProjectName);
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="LocationName"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="LocationName"/>.
-        /// </remarks>
-        public LocationName LocationName => CheckAndReturn<LocationName>(OneofType.LocationName);
-
-        /// <inheritdoc />
-        public gax::ResourceNameKind Kind => gax::ResourceNameKind.Oneof;
-
-        /// <inheritdoc />
-        public override string ToString() => Name.ToString();
-
-        /// <inheritdoc />
-        public override int GetHashCode() => ToString().GetHashCode();
-
-        /// <inheritdoc />
-        public override bool Equals(object obj) => Equals(obj as ParentNameOneof);
-
-        /// <inheritdoc />
-        public bool Equals(ParentNameOneof other) => ToString() == other?.ToString();
-
-        /// <inheritdoc />
-        public static bool operator ==(ParentNameOneof a, ParentNameOneof b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
-
-        /// <inheritdoc />
-        public static bool operator !=(ParentNameOneof a, ParentNameOneof b) => !(a == b);
     }
 
     /// <summary>
@@ -1586,11 +1383,11 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
     public partial class CreateTransferConfigRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof ParentAsParentNameOneof
+        public gaxres::ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : gaxres::ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -1677,11 +1474,11 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
     public partial class ListDataSourcesRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof ParentAsParentNameOneof
+        public gaxres::ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : gaxres::ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -1690,11 +1487,11 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
     public partial class ListTransferConfigsRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Parent"/> resource name property.
         /// </summary>
-        public Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof ParentAsParentNameOneof
+        public gaxres::ProjectName ParentAsProjectName
         {
-            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.BigQuery.DataTransfer.V1.ParentNameOneof.Parse(Parent, true); }
+            get { return string.IsNullOrEmpty(Parent) ? null : gaxres::ProjectName.Parse(Parent); }
             set { Parent = value != null ? value.ToString() : ""; }
         }
 
@@ -1727,6 +1524,19 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1
     }
 
     public partial class ScheduleTransferRunsRequest
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// </summary>
+        public Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof ParentAsTransferConfigNameOneof
+        {
+            get { return string.IsNullOrEmpty(Parent) ? null : Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof.Parse(Parent, true); }
+            set { Parent = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
+    public partial class StartManualTransferRunsRequest
     {
         /// <summary>
         /// <see cref="Google.Cloud.BigQuery.DataTransfer.V1.TransferConfigNameOneof"/>-typed view over the <see cref="Parent"/> resource name property.

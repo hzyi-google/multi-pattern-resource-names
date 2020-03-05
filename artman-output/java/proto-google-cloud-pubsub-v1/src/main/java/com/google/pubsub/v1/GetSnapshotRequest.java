@@ -95,11 +95,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object snapshot_;
   /**
    * <pre>
-   * The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 1;</code>
+   * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The snapshot.
    */
   public java.lang.String getSnapshot() {
@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
-   * <code>string snapshot = 1;</code>
+   * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for snapshot.
    */
   public com.google.protobuf.ByteString
@@ -446,11 +446,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object snapshot_ = "";
     /**
      * <pre>
-     * The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 1;</code>
+     * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The snapshot.
      */
     public java.lang.String getSnapshot() {
@@ -467,11 +467,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 1;</code>
+     * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for snapshot.
      */
     public com.google.protobuf.ByteString
@@ -489,11 +489,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 1;</code>
+     * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The snapshot to set.
      * @return This builder for chaining.
      */
@@ -509,11 +509,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 1;</code>
+     * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSnapshot() {
@@ -524,11 +524,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
-     * <code>string snapshot = 1;</code>
+     * <code>string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for snapshot to set.
      * @return This builder for chaining.
      */

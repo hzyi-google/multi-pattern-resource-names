@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-pub_sub is the official library for Google Cloud Pub/Sub API."
-  gem.summary       = "API Client library for Google Cloud Pub/Sub API"
+  gem.description   = "google-cloud-pub_sub is the official library for Cloud Pub/Sub API."
+  gem.summary       = "API Client library for Cloud Pub/Sub API"
   gem.homepage      = "https://github.com/googleapis/googleapis"
   gem.license       = "Apache-2.0"
 

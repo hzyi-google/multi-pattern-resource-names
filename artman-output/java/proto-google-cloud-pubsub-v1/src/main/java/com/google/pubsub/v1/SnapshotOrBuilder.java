@@ -32,7 +32,7 @@ public interface SnapshotOrBuilder extends
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The topic.
    */
   java.lang.String getTopic();
@@ -41,7 +41,7 @@ public interface SnapshotOrBuilder extends
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
    *
-   * <code>string topic = 2;</code>
+   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for topic.
    */
   com.google.protobuf.ByteString

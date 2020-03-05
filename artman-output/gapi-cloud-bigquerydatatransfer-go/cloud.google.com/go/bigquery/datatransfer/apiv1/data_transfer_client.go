@@ -44,12 +44,12 @@ type CallOptions struct {
 	GetTransferConfig       []gax.CallOption
 	ListTransferConfigs     []gax.CallOption
 	ScheduleTransferRuns    []gax.CallOption
+	StartManualTransferRuns []gax.CallOption
 	GetTransferRun          []gax.CallOption
 	DeleteTransferRun       []gax.CallOption
 	ListTransferRuns        []gax.CallOption
 	ListTransferLogs        []gax.CallOption
 	CheckValidCreds         []gax.CallOption
-	StartManualTransferRuns []gax.CallOption
 }
 
 func defaultClientOptions() []option.ClientOption {
@@ -81,16 +81,16 @@ func defaultCallOptions() *CallOptions {
 		ListDataSources:         retry[[2]string{"default", "idempotent"}],
 		CreateTransferConfig:    retry[[2]string{"default", "non_idempotent"}],
 		UpdateTransferConfig:    retry[[2]string{"default", "non_idempotent"}],
-		DeleteTransferConfig:    retry[[2]string{"default", "idempotent"}],
+		DeleteTransferConfig:    retry[[2]string{"default", "non_idempotent"}],
 		GetTransferConfig:       retry[[2]string{"default", "idempotent"}],
 		ListTransferConfigs:     retry[[2]string{"default", "idempotent"}],
 		ScheduleTransferRuns:    retry[[2]string{"default", "non_idempotent"}],
+		StartManualTransferRuns: retry[[2]string{"default", "non_idempotent"}],
 		GetTransferRun:          retry[[2]string{"default", "idempotent"}],
-		DeleteTransferRun:       retry[[2]string{"default", "idempotent"}],
+		DeleteTransferRun:       retry[[2]string{"default", "non_idempotent"}],
 		ListTransferRuns:        retry[[2]string{"default", "idempotent"}],
 		ListTransferLogs:        retry[[2]string{"default", "idempotent"}],
-		CheckValidCreds:         retry[[2]string{"default", "idempotent"}],
-		StartManualTransferRuns: retry[[2]string{"default", "non_idempotent"}],
+		CheckValidCreds:         retry[[2]string{"default", "non_idempotent"}],
 	}
 }
 
@@ -336,6 +336,26 @@ func (c *Client) ScheduleTransferRuns(ctx context.Context, req *datatransferpb.S
 	return resp, nil
 }
 
+// StartManualTransferRuns start manual transfer runs to be executed now with schedule_time equal to
+// current time. The transfer runs can be created for a time range where the
+// run_time is between start_time (inclusive) and end_time (exclusive), or for
+// a specific run_time.
+func (c *Client) StartManualTransferRuns(ctx context.Context, req *datatransferpb.StartManualTransferRunsRequest, opts ...gax.CallOption) (*datatransferpb.StartManualTransferRunsResponse, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.StartManualTransferRuns[0:len(c.CallOptions.StartManualTransferRuns):len(c.CallOptions.StartManualTransferRuns)], opts...)
+	var resp *datatransferpb.StartManualTransferRunsResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.StartManualTransferRuns(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
 // GetTransferRun returns information about the particular transfer run.
 func (c *Client) GetTransferRun(ctx context.Context, req *datatransferpb.GetTransferRunRequest, opts ...gax.CallOption) (*datatransferpb.TransferRun, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
@@ -458,26 +478,6 @@ func (c *Client) CheckValidCreds(ctx context.Context, req *datatransferpb.CheckV
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.client.CheckValidCreds(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-// StartManualTransferRuns start manual transfer runs to be executed now with schedule_time equal to
-// current time. The transfer runs can be created for a time range where the
-// run_time is between start_time (inclusive) and end_time (exclusive), or for
-// a specific run_time.
-func (c *Client) StartManualTransferRuns(ctx context.Context, req *datatransferpb.StartManualTransferRunsRequest, opts ...gax.CallOption) (*datatransferpb.StartManualTransferRunsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StartManualTransferRuns[0:len(c.CallOptions.StartManualTransferRuns):len(c.CallOptions.StartManualTransferRuns)], opts...)
-	var resp *datatransferpb.StartManualTransferRunsResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.StartManualTransferRuns(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

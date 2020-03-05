@@ -9,21 +9,21 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   java.lang.String getSubscription();
   /**
    * <pre>
-   * The name of the subscription.
+   * Required. The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   com.google.protobuf.ByteString
@@ -31,39 +31,39 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
 
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String>
       getAckIdsList();
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of ackIds.
    */
   int getAckIdsCount();
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
   /**
    * <pre>
-   * List of acknowledgment IDs.
+   * Required. List of acknowledgment IDs.
    * </pre>
    *
-   * <code>repeated string ack_ids = 4;</code>
+   * <code>repeated string ack_ids = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the ackIds at the given index.
    */
@@ -72,7 +72,7 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
 
   /**
    * <pre>
-   * The new ack deadline with respect to the time this request was sent to
+   * Required. The new ack deadline with respect to the time this request was sent to
    * the Pub/Sub system. For example, if the value is 10, the new
    * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
    * was made. Specifying zero might immediately make the message available for
@@ -82,7 +82,7 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
    * The maximum deadline you can specify is 600 seconds (10 minutes).
    * </pre>
    *
-   * <code>int32 ack_deadline_seconds = 3;</code>
+   * <code>int32 ack_deadline_seconds = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The ackDeadlineSeconds.
    */
   int getAckDeadlineSeconds();

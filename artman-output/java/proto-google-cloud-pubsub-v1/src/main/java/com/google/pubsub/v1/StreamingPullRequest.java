@@ -161,13 +161,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object subscription_;
   /**
    * <pre>
-   * The subscription for which to initialize the new stream. This must be
+   * Required. The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The subscription.
    */
   public java.lang.String getSubscription() {
@@ -184,13 +184,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The subscription for which to initialize the new stream. This must be
+   * Required. The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
-   * <code>string subscription = 1;</code>
+   * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for subscription.
    */
   public com.google.protobuf.ByteString
@@ -414,13 +414,13 @@ private static final long serialVersionUID = 0L;
   private int streamAckDeadlineSeconds_;
   /**
    * <pre>
-   * The ack deadline to use for the stream. This must be provided in the
+   * Required. The ack deadline to use for the stream. This must be provided in the
    * first request on the stream, but it can also be updated on subsequent
    * requests from client to server. The minimum deadline you can specify is 10
    * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * </pre>
    *
-   * <code>int32 stream_ack_deadline_seconds = 5;</code>
+   * <code>int32 stream_ack_deadline_seconds = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The streamAckDeadlineSeconds.
    */
   public int getStreamAckDeadlineSeconds() {
@@ -941,13 +941,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object subscription_ = "";
     /**
      * <pre>
-     * The subscription for which to initialize the new stream. This must be
+     * Required. The subscription for which to initialize the new stream. This must be
      * provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The subscription.
      */
     public java.lang.String getSubscription() {
@@ -964,13 +964,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription for which to initialize the new stream. This must be
+     * Required. The subscription for which to initialize the new stream. This must be
      * provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for subscription.
      */
     public com.google.protobuf.ByteString
@@ -988,13 +988,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription for which to initialize the new stream. This must be
+     * Required. The subscription for which to initialize the new stream. This must be
      * provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The subscription to set.
      * @return This builder for chaining.
      */
@@ -1010,13 +1010,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription for which to initialize the new stream. This must be
+     * Required. The subscription for which to initialize the new stream. This must be
      * provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
@@ -1027,13 +1027,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The subscription for which to initialize the new stream. This must be
+     * Required. The subscription for which to initialize the new stream. This must be
      * provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
-     * <code>string subscription = 1;</code>
+     * <code>string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for subscription to set.
      * @return This builder for chaining.
      */
@@ -1593,13 +1593,13 @@ private static final long serialVersionUID = 0L;
     private int streamAckDeadlineSeconds_ ;
     /**
      * <pre>
-     * The ack deadline to use for the stream. This must be provided in the
+     * Required. The ack deadline to use for the stream. This must be provided in the
      * first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     * <code>int32 stream_ack_deadline_seconds = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The streamAckDeadlineSeconds.
      */
     public int getStreamAckDeadlineSeconds() {
@@ -1607,13 +1607,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ack deadline to use for the stream. This must be provided in the
+     * Required. The ack deadline to use for the stream. This must be provided in the
      * first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     * <code>int32 stream_ack_deadline_seconds = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The streamAckDeadlineSeconds to set.
      * @return This builder for chaining.
      */
@@ -1625,13 +1625,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ack deadline to use for the stream. This must be provided in the
+     * Required. The ack deadline to use for the stream. This must be provided in the
      * first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
      *
-     * <code>int32 stream_ack_deadline_seconds = 5;</code>
+     * <code>int32 stream_ack_deadline_seconds = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearStreamAckDeadlineSeconds() {

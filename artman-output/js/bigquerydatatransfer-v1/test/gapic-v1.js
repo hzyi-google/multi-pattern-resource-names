@@ -614,6 +614,57 @@ describe('DataTransferServiceClient', () => {
     });
   });
 
+  describe('startManualTransferRuns', () => {
+    it('invokes startManualTransferRuns without error', done => {
+      const client = new bigqueryDataTransferModule.v1.DataTransferServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.startManualTransferRuns = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.startManualTransferRuns(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes startManualTransferRuns with error', done => {
+      const client = new bigqueryDataTransferModule.v1.DataTransferServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const request = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.startManualTransferRuns = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.startManualTransferRuns(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
   describe('getTransferRun', () => {
     it('invokes getTransferRun without error', done => {
       const client = new bigqueryDataTransferModule.v1.DataTransferServiceClient({
@@ -911,57 +962,6 @@ describe('DataTransferServiceClient', () => {
       );
 
       client.checkValidCreds(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('startManualTransferRuns', () => {
-    it('invokes startManualTransferRuns without error', done => {
-      const client = new bigqueryDataTransferModule.v1.DataTransferServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const request = {};
-
-      // Mock response
-      const expectedResponse = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.startManualTransferRuns = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.startManualTransferRuns(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes startManualTransferRuns with error', done => {
-      const client = new bigqueryDataTransferModule.v1.DataTransferServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const request = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.startManualTransferRuns = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.startManualTransferRuns(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');

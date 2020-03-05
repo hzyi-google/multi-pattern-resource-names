@@ -1,6 +1,6 @@
 {
   "name": "google/cloud-pubsub",
-  "description": "Google Cloud Pub/Sub API client for PHP",
+  "description": "Cloud Pub/Sub API client for PHP",
   "license": "Apache-2.0",
   "minimum-stability": "stable",
   "autoload": {

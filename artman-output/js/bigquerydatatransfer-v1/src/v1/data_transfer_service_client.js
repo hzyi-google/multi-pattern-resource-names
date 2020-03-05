@@ -211,12 +211,12 @@ class DataTransferServiceClient {
       'getTransferConfig',
       'listTransferConfigs',
       'scheduleTransferRuns',
+      'startManualTransferRuns',
       'getTransferRun',
       'deleteTransferRun',
       'listTransferRuns',
       'listTransferLogs',
       'checkValidCreds',
-      'startManualTransferRuns',
     ];
     for (const methodName of dataTransferServiceStubMethods) {
       const innerCallPromise = dataTransferServiceStub.then(
@@ -1030,6 +1030,73 @@ class DataTransferServiceClient {
   }
 
   /**
+   * Start manual transfer runs to be executed now with schedule_time equal to
+   * current time. The transfer runs can be created for a time range where the
+   * run_time is between start_time (inclusive) and end_time (exclusive), or for
+   * a specific run_time.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} [request.parent]
+   *   Transfer configuration name in the form:
+   *   `projects/{project_id}/transferConfigs/{config_id}` or
+   *   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+   * @param {Object} [request.requestedTimeRange]
+   *   Time range for the transfer runs that should be started.
+   *
+   *   This object should have the same structure as [TimeRange]{@link google.cloud.bigquery.datatransfer.v1.TimeRange}
+   * @param {Object} [request.requestedRunTime]
+   *   Specific run_time for a transfer run to be started. The
+   *   requested_run_time must not be in the future.
+   *
+   *   This object should have the same structure as [Timestamp]{@link google.protobuf.Timestamp}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [StartManualTransferRunsResponse]{@link google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [StartManualTransferRunsResponse]{@link google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const bigqueryDataTransfer = require('@google-cloud/bigquery-data-transfer');
+   *
+   * const client = new bigqueryDataTransfer.v1.DataTransferServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   *
+   * client.startManualTransferRuns({})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  startManualTransferRuns(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.startManualTransferRuns(request, options, callback);
+  }
+
+  /**
    * Returns information about the particular transfer run.
    *
    * @param {Object} request
@@ -1539,73 +1606,6 @@ class DataTransferServiceClient {
     return this._innerApiCalls.checkValidCreds(request, options, callback);
   }
 
-  /**
-   * Start manual transfer runs to be executed now with schedule_time equal to
-   * current time. The transfer runs can be created for a time range where the
-   * run_time is between start_time (inclusive) and end_time (exclusive), or for
-   * a specific run_time.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} [request.parent]
-   *   Transfer configuration name in the form:
-   *   `projects/{project_id}/transferConfigs/{config_id}` or
-   *   `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-   * @param {Object} [request.requestedTimeRange]
-   *   Time range for the transfer runs that should be started.
-   *
-   *   This object should have the same structure as [TimeRange]{@link google.cloud.bigquery.datatransfer.v1.TimeRange}
-   * @param {Object} [request.requestedRunTime]
-   *   Specific run_time for a transfer run to be started. The
-   *   requested_run_time must not be in the future.
-   *
-   *   This object should have the same structure as [Timestamp]{@link google.protobuf.Timestamp}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [StartManualTransferRunsResponse]{@link google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [StartManualTransferRunsResponse]{@link google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const bigqueryDataTransfer = require('@google-cloud/bigquery-data-transfer');
-   *
-   * const client = new bigqueryDataTransfer.v1.DataTransferServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   *
-   * client.startManualTransferRuns({})
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  startManualTransferRuns(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.startManualTransferRuns(request, options, callback);
-  }
-
   // --------------------
   // -- Path templates --
   // --------------------
@@ -1625,6 +1625,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified location_data_source resource name string.
    *
    * @param {String} project
@@ -1641,6 +1642,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified location_run resource name string.
    *
    * @param {String} project
@@ -1659,6 +1661,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified location_transfer_config resource name string.
    *
    * @param {String} project
@@ -1687,6 +1690,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified project_data_source resource name string.
    *
    * @param {String} project
@@ -1701,6 +1705,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified project_run resource name string.
    *
    * @param {String} project
@@ -1717,6 +1722,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified project_transfer_config resource name string.
    *
    * @param {String} project
@@ -1757,6 +1763,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationDataSourceName from a location_data_source resource.
    *
    * @param {String} locationDataSourceName
@@ -1770,6 +1777,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationDataSourceName from a location_data_source resource.
    *
    * @param {String} locationDataSourceName
@@ -1783,6 +1791,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationDataSourceName from a location_data_source resource.
    *
    * @param {String} locationDataSourceName
@@ -1796,6 +1805,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationRunName from a location_run resource.
    *
    * @param {String} locationRunName
@@ -1809,6 +1819,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationRunName from a location_run resource.
    *
    * @param {String} locationRunName
@@ -1822,6 +1833,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationRunName from a location_run resource.
    *
    * @param {String} locationRunName
@@ -1835,6 +1847,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationRunName from a location_run resource.
    *
    * @param {String} locationRunName
@@ -1848,6 +1861,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationTransferConfigName from a location_transfer_config resource.
    *
    * @param {String} locationTransferConfigName
@@ -1861,6 +1875,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationTransferConfigName from a location_transfer_config resource.
    *
    * @param {String} locationTransferConfigName
@@ -1874,6 +1889,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the locationTransferConfigName from a location_transfer_config resource.
    *
    * @param {String} locationTransferConfigName
@@ -1900,6 +1916,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectDataSourceName from a project_data_source resource.
    *
    * @param {String} projectDataSourceName
@@ -1913,6 +1930,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectDataSourceName from a project_data_source resource.
    *
    * @param {String} projectDataSourceName
@@ -1926,6 +1944,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectRunName from a project_run resource.
    *
    * @param {String} projectRunName
@@ -1939,6 +1958,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectRunName from a project_run resource.
    *
    * @param {String} projectRunName
@@ -1952,6 +1972,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectRunName from a project_run resource.
    *
    * @param {String} projectRunName
@@ -1965,6 +1986,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectTransferConfigName from a project_transfer_config resource.
    *
    * @param {String} projectTransferConfigName
@@ -1978,6 +2000,7 @@ class DataTransferServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the projectTransferConfigName from a project_transfer_config resource.
    *
    * @param {String} projectTransferConfigName
