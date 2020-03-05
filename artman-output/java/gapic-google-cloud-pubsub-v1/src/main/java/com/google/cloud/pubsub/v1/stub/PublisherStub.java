@@ -21,11 +21,6 @@ import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedRespons
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
@@ -49,16 +44,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class PublisherStub implements BackgroundResource {
 
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    throw new UnsupportedOperationException("Not implemented: publishCallable()");
+  }
+
   public UnaryCallable<Topic, Topic> createTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: createTopicCallable()");
   }
 
   public UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTopicCallable()");
-  }
-
-  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
-    throw new UnsupportedOperationException("Not implemented: publishCallable()");
   }
 
   public UnaryCallable<GetTopicRequest, Topic> getTopicCallable() {
@@ -86,19 +81,6 @@ public abstract class PublisherStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTopicCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

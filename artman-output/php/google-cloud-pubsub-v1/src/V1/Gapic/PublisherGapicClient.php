@@ -27,7 +27,6 @@
 namespace Google\Cloud\PubSub\V1\Gapic;
 
 use Google\ApiCore\ApiException;
-use Google\ApiCore\Call;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
@@ -36,12 +35,6 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Iam\V1\GetIamPolicyRequest;
-use Google\Cloud\Iam\V1\GetPolicyOptions;
-use Google\Cloud\Iam\V1\Policy;
-use Google\Cloud\Iam\V1\SetIamPolicyRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
 use Google\Cloud\PubSub\V1\DeleteTopicRequest;
 use Google\Cloud\PubSub\V1\GetTopicRequest;
 use Google\Cloud\PubSub\V1\ListTopicSubscriptionsRequest;
@@ -67,8 +60,12 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $publisherClient = new PublisherClient();
  * try {
- *     $formattedName = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
- *     $response = $publisherClient->createTopic($formattedName);
+ *     $formattedTopic = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
+ *     $data = '';
+ *     $messagesElement = new PubsubMessage();
+ *     $messagesElement->setData($data);
+ *     $messages = [$messagesElement];
+ *     $response = $publisherClient->publish($formattedTopic, $messages);
  * } finally {
  *     $publisherClient->close();
  * }
@@ -189,7 +186,9 @@ class PublisherGapicClient
      * @param string $topic
      *
      * @return string The formatted topic resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function topicName($project, $topic)
     {
@@ -297,6 +296,64 @@ class PublisherGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
+     * does not exist.
+     *
+     * Sample code:
+     * ```
+     * $publisherClient = new PublisherClient();
+     * try {
+     *     $formattedTopic = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
+     *     $data = '';
+     *     $messagesElement = new PubsubMessage();
+     *     $messagesElement->setData($data);
+     *     $messages = [$messagesElement];
+     *     $response = $publisherClient->publish($formattedTopic, $messages);
+     * } finally {
+     *     $publisherClient->close();
+     * }
+     * ```
+     *
+     * @param string          $topic        Required. The messages in the request will be published on this topic.
+     *                                      Format is `projects/{project}/topics/{topic}`.
+     * @param PubsubMessage[] $messages     Required. The messages to publish.
+     * @param array           $optionalArgs {
+     *                                      Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\PubSub\V1\PublishResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function publish($topic, $messages, array $optionalArgs = [])
+    {
+        $request = new PublishRequest();
+        $request->setTopic($topic);
+        $request->setMessages($messages);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'topic' => $request->getTopic(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'Publish',
+            PublishResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
     }
 
     /**
@@ -430,64 +487,6 @@ class PublisherGapicClient
         return $this->startCall(
             'UpdateTopic',
             Topic::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-     * does not exist.
-     *
-     * Sample code:
-     * ```
-     * $publisherClient = new PublisherClient();
-     * try {
-     *     $formattedTopic = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
-     *     $data = '';
-     *     $messagesElement = new PubsubMessage();
-     *     $messagesElement->setData($data);
-     *     $messages = [$messagesElement];
-     *     $response = $publisherClient->publish($formattedTopic, $messages);
-     * } finally {
-     *     $publisherClient->close();
-     * }
-     * ```
-     *
-     * @param string          $topic        Required. The messages in the request will be published on this topic.
-     *                                      Format is `projects/{project}/topics/{topic}`.
-     * @param PubsubMessage[] $messages     Required. The messages to publish.
-     * @param array           $optionalArgs {
-     *                                      Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\PubSub\V1\PublishResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function publish($topic, $messages, array $optionalArgs = [])
-    {
-        $request = new PublishRequest();
-        $request->setTopic($topic);
-        $request->setMessages($messages);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'topic' => $request->getTopic(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'Publish',
-            PublishResponse::class,
             $optionalArgs,
             $request
         )->wait();
@@ -756,194 +755,6 @@ class PublisherGapicClient
             GPBEmpty::class,
             $optionalArgs,
             $request
-        )->wait();
-    }
-
-    /**
-     * Sets the access control policy on the specified resource. Replaces
-     * any existing policy.
-     *
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-     * PERMISSION_DENIED
-     *
-     * Sample code:
-     * ```
-     * $publisherClient = new PublisherClient();
-     * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
-     *     $policy = new Policy();
-     *     $response = $publisherClient->setIamPolicy($formattedResource, $policy);
-     * } finally {
-     *     $publisherClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being specified.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param Policy $policy       REQUIRED: The complete policy to be applied to the `resource`. The size of
-     *                             the policy is limited to a few 10s of KB. An empty policy is a
-     *                             valid policy but certain Cloud Platform services (such as Projects)
-     *                             might reject them.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setIamPolicy($resource, $policy, array $optionalArgs = [])
-    {
-        $request = new SetIamPolicyRequest();
-        $request->setResource($resource);
-        $request->setPolicy($policy);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
-        )->wait();
-    }
-
-    /**
-     * Gets the access control policy for a resource. Returns an empty policy
-     * if the resource exists and does not have a policy set.
-     *
-     * Sample code:
-     * ```
-     * $publisherClient = new PublisherClient();
-     * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
-     *     $response = $publisherClient->getIamPolicy($formattedResource);
-     * } finally {
-     *     $publisherClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being requested.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type GetPolicyOptions $options
-     *          OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     *          `GetIamPolicy`. This field is only used by Cloud IAM.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getIamPolicy($resource, array $optionalArgs = [])
-    {
-        $request = new GetIamPolicyRequest();
-        $request->setResource($resource);
-        if (isset($optionalArgs['options'])) {
-            $request->setOptions($optionalArgs['options']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
-        )->wait();
-    }
-
-    /**
-     * Returns permissions that a caller has on the specified resource. If the
-     * resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     *
-     * Note: This operation is designed to be used for building
-     * permission-aware UIs and command-line tools, not for authorization
-     * checking. This operation may "fail open" without warning.
-     *
-     * Sample code:
-     * ```
-     * $publisherClient = new PublisherClient();
-     * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
-     *     $permissions = [];
-     *     $response = $publisherClient->testIamPermissions($formattedResource, $permissions);
-     * } finally {
-     *     $publisherClient->close();
-     * }
-     * ```
-     *
-     * @param string   $resource     REQUIRED: The resource for which the policy detail is being requested.
-     *                               See the operation documentation for the appropriate value for this field.
-     * @param string[] $permissions  The set of permissions to check for the `resource`. Permissions with
-     *                               wildcards (such as '*' or 'storage.*') are not allowed. For more
-     *                               information see
-     *                               [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\TestIamPermissionsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function testIamPermissions($resource, $permissions, array $optionalArgs = [])
-    {
-        $request = new TestIamPermissionsRequest();
-        $request->setResource($resource);
-        $request->setPermissions($permissions);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'TestIamPermissions',
-            TestIamPermissionsResponse::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
         )->wait();
     }
 }

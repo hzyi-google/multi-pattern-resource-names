@@ -19,7 +19,6 @@ require "google/gax"
 
 require "google/cloud/pub_sub"
 require "google/cloud/pub_sub/v1/subscriber_client"
-require "google/iam/v1/iam_policy_services_pb"
 require "google/pubsub/v1/pubsub_services_pb"
 
 class CustomTestError_v1 < StandardError; end
@@ -156,90 +155,6 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
     end
   end
 
-  describe 'get_subscription' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#get_subscription."
-
-    it 'invokes get_subscription without error' do
-      # Create request parameters
-      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Create expected grpc response
-      name = "name3373707"
-      topic = "topic110546223"
-      ack_deadline_seconds = 2135351438
-      retain_acked_messages = false
-      enable_message_ordering = true
-      expected_response = {
-        name: name,
-        topic: topic,
-        ack_deadline_seconds: ack_deadline_seconds,
-        retain_acked_messages: retain_acked_messages,
-        enable_message_ordering: enable_message_ordering
-      }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::Subscription)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::GetSubscriptionRequest, request)
-        assert_equal(formatted_subscription, request.subscription)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_subscription, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("get_subscription")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.get_subscription(formatted_subscription)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.get_subscription(formatted_subscription) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes get_subscription with error' do
-      # Create request parameters
-      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::GetSubscriptionRequest, request)
-        assert_equal(formatted_subscription, request.subscription)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_subscription, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("get_subscription")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.get_subscription(formatted_subscription)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'update_subscription' do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#update_subscription."
 
@@ -325,147 +240,6 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
             client.update_subscription(subscription, update_mask)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'list_subscriptions' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#list_subscriptions."
-
-    it 'invokes list_subscriptions without error' do
-      # Create request parameters
-      formatted_project = Google::Cloud::PubSub::V1::SubscriberClient.project_path("[PROJECT]")
-
-      # Create expected grpc response
-      next_page_token = ""
-      subscriptions_element = {}
-      subscriptions = [subscriptions_element]
-      expected_response = { next_page_token: next_page_token, subscriptions: subscriptions }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::ListSubscriptionsResponse)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::ListSubscriptionsRequest, request)
-        assert_equal(formatted_project, request.project)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:list_subscriptions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("list_subscriptions")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.list_subscriptions(formatted_project)
-
-          # Verify the response
-          assert(response.instance_of?(Google::Gax::PagedEnumerable))
-          assert_equal(expected_response, response.page.response)
-          assert_nil(response.next_page)
-          assert_equal(expected_response.subscriptions.to_a, response.to_a)
-        end
-      end
-    end
-
-    it 'invokes list_subscriptions with error' do
-      # Create request parameters
-      formatted_project = Google::Cloud::PubSub::V1::SubscriberClient.project_path("[PROJECT]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::ListSubscriptionsRequest, request)
-        assert_equal(formatted_project, request.project)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:list_subscriptions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("list_subscriptions")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.list_subscriptions(formatted_project)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'delete_subscription' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#delete_subscription."
-
-    it 'invokes delete_subscription without error' do
-      # Create request parameters
-      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::DeleteSubscriptionRequest, request)
-        assert_equal(formatted_subscription, request.subscription)
-        OpenStruct.new(execute: nil)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:delete_subscription, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("delete_subscription")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.delete_subscription(formatted_subscription)
-
-          # Verify the response
-          assert_nil(response)
-
-          # Call method with block
-          client.delete_subscription(formatted_subscription) do |response, operation|
-            # Verify the response
-            assert_nil(response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes delete_subscription with error' do
-      # Create request parameters
-      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::DeleteSubscriptionRequest, request)
-        assert_equal(formatted_subscription, request.subscription)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:delete_subscription, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("delete_subscription")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.delete_subscription(formatted_subscription)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -724,9 +498,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
       request = { subscription: formatted_subscription, stream_ack_deadline_seconds: stream_ack_deadline_seconds }
 
       # Create expected grpc response
-      received_messages_element = {}
-      received_messages = [received_messages_element]
-      expected_response = { received_messages: received_messages }
+      expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::StreamingPullResponse)
 
       # Mock Grpc layer
@@ -782,6 +554,318 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
             client.streaming_pull([request])
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'update_snapshot' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#update_snapshot."
+
+    it 'invokes update_snapshot without error' do
+      # Create request parameters
+      seconds = 123456
+      expire_time = { seconds: seconds }
+      snapshot = { expire_time: expire_time }
+      paths_element = "expire_time"
+      paths = [paths_element]
+      update_mask = { paths: paths }
+
+      # Create expected grpc response
+      name = "name3373707"
+      topic = "topic110546223"
+      expected_response = { name: name, topic: topic }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::Snapshot)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::UpdateSnapshotRequest, request)
+        assert_equal(Google::Gax::to_proto(snapshot, Google::Pubsub::V1::Snapshot), request.snapshot)
+        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:update_snapshot, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("update_snapshot")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          response = client.update_snapshot(snapshot, update_mask)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.update_snapshot(snapshot, update_mask) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes update_snapshot with error' do
+      # Create request parameters
+      seconds = 123456
+      expire_time = { seconds: seconds }
+      snapshot = { expire_time: expire_time }
+      paths_element = "expire_time"
+      paths = [paths_element]
+      update_mask = { paths: paths }
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::UpdateSnapshotRequest, request)
+        assert_equal(Google::Gax::to_proto(snapshot, Google::Pubsub::V1::Snapshot), request.snapshot)
+        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:update_snapshot, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("update_snapshot")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.update_snapshot(snapshot, update_mask)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'get_subscription' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#get_subscription."
+
+    it 'invokes get_subscription without error' do
+      # Create request parameters
+      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+
+      # Create expected grpc response
+      name = "name3373707"
+      topic = "topic110546223"
+      ack_deadline_seconds = 2135351438
+      retain_acked_messages = false
+      enable_message_ordering = true
+      expected_response = {
+        name: name,
+        topic: topic,
+        ack_deadline_seconds: ack_deadline_seconds,
+        retain_acked_messages: retain_acked_messages,
+        enable_message_ordering: enable_message_ordering
+      }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::Subscription)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::GetSubscriptionRequest, request)
+        assert_equal(formatted_subscription, request.subscription)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:get_subscription, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("get_subscription")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          response = client.get_subscription(formatted_subscription)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_subscription(formatted_subscription) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_subscription with error' do
+      # Create request parameters
+      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::GetSubscriptionRequest, request)
+        assert_equal(formatted_subscription, request.subscription)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:get_subscription, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("get_subscription")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.get_subscription(formatted_subscription)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'list_subscriptions' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#list_subscriptions."
+
+    it 'invokes list_subscriptions without error' do
+      # Create request parameters
+      formatted_project = Google::Cloud::PubSub::V1::SubscriberClient.project_path("[PROJECT]")
+
+      # Create expected grpc response
+      next_page_token = ""
+      subscriptions_element = {}
+      subscriptions = [subscriptions_element]
+      expected_response = { next_page_token: next_page_token, subscriptions: subscriptions }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::ListSubscriptionsResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::ListSubscriptionsRequest, request)
+        assert_equal(formatted_project, request.project)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:list_subscriptions, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("list_subscriptions")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          response = client.list_subscriptions(formatted_project)
+
+          # Verify the response
+          assert(response.instance_of?(Google::Gax::PagedEnumerable))
+          assert_equal(expected_response, response.page.response)
+          assert_nil(response.next_page)
+          assert_equal(expected_response.subscriptions.to_a, response.to_a)
+        end
+      end
+    end
+
+    it 'invokes list_subscriptions with error' do
+      # Create request parameters
+      formatted_project = Google::Cloud::PubSub::V1::SubscriberClient.project_path("[PROJECT]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::ListSubscriptionsRequest, request)
+        assert_equal(formatted_project, request.project)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:list_subscriptions, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("list_subscriptions")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.list_subscriptions(formatted_project)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'delete_subscription' do
+    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#delete_subscription."
+
+    it 'invokes delete_subscription without error' do
+      # Create request parameters
+      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::DeleteSubscriptionRequest, request)
+        assert_equal(formatted_subscription, request.subscription)
+        OpenStruct.new(execute: nil)
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:delete_subscription, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("delete_subscription")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          response = client.delete_subscription(formatted_subscription)
+
+          # Verify the response
+          assert_nil(response)
+
+          # Call method with block
+          client.delete_subscription(formatted_subscription) do |response, operation|
+            # Verify the response
+            assert_nil(response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes delete_subscription with error' do
+      # Create request parameters
+      formatted_subscription = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Pubsub::V1::DeleteSubscriptionRequest, request)
+        assert_equal(formatted_subscription, request.subscription)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1.new(:delete_subscription, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockSubscriberCredentials_v1.new("delete_subscription")
+
+      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
+        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
+            client.delete_subscription(formatted_subscription)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -1015,93 +1099,6 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
     end
   end
 
-  describe 'update_snapshot' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#update_snapshot."
-
-    it 'invokes update_snapshot without error' do
-      # Create request parameters
-      seconds = 123456
-      expire_time = { seconds: seconds }
-      snapshot = { expire_time: expire_time }
-      paths_element = "expire_time"
-      paths = [paths_element]
-      update_mask = { paths: paths }
-
-      # Create expected grpc response
-      name = "name3373707"
-      topic = "topic110546223"
-      expected_response = { name: name, topic: topic }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::Snapshot)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::UpdateSnapshotRequest, request)
-        assert_equal(Google::Gax::to_proto(snapshot, Google::Pubsub::V1::Snapshot), request.snapshot)
-        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:update_snapshot, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("update_snapshot")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.update_snapshot(snapshot, update_mask)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.update_snapshot(snapshot, update_mask) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes update_snapshot with error' do
-      # Create request parameters
-      seconds = 123456
-      expire_time = { seconds: seconds }
-      snapshot = { expire_time: expire_time }
-      paths_element = "expire_time"
-      paths = [paths_element]
-      update_mask = { paths: paths }
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Pubsub::V1::UpdateSnapshotRequest, request)
-        assert_equal(Google::Gax::to_proto(snapshot, Google::Pubsub::V1::Snapshot), request.snapshot)
-        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:update_snapshot, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("update_snapshot")
-
-      Google::Pubsub::V1::Subscriber::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.update_snapshot(snapshot, update_mask)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
   describe 'delete_snapshot' do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#delete_snapshot."
 
@@ -1235,237 +1232,6 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
             client.seek(formatted_subscription)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'set_iam_policy' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#set_iam_policy."
-
-    it 'invokes set_iam_policy without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      policy = {}
-
-      # Create expected grpc response
-      version = 351608024
-      etag = "21"
-      expected_response = { version: version, etag: etag }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("set_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.set_iam_policy(formatted_resource, policy)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.set_iam_policy(formatted_resource, policy) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes set_iam_policy with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      policy = {}
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:set_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("set_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.set_iam_policy(formatted_resource, policy)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'get_iam_policy' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#get_iam_policy."
-
-    it 'invokes get_iam_policy without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Create expected grpc response
-      version = 351608024
-      etag = "21"
-      expected_response = { version: version, etag: etag }
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::Policy)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("get_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.get_iam_policy(formatted_resource)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.get_iam_policy(formatted_resource) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes get_iam_policy with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("get_iam_policy")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.get_iam_policy(formatted_resource)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'test_iam_permissions' do
-    custom_error = CustomTestError_v1.new "Custom test error for Google::Cloud::PubSub::V1::SubscriberClient#test_iam_permissions."
-
-    it 'invokes test_iam_permissions without error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      permissions = []
-
-      # Create expected grpc response
-      expected_response = {}
-      expected_response = Google::Gax::to_proto(expected_response, Google::Iam::V1::TestIamPermissionsResponse)
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(permissions, request.permissions)
-        OpenStruct.new(execute: expected_response)
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("test_iam_permissions")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          response = client.test_iam_permissions(formatted_resource, permissions)
-
-          # Verify the response
-          assert_equal(expected_response, response)
-
-          # Call method with block
-          client.test_iam_permissions(formatted_resource, permissions) do |response, operation|
-            # Verify the response
-            assert_equal(expected_response, response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes test_iam_permissions with error' do
-      # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-      permissions = []
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
-        assert_equal(permissions, request.permissions)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v1.new(:test_iam_permissions, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockSubscriberCredentials_v1.new("test_iam_permissions")
-
-      Google::Iam::V1::IAMPolicy::Stub.stub(:new, mock_stub) do
-        Google::Cloud::PubSub::V1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.test_iam_permissions(formatted_resource, permissions)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

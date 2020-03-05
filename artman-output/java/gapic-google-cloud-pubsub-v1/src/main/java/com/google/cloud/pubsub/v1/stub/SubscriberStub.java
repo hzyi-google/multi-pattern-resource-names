@@ -22,11 +22,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
@@ -65,26 +60,8 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createSubscriptionCallable()");
   }
 
-  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSubscriptionCallable()");
-  }
-
   public UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSubscriptionCallable()");
-  }
-
-  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
-      listSubscriptionsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
-  }
-
-  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
-      listSubscriptionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
-  }
-
-  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
   }
 
   public UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
@@ -104,6 +81,28 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: streamingPullCallable()");
   }
 
+  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
+  }
+
+  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
+  }
+
+  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
+  }
+
   public UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyPushConfigCallable()");
   }
@@ -121,29 +120,12 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
   }
 
-  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
-  }
-
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
   }
 
   public UnaryCallable<SeekRequest, SeekResponse> seekCallable() {
     throw new UnsupportedOperationException("Not implemented: seekCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

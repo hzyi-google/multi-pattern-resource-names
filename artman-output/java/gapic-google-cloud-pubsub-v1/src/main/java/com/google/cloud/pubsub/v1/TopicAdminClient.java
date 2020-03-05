@@ -30,11 +30,6 @@ import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
@@ -44,11 +39,11 @@ import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
 import java.util.List;
@@ -68,8 +63,13 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
- *   Topic response = topicAdminClient.createTopic(name);
+ *   TopicName topic = TopicName.ofDeletedTopicName();
+ *   ByteString data = ByteString.copyFromUtf8("");
+ *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+ *     .setData(data)
+ *     .build();
+ *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+ *   PublishResponse response = topicAdminClient.publish(topic, messages);
  * }
  * </code>
  * </pre>
@@ -177,29 +177,121 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name. See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
-   * rules&lt;/a&gt;.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   Topic response = topicAdminClient.createTopic(name);
+   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ByteString data = ByteString.copyFromUtf8("");
+   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+   *     .setData(data)
+   *     .build();
+   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+   *   PublishResponse response = topicAdminClient.publish(topic, messages);
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the topic. It must have the format
-   *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
-   *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
-   *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
-   *     length, and it must not start with `"goog"`.
+   * @param topic Required. The messages in the request will be published on this topic. Format is
+   *     `projects/{project}/topics/{topic}`.
+   * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic createTopic(ProjectTopicName name) {
-    Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
-    return createTopic(request);
+  /* package-private */ final PublishResponse publish(
+      TopicName topic, List<PubsubMessage> messages) {
+    PublishRequest request =
+        PublishRequest.newBuilder()
+            .setTopic(topic == null ? null : topic.toString())
+            .addAllMessages(messages)
+            .build();
+    return publish(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ByteString data = ByteString.copyFromUtf8("");
+   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+   *     .setData(data)
+   *     .build();
+   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+   *   PublishResponse response = topicAdminClient.publish(topic.toString(), messages);
+   * }
+   * </code></pre>
+   *
+   * @param topic Required. The messages in the request will be published on this topic. Format is
+   *     `projects/{project}/topics/{topic}`.
+   * @param messages Required. The messages to publish.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final PublishResponse publish(String topic, List<PubsubMessage> messages) {
+    PublishRequest request =
+        PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
+    return publish(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ByteString data = ByteString.copyFromUtf8("");
+   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+   *     .setData(data)
+   *     .build();
+   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+   *   PublishRequest request = PublishRequest.newBuilder()
+   *     .setTopic(topic.toString())
+   *     .addAllMessages(messages)
+   *     .build();
+   *   PublishResponse response = topicAdminClient.publish(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final PublishResponse publish(PublishRequest request) {
+    return publishCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ByteString data = ByteString.copyFromUtf8("");
+   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
+   *     .setData(data)
+   *     .build();
+   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
+   *   PublishRequest request = PublishRequest.newBuilder()
+   *     .setTopic(topic.toString())
+   *     .addAllMessages(messages)
+   *     .build();
+   *   ApiFuture&lt;PublishResponse&gt; future = topicAdminClient.publishCallable().futureCall(request);
+   *   // Do something
+   *   PublishResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    return stub.publishCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -212,8 +304,8 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   Topic response = topicAdminClient.createTopic(name.toString());
+   *   String formattedName = TopicName.formatDeletedTopicName();
+   *   Topic response = topicAdminClient.createTopic(formattedName);
    * }
    * </code></pre>
    *
@@ -239,7 +331,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName name = TopicName.ofDeletedTopicName();
    *   Topic request = Topic.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -264,7 +356,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName name = TopicName.ofDeletedTopicName();
    *   Topic request = Topic.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -329,132 +421,13 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   ByteString data = ByteString.copyFromUtf8("");
-   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
-   *     .setData(data)
-   *     .build();
-   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishResponse response = topicAdminClient.publish(topic, messages);
-   * }
-   * </code></pre>
-   *
-   * @param topic Required. The messages in the request will be published on this topic. Format is
-   *     `projects/{project}/topics/{topic}`.
-   * @param messages Required. The messages to publish.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  /* package-private */ final PublishResponse publish(
-      ProjectTopicName topic, List<PubsubMessage> messages) {
-    PublishRequest request =
-        PublishRequest.newBuilder()
-            .setTopic(topic == null ? null : topic.toString())
-            .addAllMessages(messages)
-            .build();
-    return publish(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   ByteString data = ByteString.copyFromUtf8("");
-   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
-   *     .setData(data)
-   *     .build();
-   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishResponse response = topicAdminClient.publish(topic.toString(), messages);
-   * }
-   * </code></pre>
-   *
-   * @param topic Required. The messages in the request will be published on this topic. Format is
-   *     `projects/{project}/topics/{topic}`.
-   * @param messages Required. The messages to publish.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  /* package-private */ final PublishResponse publish(String topic, List<PubsubMessage> messages) {
-    PublishRequest request =
-        PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
-    return publish(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   ByteString data = ByteString.copyFromUtf8("");
-   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
-   *     .setData(data)
-   *     .build();
-   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishRequest request = PublishRequest.newBuilder()
-   *     .setTopic(topic.toString())
-   *     .addAllMessages(messages)
-   *     .build();
-   *   PublishResponse response = topicAdminClient.publish(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  /* package-private */ final PublishResponse publish(PublishRequest request) {
-    return publishCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-   *   ByteString data = ByteString.copyFromUtf8("");
-   *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
-   *     .setData(data)
-   *     .build();
-   *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishRequest request = PublishRequest.newBuilder()
-   *     .setTopic(topic.toString())
-   *     .addAllMessages(messages)
-   *     .build();
-   *   ApiFuture&lt;PublishResponse&gt; future = topicAdminClient.publishCallable().futureCall(request);
-   *   // Do something
-   *   PublishResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
-    return stub.publishCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Gets the configuration of a topic.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   Topic response = topicAdminClient.getTopic(topic);
    * }
    * </code></pre>
@@ -463,7 +436,7 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic getTopic(ProjectTopicName topic) {
+  public final Topic getTopic(TopicName topic) {
     GetTopicRequest request =
         GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     return getTopic(request);
@@ -477,7 +450,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   Topic response = topicAdminClient.getTopic(topic.toString());
    * }
    * </code></pre>
@@ -499,7 +472,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -522,7 +495,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -675,7 +648,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   for (ProjectSubscriptionName element : topicAdminClient.listTopicSubscriptions(topic).iterateAllAsProjectSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
@@ -686,7 +659,7 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(ProjectTopicName topic) {
+  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder()
             .setTopic(topic == null ? null : topic.toString())
@@ -702,7 +675,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   for (ProjectSubscriptionName element : topicAdminClient.listTopicSubscriptions(topic.toString()).iterateAllAsProjectSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
@@ -727,7 +700,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -753,7 +726,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -778,7 +751,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -813,7 +786,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   topicAdminClient.deleteTopic(topic);
    * }
    * </code></pre>
@@ -822,7 +795,7 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTopic(ProjectTopicName topic) {
+  public final void deleteTopic(TopicName topic) {
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     deleteTopic(request);
@@ -839,7 +812,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   topicAdminClient.deleteTopic(topic.toString());
    * }
    * </code></pre>
@@ -864,7 +837,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -890,7 +863,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.ofDeletedTopicName();
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -902,254 +875,6 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return stub.deleteTopicCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = topicAdminClient.setIamPolicy(formattedResource, policy);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being specified. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
-   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
-   *     Platform services (such as Projects) might reject them.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(String resource, Policy policy) {
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
-    return setIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .setPolicy(policy)
-   *     .build();
-   *   Policy response = topicAdminClient.setIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(SetIamPolicyRequest request) {
-    return setIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = topicAdminClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return stub.setIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy response = topicAdminClient.getIamPolicy(formattedResource);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(String resource) {
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .build();
-   *   Policy response = topicAdminClient.getIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = topicAdminClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return stub.getIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(formattedResource, permissions);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      String resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource)
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = topicAdminClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return stub.testIamPermissionsCallable();
   }
 
   @Override

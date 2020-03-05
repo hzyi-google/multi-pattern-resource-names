@@ -3,6 +3,35 @@
 return [
     'interfaces' => [
         'google.iam.v1.IAMPolicy' => [
+            'GetIamPolicy' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:getIamPolicy',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta2/{resource=projects/*/subscriptions/*}:getIamPolicy',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{resource=projects/*/topics/*}:getIamPolicy',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:getIamPolicy',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1/{resource=projects/*/snapshots/*}:getIamPolicy',
+                    ],
+                ],
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
             'SetIamPolicy' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:setIamPolicy',
@@ -27,35 +56,6 @@ return [
                         'method' => 'post',
                         'uriTemplate' => '/v1/{resource=projects/*/snapshots/*}:setIamPolicy',
                         'body' => '*',
-                    ],
-                ],
-                'placeholders' => [
-                    'resource' => [
-                        'getters' => [
-                            'getResource',
-                        ],
-                    ],
-                ],
-            ],
-            'GetIamPolicy' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{resource=projects/*/topics/*}:getIamPolicy',
-                'additionalBindings' => [
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1beta2/{resource=projects/*/subscriptions/*}:getIamPolicy',
-                    ],
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{resource=projects/*/topics/*}:getIamPolicy',
-                    ],
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{resource=projects/*/subscriptions/*}:getIamPolicy',
-                    ],
-                    [
-                        'method' => 'get',
-                        'uriTemplate' => '/v1/{resource=projects/*/snapshots/*}:getIamPolicy',
                     ],
                 ],
                 'placeholders' => [
@@ -102,6 +102,18 @@ return [
             ],
         ],
         'google.pubsub.v1.Publisher' => [
+            'Publish' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{topic=projects/*/topics/*}:publish',
+                'body' => '*',
+                'placeholders' => [
+                    'topic' => [
+                        'getters' => [
+                            'getTopic',
+                        ],
+                    ],
+                ],
+            ],
             'CreateTopic' => [
                 'method' => 'put',
                 'uriTemplate' => '/v1/{name=projects/*/topics/*}',
@@ -123,18 +135,6 @@ return [
                         'getters' => [
                             'getTopic',
                             'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'Publish' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{topic=projects/*/topics/*}:publish',
-                'body' => '*',
-                'placeholders' => [
-                    'topic' => [
-                        'getters' => [
-                            'getTopic',
                         ],
                     ],
                 ],

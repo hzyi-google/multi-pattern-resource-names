@@ -45,11 +45,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
@@ -118,56 +113,35 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           .build();
 
   private final UnaryCallSettings<Subscription, Subscription> createSubscriptionSettings;
-  private final UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
   private final UnaryCallSettings<UpdateSubscriptionRequest, Subscription>
       updateSubscriptionSettings;
-  private final PagedCallSettings<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-      listSubscriptionsSettings;
-  private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
   private final UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
   private final UnaryCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
   private final UnaryCallSettings<PullRequest, PullResponse> pullSettings;
   private final StreamingCallSettings<StreamingPullRequest, StreamingPullResponse>
       streamingPullSettings;
+  private final UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
+  private final UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
+  private final PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings;
+  private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
   private final UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
   private final UnaryCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings;
-  private final UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
   private final UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
   private final UnaryCallSettings<SeekRequest, SeekResponse> seekSettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
 
   /** Returns the object with the settings used for calls to createSubscription. */
   public UnaryCallSettings<Subscription, Subscription> createSubscriptionSettings() {
     return createSubscriptionSettings;
   }
 
-  /** Returns the object with the settings used for calls to getSubscription. */
-  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
-    return getSubscriptionSettings;
-  }
-
   /** Returns the object with the settings used for calls to updateSubscription. */
   public UnaryCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
     return updateSubscriptionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listSubscriptions. */
-  public PagedCallSettings<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-      listSubscriptionsSettings() {
-    return listSubscriptionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteSubscription. */
-  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
-    return deleteSubscriptionSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
@@ -191,6 +165,28 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return streamingPullSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateSnapshot. */
+  public UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
+    return updateSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubscription. */
+  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
+    return getSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return listSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
+    return deleteSubscriptionSettings;
+  }
+
   /** Returns the object with the settings used for calls to modifyPushConfig. */
   public UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
@@ -207,11 +203,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return createSnapshotSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateSnapshot. */
-  public UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
-    return updateSnapshotSettings;
-  }
-
   /** Returns the object with the settings used for calls to deleteSnapshot. */
   public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
     return deleteSnapshotSettings;
@@ -220,22 +211,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   /** Returns the object with the settings used for calls to seek. */
   public UnaryCallSettings<SeekRequest, SeekResponse> seekSettings() {
     return seekSettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -308,23 +283,20 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     super(settingsBuilder);
 
     createSubscriptionSettings = settingsBuilder.createSubscriptionSettings().build();
-    getSubscriptionSettings = settingsBuilder.getSubscriptionSettings().build();
     updateSubscriptionSettings = settingsBuilder.updateSubscriptionSettings().build();
-    listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
-    deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
     modifyAckDeadlineSettings = settingsBuilder.modifyAckDeadlineSettings().build();
     acknowledgeSettings = settingsBuilder.acknowledgeSettings().build();
     pullSettings = settingsBuilder.pullSettings().build();
     streamingPullSettings = settingsBuilder.streamingPullSettings().build();
+    updateSnapshotSettings = settingsBuilder.updateSnapshotSettings().build();
+    getSubscriptionSettings = settingsBuilder.getSubscriptionSettings().build();
+    listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
+    deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
     modifyPushConfigSettings = settingsBuilder.modifyPushConfigSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
-    updateSnapshotSettings = settingsBuilder.updateSnapshotSettings().build();
     deleteSnapshotSettings = settingsBuilder.deleteSnapshotSettings().build();
     seekSettings = settingsBuilder.seekSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -445,34 +417,30 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
-    private final UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
-        getSubscriptionSettings;
     private final UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionSettings;
-    private final PagedCallSettings.Builder<
-            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-        listSubscriptionsSettings;
-    private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
-        deleteSubscriptionSettings;
     private final UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
         modifyAckDeadlineSettings;
     private final UnaryCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
     private final UnaryCallSettings.Builder<PullRequest, PullResponse> pullSettings;
     private final StreamingCallSettings.Builder<StreamingPullRequest, StreamingPullResponse>
         streamingPullSettings;
+    private final UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
+    private final UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings;
+    private final PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings;
+    private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings;
     private final UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty>
         modifyPushConfigSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
     private final UnaryCallSettings.Builder<CreateSnapshotRequest, Snapshot> createSnapshotSettings;
-    private final UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
     private final UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
     private final UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -486,8 +454,15 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       definitions.put(
+          "non_idempotent2", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "non_idempotent",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "streaming_pull",
           ImmutableSet.copyOf(
@@ -550,13 +525,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       createSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
-
-      deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       modifyAckDeadlineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -566,43 +535,40 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       streamingPullSettings = StreamingCallSettings.newBuilder();
 
+      updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
+
+      deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       modifyPushConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
 
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       seekSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriptionSettings,
-              getSubscriptionSettings,
               updateSubscriptionSettings,
-              listSubscriptionsSettings,
-              deleteSubscriptionSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
+              updateSnapshotSettings,
+              getSubscriptionSettings,
+              listSubscriptionsSettings,
+              deleteSubscriptionSettings,
               modifyPushConfigSettings,
               listSnapshotsSettings,
               createSnapshotSettings,
-              updateSnapshotSettings,
               deleteSnapshotSettings,
-              seekSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              seekSettings);
 
       initDefaults(this);
     }
@@ -624,83 +590,68 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .getSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .updateSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSubscriptionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .modifyAckDeadlineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .acknowledgeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .pullSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
-
-      builder
-          .modifyPushConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSnapshotsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .modifyPushConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .seekSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -710,43 +661,37 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       super(settings);
 
       createSubscriptionSettings = settings.createSubscriptionSettings.toBuilder();
-      getSubscriptionSettings = settings.getSubscriptionSettings.toBuilder();
       updateSubscriptionSettings = settings.updateSubscriptionSettings.toBuilder();
-      listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
-      deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
       modifyAckDeadlineSettings = settings.modifyAckDeadlineSettings.toBuilder();
       acknowledgeSettings = settings.acknowledgeSettings.toBuilder();
       pullSettings = settings.pullSettings.toBuilder();
       streamingPullSettings = settings.streamingPullSettings.toBuilder();
+      updateSnapshotSettings = settings.updateSnapshotSettings.toBuilder();
+      getSubscriptionSettings = settings.getSubscriptionSettings.toBuilder();
+      listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
+      deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
       modifyPushConfigSettings = settings.modifyPushConfigSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
-      updateSnapshotSettings = settings.updateSnapshotSettings.toBuilder();
       deleteSnapshotSettings = settings.deleteSnapshotSettings.toBuilder();
       seekSettings = settings.seekSettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriptionSettings,
-              getSubscriptionSettings,
               updateSubscriptionSettings,
-              listSubscriptionsSettings,
-              deleteSubscriptionSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
+              updateSnapshotSettings,
+              getSubscriptionSettings,
+              listSubscriptionsSettings,
+              deleteSubscriptionSettings,
               modifyPushConfigSettings,
               listSnapshotsSettings,
               createSnapshotSettings,
-              updateSnapshotSettings,
               deleteSnapshotSettings,
-              seekSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              seekSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -770,29 +715,10 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       return createSubscriptionSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getSubscription. */
-    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
-        getSubscriptionSettings() {
-      return getSubscriptionSettings;
-    }
-
     /** Returns the builder for the settings used for calls to updateSubscription. */
     public UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionSettings() {
       return updateSubscriptionSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listSubscriptions. */
-    public PagedCallSettings.Builder<
-            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-        listSubscriptionsSettings() {
-      return listSubscriptionsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSubscription. */
-    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
-        deleteSubscriptionSettings() {
-      return deleteSubscriptionSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */
@@ -816,6 +742,30 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       return streamingPullSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
+      return updateSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubscription. */
+    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings() {
+      return getSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return listSubscriptionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings() {
+      return deleteSubscriptionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to modifyPushConfig. */
     public UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
@@ -833,11 +783,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       return createSnapshotSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateSnapshot. */
-    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
-      return updateSnapshotSettings;
-    }
-
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
     public UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
       return deleteSnapshotSettings;
@@ -846,22 +791,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     /** Returns the builder for the settings used for calls to seek. */
     public UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings() {
       return seekSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     @Override

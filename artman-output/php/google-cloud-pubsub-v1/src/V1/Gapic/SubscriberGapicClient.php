@@ -36,12 +36,6 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Iam\V1\GetIamPolicyRequest;
-use Google\Cloud\Iam\V1\GetPolicyOptions;
-use Google\Cloud\Iam\V1\Policy;
-use Google\Cloud\Iam\V1\SetIamPolicyRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
 use Google\Cloud\PubSub\V1\AcknowledgeRequest;
 use Google\Cloud\PubSub\V1\CreateSnapshotRequest;
 use Google\Cloud\PubSub\V1\DeadLetterPolicy;
@@ -263,7 +257,9 @@ class SubscriberGapicClient
      * @param string $topic
      *
      * @return string The formatted topic resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function topicName($project, $topic)
     {
@@ -543,57 +539,6 @@ class SubscriberGapicClient
     }
 
     /**
-     * Gets the configuration details of a subscription.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedSubscription = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $response = $subscriberClient->getSubscription($formattedSubscription);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string $subscription Required. The name of the subscription to get.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\PubSub\V1\Subscription
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getSubscription($subscription, array $optionalArgs = [])
-    {
-        $request = new GetSubscriptionRequest();
-        $request->setSubscription($subscription);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'subscription' => $request->getSubscription(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetSubscription',
-            Subscription::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
      * Updates an existing subscription. Note that certain properties of a
      * subscription, such as its topic, are not modifiable.
      *
@@ -648,140 +593,6 @@ class SubscriberGapicClient
         return $this->startCall(
             'UpdateSubscription',
             Subscription::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Lists matching subscriptions.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedProject = $subscriberClient->projectName('[PROJECT]');
-     *     // Iterate over pages of elements
-     *     $pagedResponse = $subscriberClient->listSubscriptions($formattedProject);
-     *     foreach ($pagedResponse->iteratePages() as $page) {
-     *         foreach ($page as $element) {
-     *             // doSomethingWith($element);
-     *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $subscriberClient->listSubscriptions($formattedProject);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string $project      Required. The name of the project in which to list subscriptions.
-     *                             Format is `projects/{project-id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
-     *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\PagedListResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function listSubscriptions($project, array $optionalArgs = [])
-    {
-        $request = new ListSubscriptionsRequest();
-        $request->setProject($project);
-        if (isset($optionalArgs['pageSize'])) {
-            $request->setPageSize($optionalArgs['pageSize']);
-        }
-        if (isset($optionalArgs['pageToken'])) {
-            $request->setPageToken($optionalArgs['pageToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'project' => $request->getProject(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->getPagedListResponse(
-            'ListSubscriptions',
-            $optionalArgs,
-            ListSubscriptionsResponse::class,
-            $request
-        );
-    }
-
-    /**
-     * Deletes an existing subscription. All messages retained in the subscription
-     * are immediately dropped. Calls to `Pull` after deletion will return
-     * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
-     * the same name, but the new one has no association with the old
-     * subscription or its topic unless the same topic is specified.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedSubscription = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $subscriberClient->deleteSubscription($formattedSubscription);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string $subscription Required. The subscription to delete.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function deleteSubscription($subscription, array $optionalArgs = [])
-    {
-        $request = new DeleteSubscriptionRequest();
-        $request->setSubscription($subscription);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'subscription' => $request->getSubscription(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'DeleteSubscription',
-            GPBEmpty::class,
             $optionalArgs,
             $request
         )->wait();
@@ -1054,6 +865,257 @@ class SubscriberGapicClient
     }
 
     /**
+     * Updates an existing snapshot. Snapshots are used in
+     * <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.
+     *
+     * Sample code:
+     * ```
+     * $subscriberClient = new SubscriberClient();
+     * try {
+     *     $seconds = 123456;
+     *     $expireTime = new Timestamp();
+     *     $expireTime->setSeconds($seconds);
+     *     $snapshot = new Snapshot();
+     *     $snapshot->setExpireTime($expireTime);
+     *     $pathsElement = 'expire_time';
+     *     $paths = [$pathsElement];
+     *     $updateMask = new FieldMask();
+     *     $updateMask->setPaths($paths);
+     *     $response = $subscriberClient->updateSnapshot($snapshot, $updateMask);
+     * } finally {
+     *     $subscriberClient->close();
+     * }
+     * ```
+     *
+     * @param Snapshot  $snapshot     Required. The updated snapshot object.
+     * @param FieldMask $updateMask   Required. Indicates which fields in the provided snapshot to update.
+     *                                Must be specified and non-empty.
+     * @param array     $optionalArgs {
+     *                                Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\PubSub\V1\Snapshot
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function updateSnapshot($snapshot, $updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateSnapshotRequest();
+        $request->setSnapshot($snapshot);
+        $request->setUpdateMask($updateMask);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'snapshot.name' => $request->getSnapshot()->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'UpdateSnapshot',
+            Snapshot::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets the configuration details of a subscription.
+     *
+     * Sample code:
+     * ```
+     * $subscriberClient = new SubscriberClient();
+     * try {
+     *     $formattedSubscription = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
+     *     $response = $subscriberClient->getSubscription($formattedSubscription);
+     * } finally {
+     *     $subscriberClient->close();
+     * }
+     * ```
+     *
+     * @param string $subscription Required. The name of the subscription to get.
+     *                             Format is `projects/{project}/subscriptions/{sub}`.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\PubSub\V1\Subscription
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getSubscription($subscription, array $optionalArgs = [])
+    {
+        $request = new GetSubscriptionRequest();
+        $request->setSubscription($subscription);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'subscription' => $request->getSubscription(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetSubscription',
+            Subscription::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists matching subscriptions.
+     *
+     * Sample code:
+     * ```
+     * $subscriberClient = new SubscriberClient();
+     * try {
+     *     $formattedProject = $subscriberClient->projectName('[PROJECT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $subscriberClient->listSubscriptions($formattedProject);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $subscriberClient->listSubscriptions($formattedProject);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $subscriberClient->close();
+     * }
+     * ```
+     *
+     * @param string $project      Required. The name of the project in which to list subscriptions.
+     *                             Format is `projects/{project-id}`.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listSubscriptions($project, array $optionalArgs = [])
+    {
+        $request = new ListSubscriptionsRequest();
+        $request->setProject($project);
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListSubscriptions',
+            $optionalArgs,
+            ListSubscriptionsResponse::class,
+            $request
+        );
+    }
+
+    /**
+     * Deletes an existing subscription. All messages retained in the subscription
+     * are immediately dropped. Calls to `Pull` after deletion will return
+     * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
+     * the same name, but the new one has no association with the old
+     * subscription or its topic unless the same topic is specified.
+     *
+     * Sample code:
+     * ```
+     * $subscriberClient = new SubscriberClient();
+     * try {
+     *     $formattedSubscription = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
+     *     $subscriberClient->deleteSubscription($formattedSubscription);
+     * } finally {
+     *     $subscriberClient->close();
+     * }
+     * ```
+     *
+     * @param string $subscription Required. The subscription to delete.
+     *                             Format is `projects/{project}/subscriptions/{sub}`.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function deleteSubscription($subscription, array $optionalArgs = [])
+    {
+        $request = new DeleteSubscriptionRequest();
+        $request->setSubscription($subscription);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'subscription' => $request->getSubscription(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'DeleteSubscription',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
      * Modifies the `PushConfig` for a specified subscription.
      *
      * This may be used to change a push subscription to a pull one (signified by
@@ -1291,72 +1353,6 @@ class SubscriberGapicClient
     }
 
     /**
-     * Updates an existing snapshot. Snapshots are used in
-     * <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
-     * operations, which allow
-     * you to manage message acknowledgments in bulk. That is, you can set the
-     * acknowledgment state of messages in an existing subscription to the state
-     * captured by a snapshot.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $seconds = 123456;
-     *     $expireTime = new Timestamp();
-     *     $expireTime->setSeconds($seconds);
-     *     $snapshot = new Snapshot();
-     *     $snapshot->setExpireTime($expireTime);
-     *     $pathsElement = 'expire_time';
-     *     $paths = [$pathsElement];
-     *     $updateMask = new FieldMask();
-     *     $updateMask->setPaths($paths);
-     *     $response = $subscriberClient->updateSnapshot($snapshot, $updateMask);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param Snapshot  $snapshot     Required. The updated snapshot object.
-     * @param FieldMask $updateMask   Required. Indicates which fields in the provided snapshot to update.
-     *                                Must be specified and non-empty.
-     * @param array     $optionalArgs {
-     *                                Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\PubSub\V1\Snapshot
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function updateSnapshot($snapshot, $updateMask, array $optionalArgs = [])
-    {
-        $request = new UpdateSnapshotRequest();
-        $request->setSnapshot($snapshot);
-        $request->setUpdateMask($updateMask);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'snapshot.name' => $request->getSnapshot()->getName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'UpdateSnapshot',
-            Snapshot::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
      * Removes an existing snapshot. Snapshots are used in
      * <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
      * operations, which allow
@@ -1490,194 +1486,6 @@ class SubscriberGapicClient
             SeekResponse::class,
             $optionalArgs,
             $request
-        )->wait();
-    }
-
-    /**
-     * Sets the access control policy on the specified resource. Replaces
-     * any existing policy.
-     *
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-     * PERMISSION_DENIED
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $policy = new Policy();
-     *     $response = $subscriberClient->setIamPolicy($formattedResource, $policy);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being specified.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param Policy $policy       REQUIRED: The complete policy to be applied to the `resource`. The size of
-     *                             the policy is limited to a few 10s of KB. An empty policy is a
-     *                             valid policy but certain Cloud Platform services (such as Projects)
-     *                             might reject them.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function setIamPolicy($resource, $policy, array $optionalArgs = [])
-    {
-        $request = new SetIamPolicyRequest();
-        $request->setResource($resource);
-        $request->setPolicy($policy);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'SetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
-        )->wait();
-    }
-
-    /**
-     * Gets the access control policy for a resource. Returns an empty policy
-     * if the resource exists and does not have a policy set.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $response = $subscriberClient->getIamPolicy($formattedResource);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string $resource     REQUIRED: The resource for which the policy is being requested.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type GetPolicyOptions $options
-     *          OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     *          `GetIamPolicy`. This field is only used by Cloud IAM.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\Policy
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getIamPolicy($resource, array $optionalArgs = [])
-    {
-        $request = new GetIamPolicyRequest();
-        $request->setResource($resource);
-        if (isset($optionalArgs['options'])) {
-            $request->setOptions($optionalArgs['options']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetIamPolicy',
-            Policy::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
-        )->wait();
-    }
-
-    /**
-     * Returns permissions that a caller has on the specified resource. If the
-     * resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     *
-     * Note: This operation is designed to be used for building
-     * permission-aware UIs and command-line tools, not for authorization
-     * checking. This operation may "fail open" without warning.
-     *
-     * Sample code:
-     * ```
-     * $subscriberClient = new SubscriberClient();
-     * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $permissions = [];
-     *     $response = $subscriberClient->testIamPermissions($formattedResource, $permissions);
-     * } finally {
-     *     $subscriberClient->close();
-     * }
-     * ```
-     *
-     * @param string   $resource     REQUIRED: The resource for which the policy detail is being requested.
-     *                               See the operation documentation for the appropriate value for this field.
-     * @param string[] $permissions  The set of permissions to check for the `resource`. Permissions with
-     *                               wildcards (such as '*' or 'storage.*') are not allowed. For more
-     *                               information see
-     *                               [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Iam\V1\TestIamPermissionsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function testIamPermissions($resource, $permissions, array $optionalArgs = [])
-    {
-        $request = new TestIamPermissionsRequest();
-        $request->setResource($resource);
-        $request->setPermissions($permissions);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource' => $request->getResource(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'TestIamPermissions',
-            TestIamPermissionsResponse::class,
-            $optionalArgs,
-            $request,
-            Call::UNARY_CALL,
-            'google.iam.v1.IAMPolicy'
         )->wait();
     }
 }
