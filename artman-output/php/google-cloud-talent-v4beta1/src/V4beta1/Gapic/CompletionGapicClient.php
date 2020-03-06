@@ -49,10 +49,10 @@ use Google\Cloud\Talent\V4beta1\CompleteQueryResponse;
  * ```
  * $completionClient = new CompletionClient();
  * try {
- *     $formattedParent = $completionClient->tenantName('[PROJECT]', '[TENANT]');
+ *     $parent = '';
  *     $query = '';
  *     $pageSize = 0;
- *     $response = $completionClient->completeQuery($formattedParent, $query, $pageSize);
+ *     $response = $completionClient->completeQuery($parent, $query, $pageSize);
  * } finally {
  *     $completionClient->close();
  * }
@@ -98,8 +98,6 @@ class CompletionGapicClient
     ];
     private static $companyNameTemplate;
     private static $companyWithoutTenantNameTemplate;
-    private static $projectNameTemplate;
-    private static $tenantNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -139,32 +137,12 @@ class CompletionGapicClient
         return self::$companyWithoutTenantNameTemplate;
     }
 
-    private static function getProjectNameTemplate()
-    {
-        if (null == self::$projectNameTemplate) {
-            self::$projectNameTemplate = new PathTemplate('projects/{project}');
-        }
-
-        return self::$projectNameTemplate;
-    }
-
-    private static function getTenantNameTemplate()
-    {
-        if (null == self::$tenantNameTemplate) {
-            self::$tenantNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}');
-        }
-
-        return self::$tenantNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'company' => self::getCompanyNameTemplate(),
                 'companyWithoutTenant' => self::getCompanyWithoutTenantNameTemplate(),
-                'project' => self::getProjectNameTemplate(),
-                'tenant' => self::getTenantNameTemplate(),
             ];
         }
 
@@ -180,7 +158,9 @@ class CompletionGapicClient
      * @param string $company
      *
      * @return string The formatted company resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyName($project, $tenant, $company)
     {
@@ -199,7 +179,9 @@ class CompletionGapicClient
      * @param string $company
      *
      * @return string The formatted company_without_tenant resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyWithoutTenantName($project, $company)
     {
@@ -210,47 +192,11 @@ class CompletionGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * @param string $project
-     *
-     * @return string The formatted project resource.
-     * @experimental
-     */
-    public static function projectName($project)
-    {
-        return self::getProjectNameTemplate()->render([
-            'project' => $project,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a tenant resource.
-     *
-     * @param string $project
-     * @param string $tenant
-     *
-     * @return string The formatted tenant resource.
-     * @experimental
-     */
-    public static function tenantName($project, $tenant)
-    {
-        return self::getTenantNameTemplate()->render([
-            'project' => $project,
-            'tenant' => $tenant,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - company: projects/{project}/tenants/{tenant}/companies/{company}
-     * - companyWithoutTenant: projects/{project}/companies/{company}
-     * - project: projects/{project}
-     * - tenant: projects/{project}/tenants/{tenant}.
+     * - companyWithoutTenant: projects/{project}/companies/{company}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -353,10 +299,10 @@ class CompletionGapicClient
      * ```
      * $completionClient = new CompletionClient();
      * try {
-     *     $formattedParent = $completionClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $parent = '';
      *     $query = '';
      *     $pageSize = 0;
-     *     $response = $completionClient->completeQuery($formattedParent, $query, $pageSize);
+     *     $response = $completionClient->completeQuery($parent, $query, $pageSize);
      * } finally {
      *     $completionClient->close();
      * }

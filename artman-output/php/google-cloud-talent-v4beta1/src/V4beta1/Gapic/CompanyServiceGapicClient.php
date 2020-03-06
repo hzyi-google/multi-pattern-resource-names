@@ -54,7 +54,7 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $companyServiceClient = new CompanyServiceClient();
  * try {
- *     $formattedParent = $companyServiceClient->tenantName('[PROJECT]', '[TENANT]');
+ *     $formattedParent = $companyServiceClient->projectName('[PROJECT]');
  *     $company = new Company();
  *     $response = $companyServiceClient->createCompany($formattedParent, $company);
  * } finally {
@@ -103,7 +103,6 @@ class CompanyServiceGapicClient
     private static $companyNameTemplate;
     private static $companyWithoutTenantNameTemplate;
     private static $projectNameTemplate;
-    private static $tenantNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -152,15 +151,6 @@ class CompanyServiceGapicClient
         return self::$projectNameTemplate;
     }
 
-    private static function getTenantNameTemplate()
-    {
-        if (null == self::$tenantNameTemplate) {
-            self::$tenantNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}');
-        }
-
-        return self::$tenantNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
@@ -168,7 +158,6 @@ class CompanyServiceGapicClient
                 'company' => self::getCompanyNameTemplate(),
                 'companyWithoutTenant' => self::getCompanyWithoutTenantNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
-                'tenant' => self::getTenantNameTemplate(),
             ];
         }
 
@@ -184,7 +173,9 @@ class CompanyServiceGapicClient
      * @param string $company
      *
      * @return string The formatted company resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyName($project, $tenant, $company)
     {
@@ -203,7 +194,9 @@ class CompanyServiceGapicClient
      * @param string $company
      *
      * @return string The formatted company_without_tenant resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyWithoutTenantName($project, $company)
     {
@@ -230,31 +223,12 @@ class CompanyServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a tenant resource.
-     *
-     * @param string $project
-     * @param string $tenant
-     *
-     * @return string The formatted tenant resource.
-     * @experimental
-     */
-    public static function tenantName($project, $tenant)
-    {
-        return self::getTenantNameTemplate()->render([
-            'project' => $project,
-            'tenant' => $tenant,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - company: projects/{project}/tenants/{tenant}/companies/{company}
      * - companyWithoutTenant: projects/{project}/companies/{company}
-     * - project: projects/{project}
-     * - tenant: projects/{project}/tenants/{tenant}.
+     * - project: projects/{project}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -356,7 +330,7 @@ class CompanyServiceGapicClient
      * ```
      * $companyServiceClient = new CompanyServiceClient();
      * try {
-     *     $formattedParent = $companyServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $companyServiceClient->projectName('[PROJECT]');
      *     $company = new Company();
      *     $response = $companyServiceClient->createCompany($formattedParent, $company);
      * } finally {
@@ -413,7 +387,7 @@ class CompanyServiceGapicClient
      * ```
      * $companyServiceClient = new CompanyServiceClient();
      * try {
-     *     $formattedName = $companyServiceClient->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+     *     $formattedName = $companyServiceClient->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
      *     $response = $companyServiceClient->getCompany($formattedName);
      * } finally {
      *     $companyServiceClient->close();
@@ -532,7 +506,7 @@ class CompanyServiceGapicClient
      * ```
      * $companyServiceClient = new CompanyServiceClient();
      * try {
-     *     $formattedName = $companyServiceClient->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+     *     $formattedName = $companyServiceClient->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
      *     $companyServiceClient->deleteCompany($formattedName);
      * } finally {
      *     $companyServiceClient->close();
@@ -587,9 +561,9 @@ class CompanyServiceGapicClient
      * ```
      * $companyServiceClient = new CompanyServiceClient();
      * try {
-     *     $formattedParent = $companyServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $parent = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $companyServiceClient->listCompanies($formattedParent);
+     *     $pagedResponse = $companyServiceClient->listCompanies($parent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -600,7 +574,7 @@ class CompanyServiceGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $companyServiceClient->listCompanies($formattedParent);
+     *     $pagedResponse = $companyServiceClient->listCompanies($parent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }

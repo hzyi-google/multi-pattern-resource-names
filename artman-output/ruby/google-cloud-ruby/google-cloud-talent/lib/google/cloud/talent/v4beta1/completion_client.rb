@@ -69,19 +69,9 @@ module Google
 
           private_constant :COMPANY_WITHOUT_TENANT_PATH_TEMPLATE
 
-          PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}"
-          )
-
-          private_constant :PROJECT_PATH_TEMPLATE
-
-          TENANT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}/tenants/{tenant}"
-          )
-
-          private_constant :TENANT_PATH_TEMPLATE
-
           # Returns a fully-qualified company resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param tenant [String]
           # @param company [String]
@@ -95,6 +85,8 @@ module Google
           end
 
           # Returns a fully-qualified company_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param company [String]
           # @return [String]
@@ -102,26 +94,6 @@ module Google
             COMPANY_WITHOUT_TENANT_PATH_TEMPLATE.render(
               :"project" => project,
               :"company" => company
-            )
-          end
-
-          # Returns a fully-qualified project resource name string.
-          # @param project [String]
-          # @return [String]
-          def self.project_path project
-            PROJECT_PATH_TEMPLATE.render(
-              :"project" => project
-            )
-          end
-
-          # Returns a fully-qualified tenant resource name string.
-          # @param project [String]
-          # @param tenant [String]
-          # @return [String]
-          def self.tenant_path project, tenant
-            TENANT_PATH_TEMPLATE.render(
-              :"project" => project,
-              :"tenant" => tenant
             )
           end
 
@@ -290,14 +262,16 @@ module Google
           #   require "google/cloud/talent"
           #
           #   completion_client = Google::Cloud::Talent::Completion.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompletionClient.tenant_path("[PROJECT]", "[TENANT]")
+          #
+          #   # TODO: Initialize `parent`:
+          #   parent = ''
           #
           #   # TODO: Initialize `query`:
           #   query = ''
           #
           #   # TODO: Initialize `page_size`:
           #   page_size = 0
-          #   response = completion_client.complete_query(formatted_parent, query, page_size)
+          #   response = completion_client.complete_query(parent, query, page_size)
 
           def complete_query \
               parent,

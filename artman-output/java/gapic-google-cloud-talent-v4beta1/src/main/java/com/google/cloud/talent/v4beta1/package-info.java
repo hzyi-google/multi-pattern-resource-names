@@ -19,24 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================== ApplicationServiceClient ========================
- *
- * <p>Service Description: A service that handles application management, including CRUD and
- * enumeration.
- *
- * <p>Sample for ApplicationServiceClient:
- *
- * <pre>
- * <code>
- * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   Application application = Application.newBuilder().build();
- *   Application response = applicationServiceClient.createApplication(parent, application);
- * }
- * </code>
- * </pre>
- *
- * ==================== CompanyServiceClient ====================
+ * <p>==================== CompanyServiceClient ====================
  *
  * <p>Service Description: A service that handles company management, including CRUD and
  * enumeration.
@@ -46,47 +29,9 @@
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Company company = Company.newBuilder().build();
  *   Company response = companyServiceClient.createCompany(parent, company);
- * }
- * </code>
- * </pre>
- *
- * ================ CompletionClient ================
- *
- * <p>Service Description: A service handles auto completion.
- *
- * <p>Sample for CompletionClient:
- *
- * <pre>
- * <code>
- * try (CompletionClient completionClient = CompletionClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   String query = "";
- *   int pageSize = 0;
- *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .setQuery(query)
- *     .setPageSize(pageSize)
- *     .build();
- *   CompleteQueryResponse response = completionClient.completeQuery(request);
- * }
- * </code>
- * </pre>
- *
- * ================== EventServiceClient ==================
- *
- * <p>Service Description: A service handles client event report.
- *
- * <p>Sample for EventServiceClient:
- *
- * <pre>
- * <code>
- * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
- *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
  * </code>
  * </pre>
@@ -101,7 +46,7 @@
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Job job = Job.newBuilder().build();
  *   Job response = jobServiceClient.createJob(parent, job);
  * }
@@ -121,6 +66,61 @@
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Profile profile = Profile.newBuilder().build();
  *   Profile response = profileServiceClient.createProfile(parent, profile);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== EventServiceClient ==================
+ *
+ * <p>Service Description: A service handles client event report.
+ *
+ * <p>Sample for EventServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+ *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+ *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+ *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================== ApplicationServiceClient ========================
+ *
+ * <p>Service Description: A service that handles application management, including CRUD and
+ * enumeration.
+ *
+ * <p>Sample for ApplicationServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+ *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   Application application = Application.newBuilder().build();
+ *   Application response = applicationServiceClient.createApplication(parent, application);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================ CompletionClient ================
+ *
+ * <p>Service Description: A service handles auto completion.
+ *
+ * <p>Sample for CompletionClient:
+ *
+ * <pre>
+ * <code>
+ * try (CompletionClient completionClient = CompletionClient.create()) {
+ *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+ *   String query = "";
+ *   int pageSize = 0;
+ *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
+ *     .setParent(parent.toString())
+ *     .setQuery(query)
+ *     .setPageSize(pageSize)
+ *     .build();
+ *   CompleteQueryResponse response = completionClient.completeQuery(request);
  * }
  * </code>
  * </pre>

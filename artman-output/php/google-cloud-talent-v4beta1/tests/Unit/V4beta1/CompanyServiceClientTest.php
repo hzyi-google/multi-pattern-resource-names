@@ -105,7 +105,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $formattedParent = $client->projectName('[PROJECT]');
         $company = new Company();
 
         $response = $client->createCompany($formattedParent, $company);
@@ -149,7 +149,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $formattedParent = $client->projectName('[PROJECT]');
         $company = new Company();
 
         try {
@@ -201,7 +201,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+        $formattedName = $client->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
 
         $response = $client->getCompany($formattedName);
         $this->assertEquals($expectedResponse, $response);
@@ -241,7 +241,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+        $formattedName = $client->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
 
         try {
             $client->getCompany($formattedName);
@@ -363,7 +363,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+        $formattedName = $client->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
 
         $client->deleteCompany($formattedName);
         $actualRequests = $transport->popReceivedCalls();
@@ -402,7 +402,7 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->companyName('[PROJECT]', '[TENANT]', '[COMPANY]');
+        $formattedName = $client->companyWithoutTenantName('[PROJECT]', '[COMPANY]');
 
         try {
             $client->deleteCompany($formattedName);
@@ -438,9 +438,9 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $parent = 'parent-995424086';
 
-        $response = $client->listCompanies($formattedParent);
+        $response = $client->listCompanies($parent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -454,7 +454,7 @@ class CompanyServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $this->assertProtobufEquals($parent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -481,10 +481,10 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $parent = 'parent-995424086';
 
         try {
-            $client->listCompanies($formattedParent);
+            $client->listCompanies($parent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

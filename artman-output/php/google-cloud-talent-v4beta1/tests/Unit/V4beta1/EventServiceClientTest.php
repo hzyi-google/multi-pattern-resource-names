@@ -89,10 +89,10 @@ class EventServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $parent = 'parent-995424086';
         $clientEvent = new ClientEvent();
 
-        $response = $client->createClientEvent($formattedParent, $clientEvent);
+        $response = $client->createClientEvent($parent, $clientEvent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -102,7 +102,7 @@ class EventServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $this->assertProtobufEquals($parent, $actualValue);
         $actualValue = $actualRequestObject->getClientEvent();
 
         $this->assertProtobufEquals($clientEvent, $actualValue);
@@ -133,11 +133,11 @@ class EventServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
+        $parent = 'parent-995424086';
         $clientEvent = new ClientEvent();
 
         try {
-            $client->createClientEvent($formattedParent, $clientEvent);
+            $client->createClientEvent($parent, $clientEvent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

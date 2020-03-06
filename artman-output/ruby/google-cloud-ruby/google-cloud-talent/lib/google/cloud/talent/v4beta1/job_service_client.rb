@@ -110,13 +110,9 @@ module Google
 
           private_constant :PROJECT_PATH_TEMPLATE
 
-          TENANT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}/tenants/{tenant}"
-          )
-
-          private_constant :TENANT_PATH_TEMPLATE
-
           # Returns a fully-qualified company resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param tenant [String]
           # @param company [String]
@@ -130,6 +126,8 @@ module Google
           end
 
           # Returns a fully-qualified company_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param company [String]
           # @return [String]
@@ -141,6 +139,8 @@ module Google
           end
 
           # Returns a fully-qualified job resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param tenant [String]
           # @param jobs [String]
@@ -154,6 +154,8 @@ module Google
           end
 
           # Returns a fully-qualified job_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param jobs [String]
           # @return [String]
@@ -170,17 +172,6 @@ module Google
           def self.project_path project
             PROJECT_PATH_TEMPLATE.render(
               :"project" => project
-            )
-          end
-
-          # Returns a fully-qualified tenant resource name string.
-          # @param project [String]
-          # @param tenant [String]
-          # @return [String]
-          def self.tenant_path project, tenant
-            TENANT_PATH_TEMPLATE.render(
-              :"project" => project,
-              :"tenant" => tenant
             )
           end
 
@@ -408,7 +399,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `job`:
           #   job = {}
@@ -451,8 +442,10 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::JobServiceClient.job_path("[PROJECT]", "[TENANT]", "[JOBS]")
-          #   response = job_client.get_job(formatted_name)
+          #
+          #   # TODO: Initialize `name`:
+          #   name = ''
+          #   response = job_client.get_job(name)
 
           def get_job \
               name,
@@ -539,8 +532,10 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::JobServiceClient.job_path("[PROJECT]", "[TENANT]", "[JOBS]")
-          #   job_client.delete_job(formatted_name)
+          #
+          #   # TODO: Initialize `name`:
+          #   name = ''
+          #   job_client.delete_job(name)
 
           def delete_job \
               name,
@@ -607,7 +602,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `filter`:
           #   filter = ''
@@ -673,7 +668,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `filter`:
           #   filter = ''
@@ -953,7 +948,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `request_metadata`:
           #   request_metadata = {}
@@ -1273,7 +1268,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `request_metadata`:
           #   request_metadata = {}
@@ -1349,7 +1344,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `jobs`:
           #   jobs = []
@@ -1439,7 +1434,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   job_client = Google::Cloud::Talent::Job.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::JobServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `jobs`:
           #   jobs = []

@@ -73,6 +73,18 @@ module Google
 
           private_constant :APPLICATION_PATH_TEMPLATE
 
+          COMPANY_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+            "projects/{project}/tenants/{tenant}/companies/{company}"
+          )
+
+          private_constant :COMPANY_PATH_TEMPLATE
+
+          COMPANY_WITHOUT_TENANT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+            "projects/{project}/companies/{company}"
+          )
+
+          private_constant :COMPANY_WITHOUT_TENANT_PATH_TEMPLATE
+
           PROFILE_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "projects/{project}/tenants/{tenant}/profiles/{profile}"
           )
@@ -91,6 +103,34 @@ module Google
               :"tenant" => tenant,
               :"profile" => profile,
               :"application" => application
+            )
+          end
+
+          # Returns a fully-qualified company resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
+          # @param project [String]
+          # @param tenant [String]
+          # @param company [String]
+          # @return [String]
+          def self.company_path project, tenant, company
+            COMPANY_PATH_TEMPLATE.render(
+              :"project" => project,
+              :"tenant" => tenant,
+              :"company" => company
+            )
+          end
+
+          # Returns a fully-qualified company_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
+          # @param project [String]
+          # @param company [String]
+          # @return [String]
+          def self.company_without_tenant_path project, company
+            COMPANY_WITHOUT_TENANT_PATH_TEMPLATE.render(
+              :"project" => project,
+              :"company" => company
             )
           end
 

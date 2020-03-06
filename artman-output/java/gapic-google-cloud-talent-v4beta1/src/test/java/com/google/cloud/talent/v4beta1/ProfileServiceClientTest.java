@@ -43,12 +43,12 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ProfileServiceClientTest {
-  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
+  private static MockApplicationService mockApplicationService;
+  private static MockCompletion mockCompletion;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private ProfileServiceClient client;
@@ -56,23 +56,23 @@ public class ProfileServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
-    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
+    mockApplicationService = new MockApplicationService();
+    mockCompletion = new MockCompletion();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
                 mockProfileService,
+                mockEventService,
+                mockApplicationService,
+                mockCompletion,
                 mockTenantService));
     serviceHelper.start();
   }
@@ -112,7 +112,7 @@ public class ProfileServiceClientTest {
             .build();
     mockProfileService.addResponse(expectedResponse);
 
-    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    String parent = "parent-995424086";
 
     ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
 
@@ -124,7 +124,7 @@ public class ProfileServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListProfilesRequest actualRequest = (ListProfilesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -138,7 +138,7 @@ public class ProfileServiceClientTest {
     mockProfileService.addException(exception);
 
     try {
-      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      String parent = "parent-995424086";
 
       client.listProfiles(parent);
       Assert.fail("No exception raised");

@@ -84,13 +84,9 @@ module Google
 
           private_constant :PROJECT_PATH_TEMPLATE
 
-          TENANT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}/tenants/{tenant}"
-          )
-
-          private_constant :TENANT_PATH_TEMPLATE
-
           # Returns a fully-qualified company resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param tenant [String]
           # @param company [String]
@@ -104,6 +100,8 @@ module Google
           end
 
           # Returns a fully-qualified company_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param company [String]
           # @return [String]
@@ -120,17 +118,6 @@ module Google
           def self.project_path project
             PROJECT_PATH_TEMPLATE.render(
               :"project" => project
-            )
-          end
-
-          # Returns a fully-qualified tenant resource name string.
-          # @param project [String]
-          # @param tenant [String]
-          # @return [String]
-          def self.tenant_path project, tenant
-            TENANT_PATH_TEMPLATE.render(
-              :"project" => project,
-              :"tenant" => tenant
             )
           end
 
@@ -305,7 +292,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `company`:
           #   company = {}
@@ -347,7 +334,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_path("[PROJECT]", "[TENANT]", "[COMPANY]")
+          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
           #   response = company_client.get_company(formatted_name)
 
           def get_company \
@@ -430,7 +417,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_path("[PROJECT]", "[TENANT]", "[COMPANY]")
+          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
           #   company_client.delete_company(formatted_name)
 
           def delete_company \
@@ -484,15 +471,17 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #
+          #   # TODO: Initialize `parent`:
+          #   parent = ''
           #
           #   # Iterate over all results.
-          #   company_client.list_companies(formatted_parent).each do |element|
+          #   company_client.list_companies(parent).each do |element|
           #     # Process element.
           #   end
           #
           #   # Or iterate over results one page at a time.
-          #   company_client.list_companies(formatted_parent).each_page do |page|
+          #   company_client.list_companies(parent).each_page do |page|
           #     # Process each page at a time.
           #     page.each do |element|
           #       # Process element.

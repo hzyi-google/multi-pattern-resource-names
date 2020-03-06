@@ -70,7 +70,7 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $jobServiceClient = new JobServiceClient();
  * try {
- *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+ *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
  *     $job = new Job();
  *     $response = $jobServiceClient->createJob($formattedParent, $job);
  * } finally {
@@ -121,7 +121,6 @@ class JobServiceGapicClient
     private static $jobNameTemplate;
     private static $jobWithoutTenantNameTemplate;
     private static $projectNameTemplate;
-    private static $tenantNameTemplate;
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -190,15 +189,6 @@ class JobServiceGapicClient
         return self::$projectNameTemplate;
     }
 
-    private static function getTenantNameTemplate()
-    {
-        if (null == self::$tenantNameTemplate) {
-            self::$tenantNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}');
-        }
-
-        return self::$tenantNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
@@ -208,7 +198,6 @@ class JobServiceGapicClient
                 'job' => self::getJobNameTemplate(),
                 'jobWithoutTenant' => self::getJobWithoutTenantNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
-                'tenant' => self::getTenantNameTemplate(),
             ];
         }
 
@@ -224,7 +213,9 @@ class JobServiceGapicClient
      * @param string $company
      *
      * @return string The formatted company resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyName($project, $tenant, $company)
     {
@@ -243,7 +234,9 @@ class JobServiceGapicClient
      * @param string $company
      *
      * @return string The formatted company_without_tenant resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function companyWithoutTenantName($project, $company)
     {
@@ -262,7 +255,9 @@ class JobServiceGapicClient
      * @param string $jobs
      *
      * @return string The formatted job resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function jobName($project, $tenant, $jobs)
     {
@@ -281,7 +276,9 @@ class JobServiceGapicClient
      * @param string $jobs
      *
      * @return string The formatted job_without_tenant resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function jobWithoutTenantName($project, $jobs)
     {
@@ -308,24 +305,6 @@ class JobServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a tenant resource.
-     *
-     * @param string $project
-     * @param string $tenant
-     *
-     * @return string The formatted tenant resource.
-     * @experimental
-     */
-    public static function tenantName($project, $tenant)
-    {
-        return self::getTenantNameTemplate()->render([
-            'project' => $project,
-            'tenant' => $tenant,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -333,8 +312,7 @@ class JobServiceGapicClient
      * - companyWithoutTenant: projects/{project}/companies/{company}
      * - job: projects/{project}/tenants/{tenant}/jobs/{jobs}
      * - jobWithoutTenant: projects/{project}/jobs/{jobs}
-     * - project: projects/{project}
-     * - tenant: projects/{project}/tenants/{tenant}.
+     * - project: projects/{project}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -475,7 +453,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $job = new Job();
      *     $response = $jobServiceClient->createJob($formattedParent, $job);
      * } finally {
@@ -533,8 +511,8 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedName = $jobServiceClient->jobName('[PROJECT]', '[TENANT]', '[JOBS]');
-     *     $response = $jobServiceClient->getJob($formattedName);
+     *     $name = '';
+     *     $response = $jobServiceClient->getJob($name);
      * } finally {
      *     $jobServiceClient->close();
      * }
@@ -657,8 +635,8 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedName = $jobServiceClient->jobName('[PROJECT]', '[TENANT]', '[JOBS]');
-     *     $jobServiceClient->deleteJob($formattedName);
+     *     $name = '';
+     *     $jobServiceClient->deleteJob($name);
      * } finally {
      *     $jobServiceClient->close();
      * }
@@ -712,7 +690,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $filter = '';
      *     // Iterate over pages of elements
      *     $pagedResponse = $jobServiceClient->listJobs($formattedParent, $filter);
@@ -824,7 +802,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $filter = '';
      *     $jobServiceClient->batchDeleteJobs($formattedParent, $filter);
      * } finally {
@@ -893,7 +871,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $requestMetadata = new RequestMetadata();
      *     // Iterate over pages of elements
      *     $pagedResponse = $jobServiceClient->searchJobs($formattedParent, $requestMetadata);
@@ -1241,7 +1219,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $requestMetadata = new RequestMetadata();
      *     // Iterate over pages of elements
      *     $pagedResponse = $jobServiceClient->searchJobsForAlert($formattedParent, $requestMetadata);
@@ -1580,7 +1558,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $jobs = [];
      *     $operationResponse = $jobServiceClient->batchCreateJobs($formattedParent, $jobs);
      *     $operationResponse->pollUntilComplete();
@@ -1665,7 +1643,7 @@ class JobServiceGapicClient
      * ```
      * $jobServiceClient = new JobServiceClient();
      * try {
-     *     $formattedParent = $jobServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $formattedParent = $jobServiceClient->projectName('[PROJECT]');
      *     $jobs = [];
      *     $operationResponse = $jobServiceClient->batchUpdateJobs($formattedParent, $jobs);
      *     $operationResponse->pollUntilComplete();

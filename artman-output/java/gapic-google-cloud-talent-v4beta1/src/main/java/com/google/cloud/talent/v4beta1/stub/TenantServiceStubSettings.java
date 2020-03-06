@@ -299,7 +299,7 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -361,7 +361,7 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
 
       builder
           .deleteTenantSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder

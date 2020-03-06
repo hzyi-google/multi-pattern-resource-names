@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
  *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
@@ -155,7 +155,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
    * }
@@ -189,7 +189,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent.toString(), clientEvent);
    * }
@@ -220,7 +220,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -248,7 +248,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())

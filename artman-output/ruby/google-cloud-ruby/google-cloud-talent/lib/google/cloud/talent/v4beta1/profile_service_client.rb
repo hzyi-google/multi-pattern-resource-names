@@ -318,15 +318,17 @@ module Google
           #   require "google/cloud/talent"
           #
           #   profile_client = Google::Cloud::Talent::Profile.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::ProfileServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #
+          #   # TODO: Initialize `parent`:
+          #   parent = ''
           #
           #   # Iterate over all results.
-          #   profile_client.list_profiles(formatted_parent).each do |element|
+          #   profile_client.list_profiles(parent).each do |element|
           #     # Process element.
           #   end
           #
           #   # Or iterate over results one page at a time.
-          #   profile_client.list_profiles(formatted_parent).each_page do |page|
+          #   profile_client.list_profiles(parent).each_page do |page|
           #     # Process each page at a time.
           #     page.each do |element|
           #       # Process element.

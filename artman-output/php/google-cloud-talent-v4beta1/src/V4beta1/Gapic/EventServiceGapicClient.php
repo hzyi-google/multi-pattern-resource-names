@@ -29,7 +29,6 @@ namespace Google\Cloud\Talent\V4beta1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
-use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -47,18 +46,13 @@ use Google\Cloud\Talent\V4beta1\CreateClientEventRequest;
  * ```
  * $eventServiceClient = new EventServiceClient();
  * try {
- *     $formattedParent = $eventServiceClient->tenantName('[PROJECT]', '[TENANT]');
+ *     $parent = '';
  *     $clientEvent = new ClientEvent();
- *     $response = $eventServiceClient->createClientEvent($formattedParent, $clientEvent);
+ *     $response = $eventServiceClient->createClientEvent($parent, $clientEvent);
  * } finally {
  *     $eventServiceClient->close();
  * }
  * ```
- *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
  *
  * @experimental
  */
@@ -93,9 +87,6 @@ class EventServiceGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
         'https://www.googleapis.com/auth/jobs',
     ];
-    private static $projectNameTemplate;
-    private static $tenantNameTemplate;
-    private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
@@ -114,112 +105,6 @@ class EventServiceGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function getProjectNameTemplate()
-    {
-        if (null == self::$projectNameTemplate) {
-            self::$projectNameTemplate = new PathTemplate('projects/{project}');
-        }
-
-        return self::$projectNameTemplate;
-    }
-
-    private static function getTenantNameTemplate()
-    {
-        if (null == self::$tenantNameTemplate) {
-            self::$tenantNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}');
-        }
-
-        return self::$tenantNameTemplate;
-    }
-
-    private static function getPathTemplateMap()
-    {
-        if (null == self::$pathTemplateMap) {
-            self::$pathTemplateMap = [
-                'project' => self::getProjectNameTemplate(),
-                'tenant' => self::getTenantNameTemplate(),
-            ];
-        }
-
-        return self::$pathTemplateMap;
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * @param string $project
-     *
-     * @return string The formatted project resource.
-     * @experimental
-     */
-    public static function projectName($project)
-    {
-        return self::getProjectNameTemplate()->render([
-            'project' => $project,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a tenant resource.
-     *
-     * @param string $project
-     * @param string $tenant
-     *
-     * @return string The formatted tenant resource.
-     * @experimental
-     */
-    public static function tenantName($project, $tenant)
-    {
-        return self::getTenantNameTemplate()->render([
-            'project' => $project,
-            'tenant' => $tenant,
-        ]);
-    }
-
-    /**
-     * Parses a formatted name string and returns an associative array of the components in the name.
-     * The following name formats are supported:
-     * Template: Pattern
-     * - project: projects/{project}
-     * - tenant: projects/{project}/tenants/{tenant}.
-     *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
-     *
-     * @param string $formattedName The formatted name string
-     * @param string $template      Optional name of template to match
-     *
-     * @return array An associative array from name component IDs to component values.
-     *
-     * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
-     */
-    public static function parseName($formattedName, $template = null)
-    {
-        $templateMap = self::getPathTemplateMap();
-
-        if ($template) {
-            if (!isset($templateMap[$template])) {
-                throw new ValidationException("Template name $template does not exist");
-            }
-
-            return $templateMap[$template]->match($formattedName);
-        }
-
-        foreach ($templateMap as $templateName => $pathTemplate) {
-            try {
-                return $pathTemplate->match($formattedName);
-            } catch (ValidationException $ex) {
-                // Swallow the exception to continue trying other path templates
-            }
-        }
-        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**
@@ -293,9 +178,9 @@ class EventServiceGapicClient
      * ```
      * $eventServiceClient = new EventServiceClient();
      * try {
-     *     $formattedParent = $eventServiceClient->tenantName('[PROJECT]', '[TENANT]');
+     *     $parent = '';
      *     $clientEvent = new ClientEvent();
-     *     $response = $eventServiceClient->createClientEvent($formattedParent, $clientEvent);
+     *     $response = $eventServiceClient->createClientEvent($parent, $clientEvent);
      * } finally {
      *     $eventServiceClient->close();
      * }

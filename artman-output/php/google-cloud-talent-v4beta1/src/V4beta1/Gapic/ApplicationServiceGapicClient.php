@@ -102,6 +102,8 @@ class ApplicationServiceGapicClient
         'https://www.googleapis.com/auth/jobs',
     ];
     private static $applicationNameTemplate;
+    private static $companyNameTemplate;
+    private static $companyWithoutTenantNameTemplate;
     private static $profileNameTemplate;
     private static $pathTemplateMap;
 
@@ -133,6 +135,24 @@ class ApplicationServiceGapicClient
         return self::$applicationNameTemplate;
     }
 
+    private static function getCompanyNameTemplate()
+    {
+        if (null == self::$companyNameTemplate) {
+            self::$companyNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}/companies/{company}');
+        }
+
+        return self::$companyNameTemplate;
+    }
+
+    private static function getCompanyWithoutTenantNameTemplate()
+    {
+        if (null == self::$companyWithoutTenantNameTemplate) {
+            self::$companyWithoutTenantNameTemplate = new PathTemplate('projects/{project}/companies/{company}');
+        }
+
+        return self::$companyWithoutTenantNameTemplate;
+    }
+
     private static function getProfileNameTemplate()
     {
         if (null == self::$profileNameTemplate) {
@@ -147,6 +167,8 @@ class ApplicationServiceGapicClient
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'application' => self::getApplicationNameTemplate(),
+                'company' => self::getCompanyNameTemplate(),
+                'companyWithoutTenant' => self::getCompanyWithoutTenantNameTemplate(),
                 'profile' => self::getProfileNameTemplate(),
             ];
         }
@@ -178,6 +200,48 @@ class ApplicationServiceGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
+     * a company resource.
+     *
+     * @param string $project
+     * @param string $tenant
+     * @param string $company
+     *
+     * @return string The formatted company resource.
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
+     */
+    public static function companyName($project, $tenant, $company)
+    {
+        return self::getCompanyNameTemplate()->render([
+            'project' => $project,
+            'tenant' => $tenant,
+            'company' => $company,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a company_without_tenant resource.
+     *
+     * @param string $project
+     * @param string $company
+     *
+     * @return string The formatted company_without_tenant resource.
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
+     */
+    public static function companyWithoutTenantName($project, $company)
+    {
+        return self::getCompanyWithoutTenantNameTemplate()->render([
+            'project' => $project,
+            'company' => $company,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
      * a profile resource.
      *
      * @param string $project
@@ -201,6 +265,8 @@ class ApplicationServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - application: projects/{project}/tenants/{tenant}/profiles/{profile}/applications/{application}
+     * - company: projects/{project}/tenants/{tenant}/companies/{company}
+     * - companyWithoutTenant: projects/{project}/companies/{company}
      * - profile: projects/{project}/tenants/{tenant}/profiles/{profile}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must

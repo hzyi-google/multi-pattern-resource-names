@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Job job = Job.newBuilder().build();
  *   Job response = jobServiceClient.createJob(parent, job);
  * }
@@ -182,7 +182,39 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobServiceClient.createJob(parent, job);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified a default tenant is created. For
+   *     example, "projects/foo".
+   * @param job Required. The Job to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job createJob(ProjectName parent, Job job) {
+    CreateJobRequest request =
+        CreateJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJob(job)
+            .build();
+    return createJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job.
+   *
+   * <p>Typically, the job becomes searchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   Job job = Job.newBuilder().build();
    *   Job response = jobServiceClient.createJob(parent, job);
    * }
@@ -214,7 +246,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Job job = Job.newBuilder().build();
    *   Job response = jobServiceClient.createJob(parent.toString(), job);
    * }
@@ -242,7 +274,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Job job = Job.newBuilder().build();
    *   CreateJobRequest request = CreateJobRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -269,7 +301,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Job job = Job.newBuilder().build();
    *   CreateJobRequest request = CreateJobRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -293,7 +325,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   Job response = jobServiceClient.getJob(name);
    * }
    * </code></pre>
@@ -319,7 +351,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   Job response = jobServiceClient.getJob(name.toString());
    * }
    * </code></pre>
@@ -344,7 +376,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -367,7 +399,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -466,7 +498,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   jobServiceClient.deleteJob(name);
    * }
    * </code></pre>
@@ -494,7 +526,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   jobServiceClient.deleteJob(name.toString());
    * }
    * </code></pre>
@@ -521,7 +553,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -546,7 +578,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -568,7 +600,47 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param filter Required. The filter string specifies the jobs to be enumerated.
+   *     <p>Supported operator: =, AND
+   *     <p>The fields eligible for filtering are:
+   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` &#42; `status` Available values:
+   *     OPEN, EXPIRED, ALL. Defaults to OPEN if no value is specified.
+   *     <p>Sample Query:
+   *     <p>&#42; companyName = "projects/foo/tenants/bar/companies/baz" &#42; companyName =
+   *     "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1" &#42; companyName =
+   *     "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobsPagedResponse listJobs(ProjectName parent, String filter) {
+    ListJobsRequest request =
+        ListJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists jobs by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   String filter = "";
    *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
    *     // doThingsWith(element);
@@ -608,7 +680,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   for (Job element : jobServiceClient.listJobs(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
@@ -645,7 +717,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -672,7 +744,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -698,7 +770,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -731,7 +803,41 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   jobServiceClient.batchDeleteJobs(parent, filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param filter Required. The filter string specifies the jobs to be deleted.
+   *     <p>Supported operator: =, AND
+   *     <p>The fields eligible for filtering are:
+   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
+   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteJobs(ProjectName parent, String filter) {
+    BatchDeleteJobsRequest request =
+        BatchDeleteJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    batchDeleteJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
    *   String filter = "";
    *   jobServiceClient.batchDeleteJobs(parent, filter);
    * }
@@ -765,7 +871,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   jobServiceClient.batchDeleteJobs(parent.toString(), filter);
    * }
@@ -796,7 +902,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -821,7 +927,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
    *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -850,7 +956,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -882,7 +988,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -913,7 +1019,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -954,7 +1060,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -989,7 +1095,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1024,7 +1130,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RequestMetadata requestMetadata = RequestMetadata.newBuilder().build();
    *   SearchJobsRequest request = SearchJobsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1057,9 +1163,75 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(formattedParent, jobs).get();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      ProjectName parent, List<Job> jobs) {
+    BatchCreateJobsRequest request =
+        BatchCreateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchCreateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      TenantOrProjectName parent, List<Job> jobs) {
+    BatchCreateJobsRequest request =
+        BatchCreateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchCreateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent.toString(), jobs).get();
    * }
    * </code></pre>
    *
@@ -1087,10 +1259,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(request).get();
@@ -1115,10 +1287,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchCreateJobsOperationCallable().futureCall(request);
@@ -1141,10 +1313,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchCreateJobsCallable().futureCall(request);
@@ -1165,9 +1337,75 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(formattedParent, jobs).get();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      ProjectName parent, List<Job> jobs) {
+    BatchUpdateJobsRequest request =
+        BatchUpdateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchUpdateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch update jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      TenantOrProjectName parent, List<Job> jobs) {
+    BatchUpdateJobsRequest request =
+        BatchUpdateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchUpdateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch update jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent.toString(), jobs).get();
    * }
    * </code></pre>
    *
@@ -1195,10 +1433,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(request).get();
@@ -1223,10 +1461,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchUpdateJobsOperationCallable().futureCall(request);
@@ -1249,10 +1487,10 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   String formattedParent = TenantName.format("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllJobs(jobs)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchUpdateJobsCallable().futureCall(request);

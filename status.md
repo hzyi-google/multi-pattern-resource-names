@@ -4,15 +4,15 @@ Whether these APIs have been successfully generated with deprecated resources:
 |---|---|---|---|---|---|---
 |dataproc/v1|   |   |   |   |   |   
 |dataproc/v1beta2|   |   |   |   |   |   
-|bqdt|   |   |   |   |   |   
+|bqdt| x | x | x |   |   |   
 |kms|   |   |   |   |   |   
-|securitycenter/v1|   |   |   |   |   |   
+|securitycenter/v1| - | x | x |   |   |   
 |securitycenter/v1beta1|   |   |   |   |   |   
 |talent|   |   |   |   |   |   
-|containeranalysis|   |   |   |   |   |   
-|containeranalysis/v1|   |   |   |   |   |   
-|containeranalysis/v1beta1|   |   |   |   |   |   
-|logging|   |   |   |   |   |   
+|containeranalysis| x |   |   |   |   |   
+|containeranalysis/v1| x |   |   |   |   |   
+|containeranalysis/v1beta1| x |   |   |   |   |   
+|logging| - |   |   |   |   |   
 |dlp|   |   |   |   |   |   
 |pubsub|   |   |   |   |   |   
 
