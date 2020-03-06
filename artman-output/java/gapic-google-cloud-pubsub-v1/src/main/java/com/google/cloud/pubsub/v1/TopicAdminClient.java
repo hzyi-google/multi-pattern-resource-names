@@ -68,8 +68,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   String formattedName = TopicName.formatDeletedTopicName();
- *   Topic response = topicAdminClient.createTopic(formattedName);
+ *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+ *   Topic response = topicAdminClient.createTopic(name);
  * }
  * </code>
  * </pre>
@@ -185,8 +185,35 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   String formattedName = TopicName.formatDeletedTopicName();
-   *   Topic response = topicAdminClient.createTopic(formattedName);
+   *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   Topic response = topicAdminClient.createTopic(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the topic. It must have the format
+   *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
+   *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
+   *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
+   *     length, and it must not start with `"goog"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Topic createTopic(TopicName name) {
+    Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
+    return createTopic(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates the given topic with the given name. See the &lt;a
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+   * rules&lt;/a&gt;.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   Topic response = topicAdminClient.createTopic(name.toString());
    * }
    * </code></pre>
    *
@@ -212,7 +239,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName name = TopicName.ofDeletedTopicName();
+   *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -237,7 +264,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName name = TopicName.ofDeletedTopicName();
+   *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -308,7 +335,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
@@ -341,7 +368,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
@@ -370,7 +397,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
@@ -399,7 +426,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
@@ -427,7 +454,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Topic response = topicAdminClient.getTopic(topic);
    * }
    * </code></pre>
@@ -450,7 +477,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Topic response = topicAdminClient.getTopic(topic.toString());
    * }
    * </code></pre>
@@ -472,7 +499,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -495,7 +522,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -648,7 +675,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   for (ProjectSubscriptionName element : topicAdminClient.listTopicSubscriptions(topic).iterateAllAsProjectSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
@@ -675,7 +702,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   for (ProjectSubscriptionName element : topicAdminClient.listTopicSubscriptions(topic.toString()).iterateAllAsProjectSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
@@ -700,7 +727,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -726,7 +753,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -751,7 +778,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -786,7 +813,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   topicAdminClient.deleteTopic(topic);
    * }
    * </code></pre>
@@ -812,7 +839,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   topicAdminClient.deleteTopic(topic.toString());
    * }
    * </code></pre>
@@ -837,7 +864,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();
@@ -863,7 +890,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopic(topic.toString())
    *     .build();

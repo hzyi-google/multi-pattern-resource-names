@@ -111,22 +111,22 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicTest() {
-    TopicName name2 = TopicName.ofDeletedTopicName();
+    TopicName name2 = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name2.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedName = TopicName.formatDeletedTopicName();
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
-    Topic actualResponse = client.createTopic(formattedName);
+    Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Topic actualRequest = (Topic) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, TopicName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -140,9 +140,9 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedName = TopicName.formatDeletedTopicName();
+      TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
-      client.createTopic(formattedName);
+      client.createTopic(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -152,7 +152,7 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateTopicTest() {
-    TopicName name = TopicName.ofDeletedTopicName();
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
@@ -206,7 +206,7 @@ public class TopicAdminClientTest {
         PublishResponse.newBuilder().addAllMessageIds(messageIds).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     ByteString data = ByteString.copyFromUtf8("-86");
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -233,7 +233,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.ofDeletedTopicName();
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
       ByteString data = ByteString.copyFromUtf8("-86");
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -248,13 +248,13 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicTest() {
-    TopicName name = TopicName.ofDeletedTopicName();
+    TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
     Topic expectedResponse =
         Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -277,7 +277,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.ofDeletedTopicName();
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.getTopic(topic);
       Assert.fail("No exception raised");
@@ -348,7 +348,7 @@ public class TopicAdminClientTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
@@ -381,7 +381,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.ofDeletedTopicName();
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
@@ -396,7 +396,7 @@ public class TopicAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     client.deleteTopic(topic);
 
@@ -418,7 +418,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.ofDeletedTopicName();
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
       client.deleteTopic(topic);
       Assert.fail("No exception raised");

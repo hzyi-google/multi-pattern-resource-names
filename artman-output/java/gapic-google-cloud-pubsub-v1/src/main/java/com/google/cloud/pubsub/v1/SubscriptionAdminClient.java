@@ -80,11 +80,11 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
- *   String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
- *   TopicName topic = TopicName.ofDeletedTopicName();
+ *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriptionAdminClient.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>
@@ -210,11 +210,11 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   int ackDeadlineSeconds = 0;
-   *   Subscription response = subscriptionAdminClient.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
+   *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -247,10 +247,13 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      String name, TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+      ProjectSubscriptionName name,
+      TopicName topic,
+      PushConfig pushConfig,
+      int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
-            .setName(name)
+            .setName(name == null ? null : name.toString())
             .setTopic(topic == null ? null : topic.toString())
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
@@ -275,11 +278,11 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   int ackDeadlineSeconds = 0;
-   *   Subscription response = subscriptionAdminClient.createSubscription(formattedName, topic.toString(), pushConfig, ackDeadlineSeconds);
+   *   Subscription response = subscriptionAdminClient.createSubscription(name.toString(), topic.toString(), pushConfig, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -341,7 +344,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Subscription request = Subscription.newBuilder()
    *     .setName(name.toString())
    *     .setTopic(topic.toString())
@@ -375,7 +378,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-   *   TopicName topic = TopicName.ofDeletedTopicName();
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
    *   Subscription request = Subscription.newBuilder()
    *     .setName(name.toString())
    *     .setTopic(topic.toString())

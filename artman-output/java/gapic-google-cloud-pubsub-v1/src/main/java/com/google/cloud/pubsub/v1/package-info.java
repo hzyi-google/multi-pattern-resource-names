@@ -31,8 +31,8 @@
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   String formattedName = TopicName.formatDeletedTopicName();
- *   Topic response = topicAdminClient.createTopic(formattedName);
+ *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+ *   Topic response = topicAdminClient.createTopic(name);
  * }
  * </code>
  * </pre>
@@ -50,11 +50,11 @@
  * <pre>
  * <code>
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
- *   String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
- *   TopicName topic = TopicName.ofDeletedTopicName();
+ *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriptionAdminClient.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>

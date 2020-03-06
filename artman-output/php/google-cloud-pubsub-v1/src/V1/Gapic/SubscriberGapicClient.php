@@ -38,6 +38,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Iam\V1\GetIamPolicyRequest;
 use Google\Cloud\Iam\V1\GetPolicyOptions;
+use Google\Cloud\Iam\V1\IAMPolicyGrpcClient;
 use Google\Cloud\Iam\V1\Policy;
 use Google\Cloud\Iam\V1\SetIamPolicyRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
@@ -63,7 +64,9 @@ use Google\Cloud\PubSub\V1\SeekResponse;
 use Google\Cloud\PubSub\V1\Snapshot;
 use Google\Cloud\PubSub\V1\StreamingPullRequest;
 use Google\Cloud\PubSub\V1\StreamingPullResponse;
+use Google\Cloud\PubSub\V1\SubscriberGrpcClient;
 use Google\Cloud\PubSub\V1\Subscription;
+use Google\Cloud\PubSub\V1\Subscription\LabelsEntry;
 use Google\Cloud\PubSub\V1\UpdateSnapshotRequest;
 use Google\Cloud\PubSub\V1\UpdateSubscriptionRequest;
 use Google\Protobuf\Duration;
@@ -94,7 +97,6 @@ use Google\Protobuf\Timestamp;
  * with these names, this class includes a format method for each type of name, and additionally
  * a parseName method to extract the individual identifiers contained within formatted names
  * that are returned by the API.
- *
  * @experimental
  */
 class SubscriberGapicClient
@@ -134,28 +136,29 @@ class SubscriberGapicClient
     private static $topicNameTemplate;
     private static $pathTemplateMap;
 
+
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/subscriber_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/subscriber_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/subscriber_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/subscriber_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/subscriber_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/subscriber_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/subscriber_rest_client_config.php',
-                ],
-            ],
+                    'restClientConfigPath' => __DIR__ . '/../resources/subscriber_rest_client_config.php',
+                ]
+            ]
         ];
     }
 
     private static function getProjectNameTemplate()
     {
-        if (null == self::$projectNameTemplate) {
+        if (self::$projectNameTemplate == null) {
             self::$projectNameTemplate = new PathTemplate('projects/{project}');
         }
 
@@ -164,7 +167,7 @@ class SubscriberGapicClient
 
     private static function getSnapshotNameTemplate()
     {
-        if (null == self::$snapshotNameTemplate) {
+        if (self::$snapshotNameTemplate == null) {
             self::$snapshotNameTemplate = new PathTemplate('projects/{project}/snapshots/{snapshot}');
         }
 
@@ -173,7 +176,7 @@ class SubscriberGapicClient
 
     private static function getSubscriptionNameTemplate()
     {
-        if (null == self::$subscriptionNameTemplate) {
+        if (self::$subscriptionNameTemplate == null) {
             self::$subscriptionNameTemplate = new PathTemplate('projects/{project}/subscriptions/{subscription}');
         }
 
@@ -182,16 +185,17 @@ class SubscriberGapicClient
 
     private static function getTopicNameTemplate()
     {
-        if (null == self::$topicNameTemplate) {
+        if (self::$topicNameTemplate == null) {
             self::$topicNameTemplate = new PathTemplate('projects/{project}/topics/{topic}');
         }
 
         return self::$topicNameTemplate;
     }
 
+
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'project' => self::getProjectNameTemplate(),
                 'snapshot' => self::getSnapshotNameTemplate(),
@@ -199,16 +203,13 @@ class SubscriberGapicClient
                 'topic' => self::getTopicNameTemplate(),
             ];
         }
-
         return self::$pathTemplateMap;
     }
-
     /**
      * Formats a string containing the fully-qualified path to represent
      * a project resource.
      *
      * @param string $project
-     *
      * @return string The formatted project resource.
      * @experimental
      */
@@ -225,7 +226,6 @@ class SubscriberGapicClient
      *
      * @param string $project
      * @param string $snapshot
-     *
      * @return string The formatted snapshot resource.
      * @experimental
      */
@@ -243,7 +243,6 @@ class SubscriberGapicClient
      *
      * @param string $project
      * @param string $subscription
-     *
      * @return string The formatted subscription resource.
      * @experimental
      */
@@ -261,9 +260,7 @@ class SubscriberGapicClient
      *
      * @param string $project
      * @param string $topic
-     *
      * @return string The formatted topic resource.
-     *
      * @deprecated Multi-pattern resource names will have unified formatting functions.
      *             This helper function will be deleted in the next major version.
      */
@@ -282,7 +279,7 @@ class SubscriberGapicClient
      * - project: projects/{project}
      * - snapshot: projects/{project}/snapshots/{snapshot}
      * - subscription: projects/{project}/subscriptions/{subscription}
-     * - topic: projects/{project}/topics/{topic}.
+     * - topic: projects/{project}/topics/{topic}
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -290,10 +287,8 @@ class SubscriberGapicClient
      * each of the supported templates, and return the first match.
      *
      * @param string $formattedName The formatted name string
-     * @param string $template      Optional name of template to match
-     *
+     * @param string $template Optional name of template to match
      * @return array An associative array from name component IDs to component values.
-     *
      * @throws ValidationException If $formattedName could not be matched.
      * @experimental
      */
@@ -305,7 +300,6 @@ class SubscriberGapicClient
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
             }
-
             return $templateMap[$template]->match($formattedName);
         }
 
@@ -319,12 +313,14 @@ class SubscriberGapicClient
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
+
+
+
     /**
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
-     *
+     *     Optional. Options for configuring the service API wrapper.
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
      *           as "<uri>:<port>". Default 'pubsub.googleapis.com:443'.
@@ -367,7 +363,6 @@ class SubscriberGapicClient
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
-     *
      * @throws ValidationException
      * @experimental
      */
@@ -404,19 +399,18 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the subscription. It must have the format
-     *                             `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
-     *                             start with a letter, and contain only letters (`[A-Za-z]`), numbers
-     *                             (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
-     *                             plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
-     *                             in length, and it must not start with `"goog"`.
-     * @param string $topic        Required. The name of the topic from which this subscription is receiving messages.
-     *                             Format is `projects/{project}/topics/{topic}`.
-     *                             The value of this field will be `_deleted-topic_` if the topic has been
-     *                             deleted.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $name Required. The name of the subscription. It must have the format
+     * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
+     * start with a letter, and contain only letters (`[A-Za-z]`), numbers
+     * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
+     * plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
+     * in length, and it must not start with `"goog"`.
+     * @param string $topic Required. The name of the topic from which this subscription is receiving messages.
+     * Format is `projects/{project}/topics/{topic}`.
+     * The value of this field will be `_deleted-topic_` if the topic has been
+     * deleted.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type PushConfig $pushConfig
      *          If push delivery is used with this subscription, this field is
      *          used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -559,10 +553,9 @@ class SubscriberGapicClient
      * ```
      *
      * @param string $subscription Required. The name of the subscription to get.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -617,11 +610,10 @@ class SubscriberGapicClient
      * ```
      *
      * @param Subscription $subscription Required. The updated subscription object.
-     * @param FieldMask    $updateMask   Required. Indicates which fields in the provided subscription to update.
-     *                                   Must be specified and non-empty.
-     * @param array        $optionalArgs {
-     *                                   Optional.
-     *
+     * @param FieldMask $updateMask Required. Indicates which fields in the provided subscription to update.
+     * Must be specified and non-empty.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -684,11 +676,10 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $project      Required. The name of the project in which to list subscriptions.
-     *                             Format is `projects/{project-id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $project Required. The name of the project in which to list subscriptions.
+     * Format is `projects/{project-id}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -755,10 +746,9 @@ class SubscriberGapicClient
      * ```
      *
      * @param string $subscription Required. The subscription to delete.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -809,20 +799,19 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string   $subscription       Required. The name of the subscription.
-     *                                     Format is `projects/{project}/subscriptions/{sub}`.
-     * @param string[] $ackIds             Required. List of acknowledgment IDs.
-     * @param int      $ackDeadlineSeconds Required. The new ack deadline with respect to the time this request was sent to
-     *                                     the Pub/Sub system. For example, if the value is 10, the new
-     *                                     ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-     *                                     was made. Specifying zero might immediately make the message available for
-     *                                     delivery to another subscriber client. This typically results in an
-     *                                     increase in the rate of message redeliveries (that is, duplicates).
-     *                                     The minimum deadline you can specify is 0 seconds.
-     *                                     The maximum deadline you can specify is 600 seconds (10 minutes).
-     * @param array    $optionalArgs       {
-     *                                     Optional.
-     *
+     * @param string $subscription Required. The name of the subscription.
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param string[] $ackIds Required. List of acknowledgment IDs.
+     * @param int $ackDeadlineSeconds Required. The new ack deadline with respect to the time this request was sent to
+     * the Pub/Sub system. For example, if the value is 10, the new
+     * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
+     * was made. Specifying zero might immediately make the message available for
+     * delivery to another subscriber client. This typically results in an
+     * increase in the rate of message redeliveries (that is, duplicates).
+     * The minimum deadline you can specify is 0 seconds.
+     * The maximum deadline you can specify is 600 seconds (10 minutes).
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -876,13 +865,12 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string   $subscription Required. The subscription whose message is being acknowledged.
-     *                               Format is `projects/{project}/subscriptions/{sub}`.
-     * @param string[] $ackIds       Required. The acknowledgment ID for the messages being acknowledged that was returned
-     *                               by the Pub/Sub system in the `Pull` response. Must not be empty.
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
+     * @param string $subscription Required. The subscription whose message is being acknowledged.
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param string[] $ackIds Required. The acknowledgment ID for the messages being acknowledged that was returned
+     * by the Pub/Sub system in the `Pull` response. Must not be empty.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -932,13 +920,12 @@ class SubscriberGapicClient
      * ```
      *
      * @param string $subscription Required. The subscription from which messages should be pulled.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param int    $maxMessages  Required. The maximum number of messages to return for this request. Must be a
-     *                             positive integer. The Pub/Sub system may return fewer than the number
-     *                             specified.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param int $maxMessages Required. The maximum number of messages to return for this request. Must be a
+     * positive integer. The Pub/Sub system may return fewer than the number
+     * specified.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type bool $returnImmediately
      *          If this field set to true, the system will respond immediately even if
      *          it there are no messages available to return in the `Pull` response.
@@ -1033,8 +1020,7 @@ class SubscriberGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
-     *
+     *     Optional.
      *     @type int $timeoutMillis
      *          Timeout to use for this call.
      * }
@@ -1075,17 +1061,16 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string     $subscription Required. The name of the subscription.
-     *                                 Format is `projects/{project}/subscriptions/{sub}`.
-     * @param PushConfig $pushConfig   Required. The push configuration for future deliveries.
+     * @param string $subscription Required. The name of the subscription.
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param PushConfig $pushConfig Required. The push configuration for future deliveries.
      *
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
      * the subscription if `Pull` or `StreamingPull` is not called.
      * @param array $optionalArgs {
-     *                            Optional.
-     *
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1151,11 +1136,10 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $project      Required. The name of the project in which to list snapshots.
-     *                             Format is `projects/{project-id}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $project Required. The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -1235,24 +1219,23 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. User-provided name for this snapshot. If the name is not provided in the
-     *                             request, the server will assign a random name for this snapshot on the same
-     *                             project as the subscription. Note that for REST API requests, you must
-     *                             specify a name.  See the <a
-     *                             href="https://cloud.google.com/pubsub/docs/admin#resource_names"> resource
-     *                             name rules</a>. Format is `projects/{project}/snapshots/{snap}`.
+     * @param string $name Required. User-provided name for this snapshot. If the name is not provided in the
+     * request, the server will assign a random name for this snapshot on the same
+     * project as the subscription. Note that for REST API requests, you must
+     * specify a name.  See the <a
+     * href="https://cloud.google.com/pubsub/docs/admin#resource_names"> resource
+     * name rules</a>. Format is `projects/{project}/snapshots/{snap}`.
      * @param string $subscription Required. The subscription whose backlog the snapshot retains.
-     *                             Specifically, the created snapshot is guaranteed to retain:
-     *                             (a) The existing backlog on the subscription. More precisely, this is
-     *                             defined as the messages in the subscription's backlog that are
-     *                             unacknowledged upon the successful completion of the
-     *                             `CreateSnapshot` request; as well as:
-     *                             (b) Any messages published to the subscription's topic following the
-     *                             successful completion of the CreateSnapshot request.
-     *                             Format is `projects/{project}/subscriptions/{sub}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * Specifically, the created snapshot is guaranteed to retain:
+     *  (a) The existing backlog on the subscription. More precisely, this is
+     *      defined as the messages in the subscription's backlog that are
+     *      unacknowledged upon the successful completion of the
+     *      `CreateSnapshot` request; as well as:
+     *  (b) Any messages published to the subscription's topic following the
+     *      successful completion of the CreateSnapshot request.
+     * Format is `projects/{project}/subscriptions/{sub}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type array $labels
      *          See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
      *          managing labels</a>.
@@ -1319,12 +1302,11 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param Snapshot  $snapshot     Required. The updated snapshot object.
-     * @param FieldMask $updateMask   Required. Indicates which fields in the provided snapshot to update.
-     *                                Must be specified and non-empty.
-     * @param array     $optionalArgs {
-     *                                Optional.
-     *
+     * @param Snapshot $snapshot Required. The updated snapshot object.
+     * @param FieldMask $updateMask Required. Indicates which fields in the provided snapshot to update.
+     * Must be specified and non-empty.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1381,11 +1363,10 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $snapshot     Required. The name of the snapshot to delete.
-     *                             Format is `projects/{project}/snapshots/{snap}`.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $snapshot Required. The name of the snapshot to delete.
+     * Format is `projects/{project}/snapshots/{snap}`.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1438,9 +1419,8 @@ class SubscriberGapicClient
      * ```
      *
      * @param string $subscription Required. The subscription to affect.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type Timestamp $time
      *          The time to seek to.
      *          Messages retained in the subscription that were published before this
@@ -1514,15 +1494,14 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $resource     REQUIRED: The resource for which the policy is being specified.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param Policy $policy       REQUIRED: The complete policy to be applied to the `resource`. The size of
-     *                             the policy is limited to a few 10s of KB. An empty policy is a
-     *                             valid policy but certain Cloud Platform services (such as Projects)
-     *                             might reject them.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $resource REQUIRED: The resource for which the policy is being specified.
+     * See the operation documentation for the appropriate value for this field.
+     * @param Policy $policy REQUIRED: The complete policy to be applied to the `resource`. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is a
+     * valid policy but certain Cloud Platform services (such as Projects)
+     * might reject them.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1573,11 +1552,10 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string $resource     REQUIRED: The resource for which the policy is being requested.
-     *                             See the operation documentation for the appropriate value for this field.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
+     * @param string $resource REQUIRED: The resource for which the policy is being requested.
+     * See the operation documentation for the appropriate value for this field.
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type GetPolicyOptions $options
      *          OPTIONAL: A `GetPolicyOptions` object for specifying options to
      *          `GetIamPolicy`. This field is only used by Cloud IAM.
@@ -1639,15 +1617,14 @@ class SubscriberGapicClient
      * }
      * ```
      *
-     * @param string   $resource     REQUIRED: The resource for which the policy detail is being requested.
-     *                               See the operation documentation for the appropriate value for this field.
-     * @param string[] $permissions  The set of permissions to check for the `resource`. Permissions with
-     *                               wildcards (such as '*' or 'storage.*') are not allowed. For more
-     *                               information see
-     *                               [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-     * @param array    $optionalArgs {
-     *                               Optional.
-     *
+     * @param string $resource REQUIRED: The resource for which the policy detail is being requested.
+     * See the operation documentation for the appropriate value for this field.
+     * @param string[] $permissions The set of permissions to check for the `resource`. Permissions with
+     * wildcards (such as '*' or 'storage.*') are not allowed. For more
+     * information see
+     * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+     * @param array $optionalArgs {
+     *     Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array

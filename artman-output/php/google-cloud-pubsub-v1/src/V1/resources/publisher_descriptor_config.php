@@ -10,8 +10,8 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getTopics',
-                ],
+                    'resourcesGetMethod' => 'getTopics'
+                ]
             ],
             'ListTopicSubscriptions' => [
                 'pageStreaming' => [
@@ -20,9 +20,9 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getSubscriptions',
-                ],
+                    'resourcesGetMethod' => 'getSubscriptions'
+                ]
             ],
-        ],
-    ],
+        ]
+    ]
 ];

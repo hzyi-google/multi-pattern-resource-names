@@ -130,7 +130,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void createSubscriptionTest() {
     ProjectSubscriptionName name2 = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-    TopicName topic2 = TopicName.ofDeletedTopicName();
+    TopicName topic2 = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     int ackDeadlineSeconds2 = 921632575;
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
@@ -144,20 +144,20 @@ public class SubscriptionAdminClientTest {
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
-    TopicName topic = TopicName.ofDeletedTopicName();
+    ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     PushConfig pushConfig = PushConfig.newBuilder().build();
     int ackDeadlineSeconds = 2135351438;
 
     Subscription actualResponse =
-        client.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
+        client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Subscription actualRequest = (Subscription) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ProjectSubscriptionName.parse(actualRequest.getName()));
     Assert.assertEquals(topic, TopicName.parse(actualRequest.getTopic()));
     Assert.assertEquals(pushConfig, actualRequest.getPushConfig());
     Assert.assertEquals(ackDeadlineSeconds, actualRequest.getAckDeadlineSeconds());
@@ -174,12 +174,12 @@ public class SubscriptionAdminClientTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedName = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
-      TopicName topic = TopicName.ofDeletedTopicName();
+      ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+      TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
       PushConfig pushConfig = PushConfig.newBuilder().build();
       int ackDeadlineSeconds = 2135351438;
 
-      client.createSubscription(formattedName, topic, pushConfig, ackDeadlineSeconds);
+      client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -190,7 +190,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void getSubscriptionTest() {
     ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     int ackDeadlineSeconds = 2135351438;
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
@@ -243,7 +243,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void updateSubscriptionTest() {
     ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     int ackDeadlineSeconds2 = 921632575;
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
@@ -691,7 +691,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void createSnapshotTest() {
     ProjectSnapshotName name2 = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     Snapshot expectedResponse =
         Snapshot.newBuilder().setName(name2.toString()).setTopic(topic.toString()).build();
     mockSubscriber.addResponse(expectedResponse);
@@ -738,7 +738,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void updateSnapshotTest() {
     ProjectSnapshotName name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-    TopicName topic = TopicName.ofDeletedTopicName();
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     Snapshot expectedResponse =
         Snapshot.newBuilder().setName(name.toString()).setTopic(topic.toString()).build();
     mockSubscriber.addResponse(expectedResponse);
