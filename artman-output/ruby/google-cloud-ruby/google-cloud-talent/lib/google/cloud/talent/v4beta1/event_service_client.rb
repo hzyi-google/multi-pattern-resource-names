@@ -57,6 +57,38 @@ module Google
           ].freeze
 
 
+          PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+            "projects/{project}"
+          )
+
+          private_constant :PROJECT_PATH_TEMPLATE
+
+          TENANT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+            "projects/{project}/tenants/{tenant}"
+          )
+
+          private_constant :TENANT_PATH_TEMPLATE
+
+          # Returns a fully-qualified project resource name string.
+          # @param project [String]
+          # @return [String]
+          def self.project_path project
+            PROJECT_PATH_TEMPLATE.render(
+              :"project" => project
+            )
+          end
+
+          # Returns a fully-qualified tenant resource name string.
+          # @param project [String]
+          # @param tenant [String]
+          # @return [String]
+          def self.tenant_path project, tenant
+            TENANT_PATH_TEMPLATE.render(
+              :"project" => project,
+              :"tenant" => tenant
+            )
+          end
+
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can
           #   be many types.
@@ -202,13 +234,11 @@ module Google
           #   require "google/cloud/talent"
           #
           #   event_client = Google::Cloud::Talent::Event.new(version: :v4beta1)
-          #
-          #   # TODO: Initialize `parent`:
-          #   parent = ''
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::EventServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `client_event`:
           #   client_event = {}
-          #   response = event_client.create_client_event(parent, client_event)
+          #   response = event_client.create_client_event(formatted_parent, client_event)
 
           def create_client_event \
               parent,

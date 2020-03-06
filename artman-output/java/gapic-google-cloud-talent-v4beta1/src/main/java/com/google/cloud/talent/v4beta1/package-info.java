@@ -79,7 +79,7 @@
  * <pre>
  * <code>
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   String parent = "";
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
  *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }

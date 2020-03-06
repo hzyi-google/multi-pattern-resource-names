@@ -72,7 +72,7 @@ describe Google::Cloud::Talent::V4beta1::EventServiceClient do
 
     it 'invokes create_client_event without error' do
       # Create request parameters
-      parent = ''
+      formatted_parent = Google::Cloud::Talent::V4beta1::EventServiceClient.project_path("[PROJECT]")
       client_event = {}
 
       # Create expected grpc response
@@ -89,7 +89,7 @@ describe Google::Cloud::Talent::V4beta1::EventServiceClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Cloud::Talent::V4beta1::CreateClientEventRequest, request)
-        assert_equal(parent, request.parent)
+        assert_equal(formatted_parent, request.parent)
         assert_equal(Google::Gax::to_proto(client_event, Google::Cloud::Talent::V4beta1::ClientEvent), request.client_event)
         OpenStruct.new(execute: expected_response)
       end
@@ -103,13 +103,13 @@ describe Google::Cloud::Talent::V4beta1::EventServiceClient do
           client = Google::Cloud::Talent::Event.new(version: :v4beta1)
 
           # Call method
-          response = client.create_client_event(parent, client_event)
+          response = client.create_client_event(formatted_parent, client_event)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.create_client_event(parent, client_event) do |response, operation|
+          client.create_client_event(formatted_parent, client_event) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -120,13 +120,13 @@ describe Google::Cloud::Talent::V4beta1::EventServiceClient do
 
     it 'invokes create_client_event with error' do
       # Create request parameters
-      parent = ''
+      formatted_parent = Google::Cloud::Talent::V4beta1::EventServiceClient.project_path("[PROJECT]")
       client_event = {}
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Cloud::Talent::V4beta1::CreateClientEventRequest, request)
-        assert_equal(parent, request.parent)
+        assert_equal(formatted_parent, request.parent)
         assert_equal(Google::Gax::to_proto(client_event, Google::Cloud::Talent::V4beta1::ClientEvent), request.client_event)
         raise custom_error
       end
@@ -141,7 +141,7 @@ describe Google::Cloud::Talent::V4beta1::EventServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v4beta1 do
-            client.create_client_event(parent, client_event)
+            client.create_client_event(formatted_parent, client_event)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

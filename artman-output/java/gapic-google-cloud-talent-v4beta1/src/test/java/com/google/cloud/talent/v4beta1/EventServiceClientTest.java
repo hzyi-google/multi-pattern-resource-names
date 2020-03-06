@@ -108,7 +108,7 @@ public class EventServiceClientTest {
             .build();
     mockEventService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    ProjectName parent = ProjectName.of("[PROJECT]");
     ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
     ClientEvent actualResponse = client.createClientEvent(parent, clientEvent);
@@ -118,7 +118,7 @@ public class EventServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateClientEventRequest actualRequest = (CreateClientEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(clientEvent, actualRequest.getClientEvent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -133,7 +133,7 @@ public class EventServiceClientTest {
     mockEventService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      ProjectName parent = ProjectName.of("[PROJECT]");
       ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
       client.createClientEvent(parent, clientEvent);
