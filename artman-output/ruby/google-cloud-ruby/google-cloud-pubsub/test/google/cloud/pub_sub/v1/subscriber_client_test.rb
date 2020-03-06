@@ -724,9 +724,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
       request = { subscription: formatted_subscription, stream_ack_deadline_seconds: stream_ack_deadline_seconds }
 
       # Create expected grpc response
-      received_messages_element = {}
-      received_messages = [received_messages_element]
-      expected_response = { received_messages: received_messages }
+      expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Pubsub::V1::StreamingPullResponse)
 
       # Mock Grpc layer
@@ -1249,7 +1247,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes set_iam_policy without error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
       policy = {}
 
       # Create expected grpc response
@@ -1261,7 +1259,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
         OpenStruct.new(execute: expected_response)
       end
@@ -1275,13 +1273,13 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
 
           # Call method
-          response = client.set_iam_policy(formatted_resource, policy)
+          response = client.set_iam_policy(resource, policy)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.set_iam_policy(formatted_resource, policy) do |response, operation|
+          client.set_iam_policy(resource, policy) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -1292,13 +1290,13 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes set_iam_policy with error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
       policy = {}
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::SetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         assert_equal(Google::Gax::to_proto(policy, Google::Iam::V1::Policy), request.policy)
         raise custom_error
       end
@@ -1313,7 +1311,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.set_iam_policy(formatted_resource, policy)
+            client.set_iam_policy(resource, policy)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -1328,7 +1326,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes get_iam_policy without error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
 
       # Create expected grpc response
       version = 351608024
@@ -1339,7 +1337,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
@@ -1352,13 +1350,13 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
 
           # Call method
-          response = client.get_iam_policy(formatted_resource)
+          response = client.get_iam_policy(resource)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_iam_policy(formatted_resource) do |response, operation|
+          client.get_iam_policy(resource) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -1369,12 +1367,12 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes get_iam_policy with error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::GetIamPolicyRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:get_iam_policy, mock_method)
@@ -1388,7 +1386,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.get_iam_policy(formatted_resource)
+            client.get_iam_policy(resource)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -1403,7 +1401,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes test_iam_permissions without error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
       permissions = []
 
       # Create expected grpc response
@@ -1413,7 +1411,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         assert_equal(permissions, request.permissions)
         OpenStruct.new(execute: expected_response)
       end
@@ -1427,13 +1425,13 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
           client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
 
           # Call method
-          response = client.test_iam_permissions(formatted_resource, permissions)
+          response = client.test_iam_permissions(resource, permissions)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.test_iam_permissions(formatted_resource, permissions) do |response, operation|
+          client.test_iam_permissions(resource, permissions) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -1444,13 +1442,13 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
     it 'invokes test_iam_permissions with error' do
       # Create request parameters
-      formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+      resource = ''
       permissions = []
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Iam::V1::TestIamPermissionsRequest, request)
-        assert_equal(formatted_resource, request.resource)
+        assert_equal(resource, request.resource)
         assert_equal(permissions, request.permissions)
         raise custom_error
       end
@@ -1465,7 +1463,7 @@ describe Google::Cloud::PubSub::V1::SubscriberClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.test_iam_permissions(formatted_resource, permissions)
+            client.test_iam_permissions(resource, permissions)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

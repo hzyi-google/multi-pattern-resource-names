@@ -131,6 +131,8 @@ module Google
           end
 
           # Returns a fully-qualified topic resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param topic [String]
           # @return [String]
@@ -1264,11 +1266,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `policy`:
           #   policy = {}
-          #   response = subscriber_client.set_iam_policy(formatted_resource, policy)
+          #   response = subscriber_client.set_iam_policy(resource, policy)
 
           def set_iam_policy \
               resource,
@@ -1306,8 +1310,10 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-          #   response = subscriber_client.get_iam_policy(formatted_resource)
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
+          #   response = subscriber_client.get_iam_policy(resource)
 
           def get_iam_policy \
               resource,
@@ -1350,11 +1356,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `permissions`:
           #   permissions = []
-          #   response = subscriber_client.test_iam_permissions(formatted_resource, permissions)
+          #   response = subscriber_client.test_iam_permissions(resource, permissions)
 
           def test_iam_permissions \
               resource,

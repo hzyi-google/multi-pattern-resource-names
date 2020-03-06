@@ -263,7 +263,9 @@ class SubscriberGapicClient
      * @param string $topic
      *
      * @return string The formatted topic resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function topicName($project, $topic)
     {
@@ -1504,9 +1506,9 @@ class SubscriberGapicClient
      * ```
      * $subscriberClient = new SubscriberClient();
      * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
+     *     $resource = '';
      *     $policy = new Policy();
-     *     $response = $subscriberClient->setIamPolicy($formattedResource, $policy);
+     *     $response = $subscriberClient->setIamPolicy($resource, $policy);
      * } finally {
      *     $subscriberClient->close();
      * }
@@ -1564,8 +1566,8 @@ class SubscriberGapicClient
      * ```
      * $subscriberClient = new SubscriberClient();
      * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
-     *     $response = $subscriberClient->getIamPolicy($formattedResource);
+     *     $resource = '';
+     *     $response = $subscriberClient->getIamPolicy($resource);
      * } finally {
      *     $subscriberClient->close();
      * }
@@ -1629,9 +1631,9 @@ class SubscriberGapicClient
      * ```
      * $subscriberClient = new SubscriberClient();
      * try {
-     *     $formattedResource = $subscriberClient->subscriptionName('[PROJECT]', '[SUBSCRIPTION]');
+     *     $resource = '';
      *     $permissions = [];
-     *     $response = $subscriberClient->testIamPermissions($formattedResource, $permissions);
+     *     $response = $subscriberClient->testIamPermissions($resource, $permissions);
      * } finally {
      *     $subscriberClient->close();
      * }
