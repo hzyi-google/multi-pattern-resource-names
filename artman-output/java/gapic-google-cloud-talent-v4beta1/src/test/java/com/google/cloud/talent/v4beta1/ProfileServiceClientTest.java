@@ -112,7 +112,7 @@ public class ProfileServiceClientTest {
             .build();
     mockProfileService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
 
     ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
 
@@ -124,7 +124,7 @@ public class ProfileServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListProfilesRequest actualRequest = (ListProfilesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, TenantName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -138,7 +138,7 @@ public class ProfileServiceClientTest {
     mockProfileService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
 
       client.listProfiles(parent);
       Assert.fail("No exception raised");

@@ -93,9 +93,9 @@ class ProfileServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
 
-        $response = $client->listProfiles($parent);
+        $response = $client->listProfiles($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -109,7 +109,7 @@ class ProfileServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -136,10 +136,10 @@ class ProfileServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->tenantName('[PROJECT]', '[TENANT]');
 
         try {
-            $client->listProfiles($parent);
+            $client->listProfiles($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

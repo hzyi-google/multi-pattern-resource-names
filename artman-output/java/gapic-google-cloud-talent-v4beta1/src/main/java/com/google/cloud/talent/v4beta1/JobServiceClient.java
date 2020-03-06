@@ -214,7 +214,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   Job job = Job.newBuilder().build();
    *   Job response = jobServiceClient.createJob(parent, job);
    * }
@@ -227,7 +227,7 @@ public class JobServiceClient implements BackgroundResource {
    * @param job Required. The Job to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(TenantOrProjectName parent, Job job) {
+  public final Job createJob(TenantName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -640,7 +640,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   String filter = "";
    *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
    *     // doThingsWith(element);
@@ -663,7 +663,7 @@ public class JobServiceClient implements BackgroundResource {
    *     "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(TenantOrProjectName parent, String filter) {
+  public final ListJobsPagedResponse listJobs(TenantName parent, String filter) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -837,7 +837,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   String filter = "";
    *   jobServiceClient.batchDeleteJobs(parent, filter);
    * }
@@ -854,7 +854,7 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeleteJobs(TenantOrProjectName parent, String filter) {
+  public final void batchDeleteJobs(TenantName parent, String filter) {
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1196,7 +1196,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
    * }
@@ -1212,7 +1212,7 @@ public class JobServiceClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      TenantOrProjectName parent, List<Job> jobs) {
+      TenantName parent, List<Job> jobs) {
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1370,7 +1370,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
    *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
    * }
@@ -1386,7 +1386,7 @@ public class JobServiceClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      TenantOrProjectName parent, List<Job> jobs) {
+      TenantName parent, List<Job> jobs) {
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

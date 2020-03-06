@@ -83,11 +83,11 @@ class CompletionClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->projectName('[PROJECT]');
         $query = 'query107944136';
         $pageSize = 883849137;
 
-        $response = $client->completeQuery($parent, $query, $pageSize);
+        $response = $client->completeQuery($formattedParent, $query, $pageSize);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -97,7 +97,7 @@ class CompletionClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualRequestObject->getQuery();
 
         $this->assertProtobufEquals($query, $actualValue);
@@ -131,12 +131,12 @@ class CompletionClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->projectName('[PROJECT]');
         $query = 'query107944136';
         $pageSize = 883849137;
 
         try {
-            $client->completeQuery($parent, $query, $pageSize);
+            $client->completeQuery($formattedParent, $query, $pageSize);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

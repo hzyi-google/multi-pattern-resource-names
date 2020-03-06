@@ -103,6 +103,7 @@ class CompanyServiceGapicClient
     private static $companyNameTemplate;
     private static $companyWithoutTenantNameTemplate;
     private static $projectNameTemplate;
+    private static $tenantNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -151,6 +152,15 @@ class CompanyServiceGapicClient
         return self::$projectNameTemplate;
     }
 
+    private static function getTenantNameTemplate()
+    {
+        if (null == self::$tenantNameTemplate) {
+            self::$tenantNameTemplate = new PathTemplate('projects/{project}/tenants/{tenant}');
+        }
+
+        return self::$tenantNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
@@ -158,6 +168,7 @@ class CompanyServiceGapicClient
                 'company' => self::getCompanyNameTemplate(),
                 'companyWithoutTenant' => self::getCompanyWithoutTenantNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
+                'tenant' => self::getTenantNameTemplate(),
             ];
         }
 
@@ -223,12 +234,31 @@ class CompanyServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent
+     * a tenant resource.
+     *
+     * @param string $project
+     * @param string $tenant
+     *
+     * @return string The formatted tenant resource.
+     * @experimental
+     */
+    public static function tenantName($project, $tenant)
+    {
+        return self::getTenantNameTemplate()->render([
+            'project' => $project,
+            'tenant' => $tenant,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - company: projects/{project}/tenants/{tenant}/companies/{company}
      * - companyWithoutTenant: projects/{project}/companies/{company}
-     * - project: projects/{project}.
+     * - project: projects/{project}
+     * - tenant: projects/{project}/tenants/{tenant}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -561,9 +591,9 @@ class CompanyServiceGapicClient
      * ```
      * $companyServiceClient = new CompanyServiceClient();
      * try {
-     *     $parent = '';
+     *     $formattedParent = $companyServiceClient->projectName('[PROJECT]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $companyServiceClient->listCompanies($parent);
+     *     $pagedResponse = $companyServiceClient->listCompanies($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -574,7 +604,7 @@ class CompanyServiceGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $companyServiceClient->listCompanies($parent);
+     *     $pagedResponse = $companyServiceClient->listCompanies($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }

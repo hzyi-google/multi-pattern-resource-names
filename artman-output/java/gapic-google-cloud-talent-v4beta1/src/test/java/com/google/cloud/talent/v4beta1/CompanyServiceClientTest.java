@@ -331,7 +331,7 @@ public class CompanyServiceClientTest {
             .build();
     mockCompanyService.addResponse(expectedResponse);
 
-    TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListCompaniesPagedResponse pagedListResponse = client.listCompanies(parent);
 
@@ -343,7 +343,7 @@ public class CompanyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListCompaniesRequest actualRequest = (ListCompaniesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantOrProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -357,7 +357,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listCompanies(parent);
       Assert.fail("No exception raised");

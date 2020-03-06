@@ -27,11 +27,6 @@ option java_multiple_files = true;
 option java_outer_classname = "TenantResourceProto";
 option java_package = "com.google.cloud.talent.v4beta1";
 option objc_class_prefix = "CTS";
-option (google.api.resource_definition) = {
-  type: "jobs.googleapis.com/TenantOrProject"
-  pattern: "projects/{project}/tenants/{tenant}"
-  pattern: "projects/{project}"
-};
 
 // A Tenant resource represents a tenant in the service. A tenant is a group or
 // entity that shares common access with specific privileges for resources like

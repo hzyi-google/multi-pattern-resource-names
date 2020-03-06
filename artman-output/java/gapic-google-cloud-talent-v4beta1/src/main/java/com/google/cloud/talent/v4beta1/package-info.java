@@ -79,7 +79,7 @@
  * <pre>
  * <code>
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+ *   String parent = "";
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
  *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
@@ -112,7 +112,7 @@
  * <pre>
  * <code>
  * try (CompletionClient completionClient = CompletionClient.create()) {
- *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   String query = "";
  *   int pageSize = 0;
  *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()

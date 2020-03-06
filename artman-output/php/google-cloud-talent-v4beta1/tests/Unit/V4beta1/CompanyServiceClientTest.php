@@ -438,9 +438,9 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->projectName('[PROJECT]');
 
-        $response = $client->listCompanies($parent);
+        $response = $client->listCompanies($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -454,7 +454,7 @@ class CompanyServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -481,10 +481,10 @@ class CompanyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->projectName('[PROJECT]');
 
         try {
-            $client->listCompanies($parent);
+            $client->listCompanies($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

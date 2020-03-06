@@ -72,7 +72,7 @@ describe Google::Cloud::Talent::V4beta1::ProfileServiceClient do
 
     it 'invokes list_profiles without error' do
       # Create request parameters
-      parent = ''
+      formatted_parent = Google::Cloud::Talent::V4beta1::ProfileServiceClient.tenant_path("[PROJECT]", "[TENANT]")
 
       # Create expected grpc response
       next_page_token = ""
@@ -84,7 +84,7 @@ describe Google::Cloud::Talent::V4beta1::ProfileServiceClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Cloud::Talent::V4beta1::ListProfilesRequest, request)
-        assert_equal(parent, request.parent)
+        assert_equal(formatted_parent, request.parent)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v4beta1.new(:list_profiles, mock_method)
@@ -97,7 +97,7 @@ describe Google::Cloud::Talent::V4beta1::ProfileServiceClient do
           client = Google::Cloud::Talent::Profile.new(version: :v4beta1)
 
           # Call method
-          response = client.list_profiles(parent)
+          response = client.list_profiles(formatted_parent)
 
           # Verify the response
           assert(response.instance_of?(Google::Gax::PagedEnumerable))
@@ -110,12 +110,12 @@ describe Google::Cloud::Talent::V4beta1::ProfileServiceClient do
 
     it 'invokes list_profiles with error' do
       # Create request parameters
-      parent = ''
+      formatted_parent = Google::Cloud::Talent::V4beta1::ProfileServiceClient.tenant_path("[PROJECT]", "[TENANT]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Cloud::Talent::V4beta1::ListProfilesRequest, request)
-        assert_equal(parent, request.parent)
+        assert_equal(formatted_parent, request.parent)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v4beta1.new(:list_profiles, mock_method)
@@ -129,7 +129,7 @@ describe Google::Cloud::Talent::V4beta1::ProfileServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v4beta1 do
-            client.list_profiles(parent)
+            client.list_profiles(formatted_parent)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

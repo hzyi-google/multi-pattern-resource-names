@@ -100,7 +100,7 @@ public class CompletionClientTest {
     CompleteQueryResponse expectedResponse = CompleteQueryResponse.newBuilder().build();
     mockCompletion.addResponse(expectedResponse);
 
-    TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String query = "query107944136";
     int pageSize = 883849137;
     CompleteQueryRequest request =
@@ -117,7 +117,7 @@ public class CompletionClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CompleteQueryRequest actualRequest = (CompleteQueryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantOrProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(query, actualRequest.getQuery());
     Assert.assertEquals(pageSize, actualRequest.getPageSize());
     Assert.assertTrue(
@@ -133,7 +133,7 @@ public class CompletionClientTest {
     mockCompletion.addException(exception);
 
     try {
-      TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String query = "query107944136";
       int pageSize = 883849137;
       CompleteQueryRequest request =

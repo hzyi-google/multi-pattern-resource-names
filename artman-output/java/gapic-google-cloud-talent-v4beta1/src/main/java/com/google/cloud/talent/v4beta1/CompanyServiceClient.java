@@ -193,7 +193,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   Company company = Company.newBuilder().build();
    *   Company response = companyServiceClient.createCompany(parent, company);
    * }
@@ -206,7 +206,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Company createCompany(TenantOrProjectName parent, Company company) {
+  public final Company createCompany(TenantName parent, Company company) {
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -557,7 +557,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -571,7 +571,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *     "projects/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCompaniesPagedResponse listCompanies(TenantOrProjectName parent) {
+  public final ListCompaniesPagedResponse listCompanies(ProjectName parent) {
     ListCompaniesRequest request =
         ListCompaniesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -587,7 +587,37 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the tenant under which the company is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenant/bar".
+   *     <p>If tenant id is unspecified, the default tenant will be used, for example,
+   *     "projects/foo".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCompaniesPagedResponse listCompanies(TenantName parent) {
+    ListCompaniesRequest request =
+        ListCompaniesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all companies associated with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Company element : companyServiceClient.listCompanies(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -614,7 +644,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -639,7 +669,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -664,7 +694,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantOrProjectName parent = TenantOrProjectName.ofProjectTenantName("[PROJECT]", "[TENANT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

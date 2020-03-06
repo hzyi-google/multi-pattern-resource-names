@@ -108,7 +108,7 @@ message CompleteQueryRequest {
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "jobs.googleapis.com/TenantOrProject"
+      child_type: "jobs.googleapis.com/Company"
     }
   ];
 

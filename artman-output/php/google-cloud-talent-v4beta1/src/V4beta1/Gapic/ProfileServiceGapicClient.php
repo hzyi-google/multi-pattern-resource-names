@@ -60,9 +60,9 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $profileServiceClient = new ProfileServiceClient();
  * try {
- *     $parent = '';
+ *     $formattedParent = $profileServiceClient->tenantName('[PROJECT]', '[TENANT]');
  *     // Iterate over pages of elements
- *     $pagedResponse = $profileServiceClient->listProfiles($parent);
+ *     $pagedResponse = $profileServiceClient->listProfiles($formattedParent);
  *     foreach ($pagedResponse->iteratePages() as $page) {
  *         foreach ($page as $element) {
  *             // doSomethingWith($element);
@@ -73,7 +73,7 @@ use Google\Protobuf\GPBEmpty;
  *     // Alternatively:
  *
  *     // Iterate through all elements
- *     $pagedResponse = $profileServiceClient->listProfiles($parent);
+ *     $pagedResponse = $profileServiceClient->listProfiles($formattedParent);
  *     foreach ($pagedResponse->iterateAllElements() as $element) {
  *         // doSomethingWith($element);
  *     }
@@ -318,9 +318,9 @@ class ProfileServiceGapicClient
      * ```
      * $profileServiceClient = new ProfileServiceClient();
      * try {
-     *     $parent = '';
+     *     $formattedParent = $profileServiceClient->tenantName('[PROJECT]', '[TENANT]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $profileServiceClient->listProfiles($parent);
+     *     $pagedResponse = $profileServiceClient->listProfiles($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -331,7 +331,7 @@ class ProfileServiceGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $profileServiceClient->listProfiles($parent);
+     *     $pagedResponse = $profileServiceClient->listProfiles($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }

@@ -164,8 +164,36 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   String parent = "";
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   for (Profile element : profileServiceClient.listProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the profile is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenants/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProfilesPagedResponse listProfiles(TenantName parent) {
+    ListProfilesRequest request =
+        ListProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists profiles by filter. The order is unspecified.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   for (Profile element : profileServiceClient.listProfiles(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -189,9 +217,9 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   String parent = "";
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Profile element : profileServiceClient.listProfiles(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -214,9 +242,9 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   String parent = "";
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListProfilesPagedResponse&gt; future = profileServiceClient.listProfilesPagedCallable().futureCall(request);
    *   // Do something
@@ -239,9 +267,9 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   String parent = "";
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ListProfilesRequest request = ListProfilesRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListProfilesResponse response = profileServiceClient.listProfilesCallable().call(request);
