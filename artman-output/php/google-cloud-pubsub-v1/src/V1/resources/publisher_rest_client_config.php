@@ -35,7 +35,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
             'GetIamPolicy' => [
                 'method' => 'get',
@@ -64,7 +64,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
             'TestIamPermissions' => [
                 'method' => 'post',
@@ -98,7 +98,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
         ],
         'google.pubsub.v1.Publisher' => [
@@ -112,7 +112,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'UpdateTopic' => [
                 'method' => 'patch',
@@ -125,7 +125,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'Publish' => [
                 'method' => 'post',
@@ -137,7 +137,7 @@ return [
                             'getTopic',
                         ],
                     ],
-                ]
+                ],
             ],
             'GetTopic' => [
                 'method' => 'get',
@@ -148,7 +148,7 @@ return [
                             'getTopic',
                         ],
                     ],
-                ]
+                ],
             ],
             'ListTopics' => [
                 'method' => 'get',
@@ -159,7 +159,7 @@ return [
                             'getProject',
                         ],
                     ],
-                ]
+                ],
             ],
             'ListTopicSubscriptions' => [
                 'method' => 'get',
@@ -170,7 +170,7 @@ return [
                             'getTopic',
                         ],
                     ],
-                ]
+                ],
             ],
             'DeleteTopic' => [
                 'method' => 'delete',
@@ -181,8 +181,8 @@ return [
                             'getTopic',
                         ],
                     ],
-                ]
+                ],
             ],
         ],
-    ]
+    ],
 ];

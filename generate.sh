@@ -52,7 +52,7 @@ for gapic in "${GAPICS[@]}"
 do
   for config in "${APIS[@]}"
 	do
-		artman --local --output-dir artman-output \
+		artman --output-dir artman-output \
 		  --root-dir `pwd`/googleapis \
 		  --config $config \
 		 	generate $gapic

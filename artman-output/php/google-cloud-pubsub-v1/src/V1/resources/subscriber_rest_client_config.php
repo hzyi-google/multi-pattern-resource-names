@@ -35,7 +35,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
             'GetIamPolicy' => [
                 'method' => 'get',
@@ -64,7 +64,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
             'TestIamPermissions' => [
                 'method' => 'post',
@@ -98,7 +98,7 @@ return [
                             'getResource',
                         ],
                     ],
-                ]
+                ],
             ],
         ],
         'google.pubsub.v1.Subscriber' => [
@@ -112,7 +112,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'GetSubscription' => [
                 'method' => 'get',
@@ -123,7 +123,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'UpdateSubscription' => [
                 'method' => 'patch',
@@ -136,7 +136,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'ListSubscriptions' => [
                 'method' => 'get',
@@ -147,7 +147,7 @@ return [
                             'getProject',
                         ],
                     ],
-                ]
+                ],
             ],
             'DeleteSubscription' => [
                 'method' => 'delete',
@@ -158,7 +158,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'ModifyAckDeadline' => [
                 'method' => 'post',
@@ -170,7 +170,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'Acknowledge' => [
                 'method' => 'post',
@@ -182,7 +182,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'Pull' => [
                 'method' => 'post',
@@ -194,7 +194,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'ModifyPushConfig' => [
                 'method' => 'post',
@@ -206,7 +206,7 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
             'ListSnapshots' => [
                 'method' => 'get',
@@ -217,7 +217,7 @@ return [
                             'getProject',
                         ],
                     ],
-                ]
+                ],
             ],
             'CreateSnapshot' => [
                 'method' => 'put',
@@ -229,7 +229,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'UpdateSnapshot' => [
                 'method' => 'patch',
@@ -242,7 +242,7 @@ return [
                             'getName',
                         ],
                     ],
-                ]
+                ],
             ],
             'DeleteSnapshot' => [
                 'method' => 'delete',
@@ -253,7 +253,7 @@ return [
                             'getSnapshot',
                         ],
                     ],
-                ]
+                ],
             ],
             'Seek' => [
                 'method' => 'post',
@@ -265,8 +265,8 @@ return [
                             'getSubscription',
                         ],
                     ],
-                ]
+                ],
             ],
         ],
-    ]
+    ],
 ];

@@ -26,46 +26,24 @@ use Google\Cloud\PubSub\V1\SubscriberClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\BidiStream;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\LongRunning\OperationsClient;
-use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Iam\V1\GetIamPolicyRequest;
-use Google\Cloud\Iam\V1\IAMPolicyGrpcClient;
 use Google\Cloud\Iam\V1\Policy;
-use Google\Cloud\Iam\V1\SetIamPolicyRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
-use Google\Cloud\PubSub\V1\AcknowledgeRequest;
-use Google\Cloud\PubSub\V1\CreateSnapshotRequest;
-use Google\Cloud\PubSub\V1\DeleteSnapshotRequest;
-use Google\Cloud\PubSub\V1\DeleteSubscriptionRequest;
-use Google\Cloud\PubSub\V1\GetSubscriptionRequest;
-use Google\Cloud\PubSub\V1\ListSnapshotsRequest;
 use Google\Cloud\PubSub\V1\ListSnapshotsResponse;
-use Google\Cloud\PubSub\V1\ListSubscriptionsRequest;
 use Google\Cloud\PubSub\V1\ListSubscriptionsResponse;
-use Google\Cloud\PubSub\V1\ModifyAckDeadlineRequest;
-use Google\Cloud\PubSub\V1\ModifyPushConfigRequest;
-use Google\Cloud\PubSub\V1\PullRequest;
 use Google\Cloud\PubSub\V1\PullResponse;
 use Google\Cloud\PubSub\V1\PushConfig;
-use Google\Cloud\PubSub\V1\SeekRequest;
 use Google\Cloud\PubSub\V1\SeekResponse;
 use Google\Cloud\PubSub\V1\Snapshot;
 use Google\Cloud\PubSub\V1\StreamingPullRequest;
 use Google\Cloud\PubSub\V1\StreamingPullResponse;
-use Google\Cloud\PubSub\V1\SubscriberGrpcClient;
 use Google\Cloud\PubSub\V1\Subscription;
-use Google\Cloud\PubSub\V1\UpdateSnapshotRequest;
-use Google\Cloud\PubSub\V1\UpdateSubscriptionRequest;
-use Google\LongRunning\GetOperationRequest;
 use Google\Protobuf\Any;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Protobuf\Timestamp;
 use Google\Rpc\Code;
-use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
@@ -100,8 +78,10 @@ class SubscriberClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
+
         return new SubscriberClient($options);
     }
+
     /**
      * @test
      */

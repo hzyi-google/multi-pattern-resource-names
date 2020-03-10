@@ -24,8 +24,6 @@ namespace Google\Cloud\PubSub\Tests\System\V1;
 
 use Google\Cloud\PubSub\V1\PublisherClient;
 use Google\ApiCore\Testing\GeneratedTest;
-use Google\Cloud\PubSub\V1\ListTopicsRequest;
-use Google\Cloud\PubSub\V1\ListTopicsResponse;
 
 /**
  * @group pubsub
@@ -39,7 +37,7 @@ class PublisherSmokeTest extends GeneratedTest
     public function listTopicsTest()
     {
         $projectId = getenv('PROJECT_ID');
-        if ($projectId === false) {
+        if (false === $projectId) {
             $this->fail('Environment variable PROJECT_ID must be set for smoke test');
         }
 

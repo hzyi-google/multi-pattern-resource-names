@@ -10,8 +10,8 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getSubscriptions'
-                ]
+                    'resourcesGetMethod' => 'getSubscriptions',
+                ],
             ],
             'ListSnapshots' => [
                 'pageStreaming' => [
@@ -20,14 +20,14 @@ return [
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getSnapshots'
-                ]
+                    'resourcesGetMethod' => 'getSnapshots',
+                ],
             ],
             'StreamingPull' => [
                 'grpcStreaming' => [
                     'grpcStreamingType' => 'BidiStreaming',
-                ]
+                ],
             ],
-        ]
-    ]
+        ],
+    ],
 ];

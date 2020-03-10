@@ -24,36 +24,20 @@ namespace Google\Cloud\PubSub\Tests\Unit\V1;
 
 use Google\Cloud\PubSub\V1\PublisherClient;
 use Google\ApiCore\ApiException;
-use Google\ApiCore\BidiStream;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\LongRunning\OperationsClient;
-use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Iam\V1\GetIamPolicyRequest;
-use Google\Cloud\Iam\V1\IAMPolicyGrpcClient;
 use Google\Cloud\Iam\V1\Policy;
-use Google\Cloud\Iam\V1\SetIamPolicyRequest;
-use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
-use Google\Cloud\PubSub\V1\DeleteTopicRequest;
-use Google\Cloud\PubSub\V1\GetTopicRequest;
-use Google\Cloud\PubSub\V1\ListTopicSubscriptionsRequest;
 use Google\Cloud\PubSub\V1\ListTopicSubscriptionsResponse;
-use Google\Cloud\PubSub\V1\ListTopicsRequest;
 use Google\Cloud\PubSub\V1\ListTopicsResponse;
-use Google\Cloud\PubSub\V1\PublishRequest;
 use Google\Cloud\PubSub\V1\PublishResponse;
-use Google\Cloud\PubSub\V1\PublisherGrpcClient;
 use Google\Cloud\PubSub\V1\PubsubMessage;
 use Google\Cloud\PubSub\V1\Topic;
-use Google\Cloud\PubSub\V1\UpdateTopicRequest;
-use Google\LongRunning\GetOperationRequest;
 use Google\Protobuf\Any;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
-use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
@@ -88,8 +72,10 @@ class PublisherClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
+
         return new PublisherClient($options);
     }
+
     /**
      * @test
      */
