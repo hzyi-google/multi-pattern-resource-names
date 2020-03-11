@@ -67,6 +67,75 @@ end
 
 describe Google::Cloud::Talent::V4beta1::CompanyServiceClient do
 
+  describe 'delete_company' do
+    custom_error = CustomTestError_v4beta1.new "Custom test error for Google::Cloud::Talent::V4beta1::CompanyServiceClient#delete_company."
+
+    it 'invokes delete_company without error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Talent::V4beta1::DeleteCompanyRequest, request)
+        assert_equal(formatted_name, request.name)
+        OpenStruct.new(execute: nil)
+      end
+      mock_stub = MockGrpcClientStub_v4beta1.new(:delete_company, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockCompanyServiceCredentials_v4beta1.new("delete_company")
+
+      Google::Cloud::Talent::V4beta1::CompanyService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Talent::V4beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Talent::Company.new(version: :v4beta1)
+
+          # Call method
+          response = client.delete_company(formatted_name)
+
+          # Verify the response
+          assert_nil(response)
+
+          # Call method with block
+          client.delete_company(formatted_name) do |response, operation|
+            # Verify the response
+            assert_nil(response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes delete_company with error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Talent::V4beta1::DeleteCompanyRequest, request)
+        assert_equal(formatted_name, request.name)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v4beta1.new(:delete_company, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockCompanyServiceCredentials_v4beta1.new("delete_company")
+
+      Google::Cloud::Talent::V4beta1::CompanyService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Talent::V4beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Talent::Company.new(version: :v4beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v4beta1 do
+            client.delete_company(formatted_name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
   describe 'create_company' do
     custom_error = CustomTestError_v4beta1.new "Custom test error for Google::Cloud::Talent::V4beta1::CompanyServiceClient#create_company."
 
@@ -344,75 +413,6 @@ describe Google::Cloud::Talent::V4beta1::CompanyServiceClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v4beta1 do
             client.update_company(company)
-          end
-
-          # Verify the GaxError wrapped the custom error that was raised.
-          assert_match(custom_error.message, err.message)
-        end
-      end
-    end
-  end
-
-  describe 'delete_company' do
-    custom_error = CustomTestError_v4beta1.new "Custom test error for Google::Cloud::Talent::V4beta1::CompanyServiceClient#delete_company."
-
-    it 'invokes delete_company without error' do
-      # Create request parameters
-      formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Cloud::Talent::V4beta1::DeleteCompanyRequest, request)
-        assert_equal(formatted_name, request.name)
-        OpenStruct.new(execute: nil)
-      end
-      mock_stub = MockGrpcClientStub_v4beta1.new(:delete_company, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockCompanyServiceCredentials_v4beta1.new("delete_company")
-
-      Google::Cloud::Talent::V4beta1::CompanyService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Talent::V4beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-
-          # Call method
-          response = client.delete_company(formatted_name)
-
-          # Verify the response
-          assert_nil(response)
-
-          # Call method with block
-          client.delete_company(formatted_name) do |response, operation|
-            # Verify the response
-            assert_nil(response)
-            refute_nil(operation)
-          end
-        end
-      end
-    end
-
-    it 'invokes delete_company with error' do
-      # Create request parameters
-      formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
-
-      # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Cloud::Talent::V4beta1::DeleteCompanyRequest, request)
-        assert_equal(formatted_name, request.name)
-        raise custom_error
-      end
-      mock_stub = MockGrpcClientStub_v4beta1.new(:delete_company, mock_method)
-
-      # Mock auth layer
-      mock_credentials = MockCompanyServiceCredentials_v4beta1.new("delete_company")
-
-      Google::Cloud::Talent::V4beta1::CompanyService::Stub.stub(:new, mock_stub) do
-        Google::Cloud::Talent::V4beta1::Credentials.stub(:default, mock_credentials) do
-          client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-
-          # Call method
-          err = assert_raises Google::Gax::GaxError, CustomTestError_v4beta1 do
-            client.delete_company(formatted_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

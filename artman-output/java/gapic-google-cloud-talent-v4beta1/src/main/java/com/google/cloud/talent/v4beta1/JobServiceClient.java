@@ -50,9 +50,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Job job = Job.newBuilder().build();
- *   Job response = jobServiceClient.createJob(parent, job);
+ *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+ *   jobServiceClient.deleteJob(name);
  * }
  * </code>
  * </pre>
@@ -170,6 +169,110 @@ public class JobServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+   *   jobServiceClient.deleteJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the job to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   *     "projects/foo/tenants/bar/jobs/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used. For example,
+   *     "projects/foo/jobs/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(JobName name) {
+    DeleteJobRequest request =
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+   *   jobServiceClient.deleteJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the job to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   *     "projects/foo/tenants/bar/jobs/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used. For example,
+   *     "projects/foo/jobs/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(String name) {
+    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   jobServiceClient.deleteJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(DeleteJobRequest request) {
+    deleteJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = jobServiceClient.deleteJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return stub.deleteJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -315,6 +418,180 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return stub.createJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      ProjectName parent, List<Job> jobs) {
+    BatchCreateJobsRequest request =
+        BatchCreateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchCreateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      TenantName parent, List<Job> jobs) {
+    BatchCreateJobsRequest request =
+        BatchCreateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchCreateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent.toString(), jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      String parent, List<Job> jobs) {
+    BatchCreateJobsRequest request =
+        BatchCreateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
+    return batchCreateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
+   *     .build();
+   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
+      BatchCreateJobsRequest request) {
+    return batchCreateJobsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
+   *     .build();
+   *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchCreateJobsOperationCallable().futureCall(request);
+   *   // Do something
+   *   JobOperationResult response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationCallable() {
+    return stub.batchCreateJobsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchCreateJobsCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
+    return stub.batchCreateJobsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -490,106 +767,324 @@ public class JobServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-   *   jobServiceClient.deleteJob(name);
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
    * }
    * </code></pre>
    *
-   * @param name Required. The resource name of the job to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
-   *     "projects/foo/tenants/bar/jobs/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used. For example,
-   *     "projects/foo/jobs/bar".
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(JobName name) {
-    DeleteJobRequest request =
-        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteJob(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      ProjectName parent, List<Job> jobs) {
+    BatchUpdateJobsRequest request =
+        BatchUpdateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchUpdateJobsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-   *   jobServiceClient.deleteJob(name.toString());
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
    * }
    * </code></pre>
    *
-   * @param name Required. The resource name of the job to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
-   *     "projects/foo/tenants/bar/jobs/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used. For example,
-   *     "projects/foo/jobs/bar".
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(String name) {
-    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
-    deleteJob(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      TenantName parent, List<Job> jobs) {
+    BatchUpdateJobsRequest request =
+        BatchUpdateJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllJobs(jobs)
+            .build();
+    return batchUpdateJobsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent.toString(), jobs).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param jobs Required. The jobs to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      String parent, List<Job> jobs) {
+    BatchUpdateJobsRequest request =
+        BatchUpdateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
+    return batchUpdateJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch update jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
    *     .build();
-   *   jobServiceClient.deleteJob(request);
+   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(DeleteJobRequest request) {
-    deleteJobCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
+      BatchUpdateJobsRequest request) {
+    return batchUpdateJobsOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.deleteJobCallable().futureCall(request);
+   *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchUpdateJobsOperationCallable().futureCall(request);
+   *   // Do something
+   *   JobOperationResult response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationCallable() {
+    return stub.batchUpdateJobsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Begins executing a batch update jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
+   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllJobs(jobs)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchUpdateJobsCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
+    return stub.batchUpdateJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   jobServiceClient.batchDeleteJobs(parent, filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param filter Required. The filter string specifies the jobs to be deleted.
+   *     <p>Supported operator: =, AND
+   *     <p>The fields eligible for filtering are:
+   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
+   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteJobs(ProjectName parent, String filter) {
+    BatchDeleteJobsRequest request =
+        BatchDeleteJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    batchDeleteJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   String filter = "";
+   *   jobServiceClient.batchDeleteJobs(parent, filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param filter Required. The filter string specifies the jobs to be deleted.
+   *     <p>Supported operator: =, AND
+   *     <p>The fields eligible for filtering are:
+   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
+   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteJobs(TenantName parent, String filter) {
+    BatchDeleteJobsRequest request =
+        BatchDeleteJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    batchDeleteJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   jobServiceClient.batchDeleteJobs(parent.toString(), filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the tenant under which the job is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
+   *     example, "projects/foo".
+   * @param filter Required. The filter string specifies the jobs to be deleted.
+   *     <p>Supported operator: =, AND
+   *     <p>The fields eligible for filtering are:
+   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
+   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteJobs(String parent, String filter) {
+    BatchDeleteJobsRequest request =
+        BatchDeleteJobsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    batchDeleteJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setFilter(filter)
+   *     .build();
+   *   jobServiceClient.batchDeleteJobs(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteJobs(BatchDeleteJobsRequest request) {
+    batchDeleteJobsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setFilter(filter)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = jobServiceClient.batchDeleteJobsCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
    * </code></pre>
    */
-  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return stub.deleteJobCallable();
+  public final UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {
+    return stub.batchDeleteJobsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -793,154 +1288,6 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return stub.listJobsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   jobServiceClient.batchDeleteJobs(parent, filter);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param filter Required. The filter string specifies the jobs to be deleted.
-   *     <p>Supported operator: =, AND
-   *     <p>The fields eligible for filtering are:
-   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
-   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void batchDeleteJobs(ProjectName parent, String filter) {
-    BatchDeleteJobsRequest request =
-        BatchDeleteJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    batchDeleteJobs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   String filter = "";
-   *   jobServiceClient.batchDeleteJobs(parent, filter);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param filter Required. The filter string specifies the jobs to be deleted.
-   *     <p>Supported operator: =, AND
-   *     <p>The fields eligible for filtering are:
-   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
-   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void batchDeleteJobs(TenantName parent, String filter) {
-    BatchDeleteJobsRequest request =
-        BatchDeleteJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    batchDeleteJobs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   jobServiceClient.batchDeleteJobs(parent.toString(), filter);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param filter Required. The filter string specifies the jobs to be deleted.
-   *     <p>Supported operator: =, AND
-   *     <p>The fields eligible for filtering are:
-   *     <p>&#42; `companyName` (Required) &#42; `requisitionId` (Required)
-   *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void batchDeleteJobs(String parent, String filter) {
-    BatchDeleteJobsRequest request =
-        BatchDeleteJobsRequest.newBuilder().setParent(parent).setFilter(filter).build();
-    batchDeleteJobs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFilter(filter)
-   *     .build();
-   *   jobServiceClient.batchDeleteJobs(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void batchDeleteJobs(BatchDeleteJobsRequest request) {
-    batchDeleteJobsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   BatchDeleteJobsRequest request = BatchDeleteJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFilter(filter)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.batchDeleteJobsCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {
-    return stub.batchDeleteJobsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1153,354 +1500,6 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     return stub.searchJobsForAlertCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be created.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      ProjectName parent, List<Job> jobs) {
-    BatchCreateJobsRequest request =
-        BatchCreateJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllJobs(jobs)
-            .build();
-    return batchCreateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be created.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      TenantName parent, List<Job> jobs) {
-    BatchCreateJobsRequest request =
-        BatchCreateJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllJobs(jobs)
-            .build();
-    return batchCreateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(parent.toString(), jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be created.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      String parent, List<Job> jobs) {
-    BatchCreateJobsRequest request =
-        BatchCreateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
-    return batchCreateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   JobOperationResult response = jobServiceClient.batchCreateJobsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      BatchCreateJobsRequest request) {
-    return batchCreateJobsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchCreateJobsOperationCallable().futureCall(request);
-   *   // Do something
-   *   JobOperationResult response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
-      batchCreateJobsOperationCallable() {
-    return stub.batchCreateJobsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchCreateJobsRequest request = BatchCreateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchCreateJobsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
-    return stub.batchCreateJobsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be updated.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      ProjectName parent, List<Job> jobs) {
-    BatchUpdateJobsRequest request =
-        BatchUpdateJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllJobs(jobs)
-            .build();
-    return batchUpdateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be updated.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      TenantName parent, List<Job> jobs) {
-    BatchUpdateJobsRequest request =
-        BatchUpdateJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllJobs(jobs)
-            .build();
-    return batchUpdateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(parent.toString(), jobs).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the tenant under which the job is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
-   *     example, "projects/foo".
-   * @param jobs Required. The jobs to be updated.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      String parent, List<Job> jobs) {
-    BatchUpdateJobsRequest request =
-        BatchUpdateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
-    return batchUpdateJobsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   JobOperationResult response = jobServiceClient.batchUpdateJobsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      BatchUpdateJobsRequest request) {
-    return batchUpdateJobsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   OperationFuture&lt;JobOperationResult, BatchOperationMetadata&gt; future = jobServiceClient.batchUpdateJobsOperationCallable().futureCall(request);
-   *   // Do something
-   *   JobOperationResult response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
-      batchUpdateJobsOperationCallable() {
-    return stub.batchUpdateJobsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Job&gt; jobs = new ArrayList&lt;&gt;();
-   *   BatchUpdateJobsRequest request = BatchUpdateJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllJobs(jobs)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.batchUpdateJobsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
-    return stub.batchUpdateJobsCallable();
   }
 
   @Override

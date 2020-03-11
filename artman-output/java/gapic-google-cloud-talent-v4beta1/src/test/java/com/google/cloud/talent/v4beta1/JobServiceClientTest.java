@@ -108,6 +108,43 @@ public class JobServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+
+    client.deleteJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+
+      client.deleteJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createJobTest() {
     JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
     CompanyName company = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
@@ -170,6 +207,55 @@ public class JobServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCreateJobsTest() throws Exception {
+    JobOperationResult expectedResponse = JobOperationResult.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    List<Job> jobs = new ArrayList<>();
+
+    JobOperationResult actualResponse = client.batchCreateJobsAsync(parent, jobs).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateJobsRequest actualRequest = (BatchCreateJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(jobs, actualRequest.getJobsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCreateJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      List<Job> jobs = new ArrayList<>();
+
+      client.batchCreateJobsAsync(parent, jobs).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -303,19 +389,28 @@ public class JobServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteJobTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockJobService.addResponse(expectedResponse);
+  public void batchUpdateJobsTest() throws Exception {
+    JobOperationResult expectedResponse = JobOperationResult.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
 
-    JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    List<Job> jobs = new ArrayList<>();
 
-    client.deleteJob(name);
+    JobOperationResult actualResponse = client.batchUpdateJobsAsync(parent, jobs).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
+    BatchUpdateJobsRequest actualRequest = (BatchUpdateJobsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(jobs, actualRequest.getJobsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -324,14 +419,57 @@ public class JobServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteJobExceptionTest() throws Exception {
+  public void batchUpdateJobsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockJobService.addException(exception);
 
     try {
-      JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      List<Job> jobs = new ArrayList<>();
 
-      client.deleteJob(name);
+      client.batchUpdateJobsAsync(parent, jobs).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchDeleteJobsTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String filter = "filter-1274492040";
+
+    client.batchDeleteJobs(parent, filter);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteJobsRequest actualRequest = (BatchDeleteJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchDeleteJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String filter = "filter-1274492040";
+
+      client.batchDeleteJobs(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -380,46 +518,6 @@ public class JobServiceClientTest {
       String filter = "filter-1274492040";
 
       client.listJobs(parent, filter);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchDeleteJobsTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockJobService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    String filter = "filter-1274492040";
-
-    client.batchDeleteJobs(parent, filter);
-
-    List<AbstractMessage> actualRequests = mockJobService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchDeleteJobsRequest actualRequest = (BatchDeleteJobsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(filter, actualRequest.getFilter());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchDeleteJobsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockJobService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      String filter = "filter-1274492040";
-
-      client.batchDeleteJobs(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -561,104 +659,6 @@ public class JobServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchCreateJobsTest() throws Exception {
-    JobOperationResult expectedResponse = JobOperationResult.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("batchCreateJobsTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockJobService.addResponse(resultOperation);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    List<Job> jobs = new ArrayList<>();
-
-    JobOperationResult actualResponse = client.batchCreateJobsAsync(parent, jobs).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockJobService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchCreateJobsRequest actualRequest = (BatchCreateJobsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(jobs, actualRequest.getJobsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchCreateJobsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockJobService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      List<Job> jobs = new ArrayList<>();
-
-      client.batchCreateJobsAsync(parent, jobs).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchUpdateJobsTest() throws Exception {
-    JobOperationResult expectedResponse = JobOperationResult.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("batchUpdateJobsTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockJobService.addResponse(resultOperation);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    List<Job> jobs = new ArrayList<>();
-
-    JobOperationResult actualResponse = client.batchUpdateJobsAsync(parent, jobs).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockJobService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchUpdateJobsRequest actualRequest = (BatchUpdateJobsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(jobs, actualRequest.getJobsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchUpdateJobsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockJobService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      List<Job> jobs = new ArrayList<>();
-
-      client.batchUpdateJobsAsync(parent, jobs).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

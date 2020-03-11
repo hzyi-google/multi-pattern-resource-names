@@ -29,9 +29,8 @@
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Company company = Company.newBuilder().build();
- *   Company response = companyServiceClient.createCompany(parent, company);
+ *   CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+ *   companyServiceClient.deleteCompany(name);
  * }
  * </code>
  * </pre>
@@ -46,9 +45,8 @@
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Job job = Job.newBuilder().build();
- *   Job response = jobServiceClient.createJob(parent, job);
+ *   JobName name = JobName.ofProjectJobName("[PROJECT]", "[JOB]");
+ *   jobServiceClient.deleteJob(name);
  * }
  * </code>
  * </pre>
@@ -63,9 +61,8 @@
  * <pre>
  * <code>
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   Profile profile = Profile.newBuilder().build();
- *   Profile response = profileServiceClient.createProfile(parent, profile);
+ *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   profileServiceClient.deleteProfile(name);
  * }
  * </code>
  * </pre>
@@ -96,9 +93,8 @@
  * <pre>
  * <code>
  * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   Application application = Application.newBuilder().build();
- *   Application response = applicationServiceClient.createApplication(parent, application);
+ *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+ *   applicationServiceClient.deleteApplication(name);
  * }
  * </code>
  * </pre>
@@ -134,9 +130,8 @@
  * <pre>
  * <code>
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Tenant tenant = Tenant.newBuilder().build();
- *   Tenant response = tenantServiceClient.createTenant(parent, tenant);
+ *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+ *   tenantServiceClient.deleteTenant(name);
  * }
  * </code>
  * </pre>

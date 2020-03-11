@@ -100,6 +100,43 @@ public class CompanyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteCompanyTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCompanyService.addResponse(expectedResponse);
+
+    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+
+    client.deleteCompany(name);
+
+    List<AbstractMessage> actualRequests = mockCompanyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCompanyRequest actualRequest = (DeleteCompanyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CompanyName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCompanyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCompanyService.addException(exception);
+
+    try {
+      CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
+
+      client.deleteCompany(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createCompanyTest() {
     CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
     String displayName = "displayName1615086568";
@@ -275,43 +312,6 @@ public class CompanyServiceClientTest {
       Company company = Company.newBuilder().build();
 
       client.updateCompany(company);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCompanyTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCompanyService.addResponse(expectedResponse);
-
-    CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
-
-    client.deleteCompany(name);
-
-    List<AbstractMessage> actualRequests = mockCompanyService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCompanyRequest actualRequest = (DeleteCompanyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CompanyName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCompanyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCompanyService.addException(exception);
-
-    try {
-      CompanyName name = CompanyName.ofProjectCompanyName("[PROJECT]", "[COMPANY]");
-
-      client.deleteCompany(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

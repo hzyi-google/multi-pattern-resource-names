@@ -20,6 +20,11 @@
         }
       },
       "methods": {
+        "DeleteTenant": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "default"
+        },
         "CreateTenant": {
           "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
@@ -33,11 +38,6 @@
         "UpdateTenant": {
           "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
-          "retry_params_name": "default"
-        },
-        "DeleteTenant": {
-          "timeout_millis": 60000,
-          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "ListTenants": {
